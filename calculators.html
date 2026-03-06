@@ -4,6 +4,7 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Finance Calculators — Punjabi Finance</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
 
 :root{--gold:#D4A017;--gl:#E8A820;--sa:#E8890C;--bg:#0A0A04;--bg2:#0f0e06;--muted:#9A8A6A;--off:#FAF7F0;--border:rgba(212,160,23,0.14);--white:#ffffff;--dark:#1a1600;--mid:#4a3f20;--light:#7a6a45;}
@@ -32,30 +33,60 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
 .footer-disc{font-size:0.65rem;color:var(--muted);opacity:0.4;width:100%;line-height:1.5;}
 @media(max-width:768px){nav{padding:0 20px;}footer{padding:28px 20px 16px;}}
 
-.hero{padding:64px 80px 48px;background:linear-gradient(135deg,rgba(212,160,23,0.07),transparent 60%);border-bottom:1px solid var(--border);}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:900;margin-bottom:10px;}
-.hero p{color:var(--muted);font-size:0.95rem;line-height:1.7;max-width:560px;}
-.calc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:24px;padding:48px 80px 80px;}
-.calc-card{background:#fff;border-radius:20px;padding:28px;box-shadow:0 2px 16px rgba(0,0,0,0.1);}
-.calc-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid rgba(0,0,0,0.07);}
-.calc-icon{font-size:1.8rem;width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:rgba(212,160,23,0.1);border-radius:12px;}
-.calc-title{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--dark);font-weight:700;}
-.calc-sub{font-size:0.75rem;color:var(--light);margin-top:2px;}
+:root{--gold:#D4A017;--gl:#E8A820;--sa:#E8890C;--bg:#0A0A04;--bg2:#0f0e06;--muted:#9A8A6A;--off:#FAF7F0;--border:rgba(212,160,23,0.14);}
+.page-hero{padding:56px 80px 40px;background:linear-gradient(135deg,rgba(212,160,23,0.07),transparent 60%);border-bottom:1px solid var(--border);}
+.page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:900;margin-bottom:10px;}
+.page-hero p{color:var(--muted);font-size:0.95rem;line-height:1.7;max-width:560px;}
+.calc-nav{display:flex;gap:8px;flex-wrap:wrap;padding:20px 80px 0;}
+.calc-tab{padding:8px 18px;border-radius:50px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:0.8rem;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;}
+.calc-tab.active,.calc-tab:hover{background:var(--gold);color:#0a0a0a;border-color:var(--gold);}
+.calc-container{display:none;padding:40px 80px 80px;}
+.calc-container.active{display:block;}
+.calc-layout{display:grid;grid-template-columns:380px 1fr;gap:28px;align-items:start;}
+.calc-panel{background:#fff;border-radius:20px;padding:28px;box-shadow:0 2px 16px rgba(0,0,0,0.1);}
+.calc-title{font-family:'Playfair Display',serif;font-size:1.2rem;color:#1a1600;font-weight:700;margin-bottom:4px;}
+.calc-subtitle{font-size:0.78rem;color:#7a6a45;margin-bottom:20px;}
 .field{margin-bottom:14px;}
-.field label{display:block;font-size:0.75rem;font-weight:600;color:var(--mid);margin-bottom:5px;text-transform:uppercase;letter-spacing:0.06em;}
-.field input,.field select{width:100%;padding:10px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:10px;font-size:0.9rem;font-family:'DM Sans',sans-serif;color:var(--dark);background:#fafafa;transition:border-color 0.2s;outline:none;}
-.field input:focus,.field select:focus{border-color:var(--gold);background:#fff;}
-.calc-result{background:linear-gradient(135deg,rgba(212,160,23,0.1),rgba(232,137,12,0.05));border:1px solid rgba(212,160,23,0.25);border-radius:12px;padding:14px 16px;margin-top:16px;display:none;}
-.calc-result.show{display:block;}
-.result-label{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--sa);margin-bottom:4px;}
-.result-value{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--dark);}
-.result-note{font-size:0.73rem;color:var(--light);margin-top:4px;line-height:1.5;}
-.calc-btn{width:100%;padding:11px;background:var(--gold);color:#0a0a0a;border:none;border-radius:50px;font-weight:700;font-size:0.87rem;cursor:pointer;font-family:'DM Sans',sans-serif;margin-top:16px;transition:background 0.2s;}
-.calc-btn:hover{background:var(--gl);}
-.net-worth-rows{margin-bottom:8px;}
+.field label{display:block;font-size:0.73rem;font-weight:700;color:#4a3f20;margin-bottom:5px;text-transform:uppercase;letter-spacing:0.06em;}
+.field input,.field select{width:100%;padding:10px 14px;border:1.5px solid rgba(0,0,0,0.1);border-radius:10px;font-size:0.9rem;font-family:'DM Sans',sans-serif;color:#1a1600;background:#fafafa;transition:border-color 0.2s;outline:none;}
+.field input:focus,.field select:focus{border-color:var(--gold);background:#fff;box-shadow:0 0 0 3px rgba(212,160,23,0.1);}
+.slider-field{margin-bottom:16px;}
+.slider-field label{display:flex;justify-content:space-between;font-size:0.73rem;font-weight:700;color:#4a3f20;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.06em;}
+.slider-val{color:var(--gold);font-size:0.85rem;}
+input[type=range]{width:100%;height:5px;border-radius:5px;background:rgba(212,160,23,0.2);outline:none;-webkit-appearance:none;cursor:pointer;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--gold);cursor:pointer;box-shadow:0 2px 6px rgba(212,160,23,0.4);}
+.calc-btn{width:100%;padding:12px;background:linear-gradient(135deg,var(--gold),var(--sa));color:#0a0a0a;border:none;border-radius:50px;font-weight:700;font-size:0.9rem;cursor:pointer;font-family:'DM Sans',sans-serif;margin-top:16px;transition:all 0.2s;letter-spacing:0.02em;}
+.calc-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(212,160,23,0.35);}
+.results-panel{background:#fff;border-radius:20px;padding:28px;box-shadow:0 2px 16px rgba(0,0,0,0.1);}
+.results-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:28px;}
+.result-box{background:linear-gradient(135deg,rgba(212,160,23,0.08),rgba(232,137,12,0.04));border:1px solid rgba(212,160,23,0.2);border-radius:14px;padding:16px 18px;}
+.result-box.highlight{background:linear-gradient(135deg,rgba(212,160,23,0.18),rgba(232,137,12,0.1));border-color:rgba(212,160,23,0.4);}
+.result-label{font-size:0.68rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--sa);margin-bottom:4px;}
+.result-value{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#1a1600;line-height:1.1;}
+.result-sub{font-size:0.72rem;color:#7a6a45;margin-top:3px;}
+.chart-wrap{position:relative;height:280px;margin-top:10px;}
+.chart-tip{font-size:0.76rem;color:var(--muted);text-align:center;margin-top:6px;}
+.insight-box{background:rgba(37,211,102,0.06);border:1px solid rgba(37,211,102,0.2);border-radius:12px;padding:14px 16px;margin-top:16px;}
+.insight-box p{font-size:0.84rem;color:#1a3020;line-height:1.6;margin:0;}
+.insight-box.warn{background:rgba(230,100,30,0.06);border-color:rgba(230,100,30,0.2);}
+.insight-box.warn p{color:#3a1800;}
+.nw-section{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--sa);margin:14px 0 6px;}
 .nw-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:6px;}
-.nw-section{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--sa);margin:10px 0 5px;}
-@media(max-width:768px){.calc-grid{padding:28px 20px 60px;grid-template-columns:1fr;}.hero{padding:48px 20px 32px;}}
+.nw-input{padding:9px 12px;border:1.5px solid rgba(0,0,0,0.1);border-radius:10px;font-size:0.85rem;font-family:'DM Sans',sans-serif;width:100%;outline:none;color:#1a1600;background:#fafafa;transition:border-color 0.2s;}
+.nw-input:focus{border-color:var(--gold);background:#fff;}
+.empty-state{text-align:center;padding:60px 20px;color:var(--muted);}
+.empty-state .ei{font-size:3rem;margin-bottom:12px;}
+.empty-state p{font-size:0.9rem;}
+.pill-toggle{display:flex;background:rgba(0,0,0,0.04);border-radius:10px;padding:3px;margin-bottom:16px;}
+.pill-option{flex:1;text-align:center;padding:7px;border-radius:8px;font-size:0.78rem;font-weight:600;cursor:pointer;transition:all 0.2s;color:#7a6a45;}
+.pill-option.sel{background:#fff;color:#1a1600;box-shadow:0 1px 4px rgba(0,0,0,0.1);}
+@media(max-width:900px){.calc-layout{grid-template-columns:1fr;}.calc-container,.page-hero,.calc-nav{padding-left:20px;padding-right:20px;}}
+@media(max-width:600px){.results-grid{grid-template-columns:1fr 1fr;}.calc-container{padding-top:24px;padding-bottom:60px;}}
+
+.lang-pill{display:flex;align-items:center;background:rgba(212,160,23,0.08);border:1px solid rgba(212,160,23,0.22);border-radius:50px;padding:3px;}
+.lang-pill-btn{padding:5px 14px;border-radius:50px;border:none;cursor:pointer;font-size:0.78rem;font-weight:600;font-family:'DM Sans',sans-serif;transition:all 0.2s;background:transparent;color:#9A8A6A;}
+.lang-pill-btn.active{background:#D4A017;color:#0a0a0a;}
+
 </style>
 </head>
 <body>
@@ -67,147 +98,204 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
     <a href="calculators.html" style="color:var(--gl)">Calculators</a>
     <a href="tools.html" >Immigrant Tools</a>
     <a href="downloads.html" >Free Downloads</a>
-    <div class="lang-toggle">
-      <button class="lang-btn active" id="nb-en" onclick="siteSetLang('en')">EN</button>
-      <button class="lang-btn" id="nb-pa" onclick="siteSetLang('pa')">PA</button>
+    <div class="lang-pill">
+      <button class="lang-pill-btn active" id="nb-en" onclick="siteSetLang('en')">English</button>
+      <button class="lang-pill-btn" id="nb-pa" onclick="siteSetLang('pa')">ਪੰਜਾਬੀ</button>
     </div>
     <a href="https://wa.me/+16477456850" target="_blank" style="background:var(--gold);color:#0a0a0a;padding:7px 18px;border-radius:50px;font-weight:700;font-size:0.8rem;">WhatsApp</a>
   </div>
 </nav>
 
-<div class="hero">
-  <div class="section-label" data-en="Finance Calculators" data-pa="ਵਿੱਤੀ ਕੈਲਕੁਲੇਟਰ">Finance Calculators</div>
-  <h1 data-en="Know Your Numbers" data-pa="ਆਪਣੇ ਨੰਬਰ ਜਾਣੋ">Know Your <span class="gold">Numbers</span></h1>
-  <p data-en="Six free calculators to help you plan smarter — from life insurance to retirement." data-pa="ਛੇ ਮੁਫ਼ਤ ਕੈਲਕੁਲੇਟਰ — ਜ਼ਿੰਦਗੀ ਬੀਮੇ ਤੋਂ ਰਿਟਾਇਰਮੈਂਟ ਤੱਕ ਸਮਾਰਟ ਯੋਜਨਾ ਬਣਾਓ।">Six free calculators to help you plan smarter — from life insurance to retirement.</p>
+<div class="page-hero">
+  <div class="section-label">Finance Calculators</div>
+  <h1>Know Your <span class="gold">Numbers</span></h1>
+  <p>Six interactive calculators with visual projections — built for Canadian finances.</p>
 </div>
 
-<div class="calc-grid">
-
-<!-- 1. LIFE INSURANCE -->
-<div class="calc-card">
-  <div class="calc-header">
-    <div class="calc-icon">🛡️</div>
-    <div><div class="calc-title" data-en="Life Insurance Calculator" data-pa="ਜ਼ਿੰਦਗੀ ਬੀਮਾ ਕੈਲਕੁਲੇਟਰ">Life Insurance Calculator</div>
-    <div class="calc-sub" data-en="How much coverage do I need?" data-pa="ਮੈਨੂੰ ਕਿੰਨੀ ਕਵਰੇਜ ਚਾਹੀਦੀ?">How much coverage do I need?</div></div>
-  </div>
-  <div class="field"><label data-en="Annual Income ($)" data-pa="ਸਾਲਾਨਾ ਆਮਦਨ ($)">Annual Income ($)</label><input type="number" id="li-income" placeholder="85000" value="85000"></div>
-  <div class="field"><label data-en="Years to Replace (e.g. until youngest child is 25)" data-pa="ਬਦਲਣ ਦੇ ਸਾਲ">Years to Replace Income</label><input type="number" id="li-years" placeholder="20" value="20"></div>
-  <div class="field"><label data-en="Total Debts — Mortgage, Loans ($)" data-pa="ਕੁੱਲ ਕਰਜ਼ ($)">Total Debts — Mortgage, Loans ($)</label><input type="number" id="li-debt" placeholder="400000" value="400000"></div>
-  <div class="field"><label data-en="Children's Education Fund ($)" data-pa="ਬੱਚਿਆਂ ਦੀ ਪੜ੍ਹਾਈ ਫੰਡ ($)">Children's Education Fund ($)</label><input type="number" id="li-edu" placeholder="50000" value="50000"></div>
-  <div class="field"><label data-en="Existing Life Insurance ($)" data-pa="ਮੌਜੂਦਾ ਜ਼ਿੰਦਗੀ ਬੀਮਾ ($)">Existing Life Insurance ($)</label><input type="number" id="li-existing" placeholder="0" value="0"></div>
-  <button class="calc-btn" onclick="calcLifeInsurance()" data-en="Calculate Coverage Needed" data-pa="ਲੋੜੀਂਦੀ ਕਵਰੇਜ ਗਿਣੋ">Calculate Coverage Needed</button>
-  <div class="calc-result" id="li-result">
-    <div class="result-label" data-en="Recommended Coverage" data-pa="ਸਿਫ਼ਾਰਿਸ਼ਕ੍ਰਿਤ ਕਵਰੇਜ">Recommended Coverage</div>
-    <div class="result-value" id="li-value"></div>
-    <div class="result-note" id="li-note"></div>
-  </div>
+<div class="calc-nav">
+  <button class="calc-tab active" onclick="showCalc('compound')">📈 Compound Interest</button>
+  <button class="calc-tab" onclick="showCalc('retirement')">🌅 Retirement</button>
+  <button class="calc-tab" onclick="showCalc('resp')">🎓 RESP</button>
+  <button class="calc-tab" onclick="showCalc('life')">🛡️ Life Insurance</button>
+  <button class="calc-tab" onclick="showCalc('mortgage')">🏠 Mortgage</button>
+  <button class="calc-tab" onclick="showCalc('networth')">💎 Net Worth</button>
 </div>
 
-<!-- 2. MORTGAGE PROTECTION -->
-<div class="calc-card">
-  <div class="calc-header">
-    <div class="calc-icon">🏠</div>
-    <div><div class="calc-title" data-en="Mortgage Protection Calculator" data-pa="ਮੌਰਗੇਜ ਸੁਰੱਖਿਆ ਕੈਲਕੁਲੇਟਰ">Mortgage Protection Calculator</div>
-    <div class="calc-sub" data-en="How much term insurance to cover my mortgage?" data-pa="ਮੌਰਗੇਜ ਕਵਰ ਕਰਨ ਲਈ ਕਿੰਨਾ ਟਰਮ ਬੀਮਾ?">How much term insurance covers my mortgage?</div></div>
-  </div>
-  <div class="field"><label data-en="Remaining Mortgage Balance ($)" data-pa="ਬਾਕੀ ਮੌਰਗੇਜ ਬਕਾਇਆ ($)">Remaining Mortgage Balance ($)</label><input type="number" id="mp-balance" placeholder="550000" value="550000"></div>
-  <div class="field"><label data-en="Years Remaining on Mortgage" data-pa="ਮੌਰਗੇਜ ਦੇ ਬਾਕੀ ਸਾਲ">Years Remaining on Mortgage</label><input type="number" id="mp-years" placeholder="25" value="25"></div>
-  <div class="field"><label data-en="Monthly Payment ($)" data-pa="ਮਾਸਿਕ ਭੁਗਤਾਨ ($)">Monthly Payment ($)</label><input type="number" id="mp-payment" placeholder="2800" value="2800"></div>
-  <div class="field"><label data-en="Coverage Type" data-pa="ਕਵਰੇਜ ਕਿਸਮ">Coverage Type</label>
-    <select id="mp-type">
-      <option value="decreasing" data-en="Decreasing Term (follows mortgage)" data-pa="ਘਟਦਾ ਟਰਮ (ਮੌਰਗੇਜ ਅਨੁਸਾਰ)">Decreasing Term (follows mortgage)</option>
-      <option value="level" data-en="Level Term (fixed coverage)" data-pa="ਸਥਿਰ ਟਰਮ (ਨਿਸ਼ਚਿਤ ਕਵਰੇਜ)">Level Term (fixed coverage)</option>
-    </select>
-  </div>
-  <button class="calc-btn" onclick="calcMortgageProtection()" data-en="Calculate Protection Needed" data-pa="ਲੋੜੀਂਦੀ ਸੁਰੱਖਿਆ ਗਿਣੋ">Calculate Protection Needed</button>
-  <div class="calc-result" id="mp-result">
-    <div class="result-label" data-en="Coverage Recommendation" data-pa="ਕਵਰੇਜ ਸਿਫ਼ਾਰਿਸ਼">Coverage Recommendation</div>
-    <div class="result-value" id="mp-value"></div>
-    <div class="result-note" id="mp-note"></div>
+<!-- ===== COMPOUND INTEREST ===== -->
+<div class="calc-container active" id="calc-compound">
+  <div class="calc-layout">
+    <div class="calc-panel">
+      <div class="calc-title">Compound Interest Calculator</div>
+      <div class="calc-subtitle">Watch your money snowball — the most powerful force in finance</div>
+      <div class="field"><label>Initial Investment ($)</label><input type="number" id="ci-principal" value="10000" oninput="calcCompound()"></div>
+      <div class="slider-field"><label>Monthly Contribution <span class="slider-val" id="ci-m-val">$500</span></label><input type="range" id="ci-monthly" min="0" max="5000" step="50" value="500" oninput="document.getElementById('ci-m-val').textContent='$'+this.value;calcCompound()"></div>
+      <div class="slider-field"><label>Annual Return Rate <span class="slider-val" id="ci-r-val">7%</span></label><input type="range" id="ci-rate" min="1" max="15" step="0.5" value="7" oninput="document.getElementById('ci-r-val').textContent=this.value+'%';calcCompound()"></div>
+      <div class="slider-field"><label>Investment Period <span class="slider-val" id="ci-y-val">25 years</span></label><input type="range" id="ci-years" min="1" max="40" step="1" value="25" oninput="document.getElementById('ci-y-val').textContent=this.value+' years';calcCompound()"></div>
+      <div class="pill-toggle">
+        <div class="pill-option sel" onclick="setCIFreq('monthly',this)">Monthly</div>
+        <div class="pill-option" onclick="setCIFreq('annual',this)">Annual</div>
+      </div>
+      <div class="field"><label>Compounding Frequency</label>
+        <select id="ci-freq" onchange="calcCompound()">
+          <option value="12">Monthly (recommended)</option>
+          <option value="4">Quarterly</option>
+          <option value="2">Semi-Annual</option>
+          <option value="1">Annual</option>
+        </select>
+      </div>
+    </div>
+    <div class="results-panel">
+      <div class="results-grid" id="ci-results">
+        <div class="empty-state"><div class="ei">📈</div><p>Adjust sliders to see your money grow</p></div>
+      </div>
+      <div class="chart-wrap"><canvas id="ci-chart"></canvas></div>
+      <div class="chart-tip">Hover over the chart to see values at each year</div>
+      <div id="ci-insight"></div>
+    </div>
   </div>
 </div>
 
-<!-- 3. RESP GROWTH -->
-<div class="calc-card">
-  <div class="calc-header">
-    <div class="calc-icon">🎓</div>
-    <div><div class="calc-title" data-en="RESP Growth Calculator" data-pa="RESP ਵਿਕਾਸ ਕੈਲਕੁਲੇਟਰ">RESP Growth Calculator</div>
-    <div class="calc-sub" data-en="How much will my child's RESP be worth?" data-pa="ਮੇਰੇ ਬੱਚੇ ਦਾ RESP ਕਿੰਨਾ ਹੋਵੇਗਾ?">How much will my child's RESP grow to?</div></div>
-  </div>
-  <div class="field"><label data-en="Child's Current Age" data-pa="ਬੱਚੇ ਦੀ ਮੌਜੂਦਾ ਉਮਰ">Child's Current Age</label><input type="number" id="resp-age" placeholder="3" value="3"></div>
-  <div class="field"><label data-en="Monthly Contribution ($)" data-pa="ਮਾਸਿਕ ਯੋਗਦਾਨ ($)">Monthly Contribution ($)</label><input type="number" id="resp-monthly" placeholder="200" value="200"></div>
-  <div class="field"><label data-en="Existing RESP Balance ($)" data-pa="ਮੌਜੂਦਾ RESP ਬਕਾਇਆ ($)">Existing RESP Balance ($)</label><input type="number" id="resp-existing" placeholder="0" value="0"></div>
-  <div class="field"><label data-en="Expected Annual Return (%)" data-pa="ਸਾਲਾਨਾ ਉਮੀਦ ਕੀਤੀ ਵਾਪਸੀ (%)">Expected Annual Return (%)</label><input type="number" id="resp-return" placeholder="6" value="6" step="0.5"></div>
-  <button class="calc-btn" onclick="calcRESP()" data-en="Calculate RESP Value at 18" data-pa="18 ਸਾਲ 'ਤੇ RESP ਮੁੱਲ ਗਿਣੋ">Calculate RESP Value at Age 18</button>
-  <div class="calc-result" id="resp-result">
-    <div class="result-label" data-en="Total at Age 18" data-pa="18 ਸਾਲ ਦੀ ਉਮਰ 'ਤੇ ਕੁੱਲ">Total at Age 18</div>
-    <div class="result-value" id="resp-value"></div>
-    <div class="result-note" id="resp-note"></div>
-  </div>
-</div>
-
-<!-- 4. RETIREMENT INCOME -->
-<div class="calc-card">
-  <div class="calc-header">
-    <div class="calc-icon">🌅</div>
-    <div><div class="calc-title" data-en="Retirement Income Calculator" data-pa="ਰਿਟਾਇਰਮੈਂਟ ਆਮਦਨ ਕੈਲਕੁਲੇਟਰ">Retirement Income Calculator</div>
-    <div class="calc-sub" data-en="Will I have enough to retire comfortably?" data-pa="ਕੀ ਮੈਂ ਆਰਾਮ ਨਾਲ ਰਿਟਾਇਰ ਹੋ ਸਕਦਾ/ਸਕਦੀ ਹਾਂ?">Will I have enough to retire comfortably?</div></div>
-  </div>
-  <div class="field"><label data-en="Current Age" data-pa="ਮੌਜੂਦਾ ਉਮਰ">Current Age</label><input type="number" id="ret-age" placeholder="40" value="40"></div>
-  <div class="field"><label data-en="Planned Retirement Age" data-pa="ਯੋਜਨਾਬੱਧ ਰਿਟਾਇਰਮੈਂਟ ਉਮਰ">Planned Retirement Age</label><input type="number" id="ret-retire" placeholder="65" value="65"></div>
-  <div class="field"><label data-en="Current Savings (RRSP + TFSA + Other) ($)" data-pa="ਮੌਜੂਦਾ ਬੱਚਤ ($)">Current Savings (RRSP + TFSA + Other) ($)</label><input type="number" id="ret-savings" placeholder="150000" value="150000"></div>
-  <div class="field"><label data-en="Monthly Savings Contribution ($)" data-pa="ਮਾਸਿਕ ਬੱਚਤ ਯੋਗਦਾਨ ($)">Monthly Savings Contribution ($)</label><input type="number" id="ret-monthly" placeholder="1500" value="1500"></div>
-  <div class="field"><label data-en="Desired Monthly Retirement Income ($)" data-pa="ਮਨਚਾਹੀ ਮਾਸਿਕ ਰਿਟਾਇਰਮੈਂਟ ਆਮਦਨ ($)">Desired Monthly Retirement Income ($)</label><input type="number" id="ret-desired" placeholder="5000" value="5000"></div>
-  <button class="calc-btn" onclick="calcRetirement()" data-en="Check Retirement Readiness" data-pa="ਰਿਟਾਇਰਮੈਂਟ ਤਿਆਰੀ ਜਾਂਚੋ">Check Retirement Readiness</button>
-  <div class="calc-result" id="ret-result">
-    <div class="result-label" data-en="Projected Portfolio at Retirement" data-pa="ਰਿਟਾਇਰਮੈਂਟ 'ਤੇ ਅਨੁਮਾਨਿਤ ਪੋਰਟਫੋਲੀਓ">Projected Portfolio at Retirement</div>
-    <div class="result-value" id="ret-value"></div>
-    <div class="result-note" id="ret-note"></div>
+<!-- ===== RETIREMENT ===== -->
+<div class="calc-container" id="calc-retirement">
+  <div class="calc-layout">
+    <div class="calc-panel">
+      <div class="calc-title">Retirement Readiness Calculator</div>
+      <div class="calc-subtitle">Will you have enough? Plan now, retire comfortably.</div>
+      <div class="field"><label>Current Age</label><input type="number" id="ret-age" value="38" oninput="calcRetirement()"></div>
+      <div class="field"><label>Planned Retirement Age</label><input type="number" id="ret-retire" value="65" oninput="calcRetirement()"></div>
+      <div class="field"><label>Current Savings — RRSP + TFSA + Pension ($)</label><input type="number" id="ret-savings" value="150000" oninput="calcRetirement()"></div>
+      <div class="slider-field"><label>Monthly Contributions ($) <span class="slider-val" id="ret-c-val">$1,500</span></label><input type="range" id="ret-monthly" min="100" max="8000" step="100" value="1500" oninput="document.getElementById('ret-c-val').textContent='$'+parseInt(this.value).toLocaleString();calcRetirement()"></div>
+      <div class="slider-field"><label>Expected Annual Return <span class="slider-val" id="ret-r-val">7%</span></label><input type="range" id="ret-rate" min="3" max="12" step="0.5" value="7" oninput="document.getElementById('ret-r-val').textContent=this.value+'%';calcRetirement()"></div>
+      <div class="slider-field"><label>Desired Monthly Income in Retirement ($) <span class="slider-val" id="ret-d-val">$5,000</span></label><input type="range" id="ret-desired" min="2000" max="15000" step="500" value="5000" oninput="document.getElementById('ret-d-val').textContent='$'+parseInt(this.value).toLocaleString();calcRetirement()"></div>
+      <div class="field"><label>Expected CPP + OAS (monthly, ~$1,800 avg)</label><input type="number" id="ret-cpp" value="1800" oninput="calcRetirement()"></div>
+      <div class="slider-field"><label>Retirement Duration (years) <span class="slider-val" id="ret-dur-val">25 years</span></label><input type="range" id="ret-dur" min="10" max="40" step="1" value="25" oninput="document.getElementById('ret-dur-val').textContent=this.value+' years';calcRetirement()"></div>
+    </div>
+    <div class="results-panel">
+      <div class="results-grid" id="ret-results"><div class="empty-state"><div class="ei">🌅</div><p>Adjust inputs to see your retirement projection</p></div></div>
+      <div class="chart-wrap"><canvas id="ret-chart"></canvas></div>
+      <div class="chart-tip">Blue = portfolio growth | Orange line = required nest egg</div>
+      <div id="ret-insight"></div>
+    </div>
   </div>
 </div>
 
-<!-- 5. COMPOUND INTEREST -->
-<div class="calc-card">
-  <div class="calc-header">
-    <div class="calc-icon">📈</div>
-    <div><div class="calc-title" data-en="Compound Interest Calculator" data-pa="ਮਿਸ਼ਰਤ ਵਿਆਜ ਕੈਲਕੁਲੇਟਰ">Compound Interest Calculator</div>
-    <div class="calc-sub" data-en="Watch your money grow over time" data-pa="ਸਮੇਂ ਦੇ ਨਾਲ ਪੈਸੇ ਕਿਵੇਂ ਵਧਦੇ ਹਨ">Watch your money grow over time</div></div>
-  </div>
-  <div class="field"><label data-en="Initial Investment ($)" data-pa="ਸ਼ੁਰੂਆਤੀ ਨਿਵੇਸ਼ ($)">Initial Investment ($)</label><input type="number" id="ci-principal" placeholder="10000" value="10000"></div>
-  <div class="field"><label data-en="Monthly Contribution ($)" data-pa="ਮਾਸਿਕ ਯੋਗਦਾਨ ($)">Monthly Contribution ($)</label><input type="number" id="ci-monthly" placeholder="500" value="500"></div>
-  <div class="field"><label data-en="Annual Interest Rate (%)" data-pa="ਸਾਲਾਨਾ ਵਿਆਜ ਦਰ (%)">Annual Interest Rate (%)</label><input type="number" id="ci-rate" placeholder="7" value="7" step="0.5"></div>
-  <div class="field"><label data-en="Number of Years" data-pa="ਸਾਲਾਂ ਦੀ ਗਿਣਤੀ">Number of Years</label><input type="number" id="ci-years" placeholder="25" value="25"></div>
-  <button class="calc-btn" onclick="calcCompound()" data-en="Calculate Growth" data-pa="ਵਿਕਾਸ ਗਿਣੋ">Calculate Growth</button>
-  <div class="calc-result" id="ci-result">
-    <div class="result-label" data-en="Future Value" data-pa="ਭਵਿੱਖ ਮੁੱਲ">Future Value</div>
-    <div class="result-value" id="ci-value"></div>
-    <div class="result-note" id="ci-note"></div>
-  </div>
-</div>
-
-<!-- 6. NET WORTH -->
-<div class="calc-card">
-  <div class="calc-header">
-    <div class="calc-icon">💎</div>
-    <div><div class="calc-title" data-en="Net Worth Tracker" data-pa="ਕੁੱਲ ਸੰਪੱਤੀ ਟਰੈਕਰ">Net Worth Tracker</div>
-    <div class="calc-sub" data-en="Assets minus liabilities = your real wealth" data-pa="ਸੰਪੱਤੀਆਂ ਘਟਾਓ ਦੇਣਦਾਰੀਆਂ = ਤੁਹਾਡੀ ਅਸਲੀ ਦੌਲਤ">Assets minus liabilities = your real wealth</div></div>
-  </div>
-  <div class="nw-section" data-en="📦 Assets" data-pa="📦 ਸੰਪੱਤੀਆਂ">📦 Assets</div>
-  <div class="nw-row"><input type="number" id="nw-home" placeholder="Home Value $" style="padding:9px 12px;border:1px solid rgba(0,0,0,0.12);border-radius:10px;font-size:0.85rem;font-family:'DM Sans',sans-serif;width:100%;outline:none;"><input type="number" id="nw-rrsp" placeholder="RRSP/TFSA $" style="padding:9px 12px;border:1px solid rgba(0,0,0,0.12);border-radius:10px;font-size:0.85rem;font-family:'DM Sans',sans-serif;width:100%;outline:none;"></div>
-  <div class="nw-row"><input type="number" id="nw-invest" placeholder="Investments $" style="padding:9px 12px;border:1px solid rgba(0,0,0,0.12);border-radius:10px;font-size:0.85rem;font-family:'DM Sans',sans-serif;width:100%;outline:none;"><input type="number" id="nw-cash" placeholder="Cash/Savings $" style="padding:9px 12px;border:1px solid rgba(0,0,0,0.12);border-radius:10px;font-size:0.85rem;font-family:'DM Sans',sans-serif;width:100%;outline:none;"></div>
-  <div class="nw-row"><input type="number" id="nw-car" placeholder="Vehicle Value $" style="padding:9px 12px;border:1px solid rgba(0,0,0,0.12);border-radius:10px;font-size:0.85rem;font-family:'DM Sans',sans-serif;width:100%;outline:none;"><input type="number" id="nw-other-asset" placeholder="Other Assets $" style="padding:9px 12px;border:1px solid rgba(0,0,0,0.12);border-radius:10px;font-size:0.85rem;font-family:'DM Sans',sans-serif;width:100%;outline:none;"></div>
-  <div class="nw-section" data-en="💳 Liabilities" data-pa="💳 ਦੇਣਦਾਰੀਆਂ">💳 Liabilities</div>
-  <div class="nw-row"><input type="number" id="nw-mortgage" placeholder="Mortgage $" style="padding:9px 12px;border:1px solid rgba(0,0,0,0.12);border-radius:10px;font-size:0.85rem;font-family:'DM Sans',sans-serif;width:100%;outline:none;"><input type="number" id="nw-carloan" placeholder="Car Loan $" style="padding:9px 12px;border:1px solid rgba(0,0,0,0.12);border-radius:10px;font-size:0.85rem;font-family:'DM Sans',sans-serif;width:100%;outline:none;"></div>
-  <div class="nw-row"><input type="number" id="nw-cc" placeholder="Credit Cards $" style="padding:9px 12px;border:1px solid rgba(0,0,0,0.12);border-radius:10px;font-size:0.85rem;font-family:'DM Sans',sans-serif;width:100%;outline:none;"><input type="number" id="nw-other-liab" placeholder="Other Debts $" style="padding:9px 12px;border:1px solid rgba(0,0,0,0.12);border-radius:10px;font-size:0.85rem;font-family:'DM Sans',sans-serif;width:100%;outline:none;"></div>
-  <button class="calc-btn" onclick="calcNetWorth()" data-en="Calculate Net Worth" data-pa="ਕੁੱਲ ਸੰਪੱਤੀ ਗਿਣੋ">Calculate Net Worth</button>
-  <div class="calc-result" id="nw-result">
-    <div class="result-label" data-en="Your Net Worth" data-pa="ਤੁਹਾਡੀ ਕੁੱਲ ਸੰਪੱਤੀ">Your Net Worth</div>
-    <div class="result-value" id="nw-value"></div>
-    <div class="result-note" id="nw-note"></div>
+<!-- ===== RESP ===== -->
+<div class="calc-container" id="calc-resp">
+  <div class="calc-layout">
+    <div class="calc-panel">
+      <div class="calc-title">RESP Growth Calculator</div>
+      <div class="calc-subtitle">Maximize the government's free education grant for your child</div>
+      <div class="field"><label>Child's Current Age</label><input type="number" id="resp-age" value="2" oninput="calcRESP()"></div>
+      <div class="field"><label>Existing RESP Balance ($)</label><input type="number" id="resp-bal" value="0" oninput="calcRESP()"></div>
+      <div class="slider-field"><label>Annual Contribution ($) <span class="slider-val" id="resp-c-val">$2,500</span></label><input type="range" id="resp-annual" min="0" max="10000" step="100" value="2500" oninput="document.getElementById('resp-c-val').textContent='$'+parseInt(this.value).toLocaleString();calcRESP()"></div>
+      <div class="slider-field"><label>Annual Return Rate <span class="slider-val" id="resp-r-val">6%</span></label><input type="range" id="resp-rate" min="3" max="12" step="0.5" value="6" oninput="document.getElementById('resp-r-val').textContent=this.value+'%';calcRESP()"></div>
+      <div class="field"><label>Family Income (for Additional CESG)</label>
+        <select id="resp-income" onchange="calcRESP()">
+          <option value="low">Under $53,359 (+20% extra on first $500)</option>
+          <option value="mid" selected>$53,359–$106,717 (+10% extra on first $500)</option>
+          <option value="high">Over $106,717 (basic 20% CESG only)</option>
+        </select>
+      </div>
+      <div style="background:rgba(212,160,23,0.07);border-radius:12px;padding:12px 14px;font-size:0.8rem;color:#5a4a25;margin-top:8px;">
+        💡 Contribute $2,500/year to maximize the 20% CESG grant ($500/year). Max lifetime grant = <strong>$7,200</strong>.
+      </div>
+    </div>
+    <div class="results-panel">
+      <div class="results-grid" id="resp-results"><div class="empty-state"><div class="ei">🎓</div><p>Enter your child's age to see RESP projection</p></div></div>
+      <div class="chart-wrap"><canvas id="resp-chart"></canvas></div>
+      <div class="chart-tip">Green = government grants | Blue = your contributions | Orange = investment growth</div>
+      <div id="resp-insight"></div>
+    </div>
   </div>
 </div>
 
-</div><!-- end grid -->
+<!-- ===== LIFE INSURANCE ===== -->
+<div class="calc-container" id="calc-life">
+  <div class="calc-layout">
+    <div class="calc-panel">
+      <div class="calc-title">Life Insurance Needs Calculator</div>
+      <div class="calc-subtitle">Using the DIME method — the industry standard for coverage calculation</div>
+      <div class="field"><label>Annual Gross Income ($)</label><input type="number" id="li-income" value="90000" oninput="calcLife()"></div>
+      <div class="field"><label>Years of Income to Replace</label><input type="number" id="li-years" value="20" oninput="calcLife()"></div>
+      <div class="field"><label>Mortgage Balance ($)</label><input type="number" id="li-mortgage" value="550000" oninput="calcLife()"></div>
+      <div class="field"><label>Other Debts (car loans, LOC, etc.) ($)</label><input type="number" id="li-debts" value="25000" oninput="calcLife()"></div>
+      <div class="field"><label>Children's Education Fund (per child x years) ($)</label><input type="number" id="li-edu" value="80000" oninput="calcLife()"></div>
+      <div class="field"><label>Final Expenses (funeral, estate costs) ($)</label><input type="number" id="li-final" value="25000" oninput="calcLife()"></div>
+      <div class="field"><label>Existing Life Insurance ($)</label><input type="number" id="li-existing" value="0" oninput="calcLife()"></div>
+      <div class="field"><label>Spouse's Annual Income ($)</label><input type="number" id="li-spouse" value="0" oninput="calcLife()"></div>
+    </div>
+    <div class="results-panel">
+      <div class="results-grid" id="li-results"><div class="empty-state"><div class="ei">🛡️</div><p>Enter your details to calculate coverage needed</p></div></div>
+      <div class="chart-wrap"><canvas id="li-chart"></canvas></div>
+      <div class="chart-tip">Breakdown of what your insurance needs to cover</div>
+      <div id="li-insight"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MORTGAGE ===== -->
+<div class="calc-container" id="calc-mortgage">
+  <div class="calc-layout">
+    <div class="calc-panel">
+      <div class="calc-title">Mortgage Calculator</div>
+      <div class="calc-subtitle">Monthly payments, amortization schedule & total interest cost</div>
+      <div class="field"><label>Home Purchase Price ($)</label><input type="number" id="mort-price" value="800000" oninput="calcMortgage()"></div>
+      <div class="slider-field"><label>Down Payment % <span class="slider-val" id="mort-dp-pct">20%</span></label><input type="range" id="mort-dp" min="5" max="50" step="1" value="20" oninput="document.getElementById('mort-dp-pct').textContent=this.value+'%';calcMortgage()"></div>
+      <div class="slider-field"><label>Interest Rate <span class="slider-val" id="mort-r-val">5.5%</span></label><input type="range" id="mort-rate" min="3" max="10" step="0.1" value="5.5" oninput="document.getElementById('mort-r-val').textContent=parseFloat(this.value).toFixed(1)+'%';calcMortgage()"></div>
+      <div class="field"><label>Amortization Period</label>
+        <select id="mort-amort" onchange="calcMortgage()">
+          <option value="25" selected>25 years (standard)</option>
+          <option value="30">30 years (max for insured)</option>
+          <option value="20">20 years</option>
+          <option value="15">15 years</option>
+          <option value="10">10 years</option>
+        </select>
+      </div>
+      <div class="field"><label>Payment Frequency</label>
+        <select id="mort-freq" onchange="calcMortgage()">
+          <option value="monthly">Monthly</option>
+          <option value="biweekly" selected>Accelerated Bi-Weekly (saves money!)</option>
+          <option value="weekly">Accelerated Weekly</option>
+        </select>
+      </div>
+      <div style="background:rgba(212,160,23,0.07);border-radius:12px;padding:12px 14px;font-size:0.8rem;color:#5a4a25;margin-top:8px;">
+        💡 Min down payment: 5% for homes &lt;$500K, 10% for $500K-$999K, 20% for $1M+. CMHC insurance required under 20%.
+      </div>
+    </div>
+    <div class="results-panel">
+      <div class="results-grid" id="mort-results"><div class="empty-state"><div class="ei">🏠</div><p>Enter home price to calculate mortgage</p></div></div>
+      <div class="chart-wrap"><canvas id="mort-chart"></canvas></div>
+      <div class="chart-tip">Principal paid vs. interest over your amortization period</div>
+      <div id="mort-insight"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== NET WORTH ===== -->
+<div class="calc-container" id="calc-networth">
+  <div class="calc-layout">
+    <div class="calc-panel">
+      <div class="calc-title">Net Worth Tracker</div>
+      <div class="calc-subtitle">Assets minus liabilities = your real financial position</div>
+      <div class="nw-section">🏦 ASSETS</div>
+      <div class="nw-row"><input class="nw-input" id="nw-home" placeholder="Primary Home $" oninput="calcNetWorth()"><input class="nw-input" id="nw-rental" placeholder="Rental Property $" oninput="calcNetWorth()"></div>
+      <div class="nw-row"><input class="nw-input" id="nw-rrsp" placeholder="RRSP $" oninput="calcNetWorth()"><input class="nw-input" id="nw-tfsa" placeholder="TFSA $" oninput="calcNetWorth()"></div>
+      <div class="nw-row"><input class="nw-input" id="nw-invest" placeholder="Non-Reg Investments $" oninput="calcNetWorth()"><input class="nw-input" id="nw-resp" placeholder="RESP $" oninput="calcNetWorth()"></div>
+      <div class="nw-row"><input class="nw-input" id="nw-cash" placeholder="Cash / Savings $" oninput="calcNetWorth()"><input class="nw-input" id="nw-vehicle" placeholder="Vehicles $" oninput="calcNetWorth()"></div>
+      <div class="nw-row"><input class="nw-input" id="nw-pension" placeholder="Pension Value $" oninput="calcNetWorth()"><input class="nw-input" id="nw-other-a" placeholder="Other Assets $" oninput="calcNetWorth()"></div>
+      <div class="nw-section">💳 LIABILITIES</div>
+      <div class="nw-row"><input class="nw-input" id="nw-mortgage-l" placeholder="Mortgage Balance $" oninput="calcNetWorth()"><input class="nw-input" id="nw-heloc" placeholder="HELOC Balance $" oninput="calcNetWorth()"></div>
+      <div class="nw-row"><input class="nw-input" id="nw-carloan" placeholder="Car Loan $" oninput="calcNetWorth()"><input class="nw-input" id="nw-student" placeholder="Student Loan $" oninput="calcNetWorth()"></div>
+      <div class="nw-row"><input class="nw-input" id="nw-cc" placeholder="Credit Cards $" oninput="calcNetWorth()"><input class="nw-input" id="nw-other-l" placeholder="Other Debts $" oninput="calcNetWorth()"></div>
+    </div>
+    <div class="results-panel">
+      <div class="results-grid" id="nw-results"><div class="empty-state"><div class="ei">💎</div><p>Enter your assets and liabilities to calculate net worth</p></div></div>
+      <div class="chart-wrap"><canvas id="nw-chart"></canvas></div>
+      <div id="nw-insight"></div>
+    </div>
+  </div>
+</div>
+
 <footer>
   <a href="index.html" class="footer-logo">Punjabi<span>Finance</span></a>
   <div class="footer-links">
@@ -249,95 +337,431 @@ document.addEventListener('DOMContentLoaded',()=>{
 });
 
 
-const fmt = n => '$' + Math.round(n).toLocaleString('en-CA');
-function showResult(id, value, note) {
-  const r = document.getElementById(id+'-result');
-  document.getElementById(id+'-value').textContent = value;
-  document.getElementById(id+'-note').textContent = note;
-  r.classList.add('show');
+// Chart instances
+const charts = {};
+const fmt = n => '$' + Math.abs(Math.round(n)).toLocaleString('en-CA');
+const fmtK = n => n >= 1000000 ? '$' + (n/1000000).toFixed(1) + 'M' : n >= 1000 ? '$' + Math.round(n/1000) + 'K' : '$' + Math.round(n);
+
+function showCalc(name) {
+  document.querySelectorAll('.calc-container').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.calc-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('calc-' + name).classList.add('active');
+  event.target.classList.add('active');
+  // Trigger calc
+  if (name === 'compound') calcCompound();
+  else if (name === 'retirement') calcRetirement();
+  else if (name === 'resp') calcRESP();
+  else if (name === 'life') calcLife();
+  else if (name === 'mortgage') calcMortgage();
+  else if (name === 'networth') calcNetWorth();
 }
 
-function calcLifeInsurance() {
-  const income = +document.getElementById('li-income').value||0;
-  const years = +document.getElementById('li-years').value||20;
-  const debt = +document.getElementById('li-debt').value||0;
-  const edu = +document.getElementById('li-edu').value||0;
-  const existing = +document.getElementById('li-existing').value||0;
-  const needed = (income * years) + debt + edu - existing;
-  const rounded = Math.ceil(needed/100000)*100000;
-  showResult('li', fmt(rounded), `Based on DIME method: ${fmt(income*years)} income replacement + ${fmt(debt)} debts + ${fmt(edu)} education - ${fmt(existing)} existing coverage. Rounded up to nearest $100K.`);
+function destroyChart(id) {
+  if (charts[id]) { charts[id].destroy(); delete charts[id]; }
 }
 
-function calcMortgageProtection() {
-  const balance = +document.getElementById('mp-balance').value||0;
-  const years = +document.getElementById('mp-years').value||25;
-  const payment = +document.getElementById('mp-payment').value||0;
-  const type = document.getElementById('mp-type').value;
-  const totalCost = payment * 12 * years;
-  const rec = type === 'level' ? Math.ceil(balance/100000)*100000 : balance;
-  showResult('mp', fmt(rec), `We recommend a ${years}-year ${type === 'level' ? 'level' : 'decreasing'} term policy. Total mortgage cost: ${fmt(totalCost)}. Term life is usually cheaper than bank mortgage insurance and more flexible.`);
+function setResults(id, boxes) {
+  const el = document.getElementById(id);
+  el.innerHTML = boxes.map(b => `
+    <div class="result-box ${b.hi ? 'highlight' : ''}">
+      <div class="result-label">${b.label}</div>
+      <div class="result-value">${b.value}</div>
+      ${b.sub ? `<div class="result-sub">${b.sub}</div>` : ''}
+    </div>`).join('');
 }
 
-function calcRESP() {
-  const age = +document.getElementById('resp-age').value||0;
-  const monthly = +document.getElementById('resp-monthly').value||0;
-  const existing = +document.getElementById('resp-existing').value||0;
-  const rate = (+document.getElementById('resp-return').value||6)/100;
-  const years = Math.max(18 - age, 0);
-  const monthlyRate = rate/12;
-  const n = years * 12;
-  const futureContrib = monthly * ((Math.pow(1+monthlyRate,n)-1)/monthlyRate);
-  const futureExisting = existing * Math.pow(1+rate, years);
-  const annualContrib = Math.min(monthly*12, 2500);
-  const totalGrant = Math.min(annualContrib * 0.20 * years, 7200);
-  const total = futureContrib + futureExisting + totalGrant;
-  showResult('resp', fmt(total), `Includes ~${fmt(totalGrant)} in government CESG grants (20% of up to $2,500/year, max $7,200 lifetime). Based on ${rate*100}% annual return over ${years} years.`);
+function setCIFreq(f, el) {
+  document.querySelectorAll('.pill-option').forEach(e => e.classList.remove('sel'));
+  el.classList.add('sel');
 }
 
-function calcRetirement() {
-  const age = +document.getElementById('ret-age').value||40;
-  const retireAge = +document.getElementById('ret-retire').value||65;
-  const savings = +document.getElementById('ret-savings').value||0;
-  const monthly = +document.getElementById('ret-monthly').value||0;
-  const desired = +document.getElementById('ret-desired').value||5000;
-  const years = Math.max(retireAge - age, 1);
-  const rate = 0.07; const mr = rate/12; const n = years*12;
-  const portfolio = savings * Math.pow(1+rate, years) + monthly * ((Math.pow(1+mr,n)-1)/mr);
-  const sustainable = portfolio * 0.04 / 12;
-  const cppOas = 1800;
-  const total = sustainable + cppOas;
-  const gap = desired - total;
-  const status = gap <= 0 ? '✅ On Track' : '⚠️ Gap Identified';
-  const note = gap <= 0
-    ? `Projected ${fmt(portfolio)} portfolio supports ${fmt(sustainable)}/mo (4% rule) + ~${fmt(cppOas)}/mo CPP/OAS = ${fmt(total)}/mo. You are on track!`
-    : `Projected monthly: ${fmt(total)}. Monthly gap: ${fmt(gap)}. Consider increasing contributions by ${fmt(gap * (n/(portfolio||1)) * 0.3||200)}/mo.`;
-  showResult('ret', fmt(portfolio), status + ' — ' + note);
-}
-
+// ===== COMPOUND INTEREST =====
 function calcCompound() {
-  const p = +document.getElementById('ci-principal').value||0;
-  const monthly = +document.getElementById('ci-monthly').value||0;
-  const rate = (+document.getElementById('ci-rate').value||7)/100;
-  const years = +document.getElementById('ci-years').value||25;
-  const mr = rate/12; const n = years*12;
-  const future = p * Math.pow(1+mr,n) + monthly * ((Math.pow(1+mr,n)-1)/mr);
-  const totalContrib = p + monthly*12*years;
+  const P = +document.getElementById('ci-principal').value || 0;
+  const M = +document.getElementById('ci-monthly').value || 0;
+  const r = +document.getElementById('ci-rate').value / 100;
+  const Y = +document.getElementById('ci-years').value || 1;
+  const n = +document.getElementById('ci-freq').value;
+  const totalYears = Y;
+  const mr = r / n;
+  const periods = totalYears * n;
+  const future = P * Math.pow(1 + mr, periods) + M * (n === 12 ? 1 : 1) * ((Math.pow(1 + mr, periods) - 1) / mr) * (12 / n);
+  const totalContrib = P + M * 12 * totalYears;
   const interest = future - totalContrib;
-  showResult('ci', fmt(future), `You invested ${fmt(totalContrib)} and earned ${fmt(interest)} in compound growth (${Math.round(interest/totalContrib*100)}% return on investment).`);
+  const multiplier = (future / (totalContrib || 1)).toFixed(1);
+
+  setResults('ci-results', [
+    {label: 'Future Value', value: fmtK(future), hi: true},
+    {label: 'Total Contributed', value: fmtK(totalContrib)},
+    {label: 'Interest Earned', value: fmtK(interest), sub: multiplier + 'x your money'},
+    {label: 'Avg Annual Growth', value: fmtK(future / totalYears) + '/yr', sub: 'over ' + totalYears + ' years'},
+  ]);
+
+  // Chart data
+  const labels = [], portVals = [], contribVals = [];
+  for (let y = 0; y <= totalYears; y++) {
+    labels.push(y + 'yr');
+    const p = P * Math.pow(1 + mr, y * n) + M * ((Math.pow(1 + mr, y * n) - 1) / mr) * (12 / n);
+    portVals.push(Math.round(p));
+    contribVals.push(Math.round(P + M * 12 * y));
+  }
+
+  destroyChart('ci-chart');
+  const ctx = document.getElementById('ci-chart').getContext('2d');
+  charts['ci-chart'] = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {label: 'Portfolio Value', data: portVals, borderColor: '#D4A017', backgroundColor: 'rgba(212,160,23,0.1)', fill: true, tension: 0.4, pointRadius: 0, pointHoverRadius: 6},
+        {label: 'Amount Invested', data: contribVals, borderColor: '#E8890C', backgroundColor: 'rgba(232,137,12,0.05)', fill: true, tension: 0, borderDash: [4, 4], pointRadius: 0, pointHoverRadius: 6},
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: {mode: 'index', intersect: false},
+      plugins: {legend: {position: 'top', labels: {font: {size: 11}, color: '#5a4a25'}}, tooltip: {callbacks: {label: ctx => ' ' + ctx.dataset.label + ': ' + fmt(ctx.raw)}}},
+      scales: {
+        x: {ticks: {color: '#9A8A6A', maxTicksLimit: 10, font: {size: 10}}, grid: {color: 'rgba(0,0,0,0.05)'}},
+        y: {ticks: {color: '#9A8A6A', callback: v => fmtK(v), font: {size: 10}}, grid: {color: 'rgba(0,0,0,0.05)'}},
+      }
+    }
+  });
+
+  const pct = Math.round(interest / (totalContrib || 1) * 100);
+  document.getElementById('ci-insight').innerHTML = `<div class="insight-box"><p>💡 <strong>The power of compounding:</strong> Over ${totalYears} years at ${r*100}%, your ${fmt(totalContrib)} in contributions grows to ${fmtK(future)}. That's ${fmtK(interest)} (${pct}%) in pure investment returns — money that works while you sleep.</p></div>`;
 }
 
-function calcNetWorth() {
-  const g = id => +document.getElementById(id).value||0;
-  const assets = g('nw-home')+g('nw-rrsp')+g('nw-invest')+g('nw-cash')+g('nw-car')+g('nw-other-asset');
-  const liabs = g('nw-mortgage')+g('nw-carloan')+g('nw-cc')+g('nw-other-liab');
-  const nw = assets - liabs;
-  const color = nw >= 0 ? '#1a8a3a' : '#c0392b';
-  document.getElementById('nw-value').style.color = color;
-  const note = nw >= 0
-    ? `Assets: ${fmt(assets)} — Liabilities: ${fmt(liabs)}. Great start! Track this every 6 months to measure progress.`
-    : `Assets: ${fmt(assets)} — Liabilities: ${fmt(liabs)}. You owe more than you own — focus on paying down debt.`;
-  showResult('nw', fmt(Math.abs(nw)) + (nw < 0 ? ' (negative)' : ''), note);
+// ===== RETIREMENT =====
+function calcRetirement() {
+  const age = +document.getElementById('ret-age').value || 38;
+  const retAge = +document.getElementById('ret-retire').value || 65;
+  const savings = +document.getElementById('ret-savings').value || 0;
+  const monthly = +document.getElementById('ret-monthly').value || 1500;
+  const rate = +document.getElementById('ret-rate').value / 100;
+  const desired = +document.getElementById('ret-desired').value || 5000;
+  const cpp = +document.getElementById('ret-cpp').value || 1800;
+  const dur = +document.getElementById('ret-dur').value || 25;
+  const years = Math.max(retAge - age, 1);
+  const mr = rate / 12;
+  const n = years * 12;
+
+  const portfolio = savings * Math.pow(1 + rate, years) + monthly * ((Math.pow(1 + mr, n) - 1) / mr);
+  const neededPortfolio = (desired - cpp) * 12 / 0.04; // 4% rule
+  const monthlyFromPortfolio = portfolio * 0.04 / 12;
+  const totalMonthly = monthlyFromPortfolio + cpp;
+  const gap = desired - totalMonthly;
+  const onTrack = gap <= 0;
+
+  setResults('ret-results', [
+    {label: 'Portfolio at Retirement', value: fmtK(portfolio), hi: true},
+    {label: 'Monthly Income (4% rule)', value: fmt(totalMonthly), sub: fmt(monthlyFromPortfolio) + ' + ' + fmt(cpp) + ' CPP/OAS'},
+    {label: 'Target Portfolio Needed', value: fmtK(neededPortfolio)},
+    {label: onTrack ? '✅ Status' : '⚠️ Monthly Gap', value: onTrack ? 'On Track!' : fmt(gap), sub: onTrack ? 'You're doing great' : 'consider extra contributions'},
+  ]);
+
+  // Chart: growth curve + target line
+  const labels = [], portVals = [], targetLine = [];
+  for (let y = 0; y <= years; y++) {
+    labels.push((age + y) + '');
+    const p = savings * Math.pow(1 + rate, y) + monthly * ((Math.pow(1 + mr, y * 12) - 1) / mr);
+    portVals.push(Math.round(p));
+    targetLine.push(Math.round(neededPortfolio));
+  }
+
+  destroyChart('ret-chart');
+  const ctx = document.getElementById('ret-chart').getContext('2d');
+  charts['ret-chart'] = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {label: 'Your Portfolio', data: portVals, borderColor: '#2563eb', backgroundColor: 'rgba(37,99,235,0.08)', fill: true, tension: 0.4, pointRadius: 0, pointHoverRadius: 6},
+        {label: 'Target Needed', data: targetLine, borderColor: '#E8890C', borderDash: [6, 4], fill: false, pointRadius: 0, tension: 0},
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: {mode: 'index', intersect: false},
+      plugins: {legend: {position: 'top', labels: {font: {size: 11}, color: '#5a4a25'}}, tooltip: {callbacks: {label: ctx => ' ' + ctx.dataset.label + ': ' + fmt(ctx.raw)}}},
+      scales: {
+        x: {title: {display: true, text: 'Age', color: '#9A8A6A', font: {size: 10}}, ticks: {color: '#9A8A6A', maxTicksLimit: 10, font: {size: 10}}, grid: {color: 'rgba(0,0,0,0.05)'}},
+        y: {ticks: {color: '#9A8A6A', callback: v => fmtK(v), font: {size: 10}}, grid: {color: 'rgba(0,0,0,0.05)'}},
+      }
+    }
+  });
+
+  const ins = onTrack
+    ? `<div class="insight-box"><p>✅ <strong>You're on track!</strong> At ${retAge}, your projected ${fmtK(portfolio)} portfolio generates ${fmt(monthlyFromPortfolio)}/mo (4% rule) + CPP/OAS ~${fmt(cpp)}/mo = <strong>${fmt(totalMonthly)}/mo</strong>. That exceeds your goal of ${fmt(desired)}/mo.</p></div>`
+    : `<div class="insight-box warn"><p>⚠️ <strong>Gap of ${fmt(gap)}/mo detected.</strong> To close this, try increasing monthly contributions by ~${fmt(gap * 0.6)} — or consider retiring at ${retAge + 2} instead. Every extra year of contributions adds significant value.</p></div>`;
+  document.getElementById('ret-insight').innerHTML = ins;
 }
+
+// ===== RESP =====
+function calcRESP() {
+  const childAge = +document.getElementById('resp-age').value || 0;
+  const existing = +document.getElementById('resp-bal').value || 0;
+  const annual = +document.getElementById('resp-annual').value || 2500;
+  const rate = +document.getElementById('resp-rate').value / 100;
+  const income = document.getElementById('resp-income').value;
+  const years = Math.max(18 - childAge, 0);
+  if (years === 0) { document.getElementById('resp-results').innerHTML = '<div style="padding:20px;color:#7a6a45;font-size:0.9rem">Child has reached 18 — RESP contributions should be used for education now.</div>'; return; }
+
+  const mr = rate / 12;
+  let totalContrib = 0, totalGrant = 0, portfolio = existing;
+  const labels = [], contribData = [], grantData = [], growthData = [];
+
+  for (let y = 0; y < years; y++) {
+    labels.push((childAge + y + 1) + ' yrs');
+    const prevPort = portfolio;
+    // Annual contribution
+    totalContrib += annual;
+    // CESG: 20% on first $2500, plus additional for lower income
+    const basicGrant = Math.min(annual, 2500) * 0.20;
+    let additionalGrant = 0;
+    if (income === 'low' && y < 18) additionalGrant = Math.min(annual, 500) * 0.20;
+    else if (income === 'mid' && y < 18) additionalGrant = Math.min(annual, 500) * 0.10;
+    const yearGrant = Math.min(basicGrant + additionalGrant, totalGrant < 7200 ? 7200 - totalGrant : 0);
+    totalGrant += yearGrant;
+    // Grow existing + add contrib + grant
+    portfolio = portfolio * (1 + rate) + annual + yearGrant;
+    contribData.push(Math.round(totalContrib));
+    grantData.push(Math.round(totalGrant));
+    growthData.push(Math.round(portfolio));
+  }
+
+  const interest = portfolio - totalContrib - totalGrant - existing;
+  setResults('resp-results', [
+    {label: 'Value at Age 18', value: fmtK(portfolio), hi: true},
+    {label: 'Your Contributions', value: fmtK(totalContrib + existing)},
+    {label: 'Govt Grants (CESG)', value: fmtK(totalGrant), sub: 'Free money!'},
+    {label: 'Investment Growth', value: fmtK(interest), sub: 'Over ' + years + ' years'},
+  ]);
+
+  destroyChart('resp-chart');
+  const ctx = document.getElementById('resp-chart').getContext('2d');
+  charts['resp-chart'] = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        {label: 'Contributions', data: contribData, backgroundColor: 'rgba(37,99,235,0.7)', stack: 's1'},
+        {label: 'CESG Grants', data: grantData, backgroundColor: 'rgba(37,211,102,0.8)', stack: 's1'},
+        {type: 'line', label: 'Total Value', data: growthData, borderColor: '#D4A017', backgroundColor: 'transparent', pointRadius: 0, pointHoverRadius: 5, tension: 0.4, borderWidth: 2.5},
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: {mode: 'index', intersect: false},
+      plugins: {legend: {position: 'top', labels: {font: {size: 11}, color: '#5a4a25'}}, tooltip: {callbacks: {label: ctx => ' ' + ctx.dataset.label + ': ' + fmt(ctx.raw)}}},
+      scales: {
+        x: {stacked: true, ticks: {color: '#9A8A6A', font: {size: 10}}, grid: {color: 'rgba(0,0,0,0.05)'}},
+        y: {stacked: true, ticks: {color: '#9A8A6A', callback: v => fmtK(v), font: {size: 10}}, grid: {color: 'rgba(0,0,0,0.05)'}},
+      }
+    }
+  });
+
+  document.getElementById('resp-insight').innerHTML = `<div class="insight-box"><p>💡 <strong>Free government money:</strong> By contributing ${fmt(annual)}/year, you'll receive ~${fmtK(totalGrant)} in CESG grants. Start early — each missed year means missed grant money you can't fully recover.</p></div>`;
+}
+
+// ===== LIFE INSURANCE =====
+function calcLife() {
+  const income = +document.getElementById('li-income').value || 0;
+  const years = +document.getElementById('li-years').value || 20;
+  const mortgage = +document.getElementById('li-mortgage').value || 0;
+  const debts = +document.getElementById('li-debts').value || 0;
+  const edu = +document.getElementById('li-edu').value || 0;
+  const final = +document.getElementById('li-final').value || 25000;
+  const existing = +document.getElementById('li-existing').value || 0;
+  const spouseIncome = +document.getElementById('li-spouse').value || 0;
+
+  const incomeReplacement = income * years;
+  const totalNeeds = incomeReplacement + mortgage + debts + edu + final;
+  const coverage = Math.max(0, totalNeeds - existing - spouseIncome * years * 0.5);
+  const roundedCoverage = Math.ceil(coverage / 100000) * 100000;
+
+  setResults('li-results', [
+    {label: 'Recommended Coverage', value: fmtK(roundedCoverage), hi: true},
+    {label: 'Income Replacement', value: fmtK(incomeReplacement), sub: years + ' years × $' + Math.round(income/1000) + 'K'},
+    {label: 'Debts to Clear', value: fmtK(mortgage + debts)},
+    {label: 'Est. Annual Premium', value: '~$' + Math.round(roundedCoverage / 500000 * 35) + '/mo', sub: 'Healthy person under 40'},
+  ]);
+
+  const components = [
+    {label: 'Income Replacement', value: incomeReplacement},
+    {label: 'Mortgage', value: mortgage},
+    {label: 'Other Debts', value: debts},
+    {label: 'Education Fund', value: edu},
+    {label: 'Final Expenses', value: final},
+  ].filter(c => c.value > 0);
+
+  destroyChart('li-chart');
+  const ctx = document.getElementById('li-chart').getContext('2d');
+  charts['li-chart'] = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: components.map(c => c.label),
+      datasets: [{
+        data: components.map(c => c.value),
+        backgroundColor: ['#D4A017','#E8890C','#2563eb','#059669','#7c3aed'],
+        borderWidth: 2, borderColor: '#fff',
+        hoverOffset: 8,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false, cutout: '60%',
+      plugins: {
+        legend: {position: 'bottom', labels: {font: {size: 11}, color: '#5a4a25', padding: 12}},
+        tooltip: {callbacks: {label: ctx => ' ' + ctx.label + ': ' + fmt(ctx.raw) + ' (' + Math.round(ctx.raw/totalNeeds*100) + '%)'}},
+      }
+    }
+  });
+
+  document.getElementById('li-insight').innerHTML = `<div class="insight-box"><p>🛡️ <strong>DIME Method:</strong> D (Debt ${fmtK(mortgage+debts)}) + I (Income ${fmtK(incomeReplacement)}) + M (Mortgage already included) + E (Education ${fmtK(edu)}) = ${fmtK(totalNeeds)}. After subtracting existing coverage, you need <strong>${fmtK(roundedCoverage)}</strong>. WhatsApp us for a personalized quote.</p></div>`;
+}
+
+// ===== MORTGAGE =====
+function calcMortgage() {
+  const price = +document.getElementById('mort-price').value || 800000;
+  const dpPct = +document.getElementById('mort-dp').value / 100;
+  const rate = +document.getElementById('mort-rate').value / 100;
+  const amortYears = +document.getElementById('mort-amort').value;
+  const freqStr = document.getElementById('mort-freq').value;
+
+  const dp = price * dpPct;
+  let principal = price - dp;
+  // CMHC insurance
+  let cmhc = 0;
+  if (dpPct < 0.20) {
+    const r = dpPct < 0.10 ? 0.031 : dpPct < 0.15 ? 0.028 : 0.024;
+    cmhc = principal * r;
+    principal += cmhc;
+  }
+
+  const mr = rate / 12;
+  const n = amortYears * 12;
+  const monthlyPayment = principal * (mr * Math.pow(1+mr,n)) / (Math.pow(1+mr,n)-1);
+  const annualPayments = freqStr === 'weekly' ? monthlyPayment * 13 : freqStr === 'biweekly' ? monthlyPayment * 13 : monthlyPayment * 12;
+  const totalInterest = monthlyPayment * n - principal;
+
+  // Accelerated savings
+  const monthlyTotal = monthlyPayment * n;
+  const accelPayment = monthlyPayment * 13 / 26; // biweekly
+  let accelBalance = principal, accelMonths = 0;
+  while (accelBalance > 0 && accelMonths < n * 2) {
+    accelBalance = accelBalance * (1 + mr) - accelPayment * 2;
+    accelMonths++;
+  }
+  const accelYearsSaved = (n - accelMonths * 2) / 12;
+  const accelInterestSaved = totalInterest - (accelPayment * 26 * accelMonths / 12 - principal);
+
+  setResults('mort-results', [
+    {label: freqStr === 'biweekly' ? 'Bi-Weekly Payment' : 'Monthly Payment', value: fmt(freqStr === 'biweekly' ? monthlyPayment * 12/26 : monthlyPayment), hi: true},
+    {label: 'Mortgage Amount', value: fmtK(principal - cmhc)},
+    {label: 'Total Interest Cost', value: fmtK(totalInterest), sub: Math.round(totalInterest/(principal-cmhc)*100) + '% of loan'},
+    {label: cmhc > 0 ? 'CMHC Insurance' : 'Down Payment', value: cmhc > 0 ? fmtK(cmhc) : fmtK(dp), sub: cmhc > 0 ? 'Added to mortgage' : dpPct*100 + '%'},
+  ]);
+
+  // Amortization chart - principal vs interest per year
+  const labels = [], princData = [], intData = [];
+  let bal = principal;
+  for (let y = 1; y <= amortYears; y++) {
+    let yearInt = 0, yearPrinc = 0;
+    for (let m = 0; m < 12; m++) {
+      const intPmt = bal * mr;
+      const princPmt = monthlyPayment - intPmt;
+      yearInt += intPmt;
+      yearPrinc += princPmt;
+      bal -= princPmt;
+    }
+    labels.push('Yr ' + y);
+    intData.push(Math.round(yearInt));
+    princData.push(Math.round(yearPrinc));
+  }
+
+  destroyChart('mort-chart');
+  const ctx = document.getElementById('mort-chart').getContext('2d');
+  charts['mort-chart'] = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        {label: 'Interest Paid', data: intData, backgroundColor: 'rgba(232,137,12,0.7)', stack: 's1'},
+        {label: 'Principal Paid', data: princData, backgroundColor: 'rgba(37,99,235,0.7)', stack: 's1'},
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: {mode: 'index', intersect: false},
+      plugins: {legend: {position: 'top', labels: {font: {size: 11}, color: '#5a4a25'}}, tooltip: {callbacks: {label: ctx => ' ' + ctx.dataset.label + ': ' + fmt(ctx.raw)}}},
+      scales: {
+        x: {stacked: true, ticks: {color: '#9A8A6A', maxTicksLimit: 15, font: {size: 9}}, grid: {color: 'rgba(0,0,0,0.05)'}},
+        y: {stacked: true, ticks: {color: '#9A8A6A', callback: v => fmtK(v), font: {size: 10}}, grid: {color: 'rgba(0,0,0,0.05)'}},
+      }
+    }
+  });
+
+  document.getElementById('mort-insight').innerHTML = `<div class="insight-box"><p>💡 By choosing accelerated bi-weekly payments, you could save ~${fmt(Math.max(0,accelInterestSaved))} in interest and pay off your mortgage about ${Math.max(0,accelYearsSaved).toFixed(1)} years sooner. That's extra money staying in your pocket.</p></div>`;
+}
+
+// ===== NET WORTH =====
+function calcNetWorth() {
+  const g = id => +document.getElementById(id).value || 0;
+  const assets = g('nw-home') + g('nw-rental') + g('nw-rrsp') + g('nw-tfsa') + g('nw-invest') + g('nw-resp') + g('nw-cash') + g('nw-vehicle') + g('nw-pension') + g('nw-other-a');
+  const liabs = g('nw-mortgage-l') + g('nw-heloc') + g('nw-carloan') + g('nw-student') + g('nw-cc') + g('nw-other-l');
+  const nw = assets - liabs;
+  if (assets === 0 && liabs === 0) return;
+
+  const realEstate = g('nw-home') + g('nw-rental');
+  const registered = g('nw-rrsp') + g('nw-tfsa') + g('nw-resp');
+  const liquid = g('nw-cash') + g('nw-invest');
+  const other = g('nw-vehicle') + g('nw-pension') + g('nw-other-a');
+
+  setResults('nw-results', [
+    {label: 'Total Assets', value: fmtK(assets)},
+    {label: 'Total Liabilities', value: fmtK(liabs)},
+    {label: 'Net Worth', value: fmtK(Math.abs(nw)), hi: true, sub: nw < 0 ? '(negative)' : ''},
+    {label: 'Debt-to-Asset Ratio', value: Math.round(liabs/assets*100) + '%', sub: liabs/assets < 0.5 ? '✅ Healthy' : '⚠️ High'},
+  ]);
+
+  destroyChart('nw-chart');
+  const ctx = document.getElementById('nw-chart').getContext('2d');
+  charts['nw-chart'] = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Real Estate', 'Registered Accts', 'Liquid/Investments', 'Other Assets', 'Liabilities'],
+      datasets: [{
+        data: [realEstate, registered, liquid, other, -liabs],
+        backgroundColor: [
+          'rgba(37,99,235,0.75)', 'rgba(5,150,105,0.75)', 'rgba(212,160,23,0.75)',
+          'rgba(124,58,237,0.75)', 'rgba(230,80,30,0.75)'
+        ],
+        borderRadius: 6, borderSkipped: false,
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: {display: false},
+        tooltip: {callbacks: {label: ctx => ' ' + fmt(Math.abs(ctx.raw))}},
+      },
+      scales: {
+        x: {ticks: {color: '#9A8A6A', callback: v => fmtK(Math.abs(v)), font: {size: 10}}, grid: {color: 'rgba(0,0,0,0.05)'}},
+        y: {ticks: {color: '#5a4a25', font: {size: 11}}, grid: {display: false}},
+      }
+    }
+  });
+
+  const ins = nw >= 0
+    ? `<div class="insight-box"><p>✅ <strong>Net worth: ${fmtK(nw)}</strong> — your assets exceed your liabilities. To grow this, focus on maximizing registered accounts (TFSA/RRSP) and paying down high-interest debt first. Review every 6 months.</p></div>`
+    : `<div class="insight-box warn"><p>⚠️ <strong>Negative net worth of ${fmtK(Math.abs(nw))}</strong> — you owe more than you own. This is normal early on. Focus on building an emergency fund first, then aggressively pay down debt starting with highest interest rate.</p></div>`;
+  document.getElementById('nw-insight').innerHTML = ins;
+}
+
+// Init all calcs on page load
+calcCompound();
+setTimeout(() => { calcRetirement(); calcRESP(); calcLife(); calcMortgage(); }, 100);
 </script>
 
 <!-- AI CHATBOT WIDGET -->
@@ -452,15 +876,10 @@ async function sendMsg() {
   addTyping();
   
   try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
+    const res = await fetch('/api/chat', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 400,
-        system: CHAT_SYSTEM,
-        messages: chatHistory
-      })
+      body: JSON.stringify({messages: chatHistory})
     });
     const data = await res.json();
     const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again or WhatsApp us directly.";

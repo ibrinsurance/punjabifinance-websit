@@ -1468,6 +1468,23 @@ function setLang(lang, btn) {
   btn.classList.add('active');
   document.querySelectorAll('.lang-en').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
   document.querySelectorAll('.lang-pa').forEach(el => el.style.display = lang === 'pa' ? '' : 'none');
+  // Update topic card text
+  document.querySelectorAll('.topic-card').forEach(card => {
+    const nameEl = card.querySelector('.topic-name');
+    const descEl = card.querySelector('.topic-desc');
+    const catEl = card.querySelector('.topic-cat-badge');
+    if (lang === 'pa') {
+      if (nameEl && card.dataset.pa) nameEl.textContent = card.dataset.pa;
+      if (descEl && card.dataset.paDesc) descEl.textContent = card.dataset.paDesc;
+    } else {
+      if (nameEl && card.dataset.en) nameEl.textContent = card.dataset.en;
+      if (descEl && card.dataset.enDesc) descEl.textContent = card.dataset.enDesc;
+    }
+  });
+  // Update search placeholder
+  const si = document.getElementById('search-input');
+  if (si) si.placeholder = lang === 'pa' ? 'ਵਿਸ਼ੇ ਖੋਜੋ...' : 'Search topics...';
+  // Update results label
   updateTip();
   // update results count
   const activeFilter = document.querySelector('.filter-btn.active');
@@ -1505,6 +1522,16 @@ if (savedLang !== "en") {
   if (paBtn) paBtn.classList.add("active");
   document.querySelectorAll(".lang-en").forEach(el => el.style.display = "none");
   document.querySelectorAll(".lang-pa").forEach(el => el.style.display = "");
+  // Re-render topic names in PA
+  document.querySelectorAll('.topic-card').forEach(card => {
+    const nameEl = card.querySelector('.topic-name');
+    const descEl = card.querySelector('.topic-desc');
+    if (nameEl && card.dataset.pa) nameEl.textContent = card.dataset.pa;
+    if (descEl && card.dataset.paDesc) descEl.textContent = card.dataset.paDesc;
+  });
+  // Update search placeholder
+  const si = document.getElementById('search-input');
+  if (si) si.placeholder = 'ਵਿਸ਼ੇ ਖੋਜੋ...';
 }
 updateTip();
 
@@ -1638,15 +1665,10 @@ async function sendMsg() {
   addTyping();
   
   try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
+    const res = await fetch('/api/chat', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 400,
-        system: CHAT_SYSTEM,
-        messages: chatHistory
-      })
+      body: JSON.stringify({messages: chatHistory})
     });
     const data = await res.json();
     const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again or WhatsApp us directly.";
