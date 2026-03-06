@@ -190,6 +190,8 @@ footer{background:#060603;border-top:1px solid var(--border);padding:56px 80px 3
     <a href="#reviews" data-t="nav_reviews">Reviews</a>
     <a href="calculators.html" style="font-size:0.84rem;color:var(--muted);font-weight:500;transition:color 0.2s;" onmouseenter="this.style.color='var(--gl)'" onmouseleave="this.style.color='var(--muted)'">Calculators</a>
     <a href="tools.html" style="font-size:0.84rem;color:var(--muted);font-weight:500;transition:color 0.2s;" onmouseenter="this.style.color='var(--gl)'" onmouseleave="this.style.color='var(--muted)'">Immigrant Tools</a>
+    <a href="wealth-path.html" style="font-size:0.84rem;color:var(--muted);font-weight:500;transition:color 0.2s;" onmouseenter="this.style.color='var(--gl)'" onmouseleave="this.style.color='var(--muted)'">$0 to $1M</a>
+    <a href="books.html" style="font-size:0.84rem;color:var(--muted);font-weight:500;transition:color 0.2s;" onmouseenter="this.style.color='var(--gl)'" onmouseleave="this.style.color='var(--muted)'">Books</a>
     <a href="link.html" class="nav-linktree">🔗 <span data-t="nav_alllinks">All Links</span></a>
     <div class="lang-pill"><button class="lang-pill-btn active" id="lp-en" onclick="siteSetLang('en')">English</button><button class="lang-pill-btn" id="lp-pa" onclick="siteSetLang('pa')">ਪੰਜਾਬੀ</button></div>
     <a href="https://wa.me/+16477456850" target="_blank" class="nav-cta" data-t="nav_whatsapp">WhatsApp Us</a>
@@ -217,7 +219,7 @@ footer{background:#060603;border-top:1px solid var(--border);padding:56px 80px 3
     </h1>
     <p class="hero-sub" data-t="hero_sub">Free financial education for the Punjabi community — insurance, investing, real estate, taxes and retirement planning, explained simply.</p>
     <div class="hero-actions">
-      <a href="education.html" class="btn-primary" data-t="btn_browse">Browse 100 Free Topics →</a>
+      <a href="education.html" class="btn-primary" data-t="btn_browse">Browse 200+ Free Topics →</a>
       <button onclick="toggleChat()" class="btn-ghost" style="border:1px solid rgba(212,160,23,0.3);color:var(--gl);padding:12px 24px;border-radius:50px;font-weight:500;font-size:0.87rem;background:transparent;cursor:pointer;display:inline-flex;align-items:center;gap:8px;" data-t="btn_ask">💬 Ask a Question</button>
     </div>
     <div class="hero-stats">
@@ -352,7 +354,7 @@ footer{background:#060603;border-top:1px solid var(--border);padding:56px 80px 3
     <div class="about-highlights">
       <div class="highlight"><div class="highlight-num">175K+</div><div class="highlight-label" data-t="hl_followers">Community followers</div></div>
       <div class="highlight"><div class="highlight-num">400+</div><div class="highlight-label" data-t="hl_reviews">Five-star reviews</div></div>
-      <div class="highlight"><div class="highlight-num">100</div><div class="highlight-label" data-t="hl_topics">Free education topics</div></div>
+      <div class="highlight"><div class="highlight-num">200+</div><div class="highlight-label" data-t="hl_topics">Free education topics</div></div>
       <div class="highlight"><div class="highlight-num">5+</div><div class="highlight-label" data-t="hl_years">Years serving community</div></div>
     </div>
   </div>
@@ -442,7 +444,7 @@ const T = {
   hero_h1_line2: {en: `Your Future.`, pa: `ਤੁਹਾਡਾ ਭਵਿੱਖ।`},
   hero_h1_line3: {en: `In Punjabi.`, pa: `ਪੰਜਾਬੀ ਵਿੱਚ।`},
   hero_sub: {en: `Free financial education for the Punjabi community — insurance, investing, real estate, taxes and retirement planning, explained simply.`, pa: `ਪੰਜਾਬੀ ਭਾਈਚਾਰੇ ਲਈ ਮੁਫ਼ਤ ਵਿੱਤੀ ਸਿੱਖਿਆ — ਬੀਮਾ, ਨਿਵੇਸ਼, ਰੀਅਲ ਅਸਟੇਟ, ਟੈਕਸ ਅਤੇ ਰਿਟਾਇਰਮੈਂਟ ਯੋਜਨਾ, ਸਰਲ ਭਾਸ਼ਾ ਵਿੱਚ।`},
-  btn_browse: {en: `Browse 100 Free Topics →`, pa: `100 ਮੁਫ਼ਤ ਵਿਸ਼ੇ ਦੇਖੋ →`},
+  btn_browse: {en: `Browse 200+ Free Topics →`, pa: `200+ ਮੁਫ਼ਤ ਵਿਸ਼ੇ ਦੇਖੋ →`},
   btn_ask: {en: `💬 Ask a Question`, pa: `💬 ਸਵਾਲ ਪੁੱਛੋ`},
   stat_followers: {en: `Followers`, pa: `ਫੋਲੋਅਰਸ`},
   stat_reviews: {en: `★ Reviews`, pa: `★ ਸਮੀਖਿਆਵਾਂ`},
@@ -456,7 +458,7 @@ const T = {
   learn_title: {en: `Learn for`, pa: `ਸਿੱਖੋ`},
   learn_title_gold: {en: `Free`, pa: `ਮੁਫ਼ਤ`},
   learn_sub: {en: `200+ topics across 11 categories — available in English and Punjabi.`, pa: `10 ਸ਼੍ਰੇਣੀਆਂ ਵਿੱਚ 100 ਵਿਸ਼ੇ — ਅੰਗਰੇਜ਼ੀ ਅਤੇ ਪੰਜਾਬੀ ਵਿੱਚ ਉਪਲਬਧ।`},
-  btn_browse_all: {en: `Browse All 200+ Topics →`, pa: `ਸਾਰੇ 100 ਵਿਸ਼ੇ ਦੇਖੋ →`},
+  btn_browse_all: {en: `Browse All 200+ Topics →`, pa: `ਸਾਰੇ 200+ ਵਿਸ਼ੇ ਦੇਖੋ →`},
   cat_insurance: {en: `Insurance`, pa: `ਬੀਮਾ`},
   cat_investing: {en: `Investing`, pa: `ਨਿਵੇਸ਼`},
   cat_realestate: {en: `Real Estate`, pa: `ਰੀਅਲ ਅਸਟੇਟ`},

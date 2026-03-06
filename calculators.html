@@ -113,12 +113,12 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;heigh
 </div>
 
 <div class="calc-nav">
-  <button class="calc-tab active" onclick="showCalc('compound')">📈 Compound Interest</button>
-  <button class="calc-tab" onclick="showCalc('retirement')">🌅 Retirement</button>
-  <button class="calc-tab" onclick="showCalc('resp')">🎓 RESP</button>
-  <button class="calc-tab" onclick="showCalc('life')">🛡️ Life Insurance</button>
-  <button class="calc-tab" onclick="showCalc('mortgage')">🏠 Mortgage</button>
-  <button class="calc-tab" onclick="showCalc('networth')">💎 Net Worth</button>
+  <button class="calc-tab active" onclick="showCalc('compound', this)">📈 Compound Interest</button>
+  <button class="calc-tab" onclick="showCalc('retirement', this)">🌅 Retirement</button>
+  <button class="calc-tab" onclick="showCalc('resp', this)">🎓 RESP</button>
+  <button class="calc-tab" onclick="showCalc('life', this)">🛡️ Life Insurance</button>
+  <button class="calc-tab" onclick="showCalc('mortgage', this)">🏠 Mortgage</button>
+  <button class="calc-tab" onclick="showCalc('networth', this)">💎 Net Worth</button>
 </div>
 
 <!-- ===== COMPOUND INTEREST ===== -->
@@ -342,11 +342,14 @@ const charts = {};
 const fmt = n => '$' + Math.abs(Math.round(n)).toLocaleString('en-CA');
 const fmtK = n => n >= 1000000 ? '$' + (n/1000000).toFixed(1) + 'M' : n >= 1000 ? '$' + Math.round(n/1000) + 'K' : '$' + Math.round(n);
 
-function showCalc(name) {
+function showCalc(name, btn) {
   document.querySelectorAll('.calc-container').forEach(c => c.classList.remove('active'));
   document.querySelectorAll('.calc-tab').forEach(t => t.classList.remove('active'));
-  document.getElementById('calc-' + name).classList.add('active');
-  event.target.classList.add('active');
+  const container = document.getElementById('calc-' + name);
+  if (container) container.classList.add('active');
+  // Find the actual button (in case a child element was clicked)
+  const actualBtn = btn ? btn.closest('.calc-tab') || btn : document.querySelector('.calc-tab[onclick*="' + name + '"]');
+  if (actualBtn) actualBtn.classList.add('active');
   // Trigger calc
   if (name === 'compound') calcCompound();
   else if (name === 'retirement') calcRetirement();
@@ -759,9 +762,19 @@ function calcNetWorth() {
   document.getElementById('nw-insight').innerHTML = ins;
 }
 
-// Init all calcs on page load
-calcCompound();
-setTimeout(() => { calcRetirement(); calcRESP(); calcLife(); calcMortgage(); }, 100);
+// Init all calcs after DOM + Chart.js ready
+document.addEventListener('DOMContentLoaded', function() {
+  // Small delay to ensure Chart.js is fully ready
+  setTimeout(function() {
+    try { calcCompound(); } catch(e) { console.log('compound init:', e); }
+    setTimeout(function() {
+      try { calcRetirement(); } catch(e) {}
+      try { calcRESP(); } catch(e) {}
+      try { calcLife(); } catch(e) {}
+      try { calcMortgage(); } catch(e) {}
+    }, 100);
+  }, 50);
+});
 </script>
 
 <!-- AI CHATBOT WIDGET -->

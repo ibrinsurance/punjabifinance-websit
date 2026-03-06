@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>$0 to $1M Wealth Path — Punjabi Finance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root{--gold:#D4A017;--gl:#E8A820;--sa:#E8890C;--bg:#0A0A04;--bg2:#0f0e06;--muted:#9A8A6A;--off:#FAF7F0;--border:rgba(212,160,23,0.14);--white:#ffffff;--dark:#1a1600;--mid:#4a3f20;--light:#7a6a45;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{background:var(--bg);color:var(--off);font-family:'DM Sans',sans-serif;overflow-x:hidden;}a{color:inherit;text-decoration:none;}
+nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;gap:16px;padding:0 48px;height:60px;background:rgba(8,8,2,0.94);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--gl);}.nav-logo span{color:var(--sa);}
+.nav-back{font-size:0.82rem;color:var(--muted);font-weight:500;transition:color 0.2s;}.nav-back:hover{color:var(--gl);}
+.nav-links{display:flex;align-items:center;gap:22px;margin-left:auto;}
+.nav-links a{font-size:0.82rem;color:var(--muted);font-weight:500;transition:color 0.2s;}.nav-links a:hover{color:var(--gl);}
+.lang-toggle{display:flex;align-items:center;background:rgba(212,160,23,0.08);border:1px solid rgba(212,160,23,0.2);border-radius:50px;padding:3px;}
+.lang-btn{padding:4px 12px;border-radius:50px;border:none;cursor:pointer;font-size:0.73rem;font-weight:600;font-family:'DM Sans',sans-serif;transition:all 0.2s;background:transparent;color:var(--muted);}
+.lang-btn.active{background:var(--gold);color:#0a0a0a;}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#0a0a0a;padding:11px 24px;border-radius:50px;font-weight:700;font-size:0.88rem;transition:all 0.2s;box-shadow:0 4px 16px rgba(212,160,23,0.2);border:none;cursor:pointer;}
+.btn-gold:hover{background:var(--gl);transform:translateY(-2px);}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(212,160,23,0.3);color:var(--gl);padding:10px 22px;border-radius:50px;font-weight:500;font-size:0.86rem;transition:all 0.2s;background:transparent;cursor:pointer;}
+.btn-ghost:hover{background:rgba(212,160,23,0.08);border-color:var(--gl);}
+.card-white{background:#fff;border-radius:18px;box-shadow:0 2px 16px rgba(0,0,0,0.12);transition:transform 0.22s,box-shadow 0.22s;}
+.card-white:hover{transform:translateY(-4px);box-shadow:0 10px 36px rgba(0,0,0,0.18);}
+.section-label{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--sa);margin-bottom:8px;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,2.8vw,2.4rem);font-weight:700;line-height:1.15;margin-bottom:12px;}
+.gold{color:var(--gl);}
+footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--gl);}.footer-logo span{color:var(--sa);}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;}
+.footer-links a{font-size:0.78rem;color:var(--muted);transition:color 0.2s;}.footer-links a:hover{color:var(--gl);}
+.footer-disc{font-size:0.65rem;color:var(--muted);opacity:0.4;width:100%;line-height:1.5;}
+@media(max-width:768px){nav{padding:0 20px;}footer{padding:28px 20px 16px;}}
+
+:root{--gold:#D4A017;--gl:#E8A820;--sa:#E8890C;--bg:#0A0A04;--muted:#9A8A6A;--off:#FAF7F0;--border:rgba(212,160,23,0.14);}
+.hero{padding:56px 80px 44px;background:radial-gradient(ellipse at 60% 0%,rgba(212,160,23,0.12),transparent 70%);border-bottom:1px solid var(--border);}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4vw,3.4rem);font-weight:900;margin-bottom:12px;line-height:1.05;}
+.hero p{color:var(--muted);font-size:0.95rem;line-height:1.75;max-width:580px;}
+/* LEVEL CARDS */
+.levels{padding:52px 80px 80px;display:flex;flex-direction:column;gap:0;}
+.level-connector{width:3px;height:40px;background:linear-gradient(to bottom,var(--lc-top),var(--lc-bot));margin-left:55px;}
+.level{border-radius:22px;overflow:hidden;border:1px solid var(--lc);}
+.level-header{display:flex;align-items:center;gap:20px;padding:24px 28px;cursor:pointer;transition:background 0.2s;background:var(--lh-bg);}
+.level-header:hover{background:var(--lh-hover);}
+.level-badge{width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0;background:var(--lb-bg);}
+.level-title-wrap{flex:1;}
+.level-name{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--off);margin-bottom:2px;}
+.level-range{font-size:0.78rem;color:var(--muted);font-weight:500;}
+.level-status{font-size:0.75rem;font-weight:700;padding:4px 12px;border-radius:50px;border:1px solid;}
+.level-toggle{font-size:0.8rem;color:var(--muted);transition:transform 0.3s;margin-left:8px;}
+.level-body{display:none;padding:0 28px 28px;}
+.level-body.open{display:block;}
+.level-intro{font-size:0.88rem;color:var(--muted);line-height:1.7;margin-bottom:20px;padding:14px 16px;background:rgba(255,255,255,0.03);border-radius:12px;border-left:3px solid var(--lc);}
+/* CHECKLIST */
+.checklist-section{margin-bottom:20px;}
+.cl-label{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--sa);margin-bottom:10px;}
+.cl-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid rgba(212,160,23,0.07);}
+.cl-item:last-child{border-bottom:none;}
+.cl-check{width:22px;height:22px;border-radius:7px;border:2px solid rgba(212,160,23,0.3);cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;transition:all 0.2s;margin-top:1px;}
+.cl-check.done{background:var(--gold);border-color:var(--gold);color:#0a0a0a;}
+.cl-text{font-size:0.86rem;color:rgba(250,247,240,0.78);line-height:1.6;}
+.cl-text strong{color:var(--off);}
+.cl-text span.tip{display:block;font-size:0.77rem;color:var(--muted);margin-top:3px;font-style:italic;}
+/* MILESTONE */
+.milestone{background:linear-gradient(135deg,rgba(212,160,23,0.12),rgba(232,137,12,0.05));border:1px solid rgba(212,160,23,0.3);border-radius:14px;padding:18px 20px;margin-top:16px;text-align:center;}
+.milestone h4{font-family:'Playfair Display',serif;font-size:1rem;color:var(--gl);margin-bottom:4px;}
+.milestone p{font-size:0.8rem;color:var(--muted);}
+/* PROGRESS BAR */
+.level-progress{height:5px;background:rgba(255,255,255,0.08);border-radius:3px;margin:10px 0 0;overflow:hidden;}
+.level-progress-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--gold),var(--sa));width:0;transition:width 0.6s ease;}
+/* TIMELINE */
+.timeline-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(212,160,23,0.08);border:1px solid rgba(212,160,23,0.2);border-radius:50px;padding:4px 12px;font-size:0.72rem;font-weight:600;color:var(--gl);margin-bottom:14px;}
+@media(max-width:768px){.hero,.levels{padding-left:18px;padding-right:18px;}.level-connector{margin-left:43px;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-back">← Home</a>
+  <a href="index.html" class="nav-logo">Punjabi<span>Finance</span></a>
+  <div class="nav-links">
+    <a href="education.html" >Learn</a>
+    <a href="calculators.html" >Calculators</a>
+    <a href="tools.html" >Immigrant Tools</a>
+    <a href="downloads.html" >Free Downloads</a>
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="nb-en" onclick="siteSetLang('en')">EN</button>
+      <button class="lang-btn" id="nb-pa" onclick="siteSetLang('pa')">PA</button>
+    </div>
+    <a href="https://wa.me/+16477456850" target="_blank" style="background:var(--gold);color:#0a0a0a;padding:7px 18px;border-radius:50px;font-weight:700;font-size:0.8rem;">WhatsApp</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="section-label">💰 Wealth Building Roadmap</div>
+  <h1>$0 to <span class="gold">$1 Million</span><br>The Path Is Mapped</h1>
+  <p>Six levels. Real milestones. Actionable checklists for every stage of your wealth journey — built specifically for the Punjabi community in Canada.</p>
+</div>
+
+<div class="levels" id="levels-container">
+
+<!-- LEVEL 1: SURVIVAL -->
+<div class="level" id="lvl1" style="--lc:rgba(239,68,68,0.3);--lh-bg:rgba(239,68,68,0.06);--lh-hover:rgba(239,68,68,0.1);--lb-bg:rgba(239,68,68,0.15);--lc-top:#ef4444;--lc-bot:#f97316;">
+  <div class="level-header" onclick="toggleLevel(1)">
+    <div class="level-badge">🌱</div>
+    <div class="level-title-wrap">
+      <div class="level-name">Level 1 — Survival Mode</div>
+      <div class="level-range">Net Worth: $0 or Negative → $10,000</div>
+      <div class="level-progress"><div class="level-progress-fill" id="p1" style="width:0%"></div></div>
+    </div>
+    <div class="level-status" style="color:#ef4444;border-color:rgba(239,68,68,0.4);">Start Here</div>
+    <div class="level-toggle" id="t1">▼</div>
+  </div>
+  <div class="level-body open" id="b1">
+    <p class="level-intro">This is where most immigrants and young Canadians begin. Your goal isn't to get rich yet — it's to stop bleeding money and build the foundation. No shame here. Every millionaire started at zero.</p>
+    <div class="timeline-badge">⏱️ Timeline: 3–12 months</div>
+    <div class="checklist-section">
+      <div class="cl-label">🚨 Emergency Actions</div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'1-1')"></div><div class="cl-text"><strong>Stop the bleeding — know exactly where every dollar goes</strong><span class="tip">Download your last 3 bank statements and categorize spending in a spreadsheet</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'1-2')"></div><div class="cl-text"><strong>Apply for your SIN if you're a newcomer</strong><span class="tip">You can't open accounts, get a job, or access government benefits without it</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'1-3')"></div><div class="cl-text"><strong>Open a no-fee bank account (EQ Bank, Simplii, Tangerine)</strong><span class="tip">Big bank monthly fees cost $15–$30/month = $180–$360/year wasted</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'1-4')"></div><div class="cl-text"><strong>List all your debts: balances, interest rates, minimum payments</strong><span class="tip">You can't fight what you can't see. High-interest debt (20%+) is a financial emergency</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'1-5')"></div><div class="cl-text"><strong>Apply for GST/HST credit and any benefits you qualify for</strong><span class="tip">File a tax return even with $0 income — this unlocks government benefits</span></div></div>
+    </div>
+    <div class="checklist-section">
+      <div class="cl-label">🏗️ Build the Foundation</div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'1-6')"></div><div class="cl-text"><strong>Create a zero-based monthly budget — assign every dollar a job</strong><span class="tip">Income – all expenses including savings = $0. Use pen and paper or a free app like YNAB</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'1-7')"></div><div class="cl-text"><strong>Start $500–$1,000 mini emergency fund BEFORE paying extra debt</strong><span class="tip">Without this buffer, any small emergency forces you into more debt</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'1-8')"></div><div class="cl-text"><strong>Cut or pause subscriptions, dining out, and impulse spending</strong><span class="tip">Temporary sacrifice. You're building something permanent. It doesn't last forever.</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'1-9')"></div><div class="cl-text"><strong>Apply for a secured credit card to start building Canadian credit</strong><span class="tip">RBC, Scotiabank, and Home Trust offer secured cards. $500 deposit = $500 limit</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'1-10')"></div><div class="cl-text"><strong>Open a TFSA (even with $0) to lock in your contribution room</strong><span class="tip">Opening the account with $0 doesn't forfeit room — it just makes it official</span></div></div>
+    </div>
+    <div class="milestone"><h4>🎯 Level 1 Complete: $1,000 Emergency Fund + Budget in Place</h4><p>You've stopped the chaos. Now you can build. This is the hardest milestone — most people never do it.</p></div>
+  </div>
+</div>
+
+<div class="level-connector" style="--lc-top:#f97316;--lc-bot:#f59e0b;"></div>
+
+<!-- LEVEL 2: STABILITY -->
+<div class="level" id="lvl2" style="--lc:rgba(249,115,22,0.3);--lh-bg:rgba(249,115,22,0.05);--lh-hover:rgba(249,115,22,0.09);--lb-bg:rgba(249,115,22,0.15);">
+  <div class="level-header" onclick="toggleLevel(2)">
+    <div class="level-badge">🧱</div>
+    <div class="level-title-wrap">
+      <div class="level-name">Level 2 — Building Stability</div>
+      <div class="level-range">Net Worth: $10,000 → $50,000</div>
+      <div class="level-progress"><div class="level-progress-fill" id="p2" style="width:0%"></div></div>
+    </div>
+    <div class="level-status" style="color:#f97316;border-color:rgba(249,115,22,0.4);">Getting Real</div>
+    <div class="level-toggle" id="t2">▼</div>
+  </div>
+  <div class="level-body" id="b2">
+    <p class="level-intro">You have a budget. Now it's time to escape debt, build a real safety net, and start your wealth-building engine. This phase feels slow — but every dollar here does heavy lifting for the next 20 years.</p>
+    <div class="timeline-badge">⏱️ Timeline: 1–4 years</div>
+    <div class="checklist-section">
+      <div class="cl-label">💳 Destroy High-Interest Debt</div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'2-1')"></div><div class="cl-text"><strong>Pay off credit card debt using the avalanche method (highest rate first)</strong><span class="tip">Credit card interest at 20–24% destroys more wealth than the stock market creates. This is your #1 priority.</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'2-2')"></div><div class="cl-text"><strong>Call your credit card company to negotiate a lower interest rate</strong><span class="tip">Just ask. Long-time customers often get 2–5% rate reductions. Takes 5 minutes.</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'2-3')"></div><div class="cl-text"><strong>Consider a balance transfer card (0% promo rate) if you have good credit</strong><span class="tip">Scotiabank Value Visa, MBNA offers 0% for 10–12 months. Transfer balance and attack it.</span></div></div>
+    </div>
+    <div class="checklist-section">
+      <div class="cl-label">🛡️ Build Your Safety Net</div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'2-4')"></div><div class="cl-text"><strong>Build 3-month emergency fund in a HISA (EQ Bank, Oaken — 4%+ interest)</strong><span class="tip">At $4,000/month expenses, target = $12,000 in an account you don't touch</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'2-5')"></div><div class="cl-text"><strong>Get basic term life insurance if you have dependents or a mortgage</strong><span class="tip">$500K 20-year term for a healthy 32-year-old: ~$32–40/month. Not expensive. No excuse.</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'2-6')"></div><div class="cl-text"><strong>Check if your employer has group benefits — RRSP matching especially</strong><span class="tip">Employer RRSP matching is a 50–100% instant return. Never leave this money on the table.</span></div></div>
+    </div>
+    <div class="checklist-section">
+      <div class="cl-label">📈 Start Investing (Even Small)</div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'2-7')"></div><div class="cl-text"><strong>Open Wealthsimple Trade and start investing $200–$500/month in XEQT</strong><span class="tip">One ETF. Set it up. Automate it. Stop looking at it. This is the whole strategy.</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'2-8')"></div><div class="cl-text"><strong>Open RESP within 90 days of each child's birth — claim free CESG grants</strong><span class="tip">The government gives 20% free on $2,500/year. Missing this = burning free money.</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'2-9')"></div><div class="cl-text"><strong>Build credit to 680+ by keeping utilization under 30% and paying on time</strong><span class="tip">Check free at Borrowell. You need 680+ for best mortgage rates — start now.</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'2-10')"></div><div class="cl-text"><strong>Automate savings — pay yourself first before any optional spending</strong><span class="tip">Set up automatic transfer to TFSA on payday. You won't miss what you never see.</span></div></div>
+    </div>
+    <div class="milestone"><h4>🎯 Level 2 Complete: Zero High-Interest Debt + 3-Month Emergency Fund + Investing Started</h4><p>You've escaped the trap most Canadians never leave. Your money is now working instead of disappearing.</p></div>
+  </div>
+</div>
+
+<div class="level-connector" style="--lc-top:#f59e0b;--lc-bot:#84cc16;"></div>
+
+<!-- LEVEL 3: MOMENTUM -->
+<div class="level" id="lvl3" style="--lc:rgba(234,179,8,0.3);--lh-bg:rgba(234,179,8,0.05);--lh-hover:rgba(234,179,8,0.09);--lb-bg:rgba(234,179,8,0.15);">
+  <div class="level-header" onclick="toggleLevel(3)">
+    <div class="level-badge">🚀</div>
+    <div class="level-title-wrap">
+      <div class="level-name">Level 3 — Building Momentum</div>
+      <div class="level-range">Net Worth: $50,000 → $150,000</div>
+      <div class="level-progress"><div class="level-progress-fill" id="p3" style="width:0%"></div></div>
+    </div>
+    <div class="level-status" style="color:#eab308;border-color:rgba(234,179,8,0.4);">Gaining Speed</div>
+    <div class="level-toggle" id="t3">▼</div>
+  </div>
+  <div class="level-body" id="b3">
+    <p class="level-intro">This is where compounding starts to feel real. The habits are formed. Now it's about optimization — squeezing every advantage from the Canadian tax system and making smart moves that multiply over time.</p>
+    <div class="timeline-badge">⏱️ Timeline: 2–5 years</div>
+    <div class="checklist-section">
+      <div class="cl-label">💰 Maximize Tax-Advantaged Accounts</div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'3-1')"></div><div class="cl-text"><strong>Max your TFSA ($7,000/year) before contributing to non-registered accounts</strong><span class="tip">After maxing TFSA + RRSP, your effective return is dramatically higher because of tax savings</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'3-2')"></div><div class="cl-text"><strong>Contribute to RRSP if income exceeds $60K — use the refund to invest more</strong><span class="tip">At $80K Ontario income, a $10K RRSP saves ~$3,150 in taxes. Put the refund in TFSA.</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'3-3')"></div><div class="cl-text"><strong>Open an FHSA if you're a first-time buyer — $8,000/year tax-free</strong><span class="tip">FHSA + RRSP HBP + CESG = $75K–$110K in down payment savings with tax advantages</span></div></div>
+    </div>
+    <div class="checklist-section">
+      <div class="cl-label">🏠 Real Estate Preparation</div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'3-4')"></div><div class="cl-text"><strong>Get credit score to 720+ for best mortgage rates</strong><span class="tip">0.5% rate difference on $600K mortgage = $15,000 over 5 years. Worth every effort.</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'3-5')"></div><div class="cl-text"><strong>Understand the stress test and how much you qualify for</strong><span class="tip">Get pre-approved 4 months before house shopping. Rate holds protect you from increases.</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'3-6')"></div><div class="cl-text"><strong>Save for closing costs (3–5% of purchase price) separately from down payment</strong><span class="tip">$700K house = $21K–$35K in closing costs. This is separate from your down payment.</span></div></div>
+    </div>
+    <div class="checklist-section">
+      <div class="cl-label">📊 Optimize Income</div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'3-7')"></div><div class="cl-text"><strong>Negotiate a salary increase or pursue a better-paying role</strong><span class="tip">Average raise: 2–3%. Switching jobs: 15–25% increase. Loyalty has diminishing returns.</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'3-8')"></div><div class="cl-text"><strong>Start or explore a side income — consulting, freelancing, small business</strong><span class="tip">Even $1,000/month extra invested at 7% for 10 years = $174,000</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'3-9')"></div><div class="cl-text"><strong>Review insurance annually — life, disability, critical illness</strong><span class="tip">At this wealth level, disability insurance matters most. If you can't work, does your plan hold?</span></div></div>
+    </div>
+    <div class="milestone"><h4>🎯 Level 3 Complete: All Registered Accounts Active + Home Plan in Place + $150K Net Worth</h4><p>You're in the top 25% of Canadians in wealth accumulation for your age. Compound interest is now working for you.</p></div>
+  </div>
+</div>
+
+<div class="level-connector" style="--lc-top:#84cc16;--lc-bot:#22c55e;"></div>
+
+<!-- LEVEL 4: ACCELERATION -->
+<div class="level" id="lvl4" style="--lc:rgba(34,197,94,0.3);--lh-bg:rgba(34,197,94,0.05);--lh-hover:rgba(34,197,94,0.09);--lb-bg:rgba(34,197,94,0.15);">
+  <div class="level-header" onclick="toggleLevel(4)">
+    <div class="level-badge">⚡</div>
+    <div class="level-title-wrap">
+      <div class="level-name">Level 4 — Acceleration Phase</div>
+      <div class="level-range">Net Worth: $150,000 → $400,000</div>
+      <div class="level-progress"><div class="level-progress-fill" id="p4" style="width:0%"></div></div>
+    </div>
+    <div class="level-status" style="color:#22c55e;border-color:rgba(34,197,94,0.4);">Real Wealth</div>
+    <div class="level-toggle" id="t4">▼</div>
+  </div>
+  <div class="level-body" id="b4">
+    <p class="level-intro">The money is doing serious work now. Every financial decision ripples forward decades. This phase is about smart leverage, protecting what you've built, and setting up the final push to $1M.</p>
+    <div class="timeline-badge">⏱️ Timeline: 3–8 years</div>
+    <div class="checklist-section">
+      <div class="cl-label">🏠 Real Estate as Wealth Engine</div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'4-1')"></div><div class="cl-text"><strong>Use accelerated bi-weekly mortgage payments to shave 3+ years off amortization</strong><span class="tip">On $600K at 5.5%, this saves $40,000+ in interest. Costs you nothing extra per year.</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'4-2')"></div><div class="cl-text"><strong>Apply RRSP refund + any bonuses directly to mortgage principal</strong><span class="tip">$5K extra principal payment in year 5 saves $14,000 in interest over remaining amortization</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'4-3')"></div><div class="cl-text"><strong>Research rental property or REIT investment as second income stream</strong><span class="tip">REITs (held in TFSA) give real estate returns without being a landlord. Start simple.</span></div></div>
+    </div>
+    <div class="checklist-section">
+      <div class="cl-label">🛡️ Serious Protection</div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'4-4')"></div><div class="cl-text"><strong>Review and increase life insurance as wealth and responsibilities grow</strong><span class="tip">With $300K+ net worth but $700K+ in assets, your family's exposure has grown significantly</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'4-5')"></div><div class="cl-text"><strong>Add critical illness insurance — 1 in 2 Canadians will get cancer</strong><span class="tip">CI pays lump sum so you can focus on recovery, not bills. Best bought before 45.</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'4-6')"></div><div class="cl-text"><strong>Create a will and update beneficiaries on ALL accounts (RRSP, TFSA, insurance)</strong><span class="tip">Without named beneficiaries, accounts go through probate — losing 1.5% in Ontario alone + delays</span></div></div>
+    </div>
+    <div class="checklist-section">
+      <div class="cl-label">📈 Wealth Optimization</div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'4-7')"></div><div class="cl-text"><strong>Consider incorporation if self-employed income exceeds $100K</strong><span class="tip">Active business income taxed at ~12.2% (Ontario small business rate) vs 46%+ personal rate</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'4-8')"></div><div class="cl-text"><strong>Start RRSP spousal contributions if income gap exists between partners</strong><span class="tip">Shifting $50K+ to lower-income spouse's RRSP can save $15,000–$25,000 in lifetime taxes</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'4-9')"></div><div class="cl-text"><strong>Review investment fees — ensure you're in ETFs under 0.25% MER</strong><span class="tip">At $300K portfolio, 2% fee difference = $6,000/year wasted. Move to Questrade or Wealthsimple</span></div></div>
+    </div>
+    <div class="milestone"><h4>🎯 Level 4 Complete: $400K Net Worth + All Protection in Place + Estate Plan Started</h4><p>You're in the top 10% of wealth in Canada. The next phase is less about saving more and more about growing what you have.</p></div>
+  </div>
+</div>
+
+<div class="level-connector" style="--lc-top:#22c55e;--lc-bot:#3b82f6;"></div>
+
+<!-- LEVEL 5: GROWTH COMPOUND -->
+<div class="level" id="lvl5" style="--lc:rgba(59,130,246,0.3);--lh-bg:rgba(59,130,246,0.05);--lh-hover:rgba(59,130,246,0.09);--lb-bg:rgba(59,130,246,0.15);">
+  <div class="level-header" onclick="toggleLevel(5)">
+    <div class="level-badge">💰</div>
+    <div class="level-title-wrap">
+      <div class="level-name">Level 5 — Compounding Wealth</div>
+      <div class="level-range">Net Worth: $400,000 → $750,000</div>
+      <div class="level-progress"><div class="level-progress-fill" id="p5" style="width:0%"></div></div>
+    </div>
+    <div class="level-status" style="color:#3b82f6;border-color:rgba(59,130,246,0.4);">Top 5%</div>
+    <div class="level-toggle" id="t5">▼</div>
+  </div>
+  <div class="level-body" id="b5">
+    <p class="level-intro">At this level, market returns start doing as much heavy lifting as your contributions. A $500K portfolio growing at 7% adds $35,000/year on its own — before you add a single dollar. Now it's about staying the course, tax optimization, and planning the endgame.</p>
+    <div class="timeline-badge">⏱️ Timeline: 3–7 years</div>
+    <div class="checklist-section">
+      <div class="cl-label">🧮 Advanced Tax Strategy</div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'5-1')"></div><div class="cl-text"><strong>Begin strategic RRSP drawdown if retiring early or in low-income years</strong><span class="tip">Convert RRSP to TFSA in low-income years at 0–20% tax rate instead of 40%+ at 71</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'5-2')"></div><div class="cl-text"><strong>Maximize pension income splitting with your spouse on tax returns</strong><span class="tip">Split up to 50% of eligible pension income to reduce family tax bill</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'5-3')"></div><div class="cl-text"><strong>Use tax-loss harvesting in non-registered accounts to offset gains</strong><span class="tip">Sell losing positions to offset capital gains. Must wait 30+ days to rebuy (superficial loss rule)</span></div></div>
+    </div>
+    <div class="checklist-section">
+      <div class="cl-label">🏡 Asset Management</div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'5-4')"></div><div class="cl-text"><strong>Consider real estate equity as retirement tool — review HELOC or reverse mortgage options</strong><span class="tip">$600K home equity is a massive asset. Have a plan for how it fits your retirement strategy.</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'5-5')"></div><div class="cl-text"><strong>Plan CPP timing — delay to 70 if you can fund from portfolio from 60–70</strong><span class="tip">Delaying CPP from 65 to 70 = 42% increase. Guaranteed 8.4%/year — hard to beat with investments.</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'5-6')"></div><div class="cl-text"><strong>Engage a fee-only financial planner for comprehensive retirement projection</strong><span class="tip">At $500K+ net worth, one session with a CFP can save tens of thousands in optimized decisions</span></div></div>
+    </div>
+    <div class="checklist-section">
+      <div class="cl-label">👨‍👩‍👧 Family Wealth</div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'5-7')"></div><div class="cl-text"><strong>Complete RESP funding — max grants for all children before they turn 17</strong><span class="tip">CESG stops after age 17. Any missed grants from earlier years can still be partially caught up now.</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'5-8')"></div><div class="cl-text"><strong>Update estate documents — will, POA, beneficiaries — as wealth grows</strong><span class="tip">An outdated will is dangerous at this wealth level. Estate lawyers typically charge $800–$2,000.</span></div></div>
+    </div>
+    <div class="milestone"><h4>🎯 Level 5 Complete: $750K Net Worth + Retirement Plan Finalized + All Tax Accounts Optimized</h4><p>You're officially in the top 5% of Canadian wealth. One final push to the milestone that changes everything.</p></div>
+  </div>
+</div>
+
+<div class="level-connector" style="--lc-top:#3b82f6;--lc-bot:#d4a017;"></div>
+
+<!-- LEVEL 6: THE MILLION -->
+<div class="level" id="lvl6" style="--lc:rgba(212,160,23,0.5);--lh-bg:rgba(212,160,23,0.08);--lh-hover:rgba(212,160,23,0.14);--lb-bg:rgba(212,160,23,0.2);">
+  <div class="level-header" onclick="toggleLevel(6)">
+    <div class="level-badge">👑</div>
+    <div class="level-title-wrap">
+      <div class="level-name">Level 6 — The $1 Million Mark</div>
+      <div class="level-range">Net Worth: $750,000 → $1,000,000+</div>
+      <div class="level-progress"><div class="level-progress-fill" id="p6" style="width:0%"></div></div>
+    </div>
+    <div class="level-status" style="color:var(--gl);border-color:rgba(212,160,23,0.5);">👑 The Goal</div>
+    <div class="level-toggle" id="t6">▼</div>
+  </div>
+  <div class="level-body" id="b6">
+    <p class="level-intro">At $750K heading to $1M, market returns could take you there on their own given enough time. The focus shifts from accumulation to preservation, legacy, and ensuring the wealth serves your family for generations.</p>
+    <div class="timeline-badge">⏱️ Timeline: 2–5 years (depends heavily on markets)</div>
+    <div class="checklist-section">
+      <div class="cl-label">👑 The Final Push</div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'6-1')"></div><div class="cl-text"><strong>Stay the course — your biggest risk now is emotional decisions during market dips</strong><span class="tip">A $900K portfolio dropping 20% = $180K on paper. Selling locks it in. Staying invested recovers it.</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'6-2')"></div><div class="cl-text"><strong>Shift portfolio from growth (XEQT) to balanced (VGRO) as you approach retirement</strong><span class="tip">Reduce sequence-of-returns risk. A 30% market crash the year you retire is devastating without bonds.</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'6-3')"></div><div class="cl-text"><strong>Ensure paid-off (or nearly) primary home — this alone may push you to $1M</strong><span class="tip">A $900K home with $800K mortgage = $100K equity. A $900K paid-off home = $900K asset.</span></div></div>
+    </div>
+    <div class="checklist-section">
+      <div class="cl-label">🏛️ Legacy & Beyond</div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'6-4')"></div><div class="cl-text"><strong>Establish a family financial education tradition — teach kids about money</strong><span class="tip">First-generation wealth is fragile. 70% of family wealth is gone by the second generation without financial education.</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'6-5')"></div><div class="cl-text"><strong>Consider a family trust or testamentary trust for estate planning</strong><span class="tip">For $1M+ estates, a trust can reduce probate fees ($15,000+) and ongoing taxes significantly</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'6-6')"></div><div class="cl-text"><strong>Document your financial accounts, policies, and plans for your family</strong><span class="tip">A 2-page summary of all accounts, passwords (secure), and contacts is a gift to your family</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'6-7')"></div><div class="cl-text"><strong>Celebrate — then teach someone else in the community this path</strong><span class="tip">Shared wealth knowledge is how communities rise. Your story is someone else's roadmap.</span></div></div>
+    </div>
+    <div class="milestone" style="background:linear-gradient(135deg,rgba(212,160,23,0.2),rgba(232,137,12,0.1));border-color:rgba(212,160,23,0.5);">
+      <h4>👑 You Did It: $1,000,000+ Net Worth</h4>
+      <p>At $1M, the 4% rule generates $40,000/year passively — before CPP, OAS, or any other income. You've built financial freedom. Now pay it forward.</p>
+    </div>
+  </div>
+</div>
+
+</div><!-- end levels -->
+
+<div style="padding:20px 80px 60px;text-align:center;">
+  <div style="background:linear-gradient(135deg,rgba(37,211,102,0.08),rgba(37,211,102,0.03));border:1px solid rgba(37,211,102,0.2);border-radius:20px;padding:32px;max-width:560px;margin:0 auto;">
+    <div style="font-size:2rem;margin-bottom:10px;">💬</div>
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.25rem;color:#1ebe5a;margin-bottom:8px;">Questions on Your Journey?</h3>
+    <p style="font-size:0.86rem;color:var(--muted);margin-bottom:16px;line-height:1.65;">WhatsApp us directly — in Punjabi or English. We help with insurance, investing, and financial planning questions personally.</p>
+    <a href="https://wa.me/+16477456850" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:11px 26px;border-radius:50px;font-weight:700;font-size:0.9rem;text-decoration:none;">💬 Chat on WhatsApp</a>
+  </div>
+</div>
+
+<footer>
+  <a href="index.html" class="footer-logo">Punjabi<span>Finance</span></a>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="education.html">Learn</a>
+    <a href="calculators.html">Calculators</a>
+    <a href="tools.html">Immigrant Tools</a>
+    <a href="downloads.html">Free Downloads</a>
+    <a href="link.html">All Links</a>
+    <a href="https://wa.me/+16477456850" target="_blank">WhatsApp</a>
+  </div>
+  <p class="footer-disc">Educational content only — not financial, legal, or insurance advice. Always consult a licensed professional before making financial decisions. © 2025 Punjabi Finance</p>
+</footer>
+
+<script>
+
+let sL = localStorage.getItem('pf_lang')||'en';
+function siteSetLang(l){
+  sL=l; localStorage.setItem('pf_lang',l);
+  ['en','pa'].forEach(x=>{
+    const b=document.getElementById('nb-'+x);
+    if(b){b.classList.toggle('active',x===l);}
+  });
+  applyLang();
+}
+function applyLang(){
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    el.textContent = sL==='pa' ? (el.dataset.pa||el.dataset.en) : el.dataset.en;
+  });
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  if(sL==='pa'){
+    const enb=document.getElementById('nb-en');
+    const pab=document.getElementById('nb-pa');
+    if(enb)enb.classList.remove('active');
+    if(pab)pab.classList.add('active');
+  }
+  applyLang();
+});
+
+
+function toggleLevel(n) {
+  const body = document.getElementById('b' + n);
+  const toggle = document.getElementById('t' + n);
+  body.classList.toggle('open');
+  toggle.textContent = body.classList.contains('open') ? '▲' : '▼';
+}
+
+function check(el, id) {
+  el.classList.toggle('done');
+  el.textContent = el.classList.contains('done') ? '✓' : '';
+  // Save state
+  const state = JSON.parse(localStorage.getItem('pfwp') || '{}');
+  state[id] = el.classList.contains('done');
+  localStorage.setItem('pfwp', JSON.stringify(state));
+  updateProgress();
+}
+
+function updateProgress() {
+  for (let n = 1; n <= 6; n++) {
+    const items = document.querySelectorAll('#b'+n+' .cl-check');
+    const done = document.querySelectorAll('#b'+n+' .cl-check.done').length;
+    const pct = items.length > 0 ? (done / items.length * 100) : 0;
+    const bar = document.getElementById('p'+n);
+    if (bar) bar.style.width = pct + '%';
+  }
+}
+
+// Restore saved state
+function restoreState() {
+  const state = JSON.parse(localStorage.getItem('pfwp') || '{}');
+  Object.entries(state).forEach(([id, done]) => {
+    if (done) {
+      const el = document.querySelector('[onclick="check(this,\''+id+'\')"]');
+      if (el) { el.classList.add('done'); el.textContent = '✓'; }
+    }
+  });
+  updateProgress();
+}
+
+document.addEventListener('DOMContentLoaded', restoreState);
+</script>
+
+<!-- AI CHATBOT WIDGET -->
+<div id="chat-widget" style="position:fixed;bottom:24px;right:24px;z-index:9999;font-family:'DM Sans',sans-serif;">
+  <!-- Toggle Button -->
+  <div id="chat-toggle" onclick="toggleChat()" style="width:58px;height:58px;background:linear-gradient(135deg,#D4A017,#E8890C);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 20px rgba(212,160,23,0.4);transition:transform 0.2s;" onmouseenter="this.style.transform='scale(1.1)'" onmouseleave="this.style.transform='scale(1)'">
+    <span id="chat-icon" style="font-size:1.4rem;">💬</span>
+  </div>
+  <!-- Chat Panel -->
+  <div id="chat-panel" style="display:none;position:absolute;bottom:70px;right:0;width:360px;max-height:520px;background:#fff;border-radius:20px;box-shadow:0 8px 48px rgba(0,0,0,0.2);overflow:hidden;flex-direction:column;">
+    <!-- Header -->
+    <div style="background:linear-gradient(135deg,#D4A017,#E8890C);padding:16px 18px;display:flex;align-items:center;gap:10px;">
+      <div style="width:36px;height:36px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">🤖</div>
+      <div style="flex:1;">
+        <div style="font-size:0.9rem;font-weight:700;color:#fff;">Punjabi Finance AI</div>
+        <div style="font-size:0.7rem;color:rgba(255,255,255,0.8);" id="chat-status">Ask me anything about finance in Canada</div>
+      </div>
+      <div onclick="toggleChat()" style="cursor:pointer;color:rgba(255,255,255,0.8);font-size:1.1rem;line-height:1;">✕</div>
+    </div>
+    <!-- Messages -->
+    <div id="chat-messages" style="flex:1;overflow-y:auto;padding:14px;max-height:340px;display:flex;flex-direction:column;gap:10px;">
+      <div class="chat-msg bot" style="background:#f5f3ee;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:0.84rem;color:#2a2000;line-height:1.6;max-width:85%;">
+        <span id="chat-welcome">👋 Sat Sri Akal! I'm the Punjabi Finance AI.<br><br>Ask me anything about:<br>• Life & Super Visa insurance<br>• TFSA, RRSP, investing<br>• Real estate in Canada<br>• Taxes & retirement<br><br>I answer in English or Punjabi! 🇨🇦</span>
+      </div>
+    </div>
+    <!-- Quick Questions -->
+    <div id="quick-qs" style="padding:0 14px 10px;display:flex;flex-wrap:wrap;gap:6px;">
+      <button onclick="sendQuick('How much life insurance do I need?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">Life insurance?</button>
+      <button onclick="sendQuick('What is Super Visa insurance?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">Super Visa?</button>
+      <button onclick="sendQuick('How do I start investing in Canada?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">How to invest?</button>
+      <button onclick="sendQuick('TFSA vs RRSP — which should I use?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">TFSA vs RRSP?</button>
+    </div>
+    <!-- Input -->
+    <div style="padding:10px 14px 14px;border-top:1px solid rgba(0,0,0,0.07);display:flex;gap:8px;align-items:flex-end;">
+      <input id="chat-input" type="text" placeholder="Ask a finance question..." style="flex:1;padding:10px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:50px;font-size:0.84rem;font-family:'DM Sans',sans-serif;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='#D4A017'" onblur="this.style.borderColor='rgba(0,0,0,0.12)'" onkeypress="if(event.key==='Enter')sendMsg()">
+      <button onclick="sendMsg()" id="send-btn" style="width:38px;height:38px;background:linear-gradient(135deg,#D4A017,#E8890C);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;transition:transform 0.2s;" onmouseenter="this.style.transform='scale(1.1)'" onmouseleave="this.style.transform='scale(1)'">→</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const CHAT_SYSTEM = `You are the Punjabi Finance AI assistant — a helpful, friendly financial education bot for the Punjabi community in Canada.
+
+Your role:
+- Provide free financial education about Canadian personal finance
+- Topics: life insurance, Super Visa insurance, critical illness, disability, TFSA, RRSP, FHSA, RESP, investing, real estate, mortgages, taxes, retirement, newcomer finance
+- Always remind users to consult a licensed professional for personal advice
+- Be warm and community-focused — this is for the Punjabi diaspora in Canada
+- Respond in the same language the user writes in (English or Punjabi)
+- Keep answers concise and practical — max 150 words unless asked to elaborate
+- Reference relevant tools on the site: calculators.html, tools.html, education.html
+- For insurance questions, suggest they WhatsApp us at +1 647-745-6850 for a personal quote
+- Never give specific investment recommendations or specific insurance quotes
+- Always end insurance/investment answers with a soft call to action to WhatsApp or visit ibrinsurance.ca
+
+Personality: Knowledgeable, warm, like a financially savvy older sibling or family friend who happens to know a lot about Canadian finance.`;
+
+let chatOpen = false;
+let isLoading = false;
+const chatHistory = [];
+
+function toggleChat() {
+  chatOpen = !chatOpen;
+  const panel = document.getElementById('chat-panel');
+  panel.style.display = chatOpen ? 'flex' : 'none';
+  panel.style.flexDirection = 'column';
+  document.getElementById('chat-icon').textContent = chatOpen ? '✕' : '💬';
+  if(chatOpen) document.getElementById('chat-input').focus();
+}
+
+function sendQuick(msg) {
+  document.getElementById('quick-qs').style.display = 'none';
+  document.getElementById('chat-input').value = msg;
+  sendMsg();
+}
+
+function addMsg(text, role) {
+  const msgs = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.style.cssText = role === 'user'
+    ? 'background:linear-gradient(135deg,#D4A017,#E8890C);color:#0a0a0a;border-radius:14px 14px 4px 14px;padding:10px 14px;font-size:0.84rem;line-height:1.6;max-width:80%;margin-left:auto;'
+    : 'background:#f5f3ee;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:0.84rem;color:#2a2000;line-height:1.6;max-width:88%;';
+  div.textContent = text;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+  return div;
+}
+
+function addTyping() {
+  const msgs = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.id = 'typing-indicator';
+  div.style.cssText = 'background:#f5f3ee;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:0.84rem;color:#9A8A6A;max-width:88%;';
+  div.textContent = '...thinking';
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+async function sendMsg() {
+  if(isLoading) return;
+  const input = document.getElementById('chat-input');
+  const msg = input.value.trim();
+  if(!msg) return;
+  input.value = '';
+  
+  addMsg(msg, 'user');
+  chatHistory.push({role:'user', content: msg});
+  
+  document.getElementById('quick-qs').style.display = 'none';
+  isLoading = true;
+  document.getElementById('chat-status').textContent = 'Thinking...';
+  addTyping();
+  
+  try {
+    const res = await fetch('/api/chat', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({messages: chatHistory})
+    });
+    const data = await res.json();
+    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again or WhatsApp us directly.";
+    
+    const typing = document.getElementById('typing-indicator');
+    if(typing) typing.remove();
+    
+    addMsg(reply, 'bot');
+    chatHistory.push({role:'assistant', content: reply});
+    document.getElementById('chat-status').textContent = 'Ask me anything about finance';
+  } catch(err) {
+    const typing = document.getElementById('typing-indicator');
+    if(typing) typing.remove();
+    addMsg('Sorry, something went wrong. Please WhatsApp us directly at +1 647-745-6850 or visit ibrinsurance.ca', 'bot');
+    document.getElementById('chat-status').textContent = 'Ask me anything about finance';
+  }
+  isLoading = false;
+}
+</script>
+</body></html>

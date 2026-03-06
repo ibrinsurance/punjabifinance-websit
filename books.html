@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Recommended Finance Books — Punjabi Finance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root{--gold:#D4A017;--gl:#E8A820;--sa:#E8890C;--bg:#0A0A04;--bg2:#0f0e06;--muted:#9A8A6A;--off:#FAF7F0;--border:rgba(212,160,23,0.14);--white:#ffffff;--dark:#1a1600;--mid:#4a3f20;--light:#7a6a45;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{background:var(--bg);color:var(--off);font-family:'DM Sans',sans-serif;overflow-x:hidden;}a{color:inherit;text-decoration:none;}
+nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;gap:16px;padding:0 48px;height:60px;background:rgba(8,8,2,0.94);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--gl);}.nav-logo span{color:var(--sa);}
+.nav-back{font-size:0.82rem;color:var(--muted);font-weight:500;transition:color 0.2s;}.nav-back:hover{color:var(--gl);}
+.nav-links{display:flex;align-items:center;gap:22px;margin-left:auto;}
+.nav-links a{font-size:0.82rem;color:var(--muted);font-weight:500;transition:color 0.2s;}.nav-links a:hover{color:var(--gl);}
+.lang-toggle{display:flex;align-items:center;background:rgba(212,160,23,0.08);border:1px solid rgba(212,160,23,0.2);border-radius:50px;padding:3px;}
+.lang-btn{padding:4px 12px;border-radius:50px;border:none;cursor:pointer;font-size:0.73rem;font-weight:600;font-family:'DM Sans',sans-serif;transition:all 0.2s;background:transparent;color:var(--muted);}
+.lang-btn.active{background:var(--gold);color:#0a0a0a;}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#0a0a0a;padding:11px 24px;border-radius:50px;font-weight:700;font-size:0.88rem;transition:all 0.2s;box-shadow:0 4px 16px rgba(212,160,23,0.2);border:none;cursor:pointer;}
+.btn-gold:hover{background:var(--gl);transform:translateY(-2px);}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(212,160,23,0.3);color:var(--gl);padding:10px 22px;border-radius:50px;font-weight:500;font-size:0.86rem;transition:all 0.2s;background:transparent;cursor:pointer;}
+.btn-ghost:hover{background:rgba(212,160,23,0.08);border-color:var(--gl);}
+.card-white{background:#fff;border-radius:18px;box-shadow:0 2px 16px rgba(0,0,0,0.12);transition:transform 0.22s,box-shadow 0.22s;}
+.card-white:hover{transform:translateY(-4px);box-shadow:0 10px 36px rgba(0,0,0,0.18);}
+.section-label{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--sa);margin-bottom:8px;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,2.8vw,2.4rem);font-weight:700;line-height:1.15;margin-bottom:12px;}
+.gold{color:var(--gl);}
+footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--gl);}.footer-logo span{color:var(--sa);}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;}
+.footer-links a{font-size:0.78rem;color:var(--muted);transition:color 0.2s;}.footer-links a:hover{color:var(--gl);}
+.footer-disc{font-size:0.65rem;color:var(--muted);opacity:0.4;width:100%;line-height:1.5;}
+@media(max-width:768px){nav{padding:0 20px;}footer{padding:28px 20px 16px;}}
+
+:root{--gold:#D4A017;--gl:#E8A820;--sa:#E8890C;--bg:#0A0A04;--muted:#9A8A6A;--off:#FAF7F0;--border:rgba(212,160,23,0.14);}
+.hero{padding:56px 80px 44px;background:radial-gradient(ellipse at 30% 0%,rgba(212,160,23,0.1),transparent 70%);border-bottom:1px solid var(--border);}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;margin-bottom:12px;line-height:1.1;}
+.hero p{color:var(--muted);font-size:0.94rem;line-height:1.75;max-width:560px;}
+.books-wrap{padding:44px 80px 80px;max-width:900px;}
+.book-card{border:1px solid var(--border);border-radius:20px;margin-bottom:16px;overflow:hidden;transition:border-color 0.2s;}
+.book-card:hover,.book-card.open{border-color:rgba(212,160,23,0.4);}
+.book-header{display:flex;align-items:center;gap:18px;padding:22px 24px;cursor:pointer;transition:background 0.2s;}
+.book-header:hover{background:rgba(212,160,23,0.04);}
+.book-icon{width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;}
+.book-info{flex:1;}
+.book-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--off);margin-bottom:2px;}
+.book-meta{font-size:0.75rem;color:var(--muted);margin-bottom:4px;}
+.book-tagline{font-size:0.8rem;color:var(--gl);font-weight:500;font-style:italic;}
+.book-arrow{color:var(--muted);font-size:0.8rem;transition:transform 0.3s;flex-shrink:0;}
+.book-card.open .book-arrow{transform:rotate(180deg);}
+.book-body{display:none;padding:0 24px 24px;border-top:1px solid var(--border);}
+.book-card.open .book-body{display:block;}
+.book-summary{font-size:0.88rem;color:rgba(250,247,240,0.68);line-height:1.75;margin:18px 0;padding:14px 16px;background:rgba(212,160,23,0.05);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;}
+.lessons-title{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--sa);margin-bottom:12px;}
+.lessons{display:flex;flex-direction:column;gap:2px;margin-bottom:18px;}
+.lesson{padding:12px 0;border-bottom:1px solid rgba(212,160,23,0.07);}
+.lesson:last-child{border-bottom:none;}
+.lesson-title{font-size:0.88rem;font-weight:700;color:var(--off);margin-bottom:5px;}
+.lesson-body{font-size:0.84rem;color:rgba(250,247,240,0.68);line-height:1.7;}
+.book-action{background:rgba(37,211,102,0.06);border:1px solid rgba(37,211,102,0.18);border-radius:12px;padding:13px 16px;font-size:0.83rem;color:rgba(250,247,240,0.72);line-height:1.65;}
+.book-action strong{color:#1ebe5a;}
+@media(max-width:768px){.hero,.books-wrap{padding-left:18px;padding-right:18px;}.book-header{flex-wrap:wrap;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-back">← Home</a>
+  <a href="index.html" class="nav-logo">Punjabi<span>Finance</span></a>
+  <div class="nav-links">
+    <a href="education.html" >Learn</a>
+    <a href="calculators.html" >Calculators</a>
+    <a href="tools.html" >Immigrant Tools</a>
+    <a href="downloads.html" >Free Downloads</a>
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="nb-en" onclick="siteSetLang('en')">EN</button>
+      <button class="lang-btn" id="nb-pa" onclick="siteSetLang('pa')">PA</button>
+    </div>
+    <a href="https://wa.me/+16477456850" target="_blank" style="background:var(--gold);color:#0a0a0a;padding:7px 18px;border-radius:50px;font-weight:700;font-size:0.8rem;">WhatsApp</a>
+  </div>
+</nav>
+<div class="hero">
+  <div class="section-label">📚 Recommended Reading</div>
+  <h1>Books That <span class="gold">Change</span><br>Your Financial Life</h1>
+  <p>8 essential books every Punjabi Canadian should read — with plain-language summaries so you know exactly what you'll learn before you even open them.</p>
+</div>
+<div class="books-wrap">
+
+<div class="book-card" id="book-the">
+  <div class="book-header" onclick="this.parentElement.classList.toggle('open')">
+    <div class="book-icon" style="background:rgba(212,160,23,0.15);">💈</div>
+    <div class="book-info">
+      <div class="book-title">The Wealthy Barber</div>
+      <div class="book-meta">by David Chilton · 1989</div>
+      <div class="book-tagline">The #1 Canadian personal finance book of all time</div>
+    </div>
+    <div class="book-arrow">▼</div>
+  </div>
+  <div class="book-body">
+    <div class="book-summary">Written by a Canadian author using a small-town barber as the narrator, this book teaches personal finance through simple storytelling. Roy the barber meets with clients and shares timeless advice over haircuts.</div>
+    <div class="lessons-title">📚 Key Lessons</div>
+    <div class="lessons">
+      <div class="lesson">
+        <div class="lesson-title">Pay Yourself First — 10% Rule</div>
+        <p class="lesson-body">Before paying any bill, automatically save 10% of every paycheque. This one habit, done consistently from your 20s, creates millionaires. The barber's simple rule has no exceptions — not for rent, not for emergencies, not for anything.</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-title">The Power of Compound Interest</div>
+        <p class="lesson-body">The book illustrates with actual Canadian math how $200/month from age 22, invested at 7%, becomes $1.7 million by retirement. Starting 10 years later at 32 leaves you with only $820K. Time is the most valuable asset.</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-title">RRSPs — Use Them, Period</div>
+        <p class="lesson-body">Written when TFSAs didn't exist, Chilton makes the RRSP case clearly: the tax refund is free money, the tax-deferred growth accelerates your wealth, and Canadian retirees who used RRSPs consistently end up far wealthier than those who didn't.</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-title">Lifestyle Inflation is Wealth's Enemy</div>
+        <p class="lesson-body">As income rises, lifestyle rises with it — and savings stay the same percentage (zero). The barber shows how middle-class Canadians who earn excellent salaries still retire with nothing because they never learned to say no to upgrades.</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-title">Buy a Home — The Forced Savings Plan</div>
+        <p class="lesson-body">For Canadians who struggle to save, a mortgage is the best forced savings plan available. Your equity builds with every payment, often building more wealth than investments for the average person.</p>
+      </div></div>
+    <div class="book-action"><strong>How to Use This Book:</strong> Read this first if you haven't started. It's the foundational Canadian finance text. Available at every library.</div>
+  </div>
+</div>
+<div class="book-card" id="book-rich">
+  <div class="book-header" onclick="this.parentElement.classList.toggle('open')">
+    <div class="book-icon" style="background:rgba(232,137,12,0.15);">🏘️</div>
+    <div class="book-info">
+      <div class="book-title">Rich Dad Poor Dad</div>
+      <div class="book-meta">by Robert Kiyosaki · 1997</div>
+      <div class="book-tagline">The #1 personal finance book worldwide — mindset changing</div>
+    </div>
+    <div class="book-arrow">▼</div>
+  </div>
+  <div class="book-body">
+    <div class="book-summary">Kiyosaki contrasts his biological 'poor dad' (educated, high-earning, broke) with his best friend's father 'rich dad' (less educated, wealthy). The core message: wealthy people think differently about money, assets, and work.</div>
+    <div class="lessons-title">📚 Key Lessons</div>
+    <div class="lessons">
+      <div class="lesson">
+        <div class="lesson-title">Assets vs Liabilities — The Real Difference</div>
+        <p class="lesson-body">The rich buy assets (things that put money IN your pocket). The poor and middle class buy liabilities thinking they're assets. A car, luxury watch, or even your primary home takes money OUT of your pocket monthly. True assets — rental properties, stocks, business — generate income.</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-title">Don't Work for Money — Make Money Work for You</div>
+        <p class="lesson-body">Poor Dad's advice: get good grades, get a good job, work hard. Rich Dad's lesson: work to learn, build systems, and eventually have your money earn more than you can earn yourself. The goal is passive income exceeding expenses — financial freedom.</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-title">The Rat Race Is a Trap</div>
+        <p class="lesson-body">Most people earn more, spend more, and need more work. The cycle never ends. Rich Dad teaches how to step off by increasing assets faster than liabilities. Each dollar invested in an asset is one step out of the rat race.</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-title">Financial Education Is the Most Important Education</div>
+        <p class="lesson-body">Schools teach you to be employees. They don't teach investing, taxes, real estate, or business. The most important education is financial literacy — how money works, how taxes work, and how to build wealth through systems not salary.</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-title">Use Corporations the Way the Rich Do</div>
+        <p class="lesson-body">Rich people use corporate structures to: earn money, spend on expenses, then pay taxes. Regular employees earn, pay taxes, then spend with what remains. This structural difference is why the wealthy keep more of what they make.</p>
+      </div></div>
+    <div class="book-action"><strong>How to Use This Book:</strong> Read this for mindset. Some of Kiyosaki's specific investment advice is US-focused — apply the principles to Canadian vehicles (TFSA, RRSP, Canadian real estate).</div>
+  </div>
+</div>
+<div class="book-card" id="book-the">
+  <div class="book-header" onclick="this.parentElement.classList.toggle('open')">
+    <div class="book-icon" style="background:rgba(34,197,94,0.15);">🏡</div>
+    <div class="book-info">
+      <div class="book-title">The Millionaire Next Door</div>
+      <div class="book-meta">by Thomas J. Stanley & William Danko · 1996</div>
+      <div class="book-tagline">Decades of research on how real millionaires actually live</div>
+    </div>
+    <div class="book-arrow">▼</div>
+  </div>
+  <div class="book-body">
+    <div class="book-summary">Two researchers spent 20 years studying actual millionaires in America. Their findings surprised everyone: real millionaires don't live in mansions or drive luxury cars. They're your neighbor — the boring accountant or business owner who saved aggressively for decades.</div>
+    <div class="lessons-title">📚 Key Lessons</div>
+    <div class="lessons">
+      <div class="lesson">
+        <div class="lesson-title">Prodigious Accumulators of Wealth (PAW) vs Under Accumulators</div>
+        <p class="lesson-body">PAWs accumulate far more wealth than their income suggests. Under Accumulators of Wealth (UAWs) earn a lot but have little to show for it. The key variable is not income — it's savings rate and lifestyle choices. Many doctors, lawyers, and executives are UAWs.</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-title">The Formula — How Much You Should Have by Now</div>
+        <p class="lesson-body">Multiply your age by your pre-tax income, divide by 10. That's your expected net worth. If you have double that, you're a PAW. If you have half, you're a UAW. <em>Example: Age 40, income $100K → expected net worth $400K</em></p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-title">Time, Energy, Money — The Three Resources</div>
+        <p class="lesson-body">Millionaires allocate significant time to financial planning and managing investments. Non-wealthy people spend more time on consumption (shopping, entertainment). The wealthy treat their personal finances like a business.</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-title">Economic Outpatient Care Destroys Wealth</div>
+        <p class="lesson-body">Children who receive large financial gifts from parents often accumulate less wealth than those who don't. Financial subsidies reduce self-discipline, motivation, and financial skills. Teaching your children to be financially independent is the greatest gift.</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-title">First-Generation Wealth is Built, Not Inherited</div>
+        <p class="lesson-body">The majority of millionaires in the research were first-generation wealthy. They didn't inherit it. They lived below their means, invested consistently, chose stable careers over glamorous ones, and avoided lifestyle inflation.</p>
+      </div></div>
+    <div class="book-action"><strong>How to Use This Book:</strong> Perfect for the Punjabi community — many of us are first-generation wealth builders. This book validates that boring, consistent habits beat flashy shortcuts.</div>
+  </div>
+</div>
+<div class="book-card" id="book-i">
+  <div class="book-header" onclick="this.parentElement.classList.toggle('open')">
+    <div class="book-icon" style="background:rgba(59,130,246,0.15);">💳</div>
+    <div class="book-info">
+      <div class="book-title">I Will Teach You to Be Rich</div>
+      <div class="book-meta">by Ramit Sethi · 2009</div>
+      <div class="book-tagline">A no-nonsense, practical 6-week action plan for young adults</div>
+    </div>
+    <div class="book-arrow">▼</div>
+  </div>
+  <div class="book-body">
+    <div class="book-summary">Written for 20–35 year-olds, Sethi cuts through the noise with a step-by-step system for automating your finances, eliminating fees, and investing without obsessing over every decision. No boring lectures — just concrete action steps.</div>
+    <div class="lessons-title">📚 Key Lessons</div>
+    <div class="lessons">
+      <div class="lesson">
+        <div class="lesson-title">Automate Everything — The Invisible Hand</div>
+        <p class="lesson-body">Set up automatic transfers on payday: salary arrives → automatically splits into chequing, TFSA, RRSP, emergency fund. You never decide, you never forget, you never feel the loss. Automation is the single most impactful personal finance habit.</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-title">The 'Latte Factor' Is Wrong — Focus on Big Wins</div>
+        <p class="lesson-body">Don't obsess over cutting coffee. The big wins are: negotiating your salary (+$10K), refinancing your mortgage (-0.5%), choosing low-fee investments vs mutual funds. One salary negotiation outweighs 10 years of skipped coffees.</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-title">Conscious Spending — Spend on What You Love, Cut the Rest</div>
+        <p class="lesson-body">Sethi doesn't say stop spending. He says spend extravagantly on things you genuinely love, and ruthlessly cut everything else. Create a system: fixed costs, investments, savings, guilt-free spending. The percentages matter, not the specific dollar amounts.</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-title">Optimize Credit Cards — Use Them Like the Rich</div>
+        <p class="lesson-body">Use cash-back or travel reward cards for all spending you'd do anyway. Pay them in full every month. The rewards are free money. The people who pay interest subsidize the people who don't. Be the latter.</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-title">The A-Ha Moment — Just Start Investing</div>
+        <p class="lesson-body">Young Canadians wait for the 'perfect' time or strategy. Sethi's advice: open the account, buy a diversified ETF, set up monthly automatic purchase, and stop watching it. Time in the market beats timing the market every single time.</p>
+      </div></div>
+    <div class="book-action"><strong>How to Use This Book:</strong> Best for newcomers to Canada aged 22–35. Take the TFSA/RRSP focus and apply directly to Canadian context. His automation framework translates perfectly.</div>
+  </div>
+</div>
+<div class="book-card" id="book-the">
+  <div class="book-header" onclick="this.parentElement.classList.toggle('open')">
+    <div class="book-icon" style="background:rgba(139,92,246,0.15);">🧠</div>
+    <div class="book-info">
+      <div class="book-title">The Psychology of Money</div>
+      <div class="book-meta">by Morgan Housel · 2020</div>
+      <div class="book-tagline">Why your mindset matters more than math in building wealth</div>
+    </div>
+    <div class="book-arrow">▼</div>
+  </div>
+  <div class="book-body">
+    <div class="book-summary">Housel argues that finance is less about spreadsheets and more about behavior. Understanding why humans make bad financial decisions — and how to avoid those patterns — is worth more than knowing the best investment strategy.</div>
+    <div class="lessons-title">📚 Key Lessons</div>
+    <div class="lessons">
+      <div class="lesson">
+        <div class="lesson-title">Wealth Is What You Don't Spend</div>
+        <p class="lesson-body">True wealth is financial assets that haven't been converted to stuff. The person who appears wealthy (luxury car, designer clothes) may be worth nothing. The person who appears middle-class but has $800K in their TFSA is wealthy. Wealth is invisible by definition.</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-title">Tails Drive Everything — The Long Tail of Returns</div>
+        <p class="lesson-body">The stock market's gains come from a tiny minority of stocks and days. Missing the best 10 days of S&P 500 returns from 2003–2023 cut your return by 50%. Staying invested — even through crashes — is the strategy. Don't confuse volatility with permanent loss.</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-title">Your Personal History Shapes Your Financial Beliefs</div>
+        <p class="lesson-body">People who grew up in the 1970s inflation think inflation is always imminent. People who grew up in the 2008 crash fear stocks. Your financial worldview is shaped by events you happened to live through — not universal financial truths.</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-title">Getting Wealthy vs Staying Wealthy Are Different Skills</div>
+        <p class="lesson-body">Getting rich requires taking risks and being optimistic. Staying rich requires humility, diversification, and accepting that some gains must be left on the table. Many people optimize for getting wealthy and never shift to the 'staying wealthy' mindset.</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-title">Reasonable Beats Rational</div>
+        <p class="lesson-body">Mathematically optimal financial decisions are often psychologically impossible to maintain. A portfolio you can stick with through 40% market crashes is better than the theoretically optimal one you'll panic-sell during a bad quarter. Know yourself.</p>
+      </div></div>
+    <div class="book-action"><strong>How to Use This Book:</strong> Required reading after you've set up your basic financial system. This book prevents the behavioral mistakes that destroy otherwise sound financial plans.</div>
+  </div>
+</div>
+<div class="book-card" id="book-moneysense">
+  <div class="book-header" onclick="this.parentElement.classList.toggle('open')">
+    <div class="book-icon" style="background:rgba(212,160,23,0.15);">📊</div>
+    <div class="book-info">
+      <div class="book-title">MoneySense Guide to the Perfect Portfolio</div>
+      <div class="book-meta">by Dan Bortolotti (Canadian Couch Potato) · Updated regularly</div>
+      <div class="book-tagline">The definitive Canadian DIY investing guide</div>
+    </div>
+    <div class="book-arrow">▼</div>
+  </div>
+  <div class="book-body">
+    <div class="book-summary">Dan Bortolotti runs the Canadian Couch Potato blog and has written the most practical guide to Canadian index investing. This book translates the academic research on passive investing into a simple, implementable Canadian system.</div>
+    <div class="lessons-title">📚 Key Lessons</div>
+    <div class="lessons">
+      <div class="lesson">
+        <div class="lesson-title">The Couch Potato Portfolio — Simplest Possible</div>
+        <p class="lesson-body">The core strategy: buy a single all-in-one ETF (XEQT, VGRO, or VBAL depending on risk tolerance), contribute monthly, and rebalance annually. No stock picking, no market timing, no expensive advisors. Performance matches or beats 85% of actively managed funds.</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-title">Asset Allocation — The Most Important Decision</div>
+        <p class="lesson-body">Your split between stocks and bonds (or aggressive/conservative) drives 90%+ of your returns. XEQT (100% stocks) for 15+ year horizons. VGRO (80/20) for 10–15 years. VBAL (60/40) for 5–10 years. Don't overthink beyond this.</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-title">Canadian Tax Efficiency for Investments</div>
+        <p class="lesson-body">Which account holds which investment matters. US stocks → RRSP (avoids 15% withholding tax). Canadian dividend stocks/ETFs → TFSA. Bond ETFs → RRSP. Non-registered account → Canadian dividend stocks (for dividend tax credit). This 'asset location' can add 0.3–0.5% per year.</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-title">Ignore Financial Media — Seriously</div>
+        <p class="lesson-body">Every financial news article creates urgency: the market is crashing, now's the time to buy, gold is the answer, real estate always wins. None of this noise should affect your couch potato portfolio. Rebalance once a year. That's it.</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-title">The Cost of Advice — Know What You Pay</div>
+        <p class="lesson-body">The average Canadian mutual fund MER is 2.3%. The average ETF is 0.2%. On $300,000 over 20 years, that 2.1% difference costs you $183,000 in lost returns. This single insight is worth the price of the book a hundred times over.</p>
+      </div></div>
+    <div class="book-action"><strong>How to Use This Book:</strong> The most practically useful book for Canadian investors. Read alongside Wealthsimple or Questrade — the book + platform combination is everything you need.</div>
+  </div>
+</div>
+<div class="book-card" id="book-stop">
+  <div class="book-header" onclick="this.parentElement.classList.toggle('open')">
+    <div class="book-icon" style="background:rgba(232,137,12,0.15);">🇨🇦</div>
+    <div class="book-info">
+      <div class="book-title">Stop Overthinking Your Money</div>
+      <div class="book-meta">by Preet Banerjee · 2014</div>
+      <div class="book-tagline">The simplest Canadian money guide ever written</div>
+    </div>
+    <div class="book-arrow">▼</div>
+  </div>
+  <div class="book-body">
+    <div class="book-summary">Preet Banerjee is a Canadian financial educator who reduces personal finance to five rules. Written for Canadians who feel overwhelmed, this book eliminates complexity and gives you a clear, actionable path regardless of income level.</div>
+    <div class="lessons-title">📚 Key Lessons</div>
+    <div class="lessons">
+      <div class="lesson">
+        <div class="lesson-title">Disaster-Proof Yourself First</div>
+        <p class="lesson-body">Before investing a single dollar, protect yourself against financial catastrophe. This means: emergency fund (3 months expenses), adequate life insurance (especially with dependents), and long-term disability insurance. Without these, investing is building on sand.</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-title">Spend Less Than You Earn</div>
+        <p class="lesson-body">The most obvious principle is the most violated. Track spending for 3 months without judgment — then address the gap between income and expenses. In Canada, the average household spends more than it earns. This is the single greatest predictor of financial failure.</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-title">Aggressively Pay Down High-Interest Debt</div>
+        <p class="lesson-body">Any debt above 7–8% is a guaranteed return when paid off. Credit card debt at 20% is the best guaranteed investment you can make. Paying down a 20% credit card = a 20% guaranteed, risk-free return. No investment competes with that.</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-title">Save 10% for Your Future Self</div>
+        <p class="lesson-body">Automate 10% of every paycheque to savings/investment accounts before touching anything else. This is not negotiable. This creates your retirement, your children's education, your home down payment. Future you deserves the same budget line as rent.</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-title">Get the Right Help — Not Product Salespeople</div>
+        <p class="lesson-body">Most financial 'advisors' at banks are product salespeople compensated by commissions. A fee-only financial planner charges you directly and has no incentive to sell you anything. For complex situations (incorporation, estate planning, divorce), a fee-only CFP is worth every dollar.</p>
+      </div></div>
+    <div class="book-action"><strong>How to Use This Book:</strong> Perfect starting point for newcomers to Canada or anyone feeling overwhelmed by finances. The simplest framework available in a Canadian context.</div>
+  </div>
+</div>
+<div class="book-card" id="book-broke">
+  <div class="book-header" onclick="this.parentElement.classList.toggle('open')">
+    <div class="book-icon" style="background:rgba(236,72,153,0.15);">💸</div>
+    <div class="book-info">
+      <div class="book-title">Broke Millennial</div>
+      <div class="book-meta">by Erin Lowry · 2017</div>
+      <div class="book-tagline">For young Canadians figuring out money for the first time</div>
+    </div>
+    <div class="book-arrow">▼</div>
+  </div>
+  <div class="book-body">
+    <div class="book-summary">Written for young adults who feel embarrassed about their financial situation, Lowry covers all the basics without judgment: how money mindset shapes habits, understanding your credit score, building a budget that doesn't feel like punishment, and starting to invest.</div>
+    <div class="lessons-title">📚 Key Lessons</div>
+    <div class="lessons">
+      <div class="lesson">
+        <div class="lesson-title">Your Money Story Shapes Your Habits</div>
+        <p class="lesson-body">How your parents talked about (or avoided) money deeply affects your financial behavior. Identifying your 'money story' — the beliefs you inherited — allows you to consciously choose different behaviors instead of repeating patterns you never examined.</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-title">Stop Being Embarrassed — Ask the Questions</div>
+        <p class="lesson-body">Financial shame keeps people broke. If you don't understand compound interest, credit scores, or how RRSPs work, asking is the answer — not pretending to know and continuing to make avoidable mistakes. There's no such thing as a stupid financial question.</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-title">The Bare-Bones Budget Test</div>
+        <p class="lesson-body">When in crisis, calculate your true minimum expenses: rent, utilities, food, transportation, minimum debt payments. This number is your floor. Everything else is a choice. Knowing this number eliminates panic and shows the actual gap you need to bridge.</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-title">Negotiate Everything — Starting With Your Salary</div>
+        <p class="lesson-body">The single most impactful financial skill for young adults is negotiation. Accepting the first salary offer costs you $500,000+ over a career (because future raises are percentages of that base). The discomfort of one conversation is worth a lifetime of difference.</p>
+      </div>
+      <div class="lesson">
+        <div class="lesson-title">Talk to Your Partner About Money Before You're Serious</div>
+        <p class="lesson-body">Money conflicts are the #1 cause of relationship breakdowns. Discussing financial values, debt, savings habits, and goals before merging finances prevents catastrophic surprises. A partner with $60,000 in hidden credit card debt is a life-changing financial event.</p>
+      </div></div>
+    <div class="book-action"><strong>How to Use This Book:</strong> For newcomers to Canada aged 18–30 or anyone who never got formal financial education. Normalize the conversation and start from wherever you are.</div>
+  </div>
+</div>
+</div>
+
+<div style="padding:0 80px 60px;max-width:900px;">
+  <div style="background:linear-gradient(135deg,rgba(212,160,23,0.08),rgba(232,137,12,0.03));border:1px solid rgba(212,160,23,0.22);border-radius:18px;padding:28px;text-align:center;">
+    <h3 style="font-family:'Playfair Display',serif;color:var(--gl);margin-bottom:8px;">Have a Question After Reading?</h3>
+    <p style="font-size:0.86rem;color:var(--muted);margin-bottom:16px;line-height:1.65;">Message us on WhatsApp — in Punjabi or English. We help translate book concepts into Canadian action steps.</p>
+    <a href="https://wa.me/+16477456850" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#0a0a0a;padding:11px 24px;border-radius:50px;font-weight:700;font-size:0.88rem;text-decoration:none;">💬 WhatsApp Us</a>
+  </div>
+</div>
+
+<footer>
+  <a href="index.html" class="footer-logo">Punjabi<span>Finance</span></a>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="education.html">Learn</a>
+    <a href="calculators.html">Calculators</a>
+    <a href="tools.html">Immigrant Tools</a>
+    <a href="downloads.html">Free Downloads</a>
+    <a href="link.html">All Links</a>
+    <a href="https://wa.me/+16477456850" target="_blank">WhatsApp</a>
+  </div>
+  <p class="footer-disc">Educational content only — not financial, legal, or insurance advice. Always consult a licensed professional before making financial decisions. © 2025 Punjabi Finance</p>
+</footer>
+<script>
+
+let sL = localStorage.getItem('pf_lang')||'en';
+function siteSetLang(l){
+  sL=l; localStorage.setItem('pf_lang',l);
+  ['en','pa'].forEach(x=>{
+    const b=document.getElementById('nb-'+x);
+    if(b){b.classList.toggle('active',x===l);}
+  });
+  applyLang();
+}
+function applyLang(){
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    el.textContent = sL==='pa' ? (el.dataset.pa||el.dataset.en) : el.dataset.en;
+  });
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  if(sL==='pa'){
+    const enb=document.getElementById('nb-en');
+    const pab=document.getElementById('nb-pa');
+    if(enb)enb.classList.remove('active');
+    if(pab)pab.classList.add('active');
+  }
+  applyLang();
+});
+
+</script>
+</body></html>
