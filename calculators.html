@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Finance Calculators — Punjabi Finance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root{--gold:#D4A017;--gl:#E8A820;--sa:#E8890C;--bg:#0A0A04;--bg2:#0f0e06;--muted:#9A8A6A;--off:#FAF7F0;--border:rgba(212,160,23,0.14);--white:#ffffff;--dark:#1a1600;--mid:#4a3f20;--light:#7a6a45;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{background:var(--bg);color:var(--off);font-family:'DM Sans',sans-serif;overflow-x:hidden;}a{color:inherit;text-decoration:none;}
+nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;gap:16px;padding:0 48px;height:60px;background:rgba(8,8,2,0.94);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--gl);}.nav-logo span{color:var(--sa);}
+.nav-back{font-size:0.82rem;color:var(--muted);font-weight:500;transition:color 0.2s;}.nav-back:hover{color:var(--gl);}
+.nav-links{display:flex;align-items:center;gap:22px;margin-left:auto;}
+.nav-links a{font-size:0.82rem;color:var(--muted);font-weight:500;transition:color 0.2s;}.nav-links a:hover{color:var(--gl);}
+.lang-toggle{display:flex;align-items:center;background:rgba(212,160,23,0.08);border:1px solid rgba(212,160,23,0.2);border-radius:50px;padding:3px;}
+.lang-btn{padding:4px 12px;border-radius:50px;border:none;cursor:pointer;font-size:0.73rem;font-weight:600;font-family:'DM Sans',sans-serif;transition:all 0.2s;background:transparent;color:var(--muted);}
+.lang-btn.active{background:var(--gold);color:#0a0a0a;}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#0a0a0a;padding:11px 24px;border-radius:50px;font-weight:700;font-size:0.88rem;transition:all 0.2s;box-shadow:0 4px 16px rgba(212,160,23,0.2);border:none;cursor:pointer;}
+.btn-gold:hover{background:var(--gl);transform:translateY(-2px);}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(212,160,23,0.3);color:var(--gl);padding:10px 22px;border-radius:50px;font-weight:500;font-size:0.86rem;transition:all 0.2s;background:transparent;cursor:pointer;}
+.btn-ghost:hover{background:rgba(212,160,23,0.08);border-color:var(--gl);}
+.card-white{background:#fff;border-radius:18px;box-shadow:0 2px 16px rgba(0,0,0,0.12);transition:transform 0.22s,box-shadow 0.22s;}
+.card-white:hover{transform:translateY(-4px);box-shadow:0 10px 36px rgba(0,0,0,0.18);}
+.section-label{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--sa);margin-bottom:8px;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,2.8vw,2.4rem);font-weight:700;line-height:1.15;margin-bottom:12px;}
+.gold{color:var(--gl);}
+footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--gl);}.footer-logo span{color:var(--sa);}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;}
+.footer-links a{font-size:0.78rem;color:var(--muted);transition:color 0.2s;}.footer-links a:hover{color:var(--gl);}
+.footer-disc{font-size:0.65rem;color:var(--muted);opacity:0.4;width:100%;line-height:1.5;}
+@media(max-width:768px){nav{padding:0 20px;}footer{padding:28px 20px 16px;}}
+
+.hero{padding:64px 80px 48px;background:linear-gradient(135deg,rgba(212,160,23,0.07),transparent 60%);border-bottom:1px solid var(--border);}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:900;margin-bottom:10px;}
+.hero p{color:var(--muted);font-size:0.95rem;line-height:1.7;max-width:560px;}
+.calc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:24px;padding:48px 80px 80px;}
+.calc-card{background:#fff;border-radius:20px;padding:28px;box-shadow:0 2px 16px rgba(0,0,0,0.1);}
+.calc-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid rgba(0,0,0,0.07);}
+.calc-icon{font-size:1.8rem;width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:rgba(212,160,23,0.1);border-radius:12px;}
+.calc-title{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--dark);font-weight:700;}
+.calc-sub{font-size:0.75rem;color:var(--light);margin-top:2px;}
+.field{margin-bottom:14px;}
+.field label{display:block;font-size:0.75rem;font-weight:600;color:var(--mid);margin-bottom:5px;text-transform:uppercase;letter-spacing:0.06em;}
+.field input,.field select{width:100%;padding:10px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:10px;font-size:0.9rem;font-family:'DM Sans',sans-serif;color:var(--dark);background:#fafafa;transition:border-color 0.2s;outline:none;}
+.field input:focus,.field select:focus{border-color:var(--gold);background:#fff;}
+.calc-result{background:linear-gradient(135deg,rgba(212,160,23,0.1),rgba(232,137,12,0.05));border:1px solid rgba(212,160,23,0.25);border-radius:12px;padding:14px 16px;margin-top:16px;display:none;}
+.calc-result.show{display:block;}
+.result-label{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--sa);margin-bottom:4px;}
+.result-value{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--dark);}
+.result-note{font-size:0.73rem;color:var(--light);margin-top:4px;line-height:1.5;}
+.calc-btn{width:100%;padding:11px;background:var(--gold);color:#0a0a0a;border:none;border-radius:50px;font-weight:700;font-size:0.87rem;cursor:pointer;font-family:'DM Sans',sans-serif;margin-top:16px;transition:background 0.2s;}
+.calc-btn:hover{background:var(--gl);}
+.net-worth-rows{margin-bottom:8px;}
+.nw-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:6px;}
+.nw-section{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--sa);margin:10px 0 5px;}
+@media(max-width:768px){.calc-grid{padding:28px 20px 60px;grid-template-columns:1fr;}.hero{padding:48px 20px 32px;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-back">← Home</a>
+  <a href="index.html" class="nav-logo">Punjabi<span>Finance</span></a>
+  <div class="nav-links">
+    <a href="education.html" >Learn</a>
+    <a href="calculators.html" style="color:var(--gl)">Calculators</a>
+    <a href="tools.html" >Immigrant Tools</a>
+    <a href="downloads.html" >Free Downloads</a>
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="nb-en" onclick="siteSetLang('en')">EN</button>
+      <button class="lang-btn" id="nb-pa" onclick="siteSetLang('pa')">PA</button>
+    </div>
+    <a href="https://wa.me/+16477456850" target="_blank" style="background:var(--gold);color:#0a0a0a;padding:7px 18px;border-radius:50px;font-weight:700;font-size:0.8rem;">WhatsApp</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="section-label" data-en="Finance Calculators" data-pa="ਵਿੱਤੀ ਕੈਲਕੁਲੇਟਰ">Finance Calculators</div>
+  <h1 data-en="Know Your Numbers" data-pa="ਆਪਣੇ ਨੰਬਰ ਜਾਣੋ">Know Your <span class="gold">Numbers</span></h1>
+  <p data-en="Six free calculators to help you plan smarter — from life insurance to retirement." data-pa="ਛੇ ਮੁਫ਼ਤ ਕੈਲਕੁਲੇਟਰ — ਜ਼ਿੰਦਗੀ ਬੀਮੇ ਤੋਂ ਰਿਟਾਇਰਮੈਂਟ ਤੱਕ ਸਮਾਰਟ ਯੋਜਨਾ ਬਣਾਓ।">Six free calculators to help you plan smarter — from life insurance to retirement.</p>
+</div>
+
+<div class="calc-grid">
+
+<!-- 1. LIFE INSURANCE -->
+<div class="calc-card">
+  <div class="calc-header">
+    <div class="calc-icon">🛡️</div>
+    <div><div class="calc-title" data-en="Life Insurance Calculator" data-pa="ਜ਼ਿੰਦਗੀ ਬੀਮਾ ਕੈਲਕੁਲੇਟਰ">Life Insurance Calculator</div>
+    <div class="calc-sub" data-en="How much coverage do I need?" data-pa="ਮੈਨੂੰ ਕਿੰਨੀ ਕਵਰੇਜ ਚਾਹੀਦੀ?">How much coverage do I need?</div></div>
+  </div>
+  <div class="field"><label data-en="Annual Income ($)" data-pa="ਸਾਲਾਨਾ ਆਮਦਨ ($)">Annual Income ($)</label><input type="number" id="li-income" placeholder="85000" value="85000"></div>
+  <div class="field"><label data-en="Years to Replace (e.g. until youngest child is 25)" data-pa="ਬਦਲਣ ਦੇ ਸਾਲ">Years to Replace Income</label><input type="number" id="li-years" placeholder="20" value="20"></div>
+  <div class="field"><label data-en="Total Debts — Mortgage, Loans ($)" data-pa="ਕੁੱਲ ਕਰਜ਼ ($)">Total Debts — Mortgage, Loans ($)</label><input type="number" id="li-debt" placeholder="400000" value="400000"></div>
+  <div class="field"><label data-en="Children's Education Fund ($)" data-pa="ਬੱਚਿਆਂ ਦੀ ਪੜ੍ਹਾਈ ਫੰਡ ($)">Children's Education Fund ($)</label><input type="number" id="li-edu" placeholder="50000" value="50000"></div>
+  <div class="field"><label data-en="Existing Life Insurance ($)" data-pa="ਮੌਜੂਦਾ ਜ਼ਿੰਦਗੀ ਬੀਮਾ ($)">Existing Life Insurance ($)</label><input type="number" id="li-existing" placeholder="0" value="0"></div>
+  <button class="calc-btn" onclick="calcLifeInsurance()" data-en="Calculate Coverage Needed" data-pa="ਲੋੜੀਂਦੀ ਕਵਰੇਜ ਗਿਣੋ">Calculate Coverage Needed</button>
+  <div class="calc-result" id="li-result">
+    <div class="result-label" data-en="Recommended Coverage" data-pa="ਸਿਫ਼ਾਰਿਸ਼ਕ੍ਰਿਤ ਕਵਰੇਜ">Recommended Coverage</div>
+    <div class="result-value" id="li-value"></div>
+    <div class="result-note" id="li-note"></div>
+  </div>
+</div>
+
+<!-- 2. MORTGAGE PROTECTION -->
+<div class="calc-card">
+  <div class="calc-header">
+    <div class="calc-icon">🏠</div>
+    <div><div class="calc-title" data-en="Mortgage Protection Calculator" data-pa="ਮੌਰਗੇਜ ਸੁਰੱਖਿਆ ਕੈਲਕੁਲੇਟਰ">Mortgage Protection Calculator</div>
+    <div class="calc-sub" data-en="How much term insurance to cover my mortgage?" data-pa="ਮੌਰਗੇਜ ਕਵਰ ਕਰਨ ਲਈ ਕਿੰਨਾ ਟਰਮ ਬੀਮਾ?">How much term insurance covers my mortgage?</div></div>
+  </div>
+  <div class="field"><label data-en="Remaining Mortgage Balance ($)" data-pa="ਬਾਕੀ ਮੌਰਗੇਜ ਬਕਾਇਆ ($)">Remaining Mortgage Balance ($)</label><input type="number" id="mp-balance" placeholder="550000" value="550000"></div>
+  <div class="field"><label data-en="Years Remaining on Mortgage" data-pa="ਮੌਰਗੇਜ ਦੇ ਬਾਕੀ ਸਾਲ">Years Remaining on Mortgage</label><input type="number" id="mp-years" placeholder="25" value="25"></div>
+  <div class="field"><label data-en="Monthly Payment ($)" data-pa="ਮਾਸਿਕ ਭੁਗਤਾਨ ($)">Monthly Payment ($)</label><input type="number" id="mp-payment" placeholder="2800" value="2800"></div>
+  <div class="field"><label data-en="Coverage Type" data-pa="ਕਵਰੇਜ ਕਿਸਮ">Coverage Type</label>
+    <select id="mp-type">
+      <option value="decreasing" data-en="Decreasing Term (follows mortgage)" data-pa="ਘਟਦਾ ਟਰਮ (ਮੌਰਗੇਜ ਅਨੁਸਾਰ)">Decreasing Term (follows mortgage)</option>
+      <option value="level" data-en="Level Term (fixed coverage)" data-pa="ਸਥਿਰ ਟਰਮ (ਨਿਸ਼ਚਿਤ ਕਵਰੇਜ)">Level Term (fixed coverage)</option>
+    </select>
+  </div>
+  <button class="calc-btn" onclick="calcMortgageProtection()" data-en="Calculate Protection Needed" data-pa="ਲੋੜੀਂਦੀ ਸੁਰੱਖਿਆ ਗਿਣੋ">Calculate Protection Needed</button>
+  <div class="calc-result" id="mp-result">
+    <div class="result-label" data-en="Coverage Recommendation" data-pa="ਕਵਰੇਜ ਸਿਫ਼ਾਰਿਸ਼">Coverage Recommendation</div>
+    <div class="result-value" id="mp-value"></div>
+    <div class="result-note" id="mp-note"></div>
+  </div>
+</div>
+
+<!-- 3. RESP GROWTH -->
+<div class="calc-card">
+  <div class="calc-header">
+    <div class="calc-icon">🎓</div>
+    <div><div class="calc-title" data-en="RESP Growth Calculator" data-pa="RESP ਵਿਕਾਸ ਕੈਲਕੁਲੇਟਰ">RESP Growth Calculator</div>
+    <div class="calc-sub" data-en="How much will my child's RESP be worth?" data-pa="ਮੇਰੇ ਬੱਚੇ ਦਾ RESP ਕਿੰਨਾ ਹੋਵੇਗਾ?">How much will my child's RESP grow to?</div></div>
+  </div>
+  <div class="field"><label data-en="Child's Current Age" data-pa="ਬੱਚੇ ਦੀ ਮੌਜੂਦਾ ਉਮਰ">Child's Current Age</label><input type="number" id="resp-age" placeholder="3" value="3"></div>
+  <div class="field"><label data-en="Monthly Contribution ($)" data-pa="ਮਾਸਿਕ ਯੋਗਦਾਨ ($)">Monthly Contribution ($)</label><input type="number" id="resp-monthly" placeholder="200" value="200"></div>
+  <div class="field"><label data-en="Existing RESP Balance ($)" data-pa="ਮੌਜੂਦਾ RESP ਬਕਾਇਆ ($)">Existing RESP Balance ($)</label><input type="number" id="resp-existing" placeholder="0" value="0"></div>
+  <div class="field"><label data-en="Expected Annual Return (%)" data-pa="ਸਾਲਾਨਾ ਉਮੀਦ ਕੀਤੀ ਵਾਪਸੀ (%)">Expected Annual Return (%)</label><input type="number" id="resp-return" placeholder="6" value="6" step="0.5"></div>
+  <button class="calc-btn" onclick="calcRESP()" data-en="Calculate RESP Value at 18" data-pa="18 ਸਾਲ 'ਤੇ RESP ਮੁੱਲ ਗਿਣੋ">Calculate RESP Value at Age 18</button>
+  <div class="calc-result" id="resp-result">
+    <div class="result-label" data-en="Total at Age 18" data-pa="18 ਸਾਲ ਦੀ ਉਮਰ 'ਤੇ ਕੁੱਲ">Total at Age 18</div>
+    <div class="result-value" id="resp-value"></div>
+    <div class="result-note" id="resp-note"></div>
+  </div>
+</div>
+
+<!-- 4. RETIREMENT INCOME -->
+<div class="calc-card">
+  <div class="calc-header">
+    <div class="calc-icon">🌅</div>
+    <div><div class="calc-title" data-en="Retirement Income Calculator" data-pa="ਰਿਟਾਇਰਮੈਂਟ ਆਮਦਨ ਕੈਲਕੁਲੇਟਰ">Retirement Income Calculator</div>
+    <div class="calc-sub" data-en="Will I have enough to retire comfortably?" data-pa="ਕੀ ਮੈਂ ਆਰਾਮ ਨਾਲ ਰਿਟਾਇਰ ਹੋ ਸਕਦਾ/ਸਕਦੀ ਹਾਂ?">Will I have enough to retire comfortably?</div></div>
+  </div>
+  <div class="field"><label data-en="Current Age" data-pa="ਮੌਜੂਦਾ ਉਮਰ">Current Age</label><input type="number" id="ret-age" placeholder="40" value="40"></div>
+  <div class="field"><label data-en="Planned Retirement Age" data-pa="ਯੋਜਨਾਬੱਧ ਰਿਟਾਇਰਮੈਂਟ ਉਮਰ">Planned Retirement Age</label><input type="number" id="ret-retire" placeholder="65" value="65"></div>
+  <div class="field"><label data-en="Current Savings (RRSP + TFSA + Other) ($)" data-pa="ਮੌਜੂਦਾ ਬੱਚਤ ($)">Current Savings (RRSP + TFSA + Other) ($)</label><input type="number" id="ret-savings" placeholder="150000" value="150000"></div>
+  <div class="field"><label data-en="Monthly Savings Contribution ($)" data-pa="ਮਾਸਿਕ ਬੱਚਤ ਯੋਗਦਾਨ ($)">Monthly Savings Contribution ($)</label><input type="number" id="ret-monthly" placeholder="1500" value="1500"></div>
+  <div class="field"><label data-en="Desired Monthly Retirement Income ($)" data-pa="ਮਨਚਾਹੀ ਮਾਸਿਕ ਰਿਟਾਇਰਮੈਂਟ ਆਮਦਨ ($)">Desired Monthly Retirement Income ($)</label><input type="number" id="ret-desired" placeholder="5000" value="5000"></div>
+  <button class="calc-btn" onclick="calcRetirement()" data-en="Check Retirement Readiness" data-pa="ਰਿਟਾਇਰਮੈਂਟ ਤਿਆਰੀ ਜਾਂਚੋ">Check Retirement Readiness</button>
+  <div class="calc-result" id="ret-result">
+    <div class="result-label" data-en="Projected Portfolio at Retirement" data-pa="ਰਿਟਾਇਰਮੈਂਟ 'ਤੇ ਅਨੁਮਾਨਿਤ ਪੋਰਟਫੋਲੀਓ">Projected Portfolio at Retirement</div>
+    <div class="result-value" id="ret-value"></div>
+    <div class="result-note" id="ret-note"></div>
+  </div>
+</div>
+
+<!-- 5. COMPOUND INTEREST -->
+<div class="calc-card">
+  <div class="calc-header">
+    <div class="calc-icon">📈</div>
+    <div><div class="calc-title" data-en="Compound Interest Calculator" data-pa="ਮਿਸ਼ਰਤ ਵਿਆਜ ਕੈਲਕੁਲੇਟਰ">Compound Interest Calculator</div>
+    <div class="calc-sub" data-en="Watch your money grow over time" data-pa="ਸਮੇਂ ਦੇ ਨਾਲ ਪੈਸੇ ਕਿਵੇਂ ਵਧਦੇ ਹਨ">Watch your money grow over time</div></div>
+  </div>
+  <div class="field"><label data-en="Initial Investment ($)" data-pa="ਸ਼ੁਰੂਆਤੀ ਨਿਵੇਸ਼ ($)">Initial Investment ($)</label><input type="number" id="ci-principal" placeholder="10000" value="10000"></div>
+  <div class="field"><label data-en="Monthly Contribution ($)" data-pa="ਮਾਸਿਕ ਯੋਗਦਾਨ ($)">Monthly Contribution ($)</label><input type="number" id="ci-monthly" placeholder="500" value="500"></div>
+  <div class="field"><label data-en="Annual Interest Rate (%)" data-pa="ਸਾਲਾਨਾ ਵਿਆਜ ਦਰ (%)">Annual Interest Rate (%)</label><input type="number" id="ci-rate" placeholder="7" value="7" step="0.5"></div>
+  <div class="field"><label data-en="Number of Years" data-pa="ਸਾਲਾਂ ਦੀ ਗਿਣਤੀ">Number of Years</label><input type="number" id="ci-years" placeholder="25" value="25"></div>
+  <button class="calc-btn" onclick="calcCompound()" data-en="Calculate Growth" data-pa="ਵਿਕਾਸ ਗਿਣੋ">Calculate Growth</button>
+  <div class="calc-result" id="ci-result">
+    <div class="result-label" data-en="Future Value" data-pa="ਭਵਿੱਖ ਮੁੱਲ">Future Value</div>
+    <div class="result-value" id="ci-value"></div>
+    <div class="result-note" id="ci-note"></div>
+  </div>
+</div>
+
+<!-- 6. NET WORTH -->
+<div class="calc-card">
+  <div class="calc-header">
+    <div class="calc-icon">💎</div>
+    <div><div class="calc-title" data-en="Net Worth Tracker" data-pa="ਕੁੱਲ ਸੰਪੱਤੀ ਟਰੈਕਰ">Net Worth Tracker</div>
+    <div class="calc-sub" data-en="Assets minus liabilities = your real wealth" data-pa="ਸੰਪੱਤੀਆਂ ਘਟਾਓ ਦੇਣਦਾਰੀਆਂ = ਤੁਹਾਡੀ ਅਸਲੀ ਦੌਲਤ">Assets minus liabilities = your real wealth</div></div>
+  </div>
+  <div class="nw-section" data-en="📦 Assets" data-pa="📦 ਸੰਪੱਤੀਆਂ">📦 Assets</div>
+  <div class="nw-row"><input type="number" id="nw-home" placeholder="Home Value $" style="padding:9px 12px;border:1px solid rgba(0,0,0,0.12);border-radius:10px;font-size:0.85rem;font-family:'DM Sans',sans-serif;width:100%;outline:none;"><input type="number" id="nw-rrsp" placeholder="RRSP/TFSA $" style="padding:9px 12px;border:1px solid rgba(0,0,0,0.12);border-radius:10px;font-size:0.85rem;font-family:'DM Sans',sans-serif;width:100%;outline:none;"></div>
+  <div class="nw-row"><input type="number" id="nw-invest" placeholder="Investments $" style="padding:9px 12px;border:1px solid rgba(0,0,0,0.12);border-radius:10px;font-size:0.85rem;font-family:'DM Sans',sans-serif;width:100%;outline:none;"><input type="number" id="nw-cash" placeholder="Cash/Savings $" style="padding:9px 12px;border:1px solid rgba(0,0,0,0.12);border-radius:10px;font-size:0.85rem;font-family:'DM Sans',sans-serif;width:100%;outline:none;"></div>
+  <div class="nw-row"><input type="number" id="nw-car" placeholder="Vehicle Value $" style="padding:9px 12px;border:1px solid rgba(0,0,0,0.12);border-radius:10px;font-size:0.85rem;font-family:'DM Sans',sans-serif;width:100%;outline:none;"><input type="number" id="nw-other-asset" placeholder="Other Assets $" style="padding:9px 12px;border:1px solid rgba(0,0,0,0.12);border-radius:10px;font-size:0.85rem;font-family:'DM Sans',sans-serif;width:100%;outline:none;"></div>
+  <div class="nw-section" data-en="💳 Liabilities" data-pa="💳 ਦੇਣਦਾਰੀਆਂ">💳 Liabilities</div>
+  <div class="nw-row"><input type="number" id="nw-mortgage" placeholder="Mortgage $" style="padding:9px 12px;border:1px solid rgba(0,0,0,0.12);border-radius:10px;font-size:0.85rem;font-family:'DM Sans',sans-serif;width:100%;outline:none;"><input type="number" id="nw-carloan" placeholder="Car Loan $" style="padding:9px 12px;border:1px solid rgba(0,0,0,0.12);border-radius:10px;font-size:0.85rem;font-family:'DM Sans',sans-serif;width:100%;outline:none;"></div>
+  <div class="nw-row"><input type="number" id="nw-cc" placeholder="Credit Cards $" style="padding:9px 12px;border:1px solid rgba(0,0,0,0.12);border-radius:10px;font-size:0.85rem;font-family:'DM Sans',sans-serif;width:100%;outline:none;"><input type="number" id="nw-other-liab" placeholder="Other Debts $" style="padding:9px 12px;border:1px solid rgba(0,0,0,0.12);border-radius:10px;font-size:0.85rem;font-family:'DM Sans',sans-serif;width:100%;outline:none;"></div>
+  <button class="calc-btn" onclick="calcNetWorth()" data-en="Calculate Net Worth" data-pa="ਕੁੱਲ ਸੰਪੱਤੀ ਗਿਣੋ">Calculate Net Worth</button>
+  <div class="calc-result" id="nw-result">
+    <div class="result-label" data-en="Your Net Worth" data-pa="ਤੁਹਾਡੀ ਕੁੱਲ ਸੰਪੱਤੀ">Your Net Worth</div>
+    <div class="result-value" id="nw-value"></div>
+    <div class="result-note" id="nw-note"></div>
+  </div>
+</div>
+
+</div><!-- end grid -->
+<footer>
+  <a href="index.html" class="footer-logo">Punjabi<span>Finance</span></a>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="education.html">Learn</a>
+    <a href="calculators.html">Calculators</a>
+    <a href="tools.html">Immigrant Tools</a>
+    <a href="downloads.html">Free Downloads</a>
+    <a href="link.html">All Links</a>
+    <a href="https://wa.me/+16477456850" target="_blank">WhatsApp</a>
+  </div>
+  <p class="footer-disc">Educational content only — not financial, legal, or insurance advice. Always consult a licensed professional before making financial decisions. © 2025 Punjabi Finance</p>
+</footer>
+
+<script>
+
+let sL = localStorage.getItem('pf_lang')||'en';
+function siteSetLang(l){
+  sL=l; localStorage.setItem('pf_lang',l);
+  ['en','pa'].forEach(x=>{
+    const b=document.getElementById('nb-'+x);
+    if(b){b.classList.toggle('active',x===l);}
+  });
+  applyLang();
+}
+function applyLang(){
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    el.textContent = sL==='pa' ? (el.dataset.pa||el.dataset.en) : el.dataset.en;
+  });
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  if(sL==='pa'){
+    const enb=document.getElementById('nb-en');
+    const pab=document.getElementById('nb-pa');
+    if(enb)enb.classList.remove('active');
+    if(pab)pab.classList.add('active');
+  }
+  applyLang();
+});
+
+
+const fmt = n => '$' + Math.round(n).toLocaleString('en-CA');
+function showResult(id, value, note) {
+  const r = document.getElementById(id+'-result');
+  document.getElementById(id+'-value').textContent = value;
+  document.getElementById(id+'-note').textContent = note;
+  r.classList.add('show');
+}
+
+function calcLifeInsurance() {
+  const income = +document.getElementById('li-income').value||0;
+  const years = +document.getElementById('li-years').value||20;
+  const debt = +document.getElementById('li-debt').value||0;
+  const edu = +document.getElementById('li-edu').value||0;
+  const existing = +document.getElementById('li-existing').value||0;
+  const needed = (income * years) + debt + edu - existing;
+  const rounded = Math.ceil(needed/100000)*100000;
+  showResult('li', fmt(rounded), `Based on DIME method: ${fmt(income*years)} income replacement + ${fmt(debt)} debts + ${fmt(edu)} education - ${fmt(existing)} existing coverage. Rounded up to nearest $100K.`);
+}
+
+function calcMortgageProtection() {
+  const balance = +document.getElementById('mp-balance').value||0;
+  const years = +document.getElementById('mp-years').value||25;
+  const payment = +document.getElementById('mp-payment').value||0;
+  const type = document.getElementById('mp-type').value;
+  const totalCost = payment * 12 * years;
+  const rec = type === 'level' ? Math.ceil(balance/100000)*100000 : balance;
+  showResult('mp', fmt(rec), `We recommend a ${years}-year ${type === 'level' ? 'level' : 'decreasing'} term policy. Total mortgage cost: ${fmt(totalCost)}. Term life is usually cheaper than bank mortgage insurance and more flexible.`);
+}
+
+function calcRESP() {
+  const age = +document.getElementById('resp-age').value||0;
+  const monthly = +document.getElementById('resp-monthly').value||0;
+  const existing = +document.getElementById('resp-existing').value||0;
+  const rate = (+document.getElementById('resp-return').value||6)/100;
+  const years = Math.max(18 - age, 0);
+  const monthlyRate = rate/12;
+  const n = years * 12;
+  const futureContrib = monthly * ((Math.pow(1+monthlyRate,n)-1)/monthlyRate);
+  const futureExisting = existing * Math.pow(1+rate, years);
+  const annualContrib = Math.min(monthly*12, 2500);
+  const totalGrant = Math.min(annualContrib * 0.20 * years, 7200);
+  const total = futureContrib + futureExisting + totalGrant;
+  showResult('resp', fmt(total), `Includes ~${fmt(totalGrant)} in government CESG grants (20% of up to $2,500/year, max $7,200 lifetime). Based on ${rate*100}% annual return over ${years} years.`);
+}
+
+function calcRetirement() {
+  const age = +document.getElementById('ret-age').value||40;
+  const retireAge = +document.getElementById('ret-retire').value||65;
+  const savings = +document.getElementById('ret-savings').value||0;
+  const monthly = +document.getElementById('ret-monthly').value||0;
+  const desired = +document.getElementById('ret-desired').value||5000;
+  const years = Math.max(retireAge - age, 1);
+  const rate = 0.07; const mr = rate/12; const n = years*12;
+  const portfolio = savings * Math.pow(1+rate, years) + monthly * ((Math.pow(1+mr,n)-1)/mr);
+  const sustainable = portfolio * 0.04 / 12;
+  const cppOas = 1800;
+  const total = sustainable + cppOas;
+  const gap = desired - total;
+  const status = gap <= 0 ? '✅ On Track' : '⚠️ Gap Identified';
+  const note = gap <= 0
+    ? `Projected ${fmt(portfolio)} portfolio supports ${fmt(sustainable)}/mo (4% rule) + ~${fmt(cppOas)}/mo CPP/OAS = ${fmt(total)}/mo. You are on track!`
+    : `Projected monthly: ${fmt(total)}. Monthly gap: ${fmt(gap)}. Consider increasing contributions by ${fmt(gap * (n/(portfolio||1)) * 0.3||200)}/mo.`;
+  showResult('ret', fmt(portfolio), status + ' — ' + note);
+}
+
+function calcCompound() {
+  const p = +document.getElementById('ci-principal').value||0;
+  const monthly = +document.getElementById('ci-monthly').value||0;
+  const rate = (+document.getElementById('ci-rate').value||7)/100;
+  const years = +document.getElementById('ci-years').value||25;
+  const mr = rate/12; const n = years*12;
+  const future = p * Math.pow(1+mr,n) + monthly * ((Math.pow(1+mr,n)-1)/mr);
+  const totalContrib = p + monthly*12*years;
+  const interest = future - totalContrib;
+  showResult('ci', fmt(future), `You invested ${fmt(totalContrib)} and earned ${fmt(interest)} in compound growth (${Math.round(interest/totalContrib*100)}% return on investment).`);
+}
+
+function calcNetWorth() {
+  const g = id => +document.getElementById(id).value||0;
+  const assets = g('nw-home')+g('nw-rrsp')+g('nw-invest')+g('nw-cash')+g('nw-car')+g('nw-other-asset');
+  const liabs = g('nw-mortgage')+g('nw-carloan')+g('nw-cc')+g('nw-other-liab');
+  const nw = assets - liabs;
+  const color = nw >= 0 ? '#1a8a3a' : '#c0392b';
+  document.getElementById('nw-value').style.color = color;
+  const note = nw >= 0
+    ? `Assets: ${fmt(assets)} — Liabilities: ${fmt(liabs)}. Great start! Track this every 6 months to measure progress.`
+    : `Assets: ${fmt(assets)} — Liabilities: ${fmt(liabs)}. You owe more than you own — focus on paying down debt.`;
+  showResult('nw', fmt(Math.abs(nw)) + (nw < 0 ? ' (negative)' : ''), note);
+}
+</script>
+
+<!-- AI CHATBOT WIDGET -->
+<div id="chat-widget" style="position:fixed;bottom:24px;right:24px;z-index:9999;font-family:'DM Sans',sans-serif;">
+  <!-- Toggle Button -->
+  <div id="chat-toggle" onclick="toggleChat()" style="width:58px;height:58px;background:linear-gradient(135deg,#D4A017,#E8890C);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 20px rgba(212,160,23,0.4);transition:transform 0.2s;" onmouseenter="this.style.transform='scale(1.1)'" onmouseleave="this.style.transform='scale(1)'">
+    <span id="chat-icon" style="font-size:1.4rem;">💬</span>
+  </div>
+  <!-- Chat Panel -->
+  <div id="chat-panel" style="display:none;position:absolute;bottom:70px;right:0;width:360px;max-height:520px;background:#fff;border-radius:20px;box-shadow:0 8px 48px rgba(0,0,0,0.2);overflow:hidden;flex-direction:column;">
+    <!-- Header -->
+    <div style="background:linear-gradient(135deg,#D4A017,#E8890C);padding:16px 18px;display:flex;align-items:center;gap:10px;">
+      <div style="width:36px;height:36px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">🤖</div>
+      <div style="flex:1;">
+        <div style="font-size:0.9rem;font-weight:700;color:#fff;">Punjabi Finance AI</div>
+        <div style="font-size:0.7rem;color:rgba(255,255,255,0.8);" id="chat-status">Ask me anything about finance in Canada</div>
+      </div>
+      <div onclick="toggleChat()" style="cursor:pointer;color:rgba(255,255,255,0.8);font-size:1.1rem;line-height:1;">✕</div>
+    </div>
+    <!-- Messages -->
+    <div id="chat-messages" style="flex:1;overflow-y:auto;padding:14px;max-height:340px;display:flex;flex-direction:column;gap:10px;">
+      <div class="chat-msg bot" style="background:#f5f3ee;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:0.84rem;color:#2a2000;line-height:1.6;max-width:85%;">
+        <span id="chat-welcome">👋 Sat Sri Akal! I'm the Punjabi Finance AI.<br><br>Ask me anything about:<br>• Life & Super Visa insurance<br>• TFSA, RRSP, investing<br>• Real estate in Canada<br>• Taxes & retirement<br><br>I answer in English or Punjabi! 🇨🇦</span>
+      </div>
+    </div>
+    <!-- Quick Questions -->
+    <div id="quick-qs" style="padding:0 14px 10px;display:flex;flex-wrap:wrap;gap:6px;">
+      <button onclick="sendQuick('How much life insurance do I need?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">Life insurance?</button>
+      <button onclick="sendQuick('What is Super Visa insurance?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">Super Visa?</button>
+      <button onclick="sendQuick('How do I start investing in Canada?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">How to invest?</button>
+      <button onclick="sendQuick('TFSA vs RRSP — which should I use?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">TFSA vs RRSP?</button>
+    </div>
+    <!-- Input -->
+    <div style="padding:10px 14px 14px;border-top:1px solid rgba(0,0,0,0.07);display:flex;gap:8px;align-items:flex-end;">
+      <input id="chat-input" type="text" placeholder="Ask a finance question..." style="flex:1;padding:10px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:50px;font-size:0.84rem;font-family:'DM Sans',sans-serif;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='#D4A017'" onblur="this.style.borderColor='rgba(0,0,0,0.12)'" onkeypress="if(event.key==='Enter')sendMsg()">
+      <button onclick="sendMsg()" id="send-btn" style="width:38px;height:38px;background:linear-gradient(135deg,#D4A017,#E8890C);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;transition:transform 0.2s;" onmouseenter="this.style.transform='scale(1.1)'" onmouseleave="this.style.transform='scale(1)'">→</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const CHAT_SYSTEM = `You are the Punjabi Finance AI assistant — a helpful, friendly financial education bot for the Punjabi community in Canada.
+
+Your role:
+- Provide free financial education about Canadian personal finance
+- Topics: life insurance, Super Visa insurance, critical illness, disability, TFSA, RRSP, FHSA, RESP, investing, real estate, mortgages, taxes, retirement, newcomer finance
+- Always remind users to consult a licensed professional for personal advice
+- Be warm and community-focused — this is for the Punjabi diaspora in Canada
+- Respond in the same language the user writes in (English or Punjabi)
+- Keep answers concise and practical — max 150 words unless asked to elaborate
+- Reference relevant tools on the site: calculators.html, tools.html, education.html
+- For insurance questions, suggest they WhatsApp us at +1 647-745-6850 for a personal quote
+- Never give specific investment recommendations or specific insurance quotes
+- Always end insurance/investment answers with a soft call to action to WhatsApp or visit ibrinsurance.ca
+
+Personality: Knowledgeable, warm, like a financially savvy older sibling or family friend who happens to know a lot about Canadian finance.`;
+
+let chatOpen = false;
+let isLoading = false;
+const chatHistory = [];
+
+function toggleChat() {
+  chatOpen = !chatOpen;
+  const panel = document.getElementById('chat-panel');
+  panel.style.display = chatOpen ? 'flex' : 'none';
+  panel.style.flexDirection = 'column';
+  document.getElementById('chat-icon').textContent = chatOpen ? '✕' : '💬';
+  if(chatOpen) document.getElementById('chat-input').focus();
+}
+
+function sendQuick(msg) {
+  document.getElementById('quick-qs').style.display = 'none';
+  document.getElementById('chat-input').value = msg;
+  sendMsg();
+}
+
+function addMsg(text, role) {
+  const msgs = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.style.cssText = role === 'user'
+    ? 'background:linear-gradient(135deg,#D4A017,#E8890C);color:#0a0a0a;border-radius:14px 14px 4px 14px;padding:10px 14px;font-size:0.84rem;line-height:1.6;max-width:80%;margin-left:auto;'
+    : 'background:#f5f3ee;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:0.84rem;color:#2a2000;line-height:1.6;max-width:88%;';
+  div.textContent = text;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+  return div;
+}
+
+function addTyping() {
+  const msgs = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.id = 'typing-indicator';
+  div.style.cssText = 'background:#f5f3ee;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:0.84rem;color:#9A8A6A;max-width:88%;';
+  div.textContent = '...thinking';
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+async function sendMsg() {
+  if(isLoading) return;
+  const input = document.getElementById('chat-input');
+  const msg = input.value.trim();
+  if(!msg) return;
+  input.value = '';
+  
+  addMsg(msg, 'user');
+  chatHistory.push({role:'user', content: msg});
+  
+  document.getElementById('quick-qs').style.display = 'none';
+  isLoading = true;
+  document.getElementById('chat-status').textContent = 'Thinking...';
+  addTyping();
+  
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 400,
+        system: CHAT_SYSTEM,
+        messages: chatHistory
+      })
+    });
+    const data = await res.json();
+    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again or WhatsApp us directly.";
+    
+    const typing = document.getElementById('typing-indicator');
+    if(typing) typing.remove();
+    
+    addMsg(reply, 'bot');
+    chatHistory.push({role:'assistant', content: reply});
+    document.getElementById('chat-status').textContent = 'Ask me anything about finance';
+  } catch(err) {
+    const typing = document.getElementById('typing-indicator');
+    if(typing) typing.remove();
+    addMsg('Sorry, something went wrong. Please WhatsApp us directly at +1 647-745-6850 or visit ibrinsurance.ca', 'bot');
+    document.getElementById('chat-status').textContent = 'Ask me anything about finance';
+  }
+  isLoading = false;
+}
+</script>
+</body></html>

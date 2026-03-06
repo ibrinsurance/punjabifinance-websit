@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Finance Guides — Punjabi Finance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root{--gold:#D4A017;--gl:#E8A820;--sa:#E8890C;--bg:#0A0A04;--bg2:#0f0e06;--muted:#9A8A6A;--off:#FAF7F0;--border:rgba(212,160,23,0.14);--white:#ffffff;--dark:#1a1600;--mid:#4a3f20;--light:#7a6a45;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{background:var(--bg);color:var(--off);font-family:'DM Sans',sans-serif;overflow-x:hidden;}a{color:inherit;text-decoration:none;}
+nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;gap:16px;padding:0 48px;height:60px;background:rgba(8,8,2,0.94);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--gl);}.nav-logo span{color:var(--sa);}
+.nav-back{font-size:0.82rem;color:var(--muted);font-weight:500;transition:color 0.2s;}.nav-back:hover{color:var(--gl);}
+.nav-links{display:flex;align-items:center;gap:22px;margin-left:auto;}
+.nav-links a{font-size:0.82rem;color:var(--muted);font-weight:500;transition:color 0.2s;}.nav-links a:hover{color:var(--gl);}
+.lang-toggle{display:flex;align-items:center;background:rgba(212,160,23,0.08);border:1px solid rgba(212,160,23,0.2);border-radius:50px;padding:3px;}
+.lang-btn{padding:4px 12px;border-radius:50px;border:none;cursor:pointer;font-size:0.73rem;font-weight:600;font-family:'DM Sans',sans-serif;transition:all 0.2s;background:transparent;color:var(--muted);}
+.lang-btn.active{background:var(--gold);color:#0a0a0a;}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#0a0a0a;padding:11px 24px;border-radius:50px;font-weight:700;font-size:0.88rem;transition:all 0.2s;box-shadow:0 4px 16px rgba(212,160,23,0.2);border:none;cursor:pointer;}
+.btn-gold:hover{background:var(--gl);transform:translateY(-2px);}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(212,160,23,0.3);color:var(--gl);padding:10px 22px;border-radius:50px;font-weight:500;font-size:0.86rem;transition:all 0.2s;background:transparent;cursor:pointer;}
+.btn-ghost:hover{background:rgba(212,160,23,0.08);border-color:var(--gl);}
+.card-white{background:#fff;border-radius:18px;box-shadow:0 2px 16px rgba(0,0,0,0.12);transition:transform 0.22s,box-shadow 0.22s;}
+.card-white:hover{transform:translateY(-4px);box-shadow:0 10px 36px rgba(0,0,0,0.18);}
+.section-label{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--sa);margin-bottom:8px;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,2.8vw,2.4rem);font-weight:700;line-height:1.15;margin-bottom:12px;}
+.gold{color:var(--gl);}
+footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--gl);}.footer-logo span{color:var(--sa);}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;}
+.footer-links a{font-size:0.78rem;color:var(--muted);transition:color 0.2s;}.footer-links a:hover{color:var(--gl);}
+.footer-disc{font-size:0.65rem;color:var(--muted);opacity:0.4;width:100%;line-height:1.5;}
+@media(max-width:768px){nav{padding:0 20px;}footer{padding:28px 20px 16px;}}
+
+.hero{padding:64px 80px 48px;background:linear-gradient(135deg,rgba(124,58,237,0.07),transparent 60%);border-bottom:1px solid var(--border);}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:900;margin-bottom:10px;}
+.hero p{color:var(--muted);font-size:0.95rem;line-height:1.7;max-width:560px;}
+.guides-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:24px;padding:48px 80px 80px;}
+.guide-card{border-radius:20px;overflow:hidden;}
+.expand-btn{display:flex;align-items:center;justify-content:space-between;width:100%;background:rgba(212,160,23,0.08);border:1px solid rgba(212,160,23,0.2);border-radius:10px;padding:10px 14px;cursor:pointer;font-size:0.83rem;font-weight:600;color:var(--dark);font-family:'DM Sans',sans-serif;transition:all 0.2s;}
+.expand-btn:hover{background:rgba(212,160,23,0.15);}
+.expand-icon{transition:transform 0.3s;font-size:0.8rem;}
+.expand-content{display:none;}
+.expand-content.open{display:block;}
+@media(max-width:768px){.guides-grid{padding:28px 20px 60px;grid-template-columns:1fr;}.hero{padding:48px 20px 32px;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-back">← Home</a>
+  <a href="index.html" class="nav-logo">Punjabi<span>Finance</span></a>
+  <div class="nav-links">
+    <a href="education.html" >Learn</a>
+    <a href="calculators.html" >Calculators</a>
+    <a href="tools.html" >Immigrant Tools</a>
+    <a href="downloads.html" style="color:var(--gl)">Free Downloads</a>
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="nb-en" onclick="siteSetLang('en')">EN</button>
+      <button class="lang-btn" id="nb-pa" onclick="siteSetLang('pa')">PA</button>
+    </div>
+    <a href="https://wa.me/+16477456850" target="_blank" style="background:var(--gold);color:#0a0a0a;padding:7px 18px;border-radius:50px;font-weight:700;font-size:0.8rem;">WhatsApp</a>
+  </div>
+</nav>
+<div class="hero">
+  <div class="section-label" data-en="Free Finance Guides" data-pa="ਮੁਫ਼ਤ ਵਿੱਤੀ ਗਾਈਡਾਂ">Free Finance Guides</div>
+  <h1 data-en="Read. Learn." data-pa="ਪੜ੍ਹੋ। ਸਿੱਖੋ।">Read. <span class="gold">Learn.</span> Act.</h1>
+  <p data-en="Four in-depth guides covering the most important financial topics for the Punjabi community in Canada — completely free." data-pa="ਕੈਨੇਡਾ ਵਿੱਚ ਪੰਜਾਬੀ ਭਾਈਚਾਰੇ ਲਈ ਸਭ ਤੋਂ ਮਹੱਤਵਪੂਰਨ ਵਿੱਤੀ ਵਿਸ਼ਿਆਂ 'ਤੇ ਚਾਰ ਡੂੰਘੀਆਂ ਗਾਈਡਾਂ।">Four in-depth guides covering the most important financial topics for the Punjabi community in Canada — completely free.</p>
+</div>
+<div class="guides-grid">
+
+<div class="guide-card card-white">
+  <div class="guide-top" style="background:linear-gradient(135deg,#2563eb18,#2563eb08);border-bottom:1px solid #2563eb22;padding:28px;border-radius:18px 18px 0 0;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+      <div style="font-size:2.4rem;">🔟</div>
+      <div style="background:#2563eb15;color:#2563eb;font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:3px 10px;border-radius:50px;">Personal Finance</div>
+    </div>
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--dark);font-weight:700;margin-bottom:6px;" data-en="10 Money Rules for Your 30s" data-pa="ਤੁਹਾਡੇ 30ਵਿਆਂ ਲਈ 10 ਪੈਸੇ ਦੇ ਨਿਯਮ">10 Money Rules for Your 30s</h3>
+    <p style="font-size:0.82rem;color:var(--mid);line-height:1.6;margin-bottom:14px;" data-en="The decade that determines your financial future. These 10 rules will set you up for life." data-pa="ਇਹ ਦਹਾਕਾ ਤੁਹਾਡਾ ਵਿੱਤੀ ਭਵਿੱਖ ਨਿਰਧਾਰਤ ਕਰਦਾ ਹੈ। ਇਹ 10 ਨਿਯਮ ਜ਼ਿੰਦਗੀ ਭਰ ਕੰਮ ਆਉਣਗੇ।">The decade that determines your financial future. These 10 rules will set you up for life.</p>
+    <div style="font-size:0.72rem;color:#2563eb;font-weight:600;">12 rules</div>
+  </div>
+  <div style="padding:0 28px;">
+    <button class="expand-btn" onclick="toggle('money-rules-30s')" style="margin:16px 0;background:#2563eb12;border-color:#2563eb30;color:var(--dark);">
+      <span data-en="📖 Read Guide" data-pa="📖 ਗਾਈਡ ਪੜ੍ਹੋ">📖 Read Guide</span>
+      <span class="expand-icon" id="money-rules-30s-icon">▼</span>
+    </button>
+    <div class="expand-content" id="money-rules-30s-content" style="padding-bottom:20px;">
+      
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="1. Max your TFSA before anything else" data-pa="1. ਕਿਸੇ ਵੀ ਚੀਜ਼ ਤੋਂ ਪਹਿਲਾਂ TFSA ਵੱਧ ਤੋਂ ਵੱਧ ਭਰੋ">1. Max your TFSA before anything else</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">Your TFSA is the most flexible tax shelter in Canada. Any growth inside is 100% tax-free forever. Max it ($7,000/year in 2024) before contributing to RRSP unless you're in a very high tax bracket.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="2. Get life insurance before 35" data-pa="2. 35 ਸਾਲ ਤੋਂ ਪਹਿਲਾਂ ਜ਼ਿੰਦਗੀ ਬੀਮਾ ਲਓ">2. Get life insurance before 35</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">A healthy 32-year-old male can get $500,000 of 20-year term insurance for ~$35/month. Wait until 40 and it's $70+. Health issues can make you uninsurable. Lock in rates now.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="3. Buy your home — or have a plan to" data-pa="3. ਆਪਣਾ ਘਰ ਖਰੀਦੋ — ਜਾਂ ਯੋਜਨਾ ਬਣਾਓ">3. Buy your home — or have a plan to</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">Use the FHSA ($40K tax-free) and RRSP Home Buyer's Plan ($35K) together. That's $75K in down payment savings with tax benefits. Compound equity growth in real estate is powerful in your 30s.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="4. Increase income, not just cut expenses" data-pa="4. ਸਿਰਫ਼ ਖਰਚੇ ਨਾ ਕੱਟੋ — ਆਮਦਨ ਵਧਾਓ">4. Increase income, not just cut expenses</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">There is a limit to how much you can cut. There's no limit to how much you can earn. Negotiate salary every 2 years. Add a side income. Invest in skills that pay.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="5. Build an emergency fund of 6 months" data-pa="5. 6 ਮਹੀਨਿਆਂ ਦਾ ਐਮਰਜੈਂਸੀ ਫੰਡ ਬਣਾਓ">5. Build an emergency fund of 6 months</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">Your 30s bring bigger responsibilities. Job loss hits harder. A 6-month emergency fund in a HISA keeps you from going into debt when life happens.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="6. Stop timing the market — automate investing" data-pa="6. ਮਾਰਕੀਟ ਟਾਈਮ ਕਰਨਾ ਬੰਦ ਕਰੋ — ਨਿਵੇਸ਼ ਆਟੋਮੇਟ ਕਰੋ">6. Stop timing the market — automate investing</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">Set up automatic bi-weekly ETF contributions on payday. Dollar-cost averaging removes emotion. Time in the market beats timing the market 99% of the time.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="7. Protect your income with disability insurance" data-pa="7. ਅਪੰਗਤਾ ਬੀਮੇ ਨਾਲ ਆਮਦਨ ਬਚਾਓ">7. Protect your income with disability insurance</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">Your biggest asset is your ability to earn. 1 in 3 Canadians will be disabled for 90+ days at some point in their career. Employer coverage often isn't enough.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="8. Write a will — seriously" data-pa="8. ਵਸੀਅਤ ਲਿਖੋ — ਸੱਚਮੁੱਚ">8. Write a will — seriously</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">If you have a partner, kids, or a house, you need a will. Dying without one (intestate) means the government decides who gets what — and it may not be what you wanted.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="9. Invest in yourself — courses, skills, network" data-pa="9. ਆਪਣੇ ਆਪ ਵਿੱਚ ਨਿਵੇਸ਼ ਕਰੋ">9. Invest in yourself — courses, skills, network</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">The ROI on a well-chosen course or certification can be 1000%. Spend 5-10% of income on education and skills. Your income is your biggest investment.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="10. Track net worth every 6 months" data-pa="10. ਹਰ 6 ਮਹੀਨੇ ਕੁੱਲ ਸੰਪੱਤੀ ਟਰੈਕ ਕਰੋ">10. Track net worth every 6 months</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">What gets measured gets managed. Take 30 minutes every 6 months to add up your assets and liabilities. Seeing net worth grow (or shrink) keeps you accountable.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="BONUS: Open RESP within 90 days of birth" data-pa="ਬੋਨਸ: ਜਨਮ ਦੇ 90 ਦਿਨਾਂ ਵਿੱਚ RESP ਖੋਲ੍ਹੋ">BONUS: Open RESP within 90 days of birth</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">The government gives 20% on first $2,500/year = $500 free per child per year. Over 18 years that's up to $7,200 in free grant money. Every month you wait is free money left on the table.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="BONUS: Negotiate salary every 2 years minimum" data-pa="ਬੋਨਸ: ਘੱਟੋ-ਘੱਟ ਹਰ 2 ਸਾਲ ਤਨਖਾਹ ਗੱਲਬਾਤ ਕਰੋ">BONUS: Negotiate salary every 2 years minimum</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">Most employers budget for 2-3% raises. Negotiating a new job can jump income 15-25% in one move. Loyalty is admirable but underpaid loyalty is a financial mistake.</div>
+    </div>
+      <div style="margin-top:18px;padding:14px;background:rgba(212,160,23,0.06);border-radius:12px;font-size:0.8rem;color:var(--mid);line-height:1.6;">
+        <strong style="color:var(--dark);" data-en="💬 Have questions?" data-pa="💬 ਸਵਾਲ ਹਨ?">💬 Have questions?</strong>
+        <span data-en=" Message us on WhatsApp — we answer personally in English or Punjabi." data-pa=" ਵਟਸਐਪ 'ਤੇ ਸੁਨੇਹਾ ਕਰੋ — ਅਸੀਂ ਨਿੱਜੀ ਤੌਰ 'ਤੇ ਜਵਾਬ ਦਿੰਦੇ ਹਾਂ।"> Message us on WhatsApp — we answer personally.</span>
+        <a href="https://wa.me/+16477456850" target="_blank" style="color:var(--gold);font-weight:700;"> Chat now →</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="guide-card card-white">
+  <div class="guide-top" style="background:linear-gradient(135deg,#d9770618,#d9770608);border-bottom:1px solid #d9770622;padding:28px;border-radius:18px 18px 0 0;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+      <div style="font-size:2.4rem;">🛡️</div>
+      <div style="background:#d9770615;color:#d97706;font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:3px 10px;border-radius:50px;">Insurance</div>
+    </div>
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--dark);font-weight:700;margin-bottom:6px;" data-en="Insurance Buyer's Guide" data-pa="ਬੀਮਾ ਖਰੀਦਦਾਰ ਗਾਈਡ">Insurance Buyer's Guide</h3>
+    <p style="font-size:0.82rem;color:var(--mid);line-height:1.6;margin-bottom:14px;" data-en="Everything the insurance industry doesn't teach you — how to buy the right coverage at the right price." data-pa="ਜੋ ਬੀਮਾ ਉਦਯੋਗ ਤੁਹਾਨੂੰ ਨਹੀਂ ਦੱਸਦਾ — ਸਹੀ ਕਵਰੇਜ ਸਹੀ ਕੀਮਤ 'ਤੇ ਕਿਵੇਂ ਖਰੀਦੀਏ।">Everything the insurance industry doesn't teach you — how to buy the right coverage at the right price.</p>
+    <div style="font-size:0.72rem;color:#d97706;font-weight:600;">8 topics</div>
+  </div>
+  <div style="padding:0 28px;">
+    <button class="expand-btn" onclick="toggle('insurance-guide')" style="margin:16px 0;background:#d9770612;border-color:#d9770630;color:var(--dark);">
+      <span data-en="📖 Read Guide" data-pa="📖 ਗਾਈਡ ਪੜ੍ਹੋ">📖 Read Guide</span>
+      <span class="expand-icon" id="insurance-guide-icon">▼</span>
+    </button>
+    <div class="expand-content" id="insurance-guide-content" style="padding-bottom:20px;">
+      
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="Term vs. Whole Life — Always Choose Term (Usually)" data-pa="ਟਰਮ ਬਨਾਮ ਹੋਲ ਲਾਈਫ਼ — ਆਮ ਤੌਰ 'ਤੇ ਟਰਮ ਚੁਣੋ">Term vs. Whole Life — Always Choose Term (Usually)</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">Term is 5-10x cheaper and provides pure protection. Whole life bundles insurance + savings — but the returns are mediocre and the costs are high. Buy term, invest the difference in ETFs.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="How Much Life Insurance Do You Actually Need?" data-pa="ਅਸਲ ਵਿੱਚ ਕਿੰਨੀ ਜ਼ਿੰਦਗੀ ਬੀਮਾ ਕਵਰੇਜ ਚਾਹੀਦੀ?">How Much Life Insurance Do You Actually Need?</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">Use the DIME formula: Debt + Income (10x) + Mortgage + Education. A 35-year-old earning $90K with a $600K mortgage and 2 kids likely needs $1.2M–$1.5M in coverage.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="Super Visa Insurance — Shop Around Every Year" data-pa="ਸੁਪਰ ਵੀਜ਼ਾ ਬੀਮਾ — ਹਰ ਸਾਲ ਤੁਲਨਾ ਕਰੋ">Super Visa Insurance — Shop Around Every Year</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">Prices vary by up to 40% between providers. Always compare at least 3 quotes. Check deductible options — a $1,000 deductible vs $0 can save $400+/year. Make sure the policy is from a Canadian company.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="Critical Illness — The Insurance People Forget" data-pa="ਗੰਭੀਰ ਬਿਮਾਰੀ ਬੀਮਾ — ਜੋ ਲੋਕ ਭੁੱਲ ਜਾਂਦੇ ਹਨ">Critical Illness — The Insurance People Forget</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">1 in 2 Canadians will get cancer in their lifetime. Critical illness pays a lump sum tax-free if diagnosed — so you can focus on recovery, not bills. Get this in your 30s when it's affordable.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="Group Benefits Through Work — Read the Fine Print" data-pa="ਕੰਮ ਰਾਹੀਂ ਗਰੁੱਪ ਲਾਭ — ਛੋਟਾ ਅੱਖਰ ਪੜ੍ਹੋ">Group Benefits Through Work — Read the Fine Print</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">Group life is usually 2x salary — not nearly enough. Group disability is often 60-70% of income but ends at 2 years for own-occupation. You likely need personal coverage on top.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="Mortgage Insurance vs. Term Life Insurance" data-pa="ਮੌਰਗੇਜ ਬੀਮਾ ਬਨਾਮ ਟਰਮ ਜ਼ਿੰਦਗੀ ਬੀਮਾ">Mortgage Insurance vs. Term Life Insurance</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">Bank mortgage insurance: premium stays the same, coverage decreases. Personal term: coverage stays fixed, you choose the beneficiary. Term life wins almost every time. Don't let the bank sell you overpriced mortgage insurance.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="How to Read an Insurance Policy" data-pa="ਬੀਮਾ ਪਾਲਿਸੀ ਕਿਵੇਂ ਪੜ੍ਹੀਏ">How to Read an Insurance Policy</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">Focus on: the definition of disability/illness, exclusions list, waiting periods, and renewal terms. Don't sign anything you don't understand. Ask your advisor to explain every exclusion.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="What Happens When You Make a Claim?" data-pa="ਜਦੋਂ ਤੁਸੀਂ ਦਾਅਵਾ ਕਰਦੇ ਹੋ ਤਾਂ ਕੀ ਹੁੰਦਾ?">What Happens When You Make a Claim?</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">Contact your insurer immediately. Document everything. Don't sign anything from the insurer without reviewing it. For large claims, consider a public adjuster. Insurers have teams — you should too.</div>
+    </div>
+      <div style="margin-top:18px;padding:14px;background:rgba(212,160,23,0.06);border-radius:12px;font-size:0.8rem;color:var(--mid);line-height:1.6;">
+        <strong style="color:var(--dark);" data-en="💬 Have questions?" data-pa="💬 ਸਵਾਲ ਹਨ?">💬 Have questions?</strong>
+        <span data-en=" Message us on WhatsApp — we answer personally in English or Punjabi." data-pa=" ਵਟਸਐਪ 'ਤੇ ਸੁਨੇਹਾ ਕਰੋ — ਅਸੀਂ ਨਿੱਜੀ ਤੌਰ 'ਤੇ ਜਵਾਬ ਦਿੰਦੇ ਹਾਂ।"> Message us on WhatsApp — we answer personally.</span>
+        <a href="https://wa.me/+16477456850" target="_blank" style="color:var(--gold);font-weight:700;"> Chat now →</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="guide-card card-white">
+  <div class="guide-top" style="background:linear-gradient(135deg,#05966918,#05966908);border-bottom:1px solid #05966922;padding:28px;border-radius:18px 18px 0 0;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+      <div style="font-size:2.4rem;">🏠</div>
+      <div style="background:#05966915;color:#059669;font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:3px 10px;border-radius:50px;">Real Estate</div>
+    </div>
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--dark);font-weight:700;margin-bottom:6px;" data-en="Mortgage Protection Checklist" data-pa="ਮੌਰਗੇਜ ਸੁਰੱਖਿਆ ਚੈੱਕਲਿਸਟ">Mortgage Protection Checklist</h3>
+    <p style="font-size:0.82rem;color:var(--mid);line-height:1.6;margin-bottom:14px;" data-en="10 things every Canadian homeowner should do to protect their biggest asset." data-pa="ਹਰ ਕੈਨੇਡੀਅਨ ਘਰਮਾਲਕ ਨੂੰ ਆਪਣੀ ਸਭ ਤੋਂ ਵੱਡੀ ਸੰਪੱਤੀ ਬਚਾਉਣ ਲਈ 10 ਕੰਮ।">10 things every Canadian homeowner should do to protect their biggest asset.</p>
+    <div style="font-size:0.72rem;color:#059669;font-weight:600;">10 items</div>
+  </div>
+  <div style="padding:0 28px;">
+    <button class="expand-btn" onclick="toggle('mortgage-checklist')" style="margin:16px 0;background:#05966912;border-color:#05966930;color:var(--dark);">
+      <span data-en="📖 Read Guide" data-pa="📖 ਗਾਈਡ ਪੜ੍ਹੋ">📖 Read Guide</span>
+      <span class="expand-icon" id="mortgage-checklist-icon">▼</span>
+    </button>
+    <div class="expand-content" id="mortgage-checklist-content" style="padding-bottom:20px;">
+      
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="✅ Get term life insurance equal to your mortgage balance" data-pa="✅ ਮੌਰਗੇਜ ਬਕਾਏ ਦੇ ਬਰਾਬਰ ਟਰਮ ਜ਼ਿੰਦਗੀ ਬੀਮਾ ਲਓ">✅ Get term life insurance equal to your mortgage balance</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">Personal term life insurance is almost always cheaper and better than bank mortgage insurance. You choose the beneficiary — not the bank. Coverage doesn't decrease as your mortgage is paid down.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="✅ Have disability insurance covering at least 70% of income" data-pa="✅ ਘੱਟੋ-ਘੱਟ 70% ਆਮਦਨ ਕਵਰ ਕਰਨ ਵਾਲਾ ਅਪੰਗਤਾ ਬੀਮਾ ਲਓ">✅ Have disability insurance covering at least 70% of income</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">If you can't work, how do you pay the mortgage? Disability is the leading cause of mortgage default in Canada. Your mortgage payment doesn't stop if your income does.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="✅ Review insurance annually at mortgage renewal" data-pa="✅ ਮੌਰਗੇਜ ਨਵੀਨੀਕਰਨ 'ਤੇ ਸਾਲਾਨਾ ਬੀਮੇ ਦੀ ਸਮੀਖਿਆ ਕਰੋ">✅ Review insurance annually at mortgage renewal</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">Mortgage amounts change. Your insurance should match. Use every renewal as an opportunity to shop around — both for mortgage rates AND insurance.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="✅ Set up a Home Equity Line of Credit (HELOC)" data-pa="✅ ਹੋਮ ਇਕੁਇਟੀ ਲਾਈਨ ਆਫ਼ ਕ੍ਰੈਡਿਟ (HELOC) ਸੈੱਟਅਪ ਕਰੋ">✅ Set up a Home Equity Line of Credit (HELOC)</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">A HELOC gives you access to equity for emergencies. Having it available (even if unused) prevents you from defaulting due to a temporary cash crunch.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="✅ Build 3 months of mortgage payments in a separate account" data-pa="✅ ਵੱਖਰੇ ਖਾਤੇ ਵਿੱਚ 3 ਮਹੀਨਿਆਂ ਦੇ ਮੌਰਗੇਜ ਭੁਗਤਾਨ ਬਚਾਓ">✅ Build 3 months of mortgage payments in a separate account</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">Knowing you have a 3-month buffer removes enormous financial stress. Job loss is manageable with 3 months to find new income.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="✅ Make accelerated bi-weekly payments instead of monthly" data-pa="✅ ਮਾਸਿਕ ਦੀ ਬਜਾਏ ਤੇਜ਼ੀ ਨਾਲ ਦੋ-ਹਫ਼ਤੇ ਭੁਗਤਾਨ ਕਰੋ">✅ Make accelerated bi-weekly payments instead of monthly</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">Bi-weekly accelerated = 26 payments = 13 monthly payments per year. On a $600K 5% 25-year mortgage, this cuts 3+ years off your amortization and saves $40,000+ in interest.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="✅ Put any lump sums toward principal annually" data-pa="✅ ਹਰ ਸਾਲ ਕੋਈ ਵੀ ਇਕਮੁਸ਼ਤ ਰਕਮ ਮੂਲਧਨ ਵੱਲ ਲਗਾਓ">✅ Put any lump sums toward principal annually</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">Most mortgages allow 10-20% lump sum prepayment annually without penalty. Use tax refunds, bonuses, or inheritance to attack the principal.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="✅ Review title insurance on your property" data-pa="✅ ਆਪਣੀ ਜਾਇਦਾਦ 'ਤੇ ਟਾਈਟਲ ਬੀਮੇ ਦੀ ਸਮੀਖਿਆ ਕਰੋ">✅ Review title insurance on your property</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">Title insurance protects against fraud, unknown liens, and survey issues. One-time premium paid at closing. Essential for every homeowner.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="✅ Know your mortgage renewal date — act 4 months early" data-pa="✅ ਮੌਰਗੇਜ ਨਵੀਨੀਕਰਨ ਮਿਤੀ ਜਾਣੋ — 4 ਮਹੀਨੇ ਪਹਿਲਾਂ ਕੰਮ ਕਰੋ">✅ Know your mortgage renewal date — act 4 months early</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">Banks count on you auto-renewing. Start shopping 4 months before renewal. A 0.5% rate difference on a $500K mortgage = $2,500/year in savings.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="✅ Consider critical illness insurance for key earner" data-pa="✅ ਮੁੱਖ ਕਮਾਉਣ ਵਾਲੇ ਲਈ ਗੰਭੀਰ ਬਿਮਾਰੀ ਬੀਮੇ 'ਤੇ ਵਿਚਾਰ ਕਰੋ">✅ Consider critical illness insurance for key earner</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">A cancer diagnosis, heart attack, or stroke shouldn't mean losing your home. Critical illness pays a lump sum you can use to cover mortgage payments during recovery.</div>
+    </div>
+      <div style="margin-top:18px;padding:14px;background:rgba(212,160,23,0.06);border-radius:12px;font-size:0.8rem;color:var(--mid);line-height:1.6;">
+        <strong style="color:var(--dark);" data-en="💬 Have questions?" data-pa="💬 ਸਵਾਲ ਹਨ?">💬 Have questions?</strong>
+        <span data-en=" Message us on WhatsApp — we answer personally in English or Punjabi." data-pa=" ਵਟਸਐਪ 'ਤੇ ਸੁਨੇਹਾ ਕਰੋ — ਅਸੀਂ ਨਿੱਜੀ ਤੌਰ 'ਤੇ ਜਵਾਬ ਦਿੰਦੇ ਹਾਂ।"> Message us on WhatsApp — we answer personally.</span>
+        <a href="https://wa.me/+16477456850" target="_blank" style="color:var(--gold);font-weight:700;"> Chat now →</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="guide-card card-white">
+  <div class="guide-top" style="background:linear-gradient(135deg,#7c3aed18,#7c3aed08);border-bottom:1px solid #7c3aed22;padding:28px;border-radius:18px 18px 0 0;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+      <div style="font-size:2.4rem;">🎓</div>
+      <div style="background:#7c3aed15;color:#7c3aed;font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:3px 10px;border-radius:50px;">Education Savings</div>
+    </div>
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--dark);font-weight:700;margin-bottom:6px;" data-en="RESP Planning Guide" data-pa="RESP ਯੋਜਨਾ ਗਾਈਡ">RESP Planning Guide</h3>
+    <p style="font-size:0.82rem;color:var(--mid);line-height:1.6;margin-bottom:14px;" data-en="How to maximize the government's free education money for your children — every year." data-pa="ਆਪਣੇ ਬੱਚਿਆਂ ਲਈ ਸਰਕਾਰ ਦੇ ਮੁਫ਼ਤ ਸਿੱਖਿਆ ਪੈਸੇ ਨੂੰ ਕਿਵੇਂ ਵੱਧ ਤੋਂ ਵੱਧ ਕਰੀਏ।">How to maximize the government's free education money for your children — every year.</p>
+    <div style="font-size:0.72rem;color:#7c3aed;font-weight:600;">7 topics</div>
+  </div>
+  <div style="padding:0 28px;">
+    <button class="expand-btn" onclick="toggle('resp-guide')" style="margin:16px 0;background:#7c3aed12;border-color:#7c3aed30;color:var(--dark);">
+      <span data-en="📖 Read Guide" data-pa="📖 ਗਾਈਡ ਪੜ੍ਹੋ">📖 Read Guide</span>
+      <span class="expand-icon" id="resp-guide-icon">▼</span>
+    </button>
+    <div class="expand-content" id="resp-guide-content" style="padding-bottom:20px;">
+      
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="Open RESP within 90 days of birth" data-pa="ਜਨਮ ਦੇ 90 ਦਿਨਾਂ ਵਿੱਚ RESP ਖੋਲ੍ਹੋ">Open RESP within 90 days of birth</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">The CESG (Canada Education Savings Grant) gives 20% on the first $2,500 contributed per year. That's $500/year in free money per child. Max lifetime grant = $7,200. You can't get back missed years easily.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="The $2,500 Magic Number" data-pa="$2,500 ਦਾ ਜਾਦੂਈ ਨੰਬਰ">The $2,500 Magic Number</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">Contribute exactly $2,500/year to maximize the 20% government grant. If you can't afford $2,500, contribute whatever you can — even $100/month = $1,200/year with a $240 government top-up.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="Catch-Up Contributions — Up to $5,000/Year" data-pa="ਕੈਚ-ਅੱਪ ਯੋਗਦਾਨ — ਸਾਲਾਨਾ $5,000 ਤੱਕ">Catch-Up Contributions — Up to $5,000/Year</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">If you missed years, you can contribute up to $5,000/year ($2,500 current + $2,500 catch-up) to get $1,000 in grants. But lifetime catch-up is limited — don't let years pile up.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="Family vs. Individual RESP" data-pa="ਪਰਿਵਾਰਕ ਬਨਾਮ ਵਿਅਕਤੀਗਤ RESP">Family vs. Individual RESP</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">Family RESPs let you share funds between siblings. If one child doesn't go to school, the other can use the full amount. More flexible than individual plans for families with multiple children.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="What RESP Can Be Used For" data-pa="RESP ਕਿਸ ਲਈ ਵਰਤਿਆ ਜਾ ਸਕਦਾ">What RESP Can Be Used For</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">Tuition, books, room and board, tools, equipment for eligible programs. Trade school, college, and university all count. Your child's full-time enrollment is required.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="What Happens if Your Child Doesn't Go to School?" data-pa="ਜੇ ਤੁਹਾਡਾ ਬੱਚਾ ਸਕੂਲ ਨਹੀਂ ਜਾਂਦਾ?">What Happens if Your Child Doesn't Go to School?</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">Grants must be repaid. You can transfer growth to your RRSP (up to $50K) if room is available. Or collapse the RESP and pay tax + 20% penalty on growth only. The original contributions come back tax-free.</div>
+    </div>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(0,0,0,0.07);">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--dark);margin-bottom:5px;" data-en="Invest RESP in ETFs, Not GICs" data-pa="RESP GICs ਵਿੱਚ ਨਹੀਂ, ETF ਵਿੱਚ ਨਿਵੇਸ਼ ਕਰੋ">Invest RESP in ETFs, Not GICs</div>
+      <div style="font-size:0.82rem;color:var(--mid);line-height:1.65;">Most bank RESPs put money in expensive mutual funds. Use a self-directed RESP at Questrade or Wealthsimple to buy low-cost index ETFs. On $50,000 over 18 years, lower fees can add $15,000+ to the final balance.</div>
+    </div>
+      <div style="margin-top:18px;padding:14px;background:rgba(212,160,23,0.06);border-radius:12px;font-size:0.8rem;color:var(--mid);line-height:1.6;">
+        <strong style="color:var(--dark);" data-en="💬 Have questions?" data-pa="💬 ਸਵਾਲ ਹਨ?">💬 Have questions?</strong>
+        <span data-en=" Message us on WhatsApp — we answer personally in English or Punjabi." data-pa=" ਵਟਸਐਪ 'ਤੇ ਸੁਨੇਹਾ ਕਰੋ — ਅਸੀਂ ਨਿੱਜੀ ਤੌਰ 'ਤੇ ਜਵਾਬ ਦਿੰਦੇ ਹਾਂ।"> Message us on WhatsApp — we answer personally.</span>
+        <a href="https://wa.me/+16477456850" target="_blank" style="color:var(--gold);font-weight:700;"> Chat now →</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<footer>
+  <a href="index.html" class="footer-logo">Punjabi<span>Finance</span></a>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="education.html">Learn</a>
+    <a href="calculators.html">Calculators</a>
+    <a href="tools.html">Immigrant Tools</a>
+    <a href="downloads.html">Free Downloads</a>
+    <a href="link.html">All Links</a>
+    <a href="https://wa.me/+16477456850" target="_blank">WhatsApp</a>
+  </div>
+  <p class="footer-disc">Educational content only — not financial, legal, or insurance advice. Always consult a licensed professional before making financial decisions. © 2025 Punjabi Finance</p>
+</footer>
+<script>
+
+let sL = localStorage.getItem('pf_lang')||'en';
+function siteSetLang(l){
+  sL=l; localStorage.setItem('pf_lang',l);
+  ['en','pa'].forEach(x=>{
+    const b=document.getElementById('nb-'+x);
+    if(b){b.classList.toggle('active',x===l);}
+  });
+  applyLang();
+}
+function applyLang(){
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    el.textContent = sL==='pa' ? (el.dataset.pa||el.dataset.en) : el.dataset.en;
+  });
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  if(sL==='pa'){
+    const enb=document.getElementById('nb-en');
+    const pab=document.getElementById('nb-pa');
+    if(enb)enb.classList.remove('active');
+    if(pab)pab.classList.add('active');
+  }
+  applyLang();
+});
+
+function toggle(id) {
+  const c = document.getElementById(id+'-content');
+  const i = document.getElementById(id+'-icon');
+  c.classList.toggle('open');
+  i.textContent = c.classList.contains('open') ? '▲' : '▼';
+}
+</script>
+
+<!-- AI CHATBOT WIDGET -->
+<div id="chat-widget" style="position:fixed;bottom:24px;right:24px;z-index:9999;font-family:'DM Sans',sans-serif;">
+  <!-- Toggle Button -->
+  <div id="chat-toggle" onclick="toggleChat()" style="width:58px;height:58px;background:linear-gradient(135deg,#D4A017,#E8890C);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 20px rgba(212,160,23,0.4);transition:transform 0.2s;" onmouseenter="this.style.transform='scale(1.1)'" onmouseleave="this.style.transform='scale(1)'">
+    <span id="chat-icon" style="font-size:1.4rem;">💬</span>
+  </div>
+  <!-- Chat Panel -->
+  <div id="chat-panel" style="display:none;position:absolute;bottom:70px;right:0;width:360px;max-height:520px;background:#fff;border-radius:20px;box-shadow:0 8px 48px rgba(0,0,0,0.2);overflow:hidden;flex-direction:column;">
+    <!-- Header -->
+    <div style="background:linear-gradient(135deg,#D4A017,#E8890C);padding:16px 18px;display:flex;align-items:center;gap:10px;">
+      <div style="width:36px;height:36px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">🤖</div>
+      <div style="flex:1;">
+        <div style="font-size:0.9rem;font-weight:700;color:#fff;">Punjabi Finance AI</div>
+        <div style="font-size:0.7rem;color:rgba(255,255,255,0.8);" id="chat-status">Ask me anything about finance in Canada</div>
+      </div>
+      <div onclick="toggleChat()" style="cursor:pointer;color:rgba(255,255,255,0.8);font-size:1.1rem;line-height:1;">✕</div>
+    </div>
+    <!-- Messages -->
+    <div id="chat-messages" style="flex:1;overflow-y:auto;padding:14px;max-height:340px;display:flex;flex-direction:column;gap:10px;">
+      <div class="chat-msg bot" style="background:#f5f3ee;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:0.84rem;color:#2a2000;line-height:1.6;max-width:85%;">
+        <span id="chat-welcome">👋 Sat Sri Akal! I'm the Punjabi Finance AI.<br><br>Ask me anything about:<br>• Life & Super Visa insurance<br>• TFSA, RRSP, investing<br>• Real estate in Canada<br>• Taxes & retirement<br><br>I answer in English or Punjabi! 🇨🇦</span>
+      </div>
+    </div>
+    <!-- Quick Questions -->
+    <div id="quick-qs" style="padding:0 14px 10px;display:flex;flex-wrap:wrap;gap:6px;">
+      <button onclick="sendQuick('How much life insurance do I need?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">Life insurance?</button>
+      <button onclick="sendQuick('What is Super Visa insurance?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">Super Visa?</button>
+      <button onclick="sendQuick('How do I start investing in Canada?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">How to invest?</button>
+      <button onclick="sendQuick('TFSA vs RRSP — which should I use?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">TFSA vs RRSP?</button>
+    </div>
+    <!-- Input -->
+    <div style="padding:10px 14px 14px;border-top:1px solid rgba(0,0,0,0.07);display:flex;gap:8px;align-items:flex-end;">
+      <input id="chat-input" type="text" placeholder="Ask a finance question..." style="flex:1;padding:10px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:50px;font-size:0.84rem;font-family:'DM Sans',sans-serif;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='#D4A017'" onblur="this.style.borderColor='rgba(0,0,0,0.12)'" onkeypress="if(event.key==='Enter')sendMsg()">
+      <button onclick="sendMsg()" id="send-btn" style="width:38px;height:38px;background:linear-gradient(135deg,#D4A017,#E8890C);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;transition:transform 0.2s;" onmouseenter="this.style.transform='scale(1.1)'" onmouseleave="this.style.transform='scale(1)'">→</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const CHAT_SYSTEM = `You are the Punjabi Finance AI assistant — a helpful, friendly financial education bot for the Punjabi community in Canada.
+
+Your role:
+- Provide free financial education about Canadian personal finance
+- Topics: life insurance, Super Visa insurance, critical illness, disability, TFSA, RRSP, FHSA, RESP, investing, real estate, mortgages, taxes, retirement, newcomer finance
+- Always remind users to consult a licensed professional for personal advice
+- Be warm and community-focused — this is for the Punjabi diaspora in Canada
+- Respond in the same language the user writes in (English or Punjabi)
+- Keep answers concise and practical — max 150 words unless asked to elaborate
+- Reference relevant tools on the site: calculators.html, tools.html, education.html
+- For insurance questions, suggest they WhatsApp us at +1 647-745-6850 for a personal quote
+- Never give specific investment recommendations or specific insurance quotes
+- Always end insurance/investment answers with a soft call to action to WhatsApp or visit ibrinsurance.ca
+
+Personality: Knowledgeable, warm, like a financially savvy older sibling or family friend who happens to know a lot about Canadian finance.`;
+
+let chatOpen = false;
+let isLoading = false;
+const chatHistory = [];
+
+function toggleChat() {
+  chatOpen = !chatOpen;
+  const panel = document.getElementById('chat-panel');
+  panel.style.display = chatOpen ? 'flex' : 'none';
+  panel.style.flexDirection = 'column';
+  document.getElementById('chat-icon').textContent = chatOpen ? '✕' : '💬';
+  if(chatOpen) document.getElementById('chat-input').focus();
+}
+
+function sendQuick(msg) {
+  document.getElementById('quick-qs').style.display = 'none';
+  document.getElementById('chat-input').value = msg;
+  sendMsg();
+}
+
+function addMsg(text, role) {
+  const msgs = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.style.cssText = role === 'user'
+    ? 'background:linear-gradient(135deg,#D4A017,#E8890C);color:#0a0a0a;border-radius:14px 14px 4px 14px;padding:10px 14px;font-size:0.84rem;line-height:1.6;max-width:80%;margin-left:auto;'
+    : 'background:#f5f3ee;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:0.84rem;color:#2a2000;line-height:1.6;max-width:88%;';
+  div.textContent = text;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+  return div;
+}
+
+function addTyping() {
+  const msgs = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.id = 'typing-indicator';
+  div.style.cssText = 'background:#f5f3ee;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:0.84rem;color:#9A8A6A;max-width:88%;';
+  div.textContent = '...thinking';
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+async function sendMsg() {
+  if(isLoading) return;
+  const input = document.getElementById('chat-input');
+  const msg = input.value.trim();
+  if(!msg) return;
+  input.value = '';
+  
+  addMsg(msg, 'user');
+  chatHistory.push({role:'user', content: msg});
+  
+  document.getElementById('quick-qs').style.display = 'none';
+  isLoading = true;
+  document.getElementById('chat-status').textContent = 'Thinking...';
+  addTyping();
+  
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 400,
+        system: CHAT_SYSTEM,
+        messages: chatHistory
+      })
+    });
+    const data = await res.json();
+    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again or WhatsApp us directly.";
+    
+    const typing = document.getElementById('typing-indicator');
+    if(typing) typing.remove();
+    
+    addMsg(reply, 'bot');
+    chatHistory.push({role:'assistant', content: reply});
+    document.getElementById('chat-status').textContent = 'Ask me anything about finance';
+  } catch(err) {
+    const typing = document.getElementById('typing-indicator');
+    if(typing) typing.remove();
+    addMsg('Sorry, something went wrong. Please WhatsApp us directly at +1 647-745-6850 or visit ibrinsurance.ca', 'bot');
+    document.getElementById('chat-status').textContent = 'Ask me anything about finance';
+  }
+  isLoading = false;
+}
+</script>
+</body></html>

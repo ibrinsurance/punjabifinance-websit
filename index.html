@@ -183,6 +183,8 @@ footer{background:#060603;border-top:1px solid var(--border);padding:56px 80px 3
     <a href="#services" data-t="nav_services">Services</a>
     <a href="#about" data-t="nav_about">About</a>
     <a href="#reviews" data-t="nav_reviews">Reviews</a>
+    <a href="calculators.html" style="font-size:0.84rem;color:var(--muted);font-weight:500;transition:color 0.2s;" onmouseenter="this.style.color='var(--gl)'" onmouseleave="this.style.color='var(--muted)'">Calculators</a>
+    <a href="tools.html" style="font-size:0.84rem;color:var(--muted);font-weight:500;transition:color 0.2s;" onmouseenter="this.style.color='var(--gl)'" onmouseleave="this.style.color='var(--muted)'">Immigrant Tools</a>
     <a href="link.html" class="nav-linktree">🔗 <span data-t="nav_alllinks">All Links</span></a>
     <div class="lang-toggle">
       <button class="lang-btn active" onclick="setLang('en',this)">EN</button>
@@ -217,12 +219,12 @@ footer{background:#060603;border-top:1px solid var(--border);padding:56px 80px 3
     <p class="hero-sub" data-t="hero_sub">Free financial education for the Punjabi community — insurance, investing, real estate, taxes and retirement planning, explained simply.</p>
     <div class="hero-actions">
       <a href="education.html" class="btn-primary" data-t="btn_browse">Browse 100 Free Topics →</a>
-      <a href="https://wa.me/+16477456850" target="_blank" class="btn-ghost" data-t="btn_ask">💬 Ask a Question</a>
+      <button onclick="toggleChat()" class="btn-ghost" style="border:1px solid rgba(212,160,23,0.3);color:var(--gl);padding:12px 24px;border-radius:50px;font-weight:500;font-size:0.87rem;background:transparent;cursor:pointer;display:inline-flex;align-items:center;gap:8px;" data-t="btn_ask">💬 Ask a Question</button>
     </div>
     <div class="hero-stats">
       <div><span class="hero-stat-num">175K+</span><span class="hero-stat-label" data-t="stat_followers">Followers</span></div>
       <div><span class="hero-stat-num">400+</span><span class="hero-stat-label" data-t="stat_reviews">★ Reviews</span></div>
-      <div><span class="hero-stat-num">100</span><span class="hero-stat-label" data-t="stat_topics">Free Topics</span></div>
+      <div><span class="hero-stat-num">200+</span><span class="hero-stat-label" data-t="stat_topics">Free Topics</span></div>
       <div><span class="hero-stat-num">5★</span><span class="hero-stat-label" data-t="stat_rated">Rated</span></div>
     </div>
   </div>
@@ -261,9 +263,9 @@ footer{background:#060603;border-top:1px solid var(--border);padding:56px 80px 3
     <div>
       <div class="section-label" data-t="learn_label">Education Hub</div>
       <h2 class="section-title"><span data-t="learn_title">Learn for</span> <span style="color:var(--gl)" data-t="learn_title_gold">Free</span></h2>
-      <p class="section-sub" data-t="learn_sub">100 topics across 10 categories — available in English and Punjabi.</p>
+      <p class="section-sub" data-t="learn_sub">200+ topics across 11 categories — available in English and Punjabi.</p>
     </div>
-    <a href="education.html" class="btn-primary" data-t="btn_browse_all">Browse All 100 Topics →</a>
+    <a href="education.html" class="btn-primary" data-t="btn_browse_all">Browse All 200+ Topics →</a>
   </div>
   <div class="edu-grid" id="edu-grid">
     <!-- cards injected by JS for shuffle -->
@@ -360,7 +362,7 @@ footer{background:#060603;border-top:1px solid var(--border);padding:56px 80px 3
     </div>
   </div>
   <div style="text-align:center;margin-top:36px;" class="fade-up">
-    <a href="https://www.google.com/search?q=punjabi+finance+reviews" target="_blank" class="btn-ghost" data-t="btn_reviews">Read All 400+ Google Reviews →</a>
+    <a href="https://share.google/zieVmAWkyRNTQGglm" target="_blank" class="btn-ghost" data-t="btn_reviews">Read All 400+ Google Reviews →</a>
   </div>
 </section>
 
@@ -433,8 +435,8 @@ const T = {
   learn_label: {en: `Education Hub`, pa: `ਸਿੱਖਿਆ ਕੇਂਦਰ`},
   learn_title: {en: `Learn for`, pa: `ਸਿੱਖੋ`},
   learn_title_gold: {en: `Free`, pa: `ਮੁਫ਼ਤ`},
-  learn_sub: {en: `100 topics across 10 categories — available in English and Punjabi.`, pa: `10 ਸ਼੍ਰੇਣੀਆਂ ਵਿੱਚ 100 ਵਿਸ਼ੇ — ਅੰਗਰੇਜ਼ੀ ਅਤੇ ਪੰਜਾਬੀ ਵਿੱਚ ਉਪਲਬਧ।`},
-  btn_browse_all: {en: `Browse All 100 Topics →`, pa: `ਸਾਰੇ 100 ਵਿਸ਼ੇ ਦੇਖੋ →`},
+  learn_sub: {en: `200+ topics across 11 categories — available in English and Punjabi.`, pa: `10 ਸ਼੍ਰੇਣੀਆਂ ਵਿੱਚ 100 ਵਿਸ਼ੇ — ਅੰਗਰੇਜ਼ੀ ਅਤੇ ਪੰਜਾਬੀ ਵਿੱਚ ਉਪਲਬਧ।`},
+  btn_browse_all: {en: `Browse All 200+ Topics →`, pa: `ਸਾਰੇ 100 ਵਿਸ਼ੇ ਦੇਖੋ →`},
   cat_insurance: {en: `Insurance`, pa: `ਬੀਮਾ`},
   cat_investing: {en: `Investing`, pa: `ਨਿਵੇਸ਼`},
   cat_realestate: {en: `Real Estate`, pa: `ਰੀਅਲ ਅਸਟੇਟ`},
@@ -613,6 +615,147 @@ document.querySelectorAll(".fade-up").forEach((el, i) => {
 
 // Render edu cards after fade observer is set up
 renderEduCards();
+</script>
+
+<!-- AI CHATBOT WIDGET -->
+<div id="chat-widget" style="position:fixed;bottom:24px;right:24px;z-index:9999;font-family:'DM Sans',sans-serif;">
+  <!-- Toggle Button -->
+  <div id="chat-toggle" onclick="toggleChat()" style="width:58px;height:58px;background:linear-gradient(135deg,#D4A017,#E8890C);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 20px rgba(212,160,23,0.4);transition:transform 0.2s;" onmouseenter="this.style.transform='scale(1.1)'" onmouseleave="this.style.transform='scale(1)'">
+    <span id="chat-icon" style="font-size:1.4rem;">💬</span>
+  </div>
+  <!-- Chat Panel -->
+  <div id="chat-panel" style="display:none;position:absolute;bottom:70px;right:0;width:360px;max-height:520px;background:#fff;border-radius:20px;box-shadow:0 8px 48px rgba(0,0,0,0.2);overflow:hidden;flex-direction:column;">
+    <!-- Header -->
+    <div style="background:linear-gradient(135deg,#D4A017,#E8890C);padding:16px 18px;display:flex;align-items:center;gap:10px;">
+      <div style="width:36px;height:36px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">🤖</div>
+      <div style="flex:1;">
+        <div style="font-size:0.9rem;font-weight:700;color:#fff;">Punjabi Finance AI</div>
+        <div style="font-size:0.7rem;color:rgba(255,255,255,0.8);" id="chat-status">Ask me anything about finance in Canada</div>
+      </div>
+      <div onclick="toggleChat()" style="cursor:pointer;color:rgba(255,255,255,0.8);font-size:1.1rem;line-height:1;">✕</div>
+    </div>
+    <!-- Messages -->
+    <div id="chat-messages" style="flex:1;overflow-y:auto;padding:14px;max-height:340px;display:flex;flex-direction:column;gap:10px;">
+      <div class="chat-msg bot" style="background:#f5f3ee;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:0.84rem;color:#2a2000;line-height:1.6;max-width:85%;">
+        <span id="chat-welcome">👋 Sat Sri Akal! I'm the Punjabi Finance AI.<br><br>Ask me anything about:<br>• Life & Super Visa insurance<br>• TFSA, RRSP, investing<br>• Real estate in Canada<br>• Taxes & retirement<br><br>I answer in English or Punjabi! 🇨🇦</span>
+      </div>
+    </div>
+    <!-- Quick Questions -->
+    <div id="quick-qs" style="padding:0 14px 10px;display:flex;flex-wrap:wrap;gap:6px;">
+      <button onclick="sendQuick('How much life insurance do I need?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">Life insurance?</button>
+      <button onclick="sendQuick('What is Super Visa insurance?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">Super Visa?</button>
+      <button onclick="sendQuick('How do I start investing in Canada?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">How to invest?</button>
+      <button onclick="sendQuick('TFSA vs RRSP — which should I use?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">TFSA vs RRSP?</button>
+    </div>
+    <!-- Input -->
+    <div style="padding:10px 14px 14px;border-top:1px solid rgba(0,0,0,0.07);display:flex;gap:8px;align-items:flex-end;">
+      <input id="chat-input" type="text" placeholder="Ask a finance question..." style="flex:1;padding:10px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:50px;font-size:0.84rem;font-family:'DM Sans',sans-serif;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='#D4A017'" onblur="this.style.borderColor='rgba(0,0,0,0.12)'" onkeypress="if(event.key==='Enter')sendMsg()">
+      <button onclick="sendMsg()" id="send-btn" style="width:38px;height:38px;background:linear-gradient(135deg,#D4A017,#E8890C);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;transition:transform 0.2s;" onmouseenter="this.style.transform='scale(1.1)'" onmouseleave="this.style.transform='scale(1)'">→</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const CHAT_SYSTEM = `You are the Punjabi Finance AI assistant — a helpful, friendly financial education bot for the Punjabi community in Canada.
+
+Your role:
+- Provide free financial education about Canadian personal finance
+- Topics: life insurance, Super Visa insurance, critical illness, disability, TFSA, RRSP, FHSA, RESP, investing, real estate, mortgages, taxes, retirement, newcomer finance
+- Always remind users to consult a licensed professional for personal advice
+- Be warm and community-focused — this is for the Punjabi diaspora in Canada
+- Respond in the same language the user writes in (English or Punjabi)
+- Keep answers concise and practical — max 150 words unless asked to elaborate
+- Reference relevant tools on the site: calculators.html, tools.html, education.html
+- For insurance questions, suggest they WhatsApp us at +1 647-745-6850 for a personal quote
+- Never give specific investment recommendations or specific insurance quotes
+- Always end insurance/investment answers with a soft call to action to WhatsApp or visit ibrinsurance.ca
+
+Personality: Knowledgeable, warm, like a financially savvy older sibling or family friend who happens to know a lot about Canadian finance.`;
+
+let chatOpen = false;
+let isLoading = false;
+const chatHistory = [];
+
+function toggleChat() {
+  chatOpen = !chatOpen;
+  const panel = document.getElementById('chat-panel');
+  panel.style.display = chatOpen ? 'flex' : 'none';
+  panel.style.flexDirection = 'column';
+  document.getElementById('chat-icon').textContent = chatOpen ? '✕' : '💬';
+  if(chatOpen) document.getElementById('chat-input').focus();
+}
+
+function sendQuick(msg) {
+  document.getElementById('quick-qs').style.display = 'none';
+  document.getElementById('chat-input').value = msg;
+  sendMsg();
+}
+
+function addMsg(text, role) {
+  const msgs = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.style.cssText = role === 'user'
+    ? 'background:linear-gradient(135deg,#D4A017,#E8890C);color:#0a0a0a;border-radius:14px 14px 4px 14px;padding:10px 14px;font-size:0.84rem;line-height:1.6;max-width:80%;margin-left:auto;'
+    : 'background:#f5f3ee;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:0.84rem;color:#2a2000;line-height:1.6;max-width:88%;';
+  div.textContent = text;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+  return div;
+}
+
+function addTyping() {
+  const msgs = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.id = 'typing-indicator';
+  div.style.cssText = 'background:#f5f3ee;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:0.84rem;color:#9A8A6A;max-width:88%;';
+  div.textContent = '...thinking';
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+async function sendMsg() {
+  if(isLoading) return;
+  const input = document.getElementById('chat-input');
+  const msg = input.value.trim();
+  if(!msg) return;
+  input.value = '';
+  
+  addMsg(msg, 'user');
+  chatHistory.push({role:'user', content: msg});
+  
+  document.getElementById('quick-qs').style.display = 'none';
+  isLoading = true;
+  document.getElementById('chat-status').textContent = 'Thinking...';
+  addTyping();
+  
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 400,
+        system: CHAT_SYSTEM,
+        messages: chatHistory
+      })
+    });
+    const data = await res.json();
+    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again or WhatsApp us directly.";
+    
+    const typing = document.getElementById('typing-indicator');
+    if(typing) typing.remove();
+    
+    addMsg(reply, 'bot');
+    chatHistory.push({role:'assistant', content: reply});
+    document.getElementById('chat-status').textContent = 'Ask me anything about finance';
+  } catch(err) {
+    const typing = document.getElementById('typing-indicator');
+    if(typing) typing.remove();
+    addMsg('Sorry, something went wrong. Please WhatsApp us directly at +1 647-745-6850 or visit ibrinsurance.ca', 'bot');
+    document.getElementById('chat-status').textContent = 'Ask me anything about finance';
+  }
+  isLoading = false;
+}
 </script>
 </body>
 </html>

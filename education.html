@@ -100,17 +100,6 @@
   <p class="hero-sub lang-en">100 free topics covering insurance, real estate, budgeting, taxes, investing, retirement & more.</p>
   <p class="hero-sub lang-pa" style="display:none">ਬੀਮਾ, ਰੀਅਲ ਅਸਟੇਟ, ਬਜਟ, ਟੈਕਸ, ਨਿਵੇਸ਼ ਅਤੇ ਹੋਰ 'ਤੇ 100 ਮੁਫ਼ਤ ਵਿਸ਼ੇ।</p>
 
-  <!-- DAILY TIP -->
-  <div class="tip-banner">
-    <div class="tip-icon">💡</div>
-    <div style="flex:1">
-      <div class="tip-label lang-en">Financial Tip of the Day</div>
-      <div class="tip-label lang-pa" style="display:none">ਦਿਨ ਦੀ ਵਿੱਤੀ ਸਲਾਹ</div>
-      <div class="tip-text" id="daily-tip-text">Loading...</div>
-      <div class="tip-date" id="tip-date"></div>
-    </div>
-  </div>
-
   <!-- PODCAST -->
   <a href="https://youtu.be/W1As1RtE01s" target="_blank" class="podcast-bar">
     <div class="podcast-thumb">🎙️</div>
@@ -138,9 +127,10 @@
     <button class="filter-btn" data-filter="Retirement" onclick="filterTopics('Retirement', this)"><span class="lang-en">Retirement</span><span class="lang-pa" style="display:none">ਰਿਟਾਇਰਮੈਂਟ</span></button>
     <button class="filter-btn" data-filter="Newcomers" onclick="filterTopics('Newcomers', this)"><span class="lang-en">Newcomers</span><span class="lang-pa" style="display:none">ਨਵੇਂ ਆਉਣ ਵਾਲੇ</span></button>
     <button class="filter-btn" data-filter="Personal Finance" onclick="filterTopics('Personal Finance', this)"><span class="lang-en">Personal Finance</span><span class="lang-pa" style="display:none">ਨਿੱਜੀ ਵਿੱਤ</span></button>
+    <button class="filter-btn" data-filter="Stocks" onclick="filterTopics('Stocks', this)"><span class="lang-en">Stocks</span><span class="lang-pa" style="display:none">ਸਟਾਕ</span></button>
 
   </div>
-  <div class="results-count" id="results-count">Showing all 100 topics</div>
+  <div class="results-count" id="results-count">Showing all 200+ topics</div>
 </div>
 
 <!-- GRID -->
@@ -1069,7 +1059,398 @@ function getDailyTip() {
   const now = new Date();
   const dayOfYear = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / 86400000);
   const idx = dayOfYear % TIPS_EN.length;
-  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'
+  {
+    icon: "📊", cat: "Stocks",
+    en: "Stock Market Basics", pa: "ਸਟਾਕ ਮਾਰਕੀਟ ਦੀਆਂ ਮੂਲ ਗੱਲਾਂ",
+    en_desc: "What stocks are, how they work, and how to buy your first share in Canada.", pa_desc: "ਸਟਾਕ ਕੀ ਹਨ, ਕਿਵੇਂ ਕੰਮ ਕਰਦੇ ਅਤੇ ਕੈਨੇਡਾ ਵਿੱਚ ਪਹਿਲਾ ਸ਼ੇਅਰ ਕਿਵੇਂ ਖਰੀਦੀਏ।",
+    file: "learn-stocks-basics.html"
+  },
+  {
+    icon: "🔍", cat: "Stocks",
+    en: "How to Read a Stock Chart", pa: "ਸਟਾਕ ਚਾਰਟ ਕਿਵੇਂ ਪੜ੍ਹੀਏ",
+    en_desc: "Candlesticks, moving averages, volume — reading charts without the confusion.", pa_desc: "ਕੈਂਡਲਸਟਿੱਕ, ਮੂਵਿੰਗ ਔਸਤ, ਵਾਲੀਅਮ — ਬਿਨਾਂ ਉਲਝਣ ਚਾਰਟ ਪੜ੍ਹਨਾ।",
+    file: "learn-how-to-read-stock.html"
+  },
+  {
+    icon: "🍁", cat: "Stocks",
+    en: "Best Canadian Stocks to Watch", pa: "ਵਧੀਆ ਕੈਨੇਡੀਅਨ ਸਟਾਕ",
+    en_desc: "Top Canadian companies across banking, energy, and tech sectors to research.", pa_desc: "ਬੈਂਕਿੰਗ, ਊਰਜਾ ਅਤੇ ਟੈਕ ਖੇਤਰਾਂ ਵਿੱਚ ਕੈਨੇਡੀਅਨ ਕੰਪਨੀਆਂ।",
+    file: "learn-canadian-stocks.html"
+  },
+  {
+    icon: "⚖️", cat: "Stocks",
+    en: "Growth vs. Value Stocks", pa: "ਗਰੋਥ ਬਨਾਮ ਵੈਲਿਊ ਸਟਾਕ",
+    en_desc: "The two main investing philosophies — what they mean and which fits you.", pa_desc: "ਦੋ ਮੁੱਖ ਨਿਵੇਸ਼ ਫਲਸਫੇ — ਕੀ ਮਤਲਬ ਅਤੇ ਕਿਹੜਾ ਤੁਹਾਡੇ ਲਈ ਸਹੀ।",
+    file: "learn-growth-vs-value.html"
+  },
+  {
+    icon: "🖥️", cat: "Stocks",
+    en: "Using a Stock Screener", pa: "ਸਟਾਕ ਸਕ੍ਰੀਨਰ ਵਰਤਣਾ",
+    en_desc: "How to filter and find stocks that match your criteria using free tools.", pa_desc: "ਮੁਫ਼ਤ ਟੂਲਸ ਨਾਲ ਆਪਣੇ ਮਾਪਦੰਡਾਂ ਦੇ ਅਨੁਕੂਲ ਸਟਾਕ ਲੱਭਣਾ।",
+    file: "learn-stock-screener.html"
+  },
+  {
+    icon: "📐", cat: "Stocks",
+    en: "P/E Ratio — Is a Stock Cheap or Expensive?", pa: "P/E ਅਨੁਪਾਤ — ਸਟਾਕ ਸਸਤਾ ਜਾਂ ਮਹਿੰਗਾ?",
+    en_desc: "The most important valuation metric explained simply with real examples.", pa_desc: "ਅਸਲ ਉਦਾਹਰਣਾਂ ਨਾਲ ਸਭ ਤੋਂ ਮਹੱਤਵਪੂਰਨ ਮੁੱਲਾਂਕਣ ਮੈਟ੍ਰਿਕ।",
+    file: "learn-pe-ratio.html"
+  },
+  {
+    icon: "💵", cat: "Stocks",
+    en: "Top Dividend Stocks in Canada", pa: "ਕੈਨੇਡਾ ਵਿੱਚ ਡਿਵੀਡੈਂਡ ਸਟਾਕ",
+    en_desc: "How to build a portfolio of reliable dividend-paying Canadian stocks.", pa_desc: "ਭਰੋਸੇਯੋਗ ਕੈਨੇਡੀਅਨ ਡਿਵੀਡੈਂਡ ਸਟਾਕਾਂ ਦਾ ਪੋਰਟਫੋਲੀਓ ਕਿਵੇਂ ਬਣਾਈਏ।",
+    file: "learn-dividend-stocks.html"
+  },
+  {
+    icon: "📱", cat: "Stocks",
+    en: "Wealthsimple Trade — How to Use It", pa: "Wealthsimple Trade ਕਿਵੇਂ ਵਰਤੀਏ",
+    en_desc: "Canada's most popular free stock trading app — account setup to first trade.", pa_desc: "ਕੈਨੇਡਾ ਦੀ ਮਸ਼ਹੂਰ ਮੁਫ਼ਤ ਸਟਾਕ ਟ੍ਰੇਡਿੰਗ ਐਪ — ਖਾਤਾ ਸੈੱਟਅਪ ਤੋਂ ਪਹਿਲੀ ਟ੍ਰੇਡ ਤੱਕ।",
+    file: "learn-wealthsimple-trade.html"
+  },
+  {
+    icon: "🏦", cat: "Stocks",
+    en: "Questrade — Canada's Low-Cost Broker", pa: "Questrade — ਘੱਟ ਲਾਗਤ ਬ੍ਰੋਕਰ",
+    en_desc: "How Questrade works, fees, account types, and why many Canadians prefer it.", pa_desc: "Questrade ਕਿਵੇਂ ਕੰਮ ਕਰਦਾ, ਫ਼ੀਸਾਂ ਅਤੇ ਖਾਤਾ ਕਿਸਮਾਂ।",
+    file: "learn-questrade.html"
+  },
+  {
+    icon: "🌎", cat: "Stocks",
+    en: "TSX vs. S&P 500 — Which to Invest In?", pa: "TSX ਬਨਾਮ S&P 500 — ਕਿੱਥੇ ਨਿਵੇਸ਼ ਕਰੀਏ?",
+    en_desc: "Canadian vs. US markets — pros, cons, and how to hold both in your portfolio.", pa_desc: "ਕੈਨੇਡੀਅਨ ਬਨਾਮ ਅਮਰੀਕੀ ਮਾਰਕੀਟ — ਫਾਇਦੇ-ਨੁਕਸਾਨ ਅਤੇ ਦੋਵੇਂ ਕਿਵੇਂ ਰੱਖੀਏ।",
+    file: "learn-tsx-sp500.html"
+  },
+  {
+    icon: "📉", cat: "Stocks",
+    en: "Short Selling Explained", pa: "ਸ਼ਾਰਟ ਸੈਲਿੰਗ ਸਮਝਾਈ",
+    en_desc: "What short selling is, the risks involved, and why most investors should avoid it.", pa_desc: "ਸ਼ਾਰਟ ਸੈਲਿੰਗ ਕੀ ਹੈ ਅਤੇ ਜ਼ਿਆਦਾਤਰ ਨਿਵੇਸ਼ਕਾਂ ਨੂੰ ਕਿਉਂ ਬਚਣਾ ਚਾਹੀਦਾ।",
+    file: "learn-short-selling.html"
+  },
+  {
+    icon: "🎲", cat: "Stocks",
+    en: "Stock Options — Basics Only", pa: "ਸਟਾਕ ਆਪਸ਼ਨਸ — ਮੂਲ ਗੱਲਾਂ",
+    en_desc: "What call and put options are — a beginner overview without the complexity.", pa_desc: "ਕਾਲ ਅਤੇ ਪੁਟ ਆਪਸ਼ਨਸ ਕੀ ਹਨ — ਸ਼ੁਰੂਆਤੀ ਜਾਣਕਾਰੀ।",
+    file: "learn-options-basics.html"
+  },
+  {
+    icon: "🏢", cat: "Stocks",
+    en: "REITs — Real Estate Without Buying Property", pa: "REITs — ਜਾਇਦਾਦ ਖਰੀਦੇ ਬਿਨਾਂ ਰੀਅਲ ਅਸਟੇਟ",
+    en_desc: "How Real Estate Investment Trusts let you invest in property through the stock market.", pa_desc: "ਸਟਾਕ ਮਾਰਕੀਟ ਰਾਹੀਂ ਜਾਇਦਾਦ ਵਿੱਚ ਨਿਵੇਸ਼ ਕਿਵੇਂ ਕਰੀਏ।",
+    file: "learn-reits.html"
+  },
+  {
+    icon: "🗂️", cat: "Stocks",
+    en: "Sector Investing — Finance, Energy, Tech", pa: "ਸੈਕਟਰ ਨਿਵੇਸ਼",
+    en_desc: "How to invest by sector and why concentration in one area adds risk.", pa_desc: "ਸੈਕਟਰ ਅਨੁਸਾਰ ਨਿਵੇਸ਼ ਕਿਵੇਂ ਕਰੀਏ ਅਤੇ ਇੱਕ ਖੇਤਰ ਵਿੱਚ ਜ਼ਿਆਦਾ ਕਿਉਂ ਜੋਖਮ ਵਧਾਉਂਦਾ ਹੈ।",
+    file: "learn-sector-investing.html"
+  },
+  {
+    icon: "✂️", cat: "Stocks",
+    en: "Stock Splits & What They Mean", pa: "ਸਟਾਕ ਸਪਲਿੱਟ ਅਤੇ ਇਸਦਾ ਮਤਲਬ",
+    en_desc: "What happens when a company splits its stock and how it affects you as a shareholder.", pa_desc: "ਜਦੋਂ ਕੰਪਨੀ ਸਟਾਕ ਸਪਲਿੱਟ ਕਰਦੀ ਹੈ ਤਾਂ ਸ਼ੇਅਰਹੋਲਡਰ ਵਜੋਂ ਕੀ ਹੁੰਦਾ।",
+    file: "learn-stock-split.html"
+  },
+  {
+    icon: "🌍", cat: "Insurance",
+    en: "Travel Insurance — What's Actually Covered", pa: "ਯਾਤਰਾ ਬੀਮਾ — ਅਸਲ ਵਿੱਚ ਕੀ ਕਵਰ ਹੁੰਦਾ",
+    en_desc: "Medical emergencies, trip cancellation, baggage — what travel insurance really covers.", pa_desc: "ਡਾਕਟਰੀ ਐਮਰਜੈਂਸੀ, ਯਾਤਰਾ ਰੱਦ, ਸਮਾਨ — ਯਾਤਰਾ ਬੀਮਾ ਅਸਲ ਵਿੱਚ ਕੀ ਕਵਰ ਕਰਦਾ।",
+    file: "learn-travel-insurance.html"
+  },
+  {
+    icon: "🏙️", cat: "Insurance",
+    en: "Condo vs. Home Insurance", pa: "ਕੌਂਡੋ ਬਨਾਮ ਘਰ ਬੀਮਾ",
+    en_desc: "Why condo insurance is different from home insurance and what each covers.", pa_desc: "ਕੌਂਡੋ ਬੀਮਾ ਘਰ ਬੀਮੇ ਤੋਂ ਵੱਖ ਕਿਉਂ ਅਤੇ ਹਰ ਇੱਕ ਕੀ ਕਵਰ ਕਰਦਾ।",
+    file: "learn-condo-insurance.html"
+  },
+  {
+    icon: "🔄", cat: "Insurance",
+    en: "Annual Insurance Review Checklist", pa: "ਸਾਲਾਨਾ ਬੀਮਾ ਸਮੀਖਿਆ ਚੈੱਕਲਿਸਟ",
+    en_desc: "What to review on your insurance policies every year to stay properly covered.", pa_desc: "ਹਰ ਸਾਲ ਆਪਣੀਆਂ ਬੀਮਾ ਪਾਲਿਸੀਆਂ 'ਤੇ ਕੀ ਸਮੀਖਿਆ ਕਰਨੀ ਹੈ।",
+    file: "learn-insurance-review.html"
+  },
+  {
+    icon: "🏠", cat: "Insurance",
+    en: "Mortgage Life Insurance vs. Term Life", pa: "ਮੌਰਗੇਜ ਜ਼ਿੰਦਗੀ ਬੀਮਾ ਬਨਾਮ ਟਰਮ",
+    en_desc: "Why most financial experts recommend term life over bank mortgage insurance.", pa_desc: "ਜ਼ਿਆਦਾਤਰ ਮਾਹਰ ਬੈਂਕ ਮੌਰਗੇਜ ਬੀਮੇ ਨਾਲੋਂ ਟਰਮ ਲਾਈਫ਼ ਦੀ ਸਿਫ਼ਾਰਿਸ਼ ਕਿਉਂ ਕਰਦੇ ਹਨ।",
+    file: "learn-mortgage-insurance.html"
+  },
+  {
+    icon: "💸", cat: "Insurance",
+    en: "Why Insurance Premiums Change", pa: "ਬੀਮਾ ਪ੍ਰੀਮੀਅਮ ਕਿਉਂ ਬਦਲਦੇ ਹਨ",
+    en_desc: "What factors affect your insurance rates — age, health, lifestyle, and claims.", pa_desc: "ਤੁਹਾਡੀਆਂ ਬੀਮਾ ਦਰਾਂ ਨੂੰ ਕੀ ਪ੍ਰਭਾਵਿਤ ਕਰਦਾ ਹੈ — ਉਮਰ, ਸਿਹਤ, ਜੀਵਨਸ਼ੈਲੀ।",
+    file: "learn-insurance-cost.html"
+  },
+  {
+    icon: "🏗️", cat: "Real Estate",
+    en: "Pre-Construction Condos — Risks & Benefits", pa: "ਪ੍ਰੀ-ਕੰਸਟ੍ਰਕਸ਼ਨ ਕੌਂਡੋ — ਜੋਖਮ ਅਤੇ ਫਾਇਦੇ",
+    en_desc: "How buying pre-construction works in Canada and the hidden risks to watch for.", pa_desc: "ਕੈਨੇਡਾ ਵਿੱਚ ਪ੍ਰੀ-ਕੰਸਟ੍ਰਕਸ਼ਨ ਖਰੀਦਣਾ ਕਿਵੇਂ ਕੰਮ ਕਰਦਾ ਅਤੇ ਛੁਪੇ ਜੋਖਮ।",
+    file: "learn-pre-construction.html"
+  },
+  {
+    icon: "🔄", cat: "Real Estate",
+    en: "Refinancing Your Mortgage", pa: "ਮੌਰਗੇਜ ਰੀਫਾਈਨੈਂਸਿੰਗ",
+    en_desc: "When refinancing makes sense, the costs involved, and how to calculate savings.", pa_desc: "ਰੀਫਾਈਨੈਂਸਿੰਗ ਕਦੋਂ ਫਾਇਦੇਮੰਦ, ਖਰਚੇ ਅਤੇ ਬੱਚਤ ਕਿਵੇਂ ਜੋੜੀਏ।",
+    file: "learn-refinancing.html"
+  },
+  {
+    icon: "🛏️", cat: "Real Estate",
+    en: "Airbnb & Short-Term Rentals in Canada", pa: "ਕੈਨੇਡਾ ਵਿੱਚ ਏਅਰਬੀਐਨਬੀ",
+    en_desc: "Rules, taxes, and whether short-term rentals are worth it in your city.", pa_desc: "ਨਿਯਮ, ਟੈਕਸ ਅਤੇ ਕੀ ਤੁਹਾਡੇ ਸ਼ਹਿਰ ਵਿੱਚ ਥੋੜ੍ਹੇ ਸਮੇਂ ਦੇ ਕਿਰਾਏ ਫਾਇਦੇਮੰਦ ਹਨ।",
+    file: "learn-airbnb-rental.html"
+  },
+  {
+    icon: "🧾", cat: "Real Estate",
+    en: "Property Tax in Canada — How It Works", pa: "ਕੈਨੇਡਾ ਵਿੱਚ ਜਾਇਦਾਦ ਟੈਕਸ",
+    en_desc: "How property taxes are calculated by municipality and what you can do about them.", pa_desc: "ਨਗਰਪਾਲਿਕਾ ਅਨੁਸਾਰ ਜਾਇਦਾਦ ਟੈਕਸ ਕਿਵੇਂ ਗਿਣੀਦਾ ਅਤੇ ਕੀ ਕੀਤਾ ਜਾ ਸਕਦਾ।",
+    file: "learn-property-tax.html"
+  },
+  {
+    icon: "🏘️", cat: "Real Estate",
+    en: "House Hacking — Live Free, Build Wealth", pa: "ਹਾਊਸ ਹੈਕਿੰਗ — ਮੁਫ਼ਤ ਰਹੋ, ਦੌਲਤ ਬਣਾਓ",
+    en_desc: "How to buy a duplex or triplex, live in one unit, and let tenants pay your mortgage.", pa_desc: "ਡੁਪਲੈਕਸ ਖਰੀਦੋ, ਇੱਕ ਯੂਨਿਟ ਵਿੱਚ ਰਹੋ, ਕਿਰਾਏਦਾਰ ਮੌਰਗੇਜ ਅਦਾ ਕਰਨ।",
+    file: "learn-house-hack.html"
+  },
+  {
+    icon: "⚖️", cat: "Investing",
+    en: "Portfolio Rebalancing — When & How", pa: "ਪੋਰਟਫੋਲੀਓ ਰੀਬੈਲੈਂਸਿੰਗ",
+    en_desc: "Why your portfolio drifts over time and how to rebalance without triggering taxes.", pa_desc: "ਸਮੇਂ ਨਾਲ ਪੋਰਟਫੋਲੀਓ ਕਿਉਂ ਬਦਲਦਾ ਅਤੇ ਟੈਕਸ ਤੋਂ ਬਿਨਾਂ ਰੀਬੈਲੈਂਸ ਕਿਵੇਂ ਕਰੀਏ।",
+    file: "learn-portfolio-rebalancing.html"
+  },
+  {
+    icon: "🥧", cat: "Investing",
+    en: "Asset Allocation by Age", pa: "ਉਮਰ ਅਨੁਸਾਰ ਸੰਪੱਤੀ ਵੰਡ",
+    en_desc: "How the right mix of stocks, bonds, and cash changes as you get older.", pa_desc: "ਸਟਾਕ, ਬਾਂਡ ਅਤੇ ਨਕਦੀ ਦਾ ਸਹੀ ਮਿਸ਼ਰਣ ਉਮਰ ਦੇ ਨਾਲ ਕਿਵੇਂ ਬਦਲਦਾ ਹੈ।",
+    file: "learn-asset-allocation.html"
+  },
+  {
+    icon: "🍂", cat: "Investing",
+    en: "Tax-Loss Harvesting in Canada", pa: "ਕੈਨੇਡਾ ਵਿੱਚ ਟੈਕਸ-ਲੌਸ ਹਾਰਵੈਸਟਿੰਗ",
+    en_desc: "How to sell losing investments to reduce your capital gains tax bill legally.", pa_desc: "ਪੂੰਜੀ ਲਾਭ ਟੈਕਸ ਘਟਾਉਣ ਲਈ ਘਾਟੇ ਵਾਲੇ ਨਿਵੇਸ਼ ਕਾਨੂੰਨੀ ਤੌਰ 'ਤੇ ਕਿਵੇਂ ਵੇਚੀਏ।",
+    file: "learn-tax-loss-harvesting.html"
+  },
+  {
+    icon: "🔀", cat: "Investing",
+    en: "Emergency Fund vs. Investing — Which First?", pa: "ਐਮਰਜੈਂਸੀ ਫੰਡ ਬਨਾਮ ਨਿਵੇਸ਼ — ਪਹਿਲਾਂ ਕੀ?",
+    en_desc: "The right order of operations for building financial security while growing wealth.", pa_desc: "ਵਿੱਤੀ ਸੁਰੱਖਿਆ ਬਣਾਉਂਦੇ ਹੋਏ ਦੌਲਤ ਵਧਾਉਣ ਦਾ ਸਹੀ ਕ੍ਰਮ।",
+    file: "learn-emergency-vs-invest.html"
+  },
+  {
+    icon: "😰", cat: "Investing",
+    en: "FOMO Investing — Why It Destroys Wealth", pa: "FOMO ਨਿਵੇਸ਼ — ਕਿਉਂ ਦੌਲਤ ਬਰਬਾਦ ਕਰਦਾ",
+    en_desc: "How fear of missing out leads to bad investment decisions — and how to avoid it.", pa_desc: "ਖੁੰਝ ਜਾਣ ਦਾ ਡਰ ਕਿਵੇਂ ਮਾੜੇ ਨਿਵੇਸ਼ ਫੈਸਲਿਆਂ ਵੱਲ ਲੈ ਜਾਂਦਾ।",
+    file: "learn-fomo-investing.html"
+  },
+  {
+    icon: "0️⃣", cat: "Budgeting",
+    en: "Zero-Based Budgeting — Every Dollar Has a Job", pa: "ਜ਼ੀਰੋ-ਬੇਸਡ ਬਜਟਿੰਗ",
+    en_desc: "Assign every dollar a purpose — the most powerful budgeting system explained.", pa_desc: "ਹਰ ਡਾਲਰ ਨੂੰ ਮਕਸਦ ਦਿਓ — ਸਭ ਤੋਂ ਸ਼ਕਤੀਸ਼ਾਲੀ ਬਜਟਿੰਗ ਸਿਸਟਮ।",
+    file: "learn-zero-based-budget.html"
+  },
+  {
+    icon: "✉️", cat: "Budgeting",
+    en: "Cash Envelope Method", pa: "ਕੈਸ਼ ਲਿਫ਼ਾਫ਼ਾ ਵਿਧੀ",
+    en_desc: "An old-school cash budgeting technique that still works — especially for overspenders.", pa_desc: "ਪੁਰਾਣੀ ਕੈਸ਼ ਬਜਟਿੰਗ ਤਕਨੀਕ ਜੋ ਅਜੇ ਵੀ ਕੰਮ ਕਰਦੀ ਹੈ।",
+    file: "learn-envelope-method.html"
+  },
+  {
+    icon: "🪣", cat: "Budgeting",
+    en: "Sinking Funds — Save for Big Expenses", pa: "ਸਿੰਕਿੰਗ ਫੰਡ — ਵੱਡੇ ਖਰਚਿਆਂ ਲਈ ਬੱਚਤ",
+    en_desc: "How to save ahead for irregular expenses like Christmas, vacations, and car repairs.", pa_desc: "ਕ੍ਰਿਸਮਸ, ਛੁੱਟੀਆਂ ਅਤੇ ਕਾਰ ਮੁਰੰਮਤ ਵਰਗੇ ਅਨਿਯਮਿਤ ਖਰਚਿਆਂ ਲਈ ਪਹਿਲਾਂ ਤੋਂ ਬਚਾਓ।",
+    file: "learn-sinking-funds.html"
+  },
+  {
+    icon: "📊", cat: "Budgeting",
+    en: "The Wealth Gap — Why Some People Get Ahead", pa: "ਦੌਲਤ ਦਾ ਪਾੜਾ — ਕੁਝ ਲੋਕ ਅੱਗੇ ਕਿਉਂ ਜਾਂਦੇ",
+    en_desc: "The habits and decisions that separate those who build wealth from those who don't.", pa_desc: "ਆਦਤਾਂ ਅਤੇ ਫੈਸਲੇ ਜੋ ਦੌਲਤ ਬਣਾਉਣ ਵਾਲਿਆਂ ਨੂੰ ਵੱਖ ਕਰਦੇ ਹਨ।",
+    file: "learn-wealth-gap.html"
+  },
+  {
+    icon: "🏠", cat: "Taxes",
+    en: "Rental Property Deductions in Canada", pa: "ਕਿਰਾਏ ਦੀ ਜਾਇਦਾਦ ਕਟੌਤੀਆਂ",
+    en_desc: "Every expense you can deduct from rental income to reduce your tax bill.", pa_desc: "ਕਿਰਾਏ ਦੀ ਆਮਦਨ ਤੋਂ ਕਟੌਤੀ ਕਰਨ ਯੋਗ ਹਰ ਖਰਚਾ।",
+    file: "learn-rental-deductions.html"
+  },
+  {
+    icon: "🔎", cat: "Taxes",
+    en: "CRA Audit — What Triggers One & What to Do", pa: "CRA ਆਡਿਟ — ਕੀ ਕਰਾਉਂਦਾ ਅਤੇ ਕੀ ਕਰੀਏ",
+    en_desc: "Common red flags that trigger CRA reviews and how to respond if audited.", pa_desc: "CRA ਸਮੀਖਿਆਵਾਂ ਲਈ ਆਮ ਚਿੱਤਾਵਨੀ ਸੰਕੇਤ ਅਤੇ ਆਡਿਟ 'ਤੇ ਕਿਵੇਂ ਜਵਾਬ ਦੇਈਏ।",
+    file: "learn-cra-audit.html"
+  },
+  {
+    icon: "💚", cat: "Taxes",
+    en: "Income That Is Tax-Free in Canada", pa: "ਕੈਨੇਡਾ ਵਿੱਚ ਟੈਕਸ-ਮੁਕਤ ਆਮਦਨ",
+    en_desc: "CCB, TFSA growth, lottery winnings, life insurance payouts — what CRA can't tax.", pa_desc: "CCB, TFSA ਵਿਕਾਸ, ਲਾਟਰੀ — ਜੋ CRA ਟੈਕਸ ਨਹੀਂ ਲਗਾ ਸਕਦਾ।",
+    file: "learn-tax-free-income.html"
+  },
+  {
+    icon: "🏪", cat: "Taxes",
+    en: "Charging HST as a Business Owner", pa: "ਕਾਰੋਬਾਰ ਮਾਲਕ ਵਜੋਂ HST ਵਸੂਲਣਾ",
+    en_desc: "When you're required to register for and collect HST — the $30K threshold explained.", pa_desc: "HST ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਅਤੇ ਇਕੱਤਰ ਕਰਨਾ ਕਦੋਂ ਲਾਜ਼ਮੀ — $30K ਸੀਮਾ।",
+    file: "learn-hst-business.html"
+  },
+  {
+    icon: "🤝", cat: "Estate Planning",
+    en: "Joint Ownership — How It Affects Your Estate", pa: "ਸਾਂਝੀ ਮਾਲਕੀ ਅਤੇ ਜਾਇਦਾਦ ਯੋਜਨਾ",
+    en_desc: "How holding property jointly affects what happens when one owner passes away.", pa_desc: "ਸਾਂਝੀ ਜਾਇਦਾਦ ਇੱਕ ਮਾਲਕ ਦੀ ਮੌਤ 'ਤੇ ਕੀ ਹੁੰਦਾ।",
+    file: "learn-joint-ownership.html"
+  },
+  {
+    icon: "🌍", cat: "Estate Planning",
+    en: "Estate Planning for Immigrants in Canada", pa: "ਕੈਨੇਡਾ ਵਿੱਚ ਪਰਵਾਸੀਆਂ ਲਈ ਜਾਇਦਾਦ ਯੋਜਨਾ",
+    en_desc: "Cross-border estate issues, overseas assets, and what newcomers should plan for.", pa_desc: "ਸਰਹੱਦ ਪਾਰ ਜਾਇਦਾਦ ਮੁੱਦੇ ਅਤੇ ਨਵੇਂ ਆਉਣ ਵਾਲਿਆਂ ਨੂੰ ਕੀ ਯੋਜਨਾ ਬਣਾਉਣੀ ਚਾਹੀਦੀ।",
+    file: "learn-estate-immigrants.html"
+  },
+  {
+    icon: "🕯️", cat: "Estate Planning",
+    en: "Final Expense Insurance", pa: "ਅੰਤਿਮ ਖਰਚ ਬੀਮਾ",
+    en_desc: "Coverage designed to pay for funeral costs — who needs it and how it works.", pa_desc: "ਅੰਤਿਮ ਸੰਸਕਾਰ ਖਰਚਿਆਂ ਲਈ ਕਵਰੇਜ — ਕਿਸਨੂੰ ਚਾਹੀਦਾ ਅਤੇ ਕਿਵੇਂ ਕੰਮ ਕਰਦਾ।",
+    file: "learn-final-expenses.html"
+  },
+  {
+    icon: "🌴", cat: "Retirement",
+    en: "How to Retire Early in Canada", pa: "ਕੈਨੇਡਾ ਵਿੱਚ ਜਲਦੀ ਕਿਵੇਂ ਰਿਟਾਇਰ ਹੋਈਏ",
+    en_desc: "The math, the savings rate, and the strategy behind retiring before 65.", pa_desc: "ਗਣਿਤ, ਬੱਚਤ ਦਰ ਅਤੇ 65 ਤੋਂ ਪਹਿਲਾਂ ਰਿਟਾਇਰ ਹੋਣ ਦੀ ਰਣਨੀਤੀ।",
+    file: "learn-early-retirement.html"
+  },
+  {
+    icon: "🏅", cat: "Retirement",
+    en: "Guaranteed Income Supplement (GIS)", pa: "ਗਾਰੰਟੀਡ ਆਮਦਨ ਪੂਰਕ (GIS)",
+    en_desc: "A top-up benefit for low-income seniors — who qualifies and how to apply.", pa_desc: "ਘੱਟ ਆਮਦਨ ਵਾਲੇ ਬਜ਼ੁਰਗਾਂ ਲਈ ਵਾਧੂ ਲਾਭ — ਕੌਣ ਯੋਗ ਅਤੇ ਕਿਵੇਂ ਅਪਲਾਈ ਕਰੀਏ।",
+    file: "learn-gis.html"
+  },
+  {
+    icon: "💳", cat: "Retirement",
+    en: "Retirement Withdrawal Strategy", pa: "ਰਿਟਾਇਰਮੈਂਟ ਵਿੱਚ ਕਿੱਥੋਂ ਪਹਿਲਾਂ ਕੱਢੀਏ",
+    en_desc: "TFSA first or RRSP? The tax-smart order to draw down your retirement savings.", pa_desc: "TFSA ਪਹਿਲਾਂ ਜਾਂ RRSP? ਰਿਟਾਇਰਮੈਂਟ ਬੱਚਤ ਕੱਢਣ ਦਾ ਟੈਕਸ-ਸਮਾਰਟ ਕ੍ਰਮ।",
+    file: "learn-retirement-withdrawal.html"
+  },
+  {
+    icon: "📈", cat: "Retirement",
+    en: "Sequence of Returns Risk", pa: "ਰਿਟਰਨ ਦਾ ਕ੍ਰਮ ਜੋਖਮ",
+    en_desc: "Why a market crash early in retirement is far more dangerous than one later on.", pa_desc: "ਰਿਟਾਇਰਮੈਂਟ ਦੀ ਸ਼ੁਰੂਆਤ ਵਿੱਚ ਮਾਰਕੀਟ ਕਰੈਸ਼ ਬਾਅਦ ਵਿੱਚ ਕਰੈਸ਼ ਨਾਲੋਂ ਖ਼ਤਰਨਾਕ ਕਿਉਂ।",
+    file: "learn-sequence-of-returns.html"
+  },
+  {
+    icon: "📊", cat: "Credit",
+    en: "Credit Utilization — The 30% Rule", pa: "ਕ੍ਰੈਡਿਟ ਵਰਤੋਂ — 30% ਨਿਯਮ",
+    en_desc: "Why keeping your balances below 30% of your limit is crucial for your score.", pa_desc: "ਆਪਣੇ ਬਕਾਏ ਨੂੰ ਸੀਮਾ ਦੇ 30% ਤੋਂ ਘੱਟ ਰੱਖਣਾ ਸਕੋਰ ਲਈ ਕਿਉਂ ਜ਼ਰੂਰੀ।",
+    file: "learn-credit-utilization.html"
+  },
+  {
+    icon: "🧊", cat: "Credit",
+    en: "Credit Freeze — How to Protect Yourself", pa: "ਕ੍ਰੈਡਿਟ ਫ੍ਰੀਜ਼ — ਆਪਣੀ ਸੁਰੱਖਿਆ ਕਿਵੇਂ ਕਰੀਏ",
+    en_desc: "How to freeze your credit at Equifax and TransUnion to prevent identity fraud.", pa_desc: "Equifax ਅਤੇ TransUnion 'ਤੇ ਕ੍ਰੈਡਿਟ ਫ੍ਰੀਜ਼ ਕਿਵੇਂ ਕਰੀਏ।",
+    file: "learn-credit-freeze.html"
+  },
+  {
+    icon: "🛍️", cat: "Credit",
+    en: "Buy Now Pay Later — The Hidden Dangers", pa: "ਹੁਣ ਖਰੀਦੋ ਬਾਅਦ ਵਿੱਚ ਭੁਗਤਾਨ ਕਰੋ — ਖ਼ਤਰੇ",
+    en_desc: "BNPL services like Afterpay and Klarna — what they don't tell you about the risks.", pa_desc: "Afterpay ਅਤੇ Klarna ਵਰਗੀਆਂ BNPL ਸੇਵਾਵਾਂ — ਜੋ ਜੋਖਮਾਂ ਬਾਰੇ ਨਹੀਂ ਦੱਸਦੇ।",
+    file: "learn-buy-now-pay-later.html"
+  },
+  {
+    icon: "👨‍👩‍👧", cat: "Newcomers",
+    en: "Sponsoring Parents to Canada", pa: "ਮਾਤਾ-ਪਿਤਾ ਨੂੰ ਕੈਨੇਡਾ ਸਪਾਂਸਰ ਕਰਨਾ",
+    en_desc: "Financial requirements and responsibilities when sponsoring family to Canada.", pa_desc: "ਪਰਿਵਾਰ ਨੂੰ ਸਪਾਂਸਰ ਕਰਨ ਲਈ ਵਿੱਤੀ ਲੋੜਾਂ ਅਤੇ ਜ਼ਿੰਮੇਵਾਰੀਆਂ।",
+    file: "learn-sponsoring-parents.html"
+  },
+  {
+    icon: "🎓", cat: "Newcomers",
+    en: "Getting Your Foreign Credentials Recognized", pa: "ਵਿਦੇਸ਼ੀ ਡਿਗਰੀ ਮਾਨਤਾ",
+    en_desc: "How to get internationally earned degrees and certifications recognized in Canada.", pa_desc: "ਕੈਨੇਡਾ ਵਿੱਚ ਅੰਤਰਰਾਸ਼ਟਰੀ ਡਿਗਰੀਆਂ ਅਤੇ ਸਰਟੀਫਿਕੇਟ ਮਾਨਤਾ ਕਿਵੇਂ ਪ੍ਰਾਪਤ ਕਰੀਏ।",
+    file: "learn-international-degree.html"
+  },
+  {
+    icon: "💳", cat: "Newcomers",
+    en: "Best Bank Accounts for Newcomers", pa: "ਨਵੇਂ ਆਉਣ ਵਾਲਿਆਂ ਲਈ ਬੈਂਕ ਖਾਤੇ",
+    en_desc: "Free newcomer banking offers from major Canadian banks — what to look for.", pa_desc: "ਵੱਡੇ ਕੈਨੇਡੀਅਨ ਬੈਂਕਾਂ ਤੋਂ ਮੁਫ਼ਤ ਨਵੇਂ ਆਉਣ ਵਾਲਿਆਂ ਲਈ ਖਾਤੇ।",
+    file: "learn-newcomer-banking.html"
+  },
+  {
+    icon: "🍁", cat: "Newcomers",
+    en: "OAS for Immigrants — The 40-Year Rule", pa: "ਪਰਵਾਸੀਆਂ ਲਈ OAS — 40 ਸਾਲ ਦਾ ਨਿਯਮ",
+    en_desc: "How OAS is calculated based on years in Canada and what partial OAS means.", pa_desc: "ਕੈਨੇਡਾ ਵਿੱਚ ਸਾਲਾਂ ਦੇ ਆਧਾਰ 'ਤੇ OAS ਕਿਵੇਂ ਗਿਣੀਦੀ ਅਤੇ ਅੰਸ਼ਕ OAS ਦਾ ਮਤਲਬ।",
+    file: "learn-oas-immigrants.html"
+  },
+  {
+    icon: "💼", cat: "Personal Finance",
+    en: "How to Negotiate Your Salary in Canada", pa: "ਕੈਨੇਡਾ ਵਿੱਚ ਤਨਖਾਹ ਕਿਵੇਂ ਗੱਲਬਾਤ ਕਰੀਏ",
+    en_desc: "Research, scripts, and timing to negotiate a higher salary confidently.", pa_desc: "ਆਤਮਵਿਸ਼ਵਾਸ ਨਾਲ ਵੱਧ ਤਨਖਾਹ ਗੱਲਬਾਤ ਕਰਨ ਲਈ ਖੋਜ, ਸਕ੍ਰਿਪਟ ਅਤੇ ਸਮਾਂ।",
+    file: "learn-negotiating-salary.html"
+  },
+  {
+    icon: "🏢", cat: "Personal Finance",
+    en: "Insurance for Small Business Owners", pa: "ਛੋਟੇ ਕਾਰੋਬਾਰ ਮਾਲਕਾਂ ਲਈ ਬੀਮਾ",
+    en_desc: "Key insurance types every Canadian small business owner should have.", pa_desc: "ਹਰ ਕੈਨੇਡੀਅਨ ਛੋਟੇ ਕਾਰੋਬਾਰ ਮਾਲਕ ਕੋਲ ਹੋਣੀਆਂ ਚਾਹੀਦੀਆਂ ਮੁੱਖ ਬੀਮਾ ਕਿਸਮਾਂ।",
+    file: "learn-insurance-business.html"
+  },
+  {
+    icon: "💍", cat: "Personal Finance",
+    en: "Money & Marriage — Prenups and Joint Finances", pa: "ਪੈਸੇ ਅਤੇ ਵਿਆਹ — ਪ੍ਰੀਨਅਪਸ ਅਤੇ ਸਾਂਝੇ ਵਿੱਤ",
+    en_desc: "Prenuptial agreements, joint vs. separate accounts, and financial planning as a couple.", pa_desc: "ਵਿਆਹ ਤੋਂ ਪਹਿਲਾਂ ਇਕਰਾਰਨਾਮੇ, ਸਾਂਝੇ ਬਨਾਮ ਵੱਖਰੇ ਖਾਤੇ ਅਤੇ ਜੋੜੇ ਵਜੋਂ ਵਿੱਤੀ ਯੋਜਨਾ।",
+    file: "learn-money-in-marriage.html"
+  },
+  {
+    icon: "🔑", cat: "Personal Finance",
+    en: "Financial Independence — The 4% Rule", pa: "ਵਿੱਤੀ ਸੁਤੰਤਰਤਾ — 4% ਨਿਯਮ",
+    en_desc: "The 4% withdrawal rule and how to calculate your financial independence number.", pa_desc: "4% ਕਢਾਈ ਨਿਯਮ ਅਤੇ ਆਪਣੀ ਵਿੱਤੀ ਸੁਤੰਤਰਤਾ ਸੰਖਿਆ ਕਿਵੇਂ ਗਿਣੀਏ।",
+    file: "learn-financial-independence.html"
+  },
+  {
+    icon: "🏙️", cat: "Personal Finance",
+    en: "Cost of Living — Toronto, Vancouver, Calgary", pa: "ਜੀਵਨ ਯਾਪਨ ਦੀ ਲਾਗਤ — ਟੋਰਾਂਟੋ, ਵੈਂਕੂਵਰ, ਕੈਲਗਰੀ",
+    en_desc: "Comparing the true cost of living in Canada's major cities — which is worth it?", pa_desc: "ਕੈਨੇਡਾ ਦੇ ਵੱਡੇ ਸ਼ਹਿਰਾਂ ਵਿੱਚ ਜੀਵਨ ਯਾਪਨ ਦੀ ਅਸਲੀ ਲਾਗਤ ਦੀ ਤੁਲਨਾ।",
+    file: "learn-cost-of-living.html"
+  },
+  {
+    icon: "🚩", cat: "Personal Finance",
+    en: "Financial Red Flags in a Relationship", pa: "ਰਿਸ਼ਤੇ ਵਿੱਚ ਵਿੱਤੀ ਚਿੱਤਾਵਨੀ ਸੰਕੇਤ",
+    en_desc: "Money behaviors that signal financial incompatibility — and what to watch for.", pa_desc: "ਪੈਸੇ ਦੀਆਂ ਆਦਤਾਂ ਜੋ ਵਿੱਤੀ ਅਸੰਗਤਤਾ ਦਰਸਾਉਂਦੀਆਂ ਹਨ।",
+    file: "learn-financial-red-flags.html"
+  },
+  {
+    icon: "❤️", cat: "Personal Finance",
+    en: "Charitable Giving & Tax Credits in Canada", pa: "ਕੈਨੇਡਾ ਵਿੱਚ ਦਾਨ ਅਤੇ ਟੈਕਸ ਕ੍ਰੈਡਿਟ",
+    en_desc: "How charitable donations reduce your taxes and the best ways to give in Canada.", pa_desc: "ਦਾਨ ਟੈਕਸ ਕਿਵੇਂ ਘਟਾਉਂਦਾ ਅਤੇ ਕੈਨੇਡਾ ਵਿੱਚ ਦੇਣ ਦੇ ਸਭ ਤੋਂ ਵਧੀਆ ਤਰੀਕੇ।",
+    file: "learn-charitable-giving.html"
+  },
+  {
+    icon: "🧠", cat: "Personal Finance",
+    en: "Psychology of Wealth — Why Smart People Stay Broke", pa: "ਦੌਲਤ ਦੀ ਮਨੋਵਿਗਿਆਨ",
+    en_desc: "Behavioral finance — the mental biases that keep intelligent people from wealth.", pa_desc: "ਵਿਵਹਾਰਕ ਵਿੱਤ — ਮਾਨਸਿਕ ਪੱਖਪਾਤ ਜੋ ਬੁੱਧੀਮਾਨ ਲੋਕਾਂ ਨੂੰ ਦੌਲਤ ਤੋਂ ਦੂਰ ਰੱਖਦੇ।",
+    file: "learn-wealth-psychology.html"
+  },
+  {
+    icon: "🏆", cat: "Stocks",
+    en: "Market Cap — Small, Mid & Large Cap Stocks", pa: "ਮਾਰਕੀਟ ਕੈਪ — ਛੋਟੇ, ਮੱਧ ਅਤੇ ਵੱਡੇ ਕੈਪ ਸਟਾਕ",
+    en_desc: "What market capitalization means and how to choose based on risk appetite.", pa_desc: "ਮਾਰਕੀਟ ਪੂੰਜੀਕਰਣ ਦਾ ਮਤਲਬ ਅਤੇ ਜੋਖਮ ਦੀ ਇੱਛਾ ਅਨੁਸਾਰ ਕਿਵੇਂ ਚੁਣੀਏ।",
+    file: "learn-market-cap.html"
+  },
+  {
+    icon: "📋", cat: "Stocks",
+    en: "Reading Earnings Reports", pa: "ਕਮਾਈ ਰਿਪੋਰਟਾਂ ਪੜ੍ਹਨਾ",
+    en_desc: "What quarterly earnings reports tell you — EPS, revenue, guidance, and what moves stocks.", pa_desc: "ਤਿਮਾਹੀ ਕਮਾਈ ਰਿਪੋਰਟਾਂ — EPS, ਮਾਲੀਆ ਅਤੇ ਸਟਾਕ ਕੀ ਹਿਲਾਉਂਦਾ ਹੈ।",
+    file: "learn-earnings-reports.html"
+  },
+  {
+    icon: "⚡", cat: "Stocks",
+    en: "Picking Stocks vs. Buying ETFs", pa: "ਸਟਾਕ ਚੁਣਨਾ ਬਨਾਮ ETF ਖਰੀਦਣਾ",
+    en_desc: "The honest case for and against picking individual stocks vs. buying index ETFs.", pa_desc: "ਵਿਅਕਤੀਗਤ ਸਟਾਕ ਚੁਣਨ ਬਨਾਮ ਇੰਡੈਕਸ ETF ਖਰੀਦਣ ਦੀ ਇਮਾਨਦਾਰ ਸਮੀਖਿਆ।",
+    file: "learn-stock-vs-etf.html"
+  },
+  {
+    icon: "💲", cat: "Stocks",
+    en: "Penny Stocks — Why Most Investors Lose", pa: "ਪੈਨੀ ਸਟਾਕ — ਜ਼ਿਆਦਾਤਰ ਨਿਵੇਸ਼ਕ ਕਿਉਂ ਹਾਰਦੇ",
+    en_desc: "The truth about penny stocks — manipulation, low liquidity, and why to avoid them.", pa_desc: "ਪੈਨੀ ਸਟਾਕ ਦੀ ਸੱਚਾਈ — ਹੇਰਾਫੇਰੀ ਅਤੇ ਘੱਟ ਤਰਲਤਾ।",
+    file: "learn-penny-stocks.html"
+  },
+  {
+    icon: "🚫", cat: "Stocks",
+    en: "Insider Trading — What's Legal & What Isn't", pa: "ਇਨਸਾਈਡਰ ਟ੍ਰੇਡਿੰਗ — ਕਾਨੂੰਨੀ ਅਤੇ ਗੈਰ-ਕਾਨੂੰਨੀ",
+    en_desc: "What insider trading is, why it's illegal, and what counts as legal insider activity.", pa_desc: "ਇਨਸਾਈਡਰ ਟ੍ਰੇਡਿੰਗ ਕੀ ਹੈ, ਕਿਉਂ ਗੈਰ-ਕਾਨੂੰਨੀ ਅਤੇ ਕਾਨੂੰਨੀ ਗਤੀਵਿਧੀ ਕੀ ਹੈ।",
+    file: "learn-insider-trading.html"
+  },
+];
   const dateStr = months[now.getMonth()] + ' ' + now.getDate() + ', ' + now.getFullYear();
   return { en: TIPS_EN[idx], pa: TIPS_PA[idx], date: dateStr };
 }
@@ -1143,6 +1524,147 @@ document.querySelectorAll('.topic-card').forEach((el,i) => {
   el.style.transition='opacity 0.35s ease ' + (i*0.015) + 's, transform 0.35s ease ' + (i*0.015) + 's, border-color 0.22s, box-shadow 0.22s';
   obs.observe(el);
 });
+</script>
+
+<!-- AI CHATBOT WIDGET -->
+<div id="chat-widget" style="position:fixed;bottom:24px;right:24px;z-index:9999;font-family:'DM Sans',sans-serif;">
+  <!-- Toggle Button -->
+  <div id="chat-toggle" onclick="toggleChat()" style="width:58px;height:58px;background:linear-gradient(135deg,#D4A017,#E8890C);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 20px rgba(212,160,23,0.4);transition:transform 0.2s;" onmouseenter="this.style.transform='scale(1.1)'" onmouseleave="this.style.transform='scale(1)'">
+    <span id="chat-icon" style="font-size:1.4rem;">💬</span>
+  </div>
+  <!-- Chat Panel -->
+  <div id="chat-panel" style="display:none;position:absolute;bottom:70px;right:0;width:360px;max-height:520px;background:#fff;border-radius:20px;box-shadow:0 8px 48px rgba(0,0,0,0.2);overflow:hidden;flex-direction:column;">
+    <!-- Header -->
+    <div style="background:linear-gradient(135deg,#D4A017,#E8890C);padding:16px 18px;display:flex;align-items:center;gap:10px;">
+      <div style="width:36px;height:36px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">🤖</div>
+      <div style="flex:1;">
+        <div style="font-size:0.9rem;font-weight:700;color:#fff;">Punjabi Finance AI</div>
+        <div style="font-size:0.7rem;color:rgba(255,255,255,0.8);" id="chat-status">Ask me anything about finance in Canada</div>
+      </div>
+      <div onclick="toggleChat()" style="cursor:pointer;color:rgba(255,255,255,0.8);font-size:1.1rem;line-height:1;">✕</div>
+    </div>
+    <!-- Messages -->
+    <div id="chat-messages" style="flex:1;overflow-y:auto;padding:14px;max-height:340px;display:flex;flex-direction:column;gap:10px;">
+      <div class="chat-msg bot" style="background:#f5f3ee;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:0.84rem;color:#2a2000;line-height:1.6;max-width:85%;">
+        <span id="chat-welcome">👋 Sat Sri Akal! I'm the Punjabi Finance AI.<br><br>Ask me anything about:<br>• Life & Super Visa insurance<br>• TFSA, RRSP, investing<br>• Real estate in Canada<br>• Taxes & retirement<br><br>I answer in English or Punjabi! 🇨🇦</span>
+      </div>
+    </div>
+    <!-- Quick Questions -->
+    <div id="quick-qs" style="padding:0 14px 10px;display:flex;flex-wrap:wrap;gap:6px;">
+      <button onclick="sendQuick('How much life insurance do I need?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">Life insurance?</button>
+      <button onclick="sendQuick('What is Super Visa insurance?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">Super Visa?</button>
+      <button onclick="sendQuick('How do I start investing in Canada?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">How to invest?</button>
+      <button onclick="sendQuick('TFSA vs RRSP — which should I use?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">TFSA vs RRSP?</button>
+    </div>
+    <!-- Input -->
+    <div style="padding:10px 14px 14px;border-top:1px solid rgba(0,0,0,0.07);display:flex;gap:8px;align-items:flex-end;">
+      <input id="chat-input" type="text" placeholder="Ask a finance question..." style="flex:1;padding:10px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:50px;font-size:0.84rem;font-family:'DM Sans',sans-serif;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='#D4A017'" onblur="this.style.borderColor='rgba(0,0,0,0.12)'" onkeypress="if(event.key==='Enter')sendMsg()">
+      <button onclick="sendMsg()" id="send-btn" style="width:38px;height:38px;background:linear-gradient(135deg,#D4A017,#E8890C);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;transition:transform 0.2s;" onmouseenter="this.style.transform='scale(1.1)'" onmouseleave="this.style.transform='scale(1)'">→</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const CHAT_SYSTEM = `You are the Punjabi Finance AI assistant — a helpful, friendly financial education bot for the Punjabi community in Canada.
+
+Your role:
+- Provide free financial education about Canadian personal finance
+- Topics: life insurance, Super Visa insurance, critical illness, disability, TFSA, RRSP, FHSA, RESP, investing, real estate, mortgages, taxes, retirement, newcomer finance
+- Always remind users to consult a licensed professional for personal advice
+- Be warm and community-focused — this is for the Punjabi diaspora in Canada
+- Respond in the same language the user writes in (English or Punjabi)
+- Keep answers concise and practical — max 150 words unless asked to elaborate
+- Reference relevant tools on the site: calculators.html, tools.html, education.html
+- For insurance questions, suggest they WhatsApp us at +1 647-745-6850 for a personal quote
+- Never give specific investment recommendations or specific insurance quotes
+- Always end insurance/investment answers with a soft call to action to WhatsApp or visit ibrinsurance.ca
+
+Personality: Knowledgeable, warm, like a financially savvy older sibling or family friend who happens to know a lot about Canadian finance.`;
+
+let chatOpen = false;
+let isLoading = false;
+const chatHistory = [];
+
+function toggleChat() {
+  chatOpen = !chatOpen;
+  const panel = document.getElementById('chat-panel');
+  panel.style.display = chatOpen ? 'flex' : 'none';
+  panel.style.flexDirection = 'column';
+  document.getElementById('chat-icon').textContent = chatOpen ? '✕' : '💬';
+  if(chatOpen) document.getElementById('chat-input').focus();
+}
+
+function sendQuick(msg) {
+  document.getElementById('quick-qs').style.display = 'none';
+  document.getElementById('chat-input').value = msg;
+  sendMsg();
+}
+
+function addMsg(text, role) {
+  const msgs = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.style.cssText = role === 'user'
+    ? 'background:linear-gradient(135deg,#D4A017,#E8890C);color:#0a0a0a;border-radius:14px 14px 4px 14px;padding:10px 14px;font-size:0.84rem;line-height:1.6;max-width:80%;margin-left:auto;'
+    : 'background:#f5f3ee;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:0.84rem;color:#2a2000;line-height:1.6;max-width:88%;';
+  div.textContent = text;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+  return div;
+}
+
+function addTyping() {
+  const msgs = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.id = 'typing-indicator';
+  div.style.cssText = 'background:#f5f3ee;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:0.84rem;color:#9A8A6A;max-width:88%;';
+  div.textContent = '...thinking';
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+async function sendMsg() {
+  if(isLoading) return;
+  const input = document.getElementById('chat-input');
+  const msg = input.value.trim();
+  if(!msg) return;
+  input.value = '';
+  
+  addMsg(msg, 'user');
+  chatHistory.push({role:'user', content: msg});
+  
+  document.getElementById('quick-qs').style.display = 'none';
+  isLoading = true;
+  document.getElementById('chat-status').textContent = 'Thinking...';
+  addTyping();
+  
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 400,
+        system: CHAT_SYSTEM,
+        messages: chatHistory
+      })
+    });
+    const data = await res.json();
+    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again or WhatsApp us directly.";
+    
+    const typing = document.getElementById('typing-indicator');
+    if(typing) typing.remove();
+    
+    addMsg(reply, 'bot');
+    chatHistory.push({role:'assistant', content: reply});
+    document.getElementById('chat-status').textContent = 'Ask me anything about finance';
+  } catch(err) {
+    const typing = document.getElementById('typing-indicator');
+    if(typing) typing.remove();
+    addMsg('Sorry, something went wrong. Please WhatsApp us directly at +1 647-745-6850 or visit ibrinsurance.ca', 'bot');
+    document.getElementById('chat-status').textContent = 'Ask me anything about finance';
+  }
+  isLoading = false;
+}
 </script>
 </body>
 </html>
