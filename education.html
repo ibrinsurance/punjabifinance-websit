@@ -53,11 +53,14 @@
   /* TOPIC GRID */
   .topics-wrap{max-width:1180px;margin:0 auto;padding:0 28px 60px;}
   .topics-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;}
-  .topic-card{background:var(--card-bg);border:1px solid rgba(212,160,23,0.14);border-radius:16px;padding:18px 16px 14px;text-decoration:none;color:var(--off-white);transition:border-color 0.22s,transform 0.22s,box-shadow 0.22s;display:flex;flex-direction:column;gap:5px;position:relative;overflow:hidden;}
-  .topic-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);transform:scaleY(0);transition:transform 0.22s;border-radius:3px 0 0 3px;}
-  .topic-card:hover{border-color:rgba(212,160,23,0.4);transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,0.3);}
-  .topic-card:hover::before{transform:scaleY(1);}
+  .topic-card{background:#fff;border:none;border-radius:16px;padding:18px 16px 14px;text-decoration:none;color:var(--black,#1a1600);transition:transform 0.22s,box-shadow 0.22s;display:flex;flex-direction:column;gap:5px;position:relative;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.13);}
+  .topic-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--saffron));transform:scaleX(0);transition:transform 0.25s;transform-origin:left;}
+  .topic-card:hover{transform:translateY(-4px);box-shadow:0 10px 32px rgba(0,0,0,0.2);}
+  .topic-card:hover::after{transform:scaleX(1);}
   .topic-card.hidden{display:none;}
+  .topic-name{color:#1a1600 !important;}
+  .topic-desc{color:#5a4a2a !important;}
+  .topic-cat-badge{color:#3a2a00 !important;}
   .topic-icon{font-size:1.5rem;}
   .topic-cat-badge{display:inline-block;padding:2px 9px;border-radius:50px;font-size:0.63rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;border:1px solid;width:fit-content;}
   .topic-name{font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:700;line-height:1.25;}
@@ -146,7 +149,7 @@
     
       <a href="learn-life-insurance.html" class="topic-card" data-cat="Insurance">
         <div class="topic-icon">🛡️</div>
-        <div class="topic-cat-badge" style="background:rgba(212,160,23,0.13);color:#D4A017;border-color:rgba(212,160,23,0.3)"><span class="lang-en">Insurance</span><span class="lang-pa" style="display:none">ਬੀਮਾ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(212,160,23,0.13);color:rgba(30,20,0,0.75);border-color:rgba(212,160,23,0.3)"><span class="lang-en">Insurance</span><span class="lang-pa" style="display:none">ਬੀਮਾ</span></div>
         <div class="topic-name lang-en">Life Insurance Explained</div>
         <div class="topic-name lang-pa" style="display:none">ਜ਼ਿੰਦਗੀ ਬੀਮਾ ਸਮਝਾਇਆ</div>
         <div class="topic-desc lang-en">What it is, types, how much you need, and how to choose the right policy.</div>
@@ -155,7 +158,7 @@
       </a>
       <a href="learn-supervisa.html" class="topic-card" data-cat="Insurance">
         <div class="topic-icon">✈️</div>
-        <div class="topic-cat-badge" style="background:rgba(212,160,23,0.13);color:#D4A017;border-color:rgba(212,160,23,0.3)"><span class="lang-en">Insurance</span><span class="lang-pa" style="display:none">ਬੀਮਾ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(212,160,23,0.13);color:rgba(30,20,0,0.75);border-color:rgba(212,160,23,0.3)"><span class="lang-en">Insurance</span><span class="lang-pa" style="display:none">ਬੀਮਾ</span></div>
         <div class="topic-name lang-en">Super Visa Insurance Guide</div>
         <div class="topic-name lang-pa" style="display:none">ਸੁਪਰ ਵੀਜ਼ਾ ਬੀਮਾ ਗਾਈਡ</div>
         <div class="topic-desc lang-en">Bring your parents to Canada — requirements, costs, and pre-existing conditions.</div>
@@ -164,7 +167,7 @@
       </a>
       <a href="learn-critical-illness.html" class="topic-card" data-cat="Insurance">
         <div class="topic-icon">❤️‍🩹</div>
-        <div class="topic-cat-badge" style="background:rgba(212,160,23,0.13);color:#D4A017;border-color:rgba(212,160,23,0.3)"><span class="lang-en">Insurance</span><span class="lang-pa" style="display:none">ਬੀਮਾ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(212,160,23,0.13);color:rgba(30,20,0,0.75);border-color:rgba(212,160,23,0.3)"><span class="lang-en">Insurance</span><span class="lang-pa" style="display:none">ਬੀਮਾ</span></div>
         <div class="topic-name lang-en">Critical Illness Insurance</div>
         <div class="topic-name lang-pa" style="display:none">ਗੰਭੀਰ ਬਿਮਾਰੀ ਬੀਮਾ</div>
         <div class="topic-desc lang-en">What it covers, who needs it, and how it differs from life insurance.</div>
@@ -173,7 +176,7 @@
       </a>
       <a href="learn-visitor-insurance.html" class="topic-card" data-cat="Insurance">
         <div class="topic-icon">🍁</div>
-        <div class="topic-cat-badge" style="background:rgba(212,160,23,0.13);color:#D4A017;border-color:rgba(212,160,23,0.3)"><span class="lang-en">Insurance</span><span class="lang-pa" style="display:none">ਬੀਮਾ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(212,160,23,0.13);color:rgba(30,20,0,0.75);border-color:rgba(212,160,23,0.3)"><span class="lang-en">Insurance</span><span class="lang-pa" style="display:none">ਬੀਮਾ</span></div>
         <div class="topic-name lang-en">Visitor to Canada Insurance</div>
         <div class="topic-name lang-pa" style="display:none">ਕੈਨੇਡਾ ਵਿਜ਼ਟਰ ਬੀਮਾ</div>
         <div class="topic-desc lang-en">Coverage for visitors, new arrivals, and those waiting for provincial health.</div>
@@ -182,7 +185,7 @@
       </a>
       <a href="learn-disability.html" class="topic-card" data-cat="Insurance">
         <div class="topic-icon">🩺</div>
-        <div class="topic-cat-badge" style="background:rgba(212,160,23,0.13);color:#D4A017;border-color:rgba(212,160,23,0.3)"><span class="lang-en">Insurance</span><span class="lang-pa" style="display:none">ਬੀਮਾ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(212,160,23,0.13);color:rgba(30,20,0,0.75);border-color:rgba(212,160,23,0.3)"><span class="lang-en">Insurance</span><span class="lang-pa" style="display:none">ਬੀਮਾ</span></div>
         <div class="topic-name lang-en">Disability Insurance</div>
         <div class="topic-name lang-pa" style="display:none">ਅਪੰਗਤਾ ਬੀਮਾ</div>
         <div class="topic-desc lang-en">What happens to your income if you can't work? Disability insurance explained.</div>
@@ -191,7 +194,7 @@
       </a>
       <a href="learn-term-vs-whole.html" class="topic-card" data-cat="Insurance">
         <div class="topic-icon">⚖️</div>
-        <div class="topic-cat-badge" style="background:rgba(212,160,23,0.13);color:#D4A017;border-color:rgba(212,160,23,0.3)"><span class="lang-en">Insurance</span><span class="lang-pa" style="display:none">ਬੀਮਾ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(212,160,23,0.13);color:rgba(30,20,0,0.75);border-color:rgba(212,160,23,0.3)"><span class="lang-en">Insurance</span><span class="lang-pa" style="display:none">ਬੀਮਾ</span></div>
         <div class="topic-name lang-en">Term vs. Whole Life Insurance</div>
         <div class="topic-name lang-pa" style="display:none">ਟਰਮ ਬਨਾਮ ਸੰਪੂਰਨ ਜ਼ਿੰਦਗੀ ਬੀਮਾ</div>
         <div class="topic-desc lang-en">Understanding the key differences and which may suit your situation.</div>
@@ -200,7 +203,7 @@
       </a>
       <a href="learn-insurance-needs.html" class="topic-card" data-cat="Insurance">
         <div class="topic-icon">📋</div>
-        <div class="topic-cat-badge" style="background:rgba(212,160,23,0.13);color:#D4A017;border-color:rgba(212,160,23,0.3)"><span class="lang-en">Insurance</span><span class="lang-pa" style="display:none">ਬੀਮਾ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(212,160,23,0.13);color:rgba(30,20,0,0.75);border-color:rgba(212,160,23,0.3)"><span class="lang-en">Insurance</span><span class="lang-pa" style="display:none">ਬੀਮਾ</span></div>
         <div class="topic-name lang-en">How Much Insurance Do You Need?</div>
         <div class="topic-name lang-pa" style="display:none">ਕਿੰਨੇ ਬੀਮੇ ਦੀ ਲੋੜ ਹੈ?</div>
         <div class="topic-desc lang-en">A simple framework to calculate the right coverage amount for your family.</div>
@@ -209,7 +212,7 @@
       </a>
       <a href="learn-group-insurance.html" class="topic-card" data-cat="Insurance">
         <div class="topic-icon">👥</div>
-        <div class="topic-cat-badge" style="background:rgba(212,160,23,0.13);color:#D4A017;border-color:rgba(212,160,23,0.3)"><span class="lang-en">Insurance</span><span class="lang-pa" style="display:none">ਬੀਮਾ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(212,160,23,0.13);color:rgba(30,20,0,0.75);border-color:rgba(212,160,23,0.3)"><span class="lang-en">Insurance</span><span class="lang-pa" style="display:none">ਬੀਮਾ</span></div>
         <div class="topic-name lang-en">Group vs. Personal Insurance</div>
         <div class="topic-name lang-pa" style="display:none">ਗਰੁੱਪ ਬਨਾਮ ਨਿੱਜੀ ਬੀਮਾ</div>
         <div class="topic-desc lang-en">Why employer coverage alone may not be enough — and what to do about it.</div>
@@ -218,7 +221,7 @@
       </a>
       <a href="learn-insurance-claims.html" class="topic-card" data-cat="Insurance">
         <div class="topic-icon">📞</div>
-        <div class="topic-cat-badge" style="background:rgba(212,160,23,0.13);color:#D4A017;border-color:rgba(212,160,23,0.3)"><span class="lang-en">Insurance</span><span class="lang-pa" style="display:none">ਬੀਮਾ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(212,160,23,0.13);color:rgba(30,20,0,0.75);border-color:rgba(212,160,23,0.3)"><span class="lang-en">Insurance</span><span class="lang-pa" style="display:none">ਬੀਮਾ</span></div>
         <div class="topic-name lang-en">How to Make an Insurance Claim</div>
         <div class="topic-name lang-pa" style="display:none">ਬੀਮਾ ਕਲੇਮ ਕਿਵੇਂ ਕਰੀਏ</div>
         <div class="topic-desc lang-en">Step-by-step guide to filing a claim and what to expect from the process.</div>
@@ -227,7 +230,7 @@
       </a>
       <a href="learn-insurance-myths.html" class="topic-card" data-cat="Insurance">
         <div class="topic-icon">🚫</div>
-        <div class="topic-cat-badge" style="background:rgba(212,160,23,0.13);color:#D4A017;border-color:rgba(212,160,23,0.3)"><span class="lang-en">Insurance</span><span class="lang-pa" style="display:none">ਬੀਮਾ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(212,160,23,0.13);color:rgba(30,20,0,0.75);border-color:rgba(212,160,23,0.3)"><span class="lang-en">Insurance</span><span class="lang-pa" style="display:none">ਬੀਮਾ</span></div>
         <div class="topic-name lang-en">Top 10 Insurance Myths Busted</div>
         <div class="topic-name lang-pa" style="display:none">ਬੀਮੇ ਬਾਰੇ 10 ਗਲਤ ਧਾਰਨਾਵਾਂ</div>
         <div class="topic-desc lang-en">Common misconceptions about insurance that could cost you or your family.</div>
@@ -236,7 +239,7 @@
       </a>
       <a href="learn-wills.html" class="topic-card" data-cat="Estate Planning">
         <div class="topic-icon">📜</div>
-        <div class="topic-cat-badge" style="background:rgba(155,89,182,0.13);color:#9B59B6;border-color:rgba(155,89,182,0.3)"><span class="lang-en">Estate Planning</span><span class="lang-pa" style="display:none">ਜਾਇਦਾਦ ਯੋਜਨਾ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(155,89,182,0.13);color:rgba(30,20,0,0.75);border-color:rgba(155,89,182,0.3)"><span class="lang-en">Estate Planning</span><span class="lang-pa" style="display:none">ਜਾਇਦਾਦ ਯੋਜਨਾ</span></div>
         <div class="topic-name lang-en">Wills & Why You Need One</div>
         <div class="topic-name lang-pa" style="display:none">ਵਸੀਅਤ ਅਤੇ ਇਸਦੀ ਲੋੜ</div>
         <div class="topic-desc lang-en">What happens without a will, how to create one, and what to include.</div>
@@ -245,7 +248,7 @@
       </a>
       <a href="learn-estate-planning.html" class="topic-card" data-cat="Estate Planning">
         <div class="topic-icon">🏛️</div>
-        <div class="topic-cat-badge" style="background:rgba(155,89,182,0.13);color:#9B59B6;border-color:rgba(155,89,182,0.3)"><span class="lang-en">Estate Planning</span><span class="lang-pa" style="display:none">ਜਾਇਦਾਦ ਯੋਜਨਾ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(155,89,182,0.13);color:rgba(30,20,0,0.75);border-color:rgba(155,89,182,0.3)"><span class="lang-en">Estate Planning</span><span class="lang-pa" style="display:none">ਜਾਇਦਾਦ ਯੋਜਨਾ</span></div>
         <div class="topic-name lang-en">Estate Planning 101</div>
         <div class="topic-name lang-pa" style="display:none">ਜਾਇਦਾਦ ਯੋਜਨਾਬੰਦੀ 101</div>
         <div class="topic-desc lang-en">How to plan what happens to your assets, family, and finances after you're gone.</div>
@@ -254,7 +257,7 @@
       </a>
       <a href="learn-beneficiaries.html" class="topic-card" data-cat="Estate Planning">
         <div class="topic-icon">👨‍👩‍👧</div>
-        <div class="topic-cat-badge" style="background:rgba(155,89,182,0.13);color:#9B59B6;border-color:rgba(155,89,182,0.3)"><span class="lang-en">Estate Planning</span><span class="lang-pa" style="display:none">ਜਾਇਦਾਦ ਯੋਜਨਾ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(155,89,182,0.13);color:rgba(30,20,0,0.75);border-color:rgba(155,89,182,0.3)"><span class="lang-en">Estate Planning</span><span class="lang-pa" style="display:none">ਜਾਇਦਾਦ ਯੋਜਨਾ</span></div>
         <div class="topic-name lang-en">Choosing Your Beneficiaries</div>
         <div class="topic-name lang-pa" style="display:none">ਲਾਭਪਾਤਰੀ ਚੁਣਨਾ</div>
         <div class="topic-desc lang-en">Who gets what — and why getting this right is critically important.</div>
@@ -263,7 +266,7 @@
       </a>
       <a href="learn-poa.html" class="topic-card" data-cat="Estate Planning">
         <div class="topic-icon">✍️</div>
-        <div class="topic-cat-badge" style="background:rgba(155,89,182,0.13);color:#9B59B6;border-color:rgba(155,89,182,0.3)"><span class="lang-en">Estate Planning</span><span class="lang-pa" style="display:none">ਜਾਇਦਾਦ ਯੋਜਨਾ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(155,89,182,0.13);color:rgba(30,20,0,0.75);border-color:rgba(155,89,182,0.3)"><span class="lang-en">Estate Planning</span><span class="lang-pa" style="display:none">ਜਾਇਦਾਦ ਯੋਜਨਾ</span></div>
         <div class="topic-name lang-en">Power of Attorney Explained</div>
         <div class="topic-name lang-pa" style="display:none">ਪਾਵਰ ਆਫ਼ ਅਟਾਰਨੀ</div>
         <div class="topic-desc lang-en">What it is, when you need it, and how to set one up in Canada.</div>
@@ -272,7 +275,7 @@
       </a>
       <a href="learn-trusts.html" class="topic-card" data-cat="Estate Planning">
         <div class="topic-icon">🔒</div>
-        <div class="topic-cat-badge" style="background:rgba(155,89,182,0.13);color:#9B59B6;border-color:rgba(155,89,182,0.3)"><span class="lang-en">Estate Planning</span><span class="lang-pa" style="display:none">ਜਾਇਦਾਦ ਯੋਜਨਾ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(155,89,182,0.13);color:rgba(30,20,0,0.75);border-color:rgba(155,89,182,0.3)"><span class="lang-en">Estate Planning</span><span class="lang-pa" style="display:none">ਜਾਇਦਾਦ ਯੋਜਨਾ</span></div>
         <div class="topic-name lang-en">Trusts — What They Are & When to Use</div>
         <div class="topic-name lang-pa" style="display:none">ਟਰੱਸਟ ਕੀ ਹੈ ਅਤੇ ਕਦੋਂ ਵਰਤੀਏ</div>
         <div class="topic-desc lang-en">A simple breakdown of trusts and how they protect your family's future.</div>
@@ -281,7 +284,7 @@
       </a>
       <a href="learn-probate.html" class="topic-card" data-cat="Estate Planning">
         <div class="topic-icon">⚖️</div>
-        <div class="topic-cat-badge" style="background:rgba(155,89,182,0.13);color:#9B59B6;border-color:rgba(155,89,182,0.3)"><span class="lang-en">Estate Planning</span><span class="lang-pa" style="display:none">ਜਾਇਦਾਦ ਯੋਜਨਾ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(155,89,182,0.13);color:rgba(30,20,0,0.75);border-color:rgba(155,89,182,0.3)"><span class="lang-en">Estate Planning</span><span class="lang-pa" style="display:none">ਜਾਇਦਾਦ ਯੋਜਨਾ</span></div>
         <div class="topic-name lang-en">What Is Probate & How to Avoid It</div>
         <div class="topic-name lang-pa" style="display:none">ਪ੍ਰੋਬੇਟ ਕੀ ਹੈ ਅਤੇ ਕਿਵੇਂ ਬਚੀਏ</div>
         <div class="topic-desc lang-en">How probate works in Canada and strategies to pass assets efficiently.</div>
@@ -290,7 +293,7 @@
       </a>
       <a href="learn-digital-estate.html" class="topic-card" data-cat="Estate Planning">
         <div class="topic-icon">💻</div>
-        <div class="topic-cat-badge" style="background:rgba(155,89,182,0.13);color:#9B59B6;border-color:rgba(155,89,182,0.3)"><span class="lang-en">Estate Planning</span><span class="lang-pa" style="display:none">ਜਾਇਦਾਦ ਯੋਜਨਾ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(155,89,182,0.13);color:rgba(30,20,0,0.75);border-color:rgba(155,89,182,0.3)"><span class="lang-en">Estate Planning</span><span class="lang-pa" style="display:none">ਜਾਇਦਾਦ ਯੋਜਨਾ</span></div>
         <div class="topic-name lang-en">Your Digital Estate — What Happens Online</div>
         <div class="topic-name lang-pa" style="display:none">ਤੁਹਾਡੀ ਡਿਜੀਟਲ ਜਾਇਦਾਦ</div>
         <div class="topic-desc lang-en">What happens to your online accounts, crypto, and digital assets when you're gone.</div>
@@ -299,7 +302,7 @@
       </a>
       <a href="learn-estate-taxes.html" class="topic-card" data-cat="Estate Planning">
         <div class="topic-icon">🧾</div>
-        <div class="topic-cat-badge" style="background:rgba(155,89,182,0.13);color:#9B59B6;border-color:rgba(155,89,182,0.3)"><span class="lang-en">Estate Planning</span><span class="lang-pa" style="display:none">ਜਾਇਦਾਦ ਯੋਜਨਾ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(155,89,182,0.13);color:rgba(30,20,0,0.75);border-color:rgba(155,89,182,0.3)"><span class="lang-en">Estate Planning</span><span class="lang-pa" style="display:none">ਜਾਇਦਾਦ ਯੋਜਨਾ</span></div>
         <div class="topic-name lang-en">Estate Taxes & Death in Canada</div>
         <div class="topic-name lang-pa" style="display:none">ਜਾਇਦਾਦ ਟੈਕਸ ਅਤੇ ਮੌਤ</div>
         <div class="topic-desc lang-en">Canada has no estate tax but there are tax implications at death you should know.</div>
@@ -308,7 +311,7 @@
       </a>
       <a href="learn-budgeting.html" class="topic-card" data-cat="Budgeting">
         <div class="topic-icon">💰</div>
-        <div class="topic-cat-badge" style="background:rgba(39,174,96,0.13);color:#27AE60;border-color:rgba(39,174,96,0.3)"><span class="lang-en">Budgeting</span><span class="lang-pa" style="display:none">ਬਜਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(39,174,96,0.13);color:rgba(30,20,0,0.75);border-color:rgba(39,174,96,0.3)"><span class="lang-en">Budgeting</span><span class="lang-pa" style="display:none">ਬਜਟ</span></div>
         <div class="topic-name lang-en">Budgeting Basics</div>
         <div class="topic-name lang-pa" style="display:none">ਬਜਟ ਦੀਆਂ ਮੂਲ ਗੱਲਾਂ</div>
         <div class="topic-desc lang-en">The 50/30/20 rule and simple frameworks to take control of your money.</div>
@@ -317,7 +320,7 @@
       </a>
       <a href="learn-budgeting.html" class="topic-card" data-cat="Budgeting">
         <div class="topic-icon">🆘</div>
-        <div class="topic-cat-badge" style="background:rgba(39,174,96,0.13);color:#27AE60;border-color:rgba(39,174,96,0.3)"><span class="lang-en">Budgeting</span><span class="lang-pa" style="display:none">ਬਜਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(39,174,96,0.13);color:rgba(30,20,0,0.75);border-color:rgba(39,174,96,0.3)"><span class="lang-en">Budgeting</span><span class="lang-pa" style="display:none">ਬਜਟ</span></div>
         <div class="topic-name lang-en">Building an Emergency Fund</div>
         <div class="topic-name lang-pa" style="display:none">ਐਮਰਜੈਂਸੀ ਫੰਡ ਬਣਾਉਣਾ</div>
         <div class="topic-desc lang-en">Why 3–6 months of expenses saved can protect your entire financial plan.</div>
@@ -326,7 +329,7 @@
       </a>
       <a href="learn-saving-tips.html" class="topic-card" data-cat="Budgeting">
         <div class="topic-icon">🐷</div>
-        <div class="topic-cat-badge" style="background:rgba(39,174,96,0.13);color:#27AE60;border-color:rgba(39,174,96,0.3)"><span class="lang-en">Budgeting</span><span class="lang-pa" style="display:none">ਬਜਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(39,174,96,0.13);color:rgba(30,20,0,0.75);border-color:rgba(39,174,96,0.3)"><span class="lang-en">Budgeting</span><span class="lang-pa" style="display:none">ਬਜਟ</span></div>
         <div class="topic-name lang-en">30 Ways to Save More Money</div>
         <div class="topic-name lang-pa" style="display:none">ਪੈਸੇ ਬਚਾਉਣ ਦੇ 30 ਤਰੀਕੇ</div>
         <div class="topic-desc lang-en">Practical everyday habits to reduce spending and grow your savings faster.</div>
@@ -335,7 +338,7 @@
       </a>
       <a href="learn-hisa.html" class="topic-card" data-cat="Budgeting">
         <div class="topic-icon">🏦</div>
-        <div class="topic-cat-badge" style="background:rgba(39,174,96,0.13);color:#27AE60;border-color:rgba(39,174,96,0.3)"><span class="lang-en">Budgeting</span><span class="lang-pa" style="display:none">ਬਜਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(39,174,96,0.13);color:rgba(30,20,0,0.75);border-color:rgba(39,174,96,0.3)"><span class="lang-en">Budgeting</span><span class="lang-pa" style="display:none">ਬਜਟ</span></div>
         <div class="topic-name lang-en">High Interest Savings Accounts (HISA)</div>
         <div class="topic-name lang-pa" style="display:none">ਉੱਚ ਵਿਆਜ ਬੱਚਤ ਖਾਤੇ</div>
         <div class="topic-desc lang-en">How to earn more on your savings with zero risk.</div>
@@ -344,7 +347,7 @@
       </a>
       <a href="learn-pay-yourself.html" class="topic-card" data-cat="Budgeting">
         <div class="topic-icon">💸</div>
-        <div class="topic-cat-badge" style="background:rgba(39,174,96,0.13);color:#27AE60;border-color:rgba(39,174,96,0.3)"><span class="lang-en">Budgeting</span><span class="lang-pa" style="display:none">ਬਜਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(39,174,96,0.13);color:rgba(30,20,0,0.75);border-color:rgba(39,174,96,0.3)"><span class="lang-en">Budgeting</span><span class="lang-pa" style="display:none">ਬਜਟ</span></div>
         <div class="topic-name lang-en">Pay Yourself First Strategy</div>
         <div class="topic-name lang-pa" style="display:none">ਪਹਿਲਾਂ ਆਪਣੇ ਆਪ ਨੂੰ ਭੁਗਤਾਉਣਾ</div>
         <div class="topic-desc lang-en">Automate savings before spending — the #1 habit of wealthy people.</div>
@@ -353,7 +356,7 @@
       </a>
       <a href="learn-net-worth.html" class="topic-card" data-cat="Budgeting">
         <div class="topic-icon">📊</div>
-        <div class="topic-cat-badge" style="background:rgba(39,174,96,0.13);color:#27AE60;border-color:rgba(39,174,96,0.3)"><span class="lang-en">Budgeting</span><span class="lang-pa" style="display:none">ਬਜਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(39,174,96,0.13);color:rgba(30,20,0,0.75);border-color:rgba(39,174,96,0.3)"><span class="lang-en">Budgeting</span><span class="lang-pa" style="display:none">ਬਜਟ</span></div>
         <div class="topic-name lang-en">How to Calculate Your Net Worth</div>
         <div class="topic-name lang-pa" style="display:none">ਕੁੱਲ ਸੰਪੱਤੀ ਕਿਵੇਂ ਜਾਣੀਏ</div>
         <div class="topic-desc lang-en">Assets minus liabilities — and why tracking this number is life-changing.</div>
@@ -362,7 +365,7 @@
       </a>
       <a href="learn-grocery-savings.html" class="topic-card" data-cat="Budgeting">
         <div class="topic-icon">🛒</div>
-        <div class="topic-cat-badge" style="background:rgba(39,174,96,0.13);color:#27AE60;border-color:rgba(39,174,96,0.3)"><span class="lang-en">Budgeting</span><span class="lang-pa" style="display:none">ਬਜਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(39,174,96,0.13);color:rgba(30,20,0,0.75);border-color:rgba(39,174,96,0.3)"><span class="lang-en">Budgeting</span><span class="lang-pa" style="display:none">ਬਜਟ</span></div>
         <div class="topic-name lang-en">Cut Your Grocery Bill in Half</div>
         <div class="topic-name lang-pa" style="display:none">ਕਰਿਆਨੇ ਦਾ ਬਿੱਲ ਅੱਧਾ ਕਰੋ</div>
         <div class="topic-desc lang-en">Smart shopping strategies to save hundreds per month on food.</div>
@@ -371,7 +374,7 @@
       </a>
       <a href="learn-budget-apps.html" class="topic-card" data-cat="Budgeting">
         <div class="topic-icon">📱</div>
-        <div class="topic-cat-badge" style="background:rgba(39,174,96,0.13);color:#27AE60;border-color:rgba(39,174,96,0.3)"><span class="lang-en">Budgeting</span><span class="lang-pa" style="display:none">ਬਜਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(39,174,96,0.13);color:rgba(30,20,0,0.75);border-color:rgba(39,174,96,0.3)"><span class="lang-en">Budgeting</span><span class="lang-pa" style="display:none">ਬਜਟ</span></div>
         <div class="topic-name lang-en">Best Budgeting Apps in Canada</div>
         <div class="topic-name lang-pa" style="display:none">ਕੈਨੇਡਾ ਵਿੱਚ ਸਭ ਤੋਂ ਵਧੀਆ ਬਜਟ ਐਪਸ</div>
         <div class="topic-desc lang-en">Free and paid apps to track spending and automate your financial life.</div>
@@ -380,7 +383,7 @@
       </a>
       <a href="learn-investing.html" class="topic-card" data-cat="Investing">
         <div class="topic-icon">📈</div>
-        <div class="topic-cat-badge" style="background:rgba(41,128,185,0.13);color:#2980B9;border-color:rgba(41,128,185,0.3)"><span class="lang-en">Investing</span><span class="lang-pa" style="display:none">ਨਿਵੇਸ਼</span></div>
+        <div class="topic-cat-badge" style="background:rgba(41,128,185,0.13);color:rgba(30,20,0,0.75);border-color:rgba(41,128,185,0.3)"><span class="lang-en">Investing</span><span class="lang-pa" style="display:none">ਨਿਵੇਸ਼</span></div>
         <div class="topic-name lang-en">Investing 101 — Getting Started</div>
         <div class="topic-name lang-pa" style="display:none">ਨਿਵੇਸ਼ 101 — ਸ਼ੁਰੂਆਤ</div>
         <div class="topic-desc lang-en">Stocks, ETFs, RRSPs and TFSAs — how investing works in Canada.</div>
@@ -389,7 +392,7 @@
       </a>
       <a href="learn-tfsa.html" class="topic-card" data-cat="Investing">
         <div class="topic-icon">🏆</div>
-        <div class="topic-cat-badge" style="background:rgba(41,128,185,0.13);color:#2980B9;border-color:rgba(41,128,185,0.3)"><span class="lang-en">Investing</span><span class="lang-pa" style="display:none">ਨਿਵੇਸ਼</span></div>
+        <div class="topic-cat-badge" style="background:rgba(41,128,185,0.13);color:rgba(30,20,0,0.75);border-color:rgba(41,128,185,0.3)"><span class="lang-en">Investing</span><span class="lang-pa" style="display:none">ਨਿਵੇਸ਼</span></div>
         <div class="topic-name lang-en">TFSA — The Ultimate Guide</div>
         <div class="topic-name lang-pa" style="display:none">TFSA — ਪੂਰੀ ਗਾਈਡ</div>
         <div class="topic-desc lang-en">How Tax-Free Savings Accounts work and how to maximize them.</div>
@@ -398,7 +401,7 @@
       </a>
       <a href="learn-rrsp.html" class="topic-card" data-cat="Investing">
         <div class="topic-icon">🎯</div>
-        <div class="topic-cat-badge" style="background:rgba(41,128,185,0.13);color:#2980B9;border-color:rgba(41,128,185,0.3)"><span class="lang-en">Investing</span><span class="lang-pa" style="display:none">ਨਿਵੇਸ਼</span></div>
+        <div class="topic-cat-badge" style="background:rgba(41,128,185,0.13);color:rgba(30,20,0,0.75);border-color:rgba(41,128,185,0.3)"><span class="lang-en">Investing</span><span class="lang-pa" style="display:none">ਨਿਵੇਸ਼</span></div>
         <div class="topic-name lang-en">RRSP — How to Use It Properly</div>
         <div class="topic-name lang-pa" style="display:none">RRSP — ਸਹੀ ਵਰਤੋਂ</div>
         <div class="topic-desc lang-en">How RRSPs reduce your taxes today while building retirement wealth.</div>
@@ -407,7 +410,7 @@
       </a>
       <a href="learn-etfs.html" class="topic-card" data-cat="Investing">
         <div class="topic-icon">🗂️</div>
-        <div class="topic-cat-badge" style="background:rgba(41,128,185,0.13);color:#2980B9;border-color:rgba(41,128,185,0.3)"><span class="lang-en">Investing</span><span class="lang-pa" style="display:none">ਨਿਵੇਸ਼</span></div>
+        <div class="topic-cat-badge" style="background:rgba(41,128,185,0.13);color:rgba(30,20,0,0.75);border-color:rgba(41,128,185,0.3)"><span class="lang-en">Investing</span><span class="lang-pa" style="display:none">ਨਿਵੇਸ਼</span></div>
         <div class="topic-name lang-en">ETFs Explained Simply</div>
         <div class="topic-name lang-pa" style="display:none">ETF ਸਰਲ ਭਾਸ਼ਾ ਵਿੱਚ</div>
         <div class="topic-desc lang-en">What ETFs are, why they're popular, and how to buy them in Canada.</div>
@@ -416,7 +419,7 @@
       </a>
       <a href="learn-compound.html" class="topic-card" data-cat="Investing">
         <div class="topic-icon">⏱️</div>
-        <div class="topic-cat-badge" style="background:rgba(41,128,185,0.13);color:#2980B9;border-color:rgba(41,128,185,0.3)"><span class="lang-en">Investing</span><span class="lang-pa" style="display:none">ਨਿਵੇਸ਼</span></div>
+        <div class="topic-cat-badge" style="background:rgba(41,128,185,0.13);color:rgba(30,20,0,0.75);border-color:rgba(41,128,185,0.3)"><span class="lang-en">Investing</span><span class="lang-pa" style="display:none">ਨਿਵੇਸ਼</span></div>
         <div class="topic-name lang-en">The Power of Compound Growth</div>
         <div class="topic-name lang-pa" style="display:none">ਮਿਸ਼ਰਤ ਵਿਕਾਸ ਦੀ ਸ਼ਕਤੀ</div>
         <div class="topic-desc lang-en">Why starting early matters more than how much you invest.</div>
@@ -425,7 +428,7 @@
       </a>
       <a href="learn-dividends.html" class="topic-card" data-cat="Investing">
         <div class="topic-icon">💵</div>
-        <div class="topic-cat-badge" style="background:rgba(41,128,185,0.13);color:#2980B9;border-color:rgba(41,128,185,0.3)"><span class="lang-en">Investing</span><span class="lang-pa" style="display:none">ਨਿਵੇਸ਼</span></div>
+        <div class="topic-cat-badge" style="background:rgba(41,128,185,0.13);color:rgba(30,20,0,0.75);border-color:rgba(41,128,185,0.3)"><span class="lang-en">Investing</span><span class="lang-pa" style="display:none">ਨਿਵੇਸ਼</span></div>
         <div class="topic-name lang-en">Dividend Investing for Beginners</div>
         <div class="topic-name lang-pa" style="display:none">ਡਿਵੀਡੈਂਡ ਨਿਵੇਸ਼</div>
         <div class="topic-desc lang-en">How to earn regular passive income by investing in dividend-paying stocks.</div>
@@ -434,7 +437,7 @@
       </a>
       <a href="learn-risk-return.html" class="topic-card" data-cat="Investing">
         <div class="topic-icon">⚖️</div>
-        <div class="topic-cat-badge" style="background:rgba(41,128,185,0.13);color:#2980B9;border-color:rgba(41,128,185,0.3)"><span class="lang-en">Investing</span><span class="lang-pa" style="display:none">ਨਿਵੇਸ਼</span></div>
+        <div class="topic-cat-badge" style="background:rgba(41,128,185,0.13);color:rgba(30,20,0,0.75);border-color:rgba(41,128,185,0.3)"><span class="lang-en">Investing</span><span class="lang-pa" style="display:none">ਨਿਵੇਸ਼</span></div>
         <div class="topic-name lang-en">Risk vs. Return — Finding Your Balance</div>
         <div class="topic-name lang-pa" style="display:none">ਜੋਖਮ ਬਨਾਮ ਵਾਪਸੀ</div>
         <div class="topic-desc lang-en">How to think about investment risk and build a portfolio that suits you.</div>
@@ -443,7 +446,7 @@
       </a>
       <a href="learn-market-crash.html" class="topic-card" data-cat="Investing">
         <div class="topic-icon">📉</div>
-        <div class="topic-cat-badge" style="background:rgba(41,128,185,0.13);color:#2980B9;border-color:rgba(41,128,185,0.3)"><span class="lang-en">Investing</span><span class="lang-pa" style="display:none">ਨਿਵੇਸ਼</span></div>
+        <div class="topic-cat-badge" style="background:rgba(41,128,185,0.13);color:rgba(30,20,0,0.75);border-color:rgba(41,128,185,0.3)"><span class="lang-en">Investing</span><span class="lang-pa" style="display:none">ਨਿਵੇਸ਼</span></div>
         <div class="topic-name lang-en">What to Do During a Market Crash</div>
         <div class="topic-name lang-pa" style="display:none">ਬਾਜ਼ਾਰ ਗਿਰਾਵਟ ਵਿੱਚ ਕੀ ਕਰੀਏ</div>
         <div class="topic-desc lang-en">How to stay calm and make smart decisions when markets fall.</div>
@@ -452,7 +455,7 @@
       </a>
       <a href="learn-index-funds.html" class="topic-card" data-cat="Investing">
         <div class="topic-icon">📦</div>
-        <div class="topic-cat-badge" style="background:rgba(41,128,185,0.13);color:#2980B9;border-color:rgba(41,128,185,0.3)"><span class="lang-en">Investing</span><span class="lang-pa" style="display:none">ਨਿਵੇਸ਼</span></div>
+        <div class="topic-cat-badge" style="background:rgba(41,128,185,0.13);color:rgba(30,20,0,0.75);border-color:rgba(41,128,185,0.3)"><span class="lang-en">Investing</span><span class="lang-pa" style="display:none">ਨਿਵੇਸ਼</span></div>
         <div class="topic-name lang-en">Index Funds — Set It & Forget It</div>
         <div class="topic-name lang-pa" style="display:none">ਇੰਡੈਕਸ ਫੰਡ — ਲਗਾਓ ਅਤੇ ਭੁੱਲ ਜਾਓ</div>
         <div class="topic-desc lang-en">Why low-cost index funds beat most actively managed portfolios long-term.</div>
@@ -461,7 +464,7 @@
       </a>
       <a href="learn-robo-advisors.html" class="topic-card" data-cat="Investing">
         <div class="topic-icon">🤖</div>
-        <div class="topic-cat-badge" style="background:rgba(41,128,185,0.13);color:#2980B9;border-color:rgba(41,128,185,0.3)"><span class="lang-en">Investing</span><span class="lang-pa" style="display:none">ਨਿਵੇਸ਼</span></div>
+        <div class="topic-cat-badge" style="background:rgba(41,128,185,0.13);color:rgba(30,20,0,0.75);border-color:rgba(41,128,185,0.3)"><span class="lang-en">Investing</span><span class="lang-pa" style="display:none">ਨਿਵੇਸ਼</span></div>
         <div class="topic-name lang-en">Robo-Advisors in Canada</div>
         <div class="topic-name lang-pa" style="display:none">ਕੈਨੇਡਾ ਵਿੱਚ ਰੋਬੋ-ਅਡਵਾਈਜ਼ਰ</div>
         <div class="topic-desc lang-en">Automated investing platforms — what they are and if they're right for you.</div>
@@ -470,7 +473,7 @@
       </a>
       <a href="learn-dollar-cost.html" class="topic-card" data-cat="Investing">
         <div class="topic-icon">📅</div>
-        <div class="topic-cat-badge" style="background:rgba(41,128,185,0.13);color:#2980B9;border-color:rgba(41,128,185,0.3)"><span class="lang-en">Investing</span><span class="lang-pa" style="display:none">ਨਿਵੇਸ਼</span></div>
+        <div class="topic-cat-badge" style="background:rgba(41,128,185,0.13);color:rgba(30,20,0,0.75);border-color:rgba(41,128,185,0.3)"><span class="lang-en">Investing</span><span class="lang-pa" style="display:none">ਨਿਵੇਸ਼</span></div>
         <div class="topic-name lang-en">Dollar-Cost Averaging Strategy</div>
         <div class="topic-name lang-pa" style="display:none">ਡਾਲਰ-ਕੌਸਟ ਔਸਤ ਰਣਨੀਤੀ</div>
         <div class="topic-desc lang-en">How investing fixed amounts regularly removes emotion and reduces risk.</div>
@@ -479,7 +482,7 @@
       </a>
       <a href="learn-crypto.html" class="topic-card" data-cat="Investing">
         <div class="topic-icon">₿</div>
-        <div class="topic-cat-badge" style="background:rgba(41,128,185,0.13);color:#2980B9;border-color:rgba(41,128,185,0.3)"><span class="lang-en">Investing</span><span class="lang-pa" style="display:none">ਨਿਵੇਸ਼</span></div>
+        <div class="topic-cat-badge" style="background:rgba(41,128,185,0.13);color:rgba(30,20,0,0.75);border-color:rgba(41,128,185,0.3)"><span class="lang-en">Investing</span><span class="lang-pa" style="display:none">ਨਿਵੇਸ਼</span></div>
         <div class="topic-name lang-en">Crypto — What You Should Know</div>
         <div class="topic-name lang-pa" style="display:none">ਕ੍ਰਿਪਟੋ — ਜੋ ਤੁਹਾਨੂੰ ਜਾਣਨਾ ਚਾਹੀਦਾ</div>
         <div class="topic-desc lang-en">A balanced, educational overview of cryptocurrency — risks, basics, and hype.</div>
@@ -488,7 +491,7 @@
       </a>
       <a href="learn-real-estate.html" class="topic-card" data-cat="Real Estate">
         <div class="topic-icon">🏡</div>
-        <div class="topic-cat-badge" style="background:rgba(230,126,34,0.13);color:#E67E22;border-color:rgba(230,126,34,0.3)"><span class="lang-en">Real Estate</span><span class="lang-pa" style="display:none">ਰੀਅਲ ਅਸਟੇਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(230,126,34,0.13);color:rgba(30,20,0,0.75);border-color:rgba(230,126,34,0.3)"><span class="lang-en">Real Estate</span><span class="lang-pa" style="display:none">ਰੀਅਲ ਅਸਟੇਟ</span></div>
         <div class="topic-name lang-en">Buying Your First Home in Canada</div>
         <div class="topic-name lang-pa" style="display:none">ਕੈਨੇਡਾ ਵਿੱਚ ਪਹਿਲਾ ਘਰ</div>
         <div class="topic-desc lang-en">The complete guide from saving a down payment to closing day.</div>
@@ -497,7 +500,7 @@
       </a>
       <a href="learn-investment-property.html" class="topic-card" data-cat="Real Estate">
         <div class="topic-icon">🏘️</div>
-        <div class="topic-cat-badge" style="background:rgba(230,126,34,0.13);color:#E67E22;border-color:rgba(230,126,34,0.3)"><span class="lang-en">Real Estate</span><span class="lang-pa" style="display:none">ਰੀਅਲ ਅਸਟੇਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(230,126,34,0.13);color:rgba(30,20,0,0.75);border-color:rgba(230,126,34,0.3)"><span class="lang-en">Real Estate</span><span class="lang-pa" style="display:none">ਰੀਅਲ ਅਸਟੇਟ</span></div>
         <div class="topic-name lang-en">Buying an Investment Property</div>
         <div class="topic-name lang-pa" style="display:none">ਨਿਵੇਸ਼ ਜਾਇਦਾਦ ਖਰੀਦਣਾ</div>
         <div class="topic-desc lang-en">How real estate investing works, what to look for, and the numbers that matter.</div>
@@ -506,7 +509,7 @@
       </a>
       <a href="learn-mortgages.html" class="topic-card" data-cat="Real Estate">
         <div class="topic-icon">🏦</div>
-        <div class="topic-cat-badge" style="background:rgba(230,126,34,0.13);color:#E67E22;border-color:rgba(230,126,34,0.3)"><span class="lang-en">Real Estate</span><span class="lang-pa" style="display:none">ਰੀਅਲ ਅਸਟੇਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(230,126,34,0.13);color:rgba(30,20,0,0.75);border-color:rgba(230,126,34,0.3)"><span class="lang-en">Real Estate</span><span class="lang-pa" style="display:none">ਰੀਅਲ ਅਸਟੇਟ</span></div>
         <div class="topic-name lang-en">Mortgages Explained</div>
         <div class="topic-name lang-pa" style="display:none">ਮੌਰਗੇਜ ਸਮਝਾਇਆ</div>
         <div class="topic-desc lang-en">Fixed vs. variable, amortization, terms, and how to get the best rate.</div>
@@ -515,7 +518,7 @@
       </a>
       <a href="learn-fhsa.html" class="topic-card" data-cat="Real Estate">
         <div class="topic-icon">🔑</div>
-        <div class="topic-cat-badge" style="background:rgba(230,126,34,0.13);color:#E67E22;border-color:rgba(230,126,34,0.3)"><span class="lang-en">Real Estate</span><span class="lang-pa" style="display:none">ਰੀਅਲ ਅਸਟੇਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(230,126,34,0.13);color:rgba(30,20,0,0.75);border-color:rgba(230,126,34,0.3)"><span class="lang-en">Real Estate</span><span class="lang-pa" style="display:none">ਰੀਅਲ ਅਸਟੇਟ</span></div>
         <div class="topic-name lang-en">First Home Savings Account (FHSA)</div>
         <div class="topic-name lang-pa" style="display:none">ਪਹਿਲੇ ਘਰ ਬੱਚਤ ਖਾਤਾ</div>
         <div class="topic-desc lang-en">Canada's newest account lets you save $40K tax-free for your first home.</div>
@@ -524,7 +527,7 @@
       </a>
       <a href="learn-rent-vs-buy.html" class="topic-card" data-cat="Real Estate">
         <div class="topic-icon">🤔</div>
-        <div class="topic-cat-badge" style="background:rgba(230,126,34,0.13);color:#E67E22;border-color:rgba(230,126,34,0.3)"><span class="lang-en">Real Estate</span><span class="lang-pa" style="display:none">ਰੀਅਲ ਅਸਟੇਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(230,126,34,0.13);color:rgba(30,20,0,0.75);border-color:rgba(230,126,34,0.3)"><span class="lang-en">Real Estate</span><span class="lang-pa" style="display:none">ਰੀਅਲ ਅਸਟੇਟ</span></div>
         <div class="topic-name lang-en">Renting vs. Buying — Which Is Better?</div>
         <div class="topic-name lang-pa" style="display:none">ਕਿਰਾਏ ਬਨਾਮ ਖਰੀਦਣਾ</div>
         <div class="topic-desc lang-en">An honest look at the pros and cons of renting vs. buying in today's market.</div>
@@ -533,7 +536,7 @@
       </a>
       <a href="learn-home-inspection.html" class="topic-card" data-cat="Real Estate">
         <div class="topic-icon">🔍</div>
-        <div class="topic-cat-badge" style="background:rgba(230,126,34,0.13);color:#E67E22;border-color:rgba(230,126,34,0.3)"><span class="lang-en">Real Estate</span><span class="lang-pa" style="display:none">ਰੀਅਲ ਅਸਟੇਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(230,126,34,0.13);color:rgba(30,20,0,0.75);border-color:rgba(230,126,34,0.3)"><span class="lang-en">Real Estate</span><span class="lang-pa" style="display:none">ਰੀਅਲ ਅਸਟੇਟ</span></div>
         <div class="topic-name lang-en">Home Inspection — What to Look For</div>
         <div class="topic-name lang-pa" style="display:none">ਘਰ ਦੀ ਜਾਂਚ — ਕੀ ਦੇਖੀਏ</div>
         <div class="topic-desc lang-en">What home inspectors check and how to use the report to protect yourself.</div>
@@ -542,7 +545,7 @@
       </a>
       <a href="learn-real-estate-agent.html" class="topic-card" data-cat="Real Estate">
         <div class="topic-icon">🤝</div>
-        <div class="topic-cat-badge" style="background:rgba(230,126,34,0.13);color:#E67E22;border-color:rgba(230,126,34,0.3)"><span class="lang-en">Real Estate</span><span class="lang-pa" style="display:none">ਰੀਅਲ ਅਸਟੇਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(230,126,34,0.13);color:rgba(30,20,0,0.75);border-color:rgba(230,126,34,0.3)"><span class="lang-en">Real Estate</span><span class="lang-pa" style="display:none">ਰੀਅਲ ਅਸਟੇਟ</span></div>
         <div class="topic-name lang-en">Choosing a Real Estate Agent</div>
         <div class="topic-name lang-pa" style="display:none">ਰੀਅਲ ਅਸਟੇਟ ਏਜੰਟ ਕਿਵੇਂ ਚੁਣੀਏ</div>
         <div class="topic-desc lang-en">What a good agent does, how they're paid, and questions to ask before hiring.</div>
@@ -551,7 +554,7 @@
       </a>
       <a href="learn-land-transfer.html" class="topic-card" data-cat="Real Estate">
         <div class="topic-icon">🏷️</div>
-        <div class="topic-cat-badge" style="background:rgba(230,126,34,0.13);color:#E67E22;border-color:rgba(230,126,34,0.3)"><span class="lang-en">Real Estate</span><span class="lang-pa" style="display:none">ਰੀਅਲ ਅਸਟੇਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(230,126,34,0.13);color:rgba(30,20,0,0.75);border-color:rgba(230,126,34,0.3)"><span class="lang-en">Real Estate</span><span class="lang-pa" style="display:none">ਰੀਅਲ ਅਸਟੇਟ</span></div>
         <div class="topic-name lang-en">Land Transfer Tax in Canada</div>
         <div class="topic-name lang-pa" style="display:none">ਕੈਨੇਡਾ ਵਿੱਚ ਜ਼ਮੀਨ ਟਰਾਂਸਫਰ ਟੈਕਸ</div>
         <div class="topic-desc lang-en">How land transfer tax works by province and first-time buyer rebates.</div>
@@ -560,7 +563,7 @@
       </a>
       <a href="learn-cmhc.html" class="topic-card" data-cat="Real Estate">
         <div class="topic-icon">🏗️</div>
-        <div class="topic-cat-badge" style="background:rgba(230,126,34,0.13);color:#E67E22;border-color:rgba(230,126,34,0.3)"><span class="lang-en">Real Estate</span><span class="lang-pa" style="display:none">ਰੀਅਲ ਅਸਟੇਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(230,126,34,0.13);color:rgba(30,20,0,0.75);border-color:rgba(230,126,34,0.3)"><span class="lang-en">Real Estate</span><span class="lang-pa" style="display:none">ਰੀਅਲ ਅਸਟੇਟ</span></div>
         <div class="topic-name lang-en">CMHC Mortgage Insurance Explained</div>
         <div class="topic-name lang-pa" style="display:none">CMHC ਮੌਰਗੇਜ ਬੀਮਾ</div>
         <div class="topic-desc lang-en">What CMHC insurance is, when it's required, and how much it costs.</div>
@@ -569,7 +572,7 @@
       </a>
       <a href="learn-rental-income.html" class="topic-card" data-cat="Real Estate">
         <div class="topic-icon">💼</div>
-        <div class="topic-cat-badge" style="background:rgba(230,126,34,0.13);color:#E67E22;border-color:rgba(230,126,34,0.3)"><span class="lang-en">Real Estate</span><span class="lang-pa" style="display:none">ਰੀਅਲ ਅਸਟੇਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(230,126,34,0.13);color:rgba(30,20,0,0.75);border-color:rgba(230,126,34,0.3)"><span class="lang-en">Real Estate</span><span class="lang-pa" style="display:none">ਰੀਅਲ ਅਸਟੇਟ</span></div>
         <div class="topic-name lang-en">Rental Income — Tax & Reporting</div>
         <div class="topic-name lang-pa" style="display:none">ਕਿਰਾਏ ਦੀ ਆਮਦਨ — ਟੈਕਸ ਅਤੇ ਰਿਪੋਰਟਿੰਗ</div>
         <div class="topic-desc lang-en">How rental income is taxed in Canada and what expenses you can deduct.</div>
@@ -578,7 +581,7 @@
       </a>
       <a href="learn-credit.html" class="topic-card" data-cat="Credit">
         <div class="topic-icon">💳</div>
-        <div class="topic-cat-badge" style="background:rgba(231,76,60,0.13);color:#E74C3C;border-color:rgba(231,76,60,0.3)"><span class="lang-en">Credit</span><span class="lang-pa" style="display:none">ਕ੍ਰੈਡਿਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(231,76,60,0.13);color:rgba(30,20,0,0.75);border-color:rgba(231,76,60,0.3)"><span class="lang-en">Credit</span><span class="lang-pa" style="display:none">ਕ੍ਰੈਡਿਟ</span></div>
         <div class="topic-name lang-en">Understanding Credit in Canada</div>
         <div class="topic-name lang-pa" style="display:none">ਕੈਨੇਡਾ ਵਿੱਚ ਕ੍ਰੈਡਿਟ</div>
         <div class="topic-desc lang-en">How credit scores work and how to build great credit from scratch.</div>
@@ -587,7 +590,7 @@
       </a>
       <a href="learn-credit-cards.html" class="topic-card" data-cat="Credit">
         <div class="topic-icon">💰</div>
-        <div class="topic-cat-badge" style="background:rgba(231,76,60,0.13);color:#E74C3C;border-color:rgba(231,76,60,0.3)"><span class="lang-en">Credit</span><span class="lang-pa" style="display:none">ਕ੍ਰੈਡਿਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(231,76,60,0.13);color:rgba(30,20,0,0.75);border-color:rgba(231,76,60,0.3)"><span class="lang-en">Credit</span><span class="lang-pa" style="display:none">ਕ੍ਰੈਡਿਟ</span></div>
         <div class="topic-name lang-en">Credit Cards — Smart vs. Dangerous</div>
         <div class="topic-name lang-pa" style="display:none">ਕ੍ਰੈਡਿਟ ਕਾਰਡ — ਸਮਝਦਾਰੀ ਨਾਲ ਵਰਤਣਾ</div>
         <div class="topic-desc lang-en">How to use credit cards to your advantage — and avoid the traps.</div>
@@ -596,7 +599,7 @@
       </a>
       <a href="learn-debt-payoff.html" class="topic-card" data-cat="Credit">
         <div class="topic-icon">🔗</div>
-        <div class="topic-cat-badge" style="background:rgba(231,76,60,0.13);color:#E74C3C;border-color:rgba(231,76,60,0.3)"><span class="lang-en">Credit</span><span class="lang-pa" style="display:none">ਕ੍ਰੈਡਿਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(231,76,60,0.13);color:rgba(30,20,0,0.75);border-color:rgba(231,76,60,0.3)"><span class="lang-en">Credit</span><span class="lang-pa" style="display:none">ਕ੍ਰੈਡਿਟ</span></div>
         <div class="topic-name lang-en">How to Pay Off Debt Faster</div>
         <div class="topic-name lang-pa" style="display:none">ਕਰਜ਼ਾ ਜਲਦੀ ਕਿਵੇਂ ਚੁਕਾਈਏ</div>
         <div class="topic-desc lang-en">Avalanche vs. snowball — a realistic plan to become debt-free.</div>
@@ -605,7 +608,7 @@
       </a>
       <a href="learn-newcomer-credit.html" class="topic-card" data-cat="Credit">
         <div class="topic-icon">🌱</div>
-        <div class="topic-cat-badge" style="background:rgba(231,76,60,0.13);color:#E74C3C;border-color:rgba(231,76,60,0.3)"><span class="lang-en">Credit</span><span class="lang-pa" style="display:none">ਕ੍ਰੈਡਿਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(231,76,60,0.13);color:rgba(30,20,0,0.75);border-color:rgba(231,76,60,0.3)"><span class="lang-en">Credit</span><span class="lang-pa" style="display:none">ਕ੍ਰੈਡਿਟ</span></div>
         <div class="topic-name lang-en">Building Credit as a Newcomer</div>
         <div class="topic-name lang-pa" style="display:none">ਨਵੇਂ ਆਉਣ ਵਾਲੇ ਵਜੋਂ ਕ੍ਰੈਡਿਟ ਬਣਾਉਣਾ</div>
         <div class="topic-desc lang-en">Step-by-step guide to building Canadian credit history from zero.</div>
@@ -614,7 +617,7 @@
       </a>
       <a href="learn-credit-report.html" class="topic-card" data-cat="Credit">
         <div class="topic-icon">📄</div>
-        <div class="topic-cat-badge" style="background:rgba(231,76,60,0.13);color:#E74C3C;border-color:rgba(231,76,60,0.3)"><span class="lang-en">Credit</span><span class="lang-pa" style="display:none">ਕ੍ਰੈਡਿਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(231,76,60,0.13);color:rgba(30,20,0,0.75);border-color:rgba(231,76,60,0.3)"><span class="lang-en">Credit</span><span class="lang-pa" style="display:none">ਕ੍ਰੈਡਿਟ</span></div>
         <div class="topic-name lang-en">How to Read Your Credit Report</div>
         <div class="topic-name lang-pa" style="display:none">ਕ੍ਰੈਡਿਟ ਰਿਪੋਰਟ ਕਿਵੇਂ ਪੜ੍ਹੀਏ</div>
         <div class="topic-desc lang-en">What's on your credit report, how to get it free, and how to fix errors.</div>
@@ -623,7 +626,7 @@
       </a>
       <a href="learn-secured-card.html" class="topic-card" data-cat="Credit">
         <div class="topic-icon">🔐</div>
-        <div class="topic-cat-badge" style="background:rgba(231,76,60,0.13);color:#E74C3C;border-color:rgba(231,76,60,0.3)"><span class="lang-en">Credit</span><span class="lang-pa" style="display:none">ਕ੍ਰੈਡਿਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(231,76,60,0.13);color:rgba(30,20,0,0.75);border-color:rgba(231,76,60,0.3)"><span class="lang-en">Credit</span><span class="lang-pa" style="display:none">ਕ੍ਰੈਡਿਟ</span></div>
         <div class="topic-name lang-en">Secured Credit Cards — How They Work</div>
         <div class="topic-name lang-pa" style="display:none">ਸੁਰੱਖਿਅਤ ਕ੍ਰੈਡਿਟ ਕਾਰਡ</div>
         <div class="topic-desc lang-en">The easiest way to build or rebuild credit when you have none or bad credit.</div>
@@ -632,7 +635,7 @@
       </a>
       <a href="learn-canadian-taxes.html" class="topic-card" data-cat="Taxes">
         <div class="topic-icon">📑</div>
-        <div class="topic-cat-badge" style="background:rgba(22,160,133,0.13);color:#16A085;border-color:rgba(22,160,133,0.3)"><span class="lang-en">Taxes</span><span class="lang-pa" style="display:none">ਟੈਕਸ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(22,160,133,0.13);color:rgba(30,20,0,0.75);border-color:rgba(22,160,133,0.3)"><span class="lang-en">Taxes</span><span class="lang-pa" style="display:none">ਟੈਕਸ</span></div>
         <div class="topic-name lang-en">Canadian Taxes for Beginners</div>
         <div class="topic-name lang-pa" style="display:none">ਸ਼ੁਰੂਆਤੀ ਲੋਕਾਂ ਲਈ ਕੈਨੇਡੀਅਨ ਟੈਕਸ</div>
         <div class="topic-desc lang-en">How the Canadian tax system works and what you need to know each year.</div>
@@ -641,7 +644,7 @@
       </a>
       <a href="learn-tax-deductions.html" class="topic-card" data-cat="Taxes">
         <div class="topic-icon">🧾</div>
-        <div class="topic-cat-badge" style="background:rgba(22,160,133,0.13);color:#16A085;border-color:rgba(22,160,133,0.3)"><span class="lang-en">Taxes</span><span class="lang-pa" style="display:none">ਟੈਕਸ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(22,160,133,0.13);color:rgba(30,20,0,0.75);border-color:rgba(22,160,133,0.3)"><span class="lang-en">Taxes</span><span class="lang-pa" style="display:none">ਟੈਕਸ</span></div>
         <div class="topic-name lang-en">Tax Deductions You Might Be Missing</div>
         <div class="topic-name lang-pa" style="display:none">ਟੈਕਸ ਕਟੌਤੀਆਂ ਜੋ ਤੁਸੀਂ ਖੁੰਝ ਰਹੇ ਹੋ</div>
         <div class="topic-desc lang-en">Common tax deductions and credits that can put real money back in your pocket.</div>
@@ -650,7 +653,7 @@
       </a>
       <a href="learn-self-employed-tax.html" class="topic-card" data-cat="Taxes">
         <div class="topic-icon">💼</div>
-        <div class="topic-cat-badge" style="background:rgba(22,160,133,0.13);color:#16A085;border-color:rgba(22,160,133,0.3)"><span class="lang-en">Taxes</span><span class="lang-pa" style="display:none">ਟੈਕਸ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(22,160,133,0.13);color:rgba(30,20,0,0.75);border-color:rgba(22,160,133,0.3)"><span class="lang-en">Taxes</span><span class="lang-pa" style="display:none">ਟੈਕਸ</span></div>
         <div class="topic-name lang-en">Taxes for Self-Employed Canadians</div>
         <div class="topic-name lang-pa" style="display:none">ਸਵੈ-ਰੁਜ਼ਗਾਰ ਲਈ ਟੈਕਸ</div>
         <div class="topic-desc lang-en">Expenses, HST, and what changes when you work for yourself.</div>
@@ -659,7 +662,7 @@
       </a>
       <a href="learn-tax-return.html" class="topic-card" data-cat="Taxes">
         <div class="topic-icon">📬</div>
-        <div class="topic-cat-badge" style="background:rgba(22,160,133,0.13);color:#16A085;border-color:rgba(22,160,133,0.3)"><span class="lang-en">Taxes</span><span class="lang-pa" style="display:none">ਟੈਕਸ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(22,160,133,0.13);color:rgba(30,20,0,0.75);border-color:rgba(22,160,133,0.3)"><span class="lang-en">Taxes</span><span class="lang-pa" style="display:none">ਟੈਕਸ</span></div>
         <div class="topic-name lang-en">How to File Your Tax Return</div>
         <div class="topic-name lang-pa" style="display:none">ਟੈਕਸ ਰਿਟਰਨ ਕਿਵੇਂ ਭਰੀਏ</div>
         <div class="topic-desc lang-en">A step-by-step walkthrough of filing taxes in Canada.</div>
@@ -668,7 +671,7 @@
       </a>
       <a href="learn-gst-hst.html" class="topic-card" data-cat="Taxes">
         <div class="topic-icon">🏷️</div>
-        <div class="topic-cat-badge" style="background:rgba(22,160,133,0.13);color:#16A085;border-color:rgba(22,160,133,0.3)"><span class="lang-en">Taxes</span><span class="lang-pa" style="display:none">ਟੈਕਸ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(22,160,133,0.13);color:rgba(30,20,0,0.75);border-color:rgba(22,160,133,0.3)"><span class="lang-en">Taxes</span><span class="lang-pa" style="display:none">ਟੈਕਸ</span></div>
         <div class="topic-name lang-en">GST/HST — What It Is & How It Works</div>
         <div class="topic-name lang-pa" style="display:none">GST/HST ਕੀ ਹੈ</div>
         <div class="topic-desc lang-en">Understanding sales tax in Canada and the GST/HST credit you may qualify for.</div>
@@ -677,7 +680,7 @@
       </a>
       <a href="learn-capital-gains.html" class="topic-card" data-cat="Taxes">
         <div class="topic-icon">📈</div>
-        <div class="topic-cat-badge" style="background:rgba(22,160,133,0.13);color:#16A085;border-color:rgba(22,160,133,0.3)"><span class="lang-en">Taxes</span><span class="lang-pa" style="display:none">ਟੈਕਸ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(22,160,133,0.13);color:rgba(30,20,0,0.75);border-color:rgba(22,160,133,0.3)"><span class="lang-en">Taxes</span><span class="lang-pa" style="display:none">ਟੈਕਸ</span></div>
         <div class="topic-name lang-en">Capital Gains Tax in Canada</div>
         <div class="topic-name lang-pa" style="display:none">ਕੈਨੇਡਾ ਵਿੱਚ ਪੂੰਜੀ ਲਾਭ ਟੈਕਸ</div>
         <div class="topic-desc lang-en">How profits from selling investments or real estate are taxed.</div>
@@ -686,7 +689,7 @@
       </a>
       <a href="learn-foreign-income.html" class="topic-card" data-cat="Taxes">
         <div class="topic-icon">🌐</div>
-        <div class="topic-cat-badge" style="background:rgba(22,160,133,0.13);color:#16A085;border-color:rgba(22,160,133,0.3)"><span class="lang-en">Taxes</span><span class="lang-pa" style="display:none">ਟੈਕਸ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(22,160,133,0.13);color:rgba(30,20,0,0.75);border-color:rgba(22,160,133,0.3)"><span class="lang-en">Taxes</span><span class="lang-pa" style="display:none">ਟੈਕਸ</span></div>
         <div class="topic-name lang-en">Reporting Foreign Income in Canada</div>
         <div class="topic-name lang-pa" style="display:none">ਕੈਨੇਡਾ ਵਿੱਚ ਵਿਦੇਸ਼ੀ ਆਮਦਨ ਰਿਪੋਰਟ ਕਰਨਾ</div>
         <div class="topic-desc lang-en">What newcomers and global citizens must report to the CRA.</div>
@@ -695,7 +698,7 @@
       </a>
       <a href="learn-rrsp-tax.html" class="topic-card" data-cat="Taxes">
         <div class="topic-icon">💡</div>
-        <div class="topic-cat-badge" style="background:rgba(22,160,133,0.13);color:#16A085;border-color:rgba(22,160,133,0.3)"><span class="lang-en">Taxes</span><span class="lang-pa" style="display:none">ਟੈਕਸ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(22,160,133,0.13);color:rgba(30,20,0,0.75);border-color:rgba(22,160,133,0.3)"><span class="lang-en">Taxes</span><span class="lang-pa" style="display:none">ਟੈਕਸ</span></div>
         <div class="topic-name lang-en">How RRSP Contributions Reduce Your Taxes</div>
         <div class="topic-name lang-pa" style="display:none">RRSP ਯੋਗਦਾਨ ਟੈਕਸ ਕਿਵੇਂ ਘਟਾਉਂਦਾ</div>
         <div class="topic-desc lang-en">A practical example of how RRSP deductions work to lower your tax bill.</div>
@@ -704,7 +707,7 @@
       </a>
       <a href="learn-retirement.html" class="topic-card" data-cat="Retirement">
         <div class="topic-icon">🌅</div>
-        <div class="topic-cat-badge" style="background:rgba(142,68,173,0.13);color:#8E44AD;border-color:rgba(142,68,173,0.3)"><span class="lang-en">Retirement</span><span class="lang-pa" style="display:none">ਰਿਟਾਇਰਮੈਂਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(142,68,173,0.13);color:rgba(30,20,0,0.75);border-color:rgba(142,68,173,0.3)"><span class="lang-en">Retirement</span><span class="lang-pa" style="display:none">ਰਿਟਾਇਰਮੈਂਟ</span></div>
         <div class="topic-name lang-en">Retirement Planning in Canada</div>
         <div class="topic-name lang-pa" style="display:none">ਕੈਨੇਡਾ ਵਿੱਚ ਰਿਟਾਇਰਮੈਂਟ ਯੋਜਨਾ</div>
         <div class="topic-desc lang-en">CPP, OAS, and how to know if you'll have enough money to retire.</div>
@@ -713,7 +716,7 @@
       </a>
       <a href="learn-cpp.html" class="topic-card" data-cat="Retirement">
         <div class="topic-icon">🇨🇦</div>
-        <div class="topic-cat-badge" style="background:rgba(142,68,173,0.13);color:#8E44AD;border-color:rgba(142,68,173,0.3)"><span class="lang-en">Retirement</span><span class="lang-pa" style="display:none">ਰਿਟਾਇਰਮੈਂਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(142,68,173,0.13);color:rgba(30,20,0,0.75);border-color:rgba(142,68,173,0.3)"><span class="lang-en">Retirement</span><span class="lang-pa" style="display:none">ਰਿਟਾਇਰਮੈਂਟ</span></div>
         <div class="topic-name lang-en">CPP — Canada Pension Plan Explained</div>
         <div class="topic-name lang-pa" style="display:none">CPP — ਕੈਨੇਡਾ ਪੈਨਸ਼ਨ ਪਲੈਨ</div>
         <div class="topic-desc lang-en">How much you'll get, when to start, and how to maximize your CPP.</div>
@@ -722,7 +725,7 @@
       </a>
       <a href="learn-oas.html" class="topic-card" data-cat="Retirement">
         <div class="topic-icon">🏅</div>
-        <div class="topic-cat-badge" style="background:rgba(142,68,173,0.13);color:#8E44AD;border-color:rgba(142,68,173,0.3)"><span class="lang-en">Retirement</span><span class="lang-pa" style="display:none">ਰਿਟਾਇਰਮੈਂਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(142,68,173,0.13);color:rgba(30,20,0,0.75);border-color:rgba(142,68,173,0.3)"><span class="lang-en">Retirement</span><span class="lang-pa" style="display:none">ਰਿਟਾਇਰਮੈਂਟ</span></div>
         <div class="topic-name lang-en">Old Age Security (OAS) Guide</div>
         <div class="topic-name lang-pa" style="display:none">ਬੁਢਾਪਾ ਸੁਰੱਖਿਆ (OAS) ਗਾਈਡ</div>
         <div class="topic-desc lang-en">What OAS is, who qualifies, when it starts, and how it's taxed.</div>
@@ -731,7 +734,7 @@
       </a>
       <a href="learn-retirement-age.html" class="topic-card" data-cat="Retirement">
         <div class="topic-icon">⏰</div>
-        <div class="topic-cat-badge" style="background:rgba(142,68,173,0.13);color:#8E44AD;border-color:rgba(142,68,173,0.3)"><span class="lang-en">Retirement</span><span class="lang-pa" style="display:none">ਰਿਟਾਇਰਮੈਂਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(142,68,173,0.13);color:rgba(30,20,0,0.75);border-color:rgba(142,68,173,0.3)"><span class="lang-en">Retirement</span><span class="lang-pa" style="display:none">ਰਿਟਾਇਰਮੈਂਟ</span></div>
         <div class="topic-name lang-en">When Can You Retire? — The Numbers</div>
         <div class="topic-name lang-pa" style="display:none">ਤੁਸੀਂ ਕਦੋਂ ਰਿਟਾਇਰ ਹੋ ਸਕਦੇ ਹੋ?</div>
         <div class="topic-desc lang-en">How to figure out your retirement number and if you're on track.</div>
@@ -740,7 +743,7 @@
       </a>
       <a href="learn-fire.html" class="topic-card" data-cat="Retirement">
         <div class="topic-icon">🔥</div>
-        <div class="topic-cat-badge" style="background:rgba(142,68,173,0.13);color:#8E44AD;border-color:rgba(142,68,173,0.3)"><span class="lang-en">Retirement</span><span class="lang-pa" style="display:none">ਰਿਟਾਇਰਮੈਂਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(142,68,173,0.13);color:rgba(30,20,0,0.75);border-color:rgba(142,68,173,0.3)"><span class="lang-en">Retirement</span><span class="lang-pa" style="display:none">ਰਿਟਾਇਰਮੈਂਟ</span></div>
         <div class="topic-name lang-en">FIRE Movement — Early Retirement</div>
         <div class="topic-name lang-pa" style="display:none">FIRE ਅੰਦੋਲਨ — ਜਲਦੀ ਰਿਟਾਇਰਮੈਂਟ</div>
         <div class="topic-desc lang-en">Financial Independence, Retire Early — what it is and if it's realistic.</div>
@@ -749,7 +752,7 @@
       </a>
       <a href="learn-rrif.html" class="topic-card" data-cat="Retirement">
         <div class="topic-icon">🔄</div>
-        <div class="topic-cat-badge" style="background:rgba(142,68,173,0.13);color:#8E44AD;border-color:rgba(142,68,173,0.3)"><span class="lang-en">Retirement</span><span class="lang-pa" style="display:none">ਰਿਟਾਇਰਮੈਂਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(142,68,173,0.13);color:rgba(30,20,0,0.75);border-color:rgba(142,68,173,0.3)"><span class="lang-en">Retirement</span><span class="lang-pa" style="display:none">ਰਿਟਾਇਰਮੈਂਟ</span></div>
         <div class="topic-name lang-en">RRSP to RRIF — What Happens at 71</div>
         <div class="topic-name lang-pa" style="display:none">RRSP ਤੋਂ RRIF — 71 'ਤੇ ਕੀ ਹੁੰਦਾ</div>
         <div class="topic-desc lang-en">What happens when your RRSP must convert to a RRIF and how to plan for it.</div>
@@ -758,7 +761,7 @@
       </a>
       <a href="learn-pension-types.html" class="topic-card" data-cat="Retirement">
         <div class="topic-icon">💼</div>
-        <div class="topic-cat-badge" style="background:rgba(142,68,173,0.13);color:#8E44AD;border-color:rgba(142,68,173,0.3)"><span class="lang-en">Retirement</span><span class="lang-pa" style="display:none">ਰਿਟਾਇਰਮੈਂਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(142,68,173,0.13);color:rgba(30,20,0,0.75);border-color:rgba(142,68,173,0.3)"><span class="lang-en">Retirement</span><span class="lang-pa" style="display:none">ਰਿਟਾਇਰਮੈਂਟ</span></div>
         <div class="topic-name lang-en">Defined Benefit vs. Defined Contribution</div>
         <div class="topic-name lang-pa" style="display:none">ਪਰਿਭਾਸ਼ਿਤ ਲਾਭ ਬਨਾਮ ਯੋਗਦਾਨ ਪੈਨਸ਼ਨ</div>
         <div class="topic-desc lang-en">Workplace pension plan types — what you have and what it means for you.</div>
@@ -767,7 +770,7 @@
       </a>
       <a href="learn-retirement-income.html" class="topic-card" data-cat="Retirement">
         <div class="topic-icon">💰</div>
-        <div class="topic-cat-badge" style="background:rgba(142,68,173,0.13);color:#8E44AD;border-color:rgba(142,68,173,0.3)"><span class="lang-en">Retirement</span><span class="lang-pa" style="display:none">ਰਿਟਾਇਰਮੈਂਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(142,68,173,0.13);color:rgba(30,20,0,0.75);border-color:rgba(142,68,173,0.3)"><span class="lang-en">Retirement</span><span class="lang-pa" style="display:none">ਰਿਟਾਇਰਮੈਂਟ</span></div>
         <div class="topic-name lang-en">Creating Retirement Income Streams</div>
         <div class="topic-name lang-pa" style="display:none">ਰਿਟਾਇਰਮੈਂਟ ਆਮਦਨ ਸਰੋਤ ਬਣਾਉਣਾ</div>
         <div class="topic-desc lang-en">How to combine CPP, OAS, RRIF, TFSA, and rental income in retirement.</div>
@@ -776,7 +779,7 @@
       </a>
       <a href="learn-newcomer-finance.html" class="topic-card" data-cat="Newcomers">
         <div class="topic-icon">🌍</div>
-        <div class="topic-cat-badge" style="background:rgba(46,204,113,0.13);color:#2ECC71;border-color:rgba(46,204,113,0.3)"><span class="lang-en">Newcomers</span><span class="lang-pa" style="display:none">ਨਵੇਂ ਆਉਣ ਵਾਲੇ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(46,204,113,0.13);color:rgba(30,20,0,0.75);border-color:rgba(46,204,113,0.3)"><span class="lang-en">Newcomers</span><span class="lang-pa" style="display:none">ਨਵੇਂ ਆਉਣ ਵਾਲੇ</span></div>
         <div class="topic-name lang-en">Financial Guide for Newcomers</div>
         <div class="topic-name lang-pa" style="display:none">ਨਵੇਂ ਆਉਣ ਵਾਲਿਆਂ ਲਈ ਮਾਲੀ ਗਾਈਡ</div>
         <div class="topic-desc lang-en">The first financial steps every newcomer should take in Canada.</div>
@@ -785,7 +788,7 @@
       </a>
       <a href="learn-banking.html" class="topic-card" data-cat="Newcomers">
         <div class="topic-icon">🏛️</div>
-        <div class="topic-cat-badge" style="background:rgba(46,204,113,0.13);color:#2ECC71;border-color:rgba(46,204,113,0.3)"><span class="lang-en">Newcomers</span><span class="lang-pa" style="display:none">ਨਵੇਂ ਆਉਣ ਵਾਲੇ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(46,204,113,0.13);color:rgba(30,20,0,0.75);border-color:rgba(46,204,113,0.3)"><span class="lang-en">Newcomers</span><span class="lang-pa" style="display:none">ਨਵੇਂ ਆਉਣ ਵਾਲੇ</span></div>
         <div class="topic-name lang-en">How Banking Works in Canada</div>
         <div class="topic-name lang-pa" style="display:none">ਕੈਨੇਡਾ ਵਿੱਚ ਬੈਂਕਿੰਗ</div>
         <div class="topic-desc lang-en">Choosing a bank, types of accounts, fees, and how to avoid them.</div>
@@ -794,7 +797,7 @@
       </a>
       <a href="learn-sin-benefits.html" class="topic-card" data-cat="Newcomers">
         <div class="topic-icon">🔢</div>
-        <div class="topic-cat-badge" style="background:rgba(46,204,113,0.13);color:#2ECC71;border-color:rgba(46,204,113,0.3)"><span class="lang-en">Newcomers</span><span class="lang-pa" style="display:none">ਨਵੇਂ ਆਉਣ ਵਾਲੇ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(46,204,113,0.13);color:rgba(30,20,0,0.75);border-color:rgba(46,204,113,0.3)"><span class="lang-en">Newcomers</span><span class="lang-pa" style="display:none">ਨਵੇਂ ਆਉਣ ਵਾਲੇ</span></div>
         <div class="topic-name lang-en">SIN Number & Government Benefits</div>
         <div class="topic-name lang-pa" style="display:none">SIN ਨੰਬਰ ਅਤੇ ਸਰਕਾਰੀ ਲਾਭ</div>
         <div class="topic-desc lang-en">What a SIN is, how to get one, and what government benefits you qualify for.</div>
@@ -803,7 +806,7 @@
       </a>
       <a href="learn-ccb.html" class="topic-card" data-cat="Newcomers">
         <div class="topic-icon">👶</div>
-        <div class="topic-cat-badge" style="background:rgba(46,204,113,0.13);color:#2ECC71;border-color:rgba(46,204,113,0.3)"><span class="lang-en">Newcomers</span><span class="lang-pa" style="display:none">ਨਵੇਂ ਆਉਣ ਵਾਲੇ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(46,204,113,0.13);color:rgba(30,20,0,0.75);border-color:rgba(46,204,113,0.3)"><span class="lang-en">Newcomers</span><span class="lang-pa" style="display:none">ਨਵੇਂ ਆਉਣ ਵਾਲੇ</span></div>
         <div class="topic-name lang-en">Canada Child Benefit (CCB)</div>
         <div class="topic-name lang-pa" style="display:none">ਕੈਨੇਡਾ ਬਾਲ ਲਾਭ (CCB)</div>
         <div class="topic-desc lang-en">How CCB works, who qualifies, and how much you receive monthly.</div>
@@ -812,7 +815,7 @@
       </a>
       <a href="learn-remittances.html" class="topic-card" data-cat="Newcomers">
         <div class="topic-icon">💱</div>
-        <div class="topic-cat-badge" style="background:rgba(46,204,113,0.13);color:#2ECC71;border-color:rgba(46,204,113,0.3)"><span class="lang-en">Newcomers</span><span class="lang-pa" style="display:none">ਨਵੇਂ ਆਉਣ ਵਾਲੇ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(46,204,113,0.13);color:rgba(30,20,0,0.75);border-color:rgba(46,204,113,0.3)"><span class="lang-en">Newcomers</span><span class="lang-pa" style="display:none">ਨਵੇਂ ਆਉਣ ਵਾਲੇ</span></div>
         <div class="topic-name lang-en">Sending Money Home — Best Ways</div>
         <div class="topic-name lang-pa" style="display:none">ਘਰ ਪੈਸੇ ਭੇਜਣਾ — ਸਭ ਤੋਂ ਵਧੀਆ ਤਰੀਕੇ</div>
         <div class="topic-desc lang-en">How to send money internationally while minimizing fees and exchange losses.</div>
@@ -821,7 +824,7 @@
       </a>
       <a href="learn-pr-benefits.html" class="topic-card" data-cat="Newcomers">
         <div class="topic-icon">🍁</div>
-        <div class="topic-cat-badge" style="background:rgba(46,204,113,0.13);color:#2ECC71;border-color:rgba(46,204,113,0.3)"><span class="lang-en">Newcomers</span><span class="lang-pa" style="display:none">ਨਵੇਂ ਆਉਣ ਵਾਲੇ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(46,204,113,0.13);color:rgba(30,20,0,0.75);border-color:rgba(46,204,113,0.3)"><span class="lang-en">Newcomers</span><span class="lang-pa" style="display:none">ਨਵੇਂ ਆਉਣ ਵਾਲੇ</span></div>
         <div class="topic-name lang-en">Benefits of Permanent Residency in Canada</div>
         <div class="topic-name lang-pa" style="display:none">ਸਥਾਈ ਨਿਵਾਸ ਦੇ ਲਾਭ</div>
         <div class="topic-desc lang-en">Financial and social benefits that come with becoming a PR in Canada.</div>
@@ -830,7 +833,7 @@
       </a>
       <a href="learn-newcomer-taxes.html" class="topic-card" data-cat="Newcomers">
         <div class="topic-icon">📝</div>
-        <div class="topic-cat-badge" style="background:rgba(46,204,113,0.13);color:#2ECC71;border-color:rgba(46,204,113,0.3)"><span class="lang-en">Newcomers</span><span class="lang-pa" style="display:none">ਨਵੇਂ ਆਉਣ ਵਾਲੇ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(46,204,113,0.13);color:rgba(30,20,0,0.75);border-color:rgba(46,204,113,0.3)"><span class="lang-en">Newcomers</span><span class="lang-pa" style="display:none">ਨਵੇਂ ਆਉਣ ਵਾਲੇ</span></div>
         <div class="topic-name lang-en">Filing Taxes for the First Time in Canada</div>
         <div class="topic-name lang-pa" style="display:none">ਕੈਨੇਡਾ ਵਿੱਚ ਪਹਿਲੀ ਵਾਰ ਟੈਕਸ ਭਰਨਾ</div>
         <div class="topic-desc lang-en">A simple guide for newcomers filing their first Canadian tax return.</div>
@@ -839,7 +842,7 @@
       </a>
       <a href="learn-work-permit-finance.html" class="topic-card" data-cat="Newcomers">
         <div class="topic-icon">🛂</div>
-        <div class="topic-cat-badge" style="background:rgba(46,204,113,0.13);color:#2ECC71;border-color:rgba(46,204,113,0.3)"><span class="lang-en">Newcomers</span><span class="lang-pa" style="display:none">ਨਵੇਂ ਆਉਣ ਵਾਲੇ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(46,204,113,0.13);color:rgba(30,20,0,0.75);border-color:rgba(46,204,113,0.3)"><span class="lang-en">Newcomers</span><span class="lang-pa" style="display:none">ਨਵੇਂ ਆਉਣ ਵਾਲੇ</span></div>
         <div class="topic-name lang-en">Managing Money on a Work Permit</div>
         <div class="topic-name lang-pa" style="display:none">ਵਰਕ ਪਰਮਿਟ 'ਤੇ ਪੈਸੇ ਕਿਵੇਂ ਸੰਭਾਲੀਏ</div>
         <div class="topic-desc lang-en">Key financial moves to make while on a work permit before getting PR.</div>
@@ -848,7 +851,7 @@
       </a>
       <a href="learn-money-mindset.html" class="topic-card" data-cat="Personal Finance">
         <div class="topic-icon">🧠</div>
-        <div class="topic-cat-badge" style="background:rgba(243,156,18,0.13);color:#F39C12;border-color:rgba(243,156,18,0.3)"><span class="lang-en">Personal Finance</span><span class="lang-pa" style="display:none">ਨਿੱਜੀ ਵਿੱਤ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(243,156,18,0.13);color:rgba(30,20,0,0.75);border-color:rgba(243,156,18,0.3)"><span class="lang-en">Personal Finance</span><span class="lang-pa" style="display:none">ਨਿੱਜੀ ਵਿੱਤ</span></div>
         <div class="topic-name lang-en">Money Mindset — Rewiring How You Think</div>
         <div class="topic-name lang-pa" style="display:none">ਪੈਸੇ ਬਾਰੇ ਸੋਚ ਬਦਲਣਾ</div>
         <div class="topic-desc lang-en">How your beliefs about money affect your financial outcomes and how to shift them.</div>
@@ -857,7 +860,7 @@
       </a>
       <a href="learn-side-hustles.html" class="topic-card" data-cat="Personal Finance">
         <div class="topic-icon">💻</div>
-        <div class="topic-cat-badge" style="background:rgba(243,156,18,0.13);color:#F39C12;border-color:rgba(243,156,18,0.3)"><span class="lang-en">Personal Finance</span><span class="lang-pa" style="display:none">ਨਿੱਜੀ ਵਿੱਤ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(243,156,18,0.13);color:rgba(30,20,0,0.75);border-color:rgba(243,156,18,0.3)"><span class="lang-en">Personal Finance</span><span class="lang-pa" style="display:none">ਨਿੱਜੀ ਵਿੱਤ</span></div>
         <div class="topic-name lang-en">Side Hustles — Earn Extra Income</div>
         <div class="topic-name lang-pa" style="display:none">ਵਾਧੂ ਆਮਦਨ ਕਮਾਉਣਾ</div>
         <div class="topic-desc lang-en">Legitimate ways to earn extra money in Canada in 2024 and beyond.</div>
@@ -866,7 +869,7 @@
       </a>
       <a href="learn-inflation.html" class="topic-card" data-cat="Personal Finance">
         <div class="topic-icon">📊</div>
-        <div class="topic-cat-badge" style="background:rgba(243,156,18,0.13);color:#F39C12;border-color:rgba(243,156,18,0.3)"><span class="lang-en">Personal Finance</span><span class="lang-pa" style="display:none">ਨਿੱਜੀ ਵਿੱਤ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(243,156,18,0.13);color:rgba(30,20,0,0.75);border-color:rgba(243,156,18,0.3)"><span class="lang-en">Personal Finance</span><span class="lang-pa" style="display:none">ਨਿੱਜੀ ਵਿੱਤ</span></div>
         <div class="topic-name lang-en">Inflation — What It Means for Your Money</div>
         <div class="topic-name lang-pa" style="display:none">ਮਹਿੰਗਾਈ — ਤੁਹਾਡੇ ਪੈਸਿਆਂ ਲਈ ਕੀ ਮਤਲਬ</div>
         <div class="topic-desc lang-en">How inflation erodes purchasing power and what you can do to protect yourself.</div>
@@ -875,7 +878,7 @@
       </a>
       <a href="learn-interest-rates.html" class="topic-card" data-cat="Personal Finance">
         <div class="topic-icon">🏦</div>
-        <div class="topic-cat-badge" style="background:rgba(243,156,18,0.13);color:#F39C12;border-color:rgba(243,156,18,0.3)"><span class="lang-en">Personal Finance</span><span class="lang-pa" style="display:none">ਨਿੱਜੀ ਵਿੱਤ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(243,156,18,0.13);color:rgba(30,20,0,0.75);border-color:rgba(243,156,18,0.3)"><span class="lang-en">Personal Finance</span><span class="lang-pa" style="display:none">ਨਿੱਜੀ ਵਿੱਤ</span></div>
         <div class="topic-name lang-en">Interest Rates — How They Affect You</div>
         <div class="topic-name lang-pa" style="display:none">ਵਿਆਜ ਦਰਾਂ — ਤੁਹਾਡੇ 'ਤੇ ਅਸਰ</div>
         <div class="topic-desc lang-en">How Bank of Canada rate decisions affect your mortgage, savings, and investments.</div>
@@ -884,7 +887,7 @@
       </a>
       <a href="learn-financial-goals.html" class="topic-card" data-cat="Personal Finance">
         <div class="topic-icon">🎯</div>
-        <div class="topic-cat-badge" style="background:rgba(243,156,18,0.13);color:#F39C12;border-color:rgba(243,156,18,0.3)"><span class="lang-en">Personal Finance</span><span class="lang-pa" style="display:none">ਨਿੱਜੀ ਵਿੱਤ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(243,156,18,0.13);color:rgba(30,20,0,0.75);border-color:rgba(243,156,18,0.3)"><span class="lang-en">Personal Finance</span><span class="lang-pa" style="display:none">ਨਿੱਜੀ ਵਿੱਤ</span></div>
         <div class="topic-name lang-en">Setting & Achieving Financial Goals</div>
         <div class="topic-name lang-pa" style="display:none">ਵਿੱਤੀ ਟੀਚੇ ਨਿਰਧਾਰਤ ਕਰਨਾ ਅਤੇ ਪ੍ਰਾਪਤ ਕਰਨਾ</div>
         <div class="topic-desc lang-en">How to set SMART financial goals and build a real plan to achieve them.</div>
@@ -893,7 +896,7 @@
       </a>
       <a href="learn-financial-stress.html" class="topic-card" data-cat="Personal Finance">
         <div class="topic-icon">😰</div>
-        <div class="topic-cat-badge" style="background:rgba(243,156,18,0.13);color:#F39C12;border-color:rgba(243,156,18,0.3)"><span class="lang-en">Personal Finance</span><span class="lang-pa" style="display:none">ਨਿੱਜੀ ਵਿੱਤ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(243,156,18,0.13);color:rgba(30,20,0,0.75);border-color:rgba(243,156,18,0.3)"><span class="lang-en">Personal Finance</span><span class="lang-pa" style="display:none">ਨਿੱਜੀ ਵਿੱਤ</span></div>
         <div class="topic-name lang-en">Dealing with Financial Stress</div>
         <div class="topic-name lang-pa" style="display:none">ਵਿੱਤੀ ਤਣਾਅ ਨਾਲ ਕਿਵੇਂ ਨਿਪਟੀਏ</div>
         <div class="topic-desc lang-en">Practical steps to reduce money stress and take back control of your finances.</div>
@@ -902,7 +905,7 @@
       </a>
       <a href="learn-passive-income.html" class="topic-card" data-cat="Personal Finance">
         <div class="topic-icon">🌊</div>
-        <div class="topic-cat-badge" style="background:rgba(243,156,18,0.13);color:#F39C12;border-color:rgba(243,156,18,0.3)"><span class="lang-en">Personal Finance</span><span class="lang-pa" style="display:none">ਨਿੱਜੀ ਵਿੱਤ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(243,156,18,0.13);color:rgba(30,20,0,0.75);border-color:rgba(243,156,18,0.3)"><span class="lang-en">Personal Finance</span><span class="lang-pa" style="display:none">ਨਿੱਜੀ ਵਿੱਤ</span></div>
         <div class="topic-name lang-en">Building Passive Income Streams</div>
         <div class="topic-name lang-pa" style="display:none">ਪੈਸਿਵ ਆਮਦਨ ਸਰੋਤ ਬਣਾਉਣਾ</div>
         <div class="topic-desc lang-en">Real ways to earn money while you sleep — rentals, dividends, and more.</div>
@@ -911,7 +914,7 @@
       </a>
       <a href="learn-couples-money.html" class="topic-card" data-cat="Personal Finance">
         <div class="topic-icon">💑</div>
-        <div class="topic-cat-badge" style="background:rgba(243,156,18,0.13);color:#F39C12;border-color:rgba(243,156,18,0.3)"><span class="lang-en">Personal Finance</span><span class="lang-pa" style="display:none">ਨਿੱਜੀ ਵਿੱਤ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(243,156,18,0.13);color:rgba(30,20,0,0.75);border-color:rgba(243,156,18,0.3)"><span class="lang-en">Personal Finance</span><span class="lang-pa" style="display:none">ਨਿੱਜੀ ਵਿੱਤ</span></div>
         <div class="topic-name lang-en">Managing Money as a Couple</div>
         <div class="topic-name lang-pa" style="display:none">ਜੋੜੇ ਵਜੋਂ ਪੈਸੇ ਕਿਵੇਂ ਸੰਭਾਲੀਏ</div>
         <div class="topic-desc lang-en">Joint accounts, shared goals, and how to talk about money with your partner.</div>
@@ -920,7 +923,7 @@
       </a>
       <a href="learn-kids-money.html" class="topic-card" data-cat="Personal Finance">
         <div class="topic-icon">🧒</div>
-        <div class="topic-cat-badge" style="background:rgba(243,156,18,0.13);color:#F39C12;border-color:rgba(243,156,18,0.3)"><span class="lang-en">Personal Finance</span><span class="lang-pa" style="display:none">ਨਿੱਜੀ ਵਿੱਤ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(243,156,18,0.13);color:rgba(30,20,0,0.75);border-color:rgba(243,156,18,0.3)"><span class="lang-en">Personal Finance</span><span class="lang-pa" style="display:none">ਨਿੱਜੀ ਵਿੱਤ</span></div>
         <div class="topic-name lang-en">Teaching Kids About Money</div>
         <div class="topic-name lang-pa" style="display:none">ਬੱਚਿਆਂ ਨੂੰ ਪੈਸੇ ਬਾਰੇ ਸਿਖਾਉਣਾ</div>
         <div class="topic-desc lang-en">Age-appropriate ways to teach children about earning, saving, and giving.</div>
@@ -929,7 +932,7 @@
       </a>
       <a href="learn-annual-checkup.html" class="topic-card" data-cat="Personal Finance">
         <div class="topic-icon">✅</div>
-        <div class="topic-cat-badge" style="background:rgba(243,156,18,0.13);color:#F39C12;border-color:rgba(243,156,18,0.3)"><span class="lang-en">Personal Finance</span><span class="lang-pa" style="display:none">ਨਿੱਜੀ ਵਿੱਤ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(243,156,18,0.13);color:rgba(30,20,0,0.75);border-color:rgba(243,156,18,0.3)"><span class="lang-en">Personal Finance</span><span class="lang-pa" style="display:none">ਨਿੱਜੀ ਵਿੱਤ</span></div>
         <div class="topic-name lang-en">Annual Financial Checkup</div>
         <div class="topic-name lang-pa" style="display:none">ਸਾਲਾਨਾ ਵਿੱਤੀ ਜਾਂਚ</div>
         <div class="topic-desc lang-en">A yearly review checklist to make sure your finances are on track.</div>
@@ -938,7 +941,7 @@
       </a>
       <a href="learn-resp.html" class="topic-card" data-cat="Investing">
         <div class="topic-icon">🎓</div>
-        <div class="topic-cat-badge" style="background:rgba(41,128,185,0.13);color:#2980B9;border-color:rgba(41,128,185,0.3)"><span class="lang-en">Investing</span><span class="lang-pa" style="display:none">ਨਿਵੇਸ਼</span></div>
+        <div class="topic-cat-badge" style="background:rgba(41,128,185,0.13);color:rgba(30,20,0,0.75);border-color:rgba(41,128,185,0.3)"><span class="lang-en">Investing</span><span class="lang-pa" style="display:none">ਨਿਵੇਸ਼</span></div>
         <div class="topic-name lang-en">RESP — Saving for Your Child's Education</div>
         <div class="topic-name lang-pa" style="display:none">RESP — ਬੱਚੇ ਦੀ ਪੜ੍ਹਾਈ ਲਈ ਬੱਚਤ</div>
         <div class="topic-desc lang-en">How RESPs work, government grants, and how to maximize education savings.</div>
@@ -947,7 +950,7 @@
       </a>
       <a href="learn-gics.html" class="topic-card" data-cat="Investing">
         <div class="topic-icon">📆</div>
-        <div class="topic-cat-badge" style="background:rgba(41,128,185,0.13);color:#2980B9;border-color:rgba(41,128,185,0.3)"><span class="lang-en">Investing</span><span class="lang-pa" style="display:none">ਨਿਵੇਸ਼</span></div>
+        <div class="topic-cat-badge" style="background:rgba(41,128,185,0.13);color:rgba(30,20,0,0.75);border-color:rgba(41,128,185,0.3)"><span class="lang-en">Investing</span><span class="lang-pa" style="display:none">ਨਿਵੇਸ਼</span></div>
         <div class="topic-name lang-en">GICs — Guaranteed Investment Certificates</div>
         <div class="topic-name lang-pa" style="display:none">GIC — ਗਾਰੰਟੀਡ ਨਿਵੇਸ਼ ਸਰਟੀਫਿਕੇਟ</div>
         <div class="topic-desc lang-en">Safe, fixed-return investments — how they work and when to use them.</div>
@@ -956,7 +959,7 @@
       </a>
       <a href="learn-fraud.html" class="topic-card" data-cat="Personal Finance">
         <div class="topic-icon">🔐</div>
-        <div class="topic-cat-badge" style="background:rgba(243,156,18,0.13);color:#F39C12;border-color:rgba(243,156,18,0.3)"><span class="lang-en">Personal Finance</span><span class="lang-pa" style="display:none">ਨਿੱਜੀ ਵਿੱਤ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(243,156,18,0.13);color:rgba(30,20,0,0.75);border-color:rgba(243,156,18,0.3)"><span class="lang-en">Personal Finance</span><span class="lang-pa" style="display:none">ਨਿੱਜੀ ਵਿੱਤ</span></div>
         <div class="topic-name lang-en">Identity Theft & Financial Fraud</div>
         <div class="topic-name lang-pa" style="display:none">ਪਛਾਣ ਚੋਰੀ ਅਤੇ ਵਿੱਤੀ ਧੋਖਾਧੜੀ</div>
         <div class="topic-desc lang-en">How to protect yourself from scams, fraud, and identity theft in Canada.</div>
@@ -965,7 +968,7 @@
       </a>
       <a href="learn-financial-advisor.html" class="topic-card" data-cat="Personal Finance">
         <div class="topic-icon">🤝</div>
-        <div class="topic-cat-badge" style="background:rgba(243,156,18,0.13);color:#F39C12;border-color:rgba(243,156,18,0.3)"><span class="lang-en">Personal Finance</span><span class="lang-pa" style="display:none">ਨਿੱਜੀ ਵਿੱਤ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(243,156,18,0.13);color:rgba(30,20,0,0.75);border-color:rgba(243,156,18,0.3)"><span class="lang-en">Personal Finance</span><span class="lang-pa" style="display:none">ਨਿੱਜੀ ਵਿੱਤ</span></div>
         <div class="topic-name lang-en">When to Hire a Financial Advisor</div>
         <div class="topic-name lang-pa" style="display:none">ਵਿੱਤੀ ਸਲਾਹਕਾਰ ਕਦੋਂ ਰੱਖੀਏ</div>
         <div class="topic-desc lang-en">What financial advisors do, types of advisors, and how they're compensated.</div>
@@ -974,7 +977,7 @@
       </a>
       <a href="learn-stocks-taxes.html" class="topic-card" data-cat="Taxes">
         <div class="topic-icon">📊</div>
-        <div class="topic-cat-badge" style="background:rgba(22,160,133,0.13);color:#16A085;border-color:rgba(22,160,133,0.3)"><span class="lang-en">Taxes</span><span class="lang-pa" style="display:none">ਟੈਕਸ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(22,160,133,0.13);color:rgba(30,20,0,0.75);border-color:rgba(22,160,133,0.3)"><span class="lang-en">Taxes</span><span class="lang-pa" style="display:none">ਟੈਕਸ</span></div>
         <div class="topic-name lang-en">Stocks & Taxes — What You Need to Know</div>
         <div class="topic-name lang-pa" style="display:none">ਸਟਾਕ ਅਤੇ ਟੈਕਸ — ਜ਼ਰੂਰੀ ਜਾਣਕਾਰੀ</div>
         <div class="topic-desc lang-en">How dividends, capital gains, and losses are reported and taxed in Canada.</div>
@@ -983,7 +986,7 @@
       </a>
       <a href="learn-banking-fees.html" class="topic-card" data-cat="Newcomers">
         <div class="topic-icon">💸</div>
-        <div class="topic-cat-badge" style="background:rgba(46,204,113,0.13);color:#2ECC71;border-color:rgba(46,204,113,0.3)"><span class="lang-en">Newcomers</span><span class="lang-pa" style="display:none">ਨਵੇਂ ਆਉਣ ਵਾਲੇ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(46,204,113,0.13);color:rgba(30,20,0,0.75);border-color:rgba(46,204,113,0.3)"><span class="lang-en">Newcomers</span><span class="lang-pa" style="display:none">ਨਵੇਂ ਆਉਣ ਵਾਲੇ</span></div>
         <div class="topic-name lang-en">Bank Fees in Canada — How to Avoid Them</div>
         <div class="topic-name lang-pa" style="display:none">ਕੈਨੇਡਾ ਵਿੱਚ ਬੈਂਕ ਫ਼ੀਸਾਂ ਤੋਂ ਕਿਵੇਂ ਬਚੀਏ</div>
         <div class="topic-desc lang-en">Common banking fees Canadians pay and free alternatives to consider.</div>
@@ -992,7 +995,7 @@
       </a>
       <a href="learn-small-business.html" class="topic-card" data-cat="Personal Finance">
         <div class="topic-icon">🏪</div>
-        <div class="topic-cat-badge" style="background:rgba(243,156,18,0.13);color:#F39C12;border-color:rgba(243,156,18,0.3)"><span class="lang-en">Personal Finance</span><span class="lang-pa" style="display:none">ਨਿੱਜੀ ਵਿੱਤ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(243,156,18,0.13);color:rgba(30,20,0,0.75);border-color:rgba(243,156,18,0.3)"><span class="lang-en">Personal Finance</span><span class="lang-pa" style="display:none">ਨਿੱਜੀ ਵਿੱਤ</span></div>
         <div class="topic-name lang-en">Starting a Small Business in Canada</div>
         <div class="topic-name lang-pa" style="display:none">ਕੈਨੇਡਾ ਵਿੱਚ ਛੋਟਾ ਕਾਰੋਬਾਰ ਸ਼ੁਰੂ ਕਰਨਾ</div>
         <div class="topic-desc lang-en">Registration, taxes, insurance, and financial basics for new business owners.</div>
@@ -1001,7 +1004,7 @@
       </a>
       <a href="learn-bonds.html" class="topic-card" data-cat="Investing">
         <div class="topic-icon">📰</div>
-        <div class="topic-cat-badge" style="background:rgba(41,128,185,0.13);color:#2980B9;border-color:rgba(41,128,185,0.3)"><span class="lang-en">Investing</span><span class="lang-pa" style="display:none">ਨਿਵੇਸ਼</span></div>
+        <div class="topic-cat-badge" style="background:rgba(41,128,185,0.13);color:rgba(30,20,0,0.75);border-color:rgba(41,128,185,0.3)"><span class="lang-en">Investing</span><span class="lang-pa" style="display:none">ਨਿਵੇਸ਼</span></div>
         <div class="topic-name lang-en">Bonds Explained — Safe Investing</div>
         <div class="topic-name lang-pa" style="display:none">ਬਾਂਡ ਸਮਝਾਇਆ — ਸੁਰੱਖਿਅਤ ਨਿਵੇਸ਼</div>
         <div class="topic-desc lang-en">What bonds are, how they work, and when to include them in your portfolio.</div>
@@ -1010,7 +1013,7 @@
       </a>
       <a href="learn-student-loans.html" class="topic-card" data-cat="Credit">
         <div class="topic-icon">🎓</div>
-        <div class="topic-cat-badge" style="background:rgba(231,76,60,0.13);color:#E74C3C;border-color:rgba(231,76,60,0.3)"><span class="lang-en">Credit</span><span class="lang-pa" style="display:none">ਕ੍ਰੈਡਿਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(231,76,60,0.13);color:rgba(30,20,0,0.75);border-color:rgba(231,76,60,0.3)"><span class="lang-en">Credit</span><span class="lang-pa" style="display:none">ਕ੍ਰੈਡਿਟ</span></div>
         <div class="topic-name lang-en">Student Loans & OSAP — What to Know</div>
         <div class="topic-name lang-pa" style="display:none">ਵਿਦਿਆਰਥੀ ਕਰਜ਼ੇ ਅਤੇ OSAP</div>
         <div class="topic-desc lang-en">How student loans work in Canada, repayment options, and forgiveness programs.</div>
@@ -1019,7 +1022,7 @@
       </a>
       <a href="learn-home-equity.html" class="topic-card" data-cat="Real Estate">
         <div class="topic-icon">🏠</div>
-        <div class="topic-cat-badge" style="background:rgba(230,126,34,0.13);color:#E67E22;border-color:rgba(230,126,34,0.3)"><span class="lang-en">Real Estate</span><span class="lang-pa" style="display:none">ਰੀਅਲ ਅਸਟੇਟ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(230,126,34,0.13);color:rgba(30,20,0,0.75);border-color:rgba(230,126,34,0.3)"><span class="lang-en">Real Estate</span><span class="lang-pa" style="display:none">ਰੀਅਲ ਅਸਟੇਟ</span></div>
         <div class="topic-name lang-en">Home Equity — What It Is & How to Use It</div>
         <div class="topic-name lang-pa" style="display:none">ਘਰ ਦੀ ਇਕੁਇਟੀ — ਕੀ ਹੈ ਅਤੇ ਕਿਵੇਂ ਵਰਤੀਏ</div>
         <div class="topic-desc lang-en">Building home equity and borrowing against it — HELOCs explained.</div>
@@ -1028,7 +1031,7 @@
       </a>
       <a href="learn-car-buying.html" class="topic-card" data-cat="Personal Finance">
         <div class="topic-icon">🚗</div>
-        <div class="topic-cat-badge" style="background:rgba(243,156,18,0.13);color:#F39C12;border-color:rgba(243,156,18,0.3)"><span class="lang-en">Personal Finance</span><span class="lang-pa" style="display:none">ਨਿੱਜੀ ਵਿੱਤ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(243,156,18,0.13);color:rgba(30,20,0,0.75);border-color:rgba(243,156,18,0.3)"><span class="lang-en">Personal Finance</span><span class="lang-pa" style="display:none">ਨਿੱਜੀ ਵਿੱਤ</span></div>
         <div class="topic-name lang-en">Buying a Car — Financing vs. Leasing</div>
         <div class="topic-name lang-pa" style="display:none">ਕਾਰ ਖਰੀਦਣਾ — ਫਾਈਨੈਂਸਿੰਗ ਬਨਾਮ ਲੀਜ਼ਿੰਗ</div>
         <div class="topic-desc lang-en">The real cost of car ownership and whether to finance, lease, or buy outright.</div>
@@ -1037,7 +1040,7 @@
       </a>
       <a href="learn-healthcare.html" class="topic-card" data-cat="Newcomers">
         <div class="topic-icon">🏥</div>
-        <div class="topic-cat-badge" style="background:rgba(46,204,113,0.13);color:#2ECC71;border-color:rgba(46,204,113,0.3)"><span class="lang-en">Newcomers</span><span class="lang-pa" style="display:none">ਨਵੇਂ ਆਉਣ ਵਾਲੇ</span></div>
+        <div class="topic-cat-badge" style="background:rgba(46,204,113,0.13);color:rgba(30,20,0,0.75);border-color:rgba(46,204,113,0.3)"><span class="lang-en">Newcomers</span><span class="lang-pa" style="display:none">ਨਵੇਂ ਆਉਣ ਵਾਲੇ</span></div>
         <div class="topic-name lang-en">Healthcare in Canada — What's Covered?</div>
         <div class="topic-name lang-pa" style="display:none">ਕੈਨੇਡਾ ਵਿੱਚ ਸਿਹਤ ਸੇਵਾ — ਕੀ ਕਵਰ ਹੁੰਦਾ?</div>
         <div class="topic-desc lang-en">Provincial health insurance, waiting periods, and what requires extra coverage.</div>
@@ -1078,6 +1081,7 @@ function updateTip() {
 }
 
 function setLang(lang, btn) {
+  localStorage.setItem("pf_lang", lang);
   currentLang = lang;
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
@@ -1110,8 +1114,25 @@ function filterTopics(cat, btn, skipBtnUpdate) {
   document.getElementById('results-count').textContent = label;
 }
 
-// Init
+// Init - respect site-wide language preference
+const savedLang = localStorage.getItem("pf_lang") || "en";
+if (savedLang !== "en") {
+  currentLang = savedLang;
+  const enBtn = document.getElementById("btn-en");
+  const paBtn = document.getElementById("btn-pa");
+  if (enBtn) enBtn.classList.remove("active");
+  if (paBtn) paBtn.classList.add("active");
+  document.querySelectorAll(".lang-en").forEach(el => el.style.display = "none");
+  document.querySelectorAll(".lang-pa").forEach(el => el.style.display = "");
+}
 updateTip();
+
+// Handle ?cat= param from homepage category cards
+const urlCat = new URLSearchParams(window.location.search).get('cat');
+if (urlCat) {
+  const btn = [...document.querySelectorAll('.filter-btn')].find(b => b.dataset.filter === urlCat);
+  if (btn) { filterTopics(urlCat, btn); window.scrollTo({top: 0}); }
+}
 
 // Scroll reveal
 const obs = new IntersectionObserver(entries => {
