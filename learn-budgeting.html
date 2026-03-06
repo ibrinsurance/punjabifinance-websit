@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Budgeting Basics — Take Control of Your Money – Punjabi Finance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --gold:#D4A017;--gold-light:#F0C040;--gold-dark:#A07810;--saffron:#E8890C;--black:#0A0A0A;--off-white:#FAF7F0;--dark-bg:#111008;--card-bg:#1c1a0e;--text-muted:#9A8A6A; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--dark-bg);color:var(--off-white);font-family:'DM Sans',sans-serif;overflow-x:hidden;}
+  a{color:inherit;}
+  .top-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:16px;padding:14px 32px;background:rgba(10,10,4,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(212,160,23,0.15);}
+  .back-btn{display:flex;align-items:center;gap:6px;text-decoration:none;color:var(--text-muted);font-size:0.85rem;font-weight:500;transition:color 0.2s;}
+  .back-btn:hover{color:var(--gold-light);}
+  .nav-logo-text{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--gold-light);text-decoration:none;}
+  .nav-logo-text span{color:var(--saffron);}
+  .page-layout{display:grid;grid-template-columns:260px 1fr;min-height:100vh;}
+  .sidebar{position:sticky;top:65px;height:calc(100vh - 65px);overflow-y:auto;padding:32px 24px;border-right:1px solid rgba(212,160,23,0.1);background:#0d0c04;scrollbar-width:thin;scrollbar-color:rgba(212,160,23,0.2) transparent;}
+  .sidebar-title{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--saffron);margin-bottom:16px;}
+  .toc-link{display:block;padding:8px 12px;border-radius:8px;text-decoration:none;color:var(--text-muted);font-size:0.85rem;transition:all 0.2s;border-left:2px solid transparent;margin-bottom:4px;}
+  .toc-link:hover,.toc-link.active{color:var(--gold-light);background:rgba(212,160,23,0.07);border-left-color:var(--gold);}
+  .content{padding:56px 64px 72px;max-width:820px;}
+  .topic-tag{display:inline-block;background:rgba(212,160,23,0.12);border:1px solid rgba(212,160,23,0.3);color:var(--gold-light);padding:4px 14px;border-radius:50px;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;}
+  .page-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,2.8rem);font-weight:900;line-height:1.1;margin-bottom:12px;}
+  .gold{color:var(--gold-light);}
+  .lead{font-size:1.05rem;color:rgba(250,247,240,0.65);line-height:1.7;margin-bottom:48px;padding-bottom:32px;border-bottom:1px solid rgba(212,160,23,0.1);}
+  .learn-section{margin-bottom:52px;scroll-margin-top:90px;}
+  .learn-section h2{font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:700;color:var(--gold-light);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+  .learn-section h2 .ico{font-size:1.3rem;}
+  .learn-section p{color:rgba(250,247,240,0.75);line-height:1.8;font-size:0.97rem;margin-bottom:14px;}
+  .learn-section ul,.learn-section ol{color:rgba(250,247,240,0.75);line-height:1.8;font-size:0.97rem;padding-left:20px;margin-bottom:14px;}
+  .learn-section li{margin-bottom:8px;}
+  .callout{background:rgba(212,160,23,0.08);border:1px solid rgba(212,160,23,0.22);border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:18px 20px;margin:20px 0;}
+  .callout p{margin:0;color:rgba(250,247,240,0.8);}
+  .callout strong{color:var(--gold-light);}
+  .tip-box{background:rgba(37,211,102,0.06);border:1px solid rgba(37,211,102,0.2);border-radius:12px;padding:18px 20px;margin:20px 0;}
+  .tip-box p{margin:0;color:rgba(250,247,240,0.8);font-size:0.93rem;}
+  .warning-box{background:rgba(232,137,12,0.08);border:1px solid rgba(232,137,12,0.25);border-radius:12px;padding:18px 20px;margin:20px 0;}
+  .warning-box p{margin:0;color:rgba(250,247,240,0.8);font-size:0.93rem;}
+  .data-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;margin:20px 0;}
+  .data-card{background:var(--card-bg);border:1px solid rgba(212,160,23,0.18);border-radius:14px;padding:18px;text-align:center;}
+  .data-num{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--gold-light);display:block;margin-bottom:4px;}
+  .data-label{font-size:0.75rem;color:var(--text-muted);line-height:1.4;}
+  .cta-box{background:linear-gradient(135deg,rgba(212,160,23,0.12),rgba(232,137,12,0.05));border:1px solid rgba(212,160,23,0.28);border-radius:20px;padding:36px;text-align:center;margin-top:48px;}
+  .cta-box h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--gold-light);margin-bottom:10px;}
+  .cta-box p{color:var(--text-muted);font-size:0.9rem;margin-bottom:20px;}
+  .btn-gold{display:inline-block;padding:12px 28px;background:var(--gold);color:var(--black);border-radius:50px;font-weight:700;font-size:0.9rem;text-decoration:none;transition:background 0.2s,transform 0.15s;}
+  .btn-gold:hover{background:var(--gold-light);transform:translateY(-1px);}
+  .section-divider{height:1px;background:rgba(212,160,23,0.1);margin:40px 0;}
+  .sub-footer{border-top:1px solid rgba(212,160,23,0.1);padding:32px 24px;text-align:center;color:var(--text-muted);font-size:0.8rem;}
+  .sub-footer .logo{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--gold-light);margin-bottom:8px;}
+  .sub-footer .logo span{color:var(--saffron);}
+  .disclaimer{max-width:560px;margin:12px auto 0;font-size:0.68rem;opacity:0.45;line-height:1.6;}
+  @media(max-width:800px){.page-layout{grid-template-columns:1fr;}.sidebar{position:relative;height:auto;top:0;border-right:none;border-bottom:1px solid rgba(212,160,23,0.1);padding:20px 16px;}.content{padding:32px 16px 56px;}.top-nav{padding:14px 16px;}}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="education.html" class="back-btn">← Learn</a>
+  <a href="index.html" class="nav-logo-text">Punjabi<span>Finance</span></a>
+</nav>
+
+<div class="page-layout">
+  <aside class="sidebar">
+    <div class="sidebar-title">On this page</div>
+    <a href="#why" class="toc-link">🤔 Why Budgeting Matters</a><a href="#503020" class="toc-link">📊 The 50/30/20 Rule</a><a href="#emergency" class="toc-link">🆘 Building an Emergency Fund</a><a href="#debt" class="toc-link">💳 Managing & Reducing Debt</a><a href="#tools" class="toc-link">🛠️ Simple Tools to Get Started</a>
+    <div style="margin-top:28px;padding-top:20px;border-top:1px solid rgba(212,160,23,0.1);">
+      <a href="education.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none;display:block;margin-bottom:8px;" onmouseover="this.style.color='var(--gold-light)'" onmouseout="this.style.color='var(--text-muted)'">← All Topics</a>
+      <a href="index.html" style="font-size:0.8rem;color:var(--text-muted);text-decoration:none;display:block;" onmouseover="this.style.color='var(--gold-light)'" onmouseout="this.style.color='var(--text-muted)'">🏠 Home</a>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="topic-tag">💰 Personal Finance</div>
+    <h1 class="page-title">Budgeting Basics — Take Control of Your Money</h1>
+    <p class="lead">A budget is simply a plan for your money. Most people who struggle financially don't earn too little — they don't have a clear plan. This guide gives you the frameworks and mindset to start building real financial stability.</p>
+
+    
+        <div class="learn-section" id="why">
+          <h2><span class="ico">🤔</span> Why Budgeting Matters</h2>
+          
+      <p>Without a budget, money tends to disappear — and you're left wondering where it went. A budget isn't about restriction; it's about <strong style="color:var(--gold-light)">intentionality</strong>. You decide where your money goes instead of wondering where it went.</p>
+      <ul>
+        <li>Reduces financial stress and anxiety</li>
+        <li>Helps you save for goals (home, travel, retirement)</li>
+        <li>Keeps you out of debt or helps you get out faster</li>
+        <li>Builds long-term wealth over time</li>
+      </ul>
+      <div class="callout"><p>💡 <strong>Mindset shift:</strong> A budget is not a restriction — it's permission. When you budget for fun money, you can spend it guilt-free knowing your bills and savings are already handled.</p></div>
+    
+        </div>
+        <div class="section-divider"></div>
+        
+        <div class="learn-section" id="503020">
+          <h2><span class="ico">📊</span> The 50/30/20 Rule</h2>
+          
+      <p>This is one of the most popular and easy-to-follow budgeting frameworks. It divides your after-tax income into three categories:</p>
+      <div class="data-grid">
+        <div class="data-card"><span class="data-num">50%</span><span class="data-label">Needs — rent, groceries, utilities, insurance, minimum debt payments</span></div>
+        <div class="data-card"><span class="data-num">30%</span><span class="data-label">Wants — dining out, entertainment, shopping, subscriptions</span></div>
+        <div class="data-card"><span class="data-num">20%</span><span class="data-label">Savings & debt — emergency fund, TFSA, RRSP, extra debt payments</span></div>
+      </div>
+      <p>For example, if you take home $4,000/month: $2,000 goes to needs, $1,200 to wants, and $800 goes to savings and extra debt payments.</p>
+      <div class="tip-box"><p>✅ These percentages are guidelines, not rigid rules. If your rent is high, your needs might be 60% — that's okay. Adjust the other categories accordingly and work toward improving over time.</p></div>
+    
+        </div>
+        <div class="section-divider"></div>
+        
+        <div class="learn-section" id="emergency">
+          <h2><span class="ico">🆘</span> Building an Emergency Fund</h2>
+          
+      <p>An emergency fund is money set aside specifically for unexpected expenses — job loss, car repair, medical costs, or any financial surprise. Without one, unexpected costs often lead to debt.</p>
+      <p><strong style="color:var(--gold-light)">General guideline:</strong> Aim to build 3–6 months of essential living expenses in a separate, easily accessible savings account.</p>
+      <ul>
+        <li>Start small — even $500–$1,000 creates a meaningful buffer</li>
+        <li>Automate a transfer each payday so it happens without thinking</li>
+        <li>Keep it separate from your regular account to avoid temptation</li>
+        <li>A High Interest Savings Account (HISA) is a common choice</li>
+      </ul>
+      <div class="callout"><p>💡 The emergency fund is not an investment — it's insurance against life's surprises. Once it's funded, redirect that monthly amount toward savings goals or debt repayment.</p></div>
+    
+        </div>
+        <div class="section-divider"></div>
+        
+        <div class="learn-section" id="debt">
+          <h2><span class="ico">💳</span> Managing & Reducing Debt</h2>
+          
+      <p>Not all debt is equal. Understanding the difference helps you prioritize:</p>
+      <p><strong style="color:var(--gold-light)">High-interest debt</strong> (credit cards, payday loans) — this costs you a lot of money every month and should generally be paid off as aggressively as possible.</p>
+      <p><strong style="color:var(--gold-light)">Low-interest debt</strong> (mortgage, student loans) — still important to manage, but less urgent to eliminate quickly. Some people invest while paying these down slowly.</p>
+      <p>Two popular debt payoff strategies:</p>
+      <ul>
+        <li><strong>Avalanche method</strong> — Pay minimums on all debts, put extra money toward the highest-interest debt first. Saves the most in interest over time.</li>
+        <li><strong>Snowball method</strong> — Pay minimums on all debts, put extra money toward the smallest balance first. Builds momentum and motivation through quick wins.</li>
+      </ul>
+      <div class="tip-box"><p>✅ Either method works. The best one is the one you'll actually stick to. Consistency beats perfection every time.</p></div>
+    
+        </div>
+        <div class="section-divider"></div>
+        
+        <div class="learn-section" id="tools">
+          <h2><span class="ico">🛠️</span> Simple Tools to Get Started</h2>
+          
+      <p>You don't need complicated software. Here are practical ways to budget:</p>
+      <ul>
+        <li><strong>Spreadsheet</strong> — A simple Google Sheets or Excel template. List income, list every expense category, track actuals vs. plan monthly.</li>
+        <li><strong>Envelope method</strong> — Divide cash into envelopes for each spending category. When an envelope is empty, spending stops in that category.</li>
+        <li><strong>Banking apps</strong> — Many Canadian banks (TD, RBC, BMO, etc.) have built-in spending categorization tools.</li>
+        <li><strong>Budgeting apps</strong> — Apps like YNAB (You Need A Budget) or Mint can automate tracking.</li>
+      </ul>
+      <p>The best tool is whichever one you'll actually use consistently. Start with whatever feels least intimidating.</p>
+      <div class="callout"><p>💡 <strong>Most important habit:</strong> Review your spending at least once a month. Even 15 minutes of review helps you stay on track and catch problems early.</p></div>
+    
+        </div>
+        <div class="section-divider"></div>
+        
+
+    <div class="cta-box">
+      <h3>Ready to take action?</h3>
+      <p>Good finances start with protection. Make sure your family is covered — explore insurance options that fit your budget.</p>
+      <a href="https://www.ibrinsurance.ca/" target="_blank" class="btn-gold">Get a Free Quote →</a>
+      <p style="margin-top:12px;font-size:0.75rem;color:var(--text-muted)">Or <a href="https://wa.me/+16477456850" style="color:var(--gold-light);text-decoration:none;">message on WhatsApp</a> with any questions</p>
+    </div>
+  </main>
+</div>
+
+<footer class="sub-footer">
+  <div class="logo">Punjabi<span>Finance</span></div>
+  <p>Financial education for the Punjabi community</p>
+  <p class="disclaimer">All content is for educational purposes only and does not constitute financial, investment, insurance, or legal advice. Always consult a licensed professional before making financial decisions.</p>
+  <p style="margin-top:16px;opacity:0.4;font-size:0.7rem">© 2025 Punjabi Finance. All rights reserved.</p>
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('.learn-section');
+  const links = document.querySelectorAll('.toc-link');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector('.toc-link[href="#'+e.target.id+'"]');
+        if(active) active.classList.add('active');
+      }
+    });
+  }, {rootMargin:'-20% 0px -70% 0px'});
+  sections.forEach(s => obs.observe(s));
+</script>
+</body>
+</html>
