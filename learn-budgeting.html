@@ -370,8 +370,8 @@ async function sendMsg() {
       var nb=document.getElementById('unav-lb-'+x); if(nb) nb.classList.toggle('on',x===l);
       var db=document.getElementById('unav-dlb-'+x); if(db) db.classList.toggle('on',x===l);
     });
-    document.querySelectorAll('.lang-en').forEach(function(el){el.style.display=l==='en'?'':'none';});
-    document.querySelectorAll('.lang-pa').forEach(function(el){el.style.display=l==='pa'?'':'none';});
+    document.querySelectorAll('.lang-en,.lng-en').forEach(function(el){el.style.display=l==='en'?'':'none';});
+    document.querySelectorAll('.lang-pa,.lng-pa').forEach(function(el){el.style.display=l==='pa'?'':'none';});
     if(typeof setLang==='function') try{setLang(l,null);}catch(e){}
     if(typeof learnLang==='function') try{learnLang(l);}catch(e){}
     if(typeof applyLang==='function') try{applyLang();}catch(e){}

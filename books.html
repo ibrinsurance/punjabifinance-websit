@@ -50,14 +50,14 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
 .book-card.open .book-arrow{transform:rotate(180deg);}
 .book-body{display:none;padding:0 24px 24px;border-top:1px solid var(--border);}
 .book-card.open .book-body{display:block;}
-.book-summary{font-size:0.88rem;color:rgba(250,247,240,0.68);line-height:1.75;margin:18px 0;padding:14px 16px;background:rgba(212,160,23,0.05);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;}
+.book-summary{font-size:0.88rem;color:#4a3f20;line-height:1.75;margin:18px 0;padding:14px 16px;background:rgba(212,160,23,0.05);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;}
 .lessons-title{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--sa);margin-bottom:12px;}
 .lessons{display:flex;flex-direction:column;gap:2px;margin-bottom:18px;}
 .lesson{padding:12px 0;border-bottom:1px solid rgba(212,160,23,0.07);}
 .lesson:last-child{border-bottom:none;}
 .lesson-title{font-size:0.88rem;font-weight:700;color:var(--off);margin-bottom:5px;}
-.lesson-body{font-size:0.84rem;color:rgba(250,247,240,0.68);line-height:1.7;}
-.book-action{background:rgba(37,211,102,0.06);border:1px solid rgba(37,211,102,0.18);border-radius:12px;padding:13px 16px;font-size:0.83rem;color:rgba(250,247,240,0.72);line-height:1.65;}
+.lesson-body{font-size:0.84rem;color:#4a3f20;line-height:1.7;}
+.book-action{background:rgba(37,211,102,0.06);border:1px solid rgba(37,211,102,0.18);border-radius:12px;padding:13px 16px;font-size:0.83rem;color:#4a3f20;line-height:1.65;}
 .book-action strong{color:#1ebe5a;}
 @media(max-width:768px){.hero,.books-wrap{padding-left:18px;padding-right:18px;}.book-header{flex-wrap:wrap;}}
 
@@ -773,8 +773,8 @@ document.addEventListener('DOMContentLoaded',()=>{
       var db=document.getElementById('unav-dlb-'+x);
       if(db) db.classList.toggle('on',x===l);
     });
-    document.querySelectorAll('.lang-en').forEach(function(el){el.style.display=l==='en'?'':'none';});
-    document.querySelectorAll('.lang-pa').forEach(function(el){el.style.display=l==='pa'?'':'none';});
+    document.querySelectorAll('.lang-en,.lng-en').forEach(function(el){el.style.display=l==='en'?'':'none';});
+    document.querySelectorAll('.lang-pa,.lng-pa').forEach(function(el){el.style.display=l==='pa'?'':'none';});
     if(typeof setLang==='function') try{setLang(l,null);}catch(e){}
     if(typeof learnLang==='function') try{learnLang(l);}catch(e){}
     if(typeof applyLang==='function') try{applyLang();}catch(e){}

@@ -147,7 +147,7 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
 
 <!-- LEVEL 1: SURVIVAL -->
 <div class="level" id="lvl1" style="--lc:rgba(239,68,68,0.3);--lh-bg:rgba(239,68,68,0.06);--lh-hover:rgba(239,68,68,0.1);--lb-bg:rgba(239,68,68,0.15);--lc-top:#ef4444;--lc-bot:#f97316;">
-  <div class="level-header" onclick="toggleLevel(1)">
+  <div class="level-header" onclick="// Level 1 starts closed - user opens">
     <div class="level-badge">🌱</div>
     <div class="level-title-wrap">
       <div class="level-name">Level 1 — Survival Mode</div>
@@ -570,8 +570,8 @@ async function sendMsg() {
       var db=document.getElementById('unav-dlb-'+x);
       if(db) db.classList.toggle('on',x===l);
     });
-    document.querySelectorAll('.lang-en').forEach(function(el){el.style.display=l==='en'?'':'none';});
-    document.querySelectorAll('.lang-pa').forEach(function(el){el.style.display=l==='pa'?'':'none';});
+    document.querySelectorAll('.lang-en,.lng-en').forEach(function(el){el.style.display=l==='en'?'':'none';});
+    document.querySelectorAll('.lang-pa,.lng-pa').forEach(function(el){el.style.display=l==='pa'?'':'none';});
     if(typeof setLang==='function') try{setLang(l,null);}catch(e){}
     if(typeof learnLang==='function') try{learnLang(l);}catch(e){}
     if(typeof applyLang==='function') try{applyLang();}catch(e){}

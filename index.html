@@ -56,7 +56,7 @@ nav{
 .hero h1{font-family:"Playfair Display",serif;font-size:clamp(2.4rem,4vw,3.8rem);font-weight:900;line-height:1.1;margin-bottom:20px;}
 .hero h1 .gold{color:var(--gl);}
 .hero h1 em{font-style:italic;color:var(--sa);}
-.hero-sub{font-size:1rem;color:rgba(250,247,240,0.6);line-height:1.75;max-width:460px;margin-bottom:36px;}
+.hero-sub{font-size:1rem;color:#4a3f20;line-height:1.75;max-width:460px;margin-bottom:36px;}
 .hero-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
 .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#0a0a0a;padding:13px 28px;border-radius:50px;font-weight:700;font-size:0.9rem;transition:all 0.2s;box-shadow:0 4px 20px rgba(212,160,23,0.25);}
 .btn-primary:hover{background:var(--gl);transform:translateY(-2px);box-shadow:0 8px 32px rgba(212,160,23,0.35);}
@@ -131,7 +131,7 @@ section{padding:90px 80px;}
 /* ABOUT */
 #about{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;background:var(--bg2);}
 .about-photo{width:100%;max-width:420px;border-radius:24px;object-fit:cover;aspect-ratio:4/5;box-shadow:0 20px 60px rgba(0,0,0,0.4);}
-.about-text .lead{font-size:1rem;line-height:1.8;color:rgba(250,247,240,0.72);margin-bottom:20px;}
+.about-text .lead{font-size:1rem;line-height:1.8;color:#4a3f20;margin-bottom:20px;}
 .about-highlights{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0;}
 .highlight{background:#fff;border-radius:14px;padding:16px 18px;box-shadow:0 2px 10px rgba(0,0,0,0.1);}
 .highlight-num{font-family:"Playfair Display",serif;font-size:1.5rem;color:var(--text-dark);font-weight:700;}
@@ -838,8 +838,8 @@ async function sendMsg() {
       var db=document.getElementById('unav-dlb-'+x);
       if(db) db.classList.toggle('on',x===l);
     });
-    document.querySelectorAll('.lang-en').forEach(function(el){el.style.display=l==='en'?'':'none';});
-    document.querySelectorAll('.lang-pa').forEach(function(el){el.style.display=l==='pa'?'':'none';});
+    document.querySelectorAll('.lang-en,.lng-en').forEach(function(el){el.style.display=l==='en'?'':'none';});
+    document.querySelectorAll('.lang-pa,.lng-pa').forEach(function(el){el.style.display=l==='pa'?'':'none';});
     if(typeof setLang==='function') try{setLang(l,null);}catch(e){}
     if(typeof learnLang==='function') try{learnLang(l);}catch(e){}
     if(typeof applyLang==='function') try{applyLang();}catch(e){}
