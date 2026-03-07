@@ -481,7 +481,7 @@ document.addEventListener('DOMContentLoaded', restoreState);
 </script>
 
 
-<div style="padding:40px 80px 20px;background:#f7f5f0;">
+<div style="padding:40px max(18px, min(80px, 5vw)) 20px;background:#f7f5f0;text-align:center;">
   <div style="text-align:center;margin-bottom:32px;">
     <div style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,rgba(212,160,23,0.12),rgba(232,137,12,0.06));border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:8px 20px;margin-bottom:16px;">
       <span style="font-size:1.2rem;">👑</span>
@@ -492,7 +492,7 @@ document.addEventListener('DOMContentLoaded', restoreState);
   </div>
 </div>
 
-<div style="padding:0 80px 80px;background:#f7f5f0;display:flex;flex-direction:column;gap:16px;">
+<div class="levels" style="padding-top:0;gap:16px;">
 
 <div class="level" id="lvl7" style="--lc:rgba(212,160,23,0.6);--lh-bg:rgba(212,160,23,0.1);--lh-hover:rgba(212,160,23,0.18);--lb-bg:rgba(212,160,23,0.25);">
   <div class="level-header" onclick="toggleLevel(7)">
@@ -542,6 +542,8 @@ document.addEventListener('DOMContentLoaded', restoreState);
   </div>
 </div>
 
+<div class="level-connector" style="--lc-top:rgba(212,160,23,0.6);--lc-bot:rgba(212,160,23,0.8);"></div>
+
 <div class="level" id="lvl8" style="--lc:rgba(212,160,23,0.7);--lh-bg:rgba(212,160,23,0.12);--lh-hover:rgba(212,160,23,0.2);--lb-bg:rgba(212,160,23,0.28);">
   <div class="level-header" onclick="toggleLevel(8)">
     <div class="level-badge">🌐</div>
@@ -589,6 +591,8 @@ document.addEventListener('DOMContentLoaded', restoreState);
     <div class="milestone"><span style="font-size:1.4rem;">🌐</span><div><h4>Level 8 Milestone</h4><p>Family trust active, passive income covers 50%+ of expenses, integrated professional team meeting annually, children financially educated</p></div></div>
   </div>
 </div>
+
+<div class="level-connector" style="--lc-top:rgba(212,160,23,0.6);--lc-bot:rgba(212,160,23,0.8);"></div>
 
 <div class="level" id="lvl9" style="--lc:rgba(212,160,23,0.85);--lh-bg:linear-gradient(135deg,rgba(212,160,23,0.18),rgba(232,137,12,0.1));--lh-hover:rgba(212,160,23,0.25);--lb-bg:rgba(212,160,23,0.3);">
   <div class="level-header" onclick="toggleLevel(9)">
