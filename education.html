@@ -2040,7 +2040,12 @@ function filterTopics(cat, btn, skipBtnUpdate) {
   cards.forEach(c => {
     const show = cat === 'all' || c.dataset.cat === cat;
     c.classList.toggle('hidden', !show);
-    if (show) count++;
+    if (show) { 
+      count++; 
+      // Reset scroll reveal styles so filtered cards are visible
+      c.style.opacity = '1';
+      c.style.transform = 'translateY(0)';
+    }
   });
   const isPa = currentLang === 'pa';
   const catPa = {'Insurance': 'ਬੀਮਾ', 'Estate Planning': 'ਜਾਇਦਾਦ ਯੋਜਨਾ', 'Budgeting': 'ਬਜਟ', 'Investing': 'ਨਿਵੇਸ਼', 'Real Estate': 'ਰੀਅਲ ਅਸਟੇਟ', 'Credit': 'ਕ੍ਰੈਡਿਟ', 'Taxes': 'ਟੈਕਸ', 'Retirement': 'ਰਿਟਾਇਰਮੈਂਟ', 'Newcomers': 'ਨਵੇਂ ਆਉਣ ਵਾਲੇ', 'Personal Finance': 'ਨਿੱਜੀ ਵਿੱਤ'};

@@ -167,7 +167,7 @@ footer{background:#060603;border-top:1px solid var(--border);padding:56px 80px 3
 
 /* RESPONSIVE */
 @media(max-width:1024px){nav{padding:0 24px;}.nav-links{gap:16px;}section{padding:64px 40px;}#about{grid-template-columns:1fr;gap:40px;}footer{padding:48px 40px 28px;}.footer-grid{grid-template-columns:1fr 1fr;gap:28px;}.hero-text{padding:60px 40px 60px 40px;}#tip-section{padding:44px 40px;}}
-@media(max-width:768px){.nav-links{display:none;}.hamburger{display:flex;}.hero{grid-template-columns:1fr;min-height:auto;padding-top:64px;}.hero-text{padding:48px 24px 36px;}.hero-visual{height:360px;}.hero-img-wrap{width:260px;height:340px;}.hero-badge,.hero-badge2{display:none;}section{padding:56px 24px;}.reviews-grid{grid-template-columns:1fr;}#tip-section{padding:40px 24px;}footer{padding:40px 24px 24px;}.footer-grid{grid-template-columns:1fr 1fr;gap:20px;}.footer-bottom{flex-direction:column;align-items:flex-start;}}
+@media(max-width:768px){.nav-links{display:none;}.hamburger{display:flex;}.hero{grid-template-columns:1fr;min-height:auto;padding-top:64px;}.hero-text{order:1;}.hero-visual{order:2;}.hero-text{padding:48px 24px 36px;}.hero-visual{height:360px;}.hero-img-wrap{width:260px;height:340px;}.hero-badge,.hero-badge2{display:none;}section{padding:56px 24px;}.reviews-grid{grid-template-columns:1fr;}#tip-section{padding:40px 24px;}footer{padding:40px 24px 24px;}.footer-grid{grid-template-columns:1fr 1fr;gap:20px;}.footer-bottom{flex-direction:column;align-items:flex-start;}}
 @media(max-width:480px){.hero-stats{gap:18px;flex-wrap:wrap;}.about-highlights{grid-template-columns:1fr 1fr;}.footer-grid{grid-template-columns:1fr;}.edu-grid{grid-template-columns:1fr 1fr;}.services-grid{grid-template-columns:1fr;}}
 
 .fade-up{opacity:0;transform:translateY(22px);transition:opacity 0.55s ease,transform 0.55s ease;}
@@ -238,9 +238,7 @@ footer{background:#060603;border-top:1px solid var(--border);padding:56px 80px 3
         <div class="hero-badge-num">200+</div>
         <div class="hero-badge-label" data-t="badge_topics">Free education topics</div>
       </div>
-      <div class="hero-badge2">
-        <div style="font-size:0.7rem;color:var(--text-light);margin-bottom:2px" data-t="badge_community">Community</div>
-        <div style="font-size:0.85rem;font-weight:700;color:var(--text-dark)" data-t="badge_strong">175K+ Strong</div>
+         <div style="font-size:0.85rem;font-weight:700;color:var(--text-dark)" data-t="badge_strong">175K+ Strong</div>
       </div>
     </div>
   </div>
@@ -322,28 +320,11 @@ footer{background:#060603;border-top:1px solid var(--border);padding:56px 80px 3
 
 <!-- ABOUT -->
 <section id="about">
-  <div class="fade-up">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;height:100%;align-content:start;padding-top:20px;">
-      <div style="background:#fff;border-radius:20px;padding:28px 22px;box-shadow:0 2px 16px rgba(0,0,0,0.1);text-align:center;">
-        <div style="font-size:2.8rem;margin-bottom:6px;">🇨🇦</div>
-        <div style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#1a1600;font-weight:700;">175K+</div>
-        <div style="font-size:0.76rem;color:#7a6a45;margin-top:4px;">Community Followers</div>
-      </div>
-      <div style="background:#fff;border-radius:20px;padding:28px 22px;box-shadow:0 2px 16px rgba(0,0,0,0.1);text-align:center;">
-        <div style="font-size:2.8rem;margin-bottom:6px;">⭐</div>
-        <div style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#1a1600;font-weight:700;">400+</div>
-        <div style="font-size:0.76rem;color:#7a6a45;margin-top:4px;">Five-Star Reviews</div>
-      </div>
-      <div style="background:linear-gradient(135deg,#D4A017,#E8890C);border-radius:20px;padding:28px 22px;text-align:center;">
-        <div style="font-size:2.8rem;margin-bottom:6px;">🎓</div>
-        <div style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#0a0a0a;font-weight:700;">200+</div>
-        <div style="font-size:0.76rem;color:rgba(10,10,10,0.7);margin-top:4px;">Free Topics</div>
-      </div>
-      <div style="background:#fff;border-radius:20px;padding:28px 22px;box-shadow:0 2px 16px rgba(0,0,0,0.1);text-align:center;">
-        <div style="font-size:2.8rem;margin-bottom:6px;">📍</div>
-        <div style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#1a1600;font-weight:700;">5+</div>
-        <div style="font-size:0.76rem;color:#7a6a45;margin-top:4px;">Years in Community</div>
-      </div>
+  <div class="fade-up" style="display:flex;align-items:center;justify-content:center;">
+    <div style="text-align:center;padding:20px;">
+      <div style="font-size:5rem;margin-bottom:16px;">🏛️</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--gl);margin-bottom:8px;">Canada's Punjabi<br>Financial Community</div>
+      <div style="font-size:0.85rem;color:var(--muted);line-height:1.7;">Free education • Bilingual support<br>Trusted by 175K+ community members</div>
     </div>
   </div>
   <div class="fade-up">

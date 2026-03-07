@@ -7,7 +7,7 @@
 <style>
 
 :root{--gold:#D4A017;--gl:#E8A820;--sa:#E8890C;--bg:#0A0A04;--bg2:#0f0e06;--muted:#9A8A6A;--off:#FAF7F0;--border:rgba(212,160,23,0.14);--white:#ffffff;--dark:#1a1600;--mid:#4a3f20;--light:#7a6a45;}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{background:var(--bg);color:var(--off);font-family:'DM Sans',sans-serif;overflow-x:hidden;}a{color:inherit;text-decoration:none;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{background:#f7f5f0;color:#1a1600;font-family:'DM Sans',sans-serif;overflow-x:hidden;}a{color:inherit;text-decoration:none;}
 nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;gap:16px;padding:0 48px;height:60px;background:rgba(8,8,2,0.94);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
 .nav-logo{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--gl);}.nav-logo span{color:var(--sa);}
 .nav-back{font-size:0.82rem;color:var(--muted);font-weight:500;transition:color 0.2s;}.nav-back:hover{color:var(--gl);}
@@ -22,9 +22,9 @@ nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;gap:16px;p
 .btn-ghost:hover{background:rgba(212,160,23,0.08);border-color:var(--gl);}
 .card-white{background:#fff;border-radius:18px;box-shadow:0 2px 16px rgba(0,0,0,0.12);transition:transform 0.22s,box-shadow 0.22s;}
 .card-white:hover{transform:translateY(-4px);box-shadow:0 10px 36px rgba(0,0,0,0.18);}
-.section-label{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--sa);margin-bottom:8px;}
+.section-label{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:#C47008;margin-bottom:8px;}
 .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,2.8vw,2.4rem);font-weight:700;line-height:1.15;margin-bottom:12px;}
-.gold{color:var(--gl);}
+.gold{color:#C4880A;}
 footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
 .footer-logo{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--gl);}.footer-logo span{color:var(--sa);}
 .footer-links{display:flex;gap:20px;flex-wrap:wrap;}
@@ -32,10 +32,10 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
 .footer-disc{font-size:0.65rem;color:var(--muted);opacity:0.4;width:100%;line-height:1.5;}
 @media(max-width:768px){nav{padding:0 20px;}footer{padding:28px 20px 16px;}}
 
-:root{--gold:#D4A017;--gl:#E8A820;--sa:#E8890C;--bg:#0A0A04;--muted:#9A8A6A;--off:#FAF7F0;--border:rgba(212,160,23,0.14);}
+:root{--gold:#D4A017;--gl:#C4880A;--sa:#C47008;--bg:#f7f5f0;--muted:#7a6a45;--off:#1a1600;--border:rgba(212,160,23,0.2);}
 .hero{padding:56px 80px 44px;background:radial-gradient(ellipse at 30% 0%,rgba(212,160,23,0.1),transparent 70%);border-bottom:1px solid var(--border);}
 .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;margin-bottom:12px;line-height:1.1;}
-.hero p{color:var(--muted);font-size:0.94rem;line-height:1.75;max-width:560px;}
+.hero p{color:#7a6a45;font-size:0.94rem;line-height:1.75;max-width:560px;}
 .books-wrap{padding:44px 80px 80px;max-width:900px;}
 .book-card{border:1px solid var(--border);border-radius:20px;margin-bottom:16px;overflow:hidden;transition:border-color 0.2s;}
 .book-card:hover,.book-card.open{border-color:rgba(212,160,23,0.4);}
@@ -43,7 +43,7 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
 .book-header:hover{background:rgba(212,160,23,0.04);}
 .book-icon{width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;}
 .book-info{flex:1;}
-.book-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--off);margin-bottom:2px;}
+.book-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#1a1600;margin-bottom:2px;}
 .book-meta{font-size:0.75rem;color:var(--muted);margin-bottom:4px;}
 .book-tagline{font-size:0.8rem;color:var(--gl);font-weight:500;font-style:italic;}
 .book-arrow{color:var(--muted);font-size:0.8rem;transition:transform 0.3s;flex-shrink:0;}
@@ -389,6 +389,271 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
     <p style="font-size:0.86rem;color:var(--muted);margin-bottom:16px;line-height:1.65;">Message us on WhatsApp — in Punjabi or English. We help translate book concepts into Canadian action steps.</p>
     <a href="https://wa.me/+16477456850" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#0a0a0a;padding:11px 24px;border-radius:50px;font-weight:700;font-size:0.88rem;text-decoration:none;">💬 WhatsApp Us</a>
   </div>
+
+<div class="book-card" id="book-8">
+  <div class="book-header" onclick="toggleBook(8)">
+    <div class="book-emoji">🏦</div>
+    <div class="book-meta">
+      <div class="book-title">Unshakeable</div>
+      <div class="book-author">Tony Robbins · <span style="color:#7a6a45">2017</span></div>
+      <div class="book-why">Written after interviewing 50+ top money managers. The single most important skill is surviving bear markets without panic-selling.</div>
+    </div>
+    <div class="book-toggle" id="bt8">▼</div>
+  </div>
+  <div class="book-body" id="bb8">
+    <div class="key-lesson-box"><div class="kl-label">💡 KEY LESSON</div><div class="kl-text">"The most important skill in investing is not picking winners — it is surviving bear markets without panic-selling"</div></div>
+    <div class="book-summary">
+      <p>Robbins breaks down what the world's best investors actually do vs what they tell the public.</p>
+      <p><strong>The Hidden Fee Problem:</strong> Mutual funds in Canada charge 2–3% MER annually. On $500,000 over 30 years, a 2% fee costs you $435,000 compared to a 0.2% ETF. This is the most shocking math in Canadian personal finance.</p>
+      <p><strong>The Bear Market Pattern:</strong> Since 1900, markets have averaged a 10% correction once per year, a 20% correction every few years, and a 30%+ crash every decade. Every single one recovered. Investors who got wealthy simply did not sell.</p>
+      <p><strong>The All-Seasons Portfolio:</strong> 30% stocks, 55% bonds, 15% gold/commodities — designed to perform in any economic environment. Canadian equivalent: XGRO or XBAL balanced ETFs.</p>
+    </div>
+    <div class="action-box"><div class="ab-label">✅ Take Action Now</div><p>Calculate how much your mutual fund fees cost you. Search your fund's MER. Multiply by your portfolio value — that is your annual fee in dollars.</p></div>
+  </div>
+</div>
+
+<div class="book-card" id="book-9">
+  <div class="book-header" onclick="toggleBook(9)">
+    <div class="book-emoji">💳</div>
+    <div class="book-meta">
+      <div class="book-title">Debt-Free Forever</div>
+      <div class="book-author">Gail Vaz-Oxlade · <span style="color:#7a6a45">2010</span></div>
+      <div class="book-why">Canada's most recognized personal finance TV personality. Blunt, practical, specifically designed for Canadians drowning in debt.</div>
+    </div>
+    <div class="book-toggle" id="bt9">▼</div>
+  </div>
+  <div class="book-body" id="bb9">
+    <div class="key-lesson-box"><div class="kl-label">💡 KEY LESSON</div><div class="kl-text">"Debt is not bad luck — it is a math problem with a solution. Stop feeling bad and start running the numbers."</div></div>
+    <div class="book-summary">
+      <p>Gail hosted Til Debt Do Us Part, Canada's most-watched personal finance show. She fixed real families' finances on national television. This book is that process in writing.</p>
+      <p><strong>The Debt Repayment Order:</strong> Always: minimum payments on everything first (never miss — credit damage is worse than interest). Then extra money goes to HIGHEST interest rate first. Once paid, roll that payment to the next debt.</p>
+      <p><strong>The Jar System:</strong> Physical cash in labelled mason jars for each spending category weekly. When the jar is empty, spending stops. The physical act of watching money leave creates an emotional brake that digital spending completely removes.</p>
+      <p><strong>Canadian Credit Reality:</strong> Canada's credit card interest rates (19.99–22.99%) are among the highest in the developed world. Carrying $10,000 at 19.99% costs $1,999/year in pure interest — building zero wealth.</p>
+    </div>
+    <div class="action-box"><div class="ab-label">✅ Take Action Now</div><p>List all debts with their interest rates. Calculate: if you made only minimum payments, when would each debt be paid off? The number will shock you into action.</p></div>
+  </div>
+</div>
+
+<div class="book-card" id="book-10">
+  <div class="book-header" onclick="toggleBook(10)">
+    <div class="book-emoji">🔑</div>
+    <div class="book-meta">
+      <div class="book-title">Stop Overthinking Your Money</div>
+      <div class="book-author">Preet Banerjee · <span style="color:#7a6a45">2014</span></div>
+      <div class="book-why">A South Asian Canadian finance expert literally wrote this for people like us — master 5 rules and outperform 80% of Canadians.</div>
+    </div>
+    <div class="book-toggle" id="bt10">▼</div>
+  </div>
+  <div class="book-body" id="bb10">
+    <div class="key-lesson-box"><div class="kl-label">💡 KEY LESSON</div><div class="kl-text">"Personal finance in Canada is simpler than you think — 5 rules will outperform most Canadians"</div></div>
+    <div class="book-summary">
+      <p>Preet Banerjee is one of Canada's few South Asian financial educators (CBC Radio, Globe and Mail, Rotman MBA). He understands the community — pressure to send money home, pressure to show success, cultural attitudes toward debt and gold.</p>
+      <p><strong>The PREET Method:</strong> Protect (get insurance before you invest) → Register (use TFSA/RRSP/RESP before taxable accounts) → Eliminate debt (high-interest first) → Educate yourself (just enough, not obsessively) → Track net worth quarterly.</p>
+      <p><strong>For newcomers specifically:</strong> Preet is second-generation South Asian. He understands the dual financial obligations, the credit score reset, and the community dynamics that make standard Canadian financial advice miss the mark.</p>
+    </div>
+    <div class="action-box"><div class="ab-label">✅ Take Action Now</div><p>Start a quarterly net worth tracking spreadsheet today. Three columns: Assets, Liabilities, Net Worth. Update on the same date every 3 months.</p></div>
+  </div>
+</div>
+
+<div class="book-card" id="book-11">
+  <div class="book-header" onclick="toggleBook(11)">
+    <div class="book-emoji">🌊</div>
+    <div class="book-meta">
+      <div class="book-title">The Simple Path to Wealth</div>
+      <div class="book-author">JL Collins · <span style="color:#7a6a45">2016</span></div>
+      <div class="book-why">The book that launched the index fund investing movement. Brutally simple strategy that outperforms 90% of professional fund managers.</div>
+    </div>
+    <div class="book-toggle" id="bt11">▼</div>
+  </div>
+  <div class="book-body" id="bb11">
+    <div class="key-lesson-box"><div class="kl-label">💡 KEY LESSON</div><div class="kl-text">"Own the entire market through index funds. Stop trying to beat it. You cannot, and neither can most professionals."</div></div>
+    <div class="book-summary">
+      <p>Collins originally wrote this as letters to his daughter about money. The simplest, most effective investing strategy ever written.</p>
+      <p><strong>The F-You Fund:</strong> Every financial plan needs enough money to leave a bad situation (job, relationship, location) without being trapped by financial dependence. Target: 6–12 months of expenses.</p>
+      <p><strong>The Whole Strategy:</strong> VTSAX in the US. XEQT in Canada. One fund. Buy it. Keep buying. Never sell. This strategy beat 85% of actively managed funds over 15 years.</p>
+      <p><strong>The 4% Rule:</strong> In retirement, withdraw 4% annually. Mathematically sustainable for 30+ years based on historical data. $1M portfolio = $40,000/year sustainable income.</p>
+      <p><strong>Canadian translation:</strong> XEQT (100% equity, global diversification, 0.2% MER) in TFSA first, RRSP second.</p>
+    </div>
+    <div class="action-box"><div class="ab-label">✅ Take Action Now</div><p>Open Wealthsimple Trade. Buy XEQT. Set up automatic purchase every payday. Close the app and do not look at it for 3 months.</p></div>
+  </div>
+</div>
+
+<div class="book-card" id="book-12">
+  <div class="book-header" onclick="toggleBook(12)">
+    <div class="book-emoji">🎲</div>
+    <div class="book-meta">
+      <div class="book-title">A Random Walk Down Wall Street</div>
+      <div class="book-author">Burton Malkiel · <span style="color:#7a6a45">1973 (Updated 2023)</span></div>
+      <div class="book-why">The academic foundation of passive investing. Malkiel proved stock picking does not work 50 years before it became mainstream.</div>
+    </div>
+    <div class="book-toggle" id="bt12">▼</div>
+  </div>
+  <div class="book-body" id="bb12">
+    <div class="key-lesson-box"><div class="kl-label">💡 KEY LESSON</div><div class="kl-text">"A blindfolded monkey throwing darts at stock listings could pick a portfolio as good as expert stock pickers — consistently, over decades"</div></div>
+    <div class="book-summary">
+      <p>Required reading in most finance MBA programs. First published 1973, continuously updated through 12 editions.</p>
+      <p><strong>The Random Walk Hypothesis:</strong> Stock prices move randomly relative to previous prices. Past price patterns cannot reliably predict future prices. Technical analysis (chart reading, moving averages) has no predictive value on a risk-adjusted basis.</p>
+      <p><strong>The Performance Data:</strong> Over 15+ year periods, 80–90% of actively managed funds underperform their index benchmark after fees. The few that outperform in one period rarely outperform in the next. Outperformance is largely random and unpredictable.</p>
+      <p><strong>Canadian note:</strong> Canadian mutual funds have some of the highest fees in the world (2–2.5% average MER). The mathematical case against paying these fees is stronger in Canada than almost anywhere.</p>
+    </div>
+    <div class="action-box"><div class="ab-label">✅ Take Action Now</div><p>Check the MER of every mutual fund you own. If above 0.5%, calculate what that fee costs you over 20 years using our compound interest calculator.</p></div>
+  </div>
+</div>
+
+<div class="book-card" id="book-13">
+  <div class="book-header" onclick="toggleBook(13)">
+    <div class="book-emoji">🧩</div>
+    <div class="book-meta">
+      <div class="book-title">Think and Grow Rich</div>
+      <div class="book-author">Napoleon Hill · <span style="color:#7a6a45">1937</span></div>
+      <div class="book-why">The most influential self-development book of the 20th century — the mindset framework that made wealth possible for millions.</div>
+    </div>
+    <div class="book-toggle" id="bt13">▼</div>
+  </div>
+  <div class="book-body" id="bb13">
+    <div class="key-lesson-box"><div class="kl-label">💡 KEY LESSON</div><div class="kl-text">"Whatever the mind can conceive and believe, it can achieve — wealth starts as a mental commitment before it becomes a financial reality"</div></div>
+    <div class="book-summary">
+      <p>Hill spent 20 years interviewing 500+ of the wealthiest people of his era. Note: this is a mindset book, not a financial mechanics manual. Apply alongside a sound financial plan.</p>
+      <p><strong>Definiteness of Purpose:</strong> Know exactly what you want and by when. Not "I want to be comfortable" but: "I will accumulate $750,000 by age 55 by saving $2,000/month at 7% returns."</p>
+      <p><strong>The Mastermind Group:</strong> Your wealth is heavily influenced by the 5 people you spend the most time with. In the Punjabi community context: find others who talk about investing, not just spending.</p>
+      <p><strong>Specialized Knowledge:</strong> General knowledge has little value. Specialized knowledge in Canadian tax optimization, investment strategy, or your career field creates unusual leverage.</p>
+    </div>
+    <div class="action-box"><div class="ab-label">✅ Take Action Now</div><p>Write your financial definiteness of purpose: "I will accumulate $_____ by [date] by doing ____." Make it specific, measurable, and meaningful.</p></div>
+  </div>
+</div>
+
+<div class="book-card" id="book-14">
+  <div class="book-header" onclick="toggleBook(14)">
+    <div class="book-emoji">📉</div>
+    <div class="book-meta">
+      <div class="book-title">When Genius Failed</div>
+      <div class="book-author">Roger Lowenstein · <span style="color:#7a6a45">2000</span></div>
+      <div class="book-why">The most important cautionary tale in finance — how Nobel Prize-winning economists with perfect models nearly collapsed the global financial system.</div>
+    </div>
+    <div class="book-toggle" id="bt14">▼</div>
+  </div>
+  <div class="book-body" id="bb14">
+    <div class="key-lesson-box"><div class="kl-label">💡 KEY LESSON</div><div class="kl-text">"Risk management and humility matter more than intelligence — the smartest people can be the most dangerous investors"</div></div>
+    <div class="book-summary">
+      <p>The true story of Long-Term Capital Management — a hedge fund run by two Nobel Prize winners and dozens of PhDs that nearly destroyed the global financial system in 1998.</p>
+      <p><strong>Models Are Not Reality:</strong> LTCM's models assumed markets behave rationally. When Russia defaulted in 1998, markets behaved irrationally. Their models failed completely. Investment models assume normal conditions — they do not predict crashes or once-in-a-century events.</p>
+      <p><strong>Leverage Amplifies Everything — Including Losses:</strong> LTCM borrowed $125 for every $1 of equity. When markets moved 5% against them: they lost 625% of equity. Personal lesson: borrowing to invest (margin accounts, HELOC investing) carries the same amplification risk.</p>
+      <p><strong>Canadian relevance:</strong> Many Canadians lost significantly in leveraged real estate in 2022–2023 as rates rose unexpectedly. The LTCM lesson maps directly to any strategy that depends on conditions remaining stable.</p>
+    </div>
+    <div class="action-box"><div class="ab-label">✅ Take Action Now</div><p>List every financial position that depends on conditions remaining stable. If rates rise 2% more, if markets drop 30%, if you lose income — does each position survive?</p></div>
+  </div>
+</div>
+
+<div class="book-card" id="book-15">
+  <div class="book-header" onclick="toggleBook(15)">
+    <div class="book-emoji">🌱</div>
+    <div class="book-meta">
+      <div class="book-title">The Automatic Millionaire</div>
+      <div class="book-author">David Bach · <span style="color:#7a6a45">2003</span></div>
+      <div class="book-why">The book that convinced millions to automate their finances — proving you do not need discipline if you have the right systems.</div>
+    </div>
+    <div class="book-toggle" id="bt15">▼</div>
+  </div>
+  <div class="book-body" id="bb15">
+    <div class="key-lesson-box"><div class="kl-label">💡 KEY LESSON</div><div class="kl-text">"Pay yourself first automatically — before you can spend the money. One hour of setup creates decades of wealth."</div></div>
+    <div class="book-summary">
+      <p>Bach profiles an ordinary couple — teacher and manager — who retired with $1M by never budgeting, never cutting lattes, and never stressing about money. Their secret: automation.</p>
+      <p><strong>The Latte Factor (More Nuanced):</strong> NOT "stop buying coffee." It is: find your unconscious, automatic spending — things you buy habitually without deliberate choice — and redirect a portion to automatic savings. In our community: eating out while working, impulse online shopping, multiple streaming services.</p>
+      <p><strong>Automatic Mortgage Acceleration:</strong> Pay mortgage bi-weekly instead of monthly. This results in 13 full payments vs 12 per year. On a $600K mortgage at 5.5%: shaves 3.5 years off amortization and saves $40,000+ in interest automatically.</p>
+    </div>
+    <div class="action-box"><div class="ab-label">✅ Take Action Now</div><p>Set up ONE automatic transfer today for more than you are currently transferring to savings. Even $100 extra. Start — you can increase it next month.</p></div>
+  </div>
+</div>
+
+<div class="book-card" id="book-16">
+  <div class="book-header" onclick="toggleBook(16)">
+    <div class="book-emoji">🔢</div>
+    <div class="book-meta">
+      <div class="book-title">The Little Book of Common Sense Investing</div>
+      <div class="book-author">John Bogle · <span style="color:#7a6a45">2007</span></div>
+      <div class="book-why">Written by the founder of Vanguard — the man who invented the index fund — and the definitive case for passive over active investing.</div>
+    </div>
+    <div class="book-toggle" id="bt16">▼</div>
+  </div>
+  <div class="book-body" id="bb16">
+    <div class="key-lesson-box"><div class="kl-label">💡 KEY LESSON</div><div class="kl-text">"In investing, you get what you don't pay for — costs are the most reliable predictor of fund performance"</div></div>
+    <div class="book-summary">
+      <p>Bogle spent his career arguing the investment industry takes too much from investors and delivers too little — then built Vanguard to fix it.</p>
+      <p><strong>The Math of Fees:</strong> $100,000 invested for 30 years at 7% gross: $761,000. At 7% gross minus 2% fee: $432,000. Cost of that 2% fee: $329,000. You gave the fund company $329,000 of your wealth for adding negative value after costs.</p>
+      <p><strong>Performance Chasing Does Not Work:</strong> Last year's top-performing fund is highly unlikely to be next year's top performer. Fund selection based on past performance = guaranteed underperformance on average.</p>
+      <p><strong>Canadian application:</strong> Vanguard Canadian ETFs: VGRO (80/20), VBAL (60/40), VCNS (40/60). Or iShares XEQT/XGRO/XBAL. All under 0.25% MER.</p>
+    </div>
+    <div class="action-box"><div class="ab-label">✅ Take Action Now</div><p>Find the total fees paid on your investments this year. Your mutual fund statement → Management fees line. Calculate what that compounds to over 20 years at 7%.</p></div>
+  </div>
+</div>
+
+<div class="book-card" id="book-17">
+  <div class="book-header" onclick="toggleBook(17)">
+    <div class="book-emoji">🌍</div>
+    <div class="book-meta">
+      <div class="book-title">The Immigrant Wealth Blueprint</div>
+      <div class="book-author">Community Research Synthesis · <span style="color:#7a6a45">Ongoing</span></div>
+      <div class="book-why">Synthesizing the specific wealth-building challenges and advantages of immigrants — the exact situation of most of our community.</div>
+    </div>
+    <div class="book-toggle" id="bt17">▼</div>
+  </div>
+  <div class="book-body" id="bb17">
+    <div class="key-lesson-box"><div class="kl-label">💡 KEY LESSON</div><div class="kl-text">"Immigrants face unique financial hurdles but also unique advantages — discipline, sacrifice tolerance, and intergenerational vision"</div></div>
+    <div class="book-summary">
+      <p>Representing the growing body of research on immigrant wealth-building — synthesizing what uniquely challenges and advantages newcomers in Canada.</p>
+      <p><strong>The Credit Score Reset:</strong> 30 years of perfect credit in India or Philippines = zero Canadian credit score. Fix: secured credit card immediately, authorized user on a Canadian family member's account, Borrowell credit builder loan.</p>
+      <p><strong>The Recognition Gap:</strong> Foreign credentials often require Canadian equivalency. Engineers, doctors, accountants work below qualification for 2–5 years. This period requires extra financial discipline and long-term thinking.</p>
+      <p><strong>Dual Financial Obligations:</strong> Sending money home while building Canadian wealth. Strategy: Wise for remittances saves $50–200/month vs bank wire. Super Visa for parents. Clear communication with family about Canadian financial realities.</p>
+      <p><strong>The Immigrant Advantages:</strong> High savings rate culture. Entrepreneurial mindset (immigrants start businesses at 2× the Canadian-born rate). Sacrifice tolerance directed at wealth-building is extraordinarily powerful.</p>
+    </div>
+    <div class="action-box"><div class="ab-label">✅ Take Action Now</div><p>Calculate your current monthly remittance cost. Switch to Wise for your next transfer and calculate annual savings vs your current method.</p></div>
+  </div>
+</div>
+
+<div class="book-card" id="book-18">
+  <div class="book-header" onclick="toggleBook(18)">
+    <div class="book-emoji">⚖️</div>
+    <div class="book-meta">
+      <div class="book-title">The Millionaire Teacher</div>
+      <div class="book-author">Andrew Hallam · <span style="color:#7a6a45">2011 (Updated 2017)</span></div>
+      <div class="book-why">A Canadian high school teacher built a million-dollar portfolio on a teacher's salary. The most relatable wealth story for average income earners.</div>
+    </div>
+    <div class="book-toggle" id="bt18">▼</div>
+  </div>
+  <div class="book-body" id="bb18">
+    <div class="key-lesson-box"><div class="kl-label">💡 KEY LESSON</div><div class="kl-text">"A teacher's salary is enough to become a millionaire — start early, keep costs low, and never try to beat the market"</div></div>
+    <div class="book-summary">
+      <p>Andrew Hallam taught at Singapore American School, saved 40% of a modest salary, and reached millionaire status in his 30s. No inheritance, no windfall, no high income.</p>
+      <p><strong>The Power of Time:</strong> $5,000 invested at age 25 at 8% = $107,000 at 65. $5,000 at age 35 = $50,000. $5,000 at age 45 = $23,000. The same $5,000 delivers 4.6x more wealth by starting 20 years earlier.</p>
+      <p><strong>The Canadian Couch Potato Strategy:</strong> Three ETFs — Canadian equity + US equity + Bond — auto-rebalanced annually. Hallam shows Canadian mutual fund fees are the highest in the developed world and demonstrates the cost mathematically.</p>
+      <p><strong>Conquer the Enemy in the Mirror:</strong> Your biggest investing threat is your own emotional reactions: buying when optimistic, selling when fearful. Solution: automate and ignore the news.</p>
+    </div>
+    <div class="action-box"><div class="ab-label">✅ Take Action Now</div><p>Calculate what $500/month invested at 7% becomes at your retirement age using our compound interest calculator. The number will fundamentally change how you see monthly savings.</p></div>
+  </div>
+</div>
+
+<div class="book-card" id="book-19">
+  <div class="book-header" onclick="toggleBook(19)">
+    <div class="book-emoji">💡</div>
+    <div class="book-meta">
+      <div class="book-title">The Total Money Makeover</div>
+      <div class="book-author">Dave Ramsey · <span style="color:#7a6a45">2003 (Updated)</span></div>
+      <div class="book-why">The most popular debt elimination program in North America — 7 simple baby steps that have helped millions get out of debt and build wealth.</div>
+    </div>
+    <div class="book-toggle" id="bt19">▼</div>
+  </div>
+  <div class="book-body" id="bb19">
+    <div class="key-lesson-box"><div class="kl-label">💡 KEY LESSON</div><div class="kl-text">"You must walk before you can run — the baby steps work because they build momentum through small, achievable wins"</div></div>
+    <div class="book-summary">
+      <p>Ramsey's 7 Baby Steps have been followed by over 6 million families. Controversial in financial academic circles but undeniably effective for behaviour change.</p>
+      <p><strong>The 7 Baby Steps (Canadian adaptation):</strong><br>1. $1,000 mini emergency fund<br>2. Pay off all debt (smallest to largest — debt snowball)<br>3. Full 3–6 month emergency fund<br>4. Invest 15% in RRSP and TFSA<br>5. Fund RESP for children<br>6. Pay off home early<br>7. Build wealth and give</p>
+      <p><strong>The Debt Snowball vs Avalanche Debate:</strong> Ramsey advocates smallest balance first (snowball) — mathematically suboptimal but psychologically superior. The quick wins create momentum that keeps people going. Research shows completion rates are higher with snowball than avalanche for most people.</p>
+      <p><strong>Canadian note:</strong> Ramsey's no-credit-card stance is unnecessary in Canada. Used correctly (paid in full monthly), cards earn $500–1,500/year in rewards. Use his debt principles but ignore the credit card elimination advice.</p>
+    </div>
+    <div class="action-box"><div class="ab-label">✅ Take Action Now</div><p>List all your debts smallest to largest. Pay minimum on all except the smallest. Put every extra dollar at the smallest until it is gone. Feel the win. Attack the next one.</p></div>
+  </div>
+</div>
+
 </div>
 
 <footer>

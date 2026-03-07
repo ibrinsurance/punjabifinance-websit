@@ -8,7 +8,7 @@
 <style>
 
 :root{--gold:#D4A017;--gl:#E8A820;--sa:#E8890C;--bg:#0A0A04;--bg2:#0f0e06;--muted:#9A8A6A;--off:#FAF7F0;--border:rgba(212,160,23,0.14);--white:#ffffff;--dark:#1a1600;--mid:#4a3f20;--light:#7a6a45;}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{background:var(--bg);color:var(--off);font-family:'DM Sans',sans-serif;overflow-x:hidden;}a{color:inherit;text-decoration:none;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{background:#f5f3ee;color:#1a1600;font-family:'DM Sans',sans-serif;overflow-x:hidden;}a{color:inherit;text-decoration:none;}
 nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;gap:16px;padding:0 48px;height:60px;background:rgba(8,8,2,0.94);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
 .nav-logo{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--gl);}.nav-logo span{color:var(--sa);}
 .nav-back{font-size:0.82rem;color:var(--muted);font-weight:500;transition:color 0.2s;}.nav-back:hover{color:var(--gl);}
@@ -23,7 +23,7 @@ nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;gap:16px;p
 .btn-ghost:hover{background:rgba(212,160,23,0.08);border-color:var(--gl);}
 .card-white{background:#fff;border-radius:18px;box-shadow:0 2px 16px rgba(0,0,0,0.12);transition:transform 0.22s,box-shadow 0.22s;}
 .card-white:hover{transform:translateY(-4px);box-shadow:0 10px 36px rgba(0,0,0,0.18);}
-.section-label{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--sa);margin-bottom:8px;}
+.section-label{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:#E8890C;margin-bottom:8px;}
 .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,2.8vw,2.4rem);font-weight:700;line-height:1.15;margin-bottom:12px;}
 .gold{color:var(--gl);}
 footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
@@ -37,13 +37,13 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
 .page-hero{padding:56px 80px 40px;background:linear-gradient(135deg,rgba(212,160,23,0.07),transparent 60%);border-bottom:1px solid var(--border);}
 .page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:900;margin-bottom:10px;}
 .page-hero p{color:var(--muted);font-size:0.95rem;line-height:1.7;max-width:560px;}
-.calc-nav{display:flex;gap:8px;flex-wrap:wrap;padding:20px 80px 0;}
-.calc-tab{padding:8px 18px;border-radius:50px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:0.8rem;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;}
+.calc-nav{display:flex;gap:8px;flex-wrap:wrap;padding:20px 80px 0;background:#f5f3ee;}
+.calc-tab{padding:8px 18px;border-radius:50px;border:1px solid rgba(212,160,23,0.3);background:#fff;color:#7a6a45;font-size:0.8rem;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;box-shadow:0 1px 4px rgba(0,0,0,0.06);}
 .calc-tab.active,.calc-tab:hover{background:var(--gold);color:#0a0a0a;border-color:var(--gold);}
 .calc-container{display:none;padding:40px 80px 80px;}
 .calc-container.active{display:block;}
 .calc-layout{display:grid;grid-template-columns:380px 1fr;gap:28px;align-items:start;}
-.calc-panel{background:#fff;border-radius:20px;padding:28px;box-shadow:0 2px 16px rgba(0,0,0,0.1);}
+.calc-panel{background:#fff;border-radius:20px;padding:28px;box-shadow:0 2px 20px rgba(0,0,0,0.1);border:1px solid rgba(212,160,23,0.1);}
 .calc-title{font-family:'Playfair Display',serif;font-size:1.2rem;color:#1a1600;font-weight:700;margin-bottom:4px;}
 .calc-subtitle{font-size:0.78rem;color:#7a6a45;margin-bottom:20px;}
 .field{margin-bottom:14px;}
@@ -64,8 +64,8 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;heigh
 .result-label{font-size:0.68rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--sa);margin-bottom:4px;}
 .result-value{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#1a1600;line-height:1.1;}
 .result-sub{font-size:0.72rem;color:#7a6a45;margin-top:3px;}
-.chart-wrap{position:relative;height:280px;margin-top:10px;}
-.chart-tip{font-size:0.76rem;color:var(--muted);text-align:center;margin-top:6px;}
+.chart-wrap{position:relative;height:280px;margin-top:14px;background:#fafafa;border-radius:12px;padding:8px;}
+.chart-tip{font-size:0.76rem;color:#9a8a6a;text-align:center;margin-top:6px;}
 .insight-box{background:rgba(37,211,102,0.06);border:1px solid rgba(37,211,102,0.2);border-radius:12px;padding:14px 16px;margin-top:16px;}
 .insight-box p{font-size:0.84rem;color:#1a3020;line-height:1.6;margin:0;}
 .insight-box.warn{background:rgba(230,100,30,0.06);border-color:rgba(230,100,30,0.2);}
@@ -148,7 +148,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;heigh
       <div class="results-grid" id="ci-results">
         <div class="empty-state"><div class="ei">📈</div><p>Adjust sliders to see your money grow</p></div>
       </div>
-      <div class="chart-wrap"><canvas id="ci-chart"></canvas></div>
+      <div class="chart-wrap" style="position:relative;height:280px;"><canvas id="ci-chart" style="display:block;width:100%;height:100%;"></canvas></div>
       <div class="chart-tip">Hover over the chart to see values at each year</div>
       <div id="ci-insight"></div>
     </div>
@@ -172,7 +172,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;heigh
     </div>
     <div class="results-panel">
       <div class="results-grid" id="ret-results"><div class="empty-state"><div class="ei">🌅</div><p>Adjust inputs to see your retirement projection</p></div></div>
-      <div class="chart-wrap"><canvas id="ret-chart"></canvas></div>
+      <div class="chart-wrap" style="position:relative;height:280px;"><canvas id="ret-chart" style="display:block;width:100%;height:100%;"></canvas></div>
       <div class="chart-tip">Blue = portfolio growth | Orange line = required nest egg</div>
       <div id="ret-insight"></div>
     </div>
@@ -202,7 +202,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;heigh
     </div>
     <div class="results-panel">
       <div class="results-grid" id="resp-results"><div class="empty-state"><div class="ei">🎓</div><p>Enter your child's age to see RESP projection</p></div></div>
-      <div class="chart-wrap"><canvas id="resp-chart"></canvas></div>
+      <div class="chart-wrap" style="position:relative;height:280px;"><canvas id="resp-chart" style="display:block;width:100%;height:100%;"></canvas></div>
       <div class="chart-tip">Green = government grants | Blue = your contributions | Orange = investment growth</div>
       <div id="resp-insight"></div>
     </div>
@@ -226,7 +226,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;heigh
     </div>
     <div class="results-panel">
       <div class="results-grid" id="li-results"><div class="empty-state"><div class="ei">🛡️</div><p>Enter your details to calculate coverage needed</p></div></div>
-      <div class="chart-wrap"><canvas id="li-chart"></canvas></div>
+      <div class="chart-wrap" style="position:relative;height:280px;"><canvas id="li-chart" style="display:block;width:100%;height:100%;"></canvas></div>
       <div class="chart-tip">Breakdown of what your insurance needs to cover</div>
       <div id="li-insight"></div>
     </div>
@@ -264,7 +264,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;heigh
     </div>
     <div class="results-panel">
       <div class="results-grid" id="mort-results"><div class="empty-state"><div class="ei">🏠</div><p>Enter home price to calculate mortgage</p></div></div>
-      <div class="chart-wrap"><canvas id="mort-chart"></canvas></div>
+      <div class="chart-wrap" style="position:relative;height:280px;"><canvas id="mort-chart" style="display:block;width:100%;height:100%;"></canvas></div>
       <div class="chart-tip">Principal paid vs. interest over your amortization period</div>
       <div id="mort-insight"></div>
     </div>
@@ -290,7 +290,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;heigh
     </div>
     <div class="results-panel">
       <div class="results-grid" id="nw-results"><div class="empty-state"><div class="ei">💎</div><p>Enter your assets and liabilities to calculate net worth</p></div></div>
-      <div class="chart-wrap"><canvas id="nw-chart"></canvas></div>
+      <div class="chart-wrap" style="position:relative;height:280px;"><canvas id="nw-chart" style="display:block;width:100%;height:100%;"></canvas></div>
       <div id="nw-insight"></div>
     </div>
   </div>
