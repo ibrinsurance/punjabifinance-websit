@@ -179,6 +179,36 @@
     </div>
     <div class="podcast-play">→</div>
   </a>
+<script>
+// Filter function — defined early so buttons work immediately
+var currentLang = (function(){ try { return localStorage.getItem('pf_lang')||'en'; } catch(e){ return 'en'; } })();
+function filterTopics(cat, btn, skipBtnUpdate) {
+  if (!skipBtnUpdate) {
+    document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
+    if (btn) btn.classList.add('active');
+  }
+  var cards = document.querySelectorAll('.topic-card');
+  var count = 0;
+  cards.forEach(function(card) {
+    var show = cat === 'all' || card.dataset.cat === cat;
+    card.classList.toggle('hidden', !show);
+    if (show) {
+      count++;
+      card.style.opacity = '1';
+      card.style.transform = 'translateY(0)';
+    }
+  });
+  var el = document.getElementById('results-count');
+  if (el) {
+    var catPa = {'Insurance':'ਬੀਮਾ','Estate Planning':'ਜਾਇਦਾਦ ਯੋਜਨਾ','Budgeting':'ਬਜਟ','Investing':'ਨਿਵੇਸ਼','Real Estate':'ਰੀਅਲ ਅਸਟੇਟ','Credit':'ਕ੍ਰੈਡਿਟ','Taxes':'ਟੈਕਸ','Retirement':'ਰਿਟਾਇਰਮੈਂਟ','Newcomers':'ਨਵੇਂ ਆਉਣ ਵਾਲੇ','Personal Finance':'ਨਿੱਜੀ ਵਿੱਤ','Stocks':'ਸਟਾਕ'};
+    var isPa = currentLang === 'pa';
+    var label = isPa
+      ? (cat === 'all' ? 'ਸਾਰੇ ' + count + ' ਵਿਸ਼ੇ ਦਿਖਾਏ ਜਾ ਰਹੇ ਹਨ' : count + ' ਵਿਸ਼ੇ: ' + (catPa[cat]||cat))
+      : (cat === 'all' ? 'Showing all ' + count + ' topics' : 'Showing ' + count + ' topics in ' + cat);
+    el.textContent = label;
+  }
+}
+</script>
 <div class="filter-wrap">
   <div class="filter-row">
     <button class="filter-btn active" data-filter="all" onclick="filterTopics('all', this)"><span class="lang-en">All Topics</span><span class="lang-pa" style="display:none">ਸਾਰੇ ਵਿਸ਼ੇ</span></button>
