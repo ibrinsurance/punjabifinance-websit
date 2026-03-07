@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Building an Emergency Fund – Punjabi Finance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--gold:#D4A017;--gold-light:#F0C040;--saffron:#E8890C;--black:#0A0A0A;--off-white:#1a1600;--dark-bg:#111008;--card-bg:#1c1a0e;--text-muted:#9A8A6A;}
+  *{margin:0;padding:0;box-sizing:border-box;} html{scroll-behavior:smooth;}
+  body{background:var(--dark-bg);color:var(--off-white);font-family:'DM Sans',sans-serif;overflow-x:hidden;}
+  a{color:inherit;}
+  .top-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:16px;padding:13px 28px;background:rgba(10,10,4,0.93);backdrop-filter:blur(16px);border-bottom:1px solid rgba(212,160,23,0.15);}
+  .back-btn{text-decoration:none;color:var(--text-muted);font-size:0.85rem;font-weight:500;transition:color 0.2s;}
+  .back-btn:hover{color:var(--gold-light);}
+  .nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--gold-light);text-decoration:none;}
+  .nav-logo span{color:var(--saffron);}
+  .page-wrap{display:grid;grid-template-columns:240px 1fr;min-height:100vh;}
+  .sidebar{position:sticky;top:58px;height:calc(100vh - 58px);overflow-y:auto;padding:28px 20px;border-right:1px solid rgba(212,160,23,0.1);background:#0d0c04;}
+  .sidebar-title{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--saffron);margin-bottom:14px;}
+  .toc-link{display:block;padding:7px 10px;border-radius:8px;text-decoration:none;color:var(--text-muted);font-size:0.83rem;transition:all 0.2s;border-left:2px solid transparent;margin-bottom:3px;}
+  .toc-link:hover,.toc-link.active{color:var(--gold-light);background:rgba(212,160,23,0.07);border-left-color:var(--gold);}
+  .sidebar-back{margin-top:24px;padding-top:18px;border-top:1px solid rgba(212,160,23,0.1);}
+  .content{padding:52px 60px 72px;max-width:800px;}
+  .topic-tag{display:inline-block;background:rgba(212,160,23,0.12);border:1px solid rgba(212,160,23,0.3);color:var(--gold-light);padding:4px 14px;border-radius:50px;font-size:0.73rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;}
+  .page-title{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3vw,2.7rem);font-weight:900;line-height:1.1;margin-bottom:12px;}
+  .gold{color:var(--gold-light);}
+  .lead{font-size:1rem;color:#4a3f20;line-height:1.7;margin-bottom:44px;padding-bottom:28px;border-bottom:1px solid rgba(212,160,23,0.1);}
+  .learn-section{margin-bottom:48px;scroll-margin-top:80px;}
+  .learn-section h2{font-family:'Playfair Display',serif;font-size:1.45rem;color:var(--gold-light);margin-bottom:14px;display:flex;align-items:center;gap:9px;}
+  .learn-section p{color:#4a3f20;line-height:1.8;font-size:0.96rem;margin-bottom:13px;}
+  .learn-section ul,.learn-section ol{color:#4a3f20;line-height:1.8;font-size:0.96rem;padding-left:20px;margin-bottom:13px;}
+  .learn-section li{margin-bottom:7px;}
+  .callout{background:rgba(212,160,23,0.08);border:1px solid rgba(212,160,23,0.2);border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:16px 18px;margin:18px 0;}
+  .callout p{margin:0;color:#4a3f20;font-size:0.93rem;}
+  .tip-box{background:rgba(37,211,102,0.06);border:1px solid rgba(37,211,102,0.2);border-radius:12px;padding:16px 18px;margin:18px 0;}
+  .tip-box p{margin:0;color:#4a3f20;font-size:0.93rem;}
+  .warn-box{background:rgba(232,137,12,0.07);border:1px solid rgba(232,137,12,0.22);border-radius:12px;padding:16px 18px;margin:18px 0;}
+  .warn-box p{margin:0;color:#4a3f20;font-size:0.93rem;}
+  .data-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin:18px 0;}
+  .data-card{background:var(--card-bg);border:1px solid rgba(212,160,23,0.16);border-radius:13px;padding:16px;text-align:center;}
+  .data-num{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--gold-light);display:block;margin-bottom:4px;}
+  .data-label{font-size:0.72rem;color:var(--text-muted);line-height:1.4;}
+  .divider{height:1px;background:rgba(212,160,23,0.1);margin:36px 0;}
+  .cta-box{background:linear-gradient(135deg,rgba(212,160,23,0.11),rgba(232,137,12,0.04));border:1px solid rgba(212,160,23,0.26);border-radius:18px;padding:32px;text-align:center;margin-top:44px;}
+  .cta-box h3{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--gold-light);margin-bottom:9px;}
+  .cta-box p{color:var(--text-muted);font-size:0.88rem;margin-bottom:18px;}
+  .btn-gold{display:inline-block;padding:11px 26px;background:var(--gold);color:var(--black);border-radius:50px;font-weight:700;font-size:0.88rem;text-decoration:none;transition:background 0.2s,transform 0.15s;}
+  .btn-gold:hover{background:var(--gold-light);transform:translateY(-1px);}
+  .sub-footer{border-top:1px solid rgba(212,160,23,0.1);padding:28px 20px;text-align:center;color:var(--text-muted);font-size:0.78rem;}
+  .sub-footer .logo{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--gold-light);margin-bottom:6px;}
+  .sub-footer .logo span{color:var(--saffron);}
+  .disclaimer{max-width:520px;margin:10px auto 0;font-size:0.67rem;opacity:0.42;line-height:1.55;}
+  @media(max-width:780px){.page-wrap{grid-template-columns:1fr;}.sidebar{position:relative;height:auto;top:0;border-right:none;border-bottom:1px solid rgba(212,160,23,0.1);padding:16px;}.content{padding:28px 16px 52px;}.top-nav{padding:12px 16px;}}
+
+
+
+
+
+
+/* ===== UNIVERSAL NAV ===== */
+.unav{position:sticky;top:0;z-index:9000;height:60px;background:#100e04;border-bottom:1px solid rgba(212,160,23,0.15);display:flex;align-items:center;padding:0 28px;gap:0;}
+.unav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#F0C040;text-decoration:none;margin-right:24px;white-space:nowrap;}
+.unav-logo span{color:#E8890C;}
+.unav-links{display:flex;align-items:center;gap:1px;flex:1;}
+.unav-a{padding:5px 11px;border-radius:7px;font-size:0.79rem;font-weight:500;color:rgba(255,255,255,0.55);text-decoration:none;white-space:nowrap;transition:all 0.17s;}
+.unav-a:hover{color:#F0C040;background:rgba(212,160,23,0.09);}
+.unav-a.cur{color:#F0C040;}
+.unav-right{display:flex;align-items:center;gap:8px;margin-left:auto;}
+.unav-lpill{display:flex;align-items:center;background:rgba(212,160,23,0.07);border:1px solid rgba(212,160,23,0.18);border-radius:50px;padding:3px;}
+.unav-lb{padding:3px 10px;border-radius:50px;border:none;cursor:pointer;font-size:0.71rem;font-weight:600;font-family:'DM Sans',sans-serif;transition:all 0.18s;background:transparent;color:rgba(255,255,255,0.45);}
+.unav-lb.on{background:#D4A017;color:#0a0a0a;}
+.unav-ham{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:7px;border-radius:7px;border:none;background:transparent;}
+.unav-ham-l{width:20px;height:2px;background:rgba(255,255,255,0.65);border-radius:2px;transition:all 0.22s;}
+.unav-drop{display:none;position:fixed;top:60px;left:0;right:0;background:#100e04;border-bottom:2px solid rgba(212,160,23,0.2);z-index:8999;padding:10px 16px 16px;flex-direction:column;gap:2px;box-shadow:0 12px 40px rgba(0,0,0,0.5);}
+.unav-drop.open{display:flex;}
+.unav-drop .unav-a{font-size:0.92rem;padding:10px 14px;border-radius:10px;}
+.unav-drop .unav-a:hover{background:rgba(212,160,23,0.1);}
+.unav-dlang{display:flex;gap:8px;padding:10px 14px 2px;margin-top:6px;border-top:1px solid rgba(212,160,23,0.1);}
+.unav-dlang button{flex:1;padding:8px;border-radius:8px;border:1px solid rgba(212,160,23,0.2);background:transparent;color:rgba(255,255,255,0.5);font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:600;cursor:pointer;transition:all 0.18s;}
+.unav-dlang button.on{background:#D4A017;color:#0a0a0a;border-color:#D4A017;}
+@media(max-width:860px){.unav-links{display:none;}.unav-ham{display:flex;}.unav{padding:0 16px;}}
+/* ========================= */
+</style>
+</head>
+<body>
+<nav class="unav">
+  <a href="index.html" class="unav-logo">Punjabi<span>Finance</span></a>
+  <div class="unav-links">
+      <a href="education.html" class="unav-a">📚 Learn</a>
+      <a href="wealth-path.html" class="unav-a">💰 $0–$1M</a>
+      <a href="books.html" class="unav-a">📖 Books</a>
+<a href="index.html#services" class="unav-a">🛡️ Services</a>
+      <a href="index.html#about" class="unav-a">About</a>
+      <a href="index.html#reviews" class="unav-a">★ Reviews</a>
+  </div>
+  <div class="unav-right">
+    <div class="unav-lpill">
+      <button class="unav-lb on" id="unav-lb-en" onclick="siteSetLang('en')">EN</button>
+      <button class="unav-lb" id="unav-lb-pa" onclick="siteSetLang('pa')">ਪੰ</button>
+    </div>
+    <button class="unav-ham" id="unav-ham" onclick="unavToggle()" aria-label="Menu">
+      <div class="unav-ham-l" id="unav-l1"></div>
+      <div class="unav-ham-l" id="unav-l2"></div>
+      <div class="unav-ham-l" id="unav-l3"></div>
+    </button>
+  </div>
+</nav>
+<div class="unav-drop" id="unav-drop">
+      <a href="education.html" class="unav-a" onclick="unavClose()">📚 Learn</a>
+      <a href="wealth-path.html" class="unav-a" onclick="unavClose()">💰 $0–$1M</a>
+      <a href="books.html" class="unav-a" onclick="unavClose()">📖 Books</a>
+<a href="index.html#services" class="unav-a" onclick="unavClose()">🛡️ Services</a>
+      <a href="index.html#about" class="unav-a" onclick="unavClose()">About</a>
+      <a href="index.html#reviews" class="unav-a" onclick="unavClose()">★ Reviews</a>
+  <div class="unav-dlang">
+    <button class="on" id="unav-dlb-en" onclick="siteSetLang('en')">🇨🇦 English</button>
+    <button id="unav-dlb-pa" onclick="siteSetLang('pa')">ਪੰਜਾਬੀ</button>
+  </div>
+</div>
+<div class="page-wrap">
+  <aside class="sidebar">
+    <div class="sidebar-title">On this page</div>
+    <a href="#why" class="toc-link">🤔 Why an Emergency Fund?</a>
+    <a href="#how" class="toc-link">🏗️ How to Build One</a>
+    <a href="#size" class="toc-link">📊 How Much Is Enough?</a>
+    <a href="#after" class="toc-link">🚀 What to Do Once It's Funded</a>
+    
+    <div class="sidebar-back">
+      <a href="education.html" class="back-btn" style="display:block;margin-bottom:6px">← All Topics</a>
+      <a href="index.html" class="back-btn" style="display:block">🏠 Home</a>
+    </div>
+  </aside>
+  <main class="content">
+    <div class="topic-tag">🆘 Budgeting</div>
+    <h1 class="page-title">Building an Emergency Fund</h1>
+    <p class="lead">An emergency fund is your financial safety net — the buffer between a bad month and a financial crisis. Here's how to build one and why it matters.</p>
+    
+    <div class="learn-section" id="why">
+      <h2><span>🤔</span> Why an Emergency Fund?</h2>
+      <p>Without savings set aside for emergencies, unexpected expenses — job loss, car repair, medical costs — force you into debt. An emergency fund breaks that cycle.</p><div class='callout'><p>💡 The typical recommendation is 3–6 months of essential living expenses in an easily accessible, separate account. Start smaller if needed — even $1,000 provides meaningful protection.</p></div>
+    </div>
+    <div class="divider"></div>
+    <div class="learn-section" id="how">
+      <h2><span>🏗️</span> How to Build One</h2>
+      <ul><li>Open a separate High Interest Savings Account (HISA)</li><li>Automate a fixed transfer every payday</li><li>Redirect any windfalls (tax refund, bonus) until the fund is full</li><li>Keep it accessible but separate enough that you won't dip into it casually</li></ul>
+    </div>
+    <div class="divider"></div>
+    <div class="learn-section" id="size">
+      <h2><span>📊</span> How Much Is Enough?</h2>
+      <div class='data-grid'><div class='data-card'><span class='data-num'>$1,000</span><span class='data-label'>Starter goal — covers most common emergencies</span></div><div class='data-card'><span class='data-num'>3 months</span><span class='data-label'>Minimum recommended for employed individuals</span></div><div class='data-card'><span class='data-num'>6 months</span><span class='data-label'>Recommended for self-employed or variable income</span></div></div><p>Calculate your essential monthly expenses (rent, food, utilities, insurance, minimum debt payments) and multiply by your target months.</p>
+    </div>
+    <div class="divider"></div>
+    <div class="learn-section" id="after">
+      <h2><span>🚀</span> What to Do Once It's Funded</h2>
+      <p>Once your emergency fund is full, redirect that monthly savings amount toward your next financial priority — TFSA investing, RRSP contributions, or extra debt payments. The emergency fund is not an investment — it's insurance for your financial plan.</p><div class='tip-box'><p>✅ Keep your emergency fund in a HISA earning 4–5% interest — it should work for you while it waits.</p></div>
+    </div>
+    <div class="divider"></div>
+    <div class="cta-box">
+      <h3></h3>
+      <p>Protect what you're building with the right insurance coverage alongside your savings.</p>
+      <a href="https://punjabifinance.com" target="_blank" class="btn-gold">Get Started →</a>
+      <p style="margin-top:10px;font-size:0.73rem;color:var(--text-muted)">Questions? </p>
+    </div>
+  </main>
+</div>
+<footer class="sub-footer">
+  <div class="logo">Punjabi<span>Finance</span></div>
+  <p class="disclaimer">Educational content only — not financial, legal, or insurance advice. Always consult a licensed professional before making financial decisions.</p>
+</footer>
+<script>
+  const obs = new IntersectionObserver(es => es.forEach(e => {
+    if(e.isIntersecting) {
+      document.querySelectorAll('.toc-link').forEach(l => l.classList.remove('active'));
+      const a = document.querySelector('.toc-link[href="#'+e.target.id+'"]');
+      if(a) a.classList.add('active');
+    }
+  }), {rootMargin:'-15% 0px -70% 0px'});
+  document.querySelectorAll('.learn-section').forEach(s => obs.observe(s));
+</script>
+
+<!-- AI CHATBOT WIDGET -->
+<div id="chat-widget" style="position:fixed;bottom:24px;right:24px;z-index:9999;font-family:'DM Sans',sans-serif;">
+  <!-- Toggle Button -->
+  <div id="chat-toggle" onclick="toggleChat()" style="width:58px;height:58px;background:linear-gradient(135deg,#D4A017,#E8890C);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 20px rgba(212,160,23,0.4);transition:transform 0.2s;" onmouseenter="this.style.transform='scale(1.1)'" onmouseleave="this.style.transform='scale(1)'">
+    <span id="chat-icon" style="font-size:1.4rem;">💬</span>
+  </div>
+  <!-- Chat Panel -->
+  <div id="chat-panel" style="display:none;position:absolute;bottom:70px;right:0;width:360px;max-height:520px;background:#fff;border-radius:20px;box-shadow:0 8px 48px rgba(0,0,0,0.2);overflow:hidden;flex-direction:column;">
+    <!-- Header -->
+    <div style="background:linear-gradient(135deg,#D4A017,#E8890C);padding:16px 18px;display:flex;align-items:center;gap:10px;">
+      <div style="width:36px;height:36px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">🤖</div>
+      <div style="flex:1;">
+        <div style="font-size:0.9rem;font-weight:700;color:#fff;">Punjabi Finance AI</div>
+        <div style="font-size:0.7rem;color:rgba(255,255,255,0.8);" id="chat-status">Ask me anything about finance in Canada</div>
+      </div>
+      <div onclick="toggleChat()" style="cursor:pointer;color:rgba(255,255,255,0.8);font-size:1.1rem;line-height:1;">✕</div>
+    </div>
+    <!-- Messages -->
+    <div id="chat-messages" style="flex:1;overflow-y:auto;padding:14px;max-height:340px;display:flex;flex-direction:column;gap:10px;">
+      <div class="chat-msg bot" style="background:#f5f3ee;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:0.84rem;color:#2a2000;line-height:1.6;max-width:85%;">
+        <span id="chat-welcome">👋 Sat Sri Akal! I'm the Punjabi Finance AI.<br><br>Ask me anything about:<br>• Life & Super Visa insurance<br>• TFSA, RRSP, investing<br>• Real estate in Canada<br>• Taxes & retirement<br><br>I answer in English or Punjabi! 🇨🇦</span>
+      </div>
+    </div>
+    <!-- Quick Questions -->
+    <div id="quick-qs" style="padding:0 14px 10px;display:flex;flex-wrap:wrap;gap:6px;">
+      <button onclick="sendQuick('How much life insurance do I need?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">Life insurance?</button>
+      <button onclick="sendQuick('What is Super Visa insurance?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">Super Visa?</button>
+      <button onclick="sendQuick('How do I start investing in Canada?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">How to invest?</button>
+      <button onclick="sendQuick('TFSA vs RRSP — which should I use?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">TFSA vs RRSP?</button>
+    </div>
+    <!-- Input -->
+    <div style="padding:10px 14px 14px;border-top:1px solid rgba(0,0,0,0.07);display:flex;gap:8px;align-items:flex-end;">
+      <input id="chat-input" type="text" placeholder="Ask a finance question..." style="flex:1;padding:10px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:50px;font-size:0.84rem;font-family:'DM Sans',sans-serif;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='#D4A017'" onblur="this.style.borderColor='rgba(0,0,0,0.12)'" onkeypress="if(event.key==='Enter')sendMsg()">
+      <button onclick="sendMsg()" id="send-btn" style="width:38px;height:38px;background:linear-gradient(135deg,#D4A017,#E8890C);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;transition:transform 0.2s;" onmouseenter="this.style.transform='scale(1.1)'" onmouseleave="this.style.transform='scale(1)'">→</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const CHAT_SYSTEM = `You are the Punjabi Finance AI assistant — a helpful, friendly financial education bot for the Punjabi community in Canada.
+
+Your role:
+- Provide free financial education about Canadian personal finance
+- Topics: life insurance, Super Visa insurance, critical illness, disability, TFSA, RRSP, FHSA, RESP, investing, real estate, mortgages, taxes, retirement, newcomer finance
+- Always remind users to consult a licensed professional for personal advice
+- Be warm and community-focused — this is for the Punjabi diaspora in Canada
+- Respond in the same language the user writes in (English or Punjabi)
+- Keep answers concise and practical — max 150 words unless asked to elaborate
+- Reference relevant tools on the site: calculators.html, tools.html, education.html
+- For insurance questions, suggest they WhatsApp us at +1 647-745-6850 for a personal quote
+- Never give specific investment recommendations or specific insurance quotes
+- Always end insurance/investment answers with a soft call to action to WhatsApp or visit ibrinsurance.ca
+
+Personality: Knowledgeable, warm, like a financially savvy older sibling or family friend who happens to know a lot about Canadian finance.`;
+
+let chatOpen = false;
+let isLoading = false;
+const chatHistory = [];
+
+function toggleChat() {
+  chatOpen = !chatOpen;
+  const panel = document.getElementById('chat-panel');
+  panel.style.display = chatOpen ? 'flex' : 'none';
+  panel.style.flexDirection = 'column';
+  document.getElementById('chat-icon').textContent = chatOpen ? '✕' : '💬';
+  if(chatOpen) document.getElementById('chat-input').focus();
+}
+
+function sendQuick(msg) {
+  document.getElementById('quick-qs').style.display = 'none';
+  document.getElementById('chat-input').value = msg;
+  sendMsg();
+}
+
+function addMsg(text, role) {
+  const msgs = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.style.cssText = role === 'user'
+    ? 'background:linear-gradient(135deg,#D4A017,#E8890C);color:#0a0a0a;border-radius:14px 14px 4px 14px;padding:10px 14px;font-size:0.84rem;line-height:1.6;max-width:80%;margin-left:auto;'
+    : 'background:#f5f3ee;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:0.84rem;color:#2a2000;line-height:1.6;max-width:88%;';
+  div.textContent = text;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+  return div;
+}
+
+function addTyping() {
+  const msgs = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.id = 'typing-indicator';
+  div.style.cssText = 'background:#f5f3ee;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:0.84rem;color:#9A8A6A;max-width:88%;';
+  div.textContent = '...thinking';
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+async function sendMsg() {
+  if(isLoading) return;
+  const input = document.getElementById('chat-input');
+  const msg = input.value.trim();
+  if(!msg) return;
+  input.value = '';
+  
+  addMsg(msg, 'user');
+  chatHistory.push({role:'user', content: msg});
+  
+  document.getElementById('quick-qs').style.display = 'none';
+  isLoading = true;
+  document.getElementById('chat-status').textContent = 'Thinking...';
+  addTyping();
+  
+  try {
+    const res = await fetch('/api/chat', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({messages: chatHistory})
+    });
+    const data = await res.json();
+    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again or WhatsApp us directly.";
+    
+    const typing = document.getElementById('typing-indicator');
+    if(typing) typing.remove();
+    
+    addMsg(reply, 'bot');
+    chatHistory.push({role:'assistant', content: reply});
+    document.getElementById('chat-status').textContent = 'Ask me anything about finance';
+  } catch(err) {
+    const typing = document.getElementById('typing-indicator');
+    if(typing) typing.remove();
+    addMsg('Sorry, something went wrong. Please WhatsApp us directly at +1 647-745-6850 or visit ibrinsurance.ca', 'bot');
+    document.getElementById('chat-status').textContent = 'Ask me anything about finance';
+  }
+  isLoading = false;
+}
+</script>
+<script>
+
+// ===== UNIVERSAL NAV JS =====
+(function(){
+  var _lang = localStorage.getItem('pf_lang')||'en';
+  function _applyLang(l){
+    _lang=l; localStorage.setItem('pf_lang',l);
+    ['en','pa'].forEach(function(x){
+      var nb=document.getElementById('unav-lb-'+x); if(nb) nb.classList.toggle('on',x===l);
+      var db=document.getElementById('unav-dlb-'+x); if(db) db.classList.toggle('on',x===l);
+    });
+    document.querySelectorAll('.lang-en,.lng-en').forEach(function(el){el.style.display=l==='en'?'':'none';});
+    document.querySelectorAll('.lang-pa,.lng-pa').forEach(function(el){el.style.display=l==='pa'?'':'none';});
+    if(typeof setLang==='function') try{setLang(l,null);}catch(e){}
+    if(typeof learnLang==='function') try{learnLang(l);}catch(e){}
+    if(typeof applyLang==='function') try{applyLang();}catch(e){}
+  }
+  window.siteSetLang=function(l){_applyLang(l);};
+  var _open=false;
+  window.unavToggle=function(){
+    var d=document.getElementById('unav-drop');
+    _open=!_open; d.classList.toggle('open',_open);
+    var l1=document.getElementById('unav-l1'),l2=document.getElementById('unav-l2'),l3=document.getElementById('unav-l3');
+    if(_open){if(l1)l1.style.transform='translateY(6px) rotate(45deg)';if(l2)l2.style.opacity='0';if(l3)l3.style.transform='translateY(-6px) rotate(-45deg)';}
+    else{if(l1)l1.style.transform='';if(l2)l2.style.opacity='';if(l3)l3.style.transform='';}
+  };
+  window.unavClose=function(){
+    if(!_open)return; _open=false; document.getElementById('unav-drop').classList.remove('open');
+    var l1=document.getElementById('unav-l1'),l2=document.getElementById('unav-l2'),l3=document.getElementById('unav-l3');
+    if(l1)l1.style.transform='';if(l2)l2.style.opacity='';if(l3)l3.style.transform='';
+  };
+  document.addEventListener('click',function(e){
+    if(!_open)return;
+    var d=document.getElementById('unav-drop'),h=document.getElementById('unav-ham');
+    if(d&&!d.contains(e.target)&&h&&!h.contains(e.target))unavClose();
+  });
+  if(_lang!=='en')setTimeout(function(){_applyLang(_lang);},80);
+})();
+// ============================
+
+</script>
+</body>
+</html>

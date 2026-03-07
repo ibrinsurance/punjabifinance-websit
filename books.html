@@ -49,8 +49,8 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
 .book-arrow{color:var(--muted);font-size:0.8rem;transition:transform 0.3s;flex-shrink:0;}
 .book-card.open .book-arrow{transform:rotate(180deg);}
 .book-body{display:none;padding:0 24px 24px;border-top:1px solid var(--border);}
-.book-card.open .book-body{display:block;}
-.book-summary{font-size:0.88rem;color:#4a3f20;line-height:1.75;margin:18px 0;padding:14px 16px;background:rgba(212,160,23,0.05);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;}
+.book-card.open 
+.book-summary{font-size:0.88rem;color:#3a3020;line-height:1.75;margin:18px 0;padding:14px 16px;background:rgba(212,160,23,0.05);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;}
 .lessons-title{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--sa);margin-bottom:12px;}
 .lessons{display:flex;flex-direction:column;gap:2px;margin-bottom:18px;}
 .lesson{padding:12px 0;border-bottom:1px solid rgba(212,160,23,0.07);}
@@ -91,15 +91,34 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
 .book-why{font-size:0.8rem;color:#7a6a45;line-height:1.5;margin-top:4px;}
 .key-lesson-box{background:rgba(212,160,23,0.08);border:1px solid rgba(212,160,23,0.2);border-radius:12px;padding:16px;margin-bottom:18px;}
 .kl-label{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#C47008;margin-bottom:6px;}
-.kl-text{font-size:0.88rem;color:#5a4020;line-height:1.65;font-style:italic;}
-.book-summary{font-size:0.87rem;color:#4a3f20;line-height:1.82;margin-bottom:16px;}
+.kl-text{font-size:0.88rem;color:#2a2000;line-height:1.65;font-style:italic;}
+.book-summary{font-size:0.87rem;color:#3a3020;line-height:1.82;margin-bottom:16px;}
 .book-summary strong{color:#1a1600;}
 .book-summary p{margin-bottom:10px;}
 .action-box{background:#f0ede4;border-radius:10px;padding:14px 16px;border-left:3px solid #D4A017;}
 .ab-label{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#C47008;margin-bottom:6px;}
-.action-box p{font-size:0.84rem;color:#4a3f20;line-height:1.6;margin:0;}
+.action-box p{font-size:0.84rem;color:#3a3020;line-height:1.6;margin:0;}
 
 @media(max-width:768px){.books{grid-template-columns:1fr;padding:24px 16px 60px;}}
+
+/* Book content text visibility on light background */
+.book-body { background:#fff; color:#2a2000; }
+.book-body p, .book-body li, .book-body span { color:#2a2000; }
+.book-summary { color:#3a3020 !important; }
+.book-summary p, .book-summary strong { color:#2a2000 !important; }
+.kl-text { color:#2a2000 !important; }
+.action-box p { color:#3a3020 !important; }
+.key-lesson-box { background:rgba(212,160,23,0.08); }
+.level-body p, .level-body li, .level-body span { color:#2a2000; }
+.cl-text { color:#2a2000 !important; }
+.level-intro { color:#3a3020 !important; }
+
+/* Book body text - ensure readable on white */
+.book-body { background:#fff; color:#2a2000; }
+.book-body p, .book-body li, .book-summary p { color:#3a3020; }
+.book-body strong { color:#1a1600; }
+.kl-text { color:#2a2000; font-style:italic; }
+.book-why { color:#5a4a30; }
 </style>
 </head>
 <body>
@@ -109,9 +128,7 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
       <a href="education.html" class="unav-a">📚 Learn</a>
       <a href="wealth-path.html" class="unav-a">💰 $0–$1M</a>
       <a href="books.html" class="unav-a cur">📖 Books</a>
-      <a href="calculators.html" class="unav-a">🔢 Calculators</a>
-      <a href="index.html#services" class="unav-a">🛡️ Services</a>
-      <a href="downloads.html" class="unav-a">📥 Downloads</a>
+<a href="index.html#services" class="unav-a">🛡️ Services</a>
       <a href="index.html#about" class="unav-a">About</a>
       <a href="index.html#reviews" class="unav-a">★ Reviews</a>
   </div>
@@ -131,9 +148,7 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
       <a href="education.html" class="unav-a" onclick="unavClose()">📚 Learn</a>
       <a href="wealth-path.html" class="unav-a" onclick="unavClose()">💰 $0–$1M</a>
       <a href="books.html" class="unav-a" onclick="unavClose()">📖 Books</a>
-      <a href="calculators.html" class="unav-a" onclick="unavClose()">🔢 Calculators</a>
-      <a href="index.html#services" class="unav-a" onclick="unavClose()">🛡️ Services</a>
-      <a href="downloads.html" class="unav-a" onclick="unavClose()">📥 Downloads</a>
+<a href="index.html#services" class="unav-a" onclick="unavClose()">🛡️ Services</a>
       <a href="index.html#about" class="unav-a" onclick="unavClose()">About</a>
       <a href="index.html#reviews" class="unav-a" onclick="unavClose()">★ Reviews</a>
   <div class="unav-dlang">
@@ -349,11 +364,11 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
     <div class="lessons">
       <div class="lesson">
         <div class="lesson-title">The Couch Potato Portfolio — Simplest Possible</div>
-        <p class="lesson-body">The core strategy: buy a single all-in-one ETF (XEQT, VGRO, or VBAL depending on risk tolerance), contribute monthly, and rebalance annually. No stock picking, no market timing, no expensive advisors. Performance matches or beats 85% of actively managed funds.</p>
+        <p class="lesson-body">The core strategy: buy a single all-in-one ETF (a 100% equity all-in-one ETF, a growth-oriented all-in-one ETF, or a balanced all-in-one ETF depending on risk tolerance), contribute monthly, and rebalance annually. No stock picking, no market timing, no expensive advisors. Performance matches or beats 85% of actively managed funds.</p>
       </div>
       <div class="lesson">
         <div class="lesson-title">Asset Allocation — The Most Important Decision</div>
-        <p class="lesson-body">Your split between stocks and bonds (or aggressive/conservative) drives 90%+ of your returns. XEQT (100% stocks) for 15+ year horizons. VGRO (80/20) for 10–15 years. VBAL (60/40) for 5–10 years. Don't overthink beyond this.</p>
+        <p class="lesson-body">Your split between stocks and bonds (or aggressive/conservative) drives 90%+ of your returns. a 100% equity all-in-one ETF (100% stocks) for 15+ year horizons. a growth-oriented all-in-one ETF (80/20) for 10–15 years. a balanced all-in-one ETF (60/40) for 5–10 years. Don't overthink beyond this.</p>
       </div>
       <div class="lesson">
         <div class="lesson-title">Canadian Tax Efficiency for Investments</div>
@@ -469,7 +484,7 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
       <p>Robbins breaks down what the world's best investors actually do vs what they tell the public.</p>
       <p><strong>The Hidden Fee Problem:</strong> Mutual funds in Canada charge 2–3% MER annually. On $500,000 over 30 years, a 2% fee costs you $435,000 compared to a 0.2% ETF. This is the most shocking math in Canadian personal finance.</p>
       <p><strong>The Bear Market Pattern:</strong> Since 1900, markets have averaged a 10% correction once per year, a 20% correction every few years, and a 30%+ crash every decade. Every single one recovered. Investors who got wealthy simply did not sell.</p>
-      <p><strong>The All-Seasons Portfolio:</strong> 30% stocks, 55% bonds, 15% gold/commodities — designed to perform in any economic environment. Canadian equivalent: XGRO or XBAL balanced ETFs.</p>
+      <p><strong>A diversified balanced portfolio with bond and equity exposure can reduce volatility. Canadian equivalent: a growth all-in-one ETF or a balanced all-in-one ETF balanced ETFs.</p>
     </div>
     <div class="action-box"><div class="ab-label">✅ Take Action Now</div><p>Calculate how much your mutual fund fees cost you. Search your fund's MER. Multiply by your portfolio value — that is your annual fee in dollars.</p></div>
   </div>
@@ -533,11 +548,11 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
     <div class="book-summary">
       <p>Collins originally wrote this as letters to his daughter about money. The simplest, most effective investing strategy ever written.</p>
       <p><strong>The F-You Fund:</strong> Every financial plan needs enough money to leave a bad situation (job, relationship, location) without being trapped by financial dependence. Target: 6–12 months of expenses.</p>
-      <p><strong>The Whole Strategy:</strong> VTSAX in the US. XEQT in Canada. One fund. Buy it. Keep buying. Never sell. This strategy beat 85% of actively managed funds over 15 years.</p>
+      <p><strong>The Whole Strategy:</strong> a broad index fund in the US. a 100% equity all-in-one ETF in Canada. One fund. Buy it. Keep buying. Never sell. This strategy beat 85% of actively managed funds over 15 years.</p>
       <p><strong>The 4% Rule:</strong> In retirement, withdraw 4% annually. Mathematically sustainable for 30+ years based on historical data. $1M portfolio = $40,000/year sustainable income.</p>
-      <p><strong>Canadian translation:</strong> XEQT (100% equity, global diversification, 0.2% MER) in TFSA first, RRSP second.</p>
+      <p><strong>Canadian translation:</strong> a 100% equity all-in-one ETF (100% equity, global diversification, 0.2% MER) in TFSA first, RRSP second.</p>
     </div>
-    <div class="action-box"><div class="ab-label">✅ Take Action Now</div><p>Open Wealthsimple Trade. Buy XEQT. Set up automatic purchase every payday. Close the app and do not look at it for 3 months.</p></div>
+    <div class="action-box"><div class="ab-label">✅ Take Action Now</div><p>Open Wealthsimple Trade. Buy a 100% equity all-in-one ETF. Set up automatic purchase every payday. Close the app and do not look at it for 3 months.</p></div>
   </div>
 </div>
 
@@ -644,7 +659,7 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
       <p>Bogle spent his career arguing the investment industry takes too much from investors and delivers too little — then built Vanguard to fix it.</p>
       <p><strong>The Math of Fees:</strong> $100,000 invested for 30 years at 7% gross: $761,000. At 7% gross minus 2% fee: $432,000. Cost of that 2% fee: $329,000. You gave the fund company $329,000 of your wealth for adding negative value after costs.</p>
       <p><strong>Performance Chasing Does Not Work:</strong> Last year's top-performing fund is highly unlikely to be next year's top performer. Fund selection based on past performance = guaranteed underperformance on average.</p>
-      <p><strong>Canadian application:</strong> Vanguard Canadian ETFs: VGRO (80/20), VBAL (60/40), VCNS (40/60). Or iShares XEQT/XGRO/XBAL. All under 0.25% MER.</p>
+      <p><strong>Canadian application:</strong> All-in-one ETFs from major providers: growth-oriented (80% equity/20% bonds), balanced (60/40), or conservative (40/60). Or a 100% equity all-in-one ETF for long time horizons. All-in-one ETFs typically have MERs under 0.25%. All under 0.25% MER.</p>
     </div>
     <div class="action-box"><div class="ab-label">✅ Take Action Now</div><p>Find the total fees paid on your investments this year. Your mutual fund statement → Management fees line. Calculate what that compounds to over 20 years at 7%.</p></div>
   </div>

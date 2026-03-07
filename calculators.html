@@ -87,212 +87,72 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;heigh
 .lang-pill-btn{padding:5px 14px;border-radius:50px;border:none;cursor:pointer;font-size:0.78rem;font-weight:600;font-family:'DM Sans',sans-serif;transition:all 0.2s;background:transparent;color:#9A8A6A;}
 .lang-pill-btn.active{background:#D4A017;color:#0a0a0a;}
 
+
+/* ===== UNIVERSAL NAV ===== */
+.unav{position:sticky;top:0;z-index:9000;height:60px;background:#100e04;border-bottom:1px solid rgba(212,160,23,0.15);display:flex;align-items:center;padding:0 28px;gap:0;}
+.unav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#F0C040;text-decoration:none;margin-right:24px;white-space:nowrap;}
+.unav-logo span{color:#E8890C;}
+.unav-links{display:flex;align-items:center;gap:1px;flex:1;}
+.unav-a{padding:5px 11px;border-radius:7px;font-size:0.79rem;font-weight:500;color:rgba(255,255,255,0.55);text-decoration:none;white-space:nowrap;transition:all 0.17s;}
+.unav-a:hover{color:#F0C040;background:rgba(212,160,23,0.09);}
+.unav-a.cur{color:#F0C040;}
+.unav-right{display:flex;align-items:center;gap:8px;margin-left:auto;}
+.unav-lpill{display:flex;align-items:center;background:rgba(212,160,23,0.07);border:1px solid rgba(212,160,23,0.18);border-radius:50px;padding:3px;}
+.unav-lb{padding:3px 10px;border-radius:50px;border:none;cursor:pointer;font-size:0.71rem;font-weight:600;font-family:'DM Sans',sans-serif;transition:all 0.18s;background:transparent;color:rgba(255,255,255,0.45);}
+.unav-lb.on{background:#D4A017;color:#0a0a0a;}
+.unav-ham{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:7px;border-radius:7px;border:none;background:transparent;}
+.unav-ham-l{width:20px;height:2px;background:rgba(255,255,255,0.65);border-radius:2px;transition:all 0.22s;}
+.unav-drop{display:none;position:fixed;top:60px;left:0;right:0;background:#100e04;border-bottom:2px solid rgba(212,160,23,0.2);z-index:8999;padding:10px 16px 16px;flex-direction:column;gap:2px;box-shadow:0 12px 40px rgba(0,0,0,0.5);}
+.unav-drop.open{display:flex;}
+.unav-drop .unav-a{font-size:0.92rem;padding:10px 14px;border-radius:10px;}
+.unav-drop .unav-a:hover{background:rgba(212,160,23,0.1);}
+.unav-dlang{display:flex;gap:8px;padding:10px 14px 2px;margin-top:6px;border-top:1px solid rgba(212,160,23,0.1);}
+.unav-dlang button{flex:1;padding:8px;border-radius:8px;border:1px solid rgba(212,160,23,0.2);background:transparent;color:rgba(255,255,255,0.5);font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:600;cursor:pointer;transition:all 0.18s;}
+.unav-dlang button.on{background:#D4A017;color:#0a0a0a;border-color:#D4A017;}
+@media(max-width:860px){.unav-links{display:none;}.unav-ham{display:flex;}.unav{padding:0 16px;}}
+/* ========================= */
 </style>
 </head>
 <body>
-<nav>
-  <a href="index.html" class="nav-back">← Home</a>
-  <a href="index.html" class="nav-logo">Punjabi<span>Finance</span></a>
-  <div class="nav-links">
-    <a href="education.html" >Learn</a>
-    <a href="calculators.html" style="color:var(--gl)">Calculators</a>
-    <a href="tools.html" >Immigrant Tools</a>
-    <a href="downloads.html" >Free Downloads</a>
-    <div class="lang-pill">
-      <button class="lang-pill-btn active" id="nb-en" onclick="siteSetLang('en')">English</button>
-      <button class="lang-pill-btn" id="nb-pa" onclick="siteSetLang('pa')">ਪੰਜਾਬੀ</button>
+<nav class="unav">
+  <a href="index.html" class="unav-logo">Punjabi<span>Finance</span></a>
+  <div class="unav-links">
+      <a href="education.html" class="unav-a">📚 Learn</a>
+      <a href="wealth-path.html" class="unav-a">💰 $0–$1M</a>
+      <a href="books.html" class="unav-a">📖 Books</a>
+<a href="index.html#services" class="unav-a">🛡️ Services</a>
+      <a href="index.html#about" class="unav-a">About</a>
+      <a href="index.html#reviews" class="unav-a">★ Reviews</a>
+  </div>
+  <div class="unav-right">
+    <div class="unav-lpill">
+      <button class="unav-lb on" id="unav-lb-en" onclick="siteSetLang('en')">EN</button>
+      <button class="unav-lb" id="unav-lb-pa" onclick="siteSetLang('pa')">ਪੰ</button>
     </div>
-    <a href="https://wa.me/+16477456850" target="_blank" style="background:var(--gold);color:#0a0a0a;padding:7px 18px;border-radius:50px;font-weight:700;font-size:0.8rem;">WhatsApp</a>
+    <button class="unav-ham" id="unav-ham" onclick="unavToggle()" aria-label="Menu">
+      <div class="unav-ham-l" id="unav-l1"></div>
+      <div class="unav-ham-l" id="unav-l2"></div>
+      <div class="unav-ham-l" id="unav-l3"></div>
+    </button>
   </div>
 </nav>
-
-<div class="page-hero">
-  <div class="section-label">Finance Calculators</div>
-  <h1>Know Your <span class="gold">Numbers</span></h1>
-  <p>Six interactive calculators with visual projections — built for Canadian finances.</p>
-</div>
-
-<div class="calc-nav">
-  <button class="calc-tab active" onclick="showCalc('compound', this)">📈 Compound Interest</button>
-  <button class="calc-tab" onclick="showCalc('retirement', this)">🌅 Retirement</button>
-  <button class="calc-tab" onclick="showCalc('resp', this)">🎓 RESP</button>
-  <button class="calc-tab" onclick="showCalc('life', this)">🛡️ Life Insurance</button>
-  <button class="calc-tab" onclick="showCalc('mortgage', this)">🏠 Mortgage</button>
-  <button class="calc-tab" onclick="showCalc('networth', this)">💎 Net Worth</button>
-</div>
-
-<!-- ===== COMPOUND INTEREST ===== -->
-<div class="calc-container active" id="calc-compound">
-  <div class="calc-layout">
-    <div class="calc-panel">
-      <div class="calc-title">Compound Interest Calculator</div>
-      <div class="calc-subtitle">Watch your money snowball — the most powerful force in finance</div>
-      <div class="field"><label>Initial Investment ($)</label><input type="number" id="ci-principal" value="10000" oninput="calcCompound()"></div>
-      <div class="slider-field"><label>Monthly Contribution <span class="slider-val" id="ci-m-val">$500</span></label><input type="range" id="ci-monthly" min="0" max="5000" step="50" value="500" oninput="document.getElementById('ci-m-val').textContent='$'+this.value;calcCompound()"></div>
-      <div class="slider-field"><label>Annual Return Rate <span class="slider-val" id="ci-r-val">7%</span></label><input type="range" id="ci-rate" min="1" max="15" step="0.5" value="7" oninput="document.getElementById('ci-r-val').textContent=this.value+'%';calcCompound()"></div>
-      <div class="slider-field"><label>Investment Period <span class="slider-val" id="ci-y-val">25 years</span></label><input type="range" id="ci-years" min="1" max="40" step="1" value="25" oninput="document.getElementById('ci-y-val').textContent=this.value+' years';calcCompound()"></div>
-      <div class="pill-toggle">
-        <div class="pill-option sel" onclick="setCIFreq('monthly',this)">Monthly</div>
-        <div class="pill-option" onclick="setCIFreq('annual',this)">Annual</div>
-      </div>
-      <div class="field"><label>Compounding Frequency</label>
-        <select id="ci-freq" onchange="calcCompound()">
-          <option value="12">Monthly (recommended)</option>
-          <option value="4">Quarterly</option>
-          <option value="2">Semi-Annual</option>
-          <option value="1">Annual</option>
-        </select>
-      </div>
-    </div>
-    <div class="results-panel">
-      <div class="results-grid" id="ci-results">
-        <div class="empty-state"><div class="ei">📈</div><p>Adjust sliders to see your money grow</p></div>
-      </div>
-      <div class="chart-wrap" style="position:relative;height:280px;"><canvas id="ci-chart" style="display:block;width:100%;height:100%;"></canvas></div>
-      <div class="chart-tip">Hover over the chart to see values at each year</div>
-      <div id="ci-insight"></div>
-    </div>
+<div class="unav-drop" id="unav-drop">
+      <a href="education.html" class="unav-a" onclick="unavClose()">📚 Learn</a>
+      <a href="wealth-path.html" class="unav-a" onclick="unavClose()">💰 $0–$1M</a>
+      <a href="books.html" class="unav-a" onclick="unavClose()">📖 Books</a>
+<a href="index.html#services" class="unav-a" onclick="unavClose()">🛡️ Services</a>
+      <a href="index.html#about" class="unav-a" onclick="unavClose()">About</a>
+      <a href="index.html#reviews" class="unav-a" onclick="unavClose()">★ Reviews</a>
+  <div class="unav-dlang">
+    <button class="on" id="unav-dlb-en" onclick="siteSetLang('en')">🇨🇦 English</button>
+    <button id="unav-dlb-pa" onclick="siteSetLang('pa')">ਪੰਜਾਬੀ</button>
   </div>
-</div>
-
-<!-- ===== RETIREMENT ===== -->
-<div class="calc-container" id="calc-retirement">
-  <div class="calc-layout">
-    <div class="calc-panel">
-      <div class="calc-title">Retirement Readiness Calculator</div>
-      <div class="calc-subtitle">Will you have enough? Plan now, retire comfortably.</div>
-      <div class="field"><label>Current Age</label><input type="number" id="ret-age" value="38" oninput="calcRetirement()"></div>
-      <div class="field"><label>Planned Retirement Age</label><input type="number" id="ret-retire" value="65" oninput="calcRetirement()"></div>
-      <div class="field"><label>Current Savings — RRSP + TFSA + Pension ($)</label><input type="number" id="ret-savings" value="150000" oninput="calcRetirement()"></div>
-      <div class="slider-field"><label>Monthly Contributions ($) <span class="slider-val" id="ret-c-val">$1,500</span></label><input type="range" id="ret-monthly" min="100" max="8000" step="100" value="1500" oninput="document.getElementById('ret-c-val').textContent='$'+parseInt(this.value).toLocaleString();calcRetirement()"></div>
-      <div class="slider-field"><label>Expected Annual Return <span class="slider-val" id="ret-r-val">7%</span></label><input type="range" id="ret-rate" min="3" max="12" step="0.5" value="7" oninput="document.getElementById('ret-r-val').textContent=this.value+'%';calcRetirement()"></div>
-      <div class="slider-field"><label>Desired Monthly Income in Retirement ($) <span class="slider-val" id="ret-d-val">$5,000</span></label><input type="range" id="ret-desired" min="2000" max="15000" step="500" value="5000" oninput="document.getElementById('ret-d-val').textContent='$'+parseInt(this.value).toLocaleString();calcRetirement()"></div>
-      <div class="field"><label>Expected CPP + OAS (monthly, ~$1,800 avg)</label><input type="number" id="ret-cpp" value="1800" oninput="calcRetirement()"></div>
-      <div class="slider-field"><label>Retirement Duration (years) <span class="slider-val" id="ret-dur-val">25 years</span></label><input type="range" id="ret-dur" min="10" max="40" step="1" value="25" oninput="document.getElementById('ret-dur-val').textContent=this.value+' years';calcRetirement()"></div>
-    </div>
-    <div class="results-panel">
-      <div class="results-grid" id="ret-results"><div class="empty-state"><div class="ei">🌅</div><p>Adjust inputs to see your retirement projection</p></div></div>
-      <div class="chart-wrap" style="position:relative;height:280px;"><canvas id="ret-chart" style="display:block;width:100%;height:100%;"></canvas></div>
-      <div class="chart-tip">Blue = portfolio growth | Orange line = required nest egg</div>
-      <div id="ret-insight"></div>
-    </div>
-  </div>
-</div>
-
-<!-- ===== RESP ===== -->
-<div class="calc-container" id="calc-resp">
-  <div class="calc-layout">
-    <div class="calc-panel">
-      <div class="calc-title">RESP Growth Calculator</div>
-      <div class="calc-subtitle">Maximize the government's free education grant for your child</div>
-      <div class="field"><label>Child's Current Age</label><input type="number" id="resp-age" value="2" oninput="calcRESP()"></div>
-      <div class="field"><label>Existing RESP Balance ($)</label><input type="number" id="resp-bal" value="0" oninput="calcRESP()"></div>
-      <div class="slider-field"><label>Annual Contribution ($) <span class="slider-val" id="resp-c-val">$2,500</span></label><input type="range" id="resp-annual" min="0" max="10000" step="100" value="2500" oninput="document.getElementById('resp-c-val').textContent='$'+parseInt(this.value).toLocaleString();calcRESP()"></div>
-      <div class="slider-field"><label>Annual Return Rate <span class="slider-val" id="resp-r-val">6%</span></label><input type="range" id="resp-rate" min="3" max="12" step="0.5" value="6" oninput="document.getElementById('resp-r-val').textContent=this.value+'%';calcRESP()"></div>
-      <div class="field"><label>Family Income (for Additional CESG)</label>
-        <select id="resp-income" onchange="calcRESP()">
-          <option value="low">Under $53,359 (+20% extra on first $500)</option>
-          <option value="mid" selected>$53,359–$106,717 (+10% extra on first $500)</option>
-          <option value="high">Over $106,717 (basic 20% CESG only)</option>
-        </select>
-      </div>
-      <div style="background:rgba(212,160,23,0.07);border-radius:12px;padding:12px 14px;font-size:0.8rem;color:#5a4a25;margin-top:8px;">
-        💡 Contribute $2,500/year to maximize the 20% CESG grant ($500/year). Max lifetime grant = <strong>$7,200</strong>.
-      </div>
-    </div>
-    <div class="results-panel">
-      <div class="results-grid" id="resp-results"><div class="empty-state"><div class="ei">🎓</div><p>Enter your child's age to see RESP projection</p></div></div>
-      <div class="chart-wrap" style="position:relative;height:280px;"><canvas id="resp-chart" style="display:block;width:100%;height:100%;"></canvas></div>
-      <div class="chart-tip">Green = government grants | Blue = your contributions | Orange = investment growth</div>
-      <div id="resp-insight"></div>
-    </div>
-  </div>
-</div>
-
-<!-- ===== LIFE INSURANCE ===== -->
-<div class="calc-container" id="calc-life">
-  <div class="calc-layout">
-    <div class="calc-panel">
-      <div class="calc-title">Life Insurance Needs Calculator</div>
-      <div class="calc-subtitle">Using the DIME method — the industry standard for coverage calculation</div>
-      <div class="field"><label>Annual Gross Income ($)</label><input type="number" id="li-income" value="90000" oninput="calcLife()"></div>
-      <div class="field"><label>Years of Income to Replace</label><input type="number" id="li-years" value="20" oninput="calcLife()"></div>
-      <div class="field"><label>Mortgage Balance ($)</label><input type="number" id="li-mortgage" value="550000" oninput="calcLife()"></div>
-      <div class="field"><label>Other Debts (car loans, LOC, etc.) ($)</label><input type="number" id="li-debts" value="25000" oninput="calcLife()"></div>
-      <div class="field"><label>Children's Education Fund (per child x years) ($)</label><input type="number" id="li-edu" value="80000" oninput="calcLife()"></div>
-      <div class="field"><label>Final Expenses (funeral, estate costs) ($)</label><input type="number" id="li-final" value="25000" oninput="calcLife()"></div>
-      <div class="field"><label>Existing Life Insurance ($)</label><input type="number" id="li-existing" value="0" oninput="calcLife()"></div>
-      <div class="field"><label>Spouse's Annual Income ($)</label><input type="number" id="li-spouse" value="0" oninput="calcLife()"></div>
-    </div>
-    <div class="results-panel">
-      <div class="results-grid" id="li-results"><div class="empty-state"><div class="ei">🛡️</div><p>Enter your details to calculate coverage needed</p></div></div>
-      <div class="chart-wrap" style="position:relative;height:280px;"><canvas id="li-chart" style="display:block;width:100%;height:100%;"></canvas></div>
-      <div class="chart-tip">Breakdown of what your insurance needs to cover</div>
-      <div id="li-insight"></div>
-    </div>
-  </div>
-</div>
-
-<!-- ===== MORTGAGE ===== -->
-<div class="calc-container" id="calc-mortgage">
-  <div class="calc-layout">
-    <div class="calc-panel">
-      <div class="calc-title">Mortgage Calculator</div>
-      <div class="calc-subtitle">Monthly payments, amortization schedule & total interest cost</div>
-      <div class="field"><label>Home Purchase Price ($)</label><input type="number" id="mort-price" value="800000" oninput="calcMortgage()"></div>
-      <div class="slider-field"><label>Down Payment % <span class="slider-val" id="mort-dp-pct">20%</span></label><input type="range" id="mort-dp" min="5" max="50" step="1" value="20" oninput="document.getElementById('mort-dp-pct').textContent=this.value+'%';calcMortgage()"></div>
-      <div class="slider-field"><label>Interest Rate <span class="slider-val" id="mort-r-val">5.5%</span></label><input type="range" id="mort-rate" min="3" max="10" step="0.1" value="5.5" oninput="document.getElementById('mort-r-val').textContent=parseFloat(this.value).toFixed(1)+'%';calcMortgage()"></div>
-      <div class="field"><label>Amortization Period</label>
-        <select id="mort-amort" onchange="calcMortgage()">
-          <option value="25" selected>25 years (standard)</option>
-          <option value="30">30 years (max for insured)</option>
-          <option value="20">20 years</option>
-          <option value="15">15 years</option>
-          <option value="10">10 years</option>
-        </select>
-      </div>
-      <div class="field"><label>Payment Frequency</label>
-        <select id="mort-freq" onchange="calcMortgage()">
-          <option value="monthly">Monthly</option>
-          <option value="biweekly" selected>Accelerated Bi-Weekly (saves money!)</option>
-          <option value="weekly">Accelerated Weekly</option>
-        </select>
-      </div>
-      <div style="background:rgba(212,160,23,0.07);border-radius:12px;padding:12px 14px;font-size:0.8rem;color:#5a4a25;margin-top:8px;">
-        💡 Min down payment: 5% for homes &lt;$500K, 10% for $500K-$999K, 20% for $1M+. CMHC insurance required under 20%.
-      </div>
-    </div>
-    <div class="results-panel">
-      <div class="results-grid" id="mort-results"><div class="empty-state"><div class="ei">🏠</div><p>Enter home price to calculate mortgage</p></div></div>
-      <div class="chart-wrap" style="position:relative;height:280px;"><canvas id="mort-chart" style="display:block;width:100%;height:100%;"></canvas></div>
-      <div class="chart-tip">Principal paid vs. interest over your amortization period</div>
-      <div id="mort-insight"></div>
-    </div>
-  </div>
-</div>
-
-<!-- ===== NET WORTH ===== -->
-<div class="calc-container" id="calc-networth">
-  <div class="calc-layout">
-    <div class="calc-panel">
-      <div class="calc-title">Net Worth Tracker</div>
-      <div class="calc-subtitle">Assets minus liabilities = your real financial position</div>
-      <div class="nw-section">🏦 ASSETS</div>
-      <div class="nw-row"><input class="nw-input" id="nw-home" placeholder="Primary Home $" oninput="calcNetWorth()"><input class="nw-input" id="nw-rental" placeholder="Rental Property $" oninput="calcNetWorth()"></div>
-      <div class="nw-row"><input class="nw-input" id="nw-rrsp" placeholder="RRSP $" oninput="calcNetWorth()"><input class="nw-input" id="nw-tfsa" placeholder="TFSA $" oninput="calcNetWorth()"></div>
-      <div class="nw-row"><input class="nw-input" id="nw-invest" placeholder="Non-Reg Investments $" oninput="calcNetWorth()"><input class="nw-input" id="nw-resp" placeholder="RESP $" oninput="calcNetWorth()"></div>
-      <div class="nw-row"><input class="nw-input" id="nw-cash" placeholder="Cash / Savings $" oninput="calcNetWorth()"><input class="nw-input" id="nw-vehicle" placeholder="Vehicles $" oninput="calcNetWorth()"></div>
-      <div class="nw-row"><input class="nw-input" id="nw-pension" placeholder="Pension Value $" oninput="calcNetWorth()"><input class="nw-input" id="nw-other-a" placeholder="Other Assets $" oninput="calcNetWorth()"></div>
-      <div class="nw-section">💳 LIABILITIES</div>
-      <div class="nw-row"><input class="nw-input" id="nw-mortgage-l" placeholder="Mortgage Balance $" oninput="calcNetWorth()"><input class="nw-input" id="nw-heloc" placeholder="HELOC Balance $" oninput="calcNetWorth()"></div>
-      <div class="nw-row"><input class="nw-input" id="nw-carloan" placeholder="Car Loan $" oninput="calcNetWorth()"><input class="nw-input" id="nw-student" placeholder="Student Loan $" oninput="calcNetWorth()"></div>
-      <div class="nw-row"><input class="nw-input" id="nw-cc" placeholder="Credit Cards $" oninput="calcNetWorth()"><input class="nw-input" id="nw-other-l" placeholder="Other Debts $" oninput="calcNetWorth()"></div>
-    </div>
-    <div class="results-panel">
-      <div class="results-grid" id="nw-results"><div class="empty-state"><div class="ei">💎</div><p>Enter your assets and liabilities to calculate net worth</p></div></div>
-      <div class="chart-wrap" style="position:relative;height:280px;"><canvas id="nw-chart" style="display:block;width:100%;height:100%;"></canvas></div>
-      <div id="nw-insight"></div>
-    </div>
+<div style="min-height:70vh;display:flex;align-items:center;justify-content:center;padding:40px;background:#f5f0e8;">
+  <div style="text-align:center;max-width:480px;">
+    <div style="font-size:3rem;margin-bottom:16px;">🔧</div>
+    <h1 style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#1a1600;margin-bottom:12px;">Calculators Coming Soon</h1>
+    <p style="font-size:0.95rem;color:#7a6a45;line-height:1.75;margin-bottom:28px;">We're rebuilding our financial calculators to be more accurate and helpful. In the meantime, explore our 165+ educational topics to learn how the numbers work.</p>
+    <a href="education.html" style="display:inline-block;padding:12px 28px;background:#D4A017;color:#0a0a0a;border-radius:10px;font-weight:700;font-size:0.9rem;text-decoration:none;">Browse All Topics →</a>
   </div>
 </div>
 
@@ -305,7 +165,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;heigh
     <a href="tools.html">Immigrant Tools</a>
     <a href="downloads.html">Free Downloads</a>
     <a href="link.html">All Links</a>
-    <a href="https://wa.me/+16477456850" target="_blank">WhatsApp</a>
+    
   </div>
   <p class="footer-disc">Educational content only — not financial, legal, or insurance advice. Always consult a licensed professional before making financial decisions. © 2025 Punjabi Finance</p>
 </footer>
@@ -911,5 +771,60 @@ async function sendMsg() {
   }
   isLoading = false;
 }
+</script>
+<script>
+
+// ===== UNIVERSAL NAV JS =====
+(function(){
+  var _lang = localStorage.getItem('pf_lang')||'en';
+  function _applyLang(l){
+    _lang=l;
+    localStorage.setItem('pf_lang',l);
+    ['en','pa'].forEach(function(x){
+      var nb=document.getElementById('unav-lb-'+x);
+      if(nb) nb.classList.toggle('on',x===l);
+      var db=document.getElementById('unav-dlb-'+x);
+      if(db) db.classList.toggle('on',x===l);
+    });
+    document.querySelectorAll('.lang-en,.lng-en').forEach(function(el){el.style.display=l==='en'?'':'none';});
+    document.querySelectorAll('.lang-pa,.lng-pa').forEach(function(el){el.style.display=l==='pa'?'':'none';});
+    if(typeof setLang==='function') try{setLang(l,null);}catch(e){}
+    if(typeof learnLang==='function') try{learnLang(l);}catch(e){}
+    if(typeof applyLang==='function') try{applyLang();}catch(e){}
+  }
+  window.siteSetLang=function(l){ _applyLang(l); };
+  var _open=false;
+  window.unavToggle=function(){
+    var d=document.getElementById('unav-drop');
+    _open=!_open;
+    d.classList.toggle('open',_open);
+    var l1=document.getElementById('unav-l1');
+    var l2=document.getElementById('unav-l2');
+    var l3=document.getElementById('unav-l3');
+    if(_open){
+      if(l1)l1.style.transform='translateY(6px) rotate(45deg)';
+      if(l2)l2.style.opacity='0';
+      if(l3)l3.style.transform='translateY(-6px) rotate(-45deg)';
+    } else {
+      if(l1)l1.style.transform='';if(l2)l2.style.opacity='';if(l3)l3.style.transform='';
+    }
+  };
+  window.unavClose=function(){
+    if(!_open) return;
+    _open=false;
+    document.getElementById('unav-drop').classList.remove('open');
+    var l1=document.getElementById('unav-l1');var l2=document.getElementById('unav-l2');var l3=document.getElementById('unav-l3');
+    if(l1)l1.style.transform='';if(l2)l2.style.opacity='';if(l3)l3.style.transform='';
+  };
+  document.addEventListener('click',function(e){
+    if(!_open) return;
+    var d=document.getElementById('unav-drop');
+    var h=document.getElementById('unav-ham');
+    if(d&&!d.contains(e.target)&&h&&!h.contains(e.target)) unavClose();
+  });
+  if(_lang!=='en') setTimeout(function(){_applyLang(_lang);},80);
+})();
+// ============================
+
 </script>
 </body></html>

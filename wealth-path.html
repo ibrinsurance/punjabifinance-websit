@@ -48,8 +48,8 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
 .level-range{font-size:0.78rem;color:#7a6a45;font-weight:500;}
 .level-status{font-size:0.75rem;font-weight:700;padding:4px 12px;border-radius:50px;border:1px solid;}
 .level-toggle{font-size:0.8rem;color:var(--muted);transition:transform 0.3s;margin-left:8px;}
-.level-body{display:none;padding:0 28px 28px;background:#fff;border-top:1px solid rgba(212,160,23,0.1);}
-.level-body.open{display:block;}
+.level-body{display:none !important;padding:0 28px 28px;background:#fff;color:#2a2000;border-top:1px solid rgba(212,160,23,0.1);}
+.level-body.open{display:block !important;}
 .level-intro{font-size:0.88rem;color:#5a4a25;line-height:1.7;margin-bottom:20px;padding:14px 16px;background:rgba(255,255,255,0.03);border-radius:12px;border-left:3px solid var(--lc);}
 /* CHECKLIST */
 .checklist-section{margin-bottom:20px;}
@@ -95,6 +95,15 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
 .unav-dlang button.on{background:#D4A017;color:#0a0a0a;border-color:#D4A017;}
 @media(max-width:860px){.unav-links{display:none;}.unav-ham{display:flex;}.unav{padding:0 16px;}}
 /* ========================= */
+
+/* Content text visibility */
+
+.level-intro { color:#3a3020 !important; }
+.cl-text { color:#2a2000 !important; }
+.cl-label { color:#8B5E00 !important; }
+.timeline-badge { color:#7a6a45 !important; }
+.milestone p { color:#3a3020 !important; }
+.milestone h4 { color:#1a1600 !important; }
 </style>
 </head>
 <body>
@@ -104,9 +113,7 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
       <a href="education.html" class="unav-a">📚 Learn</a>
       <a href="wealth-path.html" class="unav-a cur">💰 $0–$1M</a>
       <a href="books.html" class="unav-a">📖 Books</a>
-      <a href="calculators.html" class="unav-a">🔢 Calculators</a>
-      <a href="index.html#services" class="unav-a">🛡️ Services</a>
-      <a href="downloads.html" class="unav-a">📥 Downloads</a>
+<a href="index.html#services" class="unav-a">🛡️ Services</a>
       <a href="index.html#about" class="unav-a">About</a>
       <a href="index.html#reviews" class="unav-a">★ Reviews</a>
   </div>
@@ -126,9 +133,7 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
       <a href="education.html" class="unav-a" onclick="unavClose()">📚 Learn</a>
       <a href="wealth-path.html" class="unav-a" onclick="unavClose()">💰 $0–$1M</a>
       <a href="books.html" class="unav-a" onclick="unavClose()">📖 Books</a>
-      <a href="calculators.html" class="unav-a" onclick="unavClose()">🔢 Calculators</a>
-      <a href="index.html#services" class="unav-a" onclick="unavClose()">🛡️ Services</a>
-      <a href="downloads.html" class="unav-a" onclick="unavClose()">📥 Downloads</a>
+<a href="index.html#services" class="unav-a" onclick="unavClose()">🛡️ Services</a>
       <a href="index.html#about" class="unav-a" onclick="unavClose()">About</a>
       <a href="index.html#reviews" class="unav-a" onclick="unavClose()">★ Reviews</a>
   <div class="unav-dlang">
@@ -147,7 +152,7 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
 
 <!-- LEVEL 1: SURVIVAL -->
 <div class="level" id="lvl1" style="--lc:rgba(239,68,68,0.3);--lh-bg:rgba(239,68,68,0.06);--lh-hover:rgba(239,68,68,0.1);--lb-bg:rgba(239,68,68,0.15);--lc-top:#ef4444;--lc-bot:#f97316;">
-  <div class="level-header" onclick="// Level 1 starts closed - user opens">
+  <div class="level-header" onclick="toggleLevel(1)">
     <div class="level-badge">🌱</div>
     <div class="level-title-wrap">
       <div class="level-name">Level 1 — Survival Mode</div>
@@ -157,7 +162,7 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
     <div class="level-status" style="color:#ef4444;border-color:rgba(239,68,68,0.4);">Start Here</div>
     <div class="level-toggle" id="t1">▼</div>
   </div>
-  <div class="level-body open" id="b1">
+  <div class="level-body" id="b1">
     <p class="level-intro">This is where most immigrants and young Canadians begin. Your goal isn't to get rich yet — it's to stop bleeding money and build the foundation. No shame here. Every millionaire started at zero.</p>
     <div class="timeline-badge">⏱️ Timeline: 3–12 months</div>
     <div class="checklist-section">
@@ -211,7 +216,7 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
     </div>
     <div class="checklist-section">
       <div class="cl-label">📈 Start Investing (Even Small)</div>
-      <div class="cl-item"><div class="cl-check" onclick="check(this,'2-7')"></div><div class="cl-text"><strong>Open Wealthsimple Trade and start investing $200–$500/month in XEQT</strong><span class="tip">One ETF. Set it up. Automate it. Stop looking at it. This is the whole strategy.</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'2-7')"></div><div class="cl-text"><strong>Open Wealthsimple Trade and start investing $200–$500/month in a 100% equity all-in-one ETF</strong><span class="tip">One ETF. Set it up. Automate it. Stop looking at it. This is the whole strategy.</span></div></div>
       <div class="cl-item"><div class="cl-check" onclick="check(this,'2-8')"></div><div class="cl-text"><strong>Open RESP within 90 days of each child's birth — claim free CESG grants</strong><span class="tip">The government gives 20% free on $2,500/year. Missing this = burning free money.</span></div></div>
       <div class="cl-item"><div class="cl-check" onclick="check(this,'2-9')"></div><div class="cl-text"><strong>Build credit to 680+ by keeping utilization under 30% and paying on time</strong><span class="tip">Check free at Borrowell. You need 680+ for best mortgage rates — start now.</span></div></div>
       <div class="cl-item"><div class="cl-check" onclick="check(this,'2-10')"></div><div class="cl-text"><strong>Automate savings — pay yourself first before any optional spending</strong><span class="tip">Set up automatic transfer to TFSA on payday. You won't miss what you never see.</span></div></div>
@@ -356,7 +361,7 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
     <div class="checklist-section">
       <div class="cl-label">👑 The Final Push</div>
       <div class="cl-item"><div class="cl-check" onclick="check(this,'6-1')"></div><div class="cl-text"><strong>Stay the course — your biggest risk now is emotional decisions during market dips</strong><span class="tip">A $900K portfolio dropping 20% = $180K on paper. Selling locks it in. Staying invested recovers it.</span></div></div>
-      <div class="cl-item"><div class="cl-check" onclick="check(this,'6-2')"></div><div class="cl-text"><strong>Shift portfolio from growth (XEQT) to balanced (VGRO) as you approach retirement</strong><span class="tip">Reduce sequence-of-returns risk. A 30% market crash the year you retire is devastating without bonds.</span></div></div>
+      <div class="cl-item"><div class="cl-check" onclick="check(this,'6-2')"></div><div class="cl-text"><strong>Shift portfolio from growth (a 100% equity all-in-one ETF) to balanced (a growth-oriented all-in-one ETF) as you approach retirement</strong><span class="tip">Reduce sequence-of-returns risk. A 30% market crash the year you retire is devastating without bonds.</span></div></div>
       <div class="cl-item"><div class="cl-check" onclick="check(this,'6-3')"></div><div class="cl-text"><strong>Ensure paid-off (or nearly) primary home — this alone may push you to $1M</strong><span class="tip">A $900K home with $800K mortgage = $100K equity. A $900K paid-off home = $900K asset.</span></div></div>
     </div>
     <div class="checklist-section">
