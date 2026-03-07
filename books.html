@@ -33,7 +33,7 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
 @media(max-width:768px){nav{padding:0 20px;}footer{padding:28px 20px 16px;}}
 
 :root{--gold:#D4A017;--gl:#C4880A;--sa:#C47008;--bg:#f7f5f0;--muted:#7a6a45;--off:#1a1600;--border:rgba(212,160,23,0.2);}
-.hero{padding:56px 80px 44px;background:radial-gradient(ellipse at 30% 0%,rgba(212,160,23,0.1),transparent 70%);border-bottom:1px solid var(--border);}
+.hero{padding:48px 48px 36px;background:#fff;border-bottom:1px solid rgba(212,160,23,0.15);}
 .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;margin-bottom:12px;line-height:1.1;}
 .hero p{color:#7a6a45;font-size:0.94rem;line-height:1.75;max-width:560px;}
 .books-wrap{padding:44px 80px 80px;max-width:900px;}
@@ -60,24 +60,87 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
 .book-action{background:rgba(37,211,102,0.06);border:1px solid rgba(37,211,102,0.18);border-radius:12px;padding:13px 16px;font-size:0.83rem;color:rgba(250,247,240,0.72);line-height:1.65;}
 .book-action strong{color:#1ebe5a;}
 @media(max-width:768px){.hero,.books-wrap{padding-left:18px;padding-right:18px;}.book-header{flex-wrap:wrap;}}
+
+/* ===== UNIVERSAL NAV ===== */
+.unav{position:sticky;top:0;z-index:9000;height:60px;background:#100e04;border-bottom:1px solid rgba(212,160,23,0.15);display:flex;align-items:center;padding:0 28px;gap:0;}
+.unav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#F0C040;text-decoration:none;margin-right:24px;white-space:nowrap;}
+.unav-logo span{color:#E8890C;}
+.unav-links{display:flex;align-items:center;gap:1px;flex:1;}
+.unav-a{padding:5px 11px;border-radius:7px;font-size:0.79rem;font-weight:500;color:rgba(255,255,255,0.55);text-decoration:none;white-space:nowrap;transition:all 0.17s;}
+.unav-a:hover{color:#F0C040;background:rgba(212,160,23,0.09);}
+.unav-a.cur{color:#F0C040;}
+.unav-right{display:flex;align-items:center;gap:8px;margin-left:auto;}
+.unav-lpill{display:flex;align-items:center;background:rgba(212,160,23,0.07);border:1px solid rgba(212,160,23,0.18);border-radius:50px;padding:3px;}
+.unav-lb{padding:3px 10px;border-radius:50px;border:none;cursor:pointer;font-size:0.71rem;font-weight:600;font-family:'DM Sans',sans-serif;transition:all 0.18s;background:transparent;color:rgba(255,255,255,0.45);}
+.unav-lb.on{background:#D4A017;color:#0a0a0a;}
+.unav-ham{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:7px;border-radius:7px;border:none;background:transparent;}
+.unav-ham-l{width:20px;height:2px;background:rgba(255,255,255,0.65);border-radius:2px;transition:all 0.22s;}
+.unav-drop{display:none;position:fixed;top:60px;left:0;right:0;background:#100e04;border-bottom:2px solid rgba(212,160,23,0.2);z-index:8999;padding:10px 16px 16px;flex-direction:column;gap:2px;box-shadow:0 12px 40px rgba(0,0,0,0.5);}
+.unav-drop.open{display:flex;}
+.unav-drop .unav-a{font-size:0.92rem;padding:10px 14px;border-radius:10px;}
+.unav-drop .unav-a:hover{background:rgba(212,160,23,0.1);}
+.unav-dlang{display:flex;gap:8px;padding:10px 14px 2px;margin-top:6px;border-top:1px solid rgba(212,160,23,0.1);}
+.unav-dlang button{flex:1;padding:8px;border-radius:8px;border:1px solid rgba(212,160,23,0.2);background:transparent;color:rgba(255,255,255,0.5);font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:600;cursor:pointer;transition:all 0.18s;}
+.unav-dlang button.on{background:#D4A017;color:#0a0a0a;border-color:#D4A017;}
+@media(max-width:860px){.unav-links{display:none;}.unav-ham{display:flex;}.unav{padding:0 16px;}}
+/* ========================= */
+
+.book-emoji{width:52px;height:52px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0;}
+.book-meta{flex:1;min-width:0;}
+.book-author{font-size:0.78rem;color:#7a6a45;margin-bottom:4px;}
+.book-why{font-size:0.8rem;color:#7a6a45;line-height:1.5;margin-top:4px;}
+.key-lesson-box{background:rgba(212,160,23,0.08);border:1px solid rgba(212,160,23,0.2);border-radius:12px;padding:16px;margin-bottom:18px;}
+.kl-label{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#C47008;margin-bottom:6px;}
+.kl-text{font-size:0.88rem;color:#5a4020;line-height:1.65;font-style:italic;}
+.book-summary{font-size:0.87rem;color:#4a3f20;line-height:1.82;margin-bottom:16px;}
+.book-summary strong{color:#1a1600;}
+.book-summary p{margin-bottom:10px;}
+.action-box{background:#f0ede4;border-radius:10px;padding:14px 16px;border-left:3px solid #D4A017;}
+.ab-label{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#C47008;margin-bottom:6px;}
+.action-box p{font-size:0.84rem;color:#4a3f20;line-height:1.6;margin:0;}
+
+@media(max-width:768px){.books{grid-template-columns:1fr;padding:24px 16px 60px;}}
 </style>
 </head>
 <body>
-<nav>
-  <a href="index.html" class="nav-back">← Home</a>
-  <a href="index.html" class="nav-logo">Punjabi<span>Finance</span></a>
-  <div class="nav-links">
-    <a href="education.html" >Learn</a>
-    <a href="calculators.html" >Calculators</a>
-    <a href="tools.html" >Immigrant Tools</a>
-    <a href="downloads.html" >Free Downloads</a>
-    <div class="lang-toggle">
-      <button class="lang-btn active" id="nb-en" onclick="siteSetLang('en')">EN</button>
-      <button class="lang-btn" id="nb-pa" onclick="siteSetLang('pa')">PA</button>
+<nav class="unav">
+  <a href="index.html" class="unav-logo">Punjabi<span>Finance</span></a>
+  <div class="unav-links">
+      <a href="education.html" class="unav-a">📚 Learn</a>
+      <a href="wealth-path.html" class="unav-a">💰 $0–$1M</a>
+      <a href="books.html" class="unav-a cur">📖 Books</a>
+      <a href="calculators.html" class="unav-a">🔢 Calculators</a>
+      <a href="index.html#services" class="unav-a">🛡️ Services</a>
+      <a href="downloads.html" class="unav-a">📥 Downloads</a>
+      <a href="index.html#about" class="unav-a">About</a>
+      <a href="index.html#reviews" class="unav-a">★ Reviews</a>
+  </div>
+  <div class="unav-right">
+    <div class="unav-lpill">
+      <button class="unav-lb on" id="unav-lb-en" onclick="siteSetLang('en')">EN</button>
+      <button class="unav-lb" id="unav-lb-pa" onclick="siteSetLang('pa')">ਪੰ</button>
     </div>
-    <a href="https://wa.me/+16477456850" target="_blank" style="background:var(--gold);color:#0a0a0a;padding:7px 18px;border-radius:50px;font-weight:700;font-size:0.8rem;">WhatsApp</a>
+    <button class="unav-ham" id="unav-ham" onclick="unavToggle()" aria-label="Menu">
+      <div class="unav-ham-l" id="unav-l1"></div>
+      <div class="unav-ham-l" id="unav-l2"></div>
+      <div class="unav-ham-l" id="unav-l3"></div>
+    </button>
   </div>
 </nav>
+<div class="unav-drop" id="unav-drop">
+      <a href="education.html" class="unav-a" onclick="unavClose()">📚 Learn</a>
+      <a href="wealth-path.html" class="unav-a" onclick="unavClose()">💰 $0–$1M</a>
+      <a href="books.html" class="unav-a" onclick="unavClose()">📖 Books</a>
+      <a href="calculators.html" class="unav-a" onclick="unavClose()">🔢 Calculators</a>
+      <a href="index.html#services" class="unav-a" onclick="unavClose()">🛡️ Services</a>
+      <a href="downloads.html" class="unav-a" onclick="unavClose()">📥 Downloads</a>
+      <a href="index.html#about" class="unav-a" onclick="unavClose()">About</a>
+      <a href="index.html#reviews" class="unav-a" onclick="unavClose()">★ Reviews</a>
+  <div class="unav-dlang">
+    <button class="on" id="unav-dlb-en" onclick="siteSetLang('en')">🇨🇦 English</button>
+    <button id="unav-dlb-pa" onclick="siteSetLang('pa')">ਪੰਜਾਬੀ</button>
+  </div>
+</div>
 <div class="hero">
   <div class="section-label">📚 Recommended Reading</div>
   <h1>Books That <span class="gold">Change</span><br>Your Financial Life</h1>
@@ -387,18 +450,18 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
   <div style="background:linear-gradient(135deg,rgba(212,160,23,0.08),rgba(232,137,12,0.03));border:1px solid rgba(212,160,23,0.22);border-radius:18px;padding:28px;text-align:center;">
     <h3 style="font-family:'Playfair Display',serif;color:var(--gl);margin-bottom:8px;">Have a Question After Reading?</h3>
     <p style="font-size:0.86rem;color:var(--muted);margin-bottom:16px;line-height:1.65;">Message us on WhatsApp — in Punjabi or English. We help translate book concepts into Canadian action steps.</p>
-    <a href="https://wa.me/+16477456850" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#0a0a0a;padding:11px 24px;border-radius:50px;font-weight:700;font-size:0.88rem;text-decoration:none;">💬 WhatsApp Us</a>
+    
   </div>
 
 <div class="book-card" id="book-8">
-  <div class="book-header" onclick="toggleBook(8)">
+  <div class="book-header" onclick="this.parentElement.classList.toggle('open')">
     <div class="book-emoji">🏦</div>
     <div class="book-meta">
       <div class="book-title">Unshakeable</div>
       <div class="book-author">Tony Robbins · <span style="color:#7a6a45">2017</span></div>
       <div class="book-why">Written after interviewing 50+ top money managers. The single most important skill is surviving bear markets without panic-selling.</div>
     </div>
-    <div class="book-toggle" id="bt8">▼</div>
+    <div class="book-arrow" id="bt8">▼</div>
   </div>
   <div class="book-body" id="bb8">
     <div class="key-lesson-box"><div class="kl-label">💡 KEY LESSON</div><div class="kl-text">"The most important skill in investing is not picking winners — it is surviving bear markets without panic-selling"</div></div>
@@ -413,14 +476,14 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
 </div>
 
 <div class="book-card" id="book-9">
-  <div class="book-header" onclick="toggleBook(9)">
+  <div class="book-header" onclick="this.parentElement.classList.toggle('open')">
     <div class="book-emoji">💳</div>
     <div class="book-meta">
       <div class="book-title">Debt-Free Forever</div>
       <div class="book-author">Gail Vaz-Oxlade · <span style="color:#7a6a45">2010</span></div>
       <div class="book-why">Canada's most recognized personal finance TV personality. Blunt, practical, specifically designed for Canadians drowning in debt.</div>
     </div>
-    <div class="book-toggle" id="bt9">▼</div>
+    <div class="book-arrow" id="bt9">▼</div>
   </div>
   <div class="book-body" id="bb9">
     <div class="key-lesson-box"><div class="kl-label">💡 KEY LESSON</div><div class="kl-text">"Debt is not bad luck — it is a math problem with a solution. Stop feeling bad and start running the numbers."</div></div>
@@ -435,14 +498,14 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
 </div>
 
 <div class="book-card" id="book-10">
-  <div class="book-header" onclick="toggleBook(10)">
+  <div class="book-header" onclick="this.parentElement.classList.toggle('open')">
     <div class="book-emoji">🔑</div>
     <div class="book-meta">
       <div class="book-title">Stop Overthinking Your Money</div>
       <div class="book-author">Preet Banerjee · <span style="color:#7a6a45">2014</span></div>
       <div class="book-why">A South Asian Canadian finance expert literally wrote this for people like us — master 5 rules and outperform 80% of Canadians.</div>
     </div>
-    <div class="book-toggle" id="bt10">▼</div>
+    <div class="book-arrow" id="bt10">▼</div>
   </div>
   <div class="book-body" id="bb10">
     <div class="key-lesson-box"><div class="kl-label">💡 KEY LESSON</div><div class="kl-text">"Personal finance in Canada is simpler than you think — 5 rules will outperform most Canadians"</div></div>
@@ -456,14 +519,14 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
 </div>
 
 <div class="book-card" id="book-11">
-  <div class="book-header" onclick="toggleBook(11)">
+  <div class="book-header" onclick="this.parentElement.classList.toggle('open')">
     <div class="book-emoji">🌊</div>
     <div class="book-meta">
       <div class="book-title">The Simple Path to Wealth</div>
       <div class="book-author">JL Collins · <span style="color:#7a6a45">2016</span></div>
       <div class="book-why">The book that launched the index fund investing movement. Brutally simple strategy that outperforms 90% of professional fund managers.</div>
     </div>
-    <div class="book-toggle" id="bt11">▼</div>
+    <div class="book-arrow" id="bt11">▼</div>
   </div>
   <div class="book-body" id="bb11">
     <div class="key-lesson-box"><div class="kl-label">💡 KEY LESSON</div><div class="kl-text">"Own the entire market through index funds. Stop trying to beat it. You cannot, and neither can most professionals."</div></div>
@@ -479,14 +542,14 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
 </div>
 
 <div class="book-card" id="book-12">
-  <div class="book-header" onclick="toggleBook(12)">
+  <div class="book-header" onclick="this.parentElement.classList.toggle('open')">
     <div class="book-emoji">🎲</div>
     <div class="book-meta">
       <div class="book-title">A Random Walk Down Wall Street</div>
       <div class="book-author">Burton Malkiel · <span style="color:#7a6a45">1973 (Updated 2023)</span></div>
       <div class="book-why">The academic foundation of passive investing. Malkiel proved stock picking does not work 50 years before it became mainstream.</div>
     </div>
-    <div class="book-toggle" id="bt12">▼</div>
+    <div class="book-arrow" id="bt12">▼</div>
   </div>
   <div class="book-body" id="bb12">
     <div class="key-lesson-box"><div class="kl-label">💡 KEY LESSON</div><div class="kl-text">"A blindfolded monkey throwing darts at stock listings could pick a portfolio as good as expert stock pickers — consistently, over decades"</div></div>
@@ -501,14 +564,14 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
 </div>
 
 <div class="book-card" id="book-13">
-  <div class="book-header" onclick="toggleBook(13)">
+  <div class="book-header" onclick="this.parentElement.classList.toggle('open')">
     <div class="book-emoji">🧩</div>
     <div class="book-meta">
       <div class="book-title">Think and Grow Rich</div>
       <div class="book-author">Napoleon Hill · <span style="color:#7a6a45">1937</span></div>
       <div class="book-why">The most influential self-development book of the 20th century — the mindset framework that made wealth possible for millions.</div>
     </div>
-    <div class="book-toggle" id="bt13">▼</div>
+    <div class="book-arrow" id="bt13">▼</div>
   </div>
   <div class="book-body" id="bb13">
     <div class="key-lesson-box"><div class="kl-label">💡 KEY LESSON</div><div class="kl-text">"Whatever the mind can conceive and believe, it can achieve — wealth starts as a mental commitment before it becomes a financial reality"</div></div>
@@ -523,14 +586,14 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
 </div>
 
 <div class="book-card" id="book-14">
-  <div class="book-header" onclick="toggleBook(14)">
+  <div class="book-header" onclick="this.parentElement.classList.toggle('open')">
     <div class="book-emoji">📉</div>
     <div class="book-meta">
       <div class="book-title">When Genius Failed</div>
       <div class="book-author">Roger Lowenstein · <span style="color:#7a6a45">2000</span></div>
       <div class="book-why">The most important cautionary tale in finance — how Nobel Prize-winning economists with perfect models nearly collapsed the global financial system.</div>
     </div>
-    <div class="book-toggle" id="bt14">▼</div>
+    <div class="book-arrow" id="bt14">▼</div>
   </div>
   <div class="book-body" id="bb14">
     <div class="key-lesson-box"><div class="kl-label">💡 KEY LESSON</div><div class="kl-text">"Risk management and humility matter more than intelligence — the smartest people can be the most dangerous investors"</div></div>
@@ -545,14 +608,14 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
 </div>
 
 <div class="book-card" id="book-15">
-  <div class="book-header" onclick="toggleBook(15)">
+  <div class="book-header" onclick="this.parentElement.classList.toggle('open')">
     <div class="book-emoji">🌱</div>
     <div class="book-meta">
       <div class="book-title">The Automatic Millionaire</div>
       <div class="book-author">David Bach · <span style="color:#7a6a45">2003</span></div>
       <div class="book-why">The book that convinced millions to automate their finances — proving you do not need discipline if you have the right systems.</div>
     </div>
-    <div class="book-toggle" id="bt15">▼</div>
+    <div class="book-arrow" id="bt15">▼</div>
   </div>
   <div class="book-body" id="bb15">
     <div class="key-lesson-box"><div class="kl-label">💡 KEY LESSON</div><div class="kl-text">"Pay yourself first automatically — before you can spend the money. One hour of setup creates decades of wealth."</div></div>
@@ -566,14 +629,14 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
 </div>
 
 <div class="book-card" id="book-16">
-  <div class="book-header" onclick="toggleBook(16)">
+  <div class="book-header" onclick="this.parentElement.classList.toggle('open')">
     <div class="book-emoji">🔢</div>
     <div class="book-meta">
       <div class="book-title">The Little Book of Common Sense Investing</div>
       <div class="book-author">John Bogle · <span style="color:#7a6a45">2007</span></div>
       <div class="book-why">Written by the founder of Vanguard — the man who invented the index fund — and the definitive case for passive over active investing.</div>
     </div>
-    <div class="book-toggle" id="bt16">▼</div>
+    <div class="book-arrow" id="bt16">▼</div>
   </div>
   <div class="book-body" id="bb16">
     <div class="key-lesson-box"><div class="kl-label">💡 KEY LESSON</div><div class="kl-text">"In investing, you get what you don't pay for — costs are the most reliable predictor of fund performance"</div></div>
@@ -588,14 +651,14 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
 </div>
 
 <div class="book-card" id="book-17">
-  <div class="book-header" onclick="toggleBook(17)">
+  <div class="book-header" onclick="this.parentElement.classList.toggle('open')">
     <div class="book-emoji">🌍</div>
     <div class="book-meta">
       <div class="book-title">The Immigrant Wealth Blueprint</div>
       <div class="book-author">Community Research Synthesis · <span style="color:#7a6a45">Ongoing</span></div>
       <div class="book-why">Synthesizing the specific wealth-building challenges and advantages of immigrants — the exact situation of most of our community.</div>
     </div>
-    <div class="book-toggle" id="bt17">▼</div>
+    <div class="book-arrow" id="bt17">▼</div>
   </div>
   <div class="book-body" id="bb17">
     <div class="key-lesson-box"><div class="kl-label">💡 KEY LESSON</div><div class="kl-text">"Immigrants face unique financial hurdles but also unique advantages — discipline, sacrifice tolerance, and intergenerational vision"</div></div>
@@ -611,14 +674,14 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
 </div>
 
 <div class="book-card" id="book-18">
-  <div class="book-header" onclick="toggleBook(18)">
+  <div class="book-header" onclick="this.parentElement.classList.toggle('open')">
     <div class="book-emoji">⚖️</div>
     <div class="book-meta">
       <div class="book-title">The Millionaire Teacher</div>
       <div class="book-author">Andrew Hallam · <span style="color:#7a6a45">2011 (Updated 2017)</span></div>
       <div class="book-why">A Canadian high school teacher built a million-dollar portfolio on a teacher's salary. The most relatable wealth story for average income earners.</div>
     </div>
-    <div class="book-toggle" id="bt18">▼</div>
+    <div class="book-arrow" id="bt18">▼</div>
   </div>
   <div class="book-body" id="bb18">
     <div class="key-lesson-box"><div class="kl-label">💡 KEY LESSON</div><div class="kl-text">"A teacher's salary is enough to become a millionaire — start early, keep costs low, and never try to beat the market"</div></div>
@@ -633,14 +696,14 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
 </div>
 
 <div class="book-card" id="book-19">
-  <div class="book-header" onclick="toggleBook(19)">
+  <div class="book-header" onclick="this.parentElement.classList.toggle('open')">
     <div class="book-emoji">💡</div>
     <div class="book-meta">
       <div class="book-title">The Total Money Makeover</div>
       <div class="book-author">Dave Ramsey · <span style="color:#7a6a45">2003 (Updated)</span></div>
       <div class="book-why">The most popular debt elimination program in North America — 7 simple baby steps that have helped millions get out of debt and build wealth.</div>
     </div>
-    <div class="book-toggle" id="bt19">▼</div>
+    <div class="book-arrow" id="bt19">▼</div>
   </div>
   <div class="book-body" id="bb19">
     <div class="key-lesson-box"><div class="kl-label">💡 KEY LESSON</div><div class="kl-text">"You must walk before you can run — the baby steps work because they build momentum through small, achievable wins"</div></div>
@@ -665,7 +728,7 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
     <a href="tools.html">Immigrant Tools</a>
     <a href="downloads.html">Free Downloads</a>
     <a href="link.html">All Links</a>
-    <a href="https://wa.me/+16477456850" target="_blank">WhatsApp</a>
+    
   </div>
   <p class="footer-disc">Educational content only — not financial, legal, or insurance advice. Always consult a licensed professional before making financial decisions. © 2025 Punjabi Finance</p>
 </footer>
@@ -694,6 +757,61 @@ document.addEventListener('DOMContentLoaded',()=>{
   }
   applyLang();
 });
+
+</script>
+<script>
+
+// ===== UNIVERSAL NAV JS =====
+(function(){
+  var _lang = localStorage.getItem('pf_lang')||'en';
+  function _applyLang(l){
+    _lang=l;
+    localStorage.setItem('pf_lang',l);
+    ['en','pa'].forEach(function(x){
+      var nb=document.getElementById('unav-lb-'+x);
+      if(nb) nb.classList.toggle('on',x===l);
+      var db=document.getElementById('unav-dlb-'+x);
+      if(db) db.classList.toggle('on',x===l);
+    });
+    document.querySelectorAll('.lang-en').forEach(function(el){el.style.display=l==='en'?'':'none';});
+    document.querySelectorAll('.lang-pa').forEach(function(el){el.style.display=l==='pa'?'':'none';});
+    if(typeof setLang==='function') try{setLang(l,null);}catch(e){}
+    if(typeof learnLang==='function') try{learnLang(l);}catch(e){}
+    if(typeof applyLang==='function') try{applyLang();}catch(e){}
+  }
+  window.siteSetLang=function(l){ _applyLang(l); };
+  var _open=false;
+  window.unavToggle=function(){
+    var d=document.getElementById('unav-drop');
+    _open=!_open;
+    d.classList.toggle('open',_open);
+    var l1=document.getElementById('unav-l1');
+    var l2=document.getElementById('unav-l2');
+    var l3=document.getElementById('unav-l3');
+    if(_open){
+      if(l1)l1.style.transform='translateY(6px) rotate(45deg)';
+      if(l2)l2.style.opacity='0';
+      if(l3)l3.style.transform='translateY(-6px) rotate(-45deg)';
+    } else {
+      if(l1)l1.style.transform='';if(l2)l2.style.opacity='';if(l3)l3.style.transform='';
+    }
+  };
+  window.unavClose=function(){
+    if(!_open) return;
+    _open=false;
+    document.getElementById('unav-drop').classList.remove('open');
+    var l1=document.getElementById('unav-l1');var l2=document.getElementById('unav-l2');var l3=document.getElementById('unav-l3');
+    if(l1)l1.style.transform='';if(l2)l2.style.opacity='';if(l3)l3.style.transform='';
+  };
+  document.addEventListener('click',function(e){
+    if(!_open) return;
+    var d=document.getElementById('unav-drop');
+    var h=document.getElementById('unav-ham');
+    if(d&&!d.contains(e.target)&&h&&!h.contains(e.target)) unavClose();
+  });
+  if(_lang!=='en') setTimeout(function(){_applyLang(_lang);},80);
+})();
+// ============================
 
 </script>
 </body></html>

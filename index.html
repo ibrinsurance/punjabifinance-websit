@@ -28,15 +28,15 @@ nav{
   background:rgba(8,8,2,0.92);backdrop-filter:blur(20px);
   border-bottom:1px solid var(--border);
 }
-.nav-logo{font-family:"Playfair Display",serif;font-size:1.25rem;color:var(--gl);}
-.nav-logo span{color:var(--sa);}
-.nav-links{display:flex;align-items:center;gap:28px;margin-left:auto;}
-.nav-links a{font-size:0.84rem;color:var(--muted);font-weight:500;transition:color 0.2s;}
-.nav-links a:hover{color:var(--gl);}
+
+
+
+
+
 .nav-cta{background:var(--gold);color:#0a0a0a !important;padding:8px 20px;border-radius:50px;font-weight:700 !important;font-size:0.82rem !important;transition:all 0.2s !important;}
 .nav-cta:hover{background:var(--gl) !important;transform:translateY(-1px);}
-.nav-linktree{border:1px solid rgba(212,160,23,0.3);padding:7px 16px;border-radius:50px;font-size:0.8rem !important;color:var(--gl) !important;transition:all 0.2s !important;}
-.nav-linktree:hover{background:rgba(212,160,23,0.1) !important;border-color:var(--gl) !important;}
+
+
 /* Language toggle in nav */
 .lang-toggle{display:flex;align-items:center;background:rgba(212,160,23,0.08);border:1px solid rgba(212,160,23,0.2);border-radius:50px;padding:3px;}
 .lang-btn{padding:4px 13px;border-radius:50px;border:none;cursor:pointer;font-size:0.75rem;font-weight:600;font-family:"DM Sans",sans-serif;transition:all 0.2s;background:transparent;color:var(--muted);}
@@ -166,8 +166,8 @@ footer{background:#060603;border-top:1px solid var(--border);padding:56px 80px 3
 .footer-copy{font-size:0.72rem;color:var(--muted);opacity:0.4;white-space:nowrap;}
 
 /* RESPONSIVE */
-@media(max-width:1024px){nav{padding:0 24px;}.nav-links{gap:16px;}section{padding:64px 40px;}#about{grid-template-columns:1fr;gap:40px;}footer{padding:48px 40px 28px;}.footer-grid{grid-template-columns:1fr 1fr;gap:28px;}.hero-text{padding:60px 40px 60px 40px;}#tip-section{padding:44px 40px;}}
-@media(max-width:768px){.nav-links{display:none;}.hamburger{display:flex;}.hero{grid-template-columns:1fr;min-height:auto;padding-top:64px;}.hero-text{order:1;}.hero-visual{order:2;}.hero-text{padding:48px 24px 36px;}.hero-visual{height:360px;}.hero-img-wrap{width:260px;height:340px;}.hero-badge,.hero-badge2{display:none;}section{padding:56px 24px;}.reviews-grid{grid-template-columns:1fr;}#tip-section{padding:40px 24px;}footer{padding:40px 24px 24px;}.footer-grid{grid-template-columns:1fr 1fr;gap:20px;}.footer-bottom{flex-direction:column;align-items:flex-start;}}
+@media(max-width:1024px){nav{padding:0 24px;}section{padding:64px 40px;}#about{grid-template-columns:1fr;gap:40px;}footer{padding:48px 40px 28px;}.footer-grid{grid-template-columns:1fr 1fr;gap:28px;}.hero-text{padding:60px 40px 60px 40px;}#tip-section{padding:44px 40px;}}
+@media(max-width:768px){.hamburger{display:flex;}.hero{grid-template-columns:1fr;min-height:auto;padding-top:64px;}.hero-text{order:1;}.hero-visual{order:2;}.hero-text{padding:48px 24px 36px;}.hero-visual{height:360px;}.hero-img-wrap{width:260px;height:340px;}.hero-badge,.hero-badge2{display:none;}section{padding:56px 24px;}.reviews-grid{grid-template-columns:1fr;}#tip-section{padding:40px 24px;}footer{padding:40px 24px 24px;}.footer-grid{grid-template-columns:1fr 1fr;gap:20px;}.footer-bottom{flex-direction:column;align-items:flex-start;}}
 @media(max-width:480px){.hero-stats{gap:18px;flex-wrap:wrap;}.about-highlights{grid-template-columns:1fr 1fr;}.footer-grid{grid-template-columns:1fr;}.edu-grid{grid-template-columns:1fr 1fr;}.services-grid{grid-template-columns:1fr;}}
 
 .fade-up{opacity:0;transform:translateY(22px);transition:opacity 0.55s ease,transform 0.55s ease;}
@@ -177,35 +177,79 @@ footer{background:#060603;border-top:1px solid var(--border);padding:56px 80px 3
 .lang-pill-btn{padding:5px 14px;border-radius:50px;border:none;cursor:pointer;font-size:0.78rem;font-weight:600;font-family:'DM Sans',sans-serif;transition:all 0.2s;background:transparent;color:#9A8A6A;letter-spacing:0.02em;}
 .lang-pill-btn.active{background:#D4A017;color:#0a0a0a;}
 
+
+/* ===== UNIVERSAL NAV ===== */
+.unav{position:sticky;top:0;z-index:9000;height:60px;background:#100e04;border-bottom:1px solid rgba(212,160,23,0.15);display:flex;align-items:center;padding:0 28px;gap:0;}
+.unav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#F0C040;text-decoration:none;margin-right:24px;white-space:nowrap;}
+.unav-logo span{color:#E8890C;}
+.unav-links{display:flex;align-items:center;gap:1px;flex:1;}
+.unav-a{padding:5px 11px;border-radius:7px;font-size:0.79rem;font-weight:500;color:rgba(255,255,255,0.55);text-decoration:none;white-space:nowrap;transition:all 0.17s;}
+.unav-a:hover{color:#F0C040;background:rgba(212,160,23,0.09);}
+.unav-a.cur{color:#F0C040;}
+.unav-right{display:flex;align-items:center;gap:8px;margin-left:auto;}
+.unav-lpill{display:flex;align-items:center;background:rgba(212,160,23,0.07);border:1px solid rgba(212,160,23,0.18);border-radius:50px;padding:3px;}
+.unav-lb{padding:3px 10px;border-radius:50px;border:none;cursor:pointer;font-size:0.71rem;font-weight:600;font-family:'DM Sans',sans-serif;transition:all 0.18s;background:transparent;color:rgba(255,255,255,0.45);}
+.unav-lb.on{background:#D4A017;color:#0a0a0a;}
+.unav-ham{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:7px;border-radius:7px;border:none;background:transparent;}
+.unav-ham-l{width:20px;height:2px;background:rgba(255,255,255,0.65);border-radius:2px;transition:all 0.22s;}
+.unav-drop{display:none;position:fixed;top:60px;left:0;right:0;background:#100e04;border-bottom:2px solid rgba(212,160,23,0.2);z-index:8999;padding:10px 16px 16px;flex-direction:column;gap:2px;box-shadow:0 12px 40px rgba(0,0,0,0.5);}
+.unav-drop.open{display:flex;}
+.unav-drop .unav-a{font-size:0.92rem;padding:10px 14px;border-radius:10px;}
+.unav-drop .unav-a:hover{background:rgba(212,160,23,0.1);}
+.unav-dlang{display:flex;gap:8px;padding:10px 14px 2px;margin-top:6px;border-top:1px solid rgba(212,160,23,0.1);}
+.unav-dlang button{flex:1;padding:8px;border-radius:8px;border:1px solid rgba(212,160,23,0.2);background:transparent;color:rgba(255,255,255,0.5);font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:600;cursor:pointer;transition:all 0.18s;}
+.unav-dlang button.on{background:#D4A017;color:#0a0a0a;border-color:#D4A017;}
+@media(max-width:860px){.unav-links{display:none;}.unav-ham{display:flex;}.unav{padding:0 16px;}}
+/* ========================= */
 </style>
 </head>
 <body>
 
-<nav id="main-nav">
-  <a href="/" class="nav-logo">Punjabi<span>Finance</span></a>
-  <div class="nav-links">
-    <a href="#education" data-t="nav_learn">Learn</a>
-    <a href="#services" data-t="nav_services">Services</a>
-    <a href="#about" data-t="nav_about">About</a>
-    <a href="#reviews" data-t="nav_reviews">Reviews</a>
-    <a href="calculators.html" style="font-size:0.84rem;color:var(--muted);font-weight:500;transition:color 0.2s;" onmouseenter="this.style.color='var(--gl)'" onmouseleave="this.style.color='var(--muted)'">Calculators</a>
-    <a href="tools.html" style="font-size:0.84rem;color:var(--muted);font-weight:500;transition:color 0.2s;" onmouseenter="this.style.color='var(--gl)'" onmouseleave="this.style.color='var(--muted)'">Immigrant Tools</a>
-    <a href="wealth-path.html" style="font-size:0.84rem;color:var(--muted);font-weight:500;transition:color 0.2s;" onmouseenter="this.style.color='var(--gl)'" onmouseleave="this.style.color='var(--muted)'">$0 to $1M</a>
-    <a href="books.html" style="font-size:0.84rem;color:var(--muted);font-weight:500;transition:color 0.2s;" onmouseenter="this.style.color='var(--gl)'" onmouseleave="this.style.color='var(--muted)'">Books</a>
-    <a href="link.html" class="nav-linktree">🔗 <span data-t="nav_alllinks">All Links</span></a>
-    <div class="lang-pill"><button class="lang-pill-btn active" id="lp-en" onclick="siteSetLang('en')">English</button><button class="lang-pill-btn" id="lp-pa" onclick="siteSetLang('pa')">ਪੰਜਾਬੀ</button></div>
-    <a href="https://wa.me/+16477456850" target="_blank" class="nav-cta" data-t="nav_whatsapp">WhatsApp Us</a>
+<nav class="unav">
+  <a href="index.html" class="unav-logo">Punjabi<span>Finance</span></a>
+  <div class="unav-links">
+      <a href="education.html" class="unav-a">📚 Learn</a>
+      <a href="wealth-path.html" class="unav-a">💰 $0–$1M</a>
+      <a href="books.html" class="unav-a">📖 Books</a>
+      <a href="calculators.html" class="unav-a">🔢 Calculators</a>
+      <a href="index.html#services" class="unav-a cur">🛡️ Services</a>
+      <a href="downloads.html" class="unav-a">📥 Downloads</a>
+      <a href="index.html#about" class="unav-a cur">About</a>
+      <a href="index.html#reviews" class="unav-a cur">★ Reviews</a>
   </div>
-  <div class="lang-pill" id="mobile-lang"><button class="lang-pill-btn active" id="mlp-en" onclick="siteSetLang('en')">English</button><button class="lang-pill-btn" id="mlp-pa" onclick="siteSetLang('pa')">ਪੰਜਾਬੀ</button></div>
-  <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  <div class="unav-right">
+    <div class="unav-lpill">
+      <button class="unav-lb on" id="unav-lb-en" onclick="siteSetLang('en')">EN</button>
+      <button class="unav-lb" id="unav-lb-pa" onclick="siteSetLang('pa')">ਪੰ</button>
+    </div>
+    <button class="unav-ham" id="unav-ham" onclick="unavToggle()" aria-label="Menu">
+      <div class="unav-ham-l" id="unav-l1"></div>
+      <div class="unav-ham-l" id="unav-l2"></div>
+      <div class="unav-ham-l" id="unav-l3"></div>
+    </button>
+  </div>
 </nav>
+<div class="unav-drop" id="unav-drop">
+      <a href="education.html" class="unav-a" onclick="unavClose()">📚 Learn</a>
+      <a href="wealth-path.html" class="unav-a" onclick="unavClose()">💰 $0–$1M</a>
+      <a href="books.html" class="unav-a" onclick="unavClose()">📖 Books</a>
+      <a href="calculators.html" class="unav-a" onclick="unavClose()">🔢 Calculators</a>
+      <a href="index.html#services" class="unav-a" onclick="unavClose()">🛡️ Services</a>
+      <a href="downloads.html" class="unav-a" onclick="unavClose()">📥 Downloads</a>
+      <a href="index.html#about" class="unav-a" onclick="unavClose()">About</a>
+      <a href="index.html#reviews" class="unav-a" onclick="unavClose()">★ Reviews</a>
+  <div class="unav-dlang">
+    <button class="on" id="unav-dlb-en" onclick="siteSetLang('en')">🇨🇦 English</button>
+    <button id="unav-dlb-pa" onclick="siteSetLang('pa')">ਪੰਜਾਬੀ</button>
+  </div>
+</div>
 <div class="mobile-menu" id="mobile-menu">
   <a href="#education" onclick="toggleMenu()" data-t="nav_learn">Learn</a>
   <a href="#services" onclick="toggleMenu()" data-t="nav_services">Services</a>
   <a href="#about" onclick="toggleMenu()" data-t="nav_about">About</a>
   <a href="#reviews" onclick="toggleMenu()" data-t="nav_reviews">Reviews</a>
   <a href="link.html" data-t="nav_alllinks">All Links</a>
-  <a href="https://wa.me/+16477456850" target="_blank" style="color:var(--gl)!important" data-t="nav_whatsapp">WhatsApp Us</a>
+  
 </div>
 
 <!-- HERO -->
@@ -394,7 +438,7 @@ footer{background:#060603;border-top:1px solid var(--border);padding:56px 80px 3
     <div class="footer-col">
       <h4 data-t="footer_services">Services</h4>
       <a href="https://www.ibrinsurance.ca/" target="_blank" data-t="footer_ins">Insurance Website</a>
-      <a href="https://wa.me/+16477456850" target="_blank" data-t="footer_wa">WhatsApp Us</a>
+      
       <a href="link.html" data-t="footer_links">All Links</a>
     </div>
     <div class="footer-col">
@@ -779,6 +823,61 @@ async function sendMsg() {
   }
   isLoading = false;
 }
+</script>
+<script>
+
+// ===== UNIVERSAL NAV JS =====
+(function(){
+  var _lang = localStorage.getItem('pf_lang')||'en';
+  function _applyLang(l){
+    _lang=l;
+    localStorage.setItem('pf_lang',l);
+    ['en','pa'].forEach(function(x){
+      var nb=document.getElementById('unav-lb-'+x);
+      if(nb) nb.classList.toggle('on',x===l);
+      var db=document.getElementById('unav-dlb-'+x);
+      if(db) db.classList.toggle('on',x===l);
+    });
+    document.querySelectorAll('.lang-en').forEach(function(el){el.style.display=l==='en'?'':'none';});
+    document.querySelectorAll('.lang-pa').forEach(function(el){el.style.display=l==='pa'?'':'none';});
+    if(typeof setLang==='function') try{setLang(l,null);}catch(e){}
+    if(typeof learnLang==='function') try{learnLang(l);}catch(e){}
+    if(typeof applyLang==='function') try{applyLang();}catch(e){}
+  }
+  window.siteSetLang=function(l){ _applyLang(l); };
+  var _open=false;
+  window.unavToggle=function(){
+    var d=document.getElementById('unav-drop');
+    _open=!_open;
+    d.classList.toggle('open',_open);
+    var l1=document.getElementById('unav-l1');
+    var l2=document.getElementById('unav-l2');
+    var l3=document.getElementById('unav-l3');
+    if(_open){
+      if(l1)l1.style.transform='translateY(6px) rotate(45deg)';
+      if(l2)l2.style.opacity='0';
+      if(l3)l3.style.transform='translateY(-6px) rotate(-45deg)';
+    } else {
+      if(l1)l1.style.transform='';if(l2)l2.style.opacity='';if(l3)l3.style.transform='';
+    }
+  };
+  window.unavClose=function(){
+    if(!_open) return;
+    _open=false;
+    document.getElementById('unav-drop').classList.remove('open');
+    var l1=document.getElementById('unav-l1');var l2=document.getElementById('unav-l2');var l3=document.getElementById('unav-l3');
+    if(l1)l1.style.transform='';if(l2)l2.style.opacity='';if(l3)l3.style.transform='';
+  };
+  document.addEventListener('click',function(e){
+    if(!_open) return;
+    var d=document.getElementById('unav-drop');
+    var h=document.getElementById('unav-ham');
+    if(d&&!d.contains(e.target)&&h&&!h.contains(e.target)) unavClose();
+  });
+  if(_lang!=='en') setTimeout(function(){_applyLang(_lang);},80);
+})();
+// ============================
+
 </script>
 </body>
 </html>

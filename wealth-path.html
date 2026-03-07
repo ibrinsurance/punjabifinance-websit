@@ -71,24 +71,71 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
 /* TIMELINE */
 .timeline-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(180,120,0,0.08);border:1px solid rgba(180,120,0,0.2);border-radius:50px;padding:4px 12px;font-size:0.72rem;font-weight:600;color:#8B5E00;margin-bottom:14px;}
 @media(max-width:768px){.hero,.levels{padding-left:18px;padding-right:18px;}.level-connector{margin-left:43px;}}
+
+/* ===== UNIVERSAL NAV ===== */
+.unav{position:sticky;top:0;z-index:9000;height:60px;background:#100e04;border-bottom:1px solid rgba(212,160,23,0.15);display:flex;align-items:center;padding:0 28px;gap:0;}
+.unav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#F0C040;text-decoration:none;margin-right:24px;white-space:nowrap;}
+.unav-logo span{color:#E8890C;}
+.unav-links{display:flex;align-items:center;gap:1px;flex:1;}
+.unav-a{padding:5px 11px;border-radius:7px;font-size:0.79rem;font-weight:500;color:rgba(255,255,255,0.55);text-decoration:none;white-space:nowrap;transition:all 0.17s;}
+.unav-a:hover{color:#F0C040;background:rgba(212,160,23,0.09);}
+.unav-a.cur{color:#F0C040;}
+.unav-right{display:flex;align-items:center;gap:8px;margin-left:auto;}
+.unav-lpill{display:flex;align-items:center;background:rgba(212,160,23,0.07);border:1px solid rgba(212,160,23,0.18);border-radius:50px;padding:3px;}
+.unav-lb{padding:3px 10px;border-radius:50px;border:none;cursor:pointer;font-size:0.71rem;font-weight:600;font-family:'DM Sans',sans-serif;transition:all 0.18s;background:transparent;color:rgba(255,255,255,0.45);}
+.unav-lb.on{background:#D4A017;color:#0a0a0a;}
+.unav-ham{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:7px;border-radius:7px;border:none;background:transparent;}
+.unav-ham-l{width:20px;height:2px;background:rgba(255,255,255,0.65);border-radius:2px;transition:all 0.22s;}
+.unav-drop{display:none;position:fixed;top:60px;left:0;right:0;background:#100e04;border-bottom:2px solid rgba(212,160,23,0.2);z-index:8999;padding:10px 16px 16px;flex-direction:column;gap:2px;box-shadow:0 12px 40px rgba(0,0,0,0.5);}
+.unav-drop.open{display:flex;}
+.unav-drop .unav-a{font-size:0.92rem;padding:10px 14px;border-radius:10px;}
+.unav-drop .unav-a:hover{background:rgba(212,160,23,0.1);}
+.unav-dlang{display:flex;gap:8px;padding:10px 14px 2px;margin-top:6px;border-top:1px solid rgba(212,160,23,0.1);}
+.unav-dlang button{flex:1;padding:8px;border-radius:8px;border:1px solid rgba(212,160,23,0.2);background:transparent;color:rgba(255,255,255,0.5);font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:600;cursor:pointer;transition:all 0.18s;}
+.unav-dlang button.on{background:#D4A017;color:#0a0a0a;border-color:#D4A017;}
+@media(max-width:860px){.unav-links{display:none;}.unav-ham{display:flex;}.unav{padding:0 16px;}}
+/* ========================= */
 </style>
 </head>
 <body>
-<nav>
-  <a href="index.html" class="nav-back">← Home</a>
-  <a href="index.html" class="nav-logo">Punjabi<span>Finance</span></a>
-  <div class="nav-links">
-    <a href="education.html" >Learn</a>
-    <a href="calculators.html" >Calculators</a>
-    <a href="tools.html" >Immigrant Tools</a>
-    <a href="downloads.html" >Free Downloads</a>
-    <div class="lang-toggle">
-      <button class="lang-btn active" id="nb-en" onclick="siteSetLang('en')">EN</button>
-      <button class="lang-btn" id="nb-pa" onclick="siteSetLang('pa')">PA</button>
+<nav class="unav">
+  <a href="index.html" class="unav-logo">Punjabi<span>Finance</span></a>
+  <div class="unav-links">
+      <a href="education.html" class="unav-a">📚 Learn</a>
+      <a href="wealth-path.html" class="unav-a cur">💰 $0–$1M</a>
+      <a href="books.html" class="unav-a">📖 Books</a>
+      <a href="calculators.html" class="unav-a">🔢 Calculators</a>
+      <a href="index.html#services" class="unav-a">🛡️ Services</a>
+      <a href="downloads.html" class="unav-a">📥 Downloads</a>
+      <a href="index.html#about" class="unav-a">About</a>
+      <a href="index.html#reviews" class="unav-a">★ Reviews</a>
+  </div>
+  <div class="unav-right">
+    <div class="unav-lpill">
+      <button class="unav-lb on" id="unav-lb-en" onclick="siteSetLang('en')">EN</button>
+      <button class="unav-lb" id="unav-lb-pa" onclick="siteSetLang('pa')">ਪੰ</button>
     </div>
-    <a href="https://wa.me/+16477456850" target="_blank" style="background:var(--gold);color:#0a0a0a;padding:7px 18px;border-radius:50px;font-weight:700;font-size:0.8rem;">WhatsApp</a>
+    <button class="unav-ham" id="unav-ham" onclick="unavToggle()" aria-label="Menu">
+      <div class="unav-ham-l" id="unav-l1"></div>
+      <div class="unav-ham-l" id="unav-l2"></div>
+      <div class="unav-ham-l" id="unav-l3"></div>
+    </button>
   </div>
 </nav>
+<div class="unav-drop" id="unav-drop">
+      <a href="education.html" class="unav-a" onclick="unavClose()">📚 Learn</a>
+      <a href="wealth-path.html" class="unav-a" onclick="unavClose()">💰 $0–$1M</a>
+      <a href="books.html" class="unav-a" onclick="unavClose()">📖 Books</a>
+      <a href="calculators.html" class="unav-a" onclick="unavClose()">🔢 Calculators</a>
+      <a href="index.html#services" class="unav-a" onclick="unavClose()">🛡️ Services</a>
+      <a href="downloads.html" class="unav-a" onclick="unavClose()">📥 Downloads</a>
+      <a href="index.html#about" class="unav-a" onclick="unavClose()">About</a>
+      <a href="index.html#reviews" class="unav-a" onclick="unavClose()">★ Reviews</a>
+  <div class="unav-dlang">
+    <button class="on" id="unav-dlb-en" onclick="siteSetLang('en')">🇨🇦 English</button>
+    <button id="unav-dlb-pa" onclick="siteSetLang('pa')">ਪੰਜਾਬੀ</button>
+  </div>
+</div>
 
 <div class="hero">
   <div class="section-label">💰 Wealth Building Roadmap</div>
@@ -329,53 +376,7 @@ footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 2
 </div><!-- end levels -->
 
 <div style="padding:20px 80px 60px;text-align:center;">
-  <div style="background:linear-gradient(135deg,rgba(37,211,102,0.08),rgba(37,211,102,0.03));border:1px solid rgba(37,211,102,0.2);border-radius:20px;padding:32px;max-width:560px;margin:0 auto;">
-    <div style="font-size:2rem;margin-bottom:10px;">💬</div>
-    <h3 style="font-family:'Playfair Display',serif;font-size:1.25rem;color:#1ebe5a;margin-bottom:8px;">Questions on Your Journey?</h3>
-    <p style="font-size:0.86rem;color:var(--muted);margin-bottom:16px;line-height:1.65;">WhatsApp us directly — in Punjabi or English. We help with insurance, investing, and financial planning questions personally.</p>
-    <a href="https://wa.me/+16477456850" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:11px 26px;border-radius:50px;font-weight:700;font-size:0.9rem;text-decoration:none;">💬 Chat on WhatsApp</a>
-  </div>
-</div>
-
-<footer>
-  <a href="index.html" class="footer-logo">Punjabi<span>Finance</span></a>
-  <div class="footer-links">
-    <a href="index.html">Home</a>
-    <a href="education.html">Learn</a>
-    <a href="calculators.html">Calculators</a>
-    <a href="tools.html">Immigrant Tools</a>
-    <a href="downloads.html">Free Downloads</a>
-    <a href="link.html">All Links</a>
-    <a href="https://wa.me/+16477456850" target="_blank">WhatsApp</a>
-  </div>
-  <p class="footer-disc">Educational content only — not financial, legal, or insurance advice. Always consult a licensed professional before making financial decisions. © 2025 Punjabi Finance</p>
-</footer>
-
-<script>
-
-let sL = localStorage.getItem('pf_lang')||'en';
-function siteSetLang(l){
-  sL=l; localStorage.setItem('pf_lang',l);
-  ['en','pa'].forEach(x=>{
-    const b=document.getElementById('nb-'+x);
-    if(b){b.classList.toggle('active',x===l);}
-  });
-  applyLang();
-}
-function applyLang(){
-  document.querySelectorAll('[data-en]').forEach(el=>{
-    el.textContent = sL==='pa' ? (el.dataset.pa||el.dataset.en) : el.dataset.en;
-  });
-}
-document.addEventListener('DOMContentLoaded',()=>{
-  if(sL==='pa'){
-    const enb=document.getElementById('nb-en');
-    const pab=document.getElementById('nb-pa');
-    if(enb)enb.classList.remove('active');
-    if(pab)pab.classList.add('active');
-  }
-  applyLang();
-});
+  
 
 
 function toggleLevel(n) {
@@ -555,4 +556,232 @@ async function sendMsg() {
   isLoading = false;
 }
 </script>
-</body></html>
+<script>
+
+// ===== UNIVERSAL NAV JS =====
+(function(){
+  var _lang = localStorage.getItem('pf_lang')||'en';
+  function _applyLang(l){
+    _lang=l;
+    localStorage.setItem('pf_lang',l);
+    ['en','pa'].forEach(function(x){
+      var nb=document.getElementById('unav-lb-'+x);
+      if(nb) nb.classList.toggle('on',x===l);
+      var db=document.getElementById('unav-dlb-'+x);
+      if(db) db.classList.toggle('on',x===l);
+    });
+    document.querySelectorAll('.lang-en').forEach(function(el){el.style.display=l==='en'?'':'none';});
+    document.querySelectorAll('.lang-pa').forEach(function(el){el.style.display=l==='pa'?'':'none';});
+    if(typeof setLang==='function') try{setLang(l,null);}catch(e){}
+    if(typeof learnLang==='function') try{learnLang(l);}catch(e){}
+    if(typeof applyLang==='function') try{applyLang();}catch(e){}
+  }
+  window.siteSetLang=function(l){ _applyLang(l); };
+  var _open=false;
+  window.unavToggle=function(){
+    var d=document.getElementById('unav-drop');
+    _open=!_open;
+    d.classList.toggle('open',_open);
+    var l1=document.getElementById('unav-l1');
+    var l2=document.getElementById('unav-l2');
+    var l3=document.getElementById('unav-l3');
+    if(_open){
+      if(l1)l1.style.transform='translateY(6px) rotate(45deg)';
+      if(l2)l2.style.opacity='0';
+      if(l3)l3.style.transform='translateY(-6px) rotate(-45deg)';
+    } else {
+      if(l1)l1.style.transform='';if(l2)l2.style.opacity='';if(l3)l3.style.transform='';
+    }
+  };
+  window.unavClose=function(){
+    if(!_open) return;
+    _open=false;
+    document.getElementById('unav-drop').classList.remove('open');
+    var l1=document.getElementById('unav-l1');var l2=document.getElementById('unav-l2');var l3=document.getElementById('unav-l3');
+    if(l1)l1.style.transform='';if(l2)l2.style.opacity='';if(l3)l3.style.transform='';
+  };
+  document.addEventListener('click',function(e){
+    if(!_open) return;
+    var d=document.getElementById('unav-drop');
+    var h=document.getElementById('unav-ham');
+    if(d&&!d.contains(e.target)&&h&&!h.contains(e.target)) unavClose();
+  });
+  if(_lang!=='en') setTimeout(function(){_applyLang(_lang);},80);
+})();
+// ============================
+
+</script>
+</body></html
+<!-- BONUS: $1M - $5M PLAN -->
+<div style="padding:40px 80px 20px;background:#f7f5f0;">
+  <div style="text-align:center;margin-bottom:32px;">
+    <div style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,rgba(212,160,23,0.12),rgba(232,137,12,0.06));border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:8px 20px;margin-bottom:16px;">
+      <span style="font-size:1.2rem;">👑</span>
+      <span style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#C47008;">Bonus Track</span>
+    </div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:#1a1600;margin-bottom:8px;">$1M → $5M <span style="color:#C4880A;">Wealth Mastery</span></h2>
+    <p style="font-size:0.92rem;color:#7a6a45;max-width:560px;margin:0 auto;line-height:1.75;">You crossed $1M. Most Canadians never get here. Now the game changes — you shift from wealth-building to wealth-optimization, tax mitigation, and legacy creation.</p>
+  </div>
+</div>
+
+<div style="padding:0 80px 80px;background:#f7f5f0;display:flex;flex-direction:column;gap:16px;">
+
+<div class="level" id="lvl7" style="--lc:rgba(212,160,23,0.6);--lh-bg:rgba(212,160,23,0.1);--lh-hover:rgba(212,160,23,0.18);--lb-bg:rgba(212,160,23,0.25);">
+  <div class="level-header" onclick="toggleLevel(7)">
+    <div class="level-badge">🏛️</div>
+    <div class="level-title-wrap">
+      <div class="level-name">Level 7 — The Millionaire Operating System</div>
+      <div class="level-range">Net Worth: $1,000,000 → $1,500,000</div>
+      <div class="level-progress"><div class="level-progress-fill" id="p7" style="width:0%"></div></div>
+    </div>
+    <div class="level-status" style="color:#C4880A;border-color:rgba(212,160,23,0.5);">🏛️ Foundation</div>
+    <div class="level-toggle" id="t7">▼</div>
+  </div>
+  <div class="level-body" id="b7">
+    <p class="level-intro">Crossing $1M changes how you should structure everything — your accounts, your corporation, your taxes, and your protection. This is where strategic infrastructure matters more than saving rate.</p>
+    <div class="timeline-badge">⏱ Timeline: 2–5 years from $1M, depending on income</div>
+    <div class="cl-grid">
+      <div>
+        <div class="cl-label">🏢 Professional Corporation</div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Incorporate if self-employed or professional — trap income inside corporation at 12.2% (ON small biz rate) vs personal marginal rate of 43–53%</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Pay yourself a salary to maximize RRSP contribution room, keep remainder in corp</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Build a corporate investment portfolio (passive income inside corp taxed at ~50.2% in ON — plan exit strategies)</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Add family members as shareholders via family trust for income splitting</span></div>
+      </div>
+      <div>
+        <div class="cl-label">🛡️ Advanced Protection</div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Corporate-owned life insurance: premiums paid with pre-tax corporate dollars — massive efficiency vs personal policy</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Key person insurance if your income drives the business — protects the corporation</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Personal umbrella liability insurance ($5M+) — at this net worth, you're a lawsuit target</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Will updated to include corporate assets, trusts, and business succession plan</span></div>
+      </div>
+      <div>
+        <div class="cl-label">📊 Tax Architecture</div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Hire a tax accountant specializing in high-net-worth individuals — fee pays for itself 10x</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Document all business expenses meticulously — home office, vehicle, equipment, professional development</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Capital gains planning: time realization of gains across tax years to minimize brackets</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Charitable giving strategy: donate appreciated securities instead of cash (no capital gains + full donation credit)</span></div>
+      </div>
+      <div>
+        <div class="cl-label">📈 Investment Upgrade</div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Consider a fee-only financial planner (not commission-based) for comprehensive plan</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">At $500K+ investable assets, negotiate lower fees with your advisor or switch to direct indexing</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Review asset location: hold bonds in RRSP, growth stocks in TFSA, Canadian dividends in taxable accounts</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Consider alternative assets: REITs, private lending, or angel investing (small allocation only)</span></div>
+      </div>
+    </div>
+    <div class="milestone"><span style="font-size:1.4rem;">🏛️</span><div><h4>Level 7 Milestone</h4><p>Corporation set up, tax professional hired, will updated for business assets, investment accounts optimized by tax location</p></div></div>
+  </div>
+</div>
+
+<div class="level" id="lvl8" style="--lc:rgba(212,160,23,0.7);--lh-bg:rgba(212,160,23,0.12);--lh-hover:rgba(212,160,23,0.2);--lb-bg:rgba(212,160,23,0.28);">
+  <div class="level-header" onclick="toggleLevel(8)">
+    <div class="level-badge">🌐</div>
+    <div class="level-title-wrap">
+      <div class="level-name">Level 8 — True Wealth Velocity</div>
+      <div class="level-range">Net Worth: $1,500,000 → $3,000,000</div>
+      <div class="level-progress"><div class="level-progress-fill" id="p8" style="width:0%"></div></div>
+    </div>
+    <div class="level-status" style="color:#C4880A;border-color:rgba(212,160,23,0.5);">🌐 Accelerating</div>
+    <div class="level-toggle" id="t8">▼</div>
+  </div>
+  <div class="level-body" id="b8">
+    <p class="level-intro">At $1.5M+, your investments compound faster than you can spend. The priority shifts to tax minimization, income splitting with family, and building systems that generate wealth without your direct involvement.</p>
+    <div class="timeline-badge">⏱ Timeline: Highly variable — 5–15 years depending on investment returns and income</div>
+    <div class="cl-grid">
+      <div>
+        <div class="cl-label">👨‍👩‍👧 Family Wealth Architecture</div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Family trust established — income split across adult children in lower tax brackets</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Spousal RRSP maximized — equalize retirement income between spouses to reduce combined tax in retirement</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Set up RESP for children/grandchildren and maximize CESG grants ($500/year government match)</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Review life insurance need: at $3M net worth, you may be self-insured — evaluate term renewal carefully</span></div>
+      </div>
+      <div>
+        <div class="cl-label">🏘️ Real Estate Portfolio</div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">If holding investment properties: review using holding company structure to protect assets</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Principal residence exemption planning: ensure primary home qualifies for full exemption on sale</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Consider commercial real estate for higher yield and different depreciation treatment</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Mortgage payoff analysis: at low rates, investing excess cash may beat paying down mortgage</span></div>
+      </div>
+      <div>
+        <div class="cl-label">💡 Income Diversification</div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Passive income now covers 50%+ of your lifestyle expenses — track this metric quarterly</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Canadian eligible dividends taxed at ~24% (ON) vs employment income at 43–53% — optimize dividend income</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">CPP deferral analysis: if net worth sufficient, defer CPP to age 70 for 42% higher monthly benefit</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">OAS planning: clawback starts at $90,997 (2024) income — structure retirement income to minimize clawback</span></div>
+      </div>
+      <div>
+        <div class="cl-label">📚 Education & Advisory</div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Annual meeting with estate lawyer, accountant, and financial planner together (integrated plan)</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Educate your children about money — family financial meetings, estate plans, responsibility</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Consider a Donor-Advised Fund (DAF) for charitable giving with immediate tax receipt and long-term grants</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Review insurance annually: critical illness, disability, and long-term care become more relevant at this stage</span></div>
+      </div>
+    </div>
+    <div class="milestone"><span style="font-size:1.4rem;">🌐</span><div><h4>Level 8 Milestone</h4><p>Family trust active, passive income covers 50%+ of expenses, integrated professional team meeting annually, children financially educated</p></div></div>
+  </div>
+</div>
+
+<div class="level" id="lvl9" style="--lc:rgba(212,160,23,0.85);--lh-bg:linear-gradient(135deg,rgba(212,160,23,0.18),rgba(232,137,12,0.1));--lh-hover:rgba(212,160,23,0.25);--lb-bg:rgba(212,160,23,0.3);">
+  <div class="level-header" onclick="toggleLevel(9)">
+    <div class="level-badge">🌟</div>
+    <div class="level-title-wrap">
+      <div class="level-name">Level 9 — The $5M Threshold: Legacy Mode</div>
+      <div class="level-range">Net Worth: $3,000,000 → $5,000,000+</div>
+      <div class="level-progress"><div class="level-progress-fill" id="p9" style="width:0%"></div></div>
+    </div>
+    <div class="level-status" style="color:#D4A017;border-color:rgba(212,160,23,0.7);background:rgba(212,160,23,0.1);">🌟 Legacy Builder</div>
+    <div class="level-toggle" id="t9">▼</div>
+  </div>
+  <div class="level-body" id="b9">
+    <p class="level-intro" style="font-size:0.92rem;"><strong style="color:#1a1600;">At $3M+ you are among the wealthiest 2% of Canadians.</strong> The focus now is no longer building — it is preserving, transferring, and creating meaning. Your wealth can outlive you by generations if structured correctly.</p>
+    <div class="timeline-badge">⏱ Long-term horizon — this is generational, not personal</div>
+    <div class="cl-grid">
+      <div>
+        <div class="cl-label">🏰 Estate Engineering</div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Comprehensive estate freeze: lock in current value for tax purposes, future growth goes to next generation</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Holding company with multiple share classes — income splitting and capital gains multiplication</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Life insurance as estate equalization tool: ensure children in the business and out-of-business are treated fairly</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Deemed disposition plan: on death, CRA deems all assets sold — model the tax liability and plan insurance coverage</span></div>
+      </div>
+      <div>
+        <div class="cl-label">🎓 Generational Wealth</div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">RESP fully funded for all grandchildren — $500/year per child in CESG grants plus your contributions</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Family mission statement: document your values and vision for how wealth should be used</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Letter of wishes: non-binding document explaining intent behind estate decisions to executors and beneficiaries</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Family governance structure: regular family meetings, financial education for next generation, clear succession plan</span></div>
+      </div>
+      <div>
+        <div class="cl-label">💝 Legacy & Giving</div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Private foundation or Donor-Advised Fund established for systematic charitable giving</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Cause alignment: give during your lifetime to see impact — "memory dividends" from meaningful giving</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Community investment: Punjabi community organizations, scholarships, or causes aligned with your values</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Annual giving strategy reviewed with accountant — maximize donation tax credits at provincial and federal level</span></div>
+      </div>
+      <div>
+        <div class="cl-label">🧘 Lifestyle Architecture</div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Define your "enough" — money beyond a certain point adds little happiness; design for meaning, not accumulation</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Annual family trip or experience — the best ROI at this stage is family memories, not compound interest</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Document your wealth journey — your story inspires others in the community</span></div>
+        <div class="cl-item"><input type="checkbox" class="cl-check"> <span class="cl-text">Model healthy relationship with money for the next generation — wealth without wisdom destroys families</span></div>
+      </div>
+    </div>
+    <div class="milestone" style="background:linear-gradient(135deg,rgba(212,160,23,0.12),rgba(232,137,12,0.06));border-color:rgba(212,160,23,0.4);">
+      <span style="font-size:1.8rem;">🌟</span>
+      <div>
+        <h4 style="color:#8B5E00;">$5M — The Legacy Milestone</h4>
+        <p>Estate plan complete, family trust funded, next generation educated, charitable giving structured, family mission defined. You are building something that will outlast you.</p>
+      </div>
+    </div>
+    <div style="background:linear-gradient(135deg,rgba(212,160,23,0.1),rgba(232,137,12,0.05));border:1px solid rgba(212,160,23,0.25);border-radius:16px;padding:24px;margin-top:24px;text-align:center;">
+      <div style="font-size:1.6rem;margin-bottom:8px;">🙏</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#1a1600;font-weight:700;margin-bottom:8px;">The Punjabi Wealth Legacy</div>
+      <p style="font-size:0.86rem;color:#7a6a45;line-height:1.75;max-width:480px;margin:0 auto;">Our community came to Canada with nothing. Our parents worked double shifts, saved every dollar, and sacrificed to give us a start. Building generational wealth honors that sacrifice — and gives the next generation an even better start.</p>
+    </div>
+  </div>
+</div>
+
+</div>
+<!-- END $1M-$5M BONUS -->
+
+>
