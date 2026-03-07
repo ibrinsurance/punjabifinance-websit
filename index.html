@@ -201,6 +201,17 @@ footer{background:#060603;border-top:1px solid var(--border);padding:56px 80px 3
 .unav-dlang button.on{background:#D4A017;color:#0a0a0a;border-color:#D4A017;}
 @media(max-width:860px){.unav-links{display:none;}.unav-ham{display:flex;}.unav{padding:0 16px;}}
 /* ========================= */
+
+/* Feature cards grid in learn section */
+.feature-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+@media (max-width: 680px) {
+  .feature-cards-grid { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
@@ -211,11 +222,8 @@ footer{background:#060603;border-top:1px solid var(--border);padding:56px 80px 3
       <a href="education.html" class="unav-a">📚 Learn</a>
       <a href="wealth-path.html" class="unav-a">💰 $0–$1M</a>
       <a href="books.html" class="unav-a">📖 Books</a>
-      <a href="calculators.html" class="unav-a">🔢 Calculators</a>
-      <a href="index.html#services" class="unav-a cur">🛡️ Services</a>
-      <a href="downloads.html" class="unav-a">📥 Downloads</a>
+<a href="index.html#services" class="unav-a cur">🛡️ Services</a>
       <a href="index.html#about" class="unav-a cur">About</a>
-      <a href="index.html#reviews" class="unav-a cur">★ Reviews</a>
   </div>
   <div class="unav-right">
     <div class="unav-lpill">
@@ -233,9 +241,7 @@ footer{background:#060603;border-top:1px solid var(--border);padding:56px 80px 3
       <a href="education.html" class="unav-a" onclick="unavClose()">📚 Learn</a>
       <a href="wealth-path.html" class="unav-a" onclick="unavClose()">💰 $0–$1M</a>
       <a href="books.html" class="unav-a" onclick="unavClose()">📖 Books</a>
-      <a href="calculators.html" class="unav-a" onclick="unavClose()">🔢 Calculators</a>
-      <a href="index.html#services" class="unav-a" onclick="unavClose()">🛡️ Services</a>
-      <a href="downloads.html" class="unav-a" onclick="unavClose()">📥 Downloads</a>
+<a href="index.html#services" class="unav-a" onclick="unavClose()">🛡️ Services</a>
       <a href="index.html#about" class="unav-a" onclick="unavClose()">About</a>
       <a href="index.html#reviews" class="unav-a" onclick="unavClose()">★ Reviews</a>
   <div class="unav-dlang">
@@ -253,6 +259,41 @@ footer{background:#060603;border-top:1px solid var(--border);padding:56px 80px 3
 </div>
 
 <!-- HERO -->
+<!-- LEARN / EDUCATION PREVIEW -->
+<section id="education" style="padding-top:64px;padding-bottom:24px;">
+  <div class="edu-header fade-up" style="margin-bottom:28px;">
+    <div>
+      <div class="section-label" data-t="learn_label">Education Hub</div>
+      <h2 class="section-title"><span data-t="learn_title">Learn for</span> <span style="color:var(--gl)" data-t="learn_title_gold">Free</span></h2>
+      <p class="section-sub" data-t="learn_sub">200+ topics across 11 categories — available in English and Punjabi.</p>
+    </div>
+  </div>
+
+  <!-- Feature cards: 0-1M Path + Books -->
+  <div class="feature-cards-grid fade-up">
+    <a href="wealth-path.html" style="display:flex;align-items:center;gap:16px;background:#fff;border:1.5px solid rgba(212,160,23,0.28);border-radius:16px;padding:22px 24px;text-decoration:none;transition:all 0.2s;box-shadow:0 2px 12px rgba(0,0,0,0.05);" onmouseenter="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 28px rgba(212,160,23,0.16)'" onmouseleave="this.style.transform='';this.style.boxShadow='0 2px 12px rgba(0,0,0,0.05)'">
+      <div style="font-size:2rem;flex-shrink:0;line-height:1;">🗺️</div>
+      <div>
+        <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#1a1600;margin-bottom:3px;">$0 → $1M Roadmap</div>
+        <div style="font-size:0.8rem;color:#7a6a45;line-height:1.45;">6 levels. Checklists. Your path to wealth.</div>
+        <div style="font-size:0.76rem;color:var(--gl);font-weight:600;margin-top:5px;">View roadmap →</div>
+      </div>
+    </a>
+    <a href="books.html" style="display:flex;align-items:center;gap:16px;background:#fff;border:1.5px solid rgba(212,160,23,0.28);border-radius:16px;padding:22px 24px;text-decoration:none;transition:all 0.2s;box-shadow:0 2px 12px rgba(0,0,0,0.05);" onmouseenter="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 28px rgba(212,160,23,0.16)'" onmouseleave="this.style.transform='';this.style.boxShadow='0 2px 12px rgba(0,0,0,0.05)'">
+      <div style="font-size:2rem;flex-shrink:0;line-height:1;">📚</div>
+      <div>
+        <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#1a1600;margin-bottom:3px;">Recommended Books</div>
+        <div style="font-size:0.8rem;color:#7a6a45;line-height:1.45;">20 must-read books summarized in plain language.</div>
+        <div style="font-size:0.76rem;color:var(--gl);font-weight:600;margin-top:5px;">View books →</div>
+      </div>
+    </a>
+  </div>
+
+  <div class="edu-grid" id="edu-grid">
+    <!-- cards injected by JS for shuffle -->
+  </div>
+</section>
+
 <section class="hero" id="home">
   <div class="hero-text fade-up">
     <div class="hero-eyebrow" data-t="hero_eyebrow">🇨🇦 Canada's #1 Punjabi Finance Resource</div>
@@ -262,15 +303,9 @@ footer{background:#060603;border-top:1px solid var(--border);padding:56px 80px 3
       <em data-t="hero_h1_line3">In Punjabi.</em>
     </h1>
     <p class="hero-sub" data-t="hero_sub">Free financial education for the Punjabi community — insurance, investing, real estate, taxes and retirement planning, explained simply.</p>
-    <div class="hero-actions">
-      <a href="education.html" class="btn-primary" data-t="btn_browse">Browse 200+ Free Topics →</a>
-      <button onclick="toggleChat()" class="btn-ghost" style="border:1px solid rgba(212,160,23,0.3);color:var(--gl);padding:12px 24px;border-radius:50px;font-weight:500;font-size:0.87rem;background:transparent;cursor:pointer;display:inline-flex;align-items:center;gap:8px;" data-t="btn_ask">💬 Ask a Question</button>
-    </div>
-    <div class="hero-stats">
-      <div><span class="hero-stat-num">175K+</span><span class="hero-stat-label" data-t="stat_followers">Followers</span></div>
-      <div><span class="hero-stat-num">400+</span><span class="hero-stat-label" data-t="stat_reviews">★ Reviews</span></div>
-      <div><span class="hero-stat-num">200+</span><span class="hero-stat-label" data-t="stat_topics">Free Topics</span></div>
-      <div><span class="hero-stat-num">5★</span><span class="hero-stat-label" data-t="stat_rated">Rated</span></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;">
+      <a href="wealth-path.html" class="btn-primary" style="font-size:0.9rem;padding:12px 22px;">🗺️ $0→$1M Wealth Path</a>
+      <a href="books.html" style="display:inline-flex;align-items:center;gap:6px;padding:12px 22px;border:1.5px solid rgba(212,160,23,0.4);border-radius:10px;font-size:0.9rem;color:#1a1600;font-weight:600;text-decoration:none;background:rgba(255,255,255,0.7);">📚 Recommended Books</a>
     </div>
   </div>
   <div class="hero-visual">
@@ -288,6 +323,8 @@ footer{background:#060603;border-top:1px solid var(--border);padding:56px 80px 3
   </div>
 </section>
 
+
+
 <!-- TIP OF DAY -->
 <div id="tip-section">
   <div class="tip-inner">
@@ -299,21 +336,6 @@ footer{background:#060603;border-top:1px solid var(--border);padding:56px 80px 3
     </div>
   </div>
 </div>
-
-<!-- LEARN / EDUCATION PREVIEW -->
-<section id="education">
-  <div class="edu-header fade-up">
-    <div>
-      <div class="section-label" data-t="learn_label">Education Hub</div>
-      <h2 class="section-title"><span data-t="learn_title">Learn for</span> <span style="color:var(--gl)" data-t="learn_title_gold">Free</span></h2>
-      <p class="section-sub" data-t="learn_sub">200+ topics across 11 categories — available in English and Punjabi.</p>
-    </div>
-    <a href="education.html" class="btn-primary" data-t="btn_browse_all">Browse All 200+ Topics →</a>
-  </div>
-  <div class="edu-grid" id="edu-grid">
-    <!-- cards injected by JS for shuffle -->
-  </div>
-</section>
 
 <!-- SERVICES -->
 <section id="services">
@@ -378,38 +400,10 @@ footer{background:#060603;border-top:1px solid var(--border);padding:56px 80px 3
     <p class="about-text lead" data-t="about_p2">From Super Visa insurance for your parents to building a retirement plan — we explain it simply, in the language our community speaks.</p>
     <div class="about-highlights">
       <div class="highlight"><div class="highlight-num">175K+</div><div class="highlight-label" data-t="hl_followers">Community followers</div></div>
-      <div class="highlight"><div class="highlight-num">400+</div><div class="highlight-label" data-t="hl_reviews">Five-star reviews</div></div>
+
       <div class="highlight"><div class="highlight-num">200+</div><div class="highlight-label" data-t="hl_topics">Free education topics</div></div>
       <div class="highlight"><div class="highlight-num">5+</div><div class="highlight-label" data-t="hl_years">Years serving community</div></div>
     </div>
-  </div>
-</section>
-
-<!-- REVIEWS -->
-<section id="reviews">
-  <div class="fade-up">
-    <div class="section-label" data-t="reviews_label">Community Reviews</div>
-    <h2 class="section-title"><span data-t="reviews_title">What People</span> <span style="color:var(--gl)" data-t="reviews_title_gold">Say</span></h2>
-  </div>
-  <div class="reviews-grid">
-    <div class="review-card fade-up">
-      <div class="stars">★★★★★</div>
-      <p class="review-text" data-t="review1">"Helped my family understand Super Visa insurance in minutes. Finally someone explaining it in a way we could all understand. Highly recommend!"</p>
-      <div class="reviewer"><div class="reviewer-avatar">GS</div><div><div class="reviewer-name" data-t="reviewer1_name">Gurpreet S.</div><div class="reviewer-loc">Brampton, ON</div></div></div>
-    </div>
-    <div class="review-card fade-up">
-      <div class="stars">★★★★★</div>
-      <p class="review-text" data-t="review2">"I've been following for 2 years. The TikToks are short, educational and always relevant. Got my whole family investing through TFSA."</p>
-      <div class="reviewer"><div class="reviewer-avatar">MK</div><div><div class="reviewer-name" data-t="reviewer2_name">Manpreet K.</div><div class="reviewer-loc">Surrey, BC</div></div></div>
-    </div>
-    <div class="review-card fade-up">
-      <div class="stars">★★★★★</div>
-      <p class="review-text" data-t="review3">"As a newcomer, I had no idea how Canadian finances worked. This channel was my go-to for everything from credit scores to taxes. Absolute lifesaver."</p>
-      <div class="reviewer"><div class="reviewer-avatar">HP</div><div><div class="reviewer-name" data-t="reviewer3_name">Harjot P.</div><div class="reviewer-loc">Calgary, AB</div></div></div>
-    </div>
-  </div>
-  <div style="text-align:center;margin-top:36px;" class="fade-up">
-    <a href="https://share.google/zieVmAWkyRNTQGglm" target="_blank" class="btn-ghost" data-t="btn_reviews">Read All 400+ Google Reviews →</a>
   </div>
 </section>
 
@@ -689,195 +683,5 @@ document.querySelectorAll(".fade-up").forEach((el, i) => {
 renderEduCards();
 </script>
 
-<!-- AI CHATBOT WIDGET -->
-<div id="chat-widget" style="position:fixed;bottom:24px;right:24px;z-index:9999;font-family:'DM Sans',sans-serif;">
-  <!-- Toggle Button -->
-  <div id="chat-toggle" onclick="toggleChat()" style="width:58px;height:58px;background:linear-gradient(135deg,#D4A017,#E8890C);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 20px rgba(212,160,23,0.4);transition:transform 0.2s;" onmouseenter="this.style.transform='scale(1.1)'" onmouseleave="this.style.transform='scale(1)'">
-    <span id="chat-icon" style="font-size:1.4rem;">💬</span>
-  </div>
-  <!-- Chat Panel -->
-  <div id="chat-panel" style="display:none;position:absolute;bottom:70px;right:0;width:360px;max-height:520px;background:#fff;border-radius:20px;box-shadow:0 8px 48px rgba(0,0,0,0.2);overflow:hidden;flex-direction:column;">
-    <!-- Header -->
-    <div style="background:linear-gradient(135deg,#D4A017,#E8890C);padding:16px 18px;display:flex;align-items:center;gap:10px;">
-      <div style="width:36px;height:36px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">🤖</div>
-      <div style="flex:1;">
-        <div style="font-size:0.9rem;font-weight:700;color:#fff;">Punjabi Finance AI</div>
-        <div style="font-size:0.7rem;color:rgba(255,255,255,0.8);" id="chat-status">Ask me anything about finance in Canada</div>
-      </div>
-      <div onclick="toggleChat()" style="cursor:pointer;color:rgba(255,255,255,0.8);font-size:1.1rem;line-height:1;">✕</div>
-    </div>
-    <!-- Messages -->
-    <div id="chat-messages" style="flex:1;overflow-y:auto;padding:14px;max-height:340px;display:flex;flex-direction:column;gap:10px;">
-      <div class="chat-msg bot" style="background:#f5f3ee;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:0.84rem;color:#2a2000;line-height:1.6;max-width:85%;">
-        <span id="chat-welcome">👋 Sat Sri Akal! I'm the Punjabi Finance AI.<br><br>Ask me anything about:<br>• Life & Super Visa insurance<br>• TFSA, RRSP, investing<br>• Real estate in Canada<br>• Taxes & retirement<br><br>I answer in English or Punjabi! 🇨🇦</span>
-      </div>
-    </div>
-    <!-- Quick Questions -->
-    <div id="quick-qs" style="padding:0 14px 10px;display:flex;flex-wrap:wrap;gap:6px;">
-      <button onclick="sendQuick('How much life insurance do I need?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">Life insurance?</button>
-      <button onclick="sendQuick('What is Super Visa insurance?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">Super Visa?</button>
-      <button onclick="sendQuick('How do I start investing in Canada?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">How to invest?</button>
-      <button onclick="sendQuick('TFSA vs RRSP — which should I use?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">TFSA vs RRSP?</button>
-    </div>
-    <!-- Input -->
-    <div style="padding:10px 14px 14px;border-top:1px solid rgba(0,0,0,0.07);display:flex;gap:8px;align-items:flex-end;">
-      <input id="chat-input" type="text" placeholder="Ask a finance question..." style="flex:1;padding:10px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:50px;font-size:0.84rem;font-family:'DM Sans',sans-serif;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='#D4A017'" onblur="this.style.borderColor='rgba(0,0,0,0.12)'" onkeypress="if(event.key==='Enter')sendMsg()">
-      <button onclick="sendMsg()" id="send-btn" style="width:38px;height:38px;background:linear-gradient(135deg,#D4A017,#E8890C);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;transition:transform 0.2s;" onmouseenter="this.style.transform='scale(1.1)'" onmouseleave="this.style.transform='scale(1)'">→</button>
-    </div>
-  </div>
-</div>
-
-<script>
-const CHAT_SYSTEM = `You are the Punjabi Finance AI assistant — a helpful, friendly financial education bot for the Punjabi community in Canada.
-
-Your role:
-- Provide free financial education about Canadian personal finance
-- Topics: life insurance, Super Visa insurance, critical illness, disability, TFSA, RRSP, FHSA, RESP, investing, real estate, mortgages, taxes, retirement, newcomer finance
-- Always remind users to consult a licensed professional for personal advice
-- Be warm and community-focused — this is for the Punjabi diaspora in Canada
-- Respond in the same language the user writes in (English or Punjabi)
-- Keep answers concise and practical — max 150 words unless asked to elaborate
-- Reference relevant tools on the site: calculators.html, tools.html, education.html
-- For insurance questions, suggest they WhatsApp us at +1 647-745-6850 for a personal quote
-- Never give specific investment recommendations or specific insurance quotes
-- Always end insurance/investment answers with a soft call to action to WhatsApp or visit ibrinsurance.ca
-
-Personality: Knowledgeable, warm, like a financially savvy older sibling or family friend who happens to know a lot about Canadian finance.`;
-
-let chatOpen = false;
-let isLoading = false;
-const chatHistory = [];
-
-function toggleChat() {
-  chatOpen = !chatOpen;
-  const panel = document.getElementById('chat-panel');
-  panel.style.display = chatOpen ? 'flex' : 'none';
-  panel.style.flexDirection = 'column';
-  document.getElementById('chat-icon').textContent = chatOpen ? '✕' : '💬';
-  if(chatOpen) document.getElementById('chat-input').focus();
-}
-
-function sendQuick(msg) {
-  document.getElementById('quick-qs').style.display = 'none';
-  document.getElementById('chat-input').value = msg;
-  sendMsg();
-}
-
-function addMsg(text, role) {
-  const msgs = document.getElementById('chat-messages');
-  const div = document.createElement('div');
-  div.style.cssText = role === 'user'
-    ? 'background:linear-gradient(135deg,#D4A017,#E8890C);color:#0a0a0a;border-radius:14px 14px 4px 14px;padding:10px 14px;font-size:0.84rem;line-height:1.6;max-width:80%;margin-left:auto;'
-    : 'background:#f5f3ee;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:0.84rem;color:#2a2000;line-height:1.6;max-width:88%;';
-  div.textContent = text;
-  msgs.appendChild(div);
-  msgs.scrollTop = msgs.scrollHeight;
-  return div;
-}
-
-function addTyping() {
-  const msgs = document.getElementById('chat-messages');
-  const div = document.createElement('div');
-  div.id = 'typing-indicator';
-  div.style.cssText = 'background:#f5f3ee;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:0.84rem;color:#9A8A6A;max-width:88%;';
-  div.textContent = '...thinking';
-  msgs.appendChild(div);
-  msgs.scrollTop = msgs.scrollHeight;
-}
-
-async function sendMsg() {
-  if(isLoading) return;
-  const input = document.getElementById('chat-input');
-  const msg = input.value.trim();
-  if(!msg) return;
-  input.value = '';
-  
-  addMsg(msg, 'user');
-  chatHistory.push({role:'user', content: msg});
-  
-  document.getElementById('quick-qs').style.display = 'none';
-  isLoading = true;
-  document.getElementById('chat-status').textContent = 'Thinking...';
-  addTyping();
-  
-  try {
-    const res = await fetch('/api/chat', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({messages: chatHistory})
-    });
-    const data = await res.json();
-    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again or WhatsApp us directly.";
-    
-    const typing = document.getElementById('typing-indicator');
-    if(typing) typing.remove();
-    
-    addMsg(reply, 'bot');
-    chatHistory.push({role:'assistant', content: reply});
-    document.getElementById('chat-status').textContent = 'Ask me anything about finance';
-  } catch(err) {
-    const typing = document.getElementById('typing-indicator');
-    if(typing) typing.remove();
-    addMsg('Sorry, something went wrong. Please WhatsApp us directly at +1 647-745-6850 or visit ibrinsurance.ca', 'bot');
-    document.getElementById('chat-status').textContent = 'Ask me anything about finance';
-  }
-  isLoading = false;
-}
-</script>
-<script>
-
-// ===== UNIVERSAL NAV JS =====
-(function(){
-  var _lang = localStorage.getItem('pf_lang')||'en';
-  function _applyLang(l){
-    _lang=l;
-    localStorage.setItem('pf_lang',l);
-    ['en','pa'].forEach(function(x){
-      var nb=document.getElementById('unav-lb-'+x);
-      if(nb) nb.classList.toggle('on',x===l);
-      var db=document.getElementById('unav-dlb-'+x);
-      if(db) db.classList.toggle('on',x===l);
-    });
-    document.querySelectorAll('.lang-en,.lng-en').forEach(function(el){el.style.display=l==='en'?'':'none';});
-    document.querySelectorAll('.lang-pa,.lng-pa').forEach(function(el){el.style.display=l==='pa'?'':'none';});
-    if(typeof setLang==='function') try{setLang(l,null);}catch(e){}
-    if(typeof learnLang==='function') try{learnLang(l);}catch(e){}
-    if(typeof applyLang==='function') try{applyLang();}catch(e){}
-  }
-  window.siteSetLang=function(l){ _applyLang(l); };
-  var _open=false;
-  window.unavToggle=function(){
-    var d=document.getElementById('unav-drop');
-    _open=!_open;
-    d.classList.toggle('open',_open);
-    var l1=document.getElementById('unav-l1');
-    var l2=document.getElementById('unav-l2');
-    var l3=document.getElementById('unav-l3');
-    if(_open){
-      if(l1)l1.style.transform='translateY(6px) rotate(45deg)';
-      if(l2)l2.style.opacity='0';
-      if(l3)l3.style.transform='translateY(-6px) rotate(-45deg)';
-    } else {
-      if(l1)l1.style.transform='';if(l2)l2.style.opacity='';if(l3)l3.style.transform='';
-    }
-  };
-  window.unavClose=function(){
-    if(!_open) return;
-    _open=false;
-    document.getElementById('unav-drop').classList.remove('open');
-    var l1=document.getElementById('unav-l1');var l2=document.getElementById('unav-l2');var l3=document.getElementById('unav-l3');
-    if(l1)l1.style.transform='';if(l2)l2.style.opacity='';if(l3)l3.style.transform='';
-  };
-  document.addEventListener('click',function(e){
-    if(!_open) return;
-    var d=document.getElementById('unav-drop');
-    var h=document.getElementById('unav-ham');
-    if(d&&!d.contains(e.target)&&h&&!h.contains(e.target)) unavClose();
-  });
-  if(_lang!=='en') setTimeout(function(){_applyLang(_lang);},80);
-})();
-// ============================
-
-</script>
 </body>
 </html>
