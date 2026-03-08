@@ -88,7 +88,6 @@
   <p class="lead">Buying a condo before it's built can mean big gains — or expensive lessons. Here's the full picture.</p>
   <div class="sec" id="what"><h2><span>🏗️</span> What Is Pre-Construction?</h2><p>Pre-construction (pre-con) means buying a condo or house from a developer before construction is complete — sometimes before the foundation is even poured. You pay a deposit today (typically 15-25% over several years) and receive the completed unit 2-5 years later.</p></div><div class="div"></div><div class="sec" id="upside"><h2><span>📈</span> The Appeal</h2><p><strong>Lower entry price:</strong> Developers offer early-purchase discounts to secure financing. You lock in today's price for a unit delivered in the future.</p><p><strong>Deposit leverage:</strong> If you put 20% down on a $600,000 unit and it is worth $750,000 on completion, you have made $150,000 on a $120,000 deposit — a 125% return.</p><p><strong>Assignment profits:</strong> Many investors never take possession — they assign (sell) their purchase contract to another buyer before closing for a profit, if the market has risen.</p></div><div class="div"></div><div class="sec" id="risks"><h2><span>⚠️</span> The Real Risks</h2><p><strong>Occupancy fees:</strong> When construction completes, you often can't move in immediately — you pay occupancy fees to the developer (similar to rent) until the unit is registered and you can officially close. These can last months and aren't building equity.</p><p><strong>Cost increases:</strong> Some developer contracts allow levies and fees to increase. Your final closing cost can be significantly higher than your original purchase price.</p><p><strong>Project cancellations:</strong> Developers can cancel projects if they don't achieve enough pre-sales. You get your deposit back — but you've lost years of potential investment growth elsewhere.</p><p><strong>Valuation risk:</strong> The pre-con premium assumes prices will rise. If the market falls between purchase and closing, your unit may be worth less than you paid — but you're still legally obligated to close.</p></div><div class="div"></div><div class="sec" id="protect"><h2><span>🛡️</span> Protecting Yourself</h2><p>Use a real estate lawyer (mandatory for pre-con). Review the purchase agreement carefully — especially occupancy fee caps, allowed levy increases, and cancellation provisions. Research the developer's track record. Check Tarion warranty coverage (Ontario's new home warranty program). Consider whether you would be comfortable holding the unit long-term if you cannot assign or sell at a profit.</p></div>
   <div class="div"></div>
-  <div class="cta"><h3>Have a Question?</h3><p>Message us on WhatsApp — in Punjabi or English. We answer insurance and financial questions personally.</p></div>
 </main>
 </div>
 <footer>
@@ -150,11 +149,7 @@ Your role:
 - Be warm and community-focused — this is for the Punjabi diaspora in Canada
 - Respond in the same language the user writes in (English or Punjabi)
 - Keep answers concise and practical — max 150 words unless asked to elaborate
-- Reference relevant tools on the site: calculators.html, tools.html, education.html
-- For insurance questions, suggest they WhatsApp us at +1 647-745-6850 for a personal quote
-- Never give specific investment recommendations or specific insurance quotes
-- Always end insurance/investment answers with a soft call to action to WhatsApp or visit ibrinsurance.ca
-
+- Reference relevant tools on the site: calculators.html, tools.html, education.html- Never give specific investment recommendations or specific insurance quotes
 Personality: Knowledgeable, warm, like a financially savvy older sibling or family friend who happens to know a lot about Canadian finance.`;
 
 let chatOpen = false;
@@ -220,7 +215,7 @@ async function sendMsg() {
       body: JSON.stringify({messages: chatHistory})
     });
     const data = await res.json();
-    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again or WhatsApp us directly.";
+    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again ";
     
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
@@ -231,7 +226,7 @@ async function sendMsg() {
   } catch(err) {
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
-    addMsg('Sorry, something went wrong. Please WhatsApp us directly at +1 647-745-6850 or visit ibrinsurance.ca', 'bot');
+    addMsg('Sorry, something went wrong. ', 'bot');
     document.getElementById('chat-status').textContent = 'Ask me anything about finance';
   }
   isLoading = false;

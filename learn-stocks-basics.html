@@ -88,7 +88,6 @@
   <p class="lead">Stocks are ownership in real companies. Here's what you actually need to understand before buying your first share.</p>
   <div class="sec" id="what"><h2><span>📊</span> What Is a Stock?</h2><p>A stock (also called a share or equity) represents partial ownership in a company. If a company has issued 1 million shares and you own 1,000, you own 0.1% of that company — entitled to 0.1% of any dividends paid and 0.1% of assets if the company is ever sold.</p><p>Companies sell shares to raise money for growth. Investors buy shares hoping the company will grow and their shares will increase in value.</p></div><div class="div"></div><div class="sec" id="price"><h2><span>💰</span> How Stock Prices Work</h2><p>Stock prices change every second based on supply and demand. If more people want to buy than sell, the price goes up. If more people want to sell, the price goes down.</p><p>Prices are ultimately driven by expectations of future company earnings. Strong profits or a promising outlook push prices up. Bad news pushes prices down.</p></div><div class="div"></div><div class="sec" id="returns"><h2><span>📈</span> How You Make Money from Stocks</h2><p><strong>Capital appreciation:</strong> Buy at $20, sell at $35 — you've made $15 per share.</p><p><strong>Dividends:</strong> Many established companies pay regular cash dividends to shareholders. Canadian bank stocks pay quarterly dividends yielding 3-5% annually — paid whether the stock price goes up or down, as long as the company remains profitable.</p></div><div class="div"></div><div class="sec" id="risk"><h2><span>⚠️</span> Understanding Stock Risk</h2><p>Stocks can lose value — sometimes dramatically. Individual company stocks can fall 50-90% if the business struggles. Even strong companies can see their stock cut in half during recessions or market panics.</p><p><strong>How to manage risk:</strong> Diversify across many companies and sectors (or buy index ETFs). Invest for the long term (10+ years). Never invest money you will need in the next 1-3 years.</p></div><div class="div"></div><div class="sec" id="start"><h2><span>🚀</span> How to Start Investing in Canada</h2><p>1. Open a TFSA or RRSP at Wealthsimple Trade or Questrade.<br>2. Start with a simple diversified ETF rather than individual stocks.<br>3. Invest consistently — even $100/month compounds significantly over decades.<br>4. Do not try to time the market. Invest regularly regardless of market conditions.</p></div>
   <div class="div"></div>
-  <div class="cta"><h3>Have a Question?</h3><p>Message us on WhatsApp — in Punjabi or English. We answer insurance and financial questions personally.</p></div>
 </main>
 </div>
 <footer>
@@ -150,11 +149,7 @@ Your role:
 - Be warm and community-focused — this is for the Punjabi diaspora in Canada
 - Respond in the same language the user writes in (English or Punjabi)
 - Keep answers concise and practical — max 150 words unless asked to elaborate
-- Reference relevant tools on the site: calculators.html, tools.html, education.html
-- For insurance questions, suggest they WhatsApp us at +1 647-745-6850 for a personal quote
-- Never give specific investment recommendations or specific insurance quotes
-- Always end insurance/investment answers with a soft call to action to WhatsApp or visit ibrinsurance.ca
-
+- Reference relevant tools on the site: calculators.html, tools.html, education.html- Never give specific investment recommendations or specific insurance quotes
 Personality: Knowledgeable, warm, like a financially savvy older sibling or family friend who happens to know a lot about Canadian finance.`;
 
 let chatOpen = false;
@@ -220,7 +215,7 @@ async function sendMsg() {
       body: JSON.stringify({messages: chatHistory})
     });
     const data = await res.json();
-    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again or WhatsApp us directly.";
+    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again ";
     
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
@@ -231,7 +226,7 @@ async function sendMsg() {
   } catch(err) {
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
-    addMsg('Sorry, something went wrong. Please WhatsApp us directly at +1 647-745-6850 or visit ibrinsurance.ca', 'bot');
+    addMsg('Sorry, something went wrong. ', 'bot');
     document.getElementById('chat-status').textContent = 'Ask me anything about finance';
   }
   isLoading = false;

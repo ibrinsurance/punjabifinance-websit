@@ -84,11 +84,9 @@
 <main>
   <div class="breadcrumb"><a href="index.html">Home</a> › <a href="education.html">Learn</a> › <span style="color:var(--off);">Penny Stocks</span></div>
   <div class="tag">💹 Stocks</div>
-  <h1>Penny Stocks: High Risk, Low Odds</h1>
-  <p class="lead">Penny stocks promise big gains but deliver losses for most investors. Here's the honest truth before you consider them.</p>
-  <div class="sec" id="what"><h2><span>💸</span> What Are Penny Stocks?</h2><p>Penny stocks are shares of small companies trading at very low prices — typically under $5 per share in Canada. They're often found on the TSX Venture Exchange (TSX-V) or over-the-counter markets rather than the main TSX. Many are mining exploration companies, cannabis startups, or early-stage tech firms with no revenue.</p></div><div class="div"></div><div class="sec" id="risks"><h2><span>⚠️</span> Why Penny Stocks Are Dangerous</h2><p><strong>Manipulation:</strong> Penny stocks are the most common vehicle for pump-and-dump schemes. Promoters buy shares cheaply, hype the stock on social media or newsletters, and sell when unsuspecting investors push the price up — leaving latecomers with worthless shares.</p><p><strong>No liquidity:</strong> Penny stocks often have very few buyers. When you want to sell, you may not find a buyer at any reasonable price.</p><p><strong>No transparency:</strong> Small companies have minimal reporting requirements. You often cannot verify their financial health.</p><p><strong>Wide bid-ask spreads:</strong> You might pay $0.50 per share but can only sell for $0.42 — an immediate 16% loss just from the spread.</p></div><div class="div"></div><div class="sec" id="reality"><h2><span>📊</span> The Statistics</h2><p>Studies consistently show the vast majority of penny stocks decline to near-zero over time. The small percentage that succeed are nearly impossible to identify in advance. Even professional fund managers rarely beat the market — individual retail investors face near-impossible odds picking winning penny stocks.</p></div><div class="div"></div><div class="sec" id="better"><h2><span>✅</span> Better Alternatives</h2><p>If you want high growth potential with reasonable risk: consider growth-oriented ETFs, sector ETFs in high-growth areas (tech, clean energy), or large-cap growth stocks with real revenues and transparent financials.</p><p>If you still want to speculate with a small amount: limit it to money you can afford to lose completely — never more than 5% of your portfolio.</p></div>
-  <div class="div"></div>
-  <div class="cta"><h3>Have a Question?</h3><p>Message us on WhatsApp — in Punjabi or English. We answer insurance and financial questions personally.</p></div>
+  <h1>Penny Stocks: The Honest Truth Before You Buy Any</h1>
+  <p class="lead">Social media makes penny stocks look like lottery tickets to wealth. The statistics tell a different story entirely.</p>
+  <div class="sec" id="what"><h2><span>💸</span> What Are Penny Stocks?</h2><p>Penny stocks are shares of small companies trading at very low prices — typically below $5 per share in Canada. Most are found on the TSX Venture Exchange (TSX-V), the NEO Exchange, or over-the-counter markets, rather than the main TSX. Common sectors: junior mining and exploration, cannabis, early-stage tech, oil and gas juniors, and development-stage companies with no revenue.</p><p>The low price is not a discount — it reflects the market's assessment that these companies have very little proven value. A $0.20 stock is not '95% off' a $4 stock. It's priced at $0.20 because that's what buyers believe it's worth.</p></div><div class="div"></div><div class="sec" id="manipulation"><h2><span>⚠️</span> The Pump and Dump Problem</h2><p>Penny stocks are the preferred vehicle for market manipulation because their low trading volume makes them easy to manipulate. The pump-and-dump scheme:</p><p>1. Promoters accumulate a large position in a penny stock at $0.05-$0.10/share.<br>2. They blast promotional material through newsletters, social media, Reddit, Discord, and cold calls claiming the stock is 'about to explode.'<br>3. Retail investors buy in, driving the price to $0.50-$2.00.<br>4. Promoters sell their entire position at the elevated price.<br>5. The stock collapses back to near zero — sometimes within hours.<br>6. Retail investors are left holding worthless shares.</p><p>These schemes are illegal (securities fraud) but extremely common and difficult to prosecute, especially when operated from offshore jurisdictions.</p></div><div class="div"></div><div class="sec" id="stats"><h2><span>📊</span> The Statistics Are Brutal</h2><p>Studies of penny stock performance consistently find: the vast majority of penny stocks lose more than 90% of their value within 3 years of listing; promotionally traded stocks almost universally collapse after the promotion ends; the small number that succeed are nearly impossible to identify in advance even for professional analysts with full access to company management. The expected value of a typical penny stock investment is negative — you're more likely to lose money than gain it.</p></div><div class="div"></div><div class="sec" id="better"><h2><span>✅</span> If You Want High-Growth Exposure</h2><p>If your goal is high growth potential: there are far better vehicles than penny stocks. Small-cap ETFs give you diversified exposure to hundreds of small companies without the manipulation risk of individual penny stocks. Growth-oriented sector ETFs (technology, clean energy, healthcare) provide access to high-growth industries with real revenues and analyst coverage. Individual small-cap stocks on the main TSX are subject to more stringent reporting requirements than TSX-V listings.</p><p>If you still want to speculate with penny stocks after understanding the risks: limit your total penny stock exposure to money you can afford to lose completely — a maximum of 1-5% of your total portfolio. Never borrow money to invest in penny stocks. Never invest money you need for rent, food, or emergency savings.</p></div>
 </main>
 </div>
 <footer>
@@ -150,11 +148,7 @@ Your role:
 - Be warm and community-focused — this is for the Punjabi diaspora in Canada
 - Respond in the same language the user writes in (English or Punjabi)
 - Keep answers concise and practical — max 150 words unless asked to elaborate
-- Reference relevant tools on the site: calculators.html, tools.html, education.html
-- For insurance questions, suggest they WhatsApp us at +1 647-745-6850 for a personal quote
-- Never give specific investment recommendations or specific insurance quotes
-- Always end insurance/investment answers with a soft call to action to WhatsApp or visit ibrinsurance.ca
-
+- Reference relevant tools on the site: calculators.html, tools.html, education.html- Never give specific investment recommendations or specific insurance quotes
 Personality: Knowledgeable, warm, like a financially savvy older sibling or family friend who happens to know a lot about Canadian finance.`;
 
 let chatOpen = false;
@@ -220,7 +214,7 @@ async function sendMsg() {
       body: JSON.stringify({messages: chatHistory})
     });
     const data = await res.json();
-    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again or WhatsApp us directly.";
+    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again ";
     
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
@@ -231,7 +225,7 @@ async function sendMsg() {
   } catch(err) {
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
-    addMsg('Sorry, something went wrong. Please WhatsApp us directly at +1 647-745-6850 or visit ibrinsurance.ca', 'bot');
+    addMsg('Sorry, something went wrong. ', 'bot');
     document.getElementById('chat-status').textContent = 'Ask me anything about finance';
   }
   isLoading = false;

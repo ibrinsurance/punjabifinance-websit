@@ -84,11 +84,9 @@
 <main>
   <div class="breadcrumb"><a href="index.html">Home</a> › <a href="education.html">Learn</a> › <span style="color:var(--off);">Short Selling</span></div>
   <div class="tag">💹 Stocks</div>
-  <h1>Short Selling: Profiting When Stocks Fall</h1>
-  <p class="lead">Short selling lets you bet against a stock — but it's complex and risky. Here's how it works.</p>
-  <div class="sec" id="what"><h2><span>📉</span> What Is Short Selling?</h2><p>In a normal stock purchase (going long), you buy shares hoping they'll rise. Short selling is the opposite — you borrow shares, sell them immediately, wait for the price to fall, then buy them back at the lower price and return them to the lender. The difference is your profit.</p><p><strong>Example:</strong> A stock trades at $100. You borrow and sell 100 shares ($10,000). The price falls to $60. You buy 100 shares for $6,000 and return them — your profit is $4,000 (minus fees and borrowing interest).</p></div><div class="div"></div><div class="sec" id="risk"><h2><span>⚠️</span> Why Short Selling Is Extremely Risky</h2><p><strong>Unlimited loss potential:</strong> When you buy a stock, the most you can lose is 100% (the stock goes to zero). When you short a stock, your potential loss is theoretically unlimited — the stock can rise 200%, 500%, 1000%, and you must buy it back at any price.</p><p><strong>Borrowing costs:</strong> You pay daily interest to borrow shares. If the trade takes longer than expected, costs accumulate.</p><p><strong>Short squeezes:</strong> If a heavily shorted stock rises sharply, short sellers scramble to buy shares to close positions, driving the price even higher — causing catastrophic losses. GameStop in 2021 is the most famous recent example.</p></div><div class="div"></div><div class="sec" id="legal"><h2><span>📋</span> Short Selling in Canada</h2><p>Short selling is legal in Canada and available to retail investors through margin accounts at brokerages like Questrade. However, not all stocks are shortable, and it requires a margin account — not a standard TFSA or RRSP.</p></div><div class="div"></div><div class="sec" id="alternatives"><h2><span>✅</span> Simpler Alternatives for Bearish Views</h2><p>If you think a sector or stock will fall, consider: selling your existing position, reducing exposure, or buying an inverse ETF (which rises when the index falls). These are less complex and have capped downside compared to direct short selling. For most retail investors, short selling is best avoided.</p></div>
-  <div class="div"></div>
-  <div class="cta"><h3>Have a Question?</h3><p>Message us on WhatsApp — in Punjabi or English. We answer insurance and financial questions personally.</p></div>
+  <h1>Short Selling: Profiting When Stocks Fall — And Why It's Risky</h1>
+  <p class="lead">Short selling lets you bet against a stock — but the risk is theoretically unlimited. Here's how it works and what every investor should understand.</p>
+  <div class="sec" id="what"><h2><span>📉</span> What Is Short Selling?</h2><p>In a conventional stock purchase (going 'long'), you buy shares, hope they rise, and profit from the increase. Short selling reverses this: you borrow shares from your broker, sell them immediately at today's price, wait for the price to fall, then buy the shares back at the lower price to return to the lender. The difference between your sell price and your repurchase price is your profit (minus borrowing fees).</p><p><strong>Step-by-step example:</strong><br>1. A stock trades at $80. You believe it's overvalued.<br>2. You borrow 100 shares and sell them immediately for $8,000.<br>3. The company reports poor earnings; the stock falls to $45.<br>4. You buy 100 shares for $4,500 and return them to the lender.<br>5. Your profit: $8,000 - $4,500 - borrowing fees = approximately $3,400.</p></div><div class="div"></div><div class="sec" id="risk"><h2><span>⚠️</span> The Asymmetric Risk Problem</h2><p>When you buy a stock (go long), the worst that can happen is the stock goes to zero — you lose 100% of your investment. This is bad, but it's finite.</p><p>When you short a stock, there is no ceiling on how high the price can rise. If you short a stock at $80 and it rises to $300, you must buy it back at $300 to close your position — a loss of $22,000 on a $8,000 initial transaction. If it rises to $800, your loss is $72,000. Theoretically unlimited.</p><p><strong>The short squeeze phenomenon:</strong> When a heavily shorted stock rises, short sellers scramble to buy shares to cut their losses — which pushes the price up further — which forces more short sellers to buy — which pushes the price up further. GameStop's rise from $20 to $483 in January 2021 was a textbook short squeeze that wiped out billions of dollars of short positions held by professional hedge funds.</p></div><div class="div"></div><div class="sec" id="cost"><h2><span>💸</span> The Cost of Borrowing Shares</h2><p>Short sellers pay a daily borrowing fee to the broker for the right to borrow and short shares. For easy-to-borrow large-cap stocks, this fee is low (0.25-1% annually). For hard-to-borrow stocks (small companies, heavily shorted stocks), the fee can be 5-50% annually or more. A short position held for months while a stock refuses to fall can bleed you dry in borrowing fees even before the stock moves against you.</p></div><div class="div"></div><div class="sec" id="canada"><h2><span>🇨🇦</span> Short Selling in Canada</h2><p>Short selling is legal in Canada for retail investors with a margin account at a registered dealer (Questrade, TD Direct Investing, RBC Direct Investing, etc.). Not all stocks are shortable — your broker must locate available shares to lend. You cannot short inside a TFSA or RRSP — margin accounts only.</p><p>For most retail investors, short selling is not recommended. The complexity, unlimited downside, ongoing borrowing costs, and psychological difficulty of holding a position that can move catastrophically against you overnight make it unsuitable for anyone without deep experience and significant capital.</p></div>
 </main>
 </div>
 <footer>
@@ -150,11 +148,7 @@ Your role:
 - Be warm and community-focused — this is for the Punjabi diaspora in Canada
 - Respond in the same language the user writes in (English or Punjabi)
 - Keep answers concise and practical — max 150 words unless asked to elaborate
-- Reference relevant tools on the site: calculators.html, tools.html, education.html
-- For insurance questions, suggest they WhatsApp us at +1 647-745-6850 for a personal quote
-- Never give specific investment recommendations or specific insurance quotes
-- Always end insurance/investment answers with a soft call to action to WhatsApp or visit ibrinsurance.ca
-
+- Reference relevant tools on the site: calculators.html, tools.html, education.html- Never give specific investment recommendations or specific insurance quotes
 Personality: Knowledgeable, warm, like a financially savvy older sibling or family friend who happens to know a lot about Canadian finance.`;
 
 let chatOpen = false;
@@ -220,7 +214,7 @@ async function sendMsg() {
       body: JSON.stringify({messages: chatHistory})
     });
     const data = await res.json();
-    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again or WhatsApp us directly.";
+    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again ";
     
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
@@ -231,7 +225,7 @@ async function sendMsg() {
   } catch(err) {
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
-    addMsg('Sorry, something went wrong. Please WhatsApp us directly at +1 647-745-6850 or visit ibrinsurance.ca', 'bot');
+    addMsg('Sorry, something went wrong. ', 'bot');
     document.getElementById('chat-status').textContent = 'Ask me anything about finance';
   }
   isLoading = false;

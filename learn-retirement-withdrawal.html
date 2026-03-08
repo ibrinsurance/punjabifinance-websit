@@ -88,7 +88,6 @@
   <p class="lead">Taking money out of your RRSP/RRIF, TFSA, and other accounts requires a strategy — the order matters for taxes.</p>
   <div class="sec" id="order"><h2><span>📋</span> The Smart Withdrawal Order</h2><p>The general recommended sequence for retirement withdrawals:</p><p><strong>1. Non-registered accounts first</strong> — pay capital gains tax now at relatively low rates; preserve registered accounts to continue compounding tax-sheltered.</p><p><strong>2. RRIF/RRSP withdrawals</strong> — mandatory minimums must be taken from your RRIF after conversion. Plan RRSP drawdown before age 72 to avoid OAS clawback if your income is high.</p><p><strong>3. TFSA last</strong> — TFSA withdrawals are completely tax-free. Let it compound as long as possible.</p></div><div class="div"></div><div class="sec" id="rrif"><h2><span>🏦</span> Converting RRSP to RRIF</h2><p>You must convert your RRSP to a RRIF by December 31 of the year you turn 71. After conversion, you must withdraw a minimum percentage each year (starting at about 5.28% at age 71 and rising gradually). These withdrawals are fully taxable as income.</p><p><strong>Strategy:</strong> Consider drawing down your RRSP gradually between ages 65-71 if your income is lower than it will be once CPP and OAS begin — filling up lower tax brackets while spreading the tax hit over more years.</p></div><div class="div"></div><div class="sec" id="tax"><h2><span>💰</span> Managing Taxes in Retirement</h2><p><strong>OAS clawback:</strong> OAS begins to be clawed back at roughly $90,997 of net income (2024). Each dollar above this reduces your OAS by $0.15. Large RRIF withdrawals can push you over this threshold.</p><p><strong>Pension income splitting:</strong> You can allocate up to 50% of RRIF or eligible pension income to a lower-income spouse — potentially saving thousands annually.</p><p><strong>Income averaging:</strong> Smooth your withdrawals to stay in the same tax bracket across years rather than having large spikes that push you into higher brackets.</p></div><div class="div"></div><div class="sec" id="plan"><h2><span>📅</span> When to Start Planning</h2><p>Retirement withdrawal planning should begin 5-10 years before retirement — ideally with a fee-only financial planner who can model different scenarios. The decisions you make at 60-65 (when to take CPP, how to draw down your RRSP, TFSA allocation) can easily be worth $50,000-$200,000 in lifetime after-tax income compared to an unplanned approach.</p></div>
   <div class="div"></div>
-  <div class="cta"><h3>Have a Question?</h3><p>Message us on WhatsApp — in Punjabi or English. We answer insurance and financial questions personally.</p></div>
 </main>
 </div>
 <footer>
@@ -150,11 +149,7 @@ Your role:
 - Be warm and community-focused — this is for the Punjabi diaspora in Canada
 - Respond in the same language the user writes in (English or Punjabi)
 - Keep answers concise and practical — max 150 words unless asked to elaborate
-- Reference relevant tools on the site: calculators.html, tools.html, education.html
-- For insurance questions, suggest they WhatsApp us at +1 647-745-6850 for a personal quote
-- Never give specific investment recommendations or specific insurance quotes
-- Always end insurance/investment answers with a soft call to action to WhatsApp or visit ibrinsurance.ca
-
+- Reference relevant tools on the site: calculators.html, tools.html, education.html- Never give specific investment recommendations or specific insurance quotes
 Personality: Knowledgeable, warm, like a financially savvy older sibling or family friend who happens to know a lot about Canadian finance.`;
 
 let chatOpen = false;
@@ -220,7 +215,7 @@ async function sendMsg() {
       body: JSON.stringify({messages: chatHistory})
     });
     const data = await res.json();
-    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again or WhatsApp us directly.";
+    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again ";
     
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
@@ -231,7 +226,7 @@ async function sendMsg() {
   } catch(err) {
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
-    addMsg('Sorry, something went wrong. Please WhatsApp us directly at +1 647-745-6850 or visit ibrinsurance.ca', 'bot');
+    addMsg('Sorry, something went wrong. ', 'bot');
     document.getElementById('chat-status').textContent = 'Ask me anything about finance';
   }
   isLoading = false;

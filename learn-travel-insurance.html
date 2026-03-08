@@ -88,7 +88,6 @@
   <p class="lead">One medical emergency abroad without travel insurance can cost tens of thousands. Here's what Canadians need to know.</p>
   <div class="sec" id="why"><h2><span>✈️</span> Why Travel Insurance Is Essential</h2><p>Canadian provincial health plans (OHIP, AHCIP, etc.) provide minimal coverage outside Canada — often just emergency hospital rates equivalent to what they'd pay in Canada, which is a fraction of actual international hospital costs. A single day in a US hospital can cost $15,000-$30,000 CAD. A medical evacuation from overseas can cost $50,000-$200,000+.</p></div><div class="div"></div><div class="sec" id="types"><h2><span>📋</span> Types of Travel Insurance</h2><p><strong>Emergency medical insurance:</strong> Covers hospital stays, doctor visits, prescription drugs, and medical evacuation due to illness or injury while travelling. This is the most important coverage.</p><p><strong>Trip cancellation/interruption:</strong> Reimburses non-refundable trip costs if you must cancel due to illness, injury, or other covered reasons.</p><p><strong>Baggage/delayed baggage:</strong> Compensates for lost, stolen, or delayed luggage.</p><p><strong>All-inclusive packages:</strong> Combine all of the above — often best value for vacations.</p></div><div class="div"></div><div class="sec" id="preexisting"><h2><span>⚠️</span> Pre-existing Conditions</h2><p>Most travel insurance policies exclude pre-existing medical conditions unless the condition has been stable (no changes in medication, symptoms, or treatment) for a defined period — often 90, 180, or 365 days before departure.</p><p>If you have diabetes, heart disease, or high blood pressure, declare it honestly when purchasing. Some insurers offer all-conditions coverage at higher premiums — worth it if you have significant health history.</p></div><div class="div"></div><div class="sec" id="canada"><h2><span>🇨🇦</span> Snowbird Considerations</h2><p>Canadians who spend winters in the US need specialized snowbird insurance policies. Regular travel policies have maximum trip duration limits (often 30-60 days). Snowbird policies are designed for extended US stays.</p><p>Also critical: most provinces cut off provincial health coverage if you're out of province for more than 6-7 months. Know your province's rules before extending your stay.</p></div>
   <div class="div"></div>
-  <div class="cta"><h3>Have a Question?</h3><p>Message us on WhatsApp — in Punjabi or English. We answer insurance and financial questions personally.</p></div>
 </main>
 </div>
 <footer>
@@ -150,11 +149,7 @@ Your role:
 - Be warm and community-focused — this is for the Punjabi diaspora in Canada
 - Respond in the same language the user writes in (English or Punjabi)
 - Keep answers concise and practical — max 150 words unless asked to elaborate
-- Reference relevant tools on the site: calculators.html, tools.html, education.html
-- For insurance questions, suggest they WhatsApp us at +1 647-745-6850 for a personal quote
-- Never give specific investment recommendations or specific insurance quotes
-- Always end insurance/investment answers with a soft call to action to WhatsApp or visit ibrinsurance.ca
-
+- Reference relevant tools on the site: calculators.html, tools.html, education.html- Never give specific investment recommendations or specific insurance quotes
 Personality: Knowledgeable, warm, like a financially savvy older sibling or family friend who happens to know a lot about Canadian finance.`;
 
 let chatOpen = false;
@@ -220,7 +215,7 @@ async function sendMsg() {
       body: JSON.stringify({messages: chatHistory})
     });
     const data = await res.json();
-    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again or WhatsApp us directly.";
+    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again ";
     
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
@@ -231,7 +226,7 @@ async function sendMsg() {
   } catch(err) {
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
-    addMsg('Sorry, something went wrong. Please WhatsApp us directly at +1 647-745-6850 or visit ibrinsurance.ca', 'bot');
+    addMsg('Sorry, something went wrong. ', 'bot');
     document.getElementById('chat-status').textContent = 'Ask me anything about finance';
   }
   isLoading = false;

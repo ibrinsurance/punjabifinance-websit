@@ -88,7 +88,6 @@
   <p class="lead">The order in which investment returns occur matters enormously in retirement. Here's why — and how to protect yourself.</p>
   <div class="sec" id="what"><h2><span>📊</span> What Is Sequence of Returns Risk?</h2><p>Two investors can have identical average annual returns over a 20-year retirement — but if one experiences bad years early in retirement (while withdrawing money) and the other experiences them late, their outcomes will be completely different. Bad returns early, when your portfolio is largest, can permanently deplete savings that good returns later cannot recover.</p><p><strong>Simple example:</strong> Portfolio A loses 30% in years 1-2 of retirement, then recovers. Portfolio B gains 30% in years 1-2, then loses 30% later. Same average return — but Portfolio A may run out of money 5-10 years earlier because withdrawals during the early crash forced selling low.</p></div><div class="div"></div><div class="sec" id="why"><h2><span>🤔</span> Why Withdrawals Make It Worse</h2><p>During accumulation (saving for retirement), sequence doesn't matter much. In the withdrawal phase, you're selling shares to fund living expenses. Selling during a crash forces you to liquidate more shares at depressed prices — shares you can never buy back.</p></div><div class="div"></div><div class="sec" id="protect"><h2><span>🛡️</span> How to Protect Against Sequence Risk</h2><p><strong>The bucket strategy:</strong> Keep 1-2 years of living expenses in cash/GICs. Draw from it in bad markets, giving your equity portfolio time to recover without forced selling.</p><p><strong>Flexible withdrawals:</strong> In bad market years, temporarily reduce discretionary spending. Even reducing withdrawals by 10-15% in a severe downturn can dramatically extend portfolio longevity.</p><p><strong>Delay CPP/OAS:</strong> Delaying CPP to age 70 increases your monthly benefit by 42% compared to taking it at 65. This guaranteed income reduces how much you must withdraw from your portfolio.</p></div><div class="div"></div><div class="sec" id="canadian"><h2><span>🇨🇦</span> The Canadian Context</h2><p>CPP, OAS, and GIS provide a meaningful income floor that partially protects Canadian retirees. The more retirement income that comes from guaranteed sources, the less sequence risk you face from your investment portfolio. Maximizing these guaranteed income streams through deferral is one of the most effective strategies available to Canadians.</p></div>
   <div class="div"></div>
-  <div class="cta"><h3>Have a Question?</h3><p>Message us on WhatsApp — in Punjabi or English. We answer insurance and financial questions personally.</p></div>
 </main>
 </div>
 <footer>
@@ -150,11 +149,7 @@ Your role:
 - Be warm and community-focused — this is for the Punjabi diaspora in Canada
 - Respond in the same language the user writes in (English or Punjabi)
 - Keep answers concise and practical — max 150 words unless asked to elaborate
-- Reference relevant tools on the site: calculators.html, tools.html, education.html
-- For insurance questions, suggest they WhatsApp us at +1 647-745-6850 for a personal quote
-- Never give specific investment recommendations or specific insurance quotes
-- Always end insurance/investment answers with a soft call to action to WhatsApp or visit ibrinsurance.ca
-
+- Reference relevant tools on the site: calculators.html, tools.html, education.html- Never give specific investment recommendations or specific insurance quotes
 Personality: Knowledgeable, warm, like a financially savvy older sibling or family friend who happens to know a lot about Canadian finance.`;
 
 let chatOpen = false;
@@ -220,7 +215,7 @@ async function sendMsg() {
       body: JSON.stringify({messages: chatHistory})
     });
     const data = await res.json();
-    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again or WhatsApp us directly.";
+    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again ";
     
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
@@ -231,7 +226,7 @@ async function sendMsg() {
   } catch(err) {
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
-    addMsg('Sorry, something went wrong. Please WhatsApp us directly at +1 647-745-6850 or visit ibrinsurance.ca', 'bot');
+    addMsg('Sorry, something went wrong. ', 'bot');
     document.getElementById('chat-status').textContent = 'Ask me anything about finance';
   }
   isLoading = false;

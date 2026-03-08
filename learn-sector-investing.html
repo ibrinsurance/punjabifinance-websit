@@ -84,11 +84,9 @@
 <main>
   <div class="breadcrumb"><a href="index.html">Home</a> › <a href="education.html">Learn</a> › <span style="color:var(--off);">Sector Investing</span></div>
   <div class="tag">💹 Stocks</div>
-  <h1>Sector Investing: Targeted Bets on Industries</h1>
-  <p class="lead">Sector investing lets you overweight specific industries in your portfolio. Here's how it works and when it makes sense.</p>
-  <div class="sec" id="what"><h2><span>📊</span> What Is Sector Investing?</h2><p>Instead of buying the whole market, sector investing means concentrating on a specific industry: technology, healthcare, financials, energy, utilities, consumer staples, real estate, etc. You can do this by buying individual companies in that sector or a sector-specific ETF.</p></div><div class="div"></div><div class="sec" id="why"><h2><span>🤔</span> Why Consider Sector Investing?</h2><p><strong>Conviction plays:</strong> If you believe AI will transform the economy, you might overweight technology. If you think Canada's aging population will drive healthcare spending, you might overweight healthcare stocks.</p><p><strong>Canadian rebalancing:</strong> The TSX is very heavy in financials and energy. Investors who want more tech or healthcare exposure might buy US or global sector ETFs to compensate.</p></div><div class="div"></div><div class="sec" id="risks"><h2><span>⚠️</span> The Risks</h2><p><strong>Concentration risk:</strong> If your sector underperforms for years (as financials did after 2008, or energy in the 2015 oil price crash), your portfolio suffers significantly more than a diversified market investor.</p><p><strong>Timing is extremely difficult:</strong> Even professional investors consistently fail to predict which sectors will outperform. Most sector bets that seem obvious are already priced into the market.</p></div><div class="div"></div><div class="sec" id="approach"><h2><span>✅</span> A Sensible Approach</h2><p>Most financial professionals recommend a broadly diversified core portfolio first. If you want sector exposure, limit it to 10-20% of your portfolio at most. Use low-cost sector ETFs rather than individual stocks to reduce company-specific risk within your chosen sector.</p></div>
-  <div class="div"></div>
-  <div class="cta"><h3>Have a Question?</h3><p>Message us on WhatsApp — in Punjabi or English. We answer insurance and financial questions personally.</p></div>
+  <h1>Sector Investing: Concentrating on Industries You Believe In</h1>
+  <p class="lead">Sector ETFs and focused stock picking let you overweight specific industries. Here's how sector investing works and the risks you must understand.</p>
+  <div class="sec" id="what"><h2><span>📊</span> What Is Sector Investing?</h2><p>Sector investing means concentrating a portion of your portfolio on a specific industry group — technology, healthcare, financials, energy, utilities, real estate (REITs), consumer staples, industrials, materials, communication services, or consumer discretionary.</p><p>You can implement sector investing through: sector-specific ETFs (a Canadian tech ETF, a US healthcare ETF, a global clean energy ETF) or individual stocks within your chosen sector. The goal is to overweight sectors you believe will outperform the broad market.</p></div><div class="div"></div><div class="sec" id="why"><h2><span>🎯</span> Why Investors Use Sector Strategies</h2><p><strong>TSX balancing:</strong> The S&P/TSX Composite Index is heavily concentrated in financials (~30%), energy (~18%), and materials (~13%) — and nearly absent in technology. Canadian investors who want meaningful tech exposure must look beyond the TSX. Buying a US technology sector ETF or global technology ETF supplements the gap left by Canada's market structure.<br><br><strong>Thematic conviction:</strong> You believe AI will transform every industry over the next decade. You want more tech exposure than a broad index provides. You overweight a technology ETF in your portfolio.<br><br><strong>Income strategies:</strong> Utilities, real estate (REITs), and telecoms pay higher-than-average dividends. Income-focused investors overweight these sectors to increase portfolio yield.</p></div><div class="div"></div><div class="sec" id="risks"><h2><span>⚠️</span> The Risks of Sector Concentration</h2><p><strong>Sector downturns can be prolonged and severe:</strong> Canadian energy stocks lost 60%+ during the 2014-2016 oil price crash. Technology stocks fell 75%+ during the 2000-2002 dot-com bust. Healthcare stocks faced years of underperformance during regulatory pressure periods. If your portfolio is concentrated in one sector during its downturn, recovery can take years — while the broader market has moved on.<br><br><strong>Timing is nearly impossible:</strong> The 'obvious' outperforming sectors — the ones that seem certain to win — are typically already priced in. By the time the broad public recognizes a sector trend, the sophisticated money has already moved. Most sector rotation strategies underperform simply buying and holding the total market.<br><br><strong>Correlation risk:</strong> Owning five stocks in the same sector is not diversification. All five will fall together when the sector faces headwinds.</p></div><div class="div"></div><div class="sec" id="approach"><h2><span>✅</span> A Balanced Approach to Sector Investing</h2><p>Financial professionals suggest: maintain a diversified core (80-90% of portfolio in broad market index ETFs) and use a limited satellite allocation (10-20%) for deliberate sector tilts where you have genuine conviction and understanding.</p><p>Practically for a Canadian investor: a total market ETF forms your core, and you add small positions in a US technology sector ETF (to compensate for TSX tech gap) and a global healthcare ETF (aging population thesis). Both represent informed tilts, not speculation. Keep each sector tilt to 5-10% of total portfolio maximum.</p></div>
 </main>
 </div>
 <footer>
@@ -150,11 +148,7 @@ Your role:
 - Be warm and community-focused — this is for the Punjabi diaspora in Canada
 - Respond in the same language the user writes in (English or Punjabi)
 - Keep answers concise and practical — max 150 words unless asked to elaborate
-- Reference relevant tools on the site: calculators.html, tools.html, education.html
-- For insurance questions, suggest they WhatsApp us at +1 647-745-6850 for a personal quote
-- Never give specific investment recommendations or specific insurance quotes
-- Always end insurance/investment answers with a soft call to action to WhatsApp or visit ibrinsurance.ca
-
+- Reference relevant tools on the site: calculators.html, tools.html, education.html- Never give specific investment recommendations or specific insurance quotes
 Personality: Knowledgeable, warm, like a financially savvy older sibling or family friend who happens to know a lot about Canadian finance.`;
 
 let chatOpen = false;
@@ -220,7 +214,7 @@ async function sendMsg() {
       body: JSON.stringify({messages: chatHistory})
     });
     const data = await res.json();
-    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again or WhatsApp us directly.";
+    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again ";
     
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
@@ -231,7 +225,7 @@ async function sendMsg() {
   } catch(err) {
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
-    addMsg('Sorry, something went wrong. Please WhatsApp us directly at +1 647-745-6850 or visit ibrinsurance.ca', 'bot');
+    addMsg('Sorry, something went wrong. ', 'bot');
     document.getElementById('chat-status').textContent = 'Ask me anything about finance';
   }
   isLoading = false;

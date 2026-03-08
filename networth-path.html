@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>$0 to $1M — Punjabi Finance Wealth Path</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root{--gold:#D4A017;--gl:#E8A820;--sa:#E8890C;--bg:#0A0A04;--bg2:#0f0e06;--muted:#9A8A6A;--off:#FAF7F0;--border:rgba(212,160,23,0.14);--white:#ffffff;--dark:#1a1600;--mid:#4a3f20;--light:#7a6a45;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{background:var(--bg);color:var(--off);font-family:'DM Sans',sans-serif;overflow-x:hidden;}a{color:inherit;text-decoration:none;}
+nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;gap:16px;padding:0 48px;height:60px;background:rgba(8,8,2,0.94);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--gl);}.nav-logo span{color:var(--sa);}
+.nav-back{font-size:0.82rem;color:var(--muted);font-weight:500;transition:color 0.2s;}.nav-back:hover{color:var(--gl);}
+.nav-links{display:flex;align-items:center;gap:22px;margin-left:auto;}
+.nav-links a{font-size:0.82rem;color:var(--muted);font-weight:500;transition:color 0.2s;}.nav-links a:hover{color:var(--gl);}
+.lang-toggle{display:flex;align-items:center;background:rgba(212,160,23,0.08);border:1px solid rgba(212,160,23,0.2);border-radius:50px;padding:3px;}
+.lang-btn{padding:4px 12px;border-radius:50px;border:none;cursor:pointer;font-size:0.73rem;font-weight:600;font-family:'DM Sans',sans-serif;transition:all 0.2s;background:transparent;color:var(--muted);}
+.lang-btn.active{background:var(--gold);color:#0a0a0a;}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#0a0a0a;padding:11px 24px;border-radius:50px;font-weight:700;font-size:0.88rem;transition:all 0.2s;box-shadow:0 4px 16px rgba(212,160,23,0.2);border:none;cursor:pointer;}
+.btn-gold:hover{background:var(--gl);transform:translateY(-2px);}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(212,160,23,0.3);color:var(--gl);padding:10px 22px;border-radius:50px;font-weight:500;font-size:0.86rem;transition:all 0.2s;background:transparent;cursor:pointer;}
+.btn-ghost:hover{background:rgba(212,160,23,0.08);border-color:var(--gl);}
+.card-white{background:#fff;border-radius:18px;box-shadow:0 2px 16px rgba(0,0,0,0.12);transition:transform 0.22s,box-shadow 0.22s;}
+.card-white:hover{transform:translateY(-4px);box-shadow:0 10px 36px rgba(0,0,0,0.18);}
+.section-label{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--sa);margin-bottom:8px;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,2.8vw,2.4rem);font-weight:700;line-height:1.15;margin-bottom:12px;}
+.gold{color:var(--gl);}
+footer{background:#060603;border-top:1px solid var(--border);padding:36px 80px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--gl);}.footer-logo span{color:var(--sa);}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;}
+.footer-links a{font-size:0.78rem;color:var(--muted);transition:color 0.2s;}.footer-links a:hover{color:var(--gl);}
+.footer-disc{font-size:0.65rem;color:var(--muted);opacity:0.4;width:100%;line-height:1.5;}
+@media(max-width:768px){nav{padding:0 20px;}footer{padding:28px 20px 16px;}}
+
+body{background:var(--bg);}
+.hero{padding:60px 80px 48px;background:linear-gradient(135deg,rgba(212,160,23,0.08),rgba(37,99,235,0.04),transparent);border-bottom:1px solid var(--border);}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4vw,3.4rem);font-weight:900;margin-bottom:12px;line-height:1.05;}
+.hero p{color:var(--muted);font-size:0.96rem;line-height:1.75;max-width:580px;margin-bottom:24px;}
+.progress-overview{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;}
+.prog-stat{background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:14px;padding:14px 18px;}
+.prog-stat-num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--gl);}
+.prog-stat-label{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px;}
+.path-wrap{max-width:720px;margin:0 auto;padding:48px 80px 80px;}
+.level-card{background:#fff;border-radius:22px;overflow:hidden;margin-bottom:0;box-shadow:0 2px 20px rgba(0,0,0,0.12);}
+.level-header{padding:26px 28px 20px;border:1px solid transparent;border-radius:22px 22px 0 0;border-bottom:1px solid rgba(0,0,0,0.06);}
+.level-emoji{font-size:2.4rem;margin-bottom:8px;}
+.level-badge{display:inline-block;font-size:0.62rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;padding:3px 10px;border-radius:50px;border:1px solid;margin-bottom:8px;}
+.level-range{font-size:0.8rem;font-weight:700;letter-spacing:0.04em;margin-bottom:6px;}
+.level-headline{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:#1a1600;margin-bottom:8px;line-height:1.2;}
+.level-desc{font-size:0.85rem;color:#5a4a25;line-height:1.65;margin-bottom:16px;}
+.progress-wrap{display:flex;align-items:center;gap:10px;}
+.progress-bar{flex:1;height:6px;background:rgba(0,0,0,0.08);border-radius:50px;overflow:hidden;}
+.progress-fill{height:100%;border-radius:50px;transition:width 0.5s cubic-bezier(0.4,0,0.2,1);}
+.progress-text{font-size:0.72rem;font-weight:600;color:#7a6a45;white-space:nowrap;}
+.task-list{list-style:none;padding:0 28px;margin:0;}
+.task-item{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid rgba(0,0,0,0.05);}
+.task-item:last-child{border-bottom:none;}
+.task-item.done .task-text{color:#a0a0a0;text-decoration:line-through;}
+.task-check{width:24px;height:24px;border-radius:7px;border:2px solid rgba(0,0,0,0.15);background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;transition:all 0.2s;color:transparent;}
+.task-check.done{background:#22c55e;border-color:#22c55e;color:#fff;}
+.task-check:hover{border-color:#D4A017;transform:scale(1.1);}
+.task-text{font-size:0.88rem;color:#2a2000;line-height:1.6;}
+.milestone-box{display:flex;align-items:center;gap:10px;padding:14px 28px;border-top:1px solid;}
+.milestone-icon{font-size:1.2rem;}
+.milestone-text{font-size:0.86rem;font-weight:700;color:#1a1600;}
+.level-connector{display:flex;flex-direction:column;align-items:center;height:40px;position:relative;}
+.level-connector::before{content:'';position:absolute;top:0;left:50%;width:2px;height:40px;background:linear-gradient(180deg,rgba(212,160,23,0.3),rgba(212,160,23,0.1));transform:translateX(-50%);}
+.level-connector::after{content:'↓';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:var(--gold);font-size:1rem;background:var(--bg);padding:0 4px;}
+.save-bar{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:#1a1600;border:1px solid var(--border);border-radius:50px;padding:10px 20px;font-size:0.8rem;color:var(--gl);display:none;z-index:100;box-shadow:0 4px 20px rgba(0,0,0,0.3);}
+.save-bar.show{display:block;animation:slideUp 0.3s ease;}
+@keyframes slideUp{from{opacity:0;transform:translate(-50%,10px)}to{opacity:1;transform:translate(-50%,0)}}
+@media(max-width:768px){.path-wrap,.hero{padding-left:20px;padding-right:20px;}.level-header{padding:20px 18px 16px;}.task-list{padding:0 18px;}.milestone-box{padding:12px 18px;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-back">← Home</a>
+  <a href="index.html" class="nav-logo">Punjabi<span>Finance</span></a>
+  <div class="nav-links">
+    <a href="education.html" >Learn</a>
+    <a href="calculators.html" >Calculators</a>
+    <a href="tools.html" style="color:var(--gl)">Immigrant Tools</a>
+    <a href="downloads.html" >Free Downloads</a>
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="nb-en" onclick="siteSetLang('en')">EN</button>
+      <button class="lang-btn" id="nb-pa" onclick="siteSetLang('pa')">PA</button>
+    </div>
+    
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="section-label" data-en="$0 to $1M Wealth Path" data-pa="$0 ਤੋਂ $1M ਦੌਲਤ ਮਾਰਗ">$0 to $1M Wealth Path</div>
+  <h1 data-en="Your Journey from Zero to $1,000,000" data-pa="ਜ਼ੀਰੋ ਤੋਂ $1,000,000 ਤੱਕ ਦਾ ਸਫ਼ਰ">Your Journey from <span class="gold">Zero</span> to $1,000,000</h1>
+  <p data-en="A step-by-step wealth-building path built for the Canadian Punjabi community. Check off tasks as you complete them — your progress saves automatically." data-pa="ਕੈਨੇਡੀਅਨ ਪੰਜਾਬੀ ਭਾਈਚਾਰੇ ਲਈ ਬਣਾਇਆ ਦੌਲਤ-ਨਿਰਮਾਣ ਮਾਰਗ। ਕੰਮ ਪੂਰੇ ਕਰਦੇ ਜਾਓ — ਤੁਹਾਡੀ ਤਰੱਕੀ ਆਪਣੇ ਆਪ ਸੁਰੱਖਿਅਤ ਹੁੰਦੀ ਹੈ।">A step-by-step wealth-building path built for the Canadian Punjabi community.</p>
+  <div class="progress-overview">
+    <div class="prog-stat"><div class="prog-stat-num" id="total-done">0</div><div class="prog-stat-label" data-en="Tasks Completed" data-pa="ਕੰਮ ਪੂਰੇ">Tasks Completed</div></div>
+    <div class="prog-stat"><div class="prog-stat-num" id="total-tasks">47</div><div class="prog-stat-label" data-en="Total Tasks" data-pa="ਕੁੱਲ ਕੰਮ">Total Tasks</div></div>
+    <div class="prog-stat"><div class="prog-stat-num" id="overall-pct">0%</div><div class="prog-stat-label" data-en="Overall Progress" data-pa="ਕੁੱਲ ਤਰੱਕੀ">Overall Progress</div></div>
+  </div>
+</div>
+
+<div class="path-wrap">
+  
+  <div class="level-card" id="L0" data-level="0">
+    <div class="level-header" style="background:linear-gradient(135deg,#6b728022,#6b728008);border-color:#6b728033;">
+      <div class="level-emoji">🌱</div>
+      <div class="level-badge" style="background:#6b728020;color:#6b7280;border-color:#6b728040">GROUND ZERO</div>
+      <div class="level-range" style="color:#6b7280">$0 — Starting Point</div>
+      <h2 class="level-headline lang-en">Build Your Foundation</h2>
+      <h2 class="level-headline lang-pa" style="display:none">ਆਪਣੀ ਨੀਂਹ ਬਣਾਓ</h2>
+      <p class="level-desc lang-en">Every millionaire started here. This stage is about stopping the financial bleeding, building clarity, and creating your first win.</p>
+      <p class="level-desc lang-pa" style="display:none">ਹਰ ਕਰੋੜਪਤੀ ਇੱਥੋਂ ਸ਼ੁਰੂ ਹੋਇਆ। ਇਹ ਪੜਾਅ ਵਿੱਤੀ ਸਥਿਰਤਾ ਬਣਾਉਣ ਅਤੇ ਪਹਿਲੀ ਜਿੱਤ ਦੇ ਬਾਰੇ ਹੈ।</p>
+      <div class="progress-wrap">
+        <div class="progress-bar"><div class="progress-fill" id="L0-fill" style="width:0%;background:#6b7280"></div></div>
+        <span class="progress-text" id="L0-pct">0/7 complete</span>
+      </div>
+    </div>
+    <ul class="task-list">
+        <li class="task-item" id="L0-t0">
+          <button class="task-check" onclick="toggleTask('L0-t0', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Get your SIN and open a Canadian bank account</span>
+          <span class="task-text lang-pa" style="display:none">ਆਪਣਾ SIN ਲਓ ਅਤੇ ਕੈਨੇਡੀਅਨ ਬੈਂਕ ਖਾਤਾ ਖੋਲ੍ਹੋ</span>
+        </li>
+        <li class="task-item" id="L0-t1">
+          <button class="task-check" onclick="toggleTask('L0-t1', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Track ALL income and expenses for 30 days</span>
+          <span class="task-text lang-pa" style="display:none">30 ਦਿਨਾਂ ਲਈ ਸਾਰੀ ਆਮਦਨ ਅਤੇ ਖਰਚੇ ਟਰੈਕ ਕਰੋ</span>
+        </li>
+        <li class="task-item" id="L0-t2">
+          <button class="task-check" onclick="toggleTask('L0-t2', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">File your first Canadian tax return (even with $0 income)</span>
+          <span class="task-text lang-pa" style="display:none">ਆਪਣਾ ਪਹਿਲਾ ਕੈਨੇਡੀਅਨ ਟੈਕਸ ਰਿਟਰਨ ਫਾਈਲ ਕਰੋ</span>
+        </li>
+        <li class="task-item" id="L0-t3">
+          <button class="task-check" onclick="toggleTask('L0-t3', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Apply for a secured credit card to start building credit</span>
+          <span class="task-text lang-pa" style="display:none">ਕ੍ਰੈਡਿਟ ਬਣਾਉਣ ਲਈ ਸੁਰੱਖਿਅਤ ਕ੍ਰੈਡਿਟ ਕਾਰਡ ਲਓ</span>
+        </li>
+        <li class="task-item" id="L0-t4">
+          <button class="task-check" onclick="toggleTask('L0-t4', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Open a TFSA — even with $1 inside</span>
+          <span class="task-text lang-pa" style="display:none">TFSA ਖੋਲ੍ਹੋ — ਭਾਵੇਂ $1 ਨਾਲ</span>
+        </li>
+        <li class="task-item" id="L0-t5">
+          <button class="task-check" onclick="toggleTask('L0-t5', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Get basic life insurance if you have dependants</span>
+          <span class="task-text lang-pa" style="display:none">ਜੇ ਤੁਹਾਡੇ ਆਸ਼ਰਿਤ ਹਨ ਤਾਂ ਬੁਨਿਆਦੀ ਜ਼ਿੰਦਗੀ ਬੀਮਾ ਲਓ</span>
+        </li>
+        <li class="task-item" id="L0-t6">
+          <button class="task-check" onclick="toggleTask('L0-t6', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Understand what GST/HST credit and CCB you qualify for</span>
+          <span class="task-text lang-pa" style="display:none">ਜਾਣੋ ਤੁਸੀਂ GST/HST ਕ੍ਰੈਡਿਟ ਅਤੇ CCB ਲਈ ਯੋਗ ਹੋ</span>
+        </li>
+    </ul>
+    <div class="milestone-box" style="border-color:#6b728033;background:#6b728008;">
+      <span class="milestone-icon">🎯</span>
+      <span class="milestone-text lang-en">Hit $1,000 in savings</span>
+      <span class="milestone-text lang-pa" style="display:none">$1,000 ਬੱਚਤ ਤੱਕ ਪਹੁੰਚੋ</span>
+    </div>
+  </div>
+  <div class="level-connector"></div>
+  <div class="level-card" id="L1" data-level="1">
+    <div class="level-header" style="background:linear-gradient(135deg,#d9770622,#d9770608);border-color:#d9770633;">
+      <div class="level-emoji">🔥</div>
+      <div class="level-badge" style="background:#d9770620;color:#d97706;border-color:#d9770640">STAGE 1</div>
+      <div class="level-range" style="color:#d97706">$1K — $10K</div>
+      <h2 class="level-headline lang-en">Emergency Fund & Debt Attack</h2>
+      <h2 class="level-headline lang-pa" style="display:none">ਐਮਰਜੈਂਸੀ ਫੰਡ ਅਤੇ ਕਰਜ਼ ਖਤਮ ਕਰੋ</h2>
+      <p class="level-desc lang-en">You have your first $1,000. Now protect it by building a cash buffer, killing high-interest debt, and learning your numbers.</p>
+      <p class="level-desc lang-pa" style="display:none">ਤੁਹਾਡੇ ਕੋਲ ਪਹਿਲਾ $1,000 ਹੈ। ਹੁਣ ਐਮਰਜੈਂਸੀ ਬਫਰ ਬਣਾਓ ਅਤੇ ਉੱਚ-ਵਿਆਜ ਕਰਜ਼ ਖਤਮ ਕਰੋ।</p>
+      <div class="progress-wrap">
+        <div class="progress-bar"><div class="progress-fill" id="L1-fill" style="width:0%;background:#d97706"></div></div>
+        <span class="progress-text" id="L1-pct">0/7 complete</span>
+      </div>
+    </div>
+    <ul class="task-list">
+        <li class="task-item" id="L1-t0">
+          <button class="task-check" onclick="toggleTask('L1-t0', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Build a 1-month emergency fund ($2,000–$4,000) in a HISA</span>
+          <span class="task-text lang-pa" style="display:none">1 ਮਹੀਨੇ ਦਾ ਐਮਰਜੈਂਸੀ ਫੰਡ HISA ਵਿੱਚ ਬਣਾਓ</span>
+        </li>
+        <li class="task-item" id="L1-t1">
+          <button class="task-check" onclick="toggleTask('L1-t1', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">List all debts: interest rate, balance, minimum payment</span>
+          <span class="task-text lang-pa" style="display:none">ਸਾਰੇ ਕਰਜ਼ ਸੂਚੀਬੱਧ ਕਰੋ: ਵਿਆਜ ਦਰ, ਬਕਾਇਆ, ਘੱਟੋ-ਘੱਟ ਭੁਗਤਾਨ</span>
+        </li>
+        <li class="task-item" id="L1-t2">
+          <button class="task-check" onclick="toggleTask('L1-t2', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Pay off credit card debt first (19.99%+ is financial cancer)</span>
+          <span class="task-text lang-pa" style="display:none">ਪਹਿਲਾਂ ਕ੍ਰੈਡਿਟ ਕਾਰਡ ਕਰਜ਼ ਅਦਾ ਕਰੋ</span>
+        </li>
+        <li class="task-item" id="L1-t3">
+          <button class="task-check" onclick="toggleTask('L1-t3', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Set up a real zero-based budget — every dollar has a job</span>
+          <span class="task-text lang-pa" style="display:none">ਅਸਲ ਜ਼ੀਰੋ-ਆਧਾਰਿਤ ਬਜਟ ਬਣਾਓ</span>
+        </li>
+        <li class="task-item" id="L1-t4">
+          <button class="task-check" onclick="toggleTask('L1-t4', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Automate $200–$500/month into TFSA</span>
+          <span class="task-text lang-pa" style="display:none">TFSA ਵਿੱਚ ਮਾਸਿਕ $200–$500 ਆਟੋਮੇਟ ਕਰੋ</span>
+        </li>
+        <li class="task-item" id="L1-t5">
+          <button class="task-check" onclick="toggleTask('L1-t5', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Increase credit score to 650+ by paying full balance monthly</span>
+          <span class="task-text lang-pa" style="display:none">ਹਰ ਮਹੀਨੇ ਪੂਰਾ ਬਕਾਇਆ ਅਦਾ ਕਰਕੇ ਕ੍ਰੈਡਿਟ ਸਕੋਰ 650+ ਕਰੋ</span>
+        </li>
+        <li class="task-item" id="L1-t6">
+          <button class="task-check" onclick="toggleTask('L1-t6', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Learn the difference between TFSA, RRSP, and FHSA</span>
+          <span class="task-text lang-pa" style="display:none">TFSA, RRSP ਅਤੇ FHSA ਵਿੱਚ ਅੰਤਰ ਸਿੱਖੋ</span>
+        </li>
+    </ul>
+    <div class="milestone-box" style="border-color:#d9770633;background:#d9770608;">
+      <span class="milestone-icon">🎯</span>
+      <span class="milestone-text lang-en">Hit $10,000 net worth</span>
+      <span class="milestone-text lang-pa" style="display:none">$10,000 ਕੁੱਲ ਸੰਪੱਤੀ ਤੱਕ ਪਹੁੰਚੋ</span>
+    </div>
+  </div>
+  <div class="level-connector"></div>
+  <div class="level-card" id="L2" data-level="2">
+    <div class="level-header" style="background:linear-gradient(135deg,#2563eb22,#2563eb08);border-color:#2563eb33;">
+      <div class="level-emoji">⚡</div>
+      <div class="level-badge" style="background:#2563eb20;color:#2563eb;border-color:#2563eb40">STAGE 2</div>
+      <div class="level-range" style="color:#2563eb">$10K — $50K</div>
+      <h2 class="level-headline lang-en">Build Momentum & Start Investing</h2>
+      <h2 class="level-headline lang-pa" style="display:none">ਗਤੀ ਬਣਾਓ ਅਤੇ ਨਿਵੇਸ਼ ਸ਼ੁਰੂ ਕਰੋ</h2>
+      <p class="level-desc lang-en">The snowball is rolling. This stage is about maxing your tax shelters, beginning to invest, and setting yourself up for home ownership.</p>
+      <p class="level-desc lang-pa" style="display:none">ਗੇਂਦਾ ਘੁੰਮ ਰਹੀ ਹੈ। ਟੈਕਸ ਸ਼ੈਲਟਰ ਵੱਧ ਤੋਂ ਵੱਧ ਭਰੋ ਅਤੇ ਘਰ ਖਰੀਦਣ ਲਈ ਤਿਆਰ ਕਰੋ।</p>
+      <div class="progress-wrap">
+        <div class="progress-bar"><div class="progress-fill" id="L2-fill" style="width:0%;background:#2563eb"></div></div>
+        <span class="progress-text" id="L2-pct">0/8 complete</span>
+      </div>
+    </div>
+    <ul class="task-list">
+        <li class="task-item" id="L2-t0">
+          <button class="task-check" onclick="toggleTask('L2-t0', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Max your TFSA every year ($7,000/year in 2024)</span>
+          <span class="task-text lang-pa" style="display:none">ਹਰ ਸਾਲ TFSA ਵੱਧ ਤੋਂ ਵੱਧ ਭਰੋ ($7,000/ਸਾਲ)</span>
+        </li>
+        <li class="task-item" id="L2-t1">
+          <button class="task-check" onclick="toggleTask('L2-t1', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Open FHSA if first-time home buyer ($8,000/year, $40K lifetime)</span>
+          <span class="task-text lang-pa" style="display:none">ਪਹਿਲੀ ਵਾਰ ਖਰੀਦਦਾਰ ਲਈ FHSA ਖੋਲ੍ਹੋ</span>
+        </li>
+        <li class="task-item" id="L2-t2">
+          <button class="task-check" onclick="toggleTask('L2-t2', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Invest TFSA in a 100% equity all-in-one ETF or a growth-oriented all-in-one ETF ETF — stop leaving it in savings</span>
+          <span class="task-text lang-pa" style="display:none">TFSA ਨੂੰ a 100% equity all-in-one ETF ਜਾਂ a growth-oriented all-in-one ETF ETF ਵਿੱਚ ਨਿਵੇਸ਼ ਕਰੋ</span>
+        </li>
+        <li class="task-item" id="L2-t3">
+          <button class="task-check" onclick="toggleTask('L2-t3', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Build 3-month emergency fund (3 × monthly expenses)</span>
+          <span class="task-text lang-pa" style="display:none">3 ਮਹੀਨਿਆਂ ਦਾ ਐਮਰਜੈਂਸੀ ਫੰਡ ਬਣਾਓ</span>
+        </li>
+        <li class="task-item" id="L2-t4">
+          <button class="task-check" onclick="toggleTask('L2-t4', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Increase income: negotiate salary, add skill or side income</span>
+          <span class="task-text lang-pa" style="display:none">ਆਮਦਨ ਵਧਾਓ: ਤਨਖਾਹ ਗੱਲਬਾਤ ਕਰੋ, ਸਾਈਡ ਇਨਕਮ ਸ਼ੁਰੂ ਕਰੋ</span>
+        </li>
+        <li class="task-item" id="L2-t5">
+          <button class="task-check" onclick="toggleTask('L2-t5', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Start RRSP contributions if income is $60,000+</span>
+          <span class="task-text lang-pa" style="display:none">ਜੇ ਆਮਦਨ $60,000+ ਹੈ ਤਾਂ RRSP ਯੋਗਦਾਨ ਸ਼ੁਰੂ ਕਰੋ</span>
+        </li>
+        <li class="task-item" id="L2-t6">
+          <button class="task-check" onclick="toggleTask('L2-t6', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Open RESP if you have children (get $500/year free from govt)</span>
+          <span class="task-text lang-pa" style="display:none">ਬੱਚਿਆਂ ਲਈ RESP ਖੋਲ੍ਹੋ (ਸਰਕਾਰ ਤੋਂ $500/ਸਾਲ ਮੁਫ਼ਤ)</span>
+        </li>
+        <li class="task-item" id="L2-t7">
+          <button class="task-check" onclick="toggleTask('L2-t7', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Get life + disability insurance — lock in rates while healthy</span>
+          <span class="task-text lang-pa" style="display:none">ਜ਼ਿੰਦਗੀ + ਅਪੰਗਤਾ ਬੀਮਾ ਲਓ — ਸਿਹਤਮੰਦ ਹੋਣ ਵੇਲੇ ਦਰਾਂ ਲਾਕ ਕਰੋ</span>
+        </li>
+    </ul>
+    <div class="milestone-box" style="border-color:#2563eb33;background:#2563eb08;">
+      <span class="milestone-icon">🎯</span>
+      <span class="milestone-text lang-en">Hit $50,000 net worth</span>
+      <span class="milestone-text lang-pa" style="display:none">$50,000 ਕੁੱਲ ਸੰਪੱਤੀ ਤੱਕ ਪਹੁੰਚੋ</span>
+    </div>
+  </div>
+  <div class="level-connector"></div>
+  <div class="level-card" id="L3" data-level="3">
+    <div class="level-header" style="background:linear-gradient(135deg,#05966922,#05966908);border-color:#05966933;">
+      <div class="level-emoji">🚀</div>
+      <div class="level-badge" style="background:#05966920;color:#059669;border-color:#05966940">STAGE 3</div>
+      <div class="level-range" style="color:#059669">$50K — $150K</div>
+      <h2 class="level-headline lang-en">Real Wealth Begins Here</h2>
+      <h2 class="level-headline lang-pa" style="display:none">ਅਸਲ ਦੌਲਤ ਇੱਥੋਂ ਸ਼ੁਰੂ ਹੁੰਦੀ ਹੈ</h2>
+      <p class="level-desc lang-en">You're ahead of 80% of Canadians. Now you can buy your first home, optimize your tax strategy, and let compound interest work seriously.</p>
+      <p class="level-desc lang-pa" style="display:none">ਤੁਸੀਂ 80% ਕੈਨੇਡੀਅਨਾਂ ਤੋਂ ਅੱਗੇ ਹੋ। ਹੁਣ ਘਰ ਖਰੀਦੋ, ਟੈਕਸ ਅਨੁਕੂਲਿਤ ਕਰੋ ਅਤੇ ਮਿਸ਼ਰਤ ਵਿਆਜ ਕੰਮ ਕਰਨ ਦਿਓ।</p>
+      <div class="progress-wrap">
+        <div class="progress-bar"><div class="progress-fill" id="L3-fill" style="width:0%;background:#059669"></div></div>
+        <span class="progress-text" id="L3-pct">0/8 complete</span>
+      </div>
+    </div>
+    <ul class="task-list">
+        <li class="task-item" id="L3-t0">
+          <button class="task-check" onclick="toggleTask('L3-t0', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Buy your first home — use FHSA + RRSP HBP for down payment</span>
+          <span class="task-text lang-pa" style="display:none">ਪਹਿਲਾ ਘਰ ਖਰੀਦੋ — FHSA + RRSP HBP ਦੀ ਵਰਤੋਂ ਕਰੋ</span>
+        </li>
+        <li class="task-item" id="L3-t1">
+          <button class="task-check" onclick="toggleTask('L3-t1', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Max both TFSA and RRSP every year — automate it</span>
+          <span class="task-text lang-pa" style="display:none">ਹਰ ਸਾਲ TFSA ਅਤੇ RRSP ਦੋਵੇਂ ਵੱਧ ਤੋਂ ਵੱਧ ਭਰੋ</span>
+        </li>
+        <li class="task-item" id="L3-t2">
+          <button class="task-check" onclick="toggleTask('L3-t2', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Review and optimize your investment portfolio annually</span>
+          <span class="task-text lang-pa" style="display:none">ਸਾਲਾਨਾ ਨਿਵੇਸ਼ ਪੋਰਟਫੋਲੀਓ ਦੀ ਸਮੀਖਿਆ ਅਤੇ ਅਨੁਕੂਲਤਾ</span>
+        </li>
+        <li class="task-item" id="L3-t3">
+          <button class="task-check" onclick="toggleTask('L3-t3', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Get a comprehensive life insurance review (DIME method)</span>
+          <span class="task-text lang-pa" style="display:none">ਵਿਆਪਕ ਜ਼ਿੰਦਗੀ ਬੀਮਾ ਸਮੀਖਿਆ ਕਰੋ (DIME ਤਰੀਕਾ)</span>
+        </li>
+        <li class="task-item" id="L3-t4">
+          <button class="task-check" onclick="toggleTask('L3-t4', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Make a will and name beneficiaries on ALL accounts</span>
+          <span class="task-text lang-pa" style="display:none">ਵਸੀਅਤ ਬਣਾਓ ਅਤੇ ਸਾਰੇ ਖਾਤਿਆਂ 'ਤੇ ਲਾਭਪਾਤਰੀ ਨਾਮਜ਼ਦ ਕਰੋ</span>
+        </li>
+        <li class="task-item" id="L3-t5">
+          <button class="task-check" onclick="toggleTask('L3-t5', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Maximize RESP contributions for children</span>
+          <span class="task-text lang-pa" style="display:none">ਬੱਚਿਆਂ ਲਈ RESP ਯੋਗਦਾਨ ਵੱਧ ਤੋਂ ਵੱਧ ਕਰੋ</span>
+        </li>
+        <li class="task-item" id="L3-t6">
+          <button class="task-check" onclick="toggleTask('L3-t6', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Use spousal RRSP to split income in retirement</span>
+          <span class="task-text lang-pa" style="display:none">ਸੇਵਾਮੁਕਤੀ ਵਿੱਚ ਆਮਦਨ ਵੰਡਣ ਲਈ ਜੀਵਨਸਾਥੀ RRSP ਵਰਤੋ</span>
+        </li>
+        <li class="task-item" id="L3-t7">
+          <button class="task-check" onclick="toggleTask('L3-t7', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Calculate your FI number: 25x your annual expenses</span>
+          <span class="task-text lang-pa" style="display:none">ਆਪਣਾ FI ਨੰਬਰ ਗਿਣੋ: ਸਾਲਾਨਾ ਖਰਚਿਆਂ ਦਾ 25x</span>
+        </li>
+    </ul>
+    <div class="milestone-box" style="border-color:#05966933;background:#05966908;">
+      <span class="milestone-icon">🎯</span>
+      <span class="milestone-text lang-en">Hit $150,000 net worth</span>
+      <span class="milestone-text lang-pa" style="display:none">$150,000 ਕੁੱਲ ਸੰਪੱਤੀ ਤੱਕ ਪਹੁੰਚੋ</span>
+    </div>
+  </div>
+  <div class="level-connector"></div>
+  <div class="level-card" id="L4" data-level="4">
+    <div class="level-header" style="background:linear-gradient(135deg,#7c3aed22,#7c3aed08);border-color:#7c3aed33;">
+      <div class="level-emoji">💎</div>
+      <div class="level-badge" style="background:#7c3aed20;color:#7c3aed;border-color:#7c3aed40">STAGE 4</div>
+      <div class="level-range" style="color:#7c3aed">$150K — $400K</div>
+      <h2 class="level-headline lang-en">Tax Strategy & Leverage</h2>
+      <h2 class="level-headline lang-pa" style="display:none">ਟੈਕਸ ਰਣਨੀਤੀ ਅਤੇ ਲੀਵਰੇਜ</h2>
+      <p class="level-desc lang-en">Compound interest is doing serious work. Focus on advanced tax planning, real estate equity, and optimizing every dollar.</p>
+      <p class="level-desc lang-pa" style="display:none">ਮਿਸ਼ਰਤ ਵਿਆਜ ਗੰਭੀਰ ਕੰਮ ਕਰ ਰਿਹਾ ਹੈ। ਉੱਨਤ ਟੈਕਸ ਯੋਜਨਾ ਅਤੇ ਰੀਅਲ ਅਸਟੇਟ ਇਕੁਇਟੀ 'ਤੇ ਧਿਆਨ ਦਿਓ।</p>
+      <div class="progress-wrap">
+        <div class="progress-bar"><div class="progress-fill" id="L4-fill" style="width:0%;background:#7c3aed"></div></div>
+        <span class="progress-text" id="L4-pct">0/8 complete</span>
+      </div>
+    </div>
+    <ul class="task-list">
+        <li class="task-item" id="L4-t0">
+          <button class="task-check" onclick="toggleTask('L4-t0', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Consider a fee-only financial planner for tax optimization</span>
+          <span class="task-text lang-pa" style="display:none">ਟੈਕਸ ਅਨੁਕੂਲਤਾ ਲਈ ਫ਼ੀਸ-ਸਿਰਫ਼ ਵਿੱਤੀ ਸਲਾਹਕਾਰ 'ਤੇ ਵਿਚਾਰ ਕਰੋ</span>
+        </li>
+        <li class="task-item" id="L4-t1">
+          <button class="task-check" onclick="toggleTask('L4-t1', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Do a RRSP meltdown strategy if retiring before 65</span>
+          <span class="task-text lang-pa" style="display:none">ਜੇ 65 ਤੋਂ ਪਹਿਲਾਂ ਰਿਟਾਇਰ ਹੋ ਰਹੇ ਹੋ ਤਾਂ RRSP ਮੇਲਟਡਾਊਨ ਰਣਨੀਤੀ ਕਰੋ</span>
+        </li>
+        <li class="task-item" id="L4-t2">
+          <button class="task-check" onclick="toggleTask('L4-t2', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Explore real estate investing: rental property or REITs</span>
+          <span class="task-text lang-pa" style="display:none">ਰੀਅਲ ਅਸਟੇਟ ਨਿਵੇਸ਼ ਦੀ ਖੋਜ ਕਰੋ: ਕਿਰਾਇਆ ਜਾਇਦਾਦ ਜਾਂ REITs</span>
+        </li>
+        <li class="task-item" id="L4-t3">
+          <button class="task-check" onclick="toggleTask('L4-t3', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Tax-loss harvest in non-registered accounts</span>
+          <span class="task-text lang-pa" style="display:none">ਗੈਰ-ਰਜਿਸਟਰਡ ਖਾਤਿਆਂ ਵਿੱਚ ਟੈਕਸ-ਲੌਸ ਹਾਰਵੈਸਟਿੰਗ</span>
+        </li>
+        <li class="task-item" id="L4-t4">
+          <button class="task-check" onclick="toggleTask('L4-t4', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Consider critical illness insurance — 1 in 2 Canadians get cancer</span>
+          <span class="task-text lang-pa" style="display:none">ਗੰਭੀਰ ਬਿਮਾਰੀ ਬੀਮੇ 'ਤੇ ਵਿਚਾਰ ਕਰੋ</span>
+        </li>
+        <li class="task-item" id="L4-t5">
+          <button class="task-check" onclick="toggleTask('L4-t5', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Build passive income streams: dividends, rental, royalties</span>
+          <span class="task-text lang-pa" style="display:none">ਪੈਸਿਵ ਆਮਦਨ ਸਰੋਤ ਬਣਾਓ: ਡਿਵੀਡੈਂਡ, ਕਿਰਾਇਆ</span>
+        </li>
+        <li class="task-item" id="L4-t6">
+          <button class="task-check" onclick="toggleTask('L4-t6', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Accelerate mortgage payoff with lump-sum prepayments</span>
+          <span class="task-text lang-pa" style="display:none">ਇਕਮੁਸ਼ਤ ਪ੍ਰੀ-ਪੇਮੈਂਟ ਨਾਲ ਮੌਰਗੇਜ ਭੁਗਤਾਨ ਤੇਜ਼ ਕਰੋ</span>
+        </li>
+        <li class="task-item" id="L4-t7">
+          <button class="task-check" onclick="toggleTask('L4-t7', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Update will, power of attorney, and beneficiaries</span>
+          <span class="task-text lang-pa" style="display:none">ਵਸੀਅਤ, ਪਾਵਰ ਆਫ਼ ਅਟਾਰਨੀ ਅਤੇ ਲਾਭਪਾਤਰੀ ਅੱਪਡੇਟ ਕਰੋ</span>
+        </li>
+    </ul>
+    <div class="milestone-box" style="border-color:#7c3aed33;background:#7c3aed08;">
+      <span class="milestone-icon">🎯</span>
+      <span class="milestone-text lang-en">Hit $400,000 net worth</span>
+      <span class="milestone-text lang-pa" style="display:none">$400,000 ਕੁੱਲ ਸੰਪੱਤੀ ਤੱਕ ਪਹੁੰਚੋ</span>
+    </div>
+  </div>
+  <div class="level-connector"></div>
+  <div class="level-card" id="L5" data-level="5">
+    <div class="level-header" style="background:linear-gradient(135deg,#D4A01722,#D4A01708);border-color:#D4A01733;">
+      <div class="level-emoji">👑</div>
+      <div class="level-badge" style="background:#D4A01720;color:#D4A017;border-color:#D4A01740">STAGE 5</div>
+      <div class="level-range" style="color:#D4A017">$400K — $1M+</div>
+      <h2 class="level-headline lang-en">Wealth Preservation & Legacy</h2>
+      <h2 class="level-headline lang-pa" style="display:none">ਦੌਲਤ ਸੰਭਾਲ ਅਤੇ ਵਿਰਾਸਤ</h2>
+      <p class="level-desc lang-en">You've built life-changing wealth. Now protect it, optimize estate planning, and leave a legacy for the next generation.</p>
+      <p class="level-desc lang-pa" style="display:none">ਤੁਸੀਂ ਜ਼ਿੰਦਗੀ ਬਦਲਣ ਵਾਲੀ ਦੌਲਤ ਬਣਾਈ ਹੈ। ਹੁਣ ਇਸਨੂੰ ਸੁਰੱਖਿਅਤ ਕਰੋ ਅਤੇ ਅਗਲੀ ਪੀੜ੍ਹੀ ਲਈ ਵਿਰਾਸਤ ਛੱਡੋ।</p>
+      <div class="progress-wrap">
+        <div class="progress-bar"><div class="progress-fill" id="L5-fill" style="width:0%;background:#D4A017"></div></div>
+        <span class="progress-text" id="L5-pct">0/8 complete</span>
+      </div>
+    </div>
+    <ul class="task-list">
+        <li class="task-item" id="L5-t0">
+          <button class="task-check" onclick="toggleTask('L5-t0', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Get a comprehensive estate plan with a lawyer</span>
+          <span class="task-text lang-pa" style="display:none">ਵਕੀਲ ਨਾਲ ਵਿਆਪਕ ਜਾਇਦਾਦ ਯੋਜਨਾ ਬਣਾਓ</span>
+        </li>
+        <li class="task-item" id="L5-t1">
+          <button class="task-check" onclick="toggleTask('L5-t1', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Review OAS clawback strategy — keep income under threshold</span>
+          <span class="task-text lang-pa" style="display:none">OAS ਕਲੌਬੈਕ ਰਣਨੀਤੀ ਸਮੀਖਿਆ ਕਰੋ</span>
+        </li>
+        <li class="task-item" id="L5-t2">
+          <button class="task-check" onclick="toggleTask('L5-t2', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Consider incorporating if self-employed (significant tax savings)</span>
+          <span class="task-text lang-pa" style="display:none">ਜੇ ਸਵੈ-ਰੁਜ਼ਗਾਰ ਹੋ ਤਾਂ ਇਨਕੌਰਪੋਰੇਸ਼ਨ 'ਤੇ ਵਿਚਾਰ ਕਰੋ</span>
+        </li>
+        <li class="task-item" id="L5-t3">
+          <button class="task-check" onclick="toggleTask('L5-t3', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Optimize CPP and OAS timing (delay to 70 for 42% more)</span>
+          <span class="task-text lang-pa" style="display:none">CPP ਅਤੇ OAS ਸਮਾਂ ਅਨੁਕੂਲਿਤ ਕਰੋ (70 ਤੱਕ ਦੇਰੀ = 42% ਵੱਧ)</span>
+        </li>
+        <li class="task-item" id="L5-t4">
+          <button class="task-check" onclick="toggleTask('L5-t4', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Use TFSA for legacy — no tax on death to beneficiary</span>
+          <span class="task-text lang-pa" style="display:none">ਵਿਰਾਸਤ ਲਈ TFSA ਵਰਤੋ — ਮੌਤ 'ਤੇ ਲਾਭਪਾਤਰੀ ਨੂੰ ਕੋਈ ਟੈਕਸ ਨਹੀਂ</span>
+        </li>
+        <li class="task-item" id="L5-t5">
+          <button class="task-check" onclick="toggleTask('L5-t5', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Set up family trust if estate exceeds $2M</span>
+          <span class="task-text lang-pa" style="display:none">ਜੇ ਜਾਇਦਾਦ $2M ਤੋਂ ਵੱਧ ਹੈ ਤਾਂ ਪਰਿਵਾਰਕ ਟਰੱਸਟ ਸਥਾਪਤ ਕਰੋ</span>
+        </li>
+        <li class="task-item" id="L5-t6">
+          <button class="task-check" onclick="toggleTask('L5-t6', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Maximize charitable giving for tax credits</span>
+          <span class="task-text lang-pa" style="display:none">ਟੈਕਸ ਕ੍ਰੈਡਿਟ ਲਈ ਦਾਨ ਵੱਧ ਤੋਂ ਵੱਧ ਕਰੋ</span>
+        </li>
+        <li class="task-item" id="L5-t7">
+          <button class="task-check" onclick="toggleTask('L5-t7', this)" aria-label="Mark complete">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <span class="task-text lang-en">Teach your children about money — break the cycle</span>
+          <span class="task-text lang-pa" style="display:none">ਆਪਣੇ ਬੱਚਿਆਂ ਨੂੰ ਪੈਸੇ ਬਾਰੇ ਸਿਖਾਓ — ਚੱਕਰ ਤੋੜੋ</span>
+        </li>
+    </ul>
+    <div class="milestone-box" style="border-color:#D4A01733;background:#D4A01708;">
+      <span class="milestone-icon">🎯</span>
+      <span class="milestone-text lang-en">🏆 $1M+ Net Worth — You Made It!</span>
+      <span class="milestone-text lang-pa" style="display:none">🏆 $1M+ ਕੁੱਲ ਸੰਪੱਤੀ — ਤੁਸੀਂ ਕਰ ਲਿਆ!</span>
+    </div>
+  </div>
+  
+</div>
+
+<div class="save-bar" id="save-bar" data-en="✅ Progress saved!" data-pa="✅ ਤਰੱਕੀ ਸੁਰੱਖਿਅਤ!">✅ Progress saved!</div>
+
+<footer>
+  <a href="index.html" class="footer-logo">Punjabi<span>Finance</span></a>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="education.html">Learn</a>
+    <a href="calculators.html">Calculators</a>
+    <a href="tools.html">Immigrant Tools</a>
+    <a href="downloads.html">Free Downloads</a>
+    <a href="link.html">All Links</a>
+    
+  </div>
+  <p class="footer-disc">Educational content only — not financial, legal, or insurance advice. Always consult a licensed professional before making financial decisions. © 2025 Punjabi Finance</p>
+</footer>
+<script>
+
+let sL = localStorage.getItem('pf_lang')||'en';
+function siteSetLang(l){
+  sL=l; localStorage.setItem('pf_lang',l);
+  ['en','pa'].forEach(x=>{
+    const b=document.getElementById('nb-'+x);
+    if(b){b.classList.toggle('active',x===l);}
+  });
+  applyLang();
+}
+function applyLang(){
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    el.textContent = sL==='pa' ? (el.dataset.pa||el.dataset.en) : el.dataset.en;
+  });
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  if(sL==='pa'){
+    const enb=document.getElementById('nb-en');
+    const pab=document.getElementById('nb-pa');
+    if(enb)enb.classList.remove('active');
+    if(pab)pab.classList.add('active');
+  }
+  applyLang();
+});
+
+
+// Task persistence - use sessionStorage since localStorage may not be available
+const STORAGE_KEY = 'pf_wealth_path_v2';
+let taskState = {};
+
+function loadState() {
+  try {
+    const saved = sessionStorage.getItem(STORAGE_KEY);
+    if (saved) taskState = JSON.parse(saved);
+  } catch(e) {}
+}
+
+function saveState() {
+  try {
+    sessionStorage.setItem(STORAGE_KEY, JSON.stringify(taskState));
+    const bar = document.getElementById('save-bar');
+    if (bar) {
+      bar.classList.add('show');
+      setTimeout(() => bar.classList.remove('show'), 2000);
+    }
+  } catch(e) {}
+}
+
+function toggleTask(id, btn) {
+  const li = document.getElementById(id);
+  if (!li) return;
+  const isDone = !li.classList.contains('done');
+  li.classList.toggle('done', isDone);
+  btn.classList.toggle('done', isDone);
+  taskState[id] = isDone;
+  saveState();
+  updateAllProgress();
+}
+
+function updateAllProgress() {
+  let totalDone = 0, totalTasks = 0;
+  const levels = ['L0', 'L1', 'L2', 'L3', 'L4', 'L5'];
+  const taskCounts = [7, 7, 8, 8, 8, 8];
+  levels.forEach((lvId, i) => {
+    const count = taskCounts[i];
+    totalTasks += count;
+    let done = 0;
+    for (let j = 0; j < count; j++) {
+      if (taskState[lvId + '-t' + j]) done++;
+    }
+    totalDone += done;
+    const fill = document.getElementById(lvId + '-fill');
+    const pct = document.getElementById(lvId + '-pct');
+    if (fill) fill.style.width = (count > 0 ? Math.round(done/count*100) : 0) + '%';
+    if (pct) {
+      const lang = localStorage.getItem('pf_lang') || 'en';
+      pct.textContent = done + '/' + count + (lang === 'pa' ? ' ਪੂਰੇ' : ' complete');
+    }
+  });
+  const totalDoneEl = document.getElementById('total-done');
+  const overallEl = document.getElementById('overall-pct');
+  if (totalDoneEl) totalDoneEl.textContent = totalDone;
+  if (overallEl) overallEl.textContent = Math.round(totalDone/totalTasks*100) + '%';
+}
+
+function restoreState() {
+  Object.entries(taskState).forEach(([id, done]) => {
+    if (!done) return;
+    const li = document.getElementById(id);
+    const btn = li && li.querySelector('.task-check');
+    if (li) li.classList.add('done');
+    if (btn) btn.classList.add('done');
+  });
+  updateAllProgress();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadState();
+  restoreState();
+});
+</script>
+
+<!-- AI CHATBOT WIDGET -->
+<div id="chat-widget" style="position:fixed;bottom:24px;right:24px;z-index:9999;font-family:'DM Sans',sans-serif;">
+  <!-- Toggle Button -->
+  <div id="chat-toggle" onclick="toggleChat()" style="width:58px;height:58px;background:linear-gradient(135deg,#D4A017,#E8890C);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 20px rgba(212,160,23,0.4);transition:transform 0.2s;" onmouseenter="this.style.transform='scale(1.1)'" onmouseleave="this.style.transform='scale(1)'">
+    <span id="chat-icon" style="font-size:1.4rem;">💬</span>
+  </div>
+  <!-- Chat Panel -->
+  <div id="chat-panel" style="display:none;position:absolute;bottom:70px;right:0;width:360px;max-height:520px;background:#fff;border-radius:20px;box-shadow:0 8px 48px rgba(0,0,0,0.2);overflow:hidden;flex-direction:column;">
+    <!-- Header -->
+    <div style="background:linear-gradient(135deg,#D4A017,#E8890C);padding:16px 18px;display:flex;align-items:center;gap:10px;">
+      <div style="width:36px;height:36px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">🤖</div>
+      <div style="flex:1;">
+        <div style="font-size:0.9rem;font-weight:700;color:#fff;">Punjabi Finance AI</div>
+        <div style="font-size:0.7rem;color:rgba(255,255,255,0.8);" id="chat-status">Ask me anything about finance in Canada</div>
+      </div>
+      <div onclick="toggleChat()" style="cursor:pointer;color:rgba(255,255,255,0.8);font-size:1.1rem;line-height:1;">✕</div>
+    </div>
+    <!-- Messages -->
+    <div id="chat-messages" style="flex:1;overflow-y:auto;padding:14px;max-height:340px;display:flex;flex-direction:column;gap:10px;">
+      <div class="chat-msg bot" style="background:#f5f3ee;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:0.84rem;color:#2a2000;line-height:1.6;max-width:85%;">
+        <span id="chat-welcome">👋 Sat Sri Akal! I'm the Punjabi Finance AI.<br><br>Ask me anything about:<br>• Life & Super Visa insurance<br>• TFSA, RRSP, investing<br>• Real estate in Canada<br>• Taxes & retirement<br><br>I answer in English or Punjabi! 🇨🇦</span>
+      </div>
+    </div>
+    <!-- Quick Questions -->
+    <div id="quick-qs" style="padding:0 14px 10px;display:flex;flex-wrap:wrap;gap:6px;">
+      <button onclick="sendQuick('How much life insurance do I need?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">Life insurance?</button>
+      <button onclick="sendQuick('What is Super Visa insurance?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">Super Visa?</button>
+      <button onclick="sendQuick('How do I start investing in Canada?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">How to invest?</button>
+      <button onclick="sendQuick('TFSA vs RRSP — which should I use?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">TFSA vs RRSP?</button>
+    </div>
+    <!-- Input -->
+    <div style="padding:10px 14px 14px;border-top:1px solid rgba(0,0,0,0.07);display:flex;gap:8px;align-items:flex-end;">
+      <input id="chat-input" type="text" placeholder="Ask a finance question..." style="flex:1;padding:10px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:50px;font-size:0.84rem;font-family:'DM Sans',sans-serif;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='#D4A017'" onblur="this.style.borderColor='rgba(0,0,0,0.12)'" onkeypress="if(event.key==='Enter')sendMsg()">
+      <button onclick="sendMsg()" id="send-btn" style="width:38px;height:38px;background:linear-gradient(135deg,#D4A017,#E8890C);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;transition:transform 0.2s;" onmouseenter="this.style.transform='scale(1.1)'" onmouseleave="this.style.transform='scale(1)'">→</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const CHAT_SYSTEM = `You are the Punjabi Finance AI assistant — a helpful, friendly financial education bot for the Punjabi community in Canada.
+
+Your role:
+- Provide free financial education about Canadian personal finance
+- Topics: life insurance, Super Visa insurance, critical illness, disability, TFSA, RRSP, FHSA, RESP, investing, real estate, mortgages, taxes, retirement, newcomer finance
+- Always remind users to consult a licensed professional for personal advice
+- Be warm and community-focused — this is for the Punjabi diaspora in Canada
+- Respond in the same language the user writes in (English or Punjabi)
+- Keep answers concise and practical — max 150 words unless asked to elaborate
+- Reference relevant tools on the site: calculators.html, tools.html, education.html- Never give specific investment recommendations or specific insurance quotes
+Personality: Knowledgeable, warm, like a financially savvy older sibling or family friend who happens to know a lot about Canadian finance.`;
+
+let chatOpen = false;
+let isLoading = false;
+const chatHistory = [];
+
+function toggleChat() {
+  chatOpen = !chatOpen;
+  const panel = document.getElementById('chat-panel');
+  panel.style.display = chatOpen ? 'flex' : 'none';
+  panel.style.flexDirection = 'column';
+  document.getElementById('chat-icon').textContent = chatOpen ? '✕' : '💬';
+  if(chatOpen) document.getElementById('chat-input').focus();
+}
+
+function sendQuick(msg) {
+  document.getElementById('quick-qs').style.display = 'none';
+  document.getElementById('chat-input').value = msg;
+  sendMsg();
+}
+
+function addMsg(text, role) {
+  const msgs = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.style.cssText = role === 'user'
+    ? 'background:linear-gradient(135deg,#D4A017,#E8890C);color:#0a0a0a;border-radius:14px 14px 4px 14px;padding:10px 14px;font-size:0.84rem;line-height:1.6;max-width:80%;margin-left:auto;'
+    : 'background:#f5f3ee;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:0.84rem;color:#2a2000;line-height:1.6;max-width:88%;';
+  div.textContent = text;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+  return div;
+}
+
+function addTyping() {
+  const msgs = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.id = 'typing-indicator';
+  div.style.cssText = 'background:#f5f3ee;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:0.84rem;color:#9A8A6A;max-width:88%;';
+  div.textContent = '...thinking';
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+async function sendMsg() {
+  if(isLoading) return;
+  const input = document.getElementById('chat-input');
+  const msg = input.value.trim();
+  if(!msg) return;
+  input.value = '';
+  
+  addMsg(msg, 'user');
+  chatHistory.push({role:'user', content: msg});
+  
+  document.getElementById('quick-qs').style.display = 'none';
+  isLoading = true;
+  document.getElementById('chat-status').textContent = 'Thinking...';
+  addTyping();
+  
+  try {
+    const res = await fetch('/api/chat', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({messages: chatHistory})
+    });
+    const data = await res.json();
+    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again ";
+    
+    const typing = document.getElementById('typing-indicator');
+    if(typing) typing.remove();
+    
+    addMsg(reply, 'bot');
+    chatHistory.push({role:'assistant', content: reply});
+    document.getElementById('chat-status').textContent = 'Ask me anything about finance';
+  } catch(err) {
+    const typing = document.getElementById('typing-indicator');
+    if(typing) typing.remove();
+    addMsg('Sorry, something went wrong. ', 'bot');
+    document.getElementById('chat-status').textContent = 'Ask me anything about finance';
+  }
+  isLoading = false;
+}
+</script>
+</body></html>

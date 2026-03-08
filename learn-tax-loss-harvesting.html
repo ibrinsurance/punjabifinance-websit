@@ -88,7 +88,6 @@
   <p class="lead">Tax-loss harvesting is a legitimate strategy to reduce your capital gains tax bill. Here's how it works for Canadian investors.</p>
   <div class="sec" id="what"><h2><span>💰</span> What Is Tax-Loss Harvesting?</h2><p>Tax-loss harvesting means deliberately selling an investment that has declined in value to realize a capital loss, which you can then use to offset capital gains realized elsewhere — reducing your tax bill.</p><p><strong>Example:</strong> You sold a stock and realized a $10,000 capital gain. You also hold another investment at a $4,000 loss. By selling that losing investment before December 31, you offset $4,000 of your gain — paying tax on only $6,000. At a 50% inclusion rate and 43% marginal rate, that's roughly $860 in tax savings.</p></div><div class="div"></div><div class="sec" id="rules"><h2><span>📋</span> Canadian Rules to Know</h2><p><strong>Superficial loss rule:</strong> You cannot buy back the same security within 30 days before or after the sale, or the loss is denied. Applies to you, your spouse, and corporations you control.</p><p><strong>Capital loss carry-forward:</strong> If losses exceed gains in a given year, the excess can be carried forward indefinitely to offset future capital gains — or carried back 3 years to recover taxes paid on past gains.</p><p><strong>Registered accounts don't count:</strong> Losses inside your TFSA or RRSP cannot be claimed. Tax-loss harvesting only applies to non-registered (taxable) investment accounts.</p></div><div class="div"></div><div class="sec" id="process"><h2><span>🔄</span> The Process</h2><p>1. Review your non-registered portfolio for positions with unrealized losses near year-end.<br>2. Identify positions with unrealized gains you've sold or plan to sell.<br>3. Sell loss positions before December 31 (settlement takes 2 business days — sell by December 27 to settle in the current tax year).<br>4. Wait 30 days before repurchasing the same security, or immediately buy a similar (not identical) security to maintain market exposure.</p></div><div class="div"></div><div class="sec" id="similar"><h2><span>🔀</span> Replacing the Sold Investment</h2><p>To stay invested while waiting the 30-day superficial loss period, buy a similar (not identical) investment. Example: sell a Canadian bank ETF, immediately buy a different Canadian bank ETF with similar holdings. You maintain exposure to the Canadian banking sector without violating the superficial loss rule.</p></div>
   <div class="div"></div>
-  <div class="cta"><h3>Have a Question?</h3><p>Message us on WhatsApp — in Punjabi or English. We answer insurance and financial questions personally.</p></div>
 </main>
 </div>
 <footer>
@@ -150,11 +149,7 @@ Your role:
 - Be warm and community-focused — this is for the Punjabi diaspora in Canada
 - Respond in the same language the user writes in (English or Punjabi)
 - Keep answers concise and practical — max 150 words unless asked to elaborate
-- Reference relevant tools on the site: calculators.html, tools.html, education.html
-- For insurance questions, suggest they WhatsApp us at +1 647-745-6850 for a personal quote
-- Never give specific investment recommendations or specific insurance quotes
-- Always end insurance/investment answers with a soft call to action to WhatsApp or visit ibrinsurance.ca
-
+- Reference relevant tools on the site: calculators.html, tools.html, education.html- Never give specific investment recommendations or specific insurance quotes
 Personality: Knowledgeable, warm, like a financially savvy older sibling or family friend who happens to know a lot about Canadian finance.`;
 
 let chatOpen = false;
@@ -220,7 +215,7 @@ async function sendMsg() {
       body: JSON.stringify({messages: chatHistory})
     });
     const data = await res.json();
-    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again or WhatsApp us directly.";
+    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again ";
     
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
@@ -231,7 +226,7 @@ async function sendMsg() {
   } catch(err) {
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
-    addMsg('Sorry, something went wrong. Please WhatsApp us directly at +1 647-745-6850 or visit ibrinsurance.ca', 'bot');
+    addMsg('Sorry, something went wrong. ', 'bot');
     document.getElementById('chat-status').textContent = 'Ask me anything about finance';
   }
   isLoading = false;

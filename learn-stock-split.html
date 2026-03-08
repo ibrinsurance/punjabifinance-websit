@@ -84,11 +84,9 @@
 <main>
   <div class="breadcrumb"><a href="index.html">Home</a> › <a href="education.html">Learn</a> › <span style="color:var(--off);">Stock Splits</span></div>
   <div class="tag">💹 Stocks</div>
-  <h1>Stock Splits Explained</h1>
-  <p class="lead">A stock split increases the number of shares but doesn't change the company's value. Here's what it means for investors.</p>
-  <div class="sec" id="what"><h2><span>📊</span> What Is a Stock Split?</h2><p>A stock split divides existing shares into multiple new shares. In a 2-for-1 split, every investor who owns 1 share now owns 2 shares — but each share is worth half the original price. The total value of your investment stays exactly the same.</p><p><strong>Example:</strong> You own 10 shares at $1,000 each = $10,000 total. After a 4-for-1 split: you own 40 shares at $250 each = still $10,000 total.</p></div><div class="div"></div><div class="sec" id="why"><h2><span>🤔</span> Why Do Companies Split Their Stock?</h2><p><strong>Accessibility:</strong> When a stock price gets very high (e.g., $3,000+ per share), smaller investors cannot afford a single share. A split brings the price to a more accessible range.</p><p><strong>Liquidity:</strong> Lower per-share prices mean more shares trade hands daily, making it easier to buy and sell in precise amounts.</p><p><strong>Psychological signal:</strong> Companies often split when their stock has risen dramatically — attracting retail investor attention. Amazon, Apple, and Nvidia have all done major splits in recent years.</p></div><div class="div"></div><div class="sec" id="reverse"><h2><span>🔄</span> Reverse Stock Splits</h2><p>A reverse split works the opposite way — multiple shares are combined into one. A 1-for-10 reverse split: 100 shares at $0.50 each become 10 shares at $5 each. Companies usually do reverse splits when their stock price has fallen dangerously low. This is often a warning sign of a struggling company.</p></div><div class="div"></div><div class="sec" id="impact"><h2><span>💰</span> Does a Split Affect Your Investment?</h2><p>No — not directly. Your proportional ownership stays exactly the same. Splits can attract media attention and new investors, sometimes creating a short-term price boost. Long-term, what matters is the company's underlying business performance, not the share count.</p></div>
-  <div class="div"></div>
-  <div class="cta"><h3>Have a Question?</h3><p>Message us on WhatsApp — in Punjabi or English. We answer insurance and financial questions personally.</p></div>
+  <h1>Stock Splits Explained: What They Mean for Investors</h1>
+  <p class="lead">A stock split increases the number of shares without changing the company's value. Here's exactly what it means — and the history behind major splits.</p>
+  <div class="sec" id="what"><h2><span>📊</span> What Is a Stock Split?</h2><p>A stock split divides existing shares into multiple new shares. In a 2-for-1 split, each investor who owns 1 share now owns 2 shares — but each share is worth exactly half the original price. The total value of your investment stays completely unchanged.</p><p><strong>Simple example:</strong> You own 50 shares of a company at $200 each = $10,000 total. The company announces a 4-for-1 split. You now own 200 shares at $50 each = still $10,000 total. Nothing has changed about the company — only the number of shares and price per share.</p></div><div class="div"></div><div class="sec" id="why"><h2><span>🤔</span> Why Companies Split Their Stock</h2><p><strong>Affordability:</strong> When a stock price climbs to $2,000-$5,000+ per share, many retail investors can't afford even a single share. A split brings the price to a more accessible range, opening the stock to a broader investor base. Apple split 4-for-1 in 2020 when it reached $500/share. Nvidia split 10-for-1 in 2024 after reaching $1,200/share.</p><p><strong>Liquidity:</strong> More shares at a lower price means more shares trade hands each day, making it easier to buy and sell precise dollar amounts without moving the price.</p><p><strong>Market signalling:</strong> Companies typically only split after a period of strong price appreciation. The split itself signals that management is confident in continued growth — which can briefly boost sentiment among investors.</p></div><div class="div"></div><div class="sec" id="reverse"><h2><span>🔄</span> Reverse Splits — A Warning Sign</h2><p>A reverse split works the opposite way: 10 shares become 1 share at 10x the price. Companies do reverse splits when their stock has fallen to dangerously low levels — often to avoid being delisted from a major exchange (TSX requires minimum $0.10/share; NYSE requires $1.00/share).</p><p>A reverse split doesn't fix the underlying business problems that caused the stock to fall. Studies consistently show stocks that undergo reverse splits continue to underperform the market in subsequent years. A reverse split is generally a distress signal.</p></div><div class="div"></div><div class="sec" id="tax"><h2><span>💰</span> Tax Implications of Stock Splits in Canada</h2><p>A stock split itself is not a taxable event in Canada. CRA does not consider receiving additional shares in a split to be income. However, your adjusted cost base (ACB) per share changes: if you paid $800/share and the stock splits 4-for-1, your ACB is now $200/share. Track this carefully for when you eventually sell — accurate ACB is required to correctly calculate your capital gain or loss.</p></div><div class="div"></div><div class="sec" id="action"><h2><span>✅</span> What to Do When Your Stock Splits</h2><p>Nothing, typically. Your brokerage automatically adjusts share counts and prices on the split date. Review your ACB calculations to ensure accuracy. Long-term, focus on the company's business performance — not the mechanical event of the split. A split doesn't make a bad company good or a good company better. The only thing that matters is whether the business continues to grow earnings.</p></div>
 </main>
 </div>
 <footer>
@@ -150,11 +148,7 @@ Your role:
 - Be warm and community-focused — this is for the Punjabi diaspora in Canada
 - Respond in the same language the user writes in (English or Punjabi)
 - Keep answers concise and practical — max 150 words unless asked to elaborate
-- Reference relevant tools on the site: calculators.html, tools.html, education.html
-- For insurance questions, suggest they WhatsApp us at +1 647-745-6850 for a personal quote
-- Never give specific investment recommendations or specific insurance quotes
-- Always end insurance/investment answers with a soft call to action to WhatsApp or visit ibrinsurance.ca
-
+- Reference relevant tools on the site: calculators.html, tools.html, education.html- Never give specific investment recommendations or specific insurance quotes
 Personality: Knowledgeable, warm, like a financially savvy older sibling or family friend who happens to know a lot about Canadian finance.`;
 
 let chatOpen = false;
@@ -220,7 +214,7 @@ async function sendMsg() {
       body: JSON.stringify({messages: chatHistory})
     });
     const data = await res.json();
-    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again or WhatsApp us directly.";
+    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again ";
     
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
@@ -231,7 +225,7 @@ async function sendMsg() {
   } catch(err) {
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
-    addMsg('Sorry, something went wrong. Please WhatsApp us directly at +1 647-745-6850 or visit ibrinsurance.ca', 'bot');
+    addMsg('Sorry, something went wrong. ', 'bot');
     document.getElementById('chat-status').textContent = 'Ask me anything about finance';
   }
   isLoading = false;

@@ -88,7 +88,6 @@
   <p class="lead">Questrade is one of Canada's most popular self-directed brokerages. Here's what you need to know before opening an account.</p>
   <div class="sec" id="what"><h2><span>💹</span> What Is Questrade?</h2><p>Questrade is a Canadian online discount brokerage founded in 1999 and headquartered in Toronto. It lets Canadians open self-directed investment accounts (TFSA, RRSP, RESP, margin accounts) and invest in stocks, ETFs, bonds, options, and more — without paying the high fees of traditional bank brokerages.</p></div><div class="div"></div><div class="sec" id="fees"><h2><span>💰</span> Questrade Fee Structure</h2><p><strong>ETF purchases: FREE.</strong> This is Questrade's flagship feature — you buy ETFs at zero commission.<br><strong>Stock trades:</strong> $4.95 to $9.95 per trade — much cheaper than bank brokerage commissions of $20–$30+.<br><strong>ETF sales:</strong> $4.95 to $9.95 per trade (same as stocks).<br><strong>No annual fee</strong> for active accounts. Inactive accounts under $5,000 may face a quarterly fee.</p></div><div class="div"></div><div class="sec" id="accounts"><h2><span>🏦</span> Account Types at Questrade</h2><p>Questrade supports: TFSA, RRSP, RESP (for children's education), LIRA (Locked-In Retirement Account), margin accounts, and corporate accounts. Open multiple account types under one login — your portfolio dashboard shows everything in one place.</p></div><div class="div"></div><div class="sec" id="open"><h2><span>📝</span> How to Open a Questrade Account</h2><p>1. Go to Questrade.com and click Open Account<br>2. Provide your SIN, address, employment info, and bank details<br>3. Verify your identity with government ID<br>4. Fund your account via bank transfer<br>5. Start investing</p><p>Minimum deposit: $1,000. Account approved within 1–3 business days.</p></div><div class="div"></div><div class="sec" id="vs"><h2><span>⚖️</span> Questrade vs. Wealthsimple Trade</h2><p><strong>Questrade advantages:</strong> More account types (RESP, LIRA, corporate), more investment options (bonds, options, IPOs), better research tools, USD accounts to avoid currency conversion fees.</p><p><strong>Wealthsimple Trade advantages:</strong> Truly commission-free on all stocks and ETFs, simpler interface, no minimum deposit.</p><p><strong>Best choice:</strong> For ETF-focused passive investors, Wealthsimple Trade is excellent. For more complex needs — RESP, corporate accounts, frequent US stock trading — Questrade is worth it.</p></div>
   <div class="div"></div>
-  <div class="cta"><h3>Have a Question?</h3><p>Message us on WhatsApp — in Punjabi or English. We answer insurance and financial questions personally.</p></div>
 </main>
 </div>
 <footer>
@@ -150,11 +149,7 @@ Your role:
 - Be warm and community-focused — this is for the Punjabi diaspora in Canada
 - Respond in the same language the user writes in (English or Punjabi)
 - Keep answers concise and practical — max 150 words unless asked to elaborate
-- Reference relevant tools on the site: calculators.html, tools.html, education.html
-- For insurance questions, suggest they WhatsApp us at +1 647-745-6850 for a personal quote
-- Never give specific investment recommendations or specific insurance quotes
-- Always end insurance/investment answers with a soft call to action to WhatsApp or visit ibrinsurance.ca
-
+- Reference relevant tools on the site: calculators.html, tools.html, education.html- Never give specific investment recommendations or specific insurance quotes
 Personality: Knowledgeable, warm, like a financially savvy older sibling or family friend who happens to know a lot about Canadian finance.`;
 
 let chatOpen = false;
@@ -220,7 +215,7 @@ async function sendMsg() {
       body: JSON.stringify({messages: chatHistory})
     });
     const data = await res.json();
-    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again or WhatsApp us directly.";
+    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again ";
     
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
@@ -231,7 +226,7 @@ async function sendMsg() {
   } catch(err) {
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
-    addMsg('Sorry, something went wrong. Please WhatsApp us directly at +1 647-745-6850 or visit ibrinsurance.ca', 'bot');
+    addMsg('Sorry, something went wrong. ', 'bot');
     document.getElementById('chat-status').textContent = 'Ask me anything about finance';
   }
   isLoading = false;

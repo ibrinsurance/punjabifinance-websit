@@ -84,11 +84,9 @@
 <main>
   <div class="breadcrumb"><a href="index.html">Home</a> › <a href="education.html">Learn</a> › <span style="color:var(--off);">Sinking Funds</span></div>
   <div class="tag">💰 Budgeting</div>
-  <h1>Sinking Funds: Save for Predictable Expenses</h1>
-  <p class="lead">A sinking fund prevents 'surprise' expenses from breaking your budget. Here's how to set them up.</p>
-  <div class="sec" id="what"><h2><span>💰</span> What Is a Sinking Fund?</h2><p>A sinking fund is money you set aside every month for a specific, predictable future expense — even though the expense doesn't come every month. Car registration, annual insurance premiums, holiday gifts, home repairs, vacations: these aren't actually surprises if you plan for them.</p><p><strong>Example:</strong> Your car needs new winter tires every 4-5 years. Cost: ~$1,200. Divided over 48 months: $25/month. Set aside $25 every month and when tire day comes — the money is already there. No credit card needed.</p></div><div class="div"></div><div class="sec" id="types"><h2><span>📋</span> Common Sinking Funds to Create</h2><p>Car maintenance and repairs, home maintenance (budget 1% of home value annually), holiday gifts (Diwali, Christmas, Eid), annual insurance premiums, vacations, electronics replacement, clothing, pet expenses, wedding gifts, and children's activities are all predictable expenses that blindside people who don't plan for them.</p></div><div class="div"></div><div class="sec" id="setup"><h2><span>🏦</span> How to Set Up Sinking Funds</h2><p><strong>Method 1 — Multiple HISA accounts:</strong> Open separate high-interest savings accounts labelled Car, Vacation, Home Repairs, etc. Set up automatic transfers on payday.</p><p><strong>Best Canadian banks for multiple free savings accounts:</strong> EQ Bank, Tangerine, Simplii Financial — all offer free accounts with competitive interest rates.</p><p><strong>Method 2 — Spreadsheet tracking:</strong> Keep the money in one account but track each fund in a spreadsheet. Less visually organized but works fine.</p></div><div class="div"></div><div class="sec" id="payoff"><h2><span>✅</span> The Result</h2><p>People who use sinking funds almost universally report that unexpected expenses stop feeling stressful. The car repair, the wedding gift, the flight home to visit family — none of it comes from your monthly budget or your credit card. Your emergency fund stays intact for true emergencies.</p></div>
-  <div class="div"></div>
-  <div class="cta"><h3>Have a Question?</h3><p>Message us on WhatsApp — in Punjabi or English. We answer insurance and financial questions personally.</p></div>
+  <h1>Sinking Funds: End the 'Unexpected' Expense Forever</h1>
+  <p class="lead">There's no such thing as an unexpected expense if you plan for it. Sinking funds transform financial surprises into planned withdrawals.</p>
+  <div class="sec" id="what"><h2><span>💰</span> What Is a Sinking Fund?</h2><p>A sinking fund is a dedicated savings pool for a specific, predictable future expense — set aside monthly, long before the expense arrives. The name comes from corporate finance where companies 'sink' money into a fund to retire future debt obligations. For personal finance, it means never again saying 'I didn't expect that expense' about predictable costs.</p><p><strong>Examples of 'unexpected' expenses that are actually predictable:</strong> Car needs new tires every 4-5 years. Annual insurance premiums come every year. Christmas and Diwali happen on the same date every year. The furnace has a lifespan. Dividing these costs by months remaining and saving that amount monthly transforms a crisis into a planned withdrawal.</p></div><div class="div"></div><div class="sec" id="setup"><h2><span>🏦</span> Setting Up Sinking Funds</h2><p><strong>Step 1:</strong> List every predictable large expense over the next 12-36 months: car maintenance, home maintenance (budget 1% of home value annually), annual insurance renewals, property tax installments, vacations, electronics replacement, children's activities, holiday gifts, family events.<br><br><strong>Step 2:</strong> Divide each expense by the months until you need the money.<br><br><strong>Step 3:</strong> Open separate named savings accounts at EQ Bank, Tangerine, or Simplii (all free, all high-interest) and automate the monthly transfers.<br><br><strong>Step 4:</strong> When the expense arrives, withdraw from the designated fund. The money is already there.</p></div><div class="div"></div><div class="sec" id="accounts"><h2><span>🏦</span> Best Canadian Banks for Multiple Free Accounts</h2><p><strong>EQ Bank Savings Plus Account:</strong> Highest consistent interest rates in Canada. Free to open as many accounts as you need. No monthly fees, no minimum balance. Best overall for sinking funds.<br><br><strong>Tangerine:</strong> Multiple accounts possible, competitive rates (often strong promotional rates for new deposits), easy automatic transfers, user-friendly app.<br><br><strong>Simplii Financial:</strong> CIBC's online arm. Free accounts, good rates, seamless transfer if you bank at CIBC.<br><br>Name each account literally: 'Car Tires,' 'Diwali Gifts,' 'Home Repairs.' The psychological effect of named accounts — seeing money earmarked for a specific purpose — significantly reduces the temptation to redirect it.</p></div><div class="div"></div><div class="sec" id="amounts"><h2><span>📊</span> How Much to Put in Each Fund</h2><p>Some common Canadian sinking fund calculations:<br><br><strong>Car maintenance ($1,500/year):</strong> $125/month<br><strong>Home maintenance (1% of $700K home = $7,000/year):</strong> $583/month<br><strong>Annual insurance renewals ($3,600/year):</strong> $300/month<br><strong>Holiday gifts ($2,000/year):</strong> $167/month<br><strong>Vacation ($4,000/year):</strong> $333/month<br><br>Total: $1,508/month. Many Canadians are shocked by this number — but they're already spending it, just reactively and often on credit. The sinking fund approach means paying cash, paying no interest, and feeling completely in control.</p></div>
 </main>
 </div>
 <footer>
@@ -150,11 +148,7 @@ Your role:
 - Be warm and community-focused — this is for the Punjabi diaspora in Canada
 - Respond in the same language the user writes in (English or Punjabi)
 - Keep answers concise and practical — max 150 words unless asked to elaborate
-- Reference relevant tools on the site: calculators.html, tools.html, education.html
-- For insurance questions, suggest they WhatsApp us at +1 647-745-6850 for a personal quote
-- Never give specific investment recommendations or specific insurance quotes
-- Always end insurance/investment answers with a soft call to action to WhatsApp or visit ibrinsurance.ca
-
+- Reference relevant tools on the site: calculators.html, tools.html, education.html- Never give specific investment recommendations or specific insurance quotes
 Personality: Knowledgeable, warm, like a financially savvy older sibling or family friend who happens to know a lot about Canadian finance.`;
 
 let chatOpen = false;
@@ -220,7 +214,7 @@ async function sendMsg() {
       body: JSON.stringify({messages: chatHistory})
     });
     const data = await res.json();
-    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again or WhatsApp us directly.";
+    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again ";
     
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
@@ -231,7 +225,7 @@ async function sendMsg() {
   } catch(err) {
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
-    addMsg('Sorry, something went wrong. Please WhatsApp us directly at +1 647-745-6850 or visit ibrinsurance.ca', 'bot');
+    addMsg('Sorry, something went wrong. ', 'bot');
     document.getElementById('chat-status').textContent = 'Ask me anything about finance';
   }
   isLoading = false;

@@ -84,11 +84,9 @@
 <main>
   <div class="breadcrumb"><a href="index.html">Home</a> › <a href="education.html">Learn</a> › <span style="color:var(--off);">Stocks vs ETFs</span></div>
   <div class="tag">💹 Stocks</div>
-  <h1>Individual Stocks vs. ETFs: Which Is Right for You?</h1>
-  <p class="lead">Both stocks and ETFs let you invest in the market — but they work differently and suit different investor types.</p>
-  <div class="sec" id="stocks"><h2><span>📈</span> Individual Stocks</h2><p>When you buy individual stocks, you own a share of a specific company. Your returns depend entirely on how that company performs.</p><p><strong>Advantages:</strong> Unlimited upside potential, ability to build concentrated positions in companies you know well, dividends from well-chosen stocks, no management fees.</p><p><strong>Disadvantages:</strong> Concentration risk (one bad company can devastate your portfolio), requires significant research, emotional difficulty of watching individual holdings fall, most individual investors underperform simple index ETFs over time.</p></div><div class="div"></div><div class="sec" id="etfs"><h2><span>📦</span> ETFs</h2><p>An ETF holds dozens to thousands of individual stocks in one product. You buy diversification instantly.</p><p><strong>Advantages:</strong> Instant diversification, very low cost (MERs often under 0.25%), no research required for index ETFs, consistent performance matching the market.</p><p><strong>Disadvantages:</strong> You can never beat the market with an index ETF — you will always match it minus fees. No concentrated upside like picking a winning individual stock.</p></div><div class="div"></div><div class="sec" id="research"><h2><span>📊</span> What the Research Shows</h2><p>Study after study shows that roughly 80-90% of actively managed funds — run by professional stock pickers — underperform their benchmark index over 10-20 year periods. Individual retail investors typically do worse still. This is the strongest argument for simple, low-cost index ETFs for most investors.</p></div><div class="div"></div><div class="sec" id="both"><h2><span>✅</span> A Practical Approach</h2><p>Many Canadian investors use a hybrid approach: build a core portfolio of low-cost index ETFs (80-90% of portfolio) for reliable long-term growth, then use a small "fun money" allocation (10-20%) for individual stocks they've researched and believe in. This captures the benefits of both while limiting the damage from stock-picking errors.</p></div>
-  <div class="div"></div>
-  <div class="cta"><h3>Have a Question?</h3><p>Message us on WhatsApp — in Punjabi or English. We answer insurance and financial questions personally.</p></div>
+  <h1>Individual Stocks vs. ETFs: The Definitive Comparison for Canadian Investors</h1>
+  <p class="lead">Both let you invest in the market — but they work very differently. Here's an honest breakdown of when each makes sense.</p>
+  <div class="sec" id="stocks"><h2><span>📈</span> Individual Stocks: Full Ownership in Specific Companies</h2><p>When you buy a stock, you own a fractional share of a real business. Your return is entirely determined by that company's performance — its revenues, profits, competitive position, and management decisions.</p><p><strong>Advantages:</strong> Unlimited upside (a single stock can return 1,000% or more), ability to concentrate in companies you understand deeply, no annual management fees, potential for significant dividend income, sense of ownership and engagement with companies you use.<br><br><strong>Disadvantages:</strong> Concentration risk — one bad company or industry can devastate your portfolio; requires significant research time and financial knowledge to do properly; most individual investors underperform simple index ETFs after accounting for time, taxes, and trading costs; emotional difficulty maintaining positions through volatility.</p></div><div class="div"></div><div class="sec" id="etfs"><h2><span>📦</span> ETFs: Instant Diversification in One Purchase</h2><p>An ETF holds a basket of dozens to thousands of securities in a single product. Buy one share of a broad market ETF and you own a tiny slice of every company in the index.</p><p><strong>Advantages:</strong> Instant diversification eliminates company-specific risk; very low cost (Canadian ETF MERs often 0.1-0.25% annually vs. 1.5-2.5% for actively managed mutual funds); no research required for index ETFs; consistent performance matching the market; automatic rebalancing in all-in-one products; tax efficiency; simpler for estate administration.<br><br><strong>Disadvantages:</strong> You can never outperform the market — by definition, you match it minus fees; no concentrated upside from a single great stock pick; some ETFs are complex, leveraged, or expensive (always check the MER before buying).</p></div><div class="div"></div><div class="sec" id="evidence"><h2><span>📊</span> What the Research Says</h2><p>SPIVA Canada Scorecard data consistently shows that approximately 75-90% of actively managed Canadian equity funds underperform their benchmark index over 10+ year periods — after fees. These are professional fund managers with research teams, Bloomberg terminals, and decades of experience. Individual retail investors, making decisions with less information and more emotion, typically fare even worse.</p><p>This is not an argument against all individual stock investing — it's a very strong argument that index ETFs should form the core of most Canadians' portfolios, with individual stocks as a deliberate, research-backed supplement if desired.</p></div><div class="div"></div><div class="sec" id="practical"><h2><span>✅</span> A Practical Approach That Works</h2><p>The core-satellite strategy is used by sophisticated individual investors worldwide: allocate 80-90% of your portfolio to low-cost, globally diversified index ETFs (the 'core') and use the remaining 10-20% for individual stocks in companies you know deeply and have thoroughly researched (the 'satellite'). This structure:<br>— Guarantees you capture most of the market's long-term return<br>— Limits the damage from stock-picking mistakes<br>— Satisfies the natural desire to own specific companies<br>— Keeps your overall cost structure low</p></div>
 </main>
 </div>
 <footer>
@@ -150,11 +148,7 @@ Your role:
 - Be warm and community-focused — this is for the Punjabi diaspora in Canada
 - Respond in the same language the user writes in (English or Punjabi)
 - Keep answers concise and practical — max 150 words unless asked to elaborate
-- Reference relevant tools on the site: calculators.html, tools.html, education.html
-- For insurance questions, suggest they WhatsApp us at +1 647-745-6850 for a personal quote
-- Never give specific investment recommendations or specific insurance quotes
-- Always end insurance/investment answers with a soft call to action to WhatsApp or visit ibrinsurance.ca
-
+- Reference relevant tools on the site: calculators.html, tools.html, education.html- Never give specific investment recommendations or specific insurance quotes
 Personality: Knowledgeable, warm, like a financially savvy older sibling or family friend who happens to know a lot about Canadian finance.`;
 
 let chatOpen = false;
@@ -220,7 +214,7 @@ async function sendMsg() {
       body: JSON.stringify({messages: chatHistory})
     });
     const data = await res.json();
-    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again or WhatsApp us directly.";
+    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again ";
     
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
@@ -231,7 +225,7 @@ async function sendMsg() {
   } catch(err) {
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
-    addMsg('Sorry, something went wrong. Please WhatsApp us directly at +1 647-745-6850 or visit ibrinsurance.ca', 'bot');
+    addMsg('Sorry, something went wrong. ', 'bot');
     document.getElementById('chat-status').textContent = 'Ask me anything about finance';
   }
   isLoading = false;

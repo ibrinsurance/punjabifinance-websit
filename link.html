@@ -13,7 +13,7 @@
     --gold-dark: #A07810;
     --saffron: #E8890C;
     --black: #0A0A0A;
-    --off-white: #FAF7F0;
+    --off-white: #1a1600;
     --dark-bg: #111008;
     --card-bg: #1c1a0e;
     --text-muted: #9A8A6A;
@@ -305,10 +305,10 @@
   .about-handle-text { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 14px; }
   .about-badges { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
   .badge { padding: 5px 12px; background: rgba(212,160,23,0.1); border: 1px solid rgba(212,160,23,0.3); border-radius: 50px; font-size: 0.72rem; color: var(--gold-light); }
-  .about-text p { color: rgba(250,247,240,0.72); line-height: 1.75; margin-bottom: 18px; font-size: 0.95rem; }
+  .about-text p { color: #4a3f20; line-height: 1.75; margin-bottom: 18px; font-size: 0.95rem; }
   .about-highlight { display: flex; gap: 12px; background: rgba(212,160,23,0.07); border: 1px solid rgba(212,160,23,0.18); border-radius: 12px; padding: 14px 16px; margin-top: 18px; }
   .hi-icon { font-size: 1.3rem; flex-shrink: 0; }
-  .hi-text { font-size: 0.85rem; color: rgba(250,247,240,0.72); line-height: 1.5; }
+  .hi-text { font-size: 0.85rem; color: #4a3f20; line-height: 1.5; }
   .hi-text strong { color: var(--gold-light); }
 
   /* reviews */
@@ -316,7 +316,7 @@
   .review-card { background: var(--card-bg); border: 1px solid rgba(212,160,23,0.15); border-radius: 16px; padding: 22px; transition: border-color 0.2s, transform 0.2s; }
   .review-card:hover { border-color: rgba(212,160,23,0.4); transform: translateY(-3px); }
   .review-stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 10px; }
-  .review-text { color: rgba(250,247,240,0.72); font-size: 0.87rem; line-height: 1.6; margin-bottom: 16px; }
+  .review-text { color: #4a3f20; font-size: 0.87rem; line-height: 1.6; margin-bottom: 16px; }
   .review-author { display: flex; align-items: center; gap: 10px; }
   .review-avatar { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--gold-dark), var(--saffron)); display: flex; align-items: center; justify-content: center; font-size: 0.82rem; font-weight: 700; color: var(--black); flex-shrink: 0; }
   .review-name { font-weight: 600; font-size: 0.85rem; }
@@ -375,8 +375,8 @@
   <a href="index.html" style="text-decoration:none;color:#9A8A6A;font-size:0.82rem;font-weight:500;display:flex;align-items:center;gap:6px;">← <span>Home</span></a>
   <a href="index.html" style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#F0C040;text-decoration:none;">Punjabi<span style="color:#E8890C">Finance</span></a>
   <div style="display:flex;align-items:center;background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.25);border-radius:50px;padding:3px;">
-    <button id="lk-btn-en" onclick="linkSetLang('en',this)" style="padding:4px 13px;border-radius:50px;border:none;cursor:pointer;font-size:0.75rem;font-weight:600;font-family:'DM Sans',sans-serif;background:#D4A017;color:#0a0a0a;transition:all 0.2s;">EN</button>
-    <button id="lk-btn-pa" onclick="linkSetLang('pa',this)" style="padding:4px 13px;border-radius:50px;border:none;cursor:pointer;font-size:0.75rem;font-weight:600;font-family:'DM Sans',sans-serif;background:transparent;color:#9A8A6A;transition:all 0.2s;">PA</button>
+    <button id="lk-btn-en" onclick="linkSetLang('en',this)" style="padding:4px 13px;border-radius:50px;border:none;cursor:pointer;font-size:0.75rem;font-weight:600;font-family:'DM Sans',sans-serif;background:#D4A017;color:#0a0a0a;transition:all 0.2s;">English</button>
+    <button id="lk-btn-pa" onclick="linkSetLang('pa',this)" style="padding:4px 13px;border-radius:50px;border:none;cursor:pointer;font-size:0.75rem;font-weight:600;font-family:'DM Sans',sans-serif;background:transparent;color:#9A8A6A;transition:all 0.2s;">ਪੰਜਾਬੀ</button>
   </div>
 </div>
 
@@ -617,8 +617,8 @@
         <div style="display:flex;gap:16px;align-items:flex-start;">
           <div style="font-size:2rem;flex-shrink:0;margin-top:2px;">💡</div>
           <div style="flex:1;">
-            <p id="tip-text-en" style="font-size:1.08rem;line-height:1.7;color:rgba(250,247,240,0.9);font-style:italic;">&nbsp;</p>
-            <p id="tip-text-pa" style="font-size:1.08rem;line-height:1.7;color:rgba(250,247,240,0.9);font-style:italic;display:none;">&nbsp;</p>
+            <p id="tip-text-en" style="font-size:1.08rem;line-height:1.7;color:#4a3f20;font-style:italic;">&nbsp;</p>
+            <p id="tip-text-pa" style="font-size:1.08rem;line-height:1.7;color:#4a3f20;font-style:italic;display:none;">&nbsp;</p>
           </div>
         </div>
         <div style="margin-top:16px;padding-top:14px;border-top:1px solid rgba(212,160,23,0.12);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
@@ -846,6 +846,8 @@ function updateLinkTip() {
 
 // Init link page lang
 (function() {
+  // Read saved preference
+  linkLang = localStorage.getItem("pf_lang") || "en";
   if (linkLang === "pa") {
     const enBtn = document.getElementById("lk-btn-en");
     const paBtn = document.getElementById("lk-btn-pa");
@@ -854,6 +856,138 @@ function updateLinkTip() {
   }
   updateLinkTip();
 })();
+</script>
+
+<!-- AI CHATBOT WIDGET -->
+<div id="chat-widget" style="position:fixed;bottom:24px;right:24px;z-index:9999;font-family:'DM Sans',sans-serif;">
+  <!-- Toggle Button -->
+  <div id="chat-toggle" onclick="toggleChat()" style="width:58px;height:58px;background:linear-gradient(135deg,#D4A017,#E8890C);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 20px rgba(212,160,23,0.4);transition:transform 0.2s;" onmouseenter="this.style.transform='scale(1.1)'" onmouseleave="this.style.transform='scale(1)'">
+    <span id="chat-icon" style="font-size:1.4rem;">💬</span>
+  </div>
+  <!-- Chat Panel -->
+  <div id="chat-panel" style="display:none;position:absolute;bottom:70px;right:0;width:360px;max-height:520px;background:#fff;border-radius:20px;box-shadow:0 8px 48px rgba(0,0,0,0.2);overflow:hidden;flex-direction:column;">
+    <!-- Header -->
+    <div style="background:linear-gradient(135deg,#D4A017,#E8890C);padding:16px 18px;display:flex;align-items:center;gap:10px;">
+      <div style="width:36px;height:36px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">🤖</div>
+      <div style="flex:1;">
+        <div style="font-size:0.9rem;font-weight:700;color:#fff;">Punjabi Finance AI</div>
+        <div style="font-size:0.7rem;color:rgba(255,255,255,0.8);" id="chat-status">Ask me anything about finance in Canada</div>
+      </div>
+      <div onclick="toggleChat()" style="cursor:pointer;color:rgba(255,255,255,0.8);font-size:1.1rem;line-height:1;">✕</div>
+    </div>
+    <!-- Messages -->
+    <div id="chat-messages" style="flex:1;overflow-y:auto;padding:14px;max-height:340px;display:flex;flex-direction:column;gap:10px;">
+      <div class="chat-msg bot" style="background:#f5f3ee;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:0.84rem;color:#2a2000;line-height:1.6;max-width:85%;">
+        <span id="chat-welcome">👋 Sat Sri Akal! I'm the Punjabi Finance AI.<br><br>Ask me anything about:<br>• Life & Super Visa insurance<br>• TFSA, RRSP, investing<br>• Real estate in Canada<br>• Taxes & retirement<br><br>I answer in English or Punjabi! 🇨🇦</span>
+      </div>
+    </div>
+    <!-- Quick Questions -->
+    <div id="quick-qs" style="padding:0 14px 10px;display:flex;flex-wrap:wrap;gap:6px;">
+      <button onclick="sendQuick('How much life insurance do I need?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">Life insurance?</button>
+      <button onclick="sendQuick('What is Super Visa insurance?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">Super Visa?</button>
+      <button onclick="sendQuick('How do I start investing in Canada?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">How to invest?</button>
+      <button onclick="sendQuick('TFSA vs RRSP — which should I use?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">TFSA vs RRSP?</button>
+    </div>
+    <!-- Input -->
+    <div style="padding:10px 14px 14px;border-top:1px solid rgba(0,0,0,0.07);display:flex;gap:8px;align-items:flex-end;">
+      <input id="chat-input" type="text" placeholder="Ask a finance question..." style="flex:1;padding:10px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:50px;font-size:0.84rem;font-family:'DM Sans',sans-serif;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='#D4A017'" onblur="this.style.borderColor='rgba(0,0,0,0.12)'" onkeypress="if(event.key==='Enter')sendMsg()">
+      <button onclick="sendMsg()" id="send-btn" style="width:38px;height:38px;background:linear-gradient(135deg,#D4A017,#E8890C);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;transition:transform 0.2s;" onmouseenter="this.style.transform='scale(1.1)'" onmouseleave="this.style.transform='scale(1)'">→</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const CHAT_SYSTEM = `You are the Punjabi Finance AI assistant — a helpful, friendly financial education bot for the Punjabi community in Canada.
+
+Your role:
+- Provide free financial education about Canadian personal finance
+- Topics: life insurance, Super Visa insurance, critical illness, disability, TFSA, RRSP, FHSA, RESP, investing, real estate, mortgages, taxes, retirement, newcomer finance
+- Always remind users to consult a licensed professional for personal advice
+- Be warm and community-focused — this is for the Punjabi diaspora in Canada
+- Respond in the same language the user writes in (English or Punjabi)
+- Keep answers concise and practical — max 150 words unless asked to elaborate
+- Reference relevant tools on the site: calculators.html, tools.html, education.html- Never give specific investment recommendations or specific insurance quotes
+Personality: Knowledgeable, warm, like a financially savvy older sibling or family friend who happens to know a lot about Canadian finance.`;
+
+let chatOpen = false;
+let isLoading = false;
+const chatHistory = [];
+
+function toggleChat() {
+  chatOpen = !chatOpen;
+  const panel = document.getElementById('chat-panel');
+  panel.style.display = chatOpen ? 'flex' : 'none';
+  panel.style.flexDirection = 'column';
+  document.getElementById('chat-icon').textContent = chatOpen ? '✕' : '💬';
+  if(chatOpen) document.getElementById('chat-input').focus();
+}
+
+function sendQuick(msg) {
+  document.getElementById('quick-qs').style.display = 'none';
+  document.getElementById('chat-input').value = msg;
+  sendMsg();
+}
+
+function addMsg(text, role) {
+  const msgs = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.style.cssText = role === 'user'
+    ? 'background:linear-gradient(135deg,#D4A017,#E8890C);color:#0a0a0a;border-radius:14px 14px 4px 14px;padding:10px 14px;font-size:0.84rem;line-height:1.6;max-width:80%;margin-left:auto;'
+    : 'background:#f5f3ee;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:0.84rem;color:#2a2000;line-height:1.6;max-width:88%;';
+  div.textContent = text;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+  return div;
+}
+
+function addTyping() {
+  const msgs = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.id = 'typing-indicator';
+  div.style.cssText = 'background:#f5f3ee;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:0.84rem;color:#9A8A6A;max-width:88%;';
+  div.textContent = '...thinking';
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+async function sendMsg() {
+  if(isLoading) return;
+  const input = document.getElementById('chat-input');
+  const msg = input.value.trim();
+  if(!msg) return;
+  input.value = '';
+  
+  addMsg(msg, 'user');
+  chatHistory.push({role:'user', content: msg});
+  
+  document.getElementById('quick-qs').style.display = 'none';
+  isLoading = true;
+  document.getElementById('chat-status').textContent = 'Thinking...';
+  addTyping();
+  
+  try {
+    const res = await fetch('/api/chat', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({messages: chatHistory})
+    });
+    const data = await res.json();
+    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again ";
+    
+    const typing = document.getElementById('typing-indicator');
+    if(typing) typing.remove();
+    
+    addMsg(reply, 'bot');
+    chatHistory.push({role:'assistant', content: reply});
+    document.getElementById('chat-status').textContent = 'Ask me anything about finance';
+  } catch(err) {
+    const typing = document.getElementById('typing-indicator');
+    if(typing) typing.remove();
+    addMsg('Sorry, something went wrong. ', 'bot');
+    document.getElementById('chat-status').textContent = 'Ask me anything about finance';
+  }
+  isLoading = false;
+}
 </script>
 </body>
 </html>

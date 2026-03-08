@@ -88,7 +88,6 @@
   <p class="lead">Should you invest in Canadian stocks, American stocks, or both? Here's a straightforward breakdown for Canadian investors.</p>
   <div class="sec" id="what"><h2><span>📊</span> The Two Indexes Explained</h2><p><strong>TSX (S&P/TSX Composite Index)</strong> — Canada's main stock market, tracking roughly 250 of the largest TSX-listed companies. Heavily concentrated in financials (banks, ~30%), energy (~18%), and materials (mining, gold, ~13%).</p><p><strong>S&P 500</strong> — tracks 500 of the largest US companies. Far more diversified by sector, dominated by technology, healthcare, and consumer companies. Represents about 80% of the total US market cap.</p></div><div class="div"></div><div class="sec" id="performance"><h2><span>📈</span> Historical Performance</h2><p>Over most 20-30 year periods, the S&P 500 has outperformed the TSX, largely due to US tech companies (Microsoft, Apple, Nvidia, Amazon) delivering extraordinary returns. However, there have been decade-long periods where Canadian resource stocks significantly outpaced US equities.</p><p><strong>Honest answer:</strong> You cannot reliably predict which will outperform. Both have produced strong long-term returns for patient investors.</p></div><div class="div"></div><div class="sec" id="currency"><h2><span>💱</span> The Currency Factor</h2><p>As a Canadian, investing in the S&P 500 means buying in US dollars. When the Canadian dollar is weak (e.g., CAD at $0.73 USD), your US investments are worth more in Canadian dollars. When CAD is strong, returns are reduced by currency conversion.</p><p>You can buy currency-hedged ETFs to eliminate this risk, but hedging has its own costs and is generally not recommended for long-term equity holdings.</p></div><div class="div"></div><div class="sec" id="both"><h2><span>🇨🇦</span> The Case for Owning Both</h2><p>Most Canadian financial professionals recommend global diversification including both Canadian and international equities.</p><p><strong>Benefits of Canadian stocks:</strong> No currency risk, eligible dividends qualify for the dividend tax credit, strong bank and resource dividends.</p><p><strong>Benefits of US/global stocks:</strong> Better sector diversification (tech, healthcare), historically strong returns.</p><p><strong>Common approach:</strong> A blend — 30% Canada, 40% US, 30% international — achieved easily through a single all-in-one asset allocation ETF available from Vanguard or iShares on the TSX.</p></div><div class="div"></div><div class="sec" id="buy"><h2><span>🛒</span> How to Invest in Both</h2><p>The simplest approach: buy a single all-in-one asset allocation ETF on the TSX. These hold Canadian, US, and international stocks and bonds in one product — automatic rebalancing included. Available commission-free at Questrade, and free to buy and sell at Wealthsimple Trade. Hold inside your TFSA or RRSP for maximum tax efficiency.</p></div>
   <div class="div"></div>
-  <div class="cta"><h3>Have a Question?</h3><p>Message us on WhatsApp — in Punjabi or English. We answer insurance and financial questions personally.</p></div>
 </main>
 </div>
 <footer>
@@ -150,11 +149,7 @@ Your role:
 - Be warm and community-focused — this is for the Punjabi diaspora in Canada
 - Respond in the same language the user writes in (English or Punjabi)
 - Keep answers concise and practical — max 150 words unless asked to elaborate
-- Reference relevant tools on the site: calculators.html, tools.html, education.html
-- For insurance questions, suggest they WhatsApp us at +1 647-745-6850 for a personal quote
-- Never give specific investment recommendations or specific insurance quotes
-- Always end insurance/investment answers with a soft call to action to WhatsApp or visit ibrinsurance.ca
-
+- Reference relevant tools on the site: calculators.html, tools.html, education.html- Never give specific investment recommendations or specific insurance quotes
 Personality: Knowledgeable, warm, like a financially savvy older sibling or family friend who happens to know a lot about Canadian finance.`;
 
 let chatOpen = false;
@@ -220,7 +215,7 @@ async function sendMsg() {
       body: JSON.stringify({messages: chatHistory})
     });
     const data = await res.json();
-    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again or WhatsApp us directly.";
+    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again ";
     
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
@@ -231,7 +226,7 @@ async function sendMsg() {
   } catch(err) {
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
-    addMsg('Sorry, something went wrong. Please WhatsApp us directly at +1 647-745-6850 or visit ibrinsurance.ca', 'bot');
+    addMsg('Sorry, something went wrong. ', 'bot');
     document.getElementById('chat-status').textContent = 'Ask me anything about finance';
   }
   isLoading = false;

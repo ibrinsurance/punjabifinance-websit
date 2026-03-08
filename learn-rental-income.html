@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rental Income — Tax & Reporting – Punjabi Finance</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"><style>
+:root{--gold:#D4A017;--gl:#C4880A;--sa:#C47008;--bg:#f7f5f0;--cb:#f0ede4;--muted:#7a6a45;--off:#1a1600;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:#f7f5f0;color:#1a1600;font-family:'DM Sans',sans-serif;}
+a{color:inherit;}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:16px;padding:13px 28px;background:rgba(10,10,4,.93);backdrop-filter:blur(16px);border-bottom:1px solid rgba(212,160,23,.15);}
+.bk{text-decoration:none;color:#7a6a45;font-size:.85rem;font-weight:500;transition:color .2s;}.bk:hover{color:#C4880A;}
+.logo{font-family:'Playfair Display',serif;font-size:1.1rem;color:#C4880A;text-decoration:none;margin-left:auto;}.logo span{color:#C47008;}
+.wrap{display:grid;grid-template-columns:230px 1fr;min-height:calc(100vh - 52px);}
+aside{position:sticky;top:52px;height:calc(100vh - 52px);overflow-y:auto;padding:24px 16px;border-right:1px solid rgba(212,160,23,.1);background:#0d0c04;}
+.st{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#C47008;margin-bottom:12px;}
+.tl{display:block;padding:6px 9px;border-radius:7px;text-decoration:none;color:#7a6a45;font-size:.81rem;transition:all .2s;border-left:2px solid transparent;margin-bottom:2px;}
+.tl:hover,.tl.on{color:#C4880A;background:rgba(212,160,23,.07);border-left-color:var(--gold);}
+.sb-foot{margin-top:20px;padding-top:16px;border-top:1px solid rgba(212,160,23,.1);}
+main{padding:48px 56px 72px;max-width:780px;background:#fff;}
+.tag{display:inline-block;background:rgba(212,160,23,.12);border:1px solid rgba(212,160,23,.3);color:#C4880A;padding:3px 13px;border-radius:50px;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;}
+h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:900;line-height:1.1;margin-bottom:10px;}
+.gold{color:#C4880A;}
+.lead{font-size:.97rem;color:#4a3f20;line-height:1.75;margin-bottom:40px;padding-bottom:24px;border-bottom:1px solid rgba(212,160,23,.1);}
+.sec{margin-bottom:44px;scroll-margin-top:72px;}
+.sec h2{font-family:'Playfair Display',serif;font-size:1.35rem;color:#C4880A;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.sec p{color:#4a3f20;line-height:1.8;font-size:.94rem;margin-bottom:11px;}
+.sec ul,.sec ol{color:#4a3f20;line-height:1.8;font-size:.94rem;padding-left:20px;margin-bottom:11px;}
+.sec li{margin-bottom:6px;}
+.box{background:rgba(212,160,23,.07);border:1px solid rgba(212,160,23,.2);border-left:4px solid var(--gold);border-radius:0 11px 11px 0;padding:14px 16px;margin:16px 0;}
+.box p{margin:0;font-size:.91rem;}
+.tip{background:rgba(37,211,102,.06);border:1px solid rgba(37,211,102,.2);border-radius:11px;padding:14px 16px;margin:16px 0;}
+.tip p{margin:0;font-size:.91rem;}
+.warn{background:rgba(232,137,12,.07);border:1px solid rgba(232,137,12,.22);border-radius:11px;padding:14px 16px;margin:16px 0;}
+.warn p{margin:0;font-size:.91rem;}
+.dg{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:10px;margin:16px 0;}
+.dc{background:#f0ede4;border:1px solid rgba(212,160,23,.16);border-radius:12px;padding:14px;text-align:center;}
+.dn{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#C4880A;display:block;margin-bottom:3px;}
+.dl{font-size:.7rem;color:#7a6a45;line-height:1.4;}
+.div{height:1px;background:rgba(212,160,23,.09);margin:32px 0;}
+.cta{background:linear-gradient(135deg,rgba(212,160,23,.1),rgba(232,137,12,.04));border:1px solid rgba(212,160,23,.25);border-radius:16px;padding:28px;text-align:center;margin-top:40px;}
+.cta h3{font-family:'Playfair Display',serif;font-size:1.25rem;color:#C4880A;margin-bottom:8px;}
+.cta p{color:#7a6a45;font-size:.86rem;margin-bottom:16px;}
+.btn{display:inline-block;padding:10px 24px;background:var(--gold);color:#0a0a0a;border-radius:50px;font-weight:700;font-size:.86rem;text-decoration:none;transition:background .2s,transform .15s;}
+.btn:hover{background:var(--gl);transform:translateY(-1px);}
+footer{border-top:1px solid rgba(212,160,23,.1);padding:24px 16px;text-align:center;color:#7a6a45;font-size:.76rem;}
+footer .fl{font-family:'Playfair Display',serif;font-size:1.1rem;color:#C4880A;margin-bottom:6px;}
+footer .fl span{color:#C47008;}
+.disc{max-width:500px;margin:8px auto 0;font-size:.66rem;opacity:.4;line-height:1.5;}
+@media(max-width:760px){.wrap{grid-template-columns:1fr;}aside{position:relative;height:auto;top:0;border-right:none;border-bottom:1px solid rgba(212,160,23,.1);padding:14px;}main{padding:24px 14px 48px;}nav{padding:11px 14px;}}
+
+
+
+
+
+
+/* ===== UNIVERSAL NAV ===== */
+.unav{position:sticky;top:0;z-index:9000;height:60px;background:#100e04;border-bottom:1px solid rgba(212,160,23,0.15);display:flex;align-items:center;padding:0 28px;gap:0;}
+.unav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#F0C040;text-decoration:none;margin-right:24px;white-space:nowrap;}
+.unav-logo span{color:#E8890C;}
+.unav-links{display:flex;align-items:center;gap:1px;flex:1;}
+.unav-a{padding:5px 11px;border-radius:7px;font-size:0.79rem;font-weight:500;color:rgba(255,255,255,0.55);text-decoration:none;white-space:nowrap;transition:all 0.17s;}
+.unav-a:hover{color:#F0C040;background:rgba(212,160,23,0.09);}
+.unav-a.cur{color:#F0C040;}
+.unav-right{display:flex;align-items:center;gap:8px;margin-left:auto;}
+.unav-lpill{display:flex;align-items:center;background:rgba(212,160,23,0.07);border:1px solid rgba(212,160,23,0.18);border-radius:50px;padding:3px;}
+.unav-lb{padding:3px 10px;border-radius:50px;border:none;cursor:pointer;font-size:0.71rem;font-weight:600;font-family:'DM Sans',sans-serif;transition:all 0.18s;background:transparent;color:rgba(255,255,255,0.45);}
+.unav-lb.on{background:#D4A017;color:#0a0a0a;}
+.unav-ham{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:7px;border-radius:7px;border:none;background:transparent;}
+.unav-ham-l{width:20px;height:2px;background:rgba(255,255,255,0.65);border-radius:2px;transition:all 0.22s;}
+.unav-drop{display:none;position:fixed;top:60px;left:0;right:0;background:#100e04;border-bottom:2px solid rgba(212,160,23,0.2);z-index:8999;padding:10px 16px 16px;flex-direction:column;gap:2px;box-shadow:0 12px 40px rgba(0,0,0,0.5);}
+.unav-drop.open{display:flex;}
+.unav-drop .unav-a{font-size:0.92rem;padding:10px 14px;border-radius:10px;}
+.unav-drop .unav-a:hover{background:rgba(212,160,23,0.1);}
+.unav-dlang{display:flex;gap:8px;padding:10px 14px 2px;margin-top:6px;border-top:1px solid rgba(212,160,23,0.1);}
+.unav-dlang button{flex:1;padding:8px;border-radius:8px;border:1px solid rgba(212,160,23,0.2);background:transparent;color:rgba(255,255,255,0.5);font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:600;cursor:pointer;transition:all 0.18s;}
+.unav-dlang button.on{background:#D4A017;color:#0a0a0a;border-color:#D4A017;}
+@media(max-width:860px){.unav-links{display:none;}.unav-ham{display:flex;}.unav{padding:0 16px;}}
+/* ========================= */
+</style></head>
+<body>
+<nav class="unav">
+  <a href="index.html" class="unav-logo">Punjabi<span>Finance</span></a>
+  <div class="unav-links">
+      <a href="education.html" class="unav-a">📚 Learn</a>
+      <a href="wealth-path.html" class="unav-a">💰 $0–$1M</a>
+      <a href="books.html" class="unav-a">📖 Books</a>
+<a href="index.html#services" class="unav-a">🛡️ Services</a>
+      <a href="index.html#about" class="unav-a">About</a>
+      <a href="index.html#reviews" class="unav-a">★ Reviews</a>
+  </div>
+  <div class="unav-right">
+    <div class="unav-lpill">
+      <button class="unav-lb on" id="unav-lb-en" onclick="siteSetLang('en')">EN</button>
+      <button class="unav-lb" id="unav-lb-pa" onclick="siteSetLang('pa')">ਪੰ</button>
+    </div>
+    <button class="unav-ham" id="unav-ham" onclick="unavToggle()" aria-label="Menu">
+      <div class="unav-ham-l" id="unav-l1"></div>
+      <div class="unav-ham-l" id="unav-l2"></div>
+      <div class="unav-ham-l" id="unav-l3"></div>
+    </button>
+  </div>
+</nav>
+<div class="unav-drop" id="unav-drop">
+      <a href="education.html" class="unav-a" onclick="unavClose()">📚 Learn</a>
+      <a href="wealth-path.html" class="unav-a" onclick="unavClose()">💰 $0–$1M</a>
+      <a href="books.html" class="unav-a" onclick="unavClose()">📖 Books</a>
+<a href="index.html#services" class="unav-a" onclick="unavClose()">🛡️ Services</a>
+      <a href="index.html#about" class="unav-a" onclick="unavClose()">About</a>
+      <a href="index.html#reviews" class="unav-a" onclick="unavClose()">★ Reviews</a>
+  <div class="unav-dlang">
+    <button class="on" id="unav-dlb-en" onclick="siteSetLang('en')">🇨🇦 English</button>
+    <button id="unav-dlb-pa" onclick="siteSetLang('pa')">ਪੰਜਾਬੀ</button>
+  </div>
+</div>
+<div class="wrap">
+<aside><div class="st">On this page</div><a href="#report" class="tl">📝 You Must Report All Rental Income</a>
+    <a href="#deduct" class="tl">💰 What You Can Deduct</a>
+    <a href="#net" class="tl">📊 How Net Rental Income Is Taxed</a>
+    <a href="#airbnb" class="tl">🏠 Short-Term Rentals (Airbnb)</a>
+    <a href="#records" class="tl">📂 Keep Good Records</a>
+    <div class="sb-foot"><a href="education.html" class="bk" style="display:block;margin-bottom:6px">← All 200+ Topics</a><a href="index.html" class="bk" style="display:block">🏠 Home</a></div></aside>
+<main>
+<div class="tag">💼 Real Estate</div>
+<h1><span class="lng-en">Rental Income in Canada — The Complete Picture</span><span class="lng-pa" style="display:none">Rental Income in Canada — The Complete Picture</span></h1>
+<p class="lead"><span class="lng-en">If you earn rental income in Canada, you must report it correctly. Here's what you need to know.</span><span class="lng-pa" style="display:none">ਕੈਨੇਡਾ ਵਿੱਚ ਇਸ ਵਿਸ਼ੇ ਬਾਰੇ ਪੂਰੀ ਗਾਈਡ — ਅਸਲ ਉਦਾਹਰਣਾਂ ਅਤੇ ਕੰਮ ਦੇ ਕਦਮਾਂ ਨਾਲ।</span></p>
+
+<div class="sec">
+<h2><span>🔢</span>The Real Numbers Before You Buy</h2>
+<p>The biggest mistake new landlords make: calculating only rent vs. mortgage payment. The real cash flow equation includes every ownership cost.</p>
+<p><strong>Monthly income:</strong> Gross rent collected.</p>
+<p><strong>Monthly costs:</strong> Mortgage payment + property tax ($400–800/month on a $600K property) + insurance ($150–250/month) + maintenance reserve (1% of property value annually ÷ 12) + vacancy allowance (5–8% of gross rent) + property management (8–12% of rent if using a manager) + condo fees if applicable ($400–800/month in Toronto).</p>
+<p>In Toronto's market, a $700,000 condo with 20% down generates approximately $2,600–2,800/month rent against ownership costs of $3,800–4,500/month. Most Toronto condos are cash-flow negative — investors are betting on appreciation, not income. This is speculation, not passive income investing.</p>
+</div>
+<div class="div"></div>
+
+<div class="sec">
+<h2><span>📜</span>Ontario Landlord-Tenant Law Essentials</h2>
+<p>The Residential Tenancies Act (RTA) governs Ontario rental relationships and heavily regulates what landlords can and cannot do. Key provisions:</p>
+<p><strong>Rent increases:</strong> Units first occupied before November 15, 2018 are subject to the annual rent increase guideline (2.5% for 2024). Units first occupied after that date are exempt from guidelines. You cannot raise rent above the guideline without LTB approval on rent-controlled units.</p>
+<p><strong>Eviction process:</strong> Removing a non-paying tenant requires filing with the Landlord and Tenant Board, waiting for a hearing (often 3–6+ months backlogged), and enforcing the order through the sheriff if the tenant doesn't leave. This process can take 6–12+ months from first missed payment. Illegal self-help evictions (changing locks, shutting utilities) expose you to serious legal liability and fines.</p>
+<p><strong>BC, Alberta, and Quebec</strong> each have different legislation. Research your province's Residential Tenancy Act equivalent before purchasing.</p>
+</div>
+<div class="div"></div>
+
+<div class="sec">
+<h2><span>💰</span>Tax Treatment</h2>
+<p>Rental income is taxed as regular income at your marginal rate — less favorable than capital gains (50% inclusion) or eligible dividends. On $2,400/month rent, a landlord in Ontario's 43% tax bracket pays significant tax before deducting expenses.</p>
+<p><strong>Deductible rental expenses:</strong> Mortgage interest (not principal), property taxes, insurance, maintenance, property management fees, advertising, professional fees, utilities you pay, and Capital Cost Allowance (CCA/depreciation on the building, not land). Keep detailed records of every expense with receipts.</p>
+<p><strong>CCA caveat:</strong> Claiming CCA reduces this year's taxable income but increases your capital gain on sale (depreciation recapture is added to income in the sale year). CCA is a tax deferral strategy, not a permanent reduction. Consult an accountant familiar with rental real estate before claiming CCA.</p>
+</div>
+<div class="div"></div>
+
+<div class="sec">
+<h2><span>🔍</span>Due Diligence</h2>
+<p>Check vacancy rates in your target neighborhood through CMHC's rental market reports. Research average market rents for comparable units on Rentals.ca and PadMapper before committing to a purchase price — your projected rent must be realistic, not optimistic.</p>
+<p>Verify zoning and legal suite status. A basement apartment built without permits, lacking required egress windows, or not recognized as a legal secondary suite by the municipality creates serious liability. Renting an illegal suite can result in municipal orders to vacate and liability if a tenant is injured.</p>
+<p>Commission a thorough home inspection focused on items that create ongoing landlord obligations: HVAC age and condition, electrical panel, plumbing, roof. These are what tenants call about. Knowing a furnace needs replacement in year 2 changes the investment math significantly.</p>
+</div>
+<div class="div"></div>
+
+<p style="font-size:0.8rem;color:#9A8A6A;margin-top:40px;padding-top:20px;border-top:1px solid rgba(212,160,23,0.15);">Educational content only — not financial, legal, or insurance advice.</p>
+</main></div>
+<footer><div class="fl">Punjabi<span>Finance</span></div><p class="disc">Educational content only — not financial, legal, or insurance advice. Always consult a licensed professional before making financial decisions.</p></footer>
+<script>
+const obs=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){document.querySelectorAll('.tl').forEach(l=>l.classList.remove('on'));
+  const a=document.querySelector('.tl[href="#'+e.target.id+'"]');if(a)a.classList.add('on');}
+}),{rootMargin:'-15% 0px -70% 0px'});
+document.querySelectorAll('.sec').forEach(s=>obs.observe(s));
+</script>
+<!-- AI CHATBOT WIDGET -->
+<div id="chat-widget" style="position:fixed;bottom:24px;right:24px;z-index:9999;font-family:'DM Sans',sans-serif;">
+  <!-- Toggle Button -->
+  <div id="chat-toggle" onclick="toggleChat()" style="width:58px;height:58px;background:linear-gradient(135deg,#D4A017,#E8890C);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 20px rgba(212,160,23,0.4);transition:transform 0.2s;" onmouseenter="this.style.transform='scale(1.1)'" onmouseleave="this.style.transform='scale(1)'">
+    <span id="chat-icon" style="font-size:1.4rem;">💬</span>
+  </div>
+  <!-- Chat Panel -->
+  <div id="chat-panel" style="display:none;position:absolute;bottom:70px;right:0;width:360px;max-height:520px;background:#fff;border-radius:20px;box-shadow:0 8px 48px rgba(0,0,0,0.2);overflow:hidden;flex-direction:column;">
+    <!-- Header -->
+    <div style="background:linear-gradient(135deg,#D4A017,#E8890C);padding:16px 18px;display:flex;align-items:center;gap:10px;">
+      <div style="width:36px;height:36px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">🤖</div>
+      <div style="flex:1;">
+        <div style="font-size:0.9rem;font-weight:700;color:#fff;">Punjabi Finance AI</div>
+        <div style="font-size:0.7rem;color:rgba(255,255,255,0.8);" id="chat-status">Ask me anything about finance in Canada</div>
+      </div>
+      <div onclick="toggleChat()" style="cursor:pointer;color:rgba(255,255,255,0.8);font-size:1.1rem;line-height:1;">✕</div>
+    </div>
+    <!-- Messages -->
+    <div id="chat-messages" style="flex:1;overflow-y:auto;padding:14px;max-height:340px;display:flex;flex-direction:column;gap:10px;">
+      <div class="chat-msg bot" style="background:#f5f3ee;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:0.84rem;color:#2a2000;line-height:1.6;max-width:85%;">
+        <span id="chat-welcome">👋 Sat Sri Akal! I'm the Punjabi Finance AI.<br><br>Ask me anything about:<br>• Life & Super Visa insurance<br>• TFSA, RRSP, investing<br>• Real estate in Canada<br>• Taxes & retirement<br><br>I answer in English or Punjabi! 🇨🇦</span>
+      </div>
+    </div>
+    <!-- Quick Questions -->
+    <div id="quick-qs" style="padding:0 14px 10px;display:flex;flex-wrap:wrap;gap:6px;">
+      <button onclick="sendQuick('How much life insurance do I need?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">Life insurance?</button>
+      <button onclick="sendQuick('What is Super Visa insurance?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">Super Visa?</button>
+      <button onclick="sendQuick('How do I start investing in Canada?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">How to invest?</button>
+      <button onclick="sendQuick('TFSA vs RRSP — which should I use?')" style="background:#fff7e6;border:1px solid rgba(212,160,23,0.3);border-radius:50px;padding:5px 12px;font-size:0.72rem;cursor:pointer;color:#5a3e00;font-family:'DM Sans',sans-serif;transition:all 0.2s;" onmouseenter="this.style.background='#ffeec2'" onmouseleave="this.style.background='#fff7e6'">TFSA vs RRSP?</button>
+    </div>
+    <!-- Input -->
+    <div style="padding:10px 14px 14px;border-top:1px solid rgba(0,0,0,0.07);display:flex;gap:8px;align-items:flex-end;">
+      <input id="chat-input" type="text" placeholder="Ask a finance question..." style="flex:1;padding:10px 14px;border:1px solid rgba(0,0,0,0.12);border-radius:50px;font-size:0.84rem;font-family:'DM Sans',sans-serif;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='#D4A017'" onblur="this.style.borderColor='rgba(0,0,0,0.12)'" onkeypress="if(event.key==='Enter')sendMsg()">
+      <button onclick="sendMsg()" id="send-btn" style="width:38px;height:38px;background:linear-gradient(135deg,#D4A017,#E8890C);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;transition:transform 0.2s;" onmouseenter="this.style.transform='scale(1.1)'" onmouseleave="this.style.transform='scale(1)'">→</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const CHAT_SYSTEM = `You are the Punjabi Finance AI assistant — a helpful, friendly financial education bot for the Punjabi community in Canada.
+
+Your role:
+- Provide free financial education about Canadian personal finance
+- Topics: life insurance, Super Visa insurance, critical illness, disability, TFSA, RRSP, FHSA, RESP, investing, real estate, mortgages, taxes, retirement, newcomer finance
+- Always remind users to consult a licensed professional for personal advice
+- Be warm and community-focused — this is for the Punjabi diaspora in Canada
+- Respond in the same language the user writes in (English or Punjabi)
+- Keep answers concise and practical — max 150 words unless asked to elaborate
+- Reference relevant tools on the site: calculators.html, tools.html, education.html- Never give specific investment recommendations or specific insurance quotes
+Personality: Knowledgeable, warm, like a financially savvy older sibling or family friend who happens to know a lot about Canadian finance.`;
+
+let chatOpen = false;
+let isLoading = false;
+const chatHistory = [];
+
+function toggleChat() {
+  chatOpen = !chatOpen;
+  const panel = document.getElementById('chat-panel');
+  panel.style.display = chatOpen ? 'flex' : 'none';
+  panel.style.flexDirection = 'column';
+  document.getElementById('chat-icon').textContent = chatOpen ? '✕' : '💬';
+  if(chatOpen) document.getElementById('chat-input').focus();
+}
+
+function sendQuick(msg) {
+  document.getElementById('quick-qs').style.display = 'none';
+  document.getElementById('chat-input').value = msg;
+  sendMsg();
+}
+
+function addMsg(text, role) {
+  const msgs = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.style.cssText = role === 'user'
+    ? 'background:linear-gradient(135deg,#D4A017,#E8890C);color:#0a0a0a;border-radius:14px 14px 4px 14px;padding:10px 14px;font-size:0.84rem;line-height:1.6;max-width:80%;margin-left:auto;'
+    : 'background:#f5f3ee;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:0.84rem;color:#2a2000;line-height:1.6;max-width:88%;';
+  div.textContent = text;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+  return div;
+}
+
+function addTyping() {
+  const msgs = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.id = 'typing-indicator';
+  div.style.cssText = 'background:#f5f3ee;border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:0.84rem;color:#9A8A6A;max-width:88%;';
+  div.textContent = '...thinking';
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+async function sendMsg() {
+  if(isLoading) return;
+  const input = document.getElementById('chat-input');
+  const msg = input.value.trim();
+  if(!msg) return;
+  input.value = '';
+  
+  addMsg(msg, 'user');
+  chatHistory.push({role:'user', content: msg});
+  
+  document.getElementById('quick-qs').style.display = 'none';
+  isLoading = true;
+  document.getElementById('chat-status').textContent = 'Thinking...';
+  addTyping();
+  
+  try {
+    const res = await fetch('/api/chat', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({messages: chatHistory})
+    });
+    const data = await res.json();
+    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again ";
+    
+    const typing = document.getElementById('typing-indicator');
+    if(typing) typing.remove();
+    
+    addMsg(reply, 'bot');
+    chatHistory.push({role:'assistant', content: reply});
+    document.getElementById('chat-status').textContent = 'Ask me anything about finance';
+  } catch(err) {
+    const typing = document.getElementById('typing-indicator');
+    if(typing) typing.remove();
+    addMsg('Sorry, something went wrong. ', 'bot');
+    document.getElementById('chat-status').textContent = 'Ask me anything about finance';
+  }
+  isLoading = false;
+}
+</script>
+<script>
+
+// ===== UNIVERSAL NAV JS =====
+(function(){
+  var _lang = localStorage.getItem('pf_lang')||'en';
+  function _applyLang(l){
+    _lang=l; localStorage.setItem('pf_lang',l);
+    ['en','pa'].forEach(function(x){
+      var nb=document.getElementById('unav-lb-'+x); if(nb) nb.classList.toggle('on',x===l);
+      var db=document.getElementById('unav-dlb-'+x); if(db) db.classList.toggle('on',x===l);
+    });
+    document.querySelectorAll('.lang-en,.lng-en').forEach(function(el){el.style.display=l==='en'?'':'none';});
+    document.querySelectorAll('.lang-pa,.lng-pa').forEach(function(el){el.style.display=l==='pa'?'':'none';});
+    if(typeof setLang==='function') try{setLang(l,null);}catch(e){}
+    if(typeof learnLang==='function') try{learnLang(l);}catch(e){}
+    if(typeof applyLang==='function') try{applyLang();}catch(e){}
+  }
+  window.siteSetLang=function(l){_applyLang(l);};
+  var _open=false;
+  window.unavToggle=function(){
+    var d=document.getElementById('unav-drop');
+    _open=!_open; d.classList.toggle('open',_open);
+    var l1=document.getElementById('unav-l1'),l2=document.getElementById('unav-l2'),l3=document.getElementById('unav-l3');
+    if(_open){if(l1)l1.style.transform='translateY(6px) rotate(45deg)';if(l2)l2.style.opacity='0';if(l3)l3.style.transform='translateY(-6px) rotate(-45deg)';}
+    else{if(l1)l1.style.transform='';if(l2)l2.style.opacity='';if(l3)l3.style.transform='';}
+  };
+  window.unavClose=function(){
+    if(!_open)return; _open=false; document.getElementById('unav-drop').classList.remove('open');
+    var l1=document.getElementById('unav-l1'),l2=document.getElementById('unav-l2'),l3=document.getElementById('unav-l3');
+    if(l1)l1.style.transform='';if(l2)l2.style.opacity='';if(l3)l3.style.transform='';
+  };
+  document.addEventListener('click',function(e){
+    if(!_open)return;
+    var d=document.getElementById('unav-drop'),h=document.getElementById('unav-ham');
+    if(d&&!d.contains(e.target)&&h&&!h.contains(e.target))unavClose();
+  });
+  if(_lang!=='en')setTimeout(function(){_applyLang(_lang);},80);
+})();
+// ============================
+
+</script>
+</body></html>

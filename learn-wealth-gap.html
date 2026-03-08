@@ -88,7 +88,6 @@
   <p class="lead">Newcomers often face a wealth disadvantage that compounds over time. Understanding the causes is the first step to closing the gap.</p>
   <div class="sec" id="what"><h2><span>📊</span> What Is the Wealth Gap?</h2><p>The wealth gap describes the difference in net worth between different groups in society. In Canada, recent immigrants typically start with significantly lower wealth than Canadian-born residents — not because of lower intelligence or work ethic, but because of structural disadvantages: credential non-recognition, language barriers, no Canadian credit history, and no inherited wealth or family financial network.</p></div><div class="div"></div><div class="sec" id="factors"><h2><span>⚠️</span> Factors That Widen the Gap</h2><p><strong>Starting late on registered accounts:</strong> Every year you do not maximize your TFSA and RRSP is a year of tax-free compounding lost forever. Newcomers who arrive at 30 have 10 fewer years of TFSA room than someone born here.</p><p><strong>Credit building delay:</strong> Without Canadian credit history, newcomers pay higher interest rates and insurance premiums for years.</p><p><strong>Over-reliance on informal savings:</strong> Some immigrant communities prefer home country investments, gold, or cash — missing decades of Canadian market growth and tax-sheltered compounding.</p><p><strong>Cultural consumption pressure:</strong> Weddings, remittances, family support obligations, and visible wealth displays can divert significant income from wealth building.</p></div><div class="div"></div><div class="sec" id="close"><h2><span>💪</span> How to Close the Gap</h2><p><strong>Start immediately:</strong> Open a TFSA on your first eligible day in Canada. Even $100/month in a growth ETF makes a significant difference over decades.<br><strong>Build credit aggressively:</strong> Use a secured credit card, pay in full every month, escalate to an unsecured card within 12 months.<br><strong>Maximize government benefits:</strong> CCB, GST/HST credits, OAS, CPP — many newcomers leave money on the table by not applying.<br><strong>Invest in Canadian credentials:</strong> Bridging programs and professional designation equivalencies have among the highest financial ROI available to newcomers.</p></div><div class="div"></div><div class="sec" id="community"><h2><span>🤝</span> Community Financial Strength</h2><p>The Punjabi community in Canada has numerous examples of exceptional wealth creation through entrepreneurship, real estate, and professional careers. The path exists — the key is combining cultural work ethic with deliberate Canadian financial strategy: registered accounts, low-cost investing, and avoiding the lifestyle inflation trap.</p></div>
   <div class="div"></div>
-  <div class="cta"><h3>Have a Question?</h3><p>Message us on WhatsApp — in Punjabi or English. We answer insurance and financial questions personally.</p></div>
 </main>
 </div>
 <footer>
@@ -150,11 +149,7 @@ Your role:
 - Be warm and community-focused — this is for the Punjabi diaspora in Canada
 - Respond in the same language the user writes in (English or Punjabi)
 - Keep answers concise and practical — max 150 words unless asked to elaborate
-- Reference relevant tools on the site: calculators.html, tools.html, education.html
-- For insurance questions, suggest they WhatsApp us at +1 647-745-6850 for a personal quote
-- Never give specific investment recommendations or specific insurance quotes
-- Always end insurance/investment answers with a soft call to action to WhatsApp or visit ibrinsurance.ca
-
+- Reference relevant tools on the site: calculators.html, tools.html, education.html- Never give specific investment recommendations or specific insurance quotes
 Personality: Knowledgeable, warm, like a financially savvy older sibling or family friend who happens to know a lot about Canadian finance.`;
 
 let chatOpen = false;
@@ -220,7 +215,7 @@ async function sendMsg() {
       body: JSON.stringify({messages: chatHistory})
     });
     const data = await res.json();
-    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again or WhatsApp us directly.";
+    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again ";
     
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
@@ -231,7 +226,7 @@ async function sendMsg() {
   } catch(err) {
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
-    addMsg('Sorry, something went wrong. Please WhatsApp us directly at +1 647-745-6850 or visit ibrinsurance.ca', 'bot');
+    addMsg('Sorry, something went wrong. ', 'bot');
     document.getElementById('chat-status').textContent = 'Ask me anything about finance';
   }
   isLoading = false;

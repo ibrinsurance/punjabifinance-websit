@@ -88,7 +88,6 @@
   <p class="lead">Real Estate Investment Trusts let you invest in real estate for the cost of a single stock. Here's how they work in Canada.</p>
   <div class="sec" id="what"><h2><span>🏢</span> What Is a REIT?</h2><p>A REIT (Real Estate Investment Trust) is a company that owns income-producing real estate — apartment buildings, shopping centres, office towers, warehouses, or hospitals — and is traded on the stock exchange. When you buy a REIT, you own a slice of that real estate portfolio and receive regular distributions from the rent it collects.</p><p>In Canada, REITs must distribute at least 95% of their taxable income to unitholders. This makes them one of the most reliable income investments available.</p></div><div class="div"></div><div class="sec" id="types"><h2><span>📋</span> Types of Canadian REITs</h2><p><strong>Residential REITs</strong> — own apartment buildings across major Canadian cities.</p><p><strong>Retail REITs</strong> — own shopping malls, plazas, and strip malls. Revenue from tenant leases.</p><p><strong>Industrial REITs</strong> — warehouses and distribution centres. Strong demand from e-commerce growth.</p><p><strong>Office REITs</strong> — commercial office buildings. More challenging since remote work became common.</p><p><strong>Healthcare REITs</strong> — medical offices, seniors' residences. Strong long-term demand given Canada's aging population.</p></div><div class="div"></div><div class="sec" id="tax"><h2><span>💰</span> REITs and Canadian Taxes</h2><p>REIT distributions are taxed differently depending on their composition. A single distribution can include: return of capital (tax-deferred), other income (fully taxable), capital gains (50% inclusion rate), and eligible dividends (dividend tax credit applies).</p><p><strong>Best practice:</strong> Hold REITs inside your RRSP or TFSA to defer or eliminate tax on distributions. In a non-registered account, track each distribution's composition carefully for tax time.</p><p><strong>Example:</strong> If you receive $500 in annual REIT distributions held in your TFSA, you pay zero tax — and the full $500 compounds tax-free.</p></div><div class="div"></div><div class="sec" id="buy"><h2><span>🛒</span> How to Buy REITs in Canada</h2><p>REITs trade on the TSX just like stocks. You can buy individual Canadian REITs through Questrade, Wealthsimple Trade, or your bank brokerage. Alternatively, buy a REIT ETF to instantly diversify across dozens of properties and REIT types — available through major Canadian brokerages with low MERs.</p></div><div class="div"></div><div class="sec" id="pros"><h2><span>⚖️</span> Pros and Cons</h2><p><strong>Pros:</strong> Regular income, no landlord hassles, diversification, liquidity (sell any trading day), low entry cost, access to commercial real estate unavailable to most individuals.</p><p><strong>Cons:</strong> Interest rate sensitivity (REITs often fall when rates rise), distributions are largely taxable in non-registered accounts, no leverage benefit of personally owning real estate, management fees reduce returns.</p></div>
   <div class="div"></div>
-  <div class="cta"><h3>Have a Question?</h3><p>Message us on WhatsApp — in Punjabi or English. We answer insurance and financial questions personally.</p></div>
 </main>
 </div>
 <footer>
@@ -150,11 +149,7 @@ Your role:
 - Be warm and community-focused — this is for the Punjabi diaspora in Canada
 - Respond in the same language the user writes in (English or Punjabi)
 - Keep answers concise and practical — max 150 words unless asked to elaborate
-- Reference relevant tools on the site: calculators.html, tools.html, education.html
-- For insurance questions, suggest they WhatsApp us at +1 647-745-6850 for a personal quote
-- Never give specific investment recommendations or specific insurance quotes
-- Always end insurance/investment answers with a soft call to action to WhatsApp or visit ibrinsurance.ca
-
+- Reference relevant tools on the site: calculators.html, tools.html, education.html- Never give specific investment recommendations or specific insurance quotes
 Personality: Knowledgeable, warm, like a financially savvy older sibling or family friend who happens to know a lot about Canadian finance.`;
 
 let chatOpen = false;
@@ -220,7 +215,7 @@ async function sendMsg() {
       body: JSON.stringify({messages: chatHistory})
     });
     const data = await res.json();
-    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again or WhatsApp us directly.";
+    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again ";
     
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
@@ -231,7 +226,7 @@ async function sendMsg() {
   } catch(err) {
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
-    addMsg('Sorry, something went wrong. Please WhatsApp us directly at +1 647-745-6850 or visit ibrinsurance.ca', 'bot');
+    addMsg('Sorry, something went wrong. ', 'bot');
     document.getElementById('chat-status').textContent = 'Ask me anything about finance';
   }
   isLoading = false;
