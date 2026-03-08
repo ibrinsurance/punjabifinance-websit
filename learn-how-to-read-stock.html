@@ -1,63 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Power of Compound Growth – Punjabi Finance</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{--gold:#D4A017;--gold-light:#F0C040;--saffron:#E8890C;--black:#0A0A0A;--off-white:#1a1600;--dark-bg:#111008;--card-bg:#1c1a0e;--text-muted:#9A8A6A;}
-  *{margin:0;padding:0;box-sizing:border-box;} html{scroll-behavior:smooth;}
-  body{background:var(--dark-bg);color:var(--off-white);font-family:'DM Sans',sans-serif;overflow-x:hidden;}
-  a{color:inherit;}
-  .top-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:16px;padding:13px 28px;background:rgba(10,10,4,0.93);backdrop-filter:blur(16px);border-bottom:1px solid rgba(212,160,23,0.15);}
-  .back-btn{text-decoration:none;color:var(--text-muted);font-size:0.85rem;font-weight:500;transition:color 0.2s;}
-  .back-btn:hover{color:var(--gold-light);}
-  .nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--gold-light);text-decoration:none;}
-  .nav-logo span{color:var(--saffron);}
-  .page-wrap{display:grid;grid-template-columns:240px 1fr;min-height:100vh;}
-  .sidebar{position:sticky;top:58px;height:calc(100vh - 58px);overflow-y:auto;padding:28px 20px;border-right:1px solid rgba(212,160,23,0.1);background:#0d0c04;}
-  .sidebar-title{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--saffron);margin-bottom:14px;}
-  .toc-link{display:block;padding:7px 10px;border-radius:8px;text-decoration:none;color:var(--text-muted);font-size:0.83rem;transition:all 0.2s;border-left:2px solid transparent;margin-bottom:3px;}
-  .toc-link:hover,.toc-link.active{color:var(--gold-light);background:rgba(212,160,23,0.07);border-left-color:var(--gold);}
-  .sidebar-back{margin-top:24px;padding-top:18px;border-top:1px solid rgba(212,160,23,0.1);}
-  .content{padding:52px 60px 72px;max-width:800px;}
-  .topic-tag{display:inline-block;background:rgba(212,160,23,0.12);border:1px solid rgba(212,160,23,0.3);color:var(--gold-light);padding:4px 14px;border-radius:50px;font-size:0.73rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;}
-  .page-title{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3vw,2.7rem);font-weight:900;line-height:1.1;margin-bottom:12px;}
-  .gold{color:var(--gold-light);}
-  .lead{font-size:1rem;color:#4a3f20;line-height:1.7;margin-bottom:44px;padding-bottom:28px;border-bottom:1px solid rgba(212,160,23,0.1);}
-  .learn-section{margin-bottom:48px;scroll-margin-top:80px;}
-  .learn-section h2{font-family:'Playfair Display',serif;font-size:1.45rem;color:var(--gold-light);margin-bottom:14px;display:flex;align-items:center;gap:9px;}
-  .learn-section p{color:#4a3f20;line-height:1.8;font-size:0.96rem;margin-bottom:13px;}
-  .learn-section ul,.learn-section ol{color:#4a3f20;line-height:1.8;font-size:0.96rem;padding-left:20px;margin-bottom:13px;}
-  .learn-section li{margin-bottom:7px;}
-  .callout{background:rgba(212,160,23,0.08);border:1px solid rgba(212,160,23,0.2);border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:16px 18px;margin:18px 0;}
-  .callout p{margin:0;color:#4a3f20;font-size:0.93rem;}
-  .tip-box{background:rgba(37,211,102,0.06);border:1px solid rgba(37,211,102,0.2);border-radius:12px;padding:16px 18px;margin:18px 0;}
-  .tip-box p{margin:0;color:#4a3f20;font-size:0.93rem;}
-  .warn-box{background:rgba(232,137,12,0.07);border:1px solid rgba(232,137,12,0.22);border-radius:12px;padding:16px 18px;margin:18px 0;}
-  .warn-box p{margin:0;color:#4a3f20;font-size:0.93rem;}
-  .data-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin:18px 0;}
-  .data-card{background:var(--card-bg);border:1px solid rgba(212,160,23,0.16);border-radius:13px;padding:16px;text-align:center;}
-  .data-num{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--gold-light);display:block;margin-bottom:4px;}
-  .data-label{font-size:0.72rem;color:var(--text-muted);line-height:1.4;}
-  .divider{height:1px;background:rgba(212,160,23,0.1);margin:36px 0;}
-  .cta-box{background:linear-gradient(135deg,rgba(212,160,23,0.11),rgba(232,137,12,0.04));border:1px solid rgba(212,160,23,0.26);border-radius:18px;padding:32px;text-align:center;margin-top:44px;}
-  .cta-box h3{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--gold-light);margin-bottom:9px;}
-  .cta-box p{color:var(--text-muted);font-size:0.88rem;margin-bottom:18px;}
-  .btn-gold{display:inline-block;padding:11px 26px;background:var(--gold);color:var(--black);border-radius:50px;font-weight:700;font-size:0.88rem;text-decoration:none;transition:background 0.2s,transform 0.15s;}
-  .btn-gold:hover{background:var(--gold-light);transform:translateY(-1px);}
-  .sub-footer{border-top:1px solid rgba(212,160,23,0.1);padding:28px 20px;text-align:center;color:var(--text-muted);font-size:0.78rem;}
-  .sub-footer .logo{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--gold-light);margin-bottom:6px;}
-  .sub-footer .logo span{color:var(--saffron);}
-  .disclaimer{max-width:520px;margin:10px auto 0;font-size:0.67rem;opacity:0.42;line-height:1.55;}
-  @media(max-width:780px){.page-wrap{grid-template-columns:1fr;}.sidebar{position:relative;height:auto;top:0;border-right:none;border-bottom:1px solid rgba(212,160,23,0.1);padding:16px;}.content{padding:28px 16px 52px;}.top-nav{padding:12px 16px;}}
-
-
-
-
-
-
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How To Read Stock — Punjabi Finance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>:root{--gold:#D4A017;--gl:#C4880A;--sa:#C47008;--bg:#ffffff;--muted:#7a6a45;--off:#1a1600;--border:rgba(212,160,23,0.2);};*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{background:#f7f5f0;color:#1a1600;font-family:'DM Sans',sans-serif;overflow-x:hidden;}a{color:inherit;}nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;gap:12px;padding:12px 24px;background:#1a1400;backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,160,23,0.2);}.bk{text-decoration:none;color:var(--muted);font-size:0.82rem;font-weight:500;}.bk:hover{color:var(--gl);}.logo{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--gl);text-decoration:none;margin-left:auto;}.logo span{color:var(--sa);}.nav-links{display:flex;align-items:center;gap:14px;}.nav-links a{font-size:0.78rem;color:var(--muted);font-weight:500;transition:color 0.2s;text-decoration:none;}.nav-links a:hover{color:var(--gl);}.wrap{display:grid;grid-template-columns:220px 1fr;min-height:calc(100vh - 52px);}aside{position:sticky;top:52px;height:calc(100vh - 52px);overflow-y:auto;padding:22px 14px;border-right:1px solid rgba(212,160,23,0.15);background:#f7f5f0;}.st{font-size:0.66rem;letter-spacing:0.13em;text-transform:uppercase;color:var(--sa);margin-bottom:10px;padding:0 4px;}.tl{display:block;padding:7px 10px;border-radius:8px;text-decoration:none;color:#7a6a45;font-size:0.78rem;line-height:1.4;transition:all 0.2s;border-left:2px solid transparent;margin-bottom:2px;}.tl:hover,.tl.on{color:#8B5E00;background:rgba(212,160,23,0.12);border-left-color:var(--gold);}.sb-foot{margin-top:18px;padding-top:14px;border-top:1px solid var(--border);}.sb-link{display:block;padding:6px 10px;font-size:0.77rem;color:#7a6a45;text-decoration:none;border-radius:6px;transition:all 0.2s;margin-bottom:2px;}.sb-link:hover{color:var(--gl);background:rgba(212,160,23,0.05);}main{padding:48px 60px 80px;max-width:780px;background:#fff;border-left:1px solid rgba(212,160,23,0.1);}.tag{display:inline-flex;align-items:center;gap:6px;background:rgba(180,120,0,0.1);border:1px solid rgba(180,120,0,0.3);color:#8B5E00;padding:4px 14px;border-radius:50px;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;}h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:900;line-height:1.1;margin-bottom:12px;color:#1a1600;}.gold{color:var(--gl);}.lead{font-size:0.96rem;color:#7a6a45;line-height:1.8;margin-bottom:34px;padding-bottom:26px;border-bottom:1px solid rgba(212,160,23,0.15);}.breadcrumb{display:flex;align-items:center;gap:6px;font-size:0.76rem;color:#7a6a45;margin-bottom:18px;}.breadcrumb a{color:var(--muted);text-decoration:none;}.sec{margin-bottom:38px;scroll-margin-top:68px;}.sec h2{font-family:'Playfair Display',serif;font-size:1.25rem;color:#8B5E00;margin-bottom:13px;padding-bottom:8px;border-bottom:1px solid rgba(212,160,23,0.2);}.sec p{color:#4a3f20;line-height:1.85;font-size:0.93rem;margin-bottom:11px;}.sec ul{list-style:none;padding:0;margin-bottom:12px;}.sec ul li{color:#4a3f20;line-height:1.75;font-size:0.91rem;padding:5px 0 5px 20px;position:relative;border-bottom:1px solid rgba(212,160,23,0.1);}.sec ul li:last-child{border-bottom:none;}.sec ul li::before{content:'→';position:absolute;left:0;color:var(--sa);font-size:0.78rem;top:8px;}.sec strong{color:#1a1600;}.div{height:1px;background:linear-gradient(90deg,transparent,rgba(212,160,23,0.25),transparent);margin:26px 0;}.cta{background:linear-gradient(135deg,rgba(212,160,23,0.12),rgba(232,137,12,0.06));border:1px solid rgba(212,160,23,0.3);border-radius:18px;padding:30px;text-align:center;margin-top:42px;}.cta h3{font-family:'Playfair Display',serif;font-size:1.25rem;color:#8B5E00;margin-bottom:8px;}.cta p{color:#7a6a45;font-size:0.86rem;margin-bottom:16px;line-height:1.65;}.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 24px;background:var(--gold);color:#0a0a0a;border-radius:50px;font-weight:700;font-size:0.87rem;text-decoration:none;transition:all 0.2s;}footer{border-top:1px solid rgba(212,160,23,0.15);padding:26px 20px;text-align:center;background:#1a1400;}.f-logo{font-family:'Playfair Display',serif;font-size:1.05rem;color:#E8A820;margin-bottom:8px;}.f-logo span{color:var(--sa);}.f-links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-bottom:12px;}.f-links a{font-size:0.76rem;color:#9A8A6A;text-decoration:none;}.disc{max-width:480px;margin:0 auto;font-size:0.65rem;color:var(--muted);opacity:0.4;line-height:1.6;}@media(max-width:780px){.wrap{grid-template-columns:1fr;}aside{position:relative;height:auto;top:0;border-right:none;border-bottom:1px solid var(--border);padding:12px;display:flex;flex-wrap:wrap;gap:3px;}aside .st,aside .sb-foot{display:none;}main{padding:24px 16px 52px;}}
 /* ===== UNIVERSAL NAV ===== */
 .unav{position:sticky;top:0;z-index:9000;height:60px;background:#100e04;border-bottom:1px solid rgba(212,160,23,0.15);display:flex;align-items:center;padding:0 28px;gap:0;}
 .unav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#F0C040;text-decoration:none;margin-right:24px;white-space:nowrap;}
@@ -118,40 +66,53 @@
     <button id="unav-dlb-pa" onclick="siteSetLang('pa')">ਪੰਜਾਬੀ</button>
   </div>
 </div>
-<div class="page-wrap">
-  <aside class="sidebar">
-    <div class="sidebar-title">On this page</div>
-    <a href="#what" class="toc-link">🤔 What Is Compound Growth?</a>
-    <a href="#time" class="toc-link">⏰ Why Time Is the Key Variable</a>
-    <a href="#consistent" class="toc-link">📅 Regular Contributions Amplify the Effect</a>
-    <a href="#enemy" class="toc-link">⚠️ The Enemy of Compound Growth</a>
-    
-    <div class="sidebar-back">
-      <a href="education.html" class="back-btn" style="display:block;margin-bottom:6px">← All Topics</a>
-      <a href="index.html" class="back-btn" style="display:block">🏠 Home</a>
-    </div>
-  </aside>
-  <main>
-  <div class="breadcrumb"><a href="index.html">Home</a> › <a href="education.html">Learn</a> › <span style="color:var(--off);">Compound Interest</span></div>
-  <div class="tag">📈 Investing</div>
-  <h1>Compound Interest: The Force That Builds Wealth</h1>
-  <p class="lead">Einstein reportedly called compound interest the eighth wonder of the world. Here's why — with Canadian numbers.</p>
-  <div class="sec" id="what"><h2><span>📈</span> What Is Compound Interest?</h2><p>Compound interest means earning returns not just on your original investment but also on all the interest and returns you've already earned. Your money earns money, which earns more money, which earns more money. Over decades, this snowball effect produces results that seem mathematically impossible until you see the numbers.</p><p><strong>Simple example:</strong> $10,000 at 7% annual return:<br>— After 10 years: $19,672 (nearly doubled)<br>— After 20 years: $38,697 (nearly 4x)<br>— After 30 years: $76,123 (7.6x)<br>— After 40 years: $149,745 (almost 15x)</p><p>You invested $10,000 once and did nothing. After 40 years, compound growth did $139,745 of work for you.</p></div><div class="div"></div><div class="sec" id="rule72"><h2><span>🔢</span> The Rule of 72</h2><p>The Rule of 72 is a quick mental math tool: divide 72 by your annual return rate to find how many years it takes to double your money.</p><p>Examples:<br>— 4% return (GIC): money doubles every 18 years<br>— 7% return (diversified ETF): money doubles every 10.3 years<br>— 10% return (aggressive equities): money doubles every 7.2 years<br>— 20% interest (credit card debt): your debt doubles every 3.6 years</p><p>That last one is why compound interest works against you when you're in debt. The same force that builds wealth destroys it when you're on the wrong side of the equation.</p></div><div class="div"></div><div class="sec" id="time"><h2><span>⏰</span> Why Time Is the Most Powerful Variable</h2><p>$5,000/year invested at 7%:<br>— Starting at 25, stopping at 35 (10 years, $50,000 invested): portfolio at 65 = $602,000<br>— Starting at 35, continuing until 65 (30 years, $150,000 invested): portfolio at 65 = $472,000</p><p>The investor who stopped at 35 invested $100,000 less but ended up with more money — because of the extra 10 years of compounding. This is not a typo. Starting 10 years earlier is worth more than investing 3x as long afterward.</p></div><div class="div"></div><div class="sec" id="canada"><h2><span>🇨🇦</span> Maximizing Compounding in Canada</h2><p>The TFSA is the single best compounding vehicle in Canada. All growth is completely tax-free — the government takes nothing from your compound returns, ever. $6,500/year in a TFSA at 7% from age 18 to 65 = over $2 million. The same investment in a non-registered account would be worth significantly less after the annual drag of capital gains and dividend taxes eating into your compound returns.</p></div>
+<div class="wrap">
+<aside>
+  <div class="st">In this guide</div>
+  <a href="#s1" class="tl">The Basic Numbers on a Stock Quote</a>
+  <a href="#s2" class="tl">Volume, Market Cap, and the 52-Week Range</a>
+  <a href="#s3" class="tl">P/E Ratio, EPS, and Dividend Information</a>
+  <a href="#s4" class="tl">Reading the Quote in Context — A Complete Example</a>
+  <div class="sb-foot">
+    <a href="education.html" class="sb-link">← 200+ Topics</a>
+    <a href="wealth-path.html" class="sb-link">💰 Wealth Path</a>
+    <a href="books.html" class="sb-link">📚 Books</a>
+    <a href="index.html" class="sb-link">🏠 Home</a>
+  </div>
+</aside>
+<main>
+  <div class="breadcrumb"><a href="index.html">Home</a> › <a href="education.html">Learn</a> › <span style="color:var(--off);">How to Read a Stock Quote</span></div>
+  <div class="tag">📈 Stocks</div>
+  <h1>How to Read a Stock Quote</h1>
+  <p class="lead">Before buying any stock, you need to understand what those numbers actually mean. Here's every field on a stock quote — explained clearly.</p>
+  
+  <div class="sec" id="s1">
+    <h2>The Basic Numbers on a Stock Quote</h2>
+    <p>Whether you're on Wealthsimple, Questrade, TMX Money, or Yahoo Finance, every stock quote shows the same core information.</p><p><strong>Current Price:</strong> The price of the last trade. Markets trade 9:30am–4:00pm ET on weekdays. Outside those hours, you see the previous close.</p><p><strong>Change and % Change:</strong> How much the price moved today from yesterday's closing price. A green +$1.50 (+1.2%) means it's up $1.50 or 1.2% today. Red means down.</p><p><strong>Open:</strong> The first trade price when the market opened at 9:30am today. Can be very different from yesterday's close if major news occurred overnight.</p><p><strong>Previous Close:</strong> The price at which the stock closed at 4:00pm the prior trading day. The baseline for today's change calculation.</p><p><strong>Bid / Ask:</strong> Bid is the highest price a buyer is willing to pay RIGHT NOW. Ask is the lowest price a seller is willing to accept RIGHT NOW. The difference is the "spread." For liquid large-cap stocks (Royal Bank, Shopify), the spread is $0.01. For small-cap or illiquid stocks, the spread might be $0.50 or more — and a wide spread means you lose money the moment you buy.</p>
+  </div><div class="div"></div>
+  <div class="sec" id="s2">
+    <h2>Volume, Market Cap, and the 52-Week Range</h2>
+    <p><strong>Volume:</strong> How many shares have traded today. Average volume is shown for comparison. If a stock normally trades 500,000 shares/day but today has 3,000,000 volume, something significant is happening — usually major news. High volume on a price move confirms the move; low volume on a price move suggests it may not hold.</p><p><strong>Market Capitalization (Market Cap):</strong> Current price × total shares outstanding = total market value of the company. This is the most important size metric:<br>— Under $300M: Small-cap (risky, illiquid)<br>— $300M–$2B: Mid-cap<br>— $2B–$10B: Large-cap<br>— Over $10B: Mega-cap (Royal Bank market cap: ~$200B CAD)</p><p><strong>52-Week High and Low:</strong> The highest and lowest prices the stock has traded in the past year. This provides context for where the current price sits. A stock near its 52-week low might be cheap or might be falling for a reason. A stock near its 52-week high might be expensive or in a strong uptrend. Neither tells you which — use it as context, not a signal.</p><p><strong>Float and Shares Outstanding:</strong> Shares outstanding = total shares issued. Float = shares available to trade (minus insider and restricted shares). A small float + high demand = volatile price swings. Large-cap index stocks have huge floats and are hard to manipulate.</p>
+  </div><div class="div"></div>
+  <div class="sec" id="s3">
+    <h2>P/E Ratio, EPS, and Dividend Information</h2>
+    <p><strong>EPS (Earnings Per Share):</strong> Net income ÷ shares outstanding. If TD Bank earned $14 billion last year and has 1.8 billion shares outstanding, EPS = $7.78. This is the core measure of how much profit each share generates for you as the owner.</p><p><strong>P/E Ratio (Price-to-Earnings):</strong> Current price ÷ EPS. If TD is at $80 and EPS is $7.78, P/E = 10.3x. This means you're paying $10.30 for every $1 of annual earnings. Compare P/E to:<br>— Industry peers (banks typically trade 10–13x)<br>— Historical average for this company<br>— The broad market (TSX typically 15–18x; S&P 500 typically 20–25x)<br>High P/E = expensive or high growth expected. Low P/E = cheap or problems expected.</p><p><strong>Forward P/E:</strong> Price ÷ next year's estimated earnings. More forward-looking than trailing P/E. Often what analysts cite when evaluating growth stocks.</p><p><strong>Dividend Yield:</strong> Annual dividend per share ÷ current price. Royal Bank at $140 paying $5.72 annual dividend = 4.09% yield. This is your annual income return from dividends alone.</p><p><strong>Ex-Dividend Date:</strong> Must own shares BEFORE this date to receive the next dividend. If ex-date is July 15, buy by July 14 to qualify. On the ex-date itself, the stock typically drops by the dividend amount.</p>
+  </div><div class="div"></div>
+  <div class="sec" id="s4">
+    <h2>Reading the Quote in Context — A Complete Example</h2>
+    <p><strong>Let's read Enbridge (ENB) as a full example:</strong><br>Price: $52.40<br>Change: +$0.85 (+1.65%)<br>Open: $51.70 | Prev Close: $51.55<br>Bid: $52.39 | Ask: $52.41 (tight spread — very liquid)<br>Volume: 4.2M (avg 4.8M — normal day)<br>52-Week Range: $44.50 – $56.80<br>Market Cap: $112B<br>P/E: 19.2x<br>EPS: $2.73<br>Dividend: $3.66/year | Yield: 6.99%<br>Ex-Dividend Date: February 14</p><p><strong>What this tells us:</strong> Enbridge is a mega-cap Canadian infrastructure company. The stock is up today on moderate volume — no unusual activity. It's in the middle of its 52-week range ($44.50–$56.80), neither at a peak nor a bottom. P/E of 19x is higher than typical value stocks but acceptable for a regulated pipeline with predictable cash flows. The 7% dividend yield is attractive but high — check the payout ratio to confirm sustainability.</p><p><strong>The habit of good investors:</strong> Never buy based on a single metric. A low P/E might mean cheap or broken. A high yield might mean generous or unsustainable. Look at the complete picture: P/E, dividend safety, revenue growth trend, debt levels, and your own time horizon. The stock quote is the starting point of analysis, not the end.</p>
+  </div><div class="div"></div>
 </main>
 </div>
-<footer class="sub-footer">
-  <div class="logo">Punjabi<span>Finance</span></div>
-  <p class="disclaimer">Educational content only — not financial, legal, or insurance advice. Always consult a licensed professional before making financial decisions.</p>
+<footer>
+  <div class="f-logo">Punjabi<span>Finance</span></div>
+  <div class="f-links"><a href="index.html">Home</a><a href="education.html">Learn</a><a href="calculators.html">Calculators</a><a href="wealth-path.html">Wealth Path</a><a href="books.html">Books</a></div>
+  <p class="disc">Educational content only. Not financial advice. Canadian context. © 2025 Punjabi Finance</p>
 </footer>
 <script>
-  const obs = new IntersectionObserver(es => es.forEach(e => {
-    if(e.isIntersecting) {
-      document.querySelectorAll('.toc-link').forEach(l => l.classList.remove('active'));
-      const a = document.querySelector('.toc-link[href="#'+e.target.id+'"]');
-      if(a) a.classList.add('active');
-    }
-  }), {rootMargin:'-15% 0px -70% 0px'});
-  document.querySelectorAll('.learn-section').forEach(s => obs.observe(s));
+const _ll=localStorage.getItem('pf_lang')||'en';
+function learnLang(l){localStorage.setItem('pf_lang',l);document.getElementById('lpg-en').classList.toggle('active',l==='en');document.getElementById('lpg-pa').classList.toggle('active',l==='pa');}
+document.addEventListener('DOMContentLoaded',()=>{if(_ll==='pa')learnLang('pa');const secs=document.querySelectorAll('.sec[id]'),links=document.querySelectorAll('aside .tl');const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)links.forEach(l=>l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id));});},{rootMargin:'-30% 0px -60% 0px'});secs.forEach(s=>obs.observe(s));});
 </script>
 
 <!-- AI CHATBOT WIDGET -->
@@ -326,5 +287,4 @@ async function sendMsg() {
 // ============================
 
 </script>
-</body>
-</html>
+</body></html>

@@ -1,57 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Power of Compound Growth – Punjabi Finance</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{--gold:#D4A017;--gold-light:#F0C040;--saffron:#E8890C;--black:#0A0A0A;--off-white:#1a1600;--dark-bg:#111008;--card-bg:#1c1a0e;--text-muted:#9A8A6A;}
-  *{margin:0;padding:0;box-sizing:border-box;} html{scroll-behavior:smooth;}
-  body{background:var(--dark-bg);color:var(--off-white);font-family:'DM Sans',sans-serif;overflow-x:hidden;}
-  a{color:inherit;}
-  .top-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:16px;padding:13px 28px;background:rgba(10,10,4,0.93);backdrop-filter:blur(16px);border-bottom:1px solid rgba(212,160,23,0.15);}
-  .back-btn{text-decoration:none;color:var(--text-muted);font-size:0.85rem;font-weight:500;transition:color 0.2s;}
-  .back-btn:hover{color:var(--gold-light);}
-  .nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--gold-light);text-decoration:none;}
-  .nav-logo span{color:var(--saffron);}
-  .page-wrap{display:grid;grid-template-columns:240px 1fr;min-height:100vh;}
-  .sidebar{position:sticky;top:58px;height:calc(100vh - 58px);overflow-y:auto;padding:28px 20px;border-right:1px solid rgba(212,160,23,0.1);background:#0d0c04;}
-  .sidebar-title{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--saffron);margin-bottom:14px;}
-  .toc-link{display:block;padding:7px 10px;border-radius:8px;text-decoration:none;color:var(--text-muted);font-size:0.83rem;transition:all 0.2s;border-left:2px solid transparent;margin-bottom:3px;}
-  .toc-link:hover,.toc-link.active{color:var(--gold-light);background:rgba(212,160,23,0.07);border-left-color:var(--gold);}
-  .sidebar-back{margin-top:24px;padding-top:18px;border-top:1px solid rgba(212,160,23,0.1);}
-  .content{padding:52px 60px 72px;max-width:800px;}
-  .topic-tag{display:inline-block;background:rgba(212,160,23,0.12);border:1px solid rgba(212,160,23,0.3);color:var(--gold-light);padding:4px 14px;border-radius:50px;font-size:0.73rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;}
-  .page-title{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3vw,2.7rem);font-weight:900;line-height:1.1;margin-bottom:12px;}
-  .gold{color:var(--gold-light);}
-  .lead{font-size:1rem;color:#4a3f20;line-height:1.7;margin-bottom:44px;padding-bottom:28px;border-bottom:1px solid rgba(212,160,23,0.1);}
-  .learn-section{margin-bottom:48px;scroll-margin-top:80px;}
-  .learn-section h2{font-family:'Playfair Display',serif;font-size:1.45rem;color:var(--gold-light);margin-bottom:14px;display:flex;align-items:center;gap:9px;}
-  .learn-section p{color:#4a3f20;line-height:1.8;font-size:0.96rem;margin-bottom:13px;}
-  .learn-section ul,.learn-section ol{color:#4a3f20;line-height:1.8;font-size:0.96rem;padding-left:20px;margin-bottom:13px;}
-  .learn-section li{margin-bottom:7px;}
-  .callout{background:rgba(212,160,23,0.08);border:1px solid rgba(212,160,23,0.2);border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:16px 18px;margin:18px 0;}
-  .callout p{margin:0;color:#4a3f20;font-size:0.93rem;}
-  .tip-box{background:rgba(37,211,102,0.06);border:1px solid rgba(37,211,102,0.2);border-radius:12px;padding:16px 18px;margin:18px 0;}
-  .tip-box p{margin:0;color:#4a3f20;font-size:0.93rem;}
-  .warn-box{background:rgba(232,137,12,0.07);border:1px solid rgba(232,137,12,0.22);border-radius:12px;padding:16px 18px;margin:18px 0;}
-  .warn-box p{margin:0;color:#4a3f20;font-size:0.93rem;}
-  .data-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin:18px 0;}
-  .data-card{background:var(--card-bg);border:1px solid rgba(212,160,23,0.16);border-radius:13px;padding:16px;text-align:center;}
-  .data-num{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--gold-light);display:block;margin-bottom:4px;}
-  .data-label{font-size:0.72rem;color:var(--text-muted);line-height:1.4;}
-  .divider{height:1px;background:rgba(212,160,23,0.1);margin:36px 0;}
-  .cta-box{background:linear-gradient(135deg,rgba(212,160,23,0.11),rgba(232,137,12,0.04));border:1px solid rgba(212,160,23,0.26);border-radius:18px;padding:32px;text-align:center;margin-top:44px;}
-  .cta-box h3{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--gold-light);margin-bottom:9px;}
-  .cta-box p{color:var(--text-muted);font-size:0.88rem;margin-bottom:18px;}
-  .btn-gold{display:inline-block;padding:11px 26px;background:var(--gold);color:var(--black);border-radius:50px;font-weight:700;font-size:0.88rem;text-decoration:none;transition:background 0.2s,transform 0.15s;}
-  .btn-gold:hover{background:var(--gold-light);transform:translateY(-1px);}
-  .sub-footer{border-top:1px solid rgba(212,160,23,0.1);padding:28px 20px;text-align:center;color:var(--text-muted);font-size:0.78rem;}
-  .sub-footer .logo{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--gold-light);margin-bottom:6px;}
-  .sub-footer .logo span{color:var(--saffron);}
-  .disclaimer{max-width:520px;margin:10px auto 0;font-size:0.67rem;opacity:0.42;line-height:1.55;}
-  @media(max-width:780px){.page-wrap{grid-template-columns:1fr;}.sidebar{position:relative;height:auto;top:0;border-right:none;border-bottom:1px solid rgba(212,160,23,0.1);padding:16px;}.content{padding:28px 16px 52px;}.top-nav{padding:12px 16px;}}
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Home Inspection — What to Look For – Punjabi Finance</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"><style>
+:root{--gold:#D4A017;--gl:#C4880A;--sa:#C47008;--bg:#f7f5f0;--cb:#f0ede4;--muted:#7a6a45;--off:#1a1600;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:#f7f5f0;color:#1a1600;font-family:'DM Sans',sans-serif;}
+a{color:inherit;}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:16px;padding:13px 28px;background:rgba(10,10,4,.93);backdrop-filter:blur(16px);border-bottom:1px solid rgba(212,160,23,.15);}
+.bk{text-decoration:none;color:#7a6a45;font-size:.85rem;font-weight:500;transition:color .2s;}.bk:hover{color:#C4880A;}
+.logo{font-family:'Playfair Display',serif;font-size:1.1rem;color:#C4880A;text-decoration:none;margin-left:auto;}.logo span{color:#C47008;}
+.wrap{display:grid;grid-template-columns:230px 1fr;min-height:calc(100vh - 52px);}
+aside{position:sticky;top:52px;height:calc(100vh - 52px);overflow-y:auto;padding:24px 16px;border-right:1px solid rgba(212,160,23,.1);background:#0d0c04;}
+.st{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#C47008;margin-bottom:12px;}
+.tl{display:block;padding:6px 9px;border-radius:7px;text-decoration:none;color:#7a6a45;font-size:.81rem;transition:all .2s;border-left:2px solid transparent;margin-bottom:2px;}
+.tl:hover,.tl.on{color:#C4880A;background:rgba(212,160,23,.07);border-left-color:var(--gold);}
+.sb-foot{margin-top:20px;padding-top:16px;border-top:1px solid rgba(212,160,23,.1);}
+main{padding:48px 56px 72px;max-width:780px;background:#fff;}
+.tag{display:inline-block;background:rgba(212,160,23,.12);border:1px solid rgba(212,160,23,.3);color:#C4880A;padding:3px 13px;border-radius:50px;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;}
+h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:900;line-height:1.1;margin-bottom:10px;}
+.gold{color:#C4880A;}
+.lead{font-size:.97rem;color:#4a3f20;line-height:1.75;margin-bottom:40px;padding-bottom:24px;border-bottom:1px solid rgba(212,160,23,.1);}
+.sec{margin-bottom:44px;scroll-margin-top:72px;}
+.sec h2{font-family:'Playfair Display',serif;font-size:1.35rem;color:#C4880A;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.sec p{color:#4a3f20;line-height:1.8;font-size:.94rem;margin-bottom:11px;}
+.sec ul,.sec ol{color:#4a3f20;line-height:1.8;font-size:.94rem;padding-left:20px;margin-bottom:11px;}
+.sec li{margin-bottom:6px;}
+.box{background:rgba(212,160,23,.07);border:1px solid rgba(212,160,23,.2);border-left:4px solid var(--gold);border-radius:0 11px 11px 0;padding:14px 16px;margin:16px 0;}
+.box p{margin:0;font-size:.91rem;}
+.tip{background:rgba(37,211,102,.06);border:1px solid rgba(37,211,102,.2);border-radius:11px;padding:14px 16px;margin:16px 0;}
+.tip p{margin:0;font-size:.91rem;}
+.warn{background:rgba(232,137,12,.07);border:1px solid rgba(232,137,12,.22);border-radius:11px;padding:14px 16px;margin:16px 0;}
+.warn p{margin:0;font-size:.91rem;}
+.dg{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:10px;margin:16px 0;}
+.dc{background:#f0ede4;border:1px solid rgba(212,160,23,.16);border-radius:12px;padding:14px;text-align:center;}
+.dn{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#C4880A;display:block;margin-bottom:3px;}
+.dl{font-size:.7rem;color:#7a6a45;line-height:1.4;}
+.div{height:1px;background:rgba(212,160,23,.09);margin:32px 0;}
+.cta{background:linear-gradient(135deg,rgba(212,160,23,.1),rgba(232,137,12,.04));border:1px solid rgba(212,160,23,.25);border-radius:16px;padding:28px;text-align:center;margin-top:40px;}
+.cta h3{font-family:'Playfair Display',serif;font-size:1.25rem;color:#C4880A;margin-bottom:8px;}
+.cta p{color:#7a6a45;font-size:.86rem;margin-bottom:16px;}
+.btn{display:inline-block;padding:10px 24px;background:var(--gold);color:#0a0a0a;border-radius:50px;font-weight:700;font-size:.86rem;text-decoration:none;transition:background .2s,transform .15s;}
+.btn:hover{background:var(--gl);transform:translateY(-1px);}
+footer{border-top:1px solid rgba(212,160,23,.1);padding:24px 16px;text-align:center;color:#7a6a45;font-size:.76rem;}
+footer .fl{font-family:'Playfair Display',serif;font-size:1.1rem;color:#C4880A;margin-bottom:6px;}
+footer .fl span{color:#C47008;}
+.disc{max-width:500px;margin:8px auto 0;font-size:.66rem;opacity:.4;line-height:1.5;}
+@media(max-width:760px){.wrap{grid-template-columns:1fr;}aside{position:relative;height:auto;top:0;border-right:none;border-bottom:1px solid rgba(212,160,23,.1);padding:14px;}main{padding:24px 14px 48px;}nav{padding:11px 14px;}}
 
 
 
@@ -81,8 +75,7 @@
 .unav-dlang button.on{background:#D4A017;color:#0a0a0a;border-color:#D4A017;}
 @media(max-width:860px){.unav-links{display:none;}.unav-ham{display:flex;}.unav{padding:0 16px;}}
 /* ========================= */
-</style>
-</head>
+</style></head>
 <body>
 <nav class="unav">
   <a href="index.html" class="unav-logo">Punjabi<span>Finance</span></a>
@@ -118,42 +111,37 @@
     <button id="unav-dlb-pa" onclick="siteSetLang('pa')">ਪੰਜਾਬੀ</button>
   </div>
 </div>
-<div class="page-wrap">
-  <aside class="sidebar">
-    <div class="sidebar-title">On this page</div>
-    <a href="#what" class="toc-link">🤔 What Is Compound Growth?</a>
-    <a href="#time" class="toc-link">⏰ Why Time Is the Key Variable</a>
-    <a href="#consistent" class="toc-link">📅 Regular Contributions Amplify the Effect</a>
-    <a href="#enemy" class="toc-link">⚠️ The Enemy of Compound Growth</a>
-    
-    <div class="sidebar-back">
-      <a href="education.html" class="back-btn" style="display:block;margin-bottom:6px">← All Topics</a>
-      <a href="index.html" class="back-btn" style="display:block">🏠 Home</a>
-    </div>
-  </aside>
-  <main>
-  <div class="breadcrumb"><a href="index.html">Home</a> › <a href="education.html">Learn</a> › <span style="color:var(--off);">Compound Interest</span></div>
-  <div class="tag">📈 Investing</div>
-  <h1>Compound Interest: The Force That Builds Wealth</h1>
-  <p class="lead">Einstein reportedly called compound interest the eighth wonder of the world. Here's why — with Canadian numbers.</p>
-  <div class="sec" id="what"><h2><span>📈</span> What Is Compound Interest?</h2><p>Compound interest means earning returns not just on your original investment but also on all the interest and returns you've already earned. Your money earns money, which earns more money, which earns more money. Over decades, this snowball effect produces results that seem mathematically impossible until you see the numbers.</p><p><strong>Simple example:</strong> $10,000 at 7% annual return:<br>— After 10 years: $19,672 (nearly doubled)<br>— After 20 years: $38,697 (nearly 4x)<br>— After 30 years: $76,123 (7.6x)<br>— After 40 years: $149,745 (almost 15x)</p><p>You invested $10,000 once and did nothing. After 40 years, compound growth did $139,745 of work for you.</p></div><div class="div"></div><div class="sec" id="rule72"><h2><span>🔢</span> The Rule of 72</h2><p>The Rule of 72 is a quick mental math tool: divide 72 by your annual return rate to find how many years it takes to double your money.</p><p>Examples:<br>— 4% return (GIC): money doubles every 18 years<br>— 7% return (diversified ETF): money doubles every 10.3 years<br>— 10% return (aggressive equities): money doubles every 7.2 years<br>— 20% interest (credit card debt): your debt doubles every 3.6 years</p><p>That last one is why compound interest works against you when you're in debt. The same force that builds wealth destroys it when you're on the wrong side of the equation.</p></div><div class="div"></div><div class="sec" id="time"><h2><span>⏰</span> Why Time Is the Most Powerful Variable</h2><p>$5,000/year invested at 7%:<br>— Starting at 25, stopping at 35 (10 years, $50,000 invested): portfolio at 65 = $602,000<br>— Starting at 35, continuing until 65 (30 years, $150,000 invested): portfolio at 65 = $472,000</p><p>The investor who stopped at 35 invested $100,000 less but ended up with more money — because of the extra 10 years of compounding. This is not a typo. Starting 10 years earlier is worth more than investing 3x as long afterward.</p></div><div class="div"></div><div class="sec" id="canada"><h2><span>🇨🇦</span> Maximizing Compounding in Canada</h2><p>The TFSA is the single best compounding vehicle in Canada. All growth is completely tax-free — the government takes nothing from your compound returns, ever. $6,500/year in a TFSA at 7% from age 18 to 65 = over $2 million. The same investment in a non-registered account would be worth significantly less after the annual drag of capital gains and dividend taxes eating into your compound returns.</p></div>
-</main>
-</div>
-<footer class="sub-footer">
-  <div class="logo">Punjabi<span>Finance</span></div>
-  <p class="disclaimer">Educational content only — not financial, legal, or insurance advice. Always consult a licensed professional before making financial decisions.</p>
-</footer>
+<div class="wrap">
+<aside><div class="st">On this page</div><a href="#what" class="tl">🤔 What Is a Home Inspection?</a>
+    <a href="#covers" class="tl">📋 What Inspectors Examine</a>
+    <a href="#report" class="tl">📄 Using the Report</a>
+    <a href="#choose" class="tl">✅ Choosing an Inspector</a>
+    <div class="sb-foot"><a href="education.html" class="bk" style="display:block;margin-bottom:6px">← All 200+ Topics</a><a href="index.html" class="bk" style="display:block">🏠 Home</a></div></aside>
+<main><div class="tag">🔍 Real Estate</div><h1><span class="lng-en">Home Inspection — What to Look For</span><span class="lng-pa" style="display:none">Home Inspection — What to Look For</span></h1><p class="lead"><span class="lng-en">One of the most valuable $400–$600 you'll spend in the home buying process.</span><span class="lng-pa" style="display:none">ਕੈਨੇਡਾ ਵਿੱਚ ਇਸ ਵਿਸ਼ੇ ਬਾਰੇ ਪੂਰੀ ਗਾਈਡ — ਅਸਲ ਉਦਾਹਰਣਾਂ ਅਤੇ ਕੰਮ ਦੇ ਕਦਮਾਂ ਨਾਲ।</span></p><div class="sec" id="what"><h2><span>🤔</span>What Is a Home Inspection?</h2>
+<p>A home inspection is a professional evaluation of a property's condition — roof, foundation, electrical, plumbing, HVAC, insulation — conducted before purchase. In Ontario, inspectors must be registered under the Home Inspection Act. In BC and Alberta, provincial licensing is required.</p>
+<p>An inspection costs $400–$650 and takes 2.5–4 hours. It's one of the highest-value expenditures in a home purchase — an inspection revealing $25,000 in repairs either saves you that money through renegotiation or prevents a costly mistake. Attend in person: walking through with the inspector gives you far more context than reading the report alone.</p>
+</div></div><div class="div"></div><div class="sec" id="covers"><h2><span>📋</span>What Inspectors Examine</h2>
+<p><strong>Roof:</strong> Shingle condition and age, flashing, gutters. A roof replacement costs $8,000–$25,000 in Canada — knowing it's due in 2 years affects your offer.</p>
+<p><strong>Electrical:</strong> Panel capacity (60-amp panels in older homes can't handle modern loads), wiring type (aluminum wiring from the 1960s–70s is a fire risk), GFCI protection near water.</p>
+<p><strong>Plumbing:</strong> Water pressure, drain flow, pipe material (lead pipes pre-1955, galvanized steel that corrodes), water heater age (10–15 year lifespan).</p>
+<p><strong>HVAC:</strong> Furnace and AC age and condition. A furnace over 20 years old is near end of life ($4,000–$8,000 replacement). AC systems last 15–20 years.</p>
+<p><strong>Foundation:</strong> Horizontal cracks are serious (lateral soil pressure). Vertical cracks may be settling. Water infiltration signs. Foundation repairs range from $500 (crack injection) to $30,000+ (underpinning).</p>
+<p><strong>Attic and insulation:</strong> Insulation depth and type (asbestos insulation in older homes requires professional removal), ventilation, signs of mold from condensation.</p>
+</div><div class="div"></div><div class="sec" id="report"><h2><span>📄</span>Using the Report</h2>
+<p>Reports run 40–80 pages with photos for a standard home. Don't panic at the length — every home has items to note. Categorize findings into: safety issues (must address), major expenses over $1,000 (negotiate or walk away), and maintenance items (normal owner responsibilities).</p>
+<p>Use the report in negotiation: request the seller remedy issues before closing, request a price reduction equal to repair cost, or exit the deal with your deposit returned if on a conditional offer. A home inspection condition protects you — if negotiations fail, you walk away with your deposit intact.</p>
+</div><div class="div"></div><div class="sec" id="choose"><h2><span>✅</span>Choosing an Inspector</h2>
+<p>Choose a licensed inspector who belongs to CAHPI (Canadian Association of Home & Property Inspectors) or your provincial equivalent (OAHI in Ontario, ASTTBC in BC). Ask for a sample report — good reports are photo-rich and explain issues in plain language, not technical jargon.</p>
+<p>In competitive markets where sellers won't accept conditional offers, consider a pre-offer inspection: hire an inspector before submitting your offer. Costs $400–$650 regardless of outcome, but lets you bid condition-free with knowledge of the property's actual condition — preventing you from buying unknown, expensive problems.</p>
+</div><div class="div"></div></main></div>
+<footer><div class="fl">Punjabi<span>Finance</span></div><p class="disc">Educational content only — not financial, legal, or insurance advice. Always consult a licensed professional before making financial decisions.</p></footer>
 <script>
-  const obs = new IntersectionObserver(es => es.forEach(e => {
-    if(e.isIntersecting) {
-      document.querySelectorAll('.toc-link').forEach(l => l.classList.remove('active'));
-      const a = document.querySelector('.toc-link[href="#'+e.target.id+'"]');
-      if(a) a.classList.add('active');
-    }
-  }), {rootMargin:'-15% 0px -70% 0px'});
-  document.querySelectorAll('.learn-section').forEach(s => obs.observe(s));
+const obs=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){document.querySelectorAll('.tl').forEach(l=>l.classList.remove('on'));
+  const a=document.querySelector('.tl[href="#'+e.target.id+'"]');if(a)a.classList.add('on');}
+}),{rootMargin:'-15% 0px -70% 0px'});
+document.querySelectorAll('.sec').forEach(s=>obs.observe(s));
 </script>
-
 <!-- AI CHATBOT WIDGET -->
 <div id="chat-widget" style="position:fixed;bottom:24px;right:24px;z-index:9999;font-family:'DM Sans',sans-serif;">
   <!-- Toggle Button -->
@@ -326,5 +314,4 @@ async function sendMsg() {
 // ============================
 
 </script>
-</body>
-</html>
+</body></html>

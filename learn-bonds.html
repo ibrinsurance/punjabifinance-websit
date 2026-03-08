@@ -1,57 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Power of Compound Growth – Punjabi Finance</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{--gold:#D4A017;--gold-light:#F0C040;--saffron:#E8890C;--black:#0A0A0A;--off-white:#1a1600;--dark-bg:#111008;--card-bg:#1c1a0e;--text-muted:#9A8A6A;}
-  *{margin:0;padding:0;box-sizing:border-box;} html{scroll-behavior:smooth;}
-  body{background:var(--dark-bg);color:var(--off-white);font-family:'DM Sans',sans-serif;overflow-x:hidden;}
-  a{color:inherit;}
-  .top-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:16px;padding:13px 28px;background:rgba(10,10,4,0.93);backdrop-filter:blur(16px);border-bottom:1px solid rgba(212,160,23,0.15);}
-  .back-btn{text-decoration:none;color:var(--text-muted);font-size:0.85rem;font-weight:500;transition:color 0.2s;}
-  .back-btn:hover{color:var(--gold-light);}
-  .nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--gold-light);text-decoration:none;}
-  .nav-logo span{color:var(--saffron);}
-  .page-wrap{display:grid;grid-template-columns:240px 1fr;min-height:100vh;}
-  .sidebar{position:sticky;top:58px;height:calc(100vh - 58px);overflow-y:auto;padding:28px 20px;border-right:1px solid rgba(212,160,23,0.1);background:#0d0c04;}
-  .sidebar-title{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--saffron);margin-bottom:14px;}
-  .toc-link{display:block;padding:7px 10px;border-radius:8px;text-decoration:none;color:var(--text-muted);font-size:0.83rem;transition:all 0.2s;border-left:2px solid transparent;margin-bottom:3px;}
-  .toc-link:hover,.toc-link.active{color:var(--gold-light);background:rgba(212,160,23,0.07);border-left-color:var(--gold);}
-  .sidebar-back{margin-top:24px;padding-top:18px;border-top:1px solid rgba(212,160,23,0.1);}
-  .content{padding:52px 60px 72px;max-width:800px;}
-  .topic-tag{display:inline-block;background:rgba(212,160,23,0.12);border:1px solid rgba(212,160,23,0.3);color:var(--gold-light);padding:4px 14px;border-radius:50px;font-size:0.73rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;}
-  .page-title{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3vw,2.7rem);font-weight:900;line-height:1.1;margin-bottom:12px;}
-  .gold{color:var(--gold-light);}
-  .lead{font-size:1rem;color:#4a3f20;line-height:1.7;margin-bottom:44px;padding-bottom:28px;border-bottom:1px solid rgba(212,160,23,0.1);}
-  .learn-section{margin-bottom:48px;scroll-margin-top:80px;}
-  .learn-section h2{font-family:'Playfair Display',serif;font-size:1.45rem;color:var(--gold-light);margin-bottom:14px;display:flex;align-items:center;gap:9px;}
-  .learn-section p{color:#4a3f20;line-height:1.8;font-size:0.96rem;margin-bottom:13px;}
-  .learn-section ul,.learn-section ol{color:#4a3f20;line-height:1.8;font-size:0.96rem;padding-left:20px;margin-bottom:13px;}
-  .learn-section li{margin-bottom:7px;}
-  .callout{background:rgba(212,160,23,0.08);border:1px solid rgba(212,160,23,0.2);border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:16px 18px;margin:18px 0;}
-  .callout p{margin:0;color:#4a3f20;font-size:0.93rem;}
-  .tip-box{background:rgba(37,211,102,0.06);border:1px solid rgba(37,211,102,0.2);border-radius:12px;padding:16px 18px;margin:18px 0;}
-  .tip-box p{margin:0;color:#4a3f20;font-size:0.93rem;}
-  .warn-box{background:rgba(232,137,12,0.07);border:1px solid rgba(232,137,12,0.22);border-radius:12px;padding:16px 18px;margin:18px 0;}
-  .warn-box p{margin:0;color:#4a3f20;font-size:0.93rem;}
-  .data-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin:18px 0;}
-  .data-card{background:var(--card-bg);border:1px solid rgba(212,160,23,0.16);border-radius:13px;padding:16px;text-align:center;}
-  .data-num{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--gold-light);display:block;margin-bottom:4px;}
-  .data-label{font-size:0.72rem;color:var(--text-muted);line-height:1.4;}
-  .divider{height:1px;background:rgba(212,160,23,0.1);margin:36px 0;}
-  .cta-box{background:linear-gradient(135deg,rgba(212,160,23,0.11),rgba(232,137,12,0.04));border:1px solid rgba(212,160,23,0.26);border-radius:18px;padding:32px;text-align:center;margin-top:44px;}
-  .cta-box h3{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--gold-light);margin-bottom:9px;}
-  .cta-box p{color:var(--text-muted);font-size:0.88rem;margin-bottom:18px;}
-  .btn-gold{display:inline-block;padding:11px 26px;background:var(--gold);color:var(--black);border-radius:50px;font-weight:700;font-size:0.88rem;text-decoration:none;transition:background 0.2s,transform 0.15s;}
-  .btn-gold:hover{background:var(--gold-light);transform:translateY(-1px);}
-  .sub-footer{border-top:1px solid rgba(212,160,23,0.1);padding:28px 20px;text-align:center;color:var(--text-muted);font-size:0.78rem;}
-  .sub-footer .logo{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--gold-light);margin-bottom:6px;}
-  .sub-footer .logo span{color:var(--saffron);}
-  .disclaimer{max-width:520px;margin:10px auto 0;font-size:0.67rem;opacity:0.42;line-height:1.55;}
-  @media(max-width:780px){.page-wrap{grid-template-columns:1fr;}.sidebar{position:relative;height:auto;top:0;border-right:none;border-bottom:1px solid rgba(212,160,23,0.1);padding:16px;}.content{padding:28px 16px 52px;}.top-nav{padding:12px 16px;}}
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bonds Explained — Safe Investing – Punjabi Finance</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"><style>
+:root{--gold:#D4A017;--gl:#C4880A;--sa:#C47008;--bg:#f7f5f0;--cb:#f0ede4;--muted:#7a6a45;--off:#1a1600;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:#f7f5f0;color:#1a1600;font-family:'DM Sans',sans-serif;}
+a{color:inherit;}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:16px;padding:13px 28px;background:rgba(10,10,4,.93);backdrop-filter:blur(16px);border-bottom:1px solid rgba(212,160,23,.15);}
+.bk{text-decoration:none;color:#7a6a45;font-size:.85rem;font-weight:500;transition:color .2s;}.bk:hover{color:#C4880A;}
+.logo{font-family:'Playfair Display',serif;font-size:1.1rem;color:#C4880A;text-decoration:none;margin-left:auto;}.logo span{color:#C47008;}
+.wrap{display:grid;grid-template-columns:230px 1fr;min-height:calc(100vh - 52px);}
+aside{position:sticky;top:52px;height:calc(100vh - 52px);overflow-y:auto;padding:24px 16px;border-right:1px solid rgba(212,160,23,.1);background:#0d0c04;}
+.st{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#C47008;margin-bottom:12px;}
+.tl{display:block;padding:6px 9px;border-radius:7px;text-decoration:none;color:#7a6a45;font-size:.81rem;transition:all .2s;border-left:2px solid transparent;margin-bottom:2px;}
+.tl:hover,.tl.on{color:#C4880A;background:rgba(212,160,23,.07);border-left-color:var(--gold);}
+.sb-foot{margin-top:20px;padding-top:16px;border-top:1px solid rgba(212,160,23,.1);}
+main{padding:48px 56px 72px;max-width:780px;background:#fff;}
+.tag{display:inline-block;background:rgba(212,160,23,.12);border:1px solid rgba(212,160,23,.3);color:#C4880A;padding:3px 13px;border-radius:50px;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;}
+h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:900;line-height:1.1;margin-bottom:10px;}
+.gold{color:#C4880A;}
+.lead{font-size:.97rem;color:#4a3f20;line-height:1.75;margin-bottom:40px;padding-bottom:24px;border-bottom:1px solid rgba(212,160,23,.1);}
+.sec{margin-bottom:44px;scroll-margin-top:72px;}
+.sec h2{font-family:'Playfair Display',serif;font-size:1.35rem;color:#C4880A;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.sec p{color:#4a3f20;line-height:1.8;font-size:.94rem;margin-bottom:11px;}
+.sec ul,.sec ol{color:#4a3f20;line-height:1.8;font-size:.94rem;padding-left:20px;margin-bottom:11px;}
+.sec li{margin-bottom:6px;}
+.box{background:rgba(212,160,23,.07);border:1px solid rgba(212,160,23,.2);border-left:4px solid var(--gold);border-radius:0 11px 11px 0;padding:14px 16px;margin:16px 0;}
+.box p{margin:0;font-size:.91rem;}
+.tip{background:rgba(37,211,102,.06);border:1px solid rgba(37,211,102,.2);border-radius:11px;padding:14px 16px;margin:16px 0;}
+.tip p{margin:0;font-size:.91rem;}
+.warn{background:rgba(232,137,12,.07);border:1px solid rgba(232,137,12,.22);border-radius:11px;padding:14px 16px;margin:16px 0;}
+.warn p{margin:0;font-size:.91rem;}
+.dg{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:10px;margin:16px 0;}
+.dc{background:#f0ede4;border:1px solid rgba(212,160,23,.16);border-radius:12px;padding:14px;text-align:center;}
+.dn{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#C4880A;display:block;margin-bottom:3px;}
+.dl{font-size:.7rem;color:#7a6a45;line-height:1.4;}
+.div{height:1px;background:rgba(212,160,23,.09);margin:32px 0;}
+.cta{background:linear-gradient(135deg,rgba(212,160,23,.1),rgba(232,137,12,.04));border:1px solid rgba(212,160,23,.25);border-radius:16px;padding:28px;text-align:center;margin-top:40px;}
+.cta h3{font-family:'Playfair Display',serif;font-size:1.25rem;color:#C4880A;margin-bottom:8px;}
+.cta p{color:#7a6a45;font-size:.86rem;margin-bottom:16px;}
+.btn{display:inline-block;padding:10px 24px;background:var(--gold);color:#0a0a0a;border-radius:50px;font-weight:700;font-size:.86rem;text-decoration:none;transition:background .2s,transform .15s;}
+.btn:hover{background:var(--gl);transform:translateY(-1px);}
+footer{border-top:1px solid rgba(212,160,23,.1);padding:24px 16px;text-align:center;color:#7a6a45;font-size:.76rem;}
+footer .fl{font-family:'Playfair Display',serif;font-size:1.1rem;color:#C4880A;margin-bottom:6px;}
+footer .fl span{color:#C47008;}
+.disc{max-width:500px;margin:8px auto 0;font-size:.66rem;opacity:.4;line-height:1.5;}
+@media(max-width:760px){.wrap{grid-template-columns:1fr;}aside{position:relative;height:auto;top:0;border-right:none;border-bottom:1px solid rgba(212,160,23,.1);padding:14px;}main{padding:24px 14px 48px;}nav{padding:11px 14px;}}
 
 
 
@@ -81,8 +75,7 @@
 .unav-dlang button.on{background:#D4A017;color:#0a0a0a;border-color:#D4A017;}
 @media(max-width:860px){.unav-links{display:none;}.unav-ham{display:flex;}.unav{padding:0 16px;}}
 /* ========================= */
-</style>
-</head>
+</style></head>
 <body>
 <nav class="unav">
   <a href="index.html" class="unav-logo">Punjabi<span>Finance</span></a>
@@ -118,42 +111,43 @@
     <button id="unav-dlb-pa" onclick="siteSetLang('pa')">ਪੰਜਾਬੀ</button>
   </div>
 </div>
-<div class="page-wrap">
-  <aside class="sidebar">
-    <div class="sidebar-title">On this page</div>
-    <a href="#what" class="toc-link">🤔 What Is Compound Growth?</a>
-    <a href="#time" class="toc-link">⏰ Why Time Is the Key Variable</a>
-    <a href="#consistent" class="toc-link">📅 Regular Contributions Amplify the Effect</a>
-    <a href="#enemy" class="toc-link">⚠️ The Enemy of Compound Growth</a>
-    
-    <div class="sidebar-back">
-      <a href="education.html" class="back-btn" style="display:block;margin-bottom:6px">← All Topics</a>
-      <a href="index.html" class="back-btn" style="display:block">🏠 Home</a>
-    </div>
-  </aside>
-  <main>
-  <div class="breadcrumb"><a href="index.html">Home</a> › <a href="education.html">Learn</a> › <span style="color:var(--off);">Compound Interest</span></div>
-  <div class="tag">📈 Investing</div>
-  <h1>Compound Interest: The Force That Builds Wealth</h1>
-  <p class="lead">Einstein reportedly called compound interest the eighth wonder of the world. Here's why — with Canadian numbers.</p>
-  <div class="sec" id="what"><h2><span>📈</span> What Is Compound Interest?</h2><p>Compound interest means earning returns not just on your original investment but also on all the interest and returns you've already earned. Your money earns money, which earns more money, which earns more money. Over decades, this snowball effect produces results that seem mathematically impossible until you see the numbers.</p><p><strong>Simple example:</strong> $10,000 at 7% annual return:<br>— After 10 years: $19,672 (nearly doubled)<br>— After 20 years: $38,697 (nearly 4x)<br>— After 30 years: $76,123 (7.6x)<br>— After 40 years: $149,745 (almost 15x)</p><p>You invested $10,000 once and did nothing. After 40 years, compound growth did $139,745 of work for you.</p></div><div class="div"></div><div class="sec" id="rule72"><h2><span>🔢</span> The Rule of 72</h2><p>The Rule of 72 is a quick mental math tool: divide 72 by your annual return rate to find how many years it takes to double your money.</p><p>Examples:<br>— 4% return (GIC): money doubles every 18 years<br>— 7% return (diversified ETF): money doubles every 10.3 years<br>— 10% return (aggressive equities): money doubles every 7.2 years<br>— 20% interest (credit card debt): your debt doubles every 3.6 years</p><p>That last one is why compound interest works against you when you're in debt. The same force that builds wealth destroys it when you're on the wrong side of the equation.</p></div><div class="div"></div><div class="sec" id="time"><h2><span>⏰</span> Why Time Is the Most Powerful Variable</h2><p>$5,000/year invested at 7%:<br>— Starting at 25, stopping at 35 (10 years, $50,000 invested): portfolio at 65 = $602,000<br>— Starting at 35, continuing until 65 (30 years, $150,000 invested): portfolio at 65 = $472,000</p><p>The investor who stopped at 35 invested $100,000 less but ended up with more money — because of the extra 10 years of compounding. This is not a typo. Starting 10 years earlier is worth more than investing 3x as long afterward.</p></div><div class="div"></div><div class="sec" id="canada"><h2><span>🇨🇦</span> Maximizing Compounding in Canada</h2><p>The TFSA is the single best compounding vehicle in Canada. All growth is completely tax-free — the government takes nothing from your compound returns, ever. $6,500/year in a TFSA at 7% from age 18 to 65 = over $2 million. The same investment in a non-registered account would be worth significantly less after the annual drag of capital gains and dividend taxes eating into your compound returns.</p></div>
-</main>
-</div>
-<footer class="sub-footer">
-  <div class="logo">Punjabi<span>Finance</span></div>
-  <p class="disclaimer">Educational content only — not financial, legal, or insurance advice. Always consult a licensed professional before making financial decisions.</p>
-</footer>
+<div class="wrap">
+<aside><div class="st">On this page</div><a href="#what" class="tl">🤔 What Is a Bond?</a>
+    <a href="#types" class="tl">📋 Types of Bonds</a>
+    <a href="#prices" class="tl">⚖️ Bond Prices vs. Interest Rates</a>
+    <a href="#role" class="tl">🎯 Role of Bonds in a Portfolio</a>
+    <a href="#bond-etf" class="tl">📦 Bond ETFs — Simplest Approach</a>
+    <div class="sb-foot"><a href="education.html" class="bk" style="display:block;margin-bottom:6px">← All 200+ Topics</a><a href="index.html" class="bk" style="display:block">🏠 Home</a></div></aside>
+<main><div class="tag">📰 Investing</div><h1><span class="lng-en">Bonds Explained — Safe Investing</span><span class="lng-pa" style="display:none">Bonds Explained — Safe Investing</span></h1><p class="lead"><span class="lng-en">Bonds are the 'safe' portion of most investment portfolios. Here's how they work and when to use them.</span><span class="lng-pa" style="display:none">ਕੈਨੇਡਾ ਵਿੱਚ ਇਸ ਵਿਸ਼ੇ ਬਾਰੇ ਪੂਰੀ ਗਾਈਡ — ਅਸਲ ਉਦਾਹਰਣਾਂ ਅਤੇ ਕੰਮ ਦੇ ਕਦਮਾਂ ਨਾਲ।</span></p><div class="sec" id="what"><h2><span>🤔</span>What Is a Bond?</h2>
+<p>A bond is a loan you make to a government or corporation. When you buy a bond, you're lending money to the issuer for a specified period. In return, the issuer pays you regular interest (called the coupon) and returns your principal at the end of the term (maturity date). Bonds are called "fixed income" because they pay a predictable, fixed stream of income.</p>
+<p>For example: you buy a Government of Canada bond with a $1,000 face value, 3% coupon, and 10-year term. Every year for 10 years, you receive $30 in interest ($1,000 × 3%). At year 10, you receive your $1,000 back. The total return: $300 in interest plus your original $1,000. If you bought through a brokerage, you can also sell the bond before maturity at whatever price the market offers.</p>
+<p>Governments issue bonds to fund spending (Government of Canada bonds, provincial bonds, municipal bonds). Corporations issue bonds to raise capital for expansion or operations. Government bonds are considered safer because governments have taxing authority to repay debt. Corporate bonds carry more risk but typically offer higher interest rates to compensate.</p>
+</div><div class="div"></div><div class="sec" id="types"><h2><span>📋</span>Types of Bonds</h2>
+<p><strong>Government of Canada bonds:</strong> Issued by the federal government, considered the safest Canadian fixed income investment. Returns are modest but risk of default is essentially zero. Available in terms from 2 to 30 years.</p>
+<p><strong>Provincial bonds:</strong> Issued by provincial governments (Ontario, Quebec, BC, Alberta, etc.). Slightly higher yield than federal bonds because provincial governments have less inherent creditworthiness — still very safe by global standards.</p>
+<p><strong>Corporate bonds:</strong> Issued by companies. Yield more than government bonds to compensate for default risk. Investment-grade corporates (rated BBB or higher) from major Canadian companies are considered relatively safe. High-yield (junk) bonds offer higher returns but significantly higher default risk — inappropriate for most retail investors.</p>
+<p><strong>GICs vs. bonds:</strong> A GIC (Guaranteed Investment Certificate) is Canada's retail equivalent of a bond — you lend to a bank for a fixed term at a guaranteed rate. GICs are simpler, CDIC-insured, and available at any bank. The primary difference: GICs aren't tradeable (you can't sell them before maturity at most institutions), while bonds can be bought and sold on the open market.</p>
+</div><div class="div"></div><div class="sec" id="prices"><h2><span>⚖️</span>Bond Prices vs. Interest Rates</h2>
+<p>Bond prices and interest rates move in opposite directions — this is one of the most important concepts in fixed income investing. When prevailing interest rates rise, existing bonds paying lower rates become less attractive, so their prices fall. When rates fall, existing bonds with higher rates become more valuable, so their prices rise.</p>
+<p>Practical example: You own a bond paying 3% annually. Then the Bank of Canada raises rates and new bonds now pay 5%. Your 3% bond is now less attractive — why would anyone pay full price for 3% when new bonds pay 5%? The market price of your bond drops until its effective yield (coupon ÷ market price) equals the new 5% rate. If interest rates rise significantly, existing long-term bonds can lose 10–30% of their market value.</p>
+<p>This interest rate risk is the primary risk of bond investing — and it's why 2022 was a terrible year for bond funds (the fastest rate increases in 40 years caused bond prices to fall dramatically). Shorter-term bonds are less sensitive to rate changes than longer-term bonds. Holding bonds to maturity eliminates this risk — you receive your full principal regardless of price fluctuations during the holding period.</p>
+</div><div class="div"></div><div class="sec" id="role"><h2><span>🎯</span>Role of Bonds in a Portfolio</h2>
+<p>Bonds serve a specific role in a balanced portfolio: they reduce volatility, provide income, and often rise in value when equities fall (flight to safety during market stress). A portfolio of 60% equities and 40% bonds (the classic "balanced" portfolio) historically experiences about 60% of the volatility of a 100% equity portfolio while capturing about 80% of the long-term return — a significant trade-off favorable to investors who need smoother returns.</p>
+<p>The appropriate bond allocation depends on your time horizon and risk tolerance. For someone with 30 years until retirement, a heavy equity allocation (80–100%) is generally appropriate — time absorbs volatility. For someone 5–10 years from retirement, shifting toward 30–50% bonds reduces the risk of a severe market correction devastating their portfolio right before they need it. Near or in retirement, a 40–60% bond allocation provides income and stability.</p>
+<p>Bond allocation is NOT about age alone — it's about risk capacity (ability to absorb losses), risk tolerance (psychological comfort with volatility), and income needs. A 70-year-old with a large pension and no need to draw from investments can hold more equities than a 50-year-old who must rely entirely on their investment portfolio.</p>
+</div><div class="div"></div><div class="sec" id="bond-etf"><h2><span>📦</span>Bond ETFs — Simplest Approach</h2>
+<p>Rather than buying individual bonds (minimum $5,000–$10,000 per bond, complex pricing, limited liquidity), most retail investors access the bond market through bond ETFs traded on the TSX. A bond ETF holds hundreds or thousands of bonds in a single fund, providing instant diversification at low cost.</p>
+<p>Canadian bond ETFs are available across different segments: short-term government bonds, aggregate Canadian bonds (mix of government and corporate), and global bonds. Most Canadian all-in-one asset allocation ETFs (which provide both stocks and bonds in a single fund) use bond ETFs for their fixed income allocation. If you hold a balanced all-in-one fund, you already own bonds — no separate bond ETF needed.</p>
+<p>Bond ETF distributions are taxed as interest income — the least tax-efficient income type in Canada. For this reason, financial planners typically recommend holding bond ETFs in RRSP accounts (where interest income faces no immediate tax) rather than in taxable accounts.</p>
+</div><div class="div"></div></main></div>
+<footer><div class="fl">Punjabi<span>Finance</span></div><p class="disc">Educational content only — not financial, legal, or insurance advice. Always consult a licensed professional before making financial decisions.</p></footer>
 <script>
-  const obs = new IntersectionObserver(es => es.forEach(e => {
-    if(e.isIntersecting) {
-      document.querySelectorAll('.toc-link').forEach(l => l.classList.remove('active'));
-      const a = document.querySelector('.toc-link[href="#'+e.target.id+'"]');
-      if(a) a.classList.add('active');
-    }
-  }), {rootMargin:'-15% 0px -70% 0px'});
-  document.querySelectorAll('.learn-section').forEach(s => obs.observe(s));
+const obs=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){document.querySelectorAll('.tl').forEach(l=>l.classList.remove('on'));
+  const a=document.querySelector('.tl[href="#'+e.target.id+'"]');if(a)a.classList.add('on');}
+}),{rootMargin:'-15% 0px -70% 0px'});
+document.querySelectorAll('.sec').forEach(s=>obs.observe(s));
 </script>
-
 <!-- AI CHATBOT WIDGET -->
 <div id="chat-widget" style="position:fixed;bottom:24px;right:24px;z-index:9999;font-family:'DM Sans',sans-serif;">
   <!-- Toggle Button -->
@@ -326,5 +320,4 @@ async function sendMsg() {
 // ============================
 
 </script>
-</body>
-</html>
+</body></html>

@@ -480,7 +480,7 @@ function calcLife() {
     }
   });
 
-  document.getElementById('li-insight').innerHTML = `<div class="insight-box"><p>🛡️ <strong>DIME Method:</strong> D (Debt ${fmtK(mortgage+debts)}) + I (Income ${fmtK(incomeReplacement)}) + M (Mortgage already included) + E (Education ${fmtK(edu)}) = ${fmtK(totalNeeds)}. After subtracting existing coverage, you need <strong>${fmtK(roundedCoverage)}</strong>. WhatsApp us for a personalized quote.</p></div>`;
+  document.getElementById('li-insight').innerHTML = `<div class="insight-box"><p>🛡️ <strong>DIME Method:</strong> D (Debt ${fmtK(mortgage+debts)}) + I (Income ${fmtK(incomeReplacement)}) + M (Mortgage already included) + E (Education ${fmtK(edu)}) = ${fmtK(totalNeeds)}. After subtracting existing coverage, you need <strong>${fmtK(roundedCoverage)}</strong>.</p></div>`;
 }
 
 // ===== MORTGAGE =====
@@ -685,11 +685,7 @@ Your role:
 - Be warm and community-focused — this is for the Punjabi diaspora in Canada
 - Respond in the same language the user writes in (English or Punjabi)
 - Keep answers concise and practical — max 150 words unless asked to elaborate
-- Reference relevant tools on the site: calculators.html, tools.html, education.html
-- For insurance questions, suggest they WhatsApp us at +1 647-745-6850 for a personal quote
-- Never give specific investment recommendations or specific insurance quotes
-- Always end insurance/investment answers with a soft call to action to WhatsApp or visit ibrinsurance.ca
-
+- Reference relevant tools on the site: calculators.html, tools.html, education.html- Never give specific investment recommendations or specific insurance quotes
 Personality: Knowledgeable, warm, like a financially savvy older sibling or family friend who happens to know a lot about Canadian finance.`;
 
 let chatOpen = false;
@@ -755,7 +751,7 @@ async function sendMsg() {
       body: JSON.stringify({messages: chatHistory})
     });
     const data = await res.json();
-    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again or WhatsApp us directly.";
+    const reply = data.content?.[0]?.text || "Sorry, I couldn't get a response. Please try again ";
     
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
@@ -766,7 +762,7 @@ async function sendMsg() {
   } catch(err) {
     const typing = document.getElementById('typing-indicator');
     if(typing) typing.remove();
-    addMsg('Sorry, something went wrong. Please WhatsApp us directly at +1 647-745-6850 or visit ibrinsurance.ca', 'bot');
+    addMsg('Sorry, something went wrong. ', 'bot');
     document.getElementById('chat-status').textContent = 'Ask me anything about finance';
   }
   isLoading = false;

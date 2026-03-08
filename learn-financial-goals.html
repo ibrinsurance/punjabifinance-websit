@@ -1,62 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Power of Compound Growth – Punjabi Finance</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Setting and Achieving Financial Goals - Punjabi Finance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{--gold:#D4A017;--gold-light:#F0C040;--saffron:#E8890C;--black:#0A0A0A;--off-white:#1a1600;--dark-bg:#111008;--card-bg:#1c1a0e;--text-muted:#9A8A6A;}
-  *{margin:0;padding:0;box-sizing:border-box;} html{scroll-behavior:smooth;}
-  body{background:var(--dark-bg);color:var(--off-white);font-family:'DM Sans',sans-serif;overflow-x:hidden;}
-  a{color:inherit;}
-  .top-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:16px;padding:13px 28px;background:rgba(10,10,4,0.93);backdrop-filter:blur(16px);border-bottom:1px solid rgba(212,160,23,0.15);}
-  .back-btn{text-decoration:none;color:var(--text-muted);font-size:0.85rem;font-weight:500;transition:color 0.2s;}
-  .back-btn:hover{color:var(--gold-light);}
-  .nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--gold-light);text-decoration:none;}
-  .nav-logo span{color:var(--saffron);}
-  .page-wrap{display:grid;grid-template-columns:240px 1fr;min-height:100vh;}
-  .sidebar{position:sticky;top:58px;height:calc(100vh - 58px);overflow-y:auto;padding:28px 20px;border-right:1px solid rgba(212,160,23,0.1);background:#0d0c04;}
-  .sidebar-title{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--saffron);margin-bottom:14px;}
-  .toc-link{display:block;padding:7px 10px;border-radius:8px;text-decoration:none;color:var(--text-muted);font-size:0.83rem;transition:all 0.2s;border-left:2px solid transparent;margin-bottom:3px;}
-  .toc-link:hover,.toc-link.active{color:var(--gold-light);background:rgba(212,160,23,0.07);border-left-color:var(--gold);}
-  .sidebar-back{margin-top:24px;padding-top:18px;border-top:1px solid rgba(212,160,23,0.1);}
-  .content{padding:52px 60px 72px;max-width:800px;}
-  .topic-tag{display:inline-block;background:rgba(212,160,23,0.12);border:1px solid rgba(212,160,23,0.3);color:var(--gold-light);padding:4px 14px;border-radius:50px;font-size:0.73rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;}
-  .page-title{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3vw,2.7rem);font-weight:900;line-height:1.1;margin-bottom:12px;}
-  .gold{color:var(--gold-light);}
-  .lead{font-size:1rem;color:#4a3f20;line-height:1.7;margin-bottom:44px;padding-bottom:28px;border-bottom:1px solid rgba(212,160,23,0.1);}
-  .learn-section{margin-bottom:48px;scroll-margin-top:80px;}
-  .learn-section h2{font-family:'Playfair Display',serif;font-size:1.45rem;color:var(--gold-light);margin-bottom:14px;display:flex;align-items:center;gap:9px;}
-  .learn-section p{color:#4a3f20;line-height:1.8;font-size:0.96rem;margin-bottom:13px;}
-  .learn-section ul,.learn-section ol{color:#4a3f20;line-height:1.8;font-size:0.96rem;padding-left:20px;margin-bottom:13px;}
-  .learn-section li{margin-bottom:7px;}
-  .callout{background:rgba(212,160,23,0.08);border:1px solid rgba(212,160,23,0.2);border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:16px 18px;margin:18px 0;}
-  .callout p{margin:0;color:#4a3f20;font-size:0.93rem;}
-  .tip-box{background:rgba(37,211,102,0.06);border:1px solid rgba(37,211,102,0.2);border-radius:12px;padding:16px 18px;margin:18px 0;}
-  .tip-box p{margin:0;color:#4a3f20;font-size:0.93rem;}
-  .warn-box{background:rgba(232,137,12,0.07);border:1px solid rgba(232,137,12,0.22);border-radius:12px;padding:16px 18px;margin:18px 0;}
-  .warn-box p{margin:0;color:#4a3f20;font-size:0.93rem;}
-  .data-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin:18px 0;}
-  .data-card{background:var(--card-bg);border:1px solid rgba(212,160,23,0.16);border-radius:13px;padding:16px;text-align:center;}
-  .data-num{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--gold-light);display:block;margin-bottom:4px;}
-  .data-label{font-size:0.72rem;color:var(--text-muted);line-height:1.4;}
-  .divider{height:1px;background:rgba(212,160,23,0.1);margin:36px 0;}
-  .cta-box{background:linear-gradient(135deg,rgba(212,160,23,0.11),rgba(232,137,12,0.04));border:1px solid rgba(212,160,23,0.26);border-radius:18px;padding:32px;text-align:center;margin-top:44px;}
-  .cta-box h3{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--gold-light);margin-bottom:9px;}
-  .cta-box p{color:var(--text-muted);font-size:0.88rem;margin-bottom:18px;}
-  .btn-gold{display:inline-block;padding:11px 26px;background:var(--gold);color:var(--black);border-radius:50px;font-weight:700;font-size:0.88rem;text-decoration:none;transition:background 0.2s,transform 0.15s;}
-  .btn-gold:hover{background:var(--gold-light);transform:translateY(-1px);}
-  .sub-footer{border-top:1px solid rgba(212,160,23,0.1);padding:28px 20px;text-align:center;color:var(--text-muted);font-size:0.78rem;}
-  .sub-footer .logo{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--gold-light);margin-bottom:6px;}
-  .sub-footer .logo span{color:var(--saffron);}
-  .disclaimer{max-width:520px;margin:10px auto 0;font-size:0.67rem;opacity:0.42;line-height:1.55;}
-  @media(max-width:780px){.page-wrap{grid-template-columns:1fr;}.sidebar{position:relative;height:auto;top:0;border-right:none;border-bottom:1px solid rgba(212,160,23,0.1);padding:16px;}.content{padding:28px 16px 52px;}.top-nav{padding:12px 16px;}}
+:root{--gold:#D4A017;--gl:#C4880A;--sa:#C47008;--bg:#ffffff;--muted:#7a6a45;--off:#1a1600;--border:rgba(212,160,23,0.2);}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:#f7f5f0;color:#1a1600;font-family:'DM Sans',sans-serif;overflow-x:hidden;}a{color:inherit;}
+nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;gap:12px;padding:12px 24px;background:#1a1400;backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,160,23,0.2);}
+.bk{text-decoration:none;color:var(--muted);font-size:0.82rem;font-weight:500;}.bk:hover{color:var(--gl);}
+.logo{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--gl);text-decoration:none;margin-left:auto;}.logo span{color:var(--sa);}
+.nav-links{display:flex;align-items:center;gap:14px;}.nav-links a{font-size:0.78rem;color:var(--muted);text-decoration:none;}.nav-links a:hover{color:var(--gl);}
 
 
 
-
-
+.wrap{display:grid;grid-template-columns:220px 1fr;min-height:calc(100vh - 52px);}
+aside{position:sticky;top:52px;height:calc(100vh - 52px);overflow-y:auto;padding:22px 14px;border-right:1px solid var(--border);scrollbar-width:thin;}
+.st{font-size:0.66rem;letter-spacing:0.13em;text-transform:uppercase;color:var(--sa);margin-bottom:10px;padding:0 4px;}
+.tl{display:block;padding:7px 10px;border-radius:8px;text-decoration:none;color:#7a6a45;font-size:0.78rem;line-height:1.4;transition:all 0.2s;border-left:2px solid transparent;margin-bottom:2px;}.tl:hover,.tl.on{color:#8B5E00;background:rgba(212,160,23,0.12);border-left-color:var(--gold);}
+.sb-foot{margin-top:18px;padding-top:14px;border-top:1px solid var(--border);}.sb-link{display:block;padding:6px 10px;font-size:0.77rem;color:#7a6a45;text-decoration:none;border-radius:6px;transition:all 0.2s;margin-bottom:2px;}.sb-link:hover{color:var(--gl);}
+main{padding:48px 60px 80px;max-width:780px;background:#fff;border-left:1px solid rgba(212,160,23,0.1);}
+.tag{display:inline-flex;align-items:center;gap:6px;background:rgba(180,120,0,0.1);border:1px solid rgba(180,120,0,0.3);color:#8B5E00;padding:4px 14px;border-radius:50px;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;}
+h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:900;line-height:1.1;margin-bottom:12px;color:#1a1600;}
+.lead{font-size:0.96rem;color:#7a6a45;line-height:1.8;margin-bottom:34px;padding-bottom:26px;border-bottom:1px solid rgba(212,160,23,0.15);}
+.breadcrumb{display:flex;align-items:center;gap:6px;font-size:0.76rem;color:#7a6a45;margin-bottom:18px;}.breadcrumb a{color:var(--muted);text-decoration:none;}.breadcrumb a:hover{color:var(--gl);}
+.sec{margin-bottom:38px;scroll-margin-top:68px;}.sec h2{font-family:'Playfair Display',serif;font-size:1.25rem;color:#8B5E00;margin-bottom:13px;padding-bottom:8px;border-bottom:1px solid rgba(212,160,23,0.2);}
+.sec p{color:#4a3f20;line-height:1.85;font-size:0.93rem;margin-bottom:11px;}.sec ul{list-style:none;padding:0;margin-bottom:12px;}.sec ul li{color:#4a3f20;line-height:1.75;font-size:0.91rem;padding:5px 0 5px 20px;position:relative;border-bottom:1px solid rgba(212,160,23,0.1);}.sec ul li:last-child{border-bottom:none;}.sec ul li::before{content:'->'; position:absolute;left:0;color:var(--sa);font-size:0.78rem;top:8px;}.sec strong{color:#1a1600;}
+.div{height:1px;background:linear-gradient(90deg,transparent,rgba(212,160,23,0.25),transparent);margin:26px 0;}
+.cta{background:linear-gradient(135deg,rgba(212,160,23,0.12),rgba(232,137,12,0.06));border:1px solid rgba(212,160,23,0.3);border-radius:18px;padding:30px;text-align:center;margin-top:42px;}.cta h3{font-family:'Playfair Display',serif;font-size:1.25rem;color:#8B5E00;margin-bottom:8px;}.cta p{color:#7a6a45;font-size:0.86rem;margin-bottom:16px;line-height:1.65;}.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 24px;background:var(--gold);color:#0a0a0a;border-radius:50px;font-weight:700;font-size:0.87rem;text-decoration:none;}.btn:hover{background:var(--gl);}
+footer{border-top:1px solid rgba(212,160,23,0.15);padding:26px 20px;text-align:center;background:#1a1400;}.f-logo{font-family:'Playfair Display',serif;font-size:1.05rem;color:#E8A820;margin-bottom:8px;}.f-logo span{color:var(--sa);}.f-links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-bottom:12px;}.f-links a{font-size:0.76rem;color:#9A8A6A;text-decoration:none;}.f-links a:hover{color:var(--gl);}.disc{max-width:480px;margin:0 auto;font-size:0.65rem;color:var(--muted);opacity:0.4;line-height:1.6;}
+@media(max-width:780px){.wrap{grid-template-columns:1fr;}aside{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--border);padding:12px;display:flex;flex-wrap:wrap;gap:3px;}aside .st,aside .sb-foot{display:none;}main{padding:24px 16px 52px;}nav{padding:10px 14px;}}
 
 /* ===== UNIVERSAL NAV ===== */
 .unav{position:sticky;top:0;z-index:9000;height:60px;background:#100e04;border-bottom:1px solid rgba(212,160,23,0.15);display:flex;align-items:center;padding:0 28px;gap:0;}
@@ -118,40 +93,50 @@
     <button id="unav-dlb-pa" onclick="siteSetLang('pa')">ਪੰਜਾਬੀ</button>
   </div>
 </div>
-<div class="page-wrap">
-  <aside class="sidebar">
-    <div class="sidebar-title">On this page</div>
-    <a href="#what" class="toc-link">🤔 What Is Compound Growth?</a>
-    <a href="#time" class="toc-link">⏰ Why Time Is the Key Variable</a>
-    <a href="#consistent" class="toc-link">📅 Regular Contributions Amplify the Effect</a>
-    <a href="#enemy" class="toc-link">⚠️ The Enemy of Compound Growth</a>
-    
-    <div class="sidebar-back">
-      <a href="education.html" class="back-btn" style="display:block;margin-bottom:6px">← All Topics</a>
-      <a href="index.html" class="back-btn" style="display:block">🏠 Home</a>
-    </div>
-  </aside>
-  <main>
-  <div class="breadcrumb"><a href="index.html">Home</a> › <a href="education.html">Learn</a> › <span style="color:var(--off);">Compound Interest</span></div>
-  <div class="tag">📈 Investing</div>
-  <h1>Compound Interest: The Force That Builds Wealth</h1>
-  <p class="lead">Einstein reportedly called compound interest the eighth wonder of the world. Here's why — with Canadian numbers.</p>
-  <div class="sec" id="what"><h2><span>📈</span> What Is Compound Interest?</h2><p>Compound interest means earning returns not just on your original investment but also on all the interest and returns you've already earned. Your money earns money, which earns more money, which earns more money. Over decades, this snowball effect produces results that seem mathematically impossible until you see the numbers.</p><p><strong>Simple example:</strong> $10,000 at 7% annual return:<br>— After 10 years: $19,672 (nearly doubled)<br>— After 20 years: $38,697 (nearly 4x)<br>— After 30 years: $76,123 (7.6x)<br>— After 40 years: $149,745 (almost 15x)</p><p>You invested $10,000 once and did nothing. After 40 years, compound growth did $139,745 of work for you.</p></div><div class="div"></div><div class="sec" id="rule72"><h2><span>🔢</span> The Rule of 72</h2><p>The Rule of 72 is a quick mental math tool: divide 72 by your annual return rate to find how many years it takes to double your money.</p><p>Examples:<br>— 4% return (GIC): money doubles every 18 years<br>— 7% return (diversified ETF): money doubles every 10.3 years<br>— 10% return (aggressive equities): money doubles every 7.2 years<br>— 20% interest (credit card debt): your debt doubles every 3.6 years</p><p>That last one is why compound interest works against you when you're in debt. The same force that builds wealth destroys it when you're on the wrong side of the equation.</p></div><div class="div"></div><div class="sec" id="time"><h2><span>⏰</span> Why Time Is the Most Powerful Variable</h2><p>$5,000/year invested at 7%:<br>— Starting at 25, stopping at 35 (10 years, $50,000 invested): portfolio at 65 = $602,000<br>— Starting at 35, continuing until 65 (30 years, $150,000 invested): portfolio at 65 = $472,000</p><p>The investor who stopped at 35 invested $100,000 less but ended up with more money — because of the extra 10 years of compounding. This is not a typo. Starting 10 years earlier is worth more than investing 3x as long afterward.</p></div><div class="div"></div><div class="sec" id="canada"><h2><span>🇨🇦</span> Maximizing Compounding in Canada</h2><p>The TFSA is the single best compounding vehicle in Canada. All growth is completely tax-free — the government takes nothing from your compound returns, ever. $6,500/year in a TFSA at 7% from age 18 to 65 = over $2 million. The same investment in a non-registered account would be worth significantly less after the annual drag of capital gains and dividend taxes eating into your compound returns.</p></div>
+<div class="wrap">
+<aside>
+  <div class="st">In this guide</div>
+  <a href="#s1" class="tl">The SMART Framework for Financial Goals</a>
+<a href="#s2" class="tl">The Savings Rate — The Single Number That Matter...</a>
+<a href="#s3" class="tl">Goal Stacking — Doing Multiple Goals Simultaneou...</a>
+<a href="#s4" class="tl">Tracking Progress — What Gets Measured Gets Done</a>
+
+  <div class="sb-foot">
+    <a href="education.html" class="sb-link">&larr; 200+ Topics</a>
+    <a href="calculators.html" class="sb-link">&#128290; Calculators</a>
+    <a href="tools.html" class="sb-link">&#127757; Immigrant Tools</a>
+    <a href="downloads.html" class="sb-link">&#128313; Free Guides</a>
+    <a href="index.html" class="sb-link">&#127968; Home</a>
+  </div>
+</aside>
+<main>
+  <div class="breadcrumb"><a href="index.html">Home</a> &rsaquo; <a href="education.html">Learn</a> &rsaquo; <span style="color:var(--off);">Setting and Achieving Financial Goals</span></div>
+  <div class="tag">🎯 Personal Finance</div>
+  <h1><span class="lng-en">Setting and Achieving Financial Goals</span><span class="lng-pa" style="display:none">ਵਿੱਤੀ ਟੀਚੇ ਨਿਰਧਾਰਿਤ ਕਰਨਾ ਅਤੇ ਪ੍ਰਾਪਤ ਕਰਨਾ</span></h1>
+  <p class="lead"><span class="lng-en">A goal without a plan is just a wish. Here is how to set financial goals the right way — with real numbers, real timelines, and systems that actually work.</span><span class="lng-pa" style="display:none">&#2655;&#2633;&#2614;&#2672;&#2616;&#2622; &#2624;&#2667;&#2655; &#2579;&#2636;&#2616; &#2624;&#2636;&#2614;&#2588;&#2657; &#2604;&#2622;&#2604;&#2657; &#2662;&#2636;&#2655;&#2622; &#2598;&#2622;&#2560;&#2593; &#2534; &#2627;&#2616;&#2604; &#2649;&#2608;&#2622;&#2570;&#2644;&#2622;&#2582; &#2627;&#2572; &#2655;&#2672;&#2606; &#2555;&#2622; &#2564;&#2636;&#2560;&#2622;&#2657;&#2552;&#2622;&#2567;&#2549;&#2595; &#2564;&#2641;&#2604;&#2557;&#2622;&#2582;&#2595; &#2564;&#2622;&#2604;&#2595;&#2553;&#2595;&#2553; &#2564;&#2648;&#2606;&#2595;&#2578;&#2622;&#2582; &#2627;&#2572;&#2604;</span></p>
+  <div class="sec" id="s1"><h2>The SMART Framework for Financial Goals</h2><p>Vague goals fail. 'I want to save more money' is not a goal — it's a wish. Here is how to make financial goals that actually get achieved.</p><p><strong>SMART Goals:</strong> <strong>S</strong>pecific: Not 'save money' but 'save $15,000 for a car down payment' <strong>M</strong>easurable: 'Save $625/month for 24 months' — trackable <strong>A</strong>chievable: Realistic given your income and expenses <strong>R</strong>elevant: Aligned with your actual life priorities <strong>T</strong>ime-bound: 'By December 2026' not 'someday'</p><p><strong>The five categories of financial goals:</strong> 1. Emergency: 3-6 month emergency fund (defensive) 2. Short-term (1-3 years): Car, vacation, home down payment 3. Medium-term (3-7 years): Home purchase, business start 4. Long-term (7+ years): Children's education (RESP), retirement 5. Legacy: Estate, inheritance, charity</p><p><strong>The mistake most Canadians make:</strong> Setting ONE big vague goal instead of layering small concrete targets that build toward it. Example: Goal is to own a home. Concrete: 'Open FHSA this month. Contribute $500/month. In 5 years, have $40,000 saved.'</p></div><div class="div"></div><div class="sec" id="s2"><h2>The Savings Rate — The Single Number That Matters Most</h2><p>Your savings rate — the percentage of income you keep — is the most powerful determinant of when you reach financial goals.</p><p><strong>The math:</strong> Save 10% of income: retire in roughly 43 years Save 20% of income: retire in roughly 37 years Save 30% of income: retire in roughly 28 years Save 50% of income: retire in roughly 17 years</p><p>The relationship is exponential, not linear. Going from 10% to 20% does not just speed up your retirement by 10% — it cuts 6 years off.</p><p><strong>How to calculate your savings rate:</strong> (Monthly savings + investments) divided by monthly take-home pay times 100</p><p><strong>Example:</strong> Amrit takes home $5,200/month. He contributes $500 TFSA plus $200 RRSP plus $100 savings = $800 saved. Savings rate = $800 divided by $5,200 = <strong>15.4%</strong></p><p><strong>Target for different life stages:</strong> In your 20s: Aim for 10-15% (paying off student debt is OK to prioritize). In your 30s: Aim for 15-25% (peak earning years, maximize registered accounts). In your 40s: Aim for 25-35% (kids in school, pre-retirement runway). In your 50s: Aim for 30-40%+ (final accumulation phase).</p></div><div class="div"></div><div class="sec" id="s3"><h2>Goal Stacking — Doing Multiple Goals Simultaneously</h2><p>You do not have to choose between paying off debt, building an emergency fund, saving for a home, and investing for retirement. You can do all of them at once — with the right system.</p><p><strong>The Priority Waterfall:</strong> 1. Capture employer RRSP match first (it is a 50-100% instant return) 2. Emergency fund to $1,000 (minimum buffer before anything else) 3. Pay off any debt over 8% interest (guaranteed risk-free return) 4. Build emergency fund to 3 months 5. Max FHSA if first-time buyer ($8,000/year, tax deductible) 6. Max TFSA ($7,000/year) 7. Max RRSP (if income above $60K) 8. Invest in non-registered account</p><p><strong>The allocation trick:</strong> Divide your monthly savings capacity between all active goals by priority. Example with $800/month available: $100 to emergency top-up $300 to high-interest debt $400 to FHSA/TFSA</p><p>As each bucket fills, redirect those funds down the waterfall.</p></div><div class="div"></div><div class="sec" id="s4"><h2>Tracking Progress — What Gets Measured Gets Done</h2><p>You cannot hit a target you are not aiming at. Setting goals without tracking is the most common reason people fail.</p><p><strong>Net worth tracking (monthly):</strong> List all assets (cash, investments, home equity) minus all debts. Update every month. Over time, watching this number grow is the most motivating thing in personal finance.</p><p><strong>Simple tools:</strong> Spreadsheet (Google Sheets): Most powerful, fully customizable. Wealthsimple app: Tracks TFSA, RRSP automatically. Mint or YNAB: Budget and net worth tracking.</p><p><strong>The monthly financial review:</strong> 1. Did I hit my savings target? (yes/no) 2. Where did I overspend? (identify one category) 3. Is my net worth higher than last month? (yes/no) 4. One micro-improvement for next month</p><p><strong>Annual financial review (December or January):</strong> Review progress on 1, 3, and 5-year goals. Check if TFSA and RRSP contributions are on track. Update beneficiaries on accounts. Review insurance coverage vs. current life situation. Adjust savings rates based on income changes.</p></div><div class="div"></div>
 </main>
 </div>
-<footer class="sub-footer">
-  <div class="logo">Punjabi<span>Finance</span></div>
-  <p class="disclaimer">Educational content only — not financial, legal, or insurance advice. Always consult a licensed professional before making financial decisions.</p>
+<footer>
+  <div class="f-logo">Punjabi<span>Finance</span></div>
+  <div class="f-links"><a href="index.html">Home</a><a href="education.html">Learn</a><a href="calculators.html">Calculators</a><a href="tools.html">Immigrant Tools</a><a href="downloads.html">Free Guides</a></div>
+  <p class="disc">Educational content only. Not financial or insurance advice. Verify Canadian regulations with CRA. &copy; 2025 Punjabi Finance</p>
 </footer>
 <script>
-  const obs = new IntersectionObserver(es => es.forEach(e => {
-    if(e.isIntersecting) {
-      document.querySelectorAll('.toc-link').forEach(l => l.classList.remove('active'));
-      const a = document.querySelector('.toc-link[href="#'+e.target.id+'"]');
-      if(a) a.classList.add('active');
-    }
-  }), {rootMargin:'-15% 0px -70% 0px'});
-  document.querySelectorAll('.learn-section').forEach(s => obs.observe(s));
+const _ll = localStorage.getItem('pf_lang')||'en';
+function learnLang(l){
+  localStorage.setItem('pf_lang',l);
+  document.getElementById('lpg-en').classList.toggle('active',l==='en');
+  document.getElementById('lpg-pa').classList.toggle('active',l==='pa');
+  document.querySelectorAll('.lng-en').forEach(e=>e.style.display=l==='en'?'':'none');
+  document.querySelectorAll('.lng-pa').forEach(e=>e.style.display=l==='pa'?'':'none');
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  if(_ll==='pa')learnLang('pa');
+  const secs=document.querySelectorAll('.sec[id]'),links=document.querySelectorAll('aside .tl');
+  const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)links.forEach(l=>l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id));});},{rootMargin:'-30% 0px -60% 0px'});
+  secs.forEach(s=>obs.observe(s));
+});
 </script>
 
 <!-- AI CHATBOT WIDGET -->
@@ -326,5 +311,4 @@ async function sendMsg() {
 // ============================
 
 </script>
-</body>
-</html>
+</body></html>

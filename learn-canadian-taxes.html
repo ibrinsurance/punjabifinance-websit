@@ -1,57 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Power of Compound Growth – Punjabi Finance</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{--gold:#D4A017;--gold-light:#F0C040;--saffron:#E8890C;--black:#0A0A0A;--off-white:#1a1600;--dark-bg:#111008;--card-bg:#1c1a0e;--text-muted:#9A8A6A;}
-  *{margin:0;padding:0;box-sizing:border-box;} html{scroll-behavior:smooth;}
-  body{background:var(--dark-bg);color:var(--off-white);font-family:'DM Sans',sans-serif;overflow-x:hidden;}
-  a{color:inherit;}
-  .top-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:16px;padding:13px 28px;background:rgba(10,10,4,0.93);backdrop-filter:blur(16px);border-bottom:1px solid rgba(212,160,23,0.15);}
-  .back-btn{text-decoration:none;color:var(--text-muted);font-size:0.85rem;font-weight:500;transition:color 0.2s;}
-  .back-btn:hover{color:var(--gold-light);}
-  .nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--gold-light);text-decoration:none;}
-  .nav-logo span{color:var(--saffron);}
-  .page-wrap{display:grid;grid-template-columns:240px 1fr;min-height:100vh;}
-  .sidebar{position:sticky;top:58px;height:calc(100vh - 58px);overflow-y:auto;padding:28px 20px;border-right:1px solid rgba(212,160,23,0.1);background:#0d0c04;}
-  .sidebar-title{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--saffron);margin-bottom:14px;}
-  .toc-link{display:block;padding:7px 10px;border-radius:8px;text-decoration:none;color:var(--text-muted);font-size:0.83rem;transition:all 0.2s;border-left:2px solid transparent;margin-bottom:3px;}
-  .toc-link:hover,.toc-link.active{color:var(--gold-light);background:rgba(212,160,23,0.07);border-left-color:var(--gold);}
-  .sidebar-back{margin-top:24px;padding-top:18px;border-top:1px solid rgba(212,160,23,0.1);}
-  .content{padding:52px 60px 72px;max-width:800px;}
-  .topic-tag{display:inline-block;background:rgba(212,160,23,0.12);border:1px solid rgba(212,160,23,0.3);color:var(--gold-light);padding:4px 14px;border-radius:50px;font-size:0.73rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;}
-  .page-title{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3vw,2.7rem);font-weight:900;line-height:1.1;margin-bottom:12px;}
-  .gold{color:var(--gold-light);}
-  .lead{font-size:1rem;color:#4a3f20;line-height:1.7;margin-bottom:44px;padding-bottom:28px;border-bottom:1px solid rgba(212,160,23,0.1);}
-  .learn-section{margin-bottom:48px;scroll-margin-top:80px;}
-  .learn-section h2{font-family:'Playfair Display',serif;font-size:1.45rem;color:var(--gold-light);margin-bottom:14px;display:flex;align-items:center;gap:9px;}
-  .learn-section p{color:#4a3f20;line-height:1.8;font-size:0.96rem;margin-bottom:13px;}
-  .learn-section ul,.learn-section ol{color:#4a3f20;line-height:1.8;font-size:0.96rem;padding-left:20px;margin-bottom:13px;}
-  .learn-section li{margin-bottom:7px;}
-  .callout{background:rgba(212,160,23,0.08);border:1px solid rgba(212,160,23,0.2);border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:16px 18px;margin:18px 0;}
-  .callout p{margin:0;color:#4a3f20;font-size:0.93rem;}
-  .tip-box{background:rgba(37,211,102,0.06);border:1px solid rgba(37,211,102,0.2);border-radius:12px;padding:16px 18px;margin:18px 0;}
-  .tip-box p{margin:0;color:#4a3f20;font-size:0.93rem;}
-  .warn-box{background:rgba(232,137,12,0.07);border:1px solid rgba(232,137,12,0.22);border-radius:12px;padding:16px 18px;margin:18px 0;}
-  .warn-box p{margin:0;color:#4a3f20;font-size:0.93rem;}
-  .data-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin:18px 0;}
-  .data-card{background:var(--card-bg);border:1px solid rgba(212,160,23,0.16);border-radius:13px;padding:16px;text-align:center;}
-  .data-num{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--gold-light);display:block;margin-bottom:4px;}
-  .data-label{font-size:0.72rem;color:var(--text-muted);line-height:1.4;}
-  .divider{height:1px;background:rgba(212,160,23,0.1);margin:36px 0;}
-  .cta-box{background:linear-gradient(135deg,rgba(212,160,23,0.11),rgba(232,137,12,0.04));border:1px solid rgba(212,160,23,0.26);border-radius:18px;padding:32px;text-align:center;margin-top:44px;}
-  .cta-box h3{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--gold-light);margin-bottom:9px;}
-  .cta-box p{color:var(--text-muted);font-size:0.88rem;margin-bottom:18px;}
-  .btn-gold{display:inline-block;padding:11px 26px;background:var(--gold);color:var(--black);border-radius:50px;font-weight:700;font-size:0.88rem;text-decoration:none;transition:background 0.2s,transform 0.15s;}
-  .btn-gold:hover{background:var(--gold-light);transform:translateY(-1px);}
-  .sub-footer{border-top:1px solid rgba(212,160,23,0.1);padding:28px 20px;text-align:center;color:var(--text-muted);font-size:0.78rem;}
-  .sub-footer .logo{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--gold-light);margin-bottom:6px;}
-  .sub-footer .logo span{color:var(--saffron);}
-  .disclaimer{max-width:520px;margin:10px auto 0;font-size:0.67rem;opacity:0.42;line-height:1.55;}
-  @media(max-width:780px){.page-wrap{grid-template-columns:1fr;}.sidebar{position:relative;height:auto;top:0;border-right:none;border-bottom:1px solid rgba(212,160,23,0.1);padding:16px;}.content{padding:28px 16px 52px;}.top-nav{padding:12px 16px;}}
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Canadian Taxes for Beginners – Punjabi Finance</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"><style>
+:root{--gold:#D4A017;--gl:#C4880A;--sa:#C47008;--bg:#f7f5f0;--cb:#f0ede4;--muted:#7a6a45;--off:#1a1600;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:#f7f5f0;color:#1a1600;font-family:'DM Sans',sans-serif;}
+a{color:inherit;}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:16px;padding:13px 28px;background:rgba(10,10,4,.93);backdrop-filter:blur(16px);border-bottom:1px solid rgba(212,160,23,.15);}
+.bk{text-decoration:none;color:#7a6a45;font-size:.85rem;font-weight:500;transition:color .2s;}.bk:hover{color:#C4880A;}
+.logo{font-family:'Playfair Display',serif;font-size:1.1rem;color:#C4880A;text-decoration:none;margin-left:auto;}.logo span{color:#C47008;}
+.wrap{display:grid;grid-template-columns:230px 1fr;min-height:calc(100vh - 52px);}
+aside{position:sticky;top:52px;height:calc(100vh - 52px);overflow-y:auto;padding:24px 16px;border-right:1px solid rgba(212,160,23,.1);background:#0d0c04;}
+.st{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#C47008;margin-bottom:12px;}
+.tl{display:block;padding:6px 9px;border-radius:7px;text-decoration:none;color:#7a6a45;font-size:.81rem;transition:all .2s;border-left:2px solid transparent;margin-bottom:2px;}
+.tl:hover,.tl.on{color:#C4880A;background:rgba(212,160,23,.07);border-left-color:var(--gold);}
+.sb-foot{margin-top:20px;padding-top:16px;border-top:1px solid rgba(212,160,23,.1);}
+main{padding:48px 56px 72px;max-width:780px;background:#fff;}
+.tag{display:inline-block;background:rgba(212,160,23,.12);border:1px solid rgba(212,160,23,.3);color:#C4880A;padding:3px 13px;border-radius:50px;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;}
+h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:900;line-height:1.1;margin-bottom:10px;}
+.gold{color:#C4880A;}
+.lead{font-size:.97rem;color:#4a3f20;line-height:1.75;margin-bottom:40px;padding-bottom:24px;border-bottom:1px solid rgba(212,160,23,.1);}
+.sec{margin-bottom:44px;scroll-margin-top:72px;}
+.sec h2{font-family:'Playfair Display',serif;font-size:1.35rem;color:#C4880A;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.sec p{color:#4a3f20;line-height:1.8;font-size:.94rem;margin-bottom:11px;}
+.sec ul,.sec ol{color:#4a3f20;line-height:1.8;font-size:.94rem;padding-left:20px;margin-bottom:11px;}
+.sec li{margin-bottom:6px;}
+.box{background:rgba(212,160,23,.07);border:1px solid rgba(212,160,23,.2);border-left:4px solid var(--gold);border-radius:0 11px 11px 0;padding:14px 16px;margin:16px 0;}
+.box p{margin:0;font-size:.91rem;}
+.tip{background:rgba(37,211,102,.06);border:1px solid rgba(37,211,102,.2);border-radius:11px;padding:14px 16px;margin:16px 0;}
+.tip p{margin:0;font-size:.91rem;}
+.warn{background:rgba(232,137,12,.07);border:1px solid rgba(232,137,12,.22);border-radius:11px;padding:14px 16px;margin:16px 0;}
+.warn p{margin:0;font-size:.91rem;}
+.dg{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:10px;margin:16px 0;}
+.dc{background:#f0ede4;border:1px solid rgba(212,160,23,.16);border-radius:12px;padding:14px;text-align:center;}
+.dn{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#C4880A;display:block;margin-bottom:3px;}
+.dl{font-size:.7rem;color:#7a6a45;line-height:1.4;}
+.div{height:1px;background:rgba(212,160,23,.09);margin:32px 0;}
+.cta{background:linear-gradient(135deg,rgba(212,160,23,.1),rgba(232,137,12,.04));border:1px solid rgba(212,160,23,.25);border-radius:16px;padding:28px;text-align:center;margin-top:40px;}
+.cta h3{font-family:'Playfair Display',serif;font-size:1.25rem;color:#C4880A;margin-bottom:8px;}
+.cta p{color:#7a6a45;font-size:.86rem;margin-bottom:16px;}
+.btn{display:inline-block;padding:10px 24px;background:var(--gold);color:#0a0a0a;border-radius:50px;font-weight:700;font-size:.86rem;text-decoration:none;transition:background .2s,transform .15s;}
+.btn:hover{background:var(--gl);transform:translateY(-1px);}
+footer{border-top:1px solid rgba(212,160,23,.1);padding:24px 16px;text-align:center;color:#7a6a45;font-size:.76rem;}
+footer .fl{font-family:'Playfair Display',serif;font-size:1.1rem;color:#C4880A;margin-bottom:6px;}
+footer .fl span{color:#C47008;}
+.disc{max-width:500px;margin:8px auto 0;font-size:.66rem;opacity:.4;line-height:1.5;}
+@media(max-width:760px){.wrap{grid-template-columns:1fr;}aside{position:relative;height:auto;top:0;border-right:none;border-bottom:1px solid rgba(212,160,23,.1);padding:14px;}main{padding:24px 14px 48px;}nav{padding:11px 14px;}}
 
 
 
@@ -81,8 +75,7 @@
 .unav-dlang button.on{background:#D4A017;color:#0a0a0a;border-color:#D4A017;}
 @media(max-width:860px){.unav-links{display:none;}.unav-ham{display:flex;}.unav{padding:0 16px;}}
 /* ========================= */
-</style>
-</head>
+</style></head>
 <body>
 <nav class="unav">
   <a href="index.html" class="unav-logo">Punjabi<span>Finance</span></a>
@@ -118,42 +111,45 @@
     <button id="unav-dlb-pa" onclick="siteSetLang('pa')">ਪੰਜਾਬੀ</button>
   </div>
 </div>
-<div class="page-wrap">
-  <aside class="sidebar">
-    <div class="sidebar-title">On this page</div>
-    <a href="#what" class="toc-link">🤔 What Is Compound Growth?</a>
-    <a href="#time" class="toc-link">⏰ Why Time Is the Key Variable</a>
-    <a href="#consistent" class="toc-link">📅 Regular Contributions Amplify the Effect</a>
-    <a href="#enemy" class="toc-link">⚠️ The Enemy of Compound Growth</a>
-    
-    <div class="sidebar-back">
-      <a href="education.html" class="back-btn" style="display:block;margin-bottom:6px">← All Topics</a>
-      <a href="index.html" class="back-btn" style="display:block">🏠 Home</a>
-    </div>
-  </aside>
-  <main>
-  <div class="breadcrumb"><a href="index.html">Home</a> › <a href="education.html">Learn</a> › <span style="color:var(--off);">Compound Interest</span></div>
-  <div class="tag">📈 Investing</div>
-  <h1>Compound Interest: The Force That Builds Wealth</h1>
-  <p class="lead">Einstein reportedly called compound interest the eighth wonder of the world. Here's why — with Canadian numbers.</p>
-  <div class="sec" id="what"><h2><span>📈</span> What Is Compound Interest?</h2><p>Compound interest means earning returns not just on your original investment but also on all the interest and returns you've already earned. Your money earns money, which earns more money, which earns more money. Over decades, this snowball effect produces results that seem mathematically impossible until you see the numbers.</p><p><strong>Simple example:</strong> $10,000 at 7% annual return:<br>— After 10 years: $19,672 (nearly doubled)<br>— After 20 years: $38,697 (nearly 4x)<br>— After 30 years: $76,123 (7.6x)<br>— After 40 years: $149,745 (almost 15x)</p><p>You invested $10,000 once and did nothing. After 40 years, compound growth did $139,745 of work for you.</p></div><div class="div"></div><div class="sec" id="rule72"><h2><span>🔢</span> The Rule of 72</h2><p>The Rule of 72 is a quick mental math tool: divide 72 by your annual return rate to find how many years it takes to double your money.</p><p>Examples:<br>— 4% return (GIC): money doubles every 18 years<br>— 7% return (diversified ETF): money doubles every 10.3 years<br>— 10% return (aggressive equities): money doubles every 7.2 years<br>— 20% interest (credit card debt): your debt doubles every 3.6 years</p><p>That last one is why compound interest works against you when you're in debt. The same force that builds wealth destroys it when you're on the wrong side of the equation.</p></div><div class="div"></div><div class="sec" id="time"><h2><span>⏰</span> Why Time Is the Most Powerful Variable</h2><p>$5,000/year invested at 7%:<br>— Starting at 25, stopping at 35 (10 years, $50,000 invested): portfolio at 65 = $602,000<br>— Starting at 35, continuing until 65 (30 years, $150,000 invested): portfolio at 65 = $472,000</p><p>The investor who stopped at 35 invested $100,000 less but ended up with more money — because of the extra 10 years of compounding. This is not a typo. Starting 10 years earlier is worth more than investing 3x as long afterward.</p></div><div class="div"></div><div class="sec" id="canada"><h2><span>🇨🇦</span> Maximizing Compounding in Canada</h2><p>The TFSA is the single best compounding vehicle in Canada. All growth is completely tax-free — the government takes nothing from your compound returns, ever. $6,500/year in a TFSA at 7% from age 18 to 65 = over $2 million. The same investment in a non-registered account would be worth significantly less after the annual drag of capital gains and dividend taxes eating into your compound returns.</p></div>
-</main>
-</div>
-<footer class="sub-footer">
-  <div class="logo">Punjabi<span>Finance</span></div>
-  <p class="disclaimer">Educational content only — not financial, legal, or insurance advice. Always consult a licensed professional before making financial decisions.</p>
-</footer>
+<div class="wrap">
+<aside><div class="st">On this page</div><a href="#system" class="tl">🤔 How the Canadian Tax System Works</a>
+    <a href="#brackets" class="tl">📊 2024 Federal Tax Brackets</a>
+    <a href="#types" class="tl">📋 Types of Income</a>
+    <a href="#credits" class="tl">🎁 Key Tax Credits</a>
+    <a href="#file" class="tl">📅 When and How to File</a>
+    <div class="sb-foot"><a href="education.html" class="bk" style="display:block;margin-bottom:6px">← All 200+ Topics</a><a href="index.html" class="bk" style="display:block">🏠 Home</a></div></aside>
+<main><div class="tag">📑 Taxes</div><h1><span class="lng-en">Canadian Taxes for Beginners</span><span class="lng-pa" style="display:none">Canadian Taxes for Beginners</span></h1><p class="lead"><span class="lng-en">The Canadian tax system is complex but understandable. Here's a clear overview of how it works and what you need to know.</span><span class="lng-pa" style="display:none">ਕੈਨੇਡਾ ਵਿੱਚ ਇਸ ਵਿਸ਼ੇ ਬਾਰੇ ਪੂਰੀ ਗਾਈਡ — ਅਸਲ ਉਦਾਹਰਣਾਂ ਅਤੇ ਕੰਮ ਦੇ ਕਦਮਾਂ ਨਾਲ।</span></p><div class="sec" id="system"><h2><span>🤔</span>How the Canadian Tax System Works</h2>
+<p>Canada uses a progressive tax system, meaning the more you earn, the higher percentage you pay on income above each bracket threshold. You do not pay the top rate on all your income — each "layer" of income is taxed at its corresponding rate. Federal tax brackets apply to all Canadians; each province adds its own tax on top of federal tax. The combined federal + provincial marginal rate is what appears on your final tax bill.</p>
+<p>Tax is calculated on your "taxable income" — not your gross income. Taxable income is what remains after subtracting above-the-line deductions: RRSP contributions, childcare expenses, union dues, moving expenses (in some cases), and employment expenses. This is why RRSP contributions are so powerful — they directly reduce the income on which tax is calculated, potentially dropping you into a lower bracket.</p>
+<p>Canada's tax year runs January 1 – December 31. Tax returns for the prior year are due April 30 (or June 15 if you or your spouse are self-employed, but any balance owing is still due April 30). Filing is done through CRA's NETFILE system using certified tax software — many free options exist for simple returns.</p>
+</div><div class="div"></div><div class="sec" id="brackets"><h2><span>📊</span>2024 Federal Tax Brackets</h2>
+<p>For 2024, federal tax brackets are: 15% on the first $55,867 of taxable income; 20.5% on $55,867–$111,733; 26% on $111,733–$154,906; 29% on $154,906–$220,000; and 33% on income above $220,000. Every Canadian also receives the Basic Personal Amount ($15,705 in 2024) — tax-free regardless of income level.</p>
+<p>Adding provincial tax (using Ontario as example): Ontario levies 5.05% on the first $51,446; 9.15% on $51,446–$102,894; 11.16% on $102,894–$150,000; 12.16% on $150,000–$220,000; and 13.16% on income above $220,000. Combined federal + Ontario top marginal rate: 53.53%.</p>
+<p>Important: the marginal rate (top bracket rate) applies only to income in that bracket. A person earning $80,000 in Ontario pays 15% federal on the first $55,867 and 20.5% on the remaining $24,133 — not 20.5% on all $80,000. Their effective (average) tax rate is much lower than the marginal rate on their top dollars of income.</p>
+</div><div class="div"></div><div class="sec" id="types"><h2><span>📋</span>Types of Income</h2>
+<p><strong>Employment income:</strong> Wages, salary, bonuses, tips, and most employer benefits. Taxed at your full marginal rate. CPP contributions (5.95% to the maximum of $3,867.50 in 2024) and EI premiums (1.66% to the maximum of $1,049.12) are deducted from employment income before tax is calculated.</p>
+<p><strong>Capital gains:</strong> Profits from selling investments or property. Only 50% of capital gains are included in taxable income for gains up to $250,000 (2/3 inclusion rate for gains above $250,000 after the 2024 budget change). A $10,000 capital gain at 50% inclusion adds $5,000 to your taxable income — significantly more tax-efficient than employment income.</p>
+<p><strong>Eligible dividends from Canadian corporations:</strong> Subject to the dividend tax credit mechanism, which grosses up the dividend amount but then provides a credit that results in an effective rate significantly below marginal employment income rates. At $80,000 total income, eligible Canadian dividends are taxed at approximately 20–25% effective rate in Ontario.</p>
+<p><strong>Interest income:</strong> Income from savings accounts, GICs, bonds, and lending. Taxed at full marginal rate — the least tax-efficient income type. Always hold interest-generating assets inside registered accounts (RRSP, TFSA) when possible to defer or eliminate the tax.</p>
+</div><div class="div"></div><div class="sec" id="credits"><h2><span>🎁</span>Key Tax Credits</h2>
+<p><strong>Basic Personal Amount:</strong> Everyone gets $15,705 (2024) of income completely tax-free. This non-refundable tax credit eliminates federal tax on your first $15,705 of income.</p>
+<p><strong>CPP and EI premium credits:</strong> Your CPP and EI contributions generate a 15% federal tax credit — effectively reducing the after-tax cost of these mandatory contributions.</p>
+<p><strong>Canada Caregiver Credit:</strong> For Canadians supporting an infirm dependent (parent, spouse, child). Reduces federal tax owed based on your caregiving costs.</p>
+<p><strong>Medical Expense Tax Credit:</strong> Eligible medical expenses (prescription drugs, dental, vision, certain disability devices) above 3% of net income or $2,635 (whichever is lower) generate a 15% federal credit. Keep receipts for all medical expenses paid during the year.</p>
+<p><strong>Disability Tax Credit (DTC):</strong> Significant credit for Canadians with qualifying severe disabilities. If you or a family member qualifies, the DTC reduces federal tax by $1,368+ annually and opens eligibility for RDSP (Registered Disability Savings Plan). Application requires a physician to certify the disability on Form T2201.</p>
+</div><div class="div"></div><div class="sec" id="file"><h2><span>📅</span>When and How to File</h2>
+<p>File by April 30 each year for the prior tax year. Self-employed individuals (and their spouses) can file by June 15, but any balance owing must still be paid by April 30 to avoid interest charges.</p>
+<p>Free filing options: CRA's free NETFILE-certified software list includes several no-cost options. SimpleTax (now Wealthsimple Tax) is free for all returns. StudioTax is free for returns under $20,000 income. Many community tax clinics (sponsored through CRA's Community Volunteer Income Tax Program) offer free in-person tax preparation for modest-income Canadians — particularly helpful for newcomers in their first few years.</p>
+<p>Benefits of filing even with no income: The Canada Child Benefit, GST/HST credit, and Ontario Trillium Benefit are all triggered by filing a return. Newcomers who arrive mid-year and have no income still benefit from filing — it registers them for government benefit calculations and starts their RRSP contribution room accumulation. Every Canadian resident should file a return every year, regardless of income.</p>
+</div><div class="div"></div></main></div>
+<footer><div class="fl">Punjabi<span>Finance</span></div><p class="disc">Educational content only — not financial, legal, or insurance advice. Always consult a licensed professional before making financial decisions.</p></footer>
 <script>
-  const obs = new IntersectionObserver(es => es.forEach(e => {
-    if(e.isIntersecting) {
-      document.querySelectorAll('.toc-link').forEach(l => l.classList.remove('active'));
-      const a = document.querySelector('.toc-link[href="#'+e.target.id+'"]');
-      if(a) a.classList.add('active');
-    }
-  }), {rootMargin:'-15% 0px -70% 0px'});
-  document.querySelectorAll('.learn-section').forEach(s => obs.observe(s));
+const obs=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){document.querySelectorAll('.tl').forEach(l=>l.classList.remove('on'));
+  const a=document.querySelector('.tl[href="#'+e.target.id+'"]');if(a)a.classList.add('on');}
+}),{rootMargin:'-15% 0px -70% 0px'});
+document.querySelectorAll('.sec').forEach(s=>obs.observe(s));
 </script>
-
 <!-- AI CHATBOT WIDGET -->
 <div id="chat-widget" style="position:fixed;bottom:24px;right:24px;z-index:9999;font-family:'DM Sans',sans-serif;">
   <!-- Toggle Button -->
@@ -326,5 +322,4 @@ async function sendMsg() {
 // ============================
 
 </script>
-</body>
-</html>
+</body></html>

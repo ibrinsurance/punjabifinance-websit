@@ -1,63 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Power of Compound Growth – Punjabi Finance</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{--gold:#D4A017;--gold-light:#F0C040;--saffron:#E8890C;--black:#0A0A0A;--off-white:#1a1600;--dark-bg:#111008;--card-bg:#1c1a0e;--text-muted:#9A8A6A;}
-  *{margin:0;padding:0;box-sizing:border-box;} html{scroll-behavior:smooth;}
-  body{background:var(--dark-bg);color:var(--off-white);font-family:'DM Sans',sans-serif;overflow-x:hidden;}
-  a{color:inherit;}
-  .top-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:16px;padding:13px 28px;background:rgba(10,10,4,0.93);backdrop-filter:blur(16px);border-bottom:1px solid rgba(212,160,23,0.15);}
-  .back-btn{text-decoration:none;color:var(--text-muted);font-size:0.85rem;font-weight:500;transition:color 0.2s;}
-  .back-btn:hover{color:var(--gold-light);}
-  .nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--gold-light);text-decoration:none;}
-  .nav-logo span{color:var(--saffron);}
-  .page-wrap{display:grid;grid-template-columns:240px 1fr;min-height:100vh;}
-  .sidebar{position:sticky;top:58px;height:calc(100vh - 58px);overflow-y:auto;padding:28px 20px;border-right:1px solid rgba(212,160,23,0.1);background:#0d0c04;}
-  .sidebar-title{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--saffron);margin-bottom:14px;}
-  .toc-link{display:block;padding:7px 10px;border-radius:8px;text-decoration:none;color:var(--text-muted);font-size:0.83rem;transition:all 0.2s;border-left:2px solid transparent;margin-bottom:3px;}
-  .toc-link:hover,.toc-link.active{color:var(--gold-light);background:rgba(212,160,23,0.07);border-left-color:var(--gold);}
-  .sidebar-back{margin-top:24px;padding-top:18px;border-top:1px solid rgba(212,160,23,0.1);}
-  .content{padding:52px 60px 72px;max-width:800px;}
-  .topic-tag{display:inline-block;background:rgba(212,160,23,0.12);border:1px solid rgba(212,160,23,0.3);color:var(--gold-light);padding:4px 14px;border-radius:50px;font-size:0.73rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;}
-  .page-title{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3vw,2.7rem);font-weight:900;line-height:1.1;margin-bottom:12px;}
-  .gold{color:var(--gold-light);}
-  .lead{font-size:1rem;color:#4a3f20;line-height:1.7;margin-bottom:44px;padding-bottom:28px;border-bottom:1px solid rgba(212,160,23,0.1);}
-  .learn-section{margin-bottom:48px;scroll-margin-top:80px;}
-  .learn-section h2{font-family:'Playfair Display',serif;font-size:1.45rem;color:var(--gold-light);margin-bottom:14px;display:flex;align-items:center;gap:9px;}
-  .learn-section p{color:#4a3f20;line-height:1.8;font-size:0.96rem;margin-bottom:13px;}
-  .learn-section ul,.learn-section ol{color:#4a3f20;line-height:1.8;font-size:0.96rem;padding-left:20px;margin-bottom:13px;}
-  .learn-section li{margin-bottom:7px;}
-  .callout{background:rgba(212,160,23,0.08);border:1px solid rgba(212,160,23,0.2);border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:16px 18px;margin:18px 0;}
-  .callout p{margin:0;color:#4a3f20;font-size:0.93rem;}
-  .tip-box{background:rgba(37,211,102,0.06);border:1px solid rgba(37,211,102,0.2);border-radius:12px;padding:16px 18px;margin:18px 0;}
-  .tip-box p{margin:0;color:#4a3f20;font-size:0.93rem;}
-  .warn-box{background:rgba(232,137,12,0.07);border:1px solid rgba(232,137,12,0.22);border-radius:12px;padding:16px 18px;margin:18px 0;}
-  .warn-box p{margin:0;color:#4a3f20;font-size:0.93rem;}
-  .data-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin:18px 0;}
-  .data-card{background:var(--card-bg);border:1px solid rgba(212,160,23,0.16);border-radius:13px;padding:16px;text-align:center;}
-  .data-num{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--gold-light);display:block;margin-bottom:4px;}
-  .data-label{font-size:0.72rem;color:var(--text-muted);line-height:1.4;}
-  .divider{height:1px;background:rgba(212,160,23,0.1);margin:36px 0;}
-  .cta-box{background:linear-gradient(135deg,rgba(212,160,23,0.11),rgba(232,137,12,0.04));border:1px solid rgba(212,160,23,0.26);border-radius:18px;padding:32px;text-align:center;margin-top:44px;}
-  .cta-box h3{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--gold-light);margin-bottom:9px;}
-  .cta-box p{color:var(--text-muted);font-size:0.88rem;margin-bottom:18px;}
-  .btn-gold{display:inline-block;padding:11px 26px;background:var(--gold);color:var(--black);border-radius:50px;font-weight:700;font-size:0.88rem;text-decoration:none;transition:background 0.2s,transform 0.15s;}
-  .btn-gold:hover{background:var(--gold-light);transform:translateY(-1px);}
-  .sub-footer{border-top:1px solid rgba(212,160,23,0.1);padding:28px 20px;text-align:center;color:var(--text-muted);font-size:0.78rem;}
-  .sub-footer .logo{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--gold-light);margin-bottom:6px;}
-  .sub-footer .logo span{color:var(--saffron);}
-  .disclaimer{max-width:520px;margin:10px auto 0;font-size:0.67rem;opacity:0.42;line-height:1.55;}
-  @media(max-width:780px){.page-wrap{grid-template-columns:1fr;}.sidebar{position:relative;height:auto;top:0;border-right:none;border-bottom:1px solid rgba(212,160,23,0.1);padding:16px;}.content{padding:28px 16px 52px;}.top-nav{padding:12px 16px;}}
-
-
-
-
-
-
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gis — Punjabi Finance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>:root{--gold:#D4A017;--gl:#C4880A;--sa:#C47008;--bg:#ffffff;--muted:#7a6a45;--off:#1a1600;--border:rgba(212,160,23,0.2);};*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{background:#f7f5f0;color:#1a1600;font-family:'DM Sans',sans-serif;overflow-x:hidden;}a{color:inherit;}nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;gap:12px;padding:12px 24px;background:#1a1400;backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,160,23,0.2);}.bk{text-decoration:none;color:var(--muted);font-size:0.82rem;font-weight:500;}.bk:hover{color:var(--gl);}.logo{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--gl);text-decoration:none;margin-left:auto;}.logo span{color:var(--sa);}.nav-links{display:flex;align-items:center;gap:14px;}.nav-links a{font-size:0.78rem;color:var(--muted);font-weight:500;transition:color 0.2s;text-decoration:none;}.nav-links a:hover{color:var(--gl);}.wrap{display:grid;grid-template-columns:220px 1fr;min-height:calc(100vh - 52px);}aside{position:sticky;top:52px;height:calc(100vh - 52px);overflow-y:auto;padding:22px 14px;border-right:1px solid rgba(212,160,23,0.15);background:#f7f5f0;}.st{font-size:0.66rem;letter-spacing:0.13em;text-transform:uppercase;color:var(--sa);margin-bottom:10px;padding:0 4px;}.tl{display:block;padding:7px 10px;border-radius:8px;text-decoration:none;color:#7a6a45;font-size:0.78rem;line-height:1.4;transition:all 0.2s;border-left:2px solid transparent;margin-bottom:2px;}.tl:hover,.tl.on{color:#8B5E00;background:rgba(212,160,23,0.12);border-left-color:var(--gold);}.sb-foot{margin-top:18px;padding-top:14px;border-top:1px solid var(--border);}.sb-link{display:block;padding:6px 10px;font-size:0.77rem;color:#7a6a45;text-decoration:none;border-radius:6px;transition:all 0.2s;margin-bottom:2px;}.sb-link:hover{color:var(--gl);background:rgba(212,160,23,0.05);}main{padding:48px 60px 80px;max-width:780px;background:#fff;border-left:1px solid rgba(212,160,23,0.1);}.tag{display:inline-flex;align-items:center;gap:6px;background:rgba(180,120,0,0.1);border:1px solid rgba(180,120,0,0.3);color:#8B5E00;padding:4px 14px;border-radius:50px;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;}h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:900;line-height:1.1;margin-bottom:12px;color:#1a1600;}.gold{color:var(--gl);}.lead{font-size:0.96rem;color:#7a6a45;line-height:1.8;margin-bottom:34px;padding-bottom:26px;border-bottom:1px solid rgba(212,160,23,0.15);}.breadcrumb{display:flex;align-items:center;gap:6px;font-size:0.76rem;color:#7a6a45;margin-bottom:18px;}.breadcrumb a{color:var(--muted);text-decoration:none;}.sec{margin-bottom:38px;scroll-margin-top:68px;}.sec h2{font-family:'Playfair Display',serif;font-size:1.25rem;color:#8B5E00;margin-bottom:13px;padding-bottom:8px;border-bottom:1px solid rgba(212,160,23,0.2);}.sec p{color:#4a3f20;line-height:1.85;font-size:0.93rem;margin-bottom:11px;}.sec ul{list-style:none;padding:0;margin-bottom:12px;}.sec ul li{color:#4a3f20;line-height:1.75;font-size:0.91rem;padding:5px 0 5px 20px;position:relative;border-bottom:1px solid rgba(212,160,23,0.1);}.sec ul li:last-child{border-bottom:none;}.sec ul li::before{content:'→';position:absolute;left:0;color:var(--sa);font-size:0.78rem;top:8px;}.sec strong{color:#1a1600;}.div{height:1px;background:linear-gradient(90deg,transparent,rgba(212,160,23,0.25),transparent);margin:26px 0;}.cta{background:linear-gradient(135deg,rgba(212,160,23,0.12),rgba(232,137,12,0.06));border:1px solid rgba(212,160,23,0.3);border-radius:18px;padding:30px;text-align:center;margin-top:42px;}.cta h3{font-family:'Playfair Display',serif;font-size:1.25rem;color:#8B5E00;margin-bottom:8px;}.cta p{color:#7a6a45;font-size:0.86rem;margin-bottom:16px;line-height:1.65;}.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 24px;background:var(--gold);color:#0a0a0a;border-radius:50px;font-weight:700;font-size:0.87rem;text-decoration:none;transition:all 0.2s;}footer{border-top:1px solid rgba(212,160,23,0.15);padding:26px 20px;text-align:center;background:#1a1400;}.f-logo{font-family:'Playfair Display',serif;font-size:1.05rem;color:#E8A820;margin-bottom:8px;}.f-logo span{color:var(--sa);}.f-links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-bottom:12px;}.f-links a{font-size:0.76rem;color:#9A8A6A;text-decoration:none;}.disc{max-width:480px;margin:0 auto;font-size:0.65rem;color:var(--muted);opacity:0.4;line-height:1.6;}@media(max-width:780px){.wrap{grid-template-columns:1fr;}aside{position:relative;height:auto;top:0;border-right:none;border-bottom:1px solid var(--border);padding:12px;display:flex;flex-wrap:wrap;gap:3px;}aside .st,aside .sb-foot{display:none;}main{padding:24px 16px 52px;}}
 /* ===== UNIVERSAL NAV ===== */
 .unav{position:sticky;top:0;z-index:9000;height:60px;background:#100e04;border-bottom:1px solid rgba(212,160,23,0.15);display:flex;align-items:center;padding:0 28px;gap:0;}
 .unav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#F0C040;text-decoration:none;margin-right:24px;white-space:nowrap;}
@@ -118,40 +66,53 @@
     <button id="unav-dlb-pa" onclick="siteSetLang('pa')">ਪੰਜਾਬੀ</button>
   </div>
 </div>
-<div class="page-wrap">
-  <aside class="sidebar">
-    <div class="sidebar-title">On this page</div>
-    <a href="#what" class="toc-link">🤔 What Is Compound Growth?</a>
-    <a href="#time" class="toc-link">⏰ Why Time Is the Key Variable</a>
-    <a href="#consistent" class="toc-link">📅 Regular Contributions Amplify the Effect</a>
-    <a href="#enemy" class="toc-link">⚠️ The Enemy of Compound Growth</a>
-    
-    <div class="sidebar-back">
-      <a href="education.html" class="back-btn" style="display:block;margin-bottom:6px">← All Topics</a>
-      <a href="index.html" class="back-btn" style="display:block">🏠 Home</a>
-    </div>
-  </aside>
-  <main>
-  <div class="breadcrumb"><a href="index.html">Home</a> › <a href="education.html">Learn</a> › <span style="color:var(--off);">Compound Interest</span></div>
-  <div class="tag">📈 Investing</div>
-  <h1>Compound Interest: The Force That Builds Wealth</h1>
-  <p class="lead">Einstein reportedly called compound interest the eighth wonder of the world. Here's why — with Canadian numbers.</p>
-  <div class="sec" id="what"><h2><span>📈</span> What Is Compound Interest?</h2><p>Compound interest means earning returns not just on your original investment but also on all the interest and returns you've already earned. Your money earns money, which earns more money, which earns more money. Over decades, this snowball effect produces results that seem mathematically impossible until you see the numbers.</p><p><strong>Simple example:</strong> $10,000 at 7% annual return:<br>— After 10 years: $19,672 (nearly doubled)<br>— After 20 years: $38,697 (nearly 4x)<br>— After 30 years: $76,123 (7.6x)<br>— After 40 years: $149,745 (almost 15x)</p><p>You invested $10,000 once and did nothing. After 40 years, compound growth did $139,745 of work for you.</p></div><div class="div"></div><div class="sec" id="rule72"><h2><span>🔢</span> The Rule of 72</h2><p>The Rule of 72 is a quick mental math tool: divide 72 by your annual return rate to find how many years it takes to double your money.</p><p>Examples:<br>— 4% return (GIC): money doubles every 18 years<br>— 7% return (diversified ETF): money doubles every 10.3 years<br>— 10% return (aggressive equities): money doubles every 7.2 years<br>— 20% interest (credit card debt): your debt doubles every 3.6 years</p><p>That last one is why compound interest works against you when you're in debt. The same force that builds wealth destroys it when you're on the wrong side of the equation.</p></div><div class="div"></div><div class="sec" id="time"><h2><span>⏰</span> Why Time Is the Most Powerful Variable</h2><p>$5,000/year invested at 7%:<br>— Starting at 25, stopping at 35 (10 years, $50,000 invested): portfolio at 65 = $602,000<br>— Starting at 35, continuing until 65 (30 years, $150,000 invested): portfolio at 65 = $472,000</p><p>The investor who stopped at 35 invested $100,000 less but ended up with more money — because of the extra 10 years of compounding. This is not a typo. Starting 10 years earlier is worth more than investing 3x as long afterward.</p></div><div class="div"></div><div class="sec" id="canada"><h2><span>🇨🇦</span> Maximizing Compounding in Canada</h2><p>The TFSA is the single best compounding vehicle in Canada. All growth is completely tax-free — the government takes nothing from your compound returns, ever. $6,500/year in a TFSA at 7% from age 18 to 65 = over $2 million. The same investment in a non-registered account would be worth significantly less after the annual drag of capital gains and dividend taxes eating into your compound returns.</p></div>
+<div class="wrap">
+<aside>
+  <div class="st">In this guide</div>
+  <a href="#s1" class="tl">What Is GIS and Who Qualifies</a>
+  <a href="#s2" class="tl">The Income Thresholds — How Much You Can Earn</a>
+  <a href="#s3" class="tl">How to Apply for GIS</a>
+  <a href="#s4" class="tl">GIS Strategy — How to Maximize This Benefit</a>
+  <div class="sb-foot">
+    <a href="education.html" class="sb-link">← 200+ Topics</a>
+    <a href="wealth-path.html" class="sb-link">💰 Wealth Path</a>
+    <a href="books.html" class="sb-link">📚 Books</a>
+    <a href="index.html" class="sb-link">🏠 Home</a>
+  </div>
+</aside>
+<main>
+  <div class="breadcrumb"><a href="index.html">Home</a> › <a href="education.html">Learn</a> › <span style="color:var(--off);">Guaranteed Income Supplement (GIS) in Canada</span></div>
+  <div class="tag">🏛️ Retirement</div>
+  <h1>Guaranteed Income Supplement (GIS) in Canada</h1>
+  <p class="lead">GIS is a monthly non-taxable payment for low-income seniors in Canada. Thousands of eligible seniors miss it every year — make sure you don't.</p>
+  
+  <div class="sec" id="s1">
+    <h2>What Is GIS and Who Qualifies</h2>
+    <p>The <strong>Guaranteed Income Supplement (GIS)</strong> is a monthly, non-taxable benefit paid by the federal government to seniors who receive OAS (Old Age Security) and have low income. It exists because OAS alone ($713/month in 2024) is not enough to live on, and many Canadian seniors — especially newer immigrants and those with low or no CPP — live near or below the poverty line without additional support.</p><p><strong>Basic eligibility:</strong><br>— Must be 65 or older<br>— Must be a Canadian resident<br>— Must be receiving OAS (even a partial OAS)<br>— Must have income below the threshold (updated annually)</p><p><strong>2024 maximum GIS amounts (approximate):</strong><br>— Single senior: up to $1,086/month<br>— Married/common-law, both receiving OAS: up to $654/month each<br>— Married/common-law, only one receiving OAS: up to $1,035/month for the OAS recipient</p><p><strong>Combined with OAS:</strong> A single senior receiving full OAS + full GIS receives approximately $1,800/month — $21,600/year. This is below the poverty line in most major cities but provides a meaningful base.</p><p><strong>GIS is tax-free:</strong> Unlike CPP and OAS which are taxable, GIS payments are not included in income. This is a significant advantage for very low-income seniors.</p>
+  </div><div class="div"></div>
+  <div class="sec" id="s2">
+    <h2>The Income Thresholds — How Much You Can Earn</h2>
+    <p>GIS is income-tested — the benefit reduces as your income rises and cuts off completely at higher income levels. Income is based on the previous calendar year's tax return.</p><p><strong>2024 income cutoffs (approximate):</strong><br>— Single: GIS reduces once income exceeds ~$22,000/year, cuts off at ~$22,000 (only OAS income is excluded from this calculation)<br>— Couple (both on OAS): cuts off at ~$29,000 combined<br>— The exact thresholds change each year — check canada.ca for current numbers</p><p><strong>What counts as income:</strong> CPP, private pensions, RRSP/RRIF withdrawals, employment income, rental income, and investment income (interest, dividends, capital gains). What does NOT count: OAS itself, GIS itself, the first $5,000 of employment income (plus 50% of next $10,000 — a 2021 change encouraging seniors to work part-time).</p><p><strong>TFSA withdrawals do NOT count as income</strong> for GIS purposes. This is the single most powerful reason low-income seniors should use TFSA. Withdrawing from TFSA doesn't reduce GIS. Withdrawing from RRSP does. This is why the TFSA-first strategy is essential for anyone who expects to be a GIS recipient in retirement.</p><p><strong>Example:</strong> Navdeep has no CPP (arrived in Canada at 55) and receives full OAS + GIS: ~$1,800/month. He has $80,000 in TFSA. Withdrawing $10,000/year from TFSA for expenses has zero impact on his GIS. Withdrawing from an RRSP instead would reduce his GIS dollar-for-dollar.</p>
+  </div><div class="div"></div>
+  <div class="sec" id="s3">
+    <h2>How to Apply for GIS</h2>
+    <p><strong>Most seniors are enrolled automatically</strong> once they've been filing taxes and their OAS starts. Service Canada reviews the previous year's tax return and automatically adds GIS if eligible. But <strong>this only works if you file taxes every year</strong> — even if you have no income to report.</p><p><strong>Non-filers lose GIS:</strong> Many newcomer seniors and those with no Canadian income don't file tax returns because they think they don't have to. Without a tax return, Service Canada has no income data and cannot process GIS automatically. If you know any seniors who don't file taxes, help them file — they may be leaving thousands of dollars per year on the table.</p><p><strong>How to apply manually if not automatic:</strong><br>— Call Service Canada: 1-800-277-9914 (English/French)<br>— Apply online at My Service Canada Account<br>— Visit a Service Canada office in person<br>— Bring your SIN, banking information for direct deposit, and most recent NOA (Notice of Assessment) from CRA</p><p><strong>Retroactive GIS:</strong> If you were eligible but didn't receive GIS, you can get retroactive payment for up to 11 months. Apply as soon as you discover the missed benefit.</p><p><strong>GIS is renewed annually</strong> — automatically if you file taxes. If your income changes significantly, update Service Canada immediately so your benefit adjusts accordingly.</p>
+  </div><div class="div"></div>
+  <div class="sec" id="s4">
+    <h2>GIS Strategy — How to Maximize This Benefit</h2>
+    <p><strong>The TFSA strategy for GIS recipients:</strong> Any senior who may be a GIS recipient in retirement should prioritize TFSA over RRSP. TFSA withdrawals don't count as income; RRSP/RRIF withdrawals do. Having $200,000 in TFSA allows $15,000/year in withdrawals with zero GIS clawback. The same $200,000 in RRSP/RRIF costs GIS dollar-for-dollar.</p><p><strong>RRSP meltdown before 65:</strong> If you have an RRSP and expect to receive GIS at 65+, consider withdrawing from RRSP strategically in your early 60s (before OAS/GIS eligibility) to move money to TFSA. Pay the tax once then, rather than losing GIS clawback for the rest of your life.</p><p><strong>Pension income timing:</strong> If you have a defined benefit pension option between lump sum and monthly income, consider the GIS impact carefully. A large RRSP withdrawal or pension income may make you ineligible for GIS entirely.</p><p><strong>Spousal strategy:</strong> If one spouse has high income and one has very low income, income splitting (pension splitting) may help both partners access GIS. Consult a retirement income specialist for your specific situation.</p><p><strong>Provincial supplements:</strong> Several provinces offer additional top-ups for low-income seniors on top of GIS. In Ontario, the Guaranteed Annual Income System (GAINS) adds up to $166/month. BC, Alberta, Quebec, and others have similar programs. Always check your provincial government's benefits for seniors.</p>
+  </div><div class="div"></div>
 </main>
 </div>
-<footer class="sub-footer">
-  <div class="logo">Punjabi<span>Finance</span></div>
-  <p class="disclaimer">Educational content only — not financial, legal, or insurance advice. Always consult a licensed professional before making financial decisions.</p>
+<footer>
+  <div class="f-logo">Punjabi<span>Finance</span></div>
+  <div class="f-links"><a href="index.html">Home</a><a href="education.html">Learn</a><a href="calculators.html">Calculators</a><a href="wealth-path.html">Wealth Path</a><a href="books.html">Books</a></div>
+  <p class="disc">Educational content only. Not financial advice. Canadian context. © 2025 Punjabi Finance</p>
 </footer>
 <script>
-  const obs = new IntersectionObserver(es => es.forEach(e => {
-    if(e.isIntersecting) {
-      document.querySelectorAll('.toc-link').forEach(l => l.classList.remove('active'));
-      const a = document.querySelector('.toc-link[href="#'+e.target.id+'"]');
-      if(a) a.classList.add('active');
-    }
-  }), {rootMargin:'-15% 0px -70% 0px'});
-  document.querySelectorAll('.learn-section').forEach(s => obs.observe(s));
+const _ll=localStorage.getItem('pf_lang')||'en';
+function learnLang(l){localStorage.setItem('pf_lang',l);document.getElementById('lpg-en').classList.toggle('active',l==='en');document.getElementById('lpg-pa').classList.toggle('active',l==='pa');}
+document.addEventListener('DOMContentLoaded',()=>{if(_ll==='pa')learnLang('pa');const secs=document.querySelectorAll('.sec[id]'),links=document.querySelectorAll('aside .tl');const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)links.forEach(l=>l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id));});},{rootMargin:'-30% 0px -60% 0px'});secs.forEach(s=>obs.observe(s));});
 </script>
 
 <!-- AI CHATBOT WIDGET -->
@@ -326,5 +287,4 @@ async function sendMsg() {
 // ============================
 
 </script>
-</body>
-</html>
+</body></html>

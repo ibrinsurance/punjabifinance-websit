@@ -1,57 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Power of Compound Growth – Punjabi Finance</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{--gold:#D4A017;--gold-light:#F0C040;--saffron:#E8890C;--black:#0A0A0A;--off-white:#1a1600;--dark-bg:#111008;--card-bg:#1c1a0e;--text-muted:#9A8A6A;}
-  *{margin:0;padding:0;box-sizing:border-box;} html{scroll-behavior:smooth;}
-  body{background:var(--dark-bg);color:var(--off-white);font-family:'DM Sans',sans-serif;overflow-x:hidden;}
-  a{color:inherit;}
-  .top-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:16px;padding:13px 28px;background:rgba(10,10,4,0.93);backdrop-filter:blur(16px);border-bottom:1px solid rgba(212,160,23,0.15);}
-  .back-btn{text-decoration:none;color:var(--text-muted);font-size:0.85rem;font-weight:500;transition:color 0.2s;}
-  .back-btn:hover{color:var(--gold-light);}
-  .nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--gold-light);text-decoration:none;}
-  .nav-logo span{color:var(--saffron);}
-  .page-wrap{display:grid;grid-template-columns:240px 1fr;min-height:100vh;}
-  .sidebar{position:sticky;top:58px;height:calc(100vh - 58px);overflow-y:auto;padding:28px 20px;border-right:1px solid rgba(212,160,23,0.1);background:#0d0c04;}
-  .sidebar-title{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--saffron);margin-bottom:14px;}
-  .toc-link{display:block;padding:7px 10px;border-radius:8px;text-decoration:none;color:var(--text-muted);font-size:0.83rem;transition:all 0.2s;border-left:2px solid transparent;margin-bottom:3px;}
-  .toc-link:hover,.toc-link.active{color:var(--gold-light);background:rgba(212,160,23,0.07);border-left-color:var(--gold);}
-  .sidebar-back{margin-top:24px;padding-top:18px;border-top:1px solid rgba(212,160,23,0.1);}
-  .content{padding:52px 60px 72px;max-width:800px;}
-  .topic-tag{display:inline-block;background:rgba(212,160,23,0.12);border:1px solid rgba(212,160,23,0.3);color:var(--gold-light);padding:4px 14px;border-radius:50px;font-size:0.73rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;}
-  .page-title{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3vw,2.7rem);font-weight:900;line-height:1.1;margin-bottom:12px;}
-  .gold{color:var(--gold-light);}
-  .lead{font-size:1rem;color:#4a3f20;line-height:1.7;margin-bottom:44px;padding-bottom:28px;border-bottom:1px solid rgba(212,160,23,0.1);}
-  .learn-section{margin-bottom:48px;scroll-margin-top:80px;}
-  .learn-section h2{font-family:'Playfair Display',serif;font-size:1.45rem;color:var(--gold-light);margin-bottom:14px;display:flex;align-items:center;gap:9px;}
-  .learn-section p{color:#4a3f20;line-height:1.8;font-size:0.96rem;margin-bottom:13px;}
-  .learn-section ul,.learn-section ol{color:#4a3f20;line-height:1.8;font-size:0.96rem;padding-left:20px;margin-bottom:13px;}
-  .learn-section li{margin-bottom:7px;}
-  .callout{background:rgba(212,160,23,0.08);border:1px solid rgba(212,160,23,0.2);border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:16px 18px;margin:18px 0;}
-  .callout p{margin:0;color:#4a3f20;font-size:0.93rem;}
-  .tip-box{background:rgba(37,211,102,0.06);border:1px solid rgba(37,211,102,0.2);border-radius:12px;padding:16px 18px;margin:18px 0;}
-  .tip-box p{margin:0;color:#4a3f20;font-size:0.93rem;}
-  .warn-box{background:rgba(232,137,12,0.07);border:1px solid rgba(232,137,12,0.22);border-radius:12px;padding:16px 18px;margin:18px 0;}
-  .warn-box p{margin:0;color:#4a3f20;font-size:0.93rem;}
-  .data-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin:18px 0;}
-  .data-card{background:var(--card-bg);border:1px solid rgba(212,160,23,0.16);border-radius:13px;padding:16px;text-align:center;}
-  .data-num{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--gold-light);display:block;margin-bottom:4px;}
-  .data-label{font-size:0.72rem;color:var(--text-muted);line-height:1.4;}
-  .divider{height:1px;background:rgba(212,160,23,0.1);margin:36px 0;}
-  .cta-box{background:linear-gradient(135deg,rgba(212,160,23,0.11),rgba(232,137,12,0.04));border:1px solid rgba(212,160,23,0.26);border-radius:18px;padding:32px;text-align:center;margin-top:44px;}
-  .cta-box h3{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--gold-light);margin-bottom:9px;}
-  .cta-box p{color:var(--text-muted);font-size:0.88rem;margin-bottom:18px;}
-  .btn-gold{display:inline-block;padding:11px 26px;background:var(--gold);color:var(--black);border-radius:50px;font-weight:700;font-size:0.88rem;text-decoration:none;transition:background 0.2s,transform 0.15s;}
-  .btn-gold:hover{background:var(--gold-light);transform:translateY(-1px);}
-  .sub-footer{border-top:1px solid rgba(212,160,23,0.1);padding:28px 20px;text-align:center;color:var(--text-muted);font-size:0.78rem;}
-  .sub-footer .logo{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--gold-light);margin-bottom:6px;}
-  .sub-footer .logo span{color:var(--saffron);}
-  .disclaimer{max-width:520px;margin:10px auto 0;font-size:0.67rem;opacity:0.42;line-height:1.55;}
-  @media(max-width:780px){.page-wrap{grid-template-columns:1fr;}.sidebar{position:relative;height:auto;top:0;border-right:none;border-bottom:1px solid rgba(212,160,23,0.1);padding:16px;}.content{padding:28px 16px 52px;}.top-nav{padding:12px 16px;}}
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Annual Financial Checkup – Punjabi Finance</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"><style>
+:root{--gold:#D4A017;--gl:#C4880A;--sa:#C47008;--bg:#f7f5f0;--cb:#f0ede4;--muted:#7a6a45;--off:#1a1600;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:#f7f5f0;color:#1a1600;font-family:'DM Sans',sans-serif;}
+a{color:inherit;}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:16px;padding:13px 28px;background:rgba(10,10,4,.93);backdrop-filter:blur(16px);border-bottom:1px solid rgba(212,160,23,.15);}
+.bk{text-decoration:none;color:#7a6a45;font-size:.85rem;font-weight:500;transition:color .2s;}.bk:hover{color:#C4880A;}
+.logo{font-family:'Playfair Display',serif;font-size:1.1rem;color:#C4880A;text-decoration:none;margin-left:auto;}.logo span{color:#C47008;}
+.wrap{display:grid;grid-template-columns:230px 1fr;min-height:calc(100vh - 52px);}
+aside{position:sticky;top:52px;height:calc(100vh - 52px);overflow-y:auto;padding:24px 16px;border-right:1px solid rgba(212,160,23,.1);background:#0d0c04;}
+.st{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#C47008;margin-bottom:12px;}
+.tl{display:block;padding:6px 9px;border-radius:7px;text-decoration:none;color:#7a6a45;font-size:.81rem;transition:all .2s;border-left:2px solid transparent;margin-bottom:2px;}
+.tl:hover,.tl.on{color:#C4880A;background:rgba(212,160,23,.07);border-left-color:var(--gold);}
+.sb-foot{margin-top:20px;padding-top:16px;border-top:1px solid rgba(212,160,23,.1);}
+main{padding:48px 56px 72px;max-width:780px;background:#fff;}
+.tag{display:inline-block;background:rgba(212,160,23,.12);border:1px solid rgba(212,160,23,.3);color:#C4880A;padding:3px 13px;border-radius:50px;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;}
+h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:900;line-height:1.1;margin-bottom:10px;}
+.gold{color:#C4880A;}
+.lead{font-size:.97rem;color:#4a3f20;line-height:1.75;margin-bottom:40px;padding-bottom:24px;border-bottom:1px solid rgba(212,160,23,.1);}
+.sec{margin-bottom:44px;scroll-margin-top:72px;}
+.sec h2{font-family:'Playfair Display',serif;font-size:1.35rem;color:#C4880A;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.sec p{color:#4a3f20;line-height:1.8;font-size:.94rem;margin-bottom:11px;}
+.sec ul,.sec ol{color:#4a3f20;line-height:1.8;font-size:.94rem;padding-left:20px;margin-bottom:11px;}
+.sec li{margin-bottom:6px;}
+.box{background:rgba(212,160,23,.07);border:1px solid rgba(212,160,23,.2);border-left:4px solid var(--gold);border-radius:0 11px 11px 0;padding:14px 16px;margin:16px 0;}
+.box p{margin:0;font-size:.91rem;}
+.tip{background:rgba(37,211,102,.06);border:1px solid rgba(37,211,102,.2);border-radius:11px;padding:14px 16px;margin:16px 0;}
+.tip p{margin:0;font-size:.91rem;}
+.warn{background:rgba(232,137,12,.07);border:1px solid rgba(232,137,12,.22);border-radius:11px;padding:14px 16px;margin:16px 0;}
+.warn p{margin:0;font-size:.91rem;}
+.dg{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:10px;margin:16px 0;}
+.dc{background:#f0ede4;border:1px solid rgba(212,160,23,.16);border-radius:12px;padding:14px;text-align:center;}
+.dn{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#C4880A;display:block;margin-bottom:3px;}
+.dl{font-size:.7rem;color:#7a6a45;line-height:1.4;}
+.div{height:1px;background:rgba(212,160,23,.09);margin:32px 0;}
+.cta{background:linear-gradient(135deg,rgba(212,160,23,.1),rgba(232,137,12,.04));border:1px solid rgba(212,160,23,.25);border-radius:16px;padding:28px;text-align:center;margin-top:40px;}
+.cta h3{font-family:'Playfair Display',serif;font-size:1.25rem;color:#C4880A;margin-bottom:8px;}
+.cta p{color:#7a6a45;font-size:.86rem;margin-bottom:16px;}
+.btn{display:inline-block;padding:10px 24px;background:var(--gold);color:#0a0a0a;border-radius:50px;font-weight:700;font-size:.86rem;text-decoration:none;transition:background .2s,transform .15s;}
+.btn:hover{background:var(--gl);transform:translateY(-1px);}
+footer{border-top:1px solid rgba(212,160,23,.1);padding:24px 16px;text-align:center;color:#7a6a45;font-size:.76rem;}
+footer .fl{font-family:'Playfair Display',serif;font-size:1.1rem;color:#C4880A;margin-bottom:6px;}
+footer .fl span{color:#C47008;}
+.disc{max-width:500px;margin:8px auto 0;font-size:.66rem;opacity:.4;line-height:1.5;}
+@media(max-width:760px){.wrap{grid-template-columns:1fr;}aside{position:relative;height:auto;top:0;border-right:none;border-bottom:1px solid rgba(212,160,23,.1);padding:14px;}main{padding:24px 14px 48px;}nav{padding:11px 14px;}}
 
 
 
@@ -81,8 +75,7 @@
 .unav-dlang button.on{background:#D4A017;color:#0a0a0a;border-color:#D4A017;}
 @media(max-width:860px){.unav-links{display:none;}.unav-ham{display:flex;}.unav{padding:0 16px;}}
 /* ========================= */
-</style>
-</head>
+</style></head>
 <body>
 <nav class="unav">
   <a href="index.html" class="unav-logo">Punjabi<span>Finance</span></a>
@@ -118,42 +111,45 @@
     <button id="unav-dlb-pa" onclick="siteSetLang('pa')">ਪੰਜਾਬੀ</button>
   </div>
 </div>
-<div class="page-wrap">
-  <aside class="sidebar">
-    <div class="sidebar-title">On this page</div>
-    <a href="#what" class="toc-link">🤔 What Is Compound Growth?</a>
-    <a href="#time" class="toc-link">⏰ Why Time Is the Key Variable</a>
-    <a href="#consistent" class="toc-link">📅 Regular Contributions Amplify the Effect</a>
-    <a href="#enemy" class="toc-link">⚠️ The Enemy of Compound Growth</a>
-    
-    <div class="sidebar-back">
-      <a href="education.html" class="back-btn" style="display:block;margin-bottom:6px">← All Topics</a>
-      <a href="index.html" class="back-btn" style="display:block">🏠 Home</a>
-    </div>
-  </aside>
-  <main>
-  <div class="breadcrumb"><a href="index.html">Home</a> › <a href="education.html">Learn</a> › <span style="color:var(--off);">Compound Interest</span></div>
-  <div class="tag">📈 Investing</div>
-  <h1>Compound Interest: The Force That Builds Wealth</h1>
-  <p class="lead">Einstein reportedly called compound interest the eighth wonder of the world. Here's why — with Canadian numbers.</p>
-  <div class="sec" id="what"><h2><span>📈</span> What Is Compound Interest?</h2><p>Compound interest means earning returns not just on your original investment but also on all the interest and returns you've already earned. Your money earns money, which earns more money, which earns more money. Over decades, this snowball effect produces results that seem mathematically impossible until you see the numbers.</p><p><strong>Simple example:</strong> $10,000 at 7% annual return:<br>— After 10 years: $19,672 (nearly doubled)<br>— After 20 years: $38,697 (nearly 4x)<br>— After 30 years: $76,123 (7.6x)<br>— After 40 years: $149,745 (almost 15x)</p><p>You invested $10,000 once and did nothing. After 40 years, compound growth did $139,745 of work for you.</p></div><div class="div"></div><div class="sec" id="rule72"><h2><span>🔢</span> The Rule of 72</h2><p>The Rule of 72 is a quick mental math tool: divide 72 by your annual return rate to find how many years it takes to double your money.</p><p>Examples:<br>— 4% return (GIC): money doubles every 18 years<br>— 7% return (diversified ETF): money doubles every 10.3 years<br>— 10% return (aggressive equities): money doubles every 7.2 years<br>— 20% interest (credit card debt): your debt doubles every 3.6 years</p><p>That last one is why compound interest works against you when you're in debt. The same force that builds wealth destroys it when you're on the wrong side of the equation.</p></div><div class="div"></div><div class="sec" id="time"><h2><span>⏰</span> Why Time Is the Most Powerful Variable</h2><p>$5,000/year invested at 7%:<br>— Starting at 25, stopping at 35 (10 years, $50,000 invested): portfolio at 65 = $602,000<br>— Starting at 35, continuing until 65 (30 years, $150,000 invested): portfolio at 65 = $472,000</p><p>The investor who stopped at 35 invested $100,000 less but ended up with more money — because of the extra 10 years of compounding. This is not a typo. Starting 10 years earlier is worth more than investing 3x as long afterward.</p></div><div class="div"></div><div class="sec" id="canada"><h2><span>🇨🇦</span> Maximizing Compounding in Canada</h2><p>The TFSA is the single best compounding vehicle in Canada. All growth is completely tax-free — the government takes nothing from your compound returns, ever. $6,500/year in a TFSA at 7% from age 18 to 65 = over $2 million. The same investment in a non-registered account would be worth significantly less after the annual drag of capital gains and dividend taxes eating into your compound returns.</p></div>
-</main>
-</div>
-<footer class="sub-footer">
-  <div class="logo">Punjabi<span>Finance</span></div>
-  <p class="disclaimer">Educational content only — not financial, legal, or insurance advice. Always consult a licensed professional before making financial decisions.</p>
-</footer>
+<div class="wrap">
+<aside><div class="st">On this page</div><a href="#income" class="tl">💰 Income & Taxes</a>
+    <a href="#protection" class="tl">🛡️ Insurance & Protection</a>
+    <a href="#debt" class="tl">💳 Debt & Credit</a>
+    <a href="#invest" class="tl">📈 Investments</a>
+    <a href="#goals" class="tl">🎯 Goals & Net Worth</a>
+    <div class="sb-foot"><a href="education.html" class="bk" style="display:block;margin-bottom:6px">← All 200+ Topics</a><a href="index.html" class="bk" style="display:block">🏠 Home</a></div></aside>
+<main><div class="tag">✅ Personal Finance</div><h1><span class="lng-en">Annual Financial Checkup</span><span class="lng-pa" style="display:none">Annual Financial Checkup</span></h1><p class="lead"><span class="lng-en">A yearly financial review takes 2–3 hours and can be worth thousands of dollars. Here's your complete checklist.</span><span class="lng-pa" style="display:none">ਕੈਨੇਡਾ ਵਿੱਚ ਇਸ ਵਿਸ਼ੇ ਬਾਰੇ ਪੂਰੀ ਗਾਈਡ — ਅਸਲ ਉਦਾਹਰਣਾਂ ਅਤੇ ਕੰਮ ਦੇ ਕਦਮਾਂ ਨਾਲ।</span></p><div class="sec" id="income"><h2><span>💰</span>Income & Taxes</h2>
+<p>Once a year — ideally in January or February — sit down for 2–3 hours and review every area of your financial life. Most Canadians skip this and lose thousands of dollars annually through forgotten subscriptions, unused contribution room, outdated insurance, and misaligned investments.</p>
+<p>Start with your income and tax situation. Did you change jobs, get a raise, or start freelancing? Each change affects your optimal RRSP vs TFSA strategy. Log into <strong>CRA My Account</strong> at canada.ca and check your RRSP contribution room. Many Canadians carry unused room worth tens of thousands of dollars — every year you wait to use it costs you in taxes.</p>
+<p>If your income increased significantly, consider making an RRSP contribution before the March 1 deadline to reduce this year's taxable income. A $10,000 RRSP contribution at a 43% marginal tax rate returns $4,300 in tax refund — money that should immediately go back into your TFSA or investments.</p>
+<p>Check if you're eligible for the FHSA (First Home Savings Account) if you don't own a home. You can contribute $8,000/year (lifetime max $40,000) and get both a tax deduction and tax-free growth. This is one of the best accounts available to first-time buyers — many Canadians aren't using it.</p>
+</div><div class="div"></div><div class="sec" id="protection"><h2><span>🛡️</span>Insurance & Protection</h2>
+<p>Insurance is the foundation that protects everything you've built. Most families buy insurance once and never review it — which means they're often underinsured as their lives change.</p>
+<p><strong>Life insurance review:</strong> If you bought term life 5 years ago and your income has doubled, your family's needs have doubled too. A common rule: 10–15× your annual income in coverage. If you earn $80,000, you should have $800,000–$1.2M in coverage. Review whether your current policy matches this.</p>
+<p><strong>Beneficiary designations:</strong> This is the most neglected task in Canadian finance. If you got divorced, had children, or your parents passed away, your old beneficiaries may still be named. A beneficiary who predeceases you and isn't updated means your insurance payout goes through probate — delaying distribution to your family by months and costing legal fees.</p>
+<p><strong>Disability insurance:</strong> Your most valuable asset is your ability to earn income. If you're a non-union employee, check whether your employer's group disability covers 60–70% of your income. Many plans only cover base salary, not overtime or bonuses. Self-employed Canadians have no employer plan at all — private disability insurance is critical.</p>
+<p><strong>Will and Power of Attorney:</strong> If you had a child, bought property, or went through a major life change, your will needs updating. A will costs $500–$1,500 with a lawyer — a fraction of the estate disputes that happen without one.</p>
+</div><div class="div"></div><div class="sec" id="debt"><h2><span>💳</span>Debt & Credit</h2>
+<p>Your annual checkup should include pulling your credit report. Both <strong>Borrowell</strong> and <strong>Credit Karma</strong> offer free Equifax and TransUnion reports in Canada. Check for errors — incorrect late payments, fraudulent accounts, or collections you didn't know about. Disputing an error can improve your score 30–50 points, affecting your mortgage rate significantly.</p>
+<p>List every debt you carry with its interest rate. Then calculate: how much interest did you pay last year on consumer debt? If that number is above $1,000, you have an urgent optimization problem. At the 2024 prime rate, many Canadians are paying 7–10% on lines of credit and 19.99–22.99% on credit cards — these returns are guaranteed and immediate when you pay them down.</p>
+<p>Check whether a <strong>balance transfer</strong> opportunity exists. Several Canadian cards offer 0% balance transfer promotions for 6–12 months. Moving $5,000 in credit card debt from 19.99% to 0% for 12 months saves you ~$1,000 in interest — a real, guaranteed return. Apply the savings directly to principal during that window.</p>
+</div><div class="div"></div><div class="sec" id="invest"><h2><span>📈</span>Investments</h2>
+<p>Review your investment allocation against your stated risk tolerance and time horizon. After a strong bull market, your 60/40 stock/bond allocation may have drifted to 75/25 — more risk than you intended. Annual rebalancing corrects this by selling what's grown and buying what hasn't, enforcing a "buy low, sell high" discipline automatically.</p>
+<p><strong>Review fees paid in the last 12 months.</strong> Check every account statement for management fees, fund MERs (Management Expense Ratios), and trading commissions. A 2% annual fee on $100,000 costs $2,000/year. Switching to low-cost ETFs (0.1–0.25% MER) available through Questrade or Wealthsimple Trade could save you $1,750 annually — guaranteed, risk-free savings.</p>
+<p>Verify your registered accounts are optimized: TFSA for highest-growth investments (growth compounds tax-free), RRSP for income-earning assets (bonds, REITs), and non-registered accounts for Canadian dividend-paying stocks (eligible dividend tax credit makes these most tax-efficient in taxable accounts).</p>
+</div><div class="div"></div><div class="sec" id="goals"><h2><span>🎯</span>Goals & Net Worth</h2>
+<p>The annual checkup is the right time to reassess your financial goals. Did you accomplish what you set out to do last year? What changed? Did your priority shift from saving for a home to saving for your children's education? Life changes faster than most financial plans.</p>
+<p>Set concrete, numbered goals for the next 12 months: "Save $15,000 in TFSA," "Pay off $8,000 on line of credit," "Get life insurance quote." Vague goals like "save more" consistently underperform specific ones. Write the numbers down and revisit them at the next annual checkup.</p>
+<p>If you don't have a written net worth statement, create one now: list all assets (chequing, savings, investments, property value, car value) and all liabilities (mortgage, line of credit, credit cards, student loans, car loan). Subtract liabilities from assets. This single number — your net worth — is the scorecard of all financial decisions. Track it annually, ideally quarterly.</p>
+</div><div class="div"></div></main></div>
+<footer><div class="fl">Punjabi<span>Finance</span></div><p class="disc">Educational content only — not financial, legal, or insurance advice. Always consult a licensed professional before making financial decisions.</p></footer>
 <script>
-  const obs = new IntersectionObserver(es => es.forEach(e => {
-    if(e.isIntersecting) {
-      document.querySelectorAll('.toc-link').forEach(l => l.classList.remove('active'));
-      const a = document.querySelector('.toc-link[href="#'+e.target.id+'"]');
-      if(a) a.classList.add('active');
-    }
-  }), {rootMargin:'-15% 0px -70% 0px'});
-  document.querySelectorAll('.learn-section').forEach(s => obs.observe(s));
+const obs=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){document.querySelectorAll('.tl').forEach(l=>l.classList.remove('on'));
+  const a=document.querySelector('.tl[href="#'+e.target.id+'"]');if(a)a.classList.add('on');}
+}),{rootMargin:'-15% 0px -70% 0px'});
+document.querySelectorAll('.sec').forEach(s=>obs.observe(s));
 </script>
-
 <!-- AI CHATBOT WIDGET -->
 <div id="chat-widget" style="position:fixed;bottom:24px;right:24px;z-index:9999;font-family:'DM Sans',sans-serif;">
   <!-- Toggle Button -->
@@ -326,5 +322,4 @@ async function sendMsg() {
 // ============================
 
 </script>
-</body>
-</html>
+</body></html>
