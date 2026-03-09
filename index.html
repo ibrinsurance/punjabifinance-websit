@@ -61,7 +61,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;height:60px;
 .hero::before{content:"";position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(ellipse 50% 60% at 70% 50%,rgba(201,146,26,0.06),transparent 65%);}
 .hero-photo-col{
-  position:relative;background:var(--ink2);overflow:hidden;
+  position:relative;background:var(--ink2);
+  overflow:hidden;
 }
 .hero-photo{
   width:100%;height:100%;
@@ -70,8 +71,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;height:60px;
 }
 .hero-photo-fade{
   position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(to right,transparent 55%,var(--ink) 92%),
-             linear-gradient(to top,var(--ink) 0%,transparent 15%);
+  background:linear-gradient(to right,transparent 60%,var(--ink) 100%),
+             linear-gradient(to top,var(--ink) 0%,transparent 20%);
 }
 .hero-text{
   padding:60px 48px 60px 44px;
@@ -104,20 +105,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;height:60px;
 
 /* TIP OF THE DAY */
 #tip-section{
-  display:grid;grid-template-columns:180px 1fr;
+  display:grid;grid-template-columns:200px 1fr;
   background:#1a1808;
   border-top:1px solid var(--border);border-bottom:1px solid var(--border);
 }
 .tip-label{
-  padding:28px 28px;border-right:1px solid var(--border);
+  padding:32px 36px;border-right:1px solid var(--border);
   display:flex;flex-direction:column;justify-content:center;
-  background:rgba(201,146,26,0.06);
 }
 .tip-pill{font-size:0.63rem;letter-spacing:0.14em;text-transform:uppercase;
   color:var(--gold);font-weight:700;display:flex;align-items:center;gap:7px;}
 .tip-date-txt{font-size:0.68rem;color:var(--muted);margin-top:8px;letter-spacing:0.04em;}
-.tip-body{padding:28px 44px;display:flex;align-items:center;}
-.tip-quote{font-family:var(--serif);font-size:1.18rem;font-style:italic;
+.tip-body{padding:32px 48px;display:flex;align-items:center;}
+.tip-quote{font-family:var(--serif);font-size:1.15rem;font-style:italic;
   color:#FAF6EE !important;line-height:1.65;max-width:700px;font-weight:600;}
 
 /* PROMO CARDS */
@@ -489,11 +489,11 @@ footer{background:#080806;padding:48px 80px 28px;border-top:1px solid var(--bord
 </footer>
 
 <script>
-let currentLang = "en"; try { currentLang = localStorage.getItem("pf_lang") || "en"; } catch(e) {}
+let currentLang = localStorage.getItem("pf_lang") || "en";
 
 function setLang(lang) {
   currentLang = lang;
-  try { localStorage.setItem("pf_lang", lang); } catch(e) {}
+  localStorage.setItem("pf_lang", lang);
   applyTranslations();
   updateTip();
   document.querySelectorAll(".lang-btn").forEach(b => {
@@ -527,16 +527,13 @@ function updateTip() {
   }
 }
 
-// Init — wrapped to survive localStorage blocks (e.g. preview iframes)
-try { currentLang = localStorage.getItem("pf_lang") || "en"; } catch(e) { currentLang = "en"; }
+// Init
 if (currentLang !== "en") applyTranslations();
 updateTip();
 document.querySelectorAll(".lang-btn").forEach(b => {
   const active = (currentLang==="en"&&b.textContent.trim()==="EN")||(currentLang==="pa"&&b.textContent.trim()==="PA");
   b.classList.toggle("active", active);
 });
-// Fallback: run again after page fully loads
-window.addEventListener("load", updateTip);
 
 function toggleMenu() { document.getElementById("mobile-menu").classList.toggle("open"); }
 document.addEventListener("click", e => {
